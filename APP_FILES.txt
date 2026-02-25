@@ -1,0 +1,6 @@
+src/app/workshops/page.tsx
+src/app/contact/page.tsx
+src/app/join/page.tsx
+src/app/about/page.tsx
+src/app/layout.tsx
+src/app/page.tsx

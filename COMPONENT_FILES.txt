@@ -1,0 +1,3 @@
+src/components/site-header.tsx
+src/components/site-footer.tsx
+src/components/cta.tsx

@@ -1,0 +1,20 @@
+
+/Users/louverde/life-website
+├── PROJECT_STRUCTURE.txt
+├── README.md
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── node_modules
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+├── src
+└── tsconfig.json
+
+directory: 3 file: 9
+
+
+
+[2K[1G

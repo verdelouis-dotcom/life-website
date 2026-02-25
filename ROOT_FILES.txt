@@ -1,0 +1,15 @@
+APP_FILES.txt
+COMPONENT_FILES.txt
+PROJECT_STRUCTURE.txt
+README.md
+ROOT_FILES.txt
+eslint.config.mjs
+next-env.d.ts
+next.config.ts
+node_modules
+package-lock.json
+package.json
+postcss.config.mjs
+public
+src
+tsconfig.json
