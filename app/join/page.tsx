@@ -1,7 +1,18 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-export default function JoinPage() {
+type SearchParams = Record<string, string | string[] | undefined>;
+
+export default async function JoinPage({
+  searchParams,
+}: {
+  searchParams?: Promise<SearchParams>;
+}) {
+  const sp = (await searchParams) ?? {};
+  const hostStatus = typeof sp.host === "string" ? sp.host : undefined;
+  const hostSuccess = hostStatus === "success";
+  const hostError = hostStatus === "error";
+
   return (
     <>
       <SiteHeader />
@@ -31,6 +42,18 @@ export default function JoinPage() {
             <p className="mt-2 text-zinc-700">
               This is how we scale. Open your table once a month using our simple host guide.
             </p>
+
+            {hostSuccess && (
+              <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-900">
+                Thanks for raising your hand. Check your inbox for the host guide and next steps.
+              </div>
+            )}
+
+            {hostError && (
+              <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-900">
+                Something went wrong. Please try again or email us at hello@longevityinitiativeforfoodandeducation.com.
+              </div>
+            )}
 
             <form action="/api/host" method="post" className="mt-5 grid gap-3">
               <input name="name" required placeholder="Name" className="rounded-xl border px-4 py-3" />
