@@ -20,9 +20,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
 
-    const fallbackEmail = "verde.louis@gmail.com";
-    const to = process.env.LIFE_TO_EMAIL || fallbackEmail;
-    const from = process.env.LIFE_FROM_EMAIL || fallbackEmail;
+    const fallbackTo = "verde.louis@gmail.com";
+    const fallbackFrom = "L.I.F.E. <onboarding@resend.dev>";
+    const to = process.env.LIFE_TO_EMAIL || fallbackTo;
+    const from = process.env.LIFE_FROM_EMAIL || fallbackFrom;
 
     const { error } = await resend.emails.send({
       from: from,

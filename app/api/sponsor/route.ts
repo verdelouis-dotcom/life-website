@@ -52,9 +52,10 @@ export async function POST(req: Request) {
     NextResponse.redirect(new URL("/join?sponsor=error", req.url), { status: 303 });
 
   const apiKey = process.env.RESEND_API_KEY || fallbackResendKey;
-  const fallbackEmail = "verde.louis@gmail.com";
-  const to = process.env.LIFE_TO_EMAIL || fallbackEmail;
-  const from = process.env.LIFE_FROM_EMAIL || fallbackEmail;
+  const fallbackTo = "verde.louis@gmail.com";
+  const fallbackFrom = "L.I.F.E. <onboarding@resend.dev>";
+  const to = process.env.LIFE_TO_EMAIL || fallbackTo;
+  const from = process.env.LIFE_FROM_EMAIL || fallbackFrom;
 
   const resend = new Resend(apiKey);
 

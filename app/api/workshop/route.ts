@@ -26,9 +26,10 @@ export async function POST(req: Request) {
     const attendees = formData.get("attendees")?.toString() || "";
     const message = formData.get("message")?.toString() || "";
 
-    const fallbackEmail = "verde.louis@gmail.com";
-    const to = process.env.LIFE_TO_EMAIL || fallbackEmail;
-    const from = process.env.LIFE_FROM_EMAIL || fallbackEmail;
+    const fallbackTo = "verde.louis@gmail.com";
+    const fallbackFrom = "L.I.F.E. <onboarding@resend.dev>";
+    const to = process.env.LIFE_TO_EMAIL || fallbackTo;
+    const from = process.env.LIFE_FROM_EMAIL || fallbackFrom;
 
     if (!name || !email) return redirectError();
 
