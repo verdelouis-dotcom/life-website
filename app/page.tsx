@@ -42,24 +42,28 @@ export default async function HomePage({
                   Longevity Initiative for Food &amp; Education
                 </p>
                 <h1 className="mt-4 font-serif text-4xl leading-tight text-[#2e2a26] md:text-5xl lg:text-6xl">
-                  Rebuild Life at the Table.
+                  Rebuild the Culture of the Table.
                 </h1>
-                <p className="mt-4 text-lg leading-relaxed text-[#5b5149]">
-                  Most families no longer sit down together for dinner. We&rsquo;re bringing the table
-                  back — and with it, connection, health, and longevity.
-                </p>
+                <div className="mt-5 space-y-3 text-lg leading-relaxed text-[#5b5149]">
+                  <p>Shared meals once anchored families and strengthened communities.</p>
+                  <p>Today, that structure is disappearing.</p>
+                  <p>
+                    L.I.F.E. restores the patterns that support connection, resilience, and long-term
+                    health.
+                  </p>
+                </div>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
-                    href="#host"
+                    href="/host"
                     className="rounded-2xl bg-[#6b7a46] px-5 py-3 text-white shadow-sm transition hover:bg-[#566236]"
                   >
                     Host a Table
                   </Link>
                   <Link
                     href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
-                    className="rounded-2xl border border-[#c46a3a]/60 px-5 py-3 text-[#c46a3a] transition hover:bg-[#fbe8df]"
+                    className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
                   >
-                    Download Host Guide (PDF)
+                    Download the Host Guide
                   </Link>
                 </div>
               </div>
@@ -79,122 +83,102 @@ export default async function HomePage({
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-16">
-          <h2 className="text-3xl font-semibold text-[#2e2a26]">The Quiet Crisis</h2>
-          <p className="mt-4 text-lg text-[#5b5149]">
-            Family dinner is disappearing in America. At the same time, U.S. life expectancy has
-            declined, chronic disease continues to rise, and screens have replaced shared time. We
-            removed the table — and accidentally dismantled a system that supported health,
-            belonging, and purpose. This is bigger than food. This is about rebuilding connection.
-          </p>
+          <h2 className="text-3xl font-semibold text-[#2e2a26]">The Quiet Longevity Crisis</h2>
+          <div className="mt-6 space-y-4 text-lg text-[#5b5149]">
+            <p>For the first time in modern history, life expectancy in the United States is declining.</p>
+            <p>Chronic disease is rising.<br />Isolation is increasing.<br />Family meals are disappearing.</p>
+            <p>
+              We spend more on healthcare than any nation in the world — yet rank near the bottom in life expectancy among
+              developed countries.
+            </p>
+            <p>This is not random.</p>
+            <p>
+              As the cultural patterns that once anchored families erode, so do the structures that supported long,
+              connected lives.
+            </p>
+            <p>The table was one of those structures.</p>
+            <p>L.I.F.E. restores it.</p>
+          </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 pb-16">
           <div className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
             <h2 className="text-3xl font-semibold text-[#2e2a26]">What Is L.I.F.E.?</h2>
             <p className="mt-4 text-lg text-[#5b5149]">
-              L.I.F.E. is a national nonprofit movement restoring the power of shared meals. We
-              educate communities using research-backed longevity data and teach simple
-              Mediterranean-style cooking families can recreate at home. Then we multiply impact
-              through one clear action: pay it forward at the table.
+              L.I.F.E. is a national nonprofit movement restoring the power of shared meals. We educate communities using
+              research-backed longevity data and teach simple Mediterranean-style cooking families can recreate at home.
+              Then we multiply impact through one clear action: the Table Commitment.
             </p>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 pb-16">
-          <h2 className="text-3xl font-semibold text-[#2e2a26]">How It Works</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <h2 className="text-3xl font-semibold text-[#2e2a26]">The Five Cultural Pillars of L.I.F.E.</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {[
               {
-                title: "1) Attend a Workshop",
-                body: "Learn the data, cook together, and feel the table again.",
+                title: "1) The Table",
+                body:
+                  "A shared gathering place. For generations, the table anchored family life. It created rhythm, expectation, and belonging. We restore the table as the center of the home and community.",
               },
               {
-                title: "2) Host Your Own Table",
-                body: "Simple meal, no screens, slow conversation, intentional guests.",
+                title: "2) Real Food",
+                body:
+                  "Food that is prepared, not engineered. Seasonal. Simple. Shared. Cooking reconnects people to tradition and to one another.",
               },
-                {
-                  title: "3) Pay It Forward",
-                  body: "Guests leave committed to host their own table within 30 days.",
-                },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-6 shadow-sm"
-              >
-                <h3 className="text-xl font-semibold text-[#2e2a26]">{item.title}</h3>
-                <p className="mt-3 text-[#5b5149]">{item.body}</p>
+              {
+                title: "3) Conversation",
+                body:
+                  "Stories. Questions. Listening. Face-to-face dialogue builds resilience and understanding. When conversation disappears, culture thins.",
+              },
+              {
+                title: "4) Contribution",
+                body:
+                  "Everyone participates. Setting the table. Cooking. Inviting. Cleaning. Shared responsibility builds dignity and purpose.",
+              },
+              {
+                title: "5) Commitment",
+                body:
+                  "Traditions endure when they are repeated. Every table ends with a commitment to host again. This is how a meal becomes a pattern. A pattern becomes a culture.",
+              },
+            ].map((pillar) => (
+              <div key={pillar.title} className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-[#2e2a26]">{pillar.title}</h3>
+                <p className="mt-3 text-[#5b5149]">{pillar.body}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="host" className="mx-auto max-w-6xl px-6 pb-16">
-          <div className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
-            <h2 className="text-3xl font-semibold text-[#2e2a26]">Host a Table</h2>
-            <p className="mt-4 text-lg text-[#5b5149]">
-              You don’t need to be a chef. You just need a table. We provide simple recipes, a
-              one-page Host Guide, conversation prompts, and tracking tools. Hosting is how this
-              movement grows — intentionally.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
-                className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white"
-              >
-                Download Host Guide
-              </Link>
-              <Link
-                href="/join"
-                className="rounded-2xl bg-[#6b7a46] px-5 py-3 text-white transition hover:bg-[#566236]"
-              >
-                Become a Host
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <section className="mx-auto max-w-6xl px-6 pb-16">
           <div className="rounded-3xl border border-[#dfd4c6] bg-white p-10">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <div>
-                <h2 className="text-3xl font-semibold text-[#2e2a26]">Speaking &amp; Workshops</h2>
-                <p className="mt-3 text-lg text-[#5b5149]">
-                  Bring the story and science of the table to your conference, school, or community.
-                </p>
-              </div>
-              <Link
-                href="/contact#speaker"
-                className="rounded-2xl border border-[#c46a3a]/60 px-5 py-3 text-[#c46a3a] transition hover:bg-[#fbe8df]"
-              >
-                Request a Speaker
-              </Link>
+            <h2 className="text-3xl font-semibold text-[#2e2a26]">How It Works</h2>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {["Download the Host Guide", "Host a Meal", "Register Your Table", "Invite Others to Commit"].map(
+                (step, index) => (
+                  <div key={step} className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-5 text-center">
+                    <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">Step {index + 1}</p>
+                    <p className="mt-3 text-base font-semibold text-[#2e2a26]">{step}</p>
+                  </div>
+                ),
+              )}
             </div>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {[
-                {
-                  title: "Keynote (30 Minutes)",
-                  body: "A powerful talk on the decline of the American table and the science of longevity.",
-                },
-                {
-                  title: "Interactive Workshop (60 Minutes)",
-                  body: "Educational talk plus a hands-on cooking experience.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-6">
-                  <h3 className="text-xl font-semibold text-[#2e2a26]">{item.title}</h3>
-                  <p className="mt-3 text-[#5b5149]">{item.body}</p>
-                </div>
-              ))}
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/host"
+                className="rounded-2xl bg-[#6b7a46] px-6 py-3 text-white transition hover:bg-[#566236]"
+              >
+                Host a Table
+              </Link>
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 pb-16">
-          <div className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
-            <h2 className="text-3xl font-semibold text-[#2e2a26]">Track the Movement</h2>
+          <div className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
+            <h2 className="text-3xl font-semibold text-[#2e2a26]">A Growing National Movement</h2>
             <p className="mt-3 text-lg text-[#5b5149]">
-              This is bigger than one person. Every hosted table strengthens the data, the story, and
-              the scale.
+              This is bigger than one person. Every hosted table strengthens the data, the story, and the scale.
             </p>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {[
@@ -208,9 +192,7 @@ export default async function HomePage({
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-sm text-[#5b5149]">
-              As hosts submit results, these numbers will update.
-            </p>
+            <p className="mt-6 text-sm text-[#5b5149]">Participation happens locally. Impact is tracked nationally.</p>
           </div>
         </section>
 

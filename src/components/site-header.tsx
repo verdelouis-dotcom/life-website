@@ -2,31 +2,17 @@ import Link from "next/link";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
+  { href: "/host", label: "Host" },
+  { href: "/register", label: "Register" },
   { href: "/about", label: "About" },
-  { href: "/workshops", label: "Workshops" },
-  { href: "/join", label: "Join" },
   { href: "/contact", label: "Contact" },
-  { href: "/downloads/LIFE_Host_Guide_BRANDED.pdf", label: "Host Guide" },
 ];
 
-const NavLink = ({ href, label }: { href: string; label: string }) => {
-  const commonClass =
-    "rounded-full px-3 py-2 text-sm text-[#2e2a26] transition hover:bg-[#dcd3c5] hover:text-[#2e2a26]";
-
-  if (href.endsWith(".pdf")) {
-    return (
-      <a href={href} className={commonClass} download>
-        {label}
-      </a>
-    );
-  }
-
-  return (
-    <Link href={href} className={commonClass} prefetch={false}>
-      {label}
-    </Link>
-  );
-};
+const NavLink = ({ href, label }: { href: string; label: string }) => (
+  <Link href={href} className="rounded-full px-3 py-2 text-sm text-[#2e2a26] transition hover:bg-[#dcd3c5] hover:text-[#2e2a26]" prefetch={false}>
+    {label}
+  </Link>
+);
 
 export default function SiteHeader() {
   return (
