@@ -5,11 +5,6 @@ import SiteFooter from "@/components/site-footer";
 
 const GALLERY_ITEMS = [
   {
-    src: "/images/hero-table.jpg",
-    location: "Columbus, OH",
-    note: "Neighborhood table — Sunday supper and story prompts.",
-  },
-  {
     src: "/images/hero-table2.jpeg",
     location: "Lexington, KY",
     note: "Multi-generational gathering hosted by the Patel family.",
