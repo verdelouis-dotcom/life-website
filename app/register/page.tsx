@@ -18,7 +18,7 @@ export default function RegisterPage() {
           <p className="mt-4 text-lg text-[#5b5149]">
             Thank you for hosting. Your table strengthens a growing national movement. This takes less than one minute.
           </p>
-          <form action="/api/report-table?context=register" method="post" className="mt-8 grid gap-4">
+          <form action="/api/report-table?context=register" method="post" className="mt-8 grid gap-4" encType="multipart/form-data">
             <div className="grid gap-4 md:grid-cols-2">
               <input name="name" required placeholder="Host Name" className="rounded-xl border px-4 py-3" />
               <input name="email" type="email" required placeholder="Email" className="rounded-xl border px-4 py-3" />
@@ -60,11 +60,20 @@ export default function RegisterPage() {
                 <option value="No">No</option>
               </select>
             </div>
-            <textarea
-              name="notes"
-              placeholder="What stood out? (optional)"
-              className="min-h-[140px] rounded-xl border px-4 py-3"
-            />
+            <div className="grid gap-4 md:grid-cols-2">
+              <label className="flex flex-col text-sm text-[#5b5149]">
+                <span className="mb-2 font-semibold text-[#2e2a26]">Photo (optional)</span>
+                <input name="photo" type="file" accept="image/*" className="rounded-xl border px-4 py-3 text-sm" />
+                <span className="mt-1 text-xs text-[#5b5149]">
+                  Attach a table photo to be considered for the public gallery.
+                </span>
+              </label>
+              <textarea
+                name="notes"
+                placeholder="What stood out? (optional)"
+                className="min-h-[140px] rounded-xl border px-4 py-3"
+              />
+            </div>
             <button
               type="submit"
               className="rounded-xl bg-[#6b7a46] px-6 py-3 text-white transition hover:bg-[#566236]"

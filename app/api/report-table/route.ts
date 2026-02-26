@@ -38,10 +38,21 @@ export async function POST(req: Request) {
     const totalPeople = formData.get("totalPeople")?.toString().trim() ?? "";
     const hostAgain = formData.get("hostAgain")?.toString().trim() ?? "";
     const orgInterest = formData.get("organizationInterest")?.toString().trim() ?? "";
+    const photo = formData.get("photo");
 
     if (!name || !email || !tableDate || !totalPeople) {
       return redirect("error");
     }
+
+    const attachments =
+      photo && typeof photo === "object" && "arrayBuffer" in photo
+        ? [
+            {
+              filename: (photo as File).name || "table-photo.jpg",
+              content: Buffer.from(await (photo as File).arrayBuffer()).toString("base64"),
+            },
+          ]
+        : [];
 
     const { error } = await resend.emails.send({
       from,
@@ -60,6 +71,7 @@ export async function POST(req: Request) {
         <p><strong>Notes:</strong></p>
         <p>${notes}</p>
       `,
+      attachments,
     });
 
     if (error) {
