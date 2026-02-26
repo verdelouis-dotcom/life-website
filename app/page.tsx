@@ -95,7 +95,7 @@ export default async function HomePage({
               L.I.F.E. is a national nonprofit movement restoring the power of shared meals. We
               educate communities using research-backed longevity data and teach simple
               Mediterranean-style cooking families can recreate at home. Then we multiply impact
-              through one clear action: the Table Commitment.
+              through one clear action: pay it forward at the table.
             </p>
           </div>
         </section>
@@ -112,10 +112,10 @@ export default async function HomePage({
                 title: "2) Host Your Own Table",
                 body: "Simple meal, no screens, slow conversation, intentional guests.",
               },
-              {
-                title: "3) The Table Commitment",
-                body: "Every guest commits to host their own table within 30 days.",
-              },
+                {
+                  title: "3) Pay It Forward",
+                  body: "Guests leave committed to host their own table within 30 days.",
+                },
             ].map((item) => (
               <div
                 key={item.title}
