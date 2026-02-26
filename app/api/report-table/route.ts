@@ -34,15 +34,12 @@ export async function POST(req: Request) {
     const city = formData.get("city")?.toString().trim() ?? "";
     const state = formData.get("state")?.toString().trim() ?? "";
     const tableDate = formData.get("tableDate")?.toString().trim() ?? "";
-    const guests = formData.get("guests")?.toString().trim() ?? "";
-    const commitments = formData.get("commitments")?.toString().trim() ?? "";
     const notes = formData.get("notes")?.toString().trim() ?? "";
-    const totalPeople = formData.get("totalPeople")?.toString().trim() ?? guests;
-    const committedWithin30 = formData.get("committedWithin30")?.toString().trim() ?? commitments;
+    const totalPeople = formData.get("totalPeople")?.toString().trim() ?? "";
     const hostAgain = formData.get("hostAgain")?.toString().trim() ?? "";
     const orgInterest = formData.get("organizationInterest")?.toString().trim() ?? "";
 
-    if (!name || !email || !tableDate) {
+    if (!name || !email || !tableDate || !totalPeople) {
       return redirect("error");
     }
 
@@ -58,7 +55,6 @@ export async function POST(req: Request) {
         <p><strong>City / State:</strong> ${city} ${state}</p>
         <p><strong>Date:</strong> ${tableDate}</p>
         <p><strong>Total Guests:</strong> ${totalPeople}</p>
-        <p><strong>Pay-It-Forward Commitments:</strong> ${committedWithin30}</p>
         <p><strong>Would host again:</strong> ${hostAgain || "n/a"}</p>
         <p><strong>Interested in organizational L.I.F.E.:</strong> ${orgInterest || "n/a"}</p>
         <p><strong>Notes:</strong></p>

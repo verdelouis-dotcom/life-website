@@ -46,13 +46,6 @@ export default function RegisterPage() {
               />
             </div>
             <div className="grid gap-4 md:grid-cols-2">
-              <input
-                name="committedWithin30"
-                type="number"
-                min={0}
-                placeholder="Guests who committed to host"
-                className="rounded-xl border px-4 py-3"
-              />
               <select name="hostAgain" className="rounded-xl border px-4 py-3">
                 <option value="">Would you host again?</option>
                 {["Yes", "Maybe", "No"].map((option) => (
@@ -61,12 +54,12 @@ export default function RegisterPage() {
                   </option>
                 ))}
               </select>
+              <select name="organizationInterest" className="rounded-xl border px-4 py-3">
+                <option value="">Interested in bringing L.I.F.E. to your organization?</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
             </div>
-            <select name="organizationInterest" className="rounded-xl border px-4 py-3">
-              <option value="">Interested in bringing L.I.F.E. to your organization?</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
             <textarea
               name="notes"
               placeholder="What stood out? (optional)"
