@@ -12,6 +12,9 @@ export default async function JoinPage({
   const hostStatus = typeof sp.host === "string" ? sp.host : undefined;
   const hostSuccess = hostStatus === "success";
   const hostError = hostStatus === "error";
+  const reportStatus = typeof sp.report === "string" ? sp.report : undefined;
+  const reportSuccess = reportStatus === "success";
+  const reportError = reportStatus === "error";
 
   return (
     <>
@@ -87,6 +90,55 @@ export default async function JoinPage({
             <p className="mt-3 text-xs text-zinc-600">
               We'll follow up with sponsorship options.
             </p>
+          </section>
+
+          <section className="rounded-2xl border p-7">
+            <h2 className="text-2xl font-semibold">Record Your Table</h2>
+            <p className="mt-2 text-zinc-700">
+              Hosted already? Share your data so we can track how the movement is growing.
+            </p>
+
+            {reportSuccess && (
+              <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-900">
+                Thank you for recording your table. We’ll keep building the dataset.
+              </div>
+            )}
+
+            {reportError && (
+              <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-900">
+                Something went wrong. Please try again or email us at
+                {" "}
+                <a className="underline" href="mailto:hello@longevityinitiativeforfoodandeducation.com">
+                  hello@longevityinitiativeforfoodandeducation.com
+                </a>
+                .
+              </div>
+            )}
+
+            <form action="/api/report-table" method="post" className="mt-5 grid gap-3">
+              <input name="name" required placeholder="Name" className="rounded-xl border px-4 py-3" />
+              <input name="email" type="email" required placeholder="Email" className="rounded-xl border px-4 py-3" />
+              <input name="city" placeholder="City" className="rounded-xl border px-4 py-3" />
+              <input name="tableDate" type="date" required className="rounded-xl border px-4 py-3" />
+              <input
+                name="guests"
+                placeholder="Guests hosted"
+                className="rounded-xl border px-4 py-3"
+              />
+              <input
+                name="commitments"
+                placeholder="Pay-it-forward commitments"
+                className="rounded-xl border px-4 py-3"
+              />
+              <textarea
+                name="notes"
+                placeholder="What stood out?"
+                className="min-h-[120px] rounded-xl border px-4 py-3"
+              />
+              <button type="submit" className="rounded-xl bg-[#6b7a46] px-5 py-3 text-white hover:bg-[#566236]">
+                Submit Table Report
+              </button>
+            </form>
           </section>
         </div>
       </main>
