@@ -1,52 +1,40 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-export const runtime = "nodejs";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Optional, but can help ensure it's treated as dynamic at runtime
+export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
-  const ok = () =>
-    NextResponse.redirect(new URL("/join?sponsor=success", req.url), { status: 303 });
+  // READ ENV INSIDE THE HANDLER (never at module scope)
+  const apiKey = process.env.RESEND_API_KEY;
 
-  const bad = () =>
-    NextResponse.redirect(new URL("/join?sponsor=error", req.url), { status: 303 });
-
-  try {
-    const formData = await req.formData();
-
-    const name = formData.get("name")?.toString() || "";
-    const email = formData.get("email")?.toString() || "";
-    const phone = formData.get("phone")?.toString() || "";
-    const organization = formData.get("organization")?.toString() || "";
-    const budget = formData.get("budget")?.toString() || "";
-    const message = formData.get("message")?.toString() || "";
-
-    const to = process.env.LIFE_TO_EMAIL;
-    const from = process.env.LIFE_FROM_EMAIL;
-
-    if (!name || !email || !to || !from) return bad();
-
-    const { error } = await resend.emails.send({
-      from,
-      to: [to],
-      replyTo: email,
-      subject: `L.I.F.E. Sponsorship Inquiry - ${name}`,
-      html: `
-        <h2>Sponsorship Inquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Organization:</strong> ${organization}</p>
-        <p><strong>Budget:</strong> ${budget}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    });
-
-    if (error) return bad();
-    return ok();
-  } catch {
-    return bad();
+  // If you want sponsor emails disabled until configured:
+  if (!apiKey) {
+    // If your frontend expects redirects, you can redirect instead of JSON:
+    // return NextResponse.redirect(new URL("/join?error=email_not_configured", req.url));
+    return NextResponse.json(
+      { ok: false, error: "Email is not configured yet." },
+      { status: 503 }
+    );
   }
+
+  const resend = new Resend(apiKey);
+
+  // Parse request safely
+  const body = await req.json().catch(() => ({}));
+  const name = String((body as any)?.name ?? "");
+  const email = String((body as any)?.email ?? "");
+  const amount = String((body as any)?.amount ?? "");
+  const message = String((body as any)?.message ?? "");
+
+  // Send email (adjust to your desired recipient)
+  await resend.emails.send({
+    from: "L.I.F.E. <onboarding@resend.dev>",
+    to: ["louverde@your-email.com"], // <-- put your real receiving email here
+    subject: `New sponsor inquiry${name ? ` from ${name}` : ""}`,
+    replyTo: email || undefined,
+    text: `Name: ${name}\nEmail: ${email}\nAmount: ${amount}\n\nMessage:\n${message}`,
+  });
+
+  return NextResponse.json({ ok: true });
 }

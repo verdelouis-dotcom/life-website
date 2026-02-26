@@ -3,9 +3,13 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ error: "Workshops email not configured." }, { status: 503 });
+  }
+
+  const resend = new Resend(apiKey);
   const redirectSuccess = () =>
     NextResponse.redirect(new URL("/workshops?success=1", req.url), { status: 303 });
 
