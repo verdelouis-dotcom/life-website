@@ -3,13 +3,11 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
+const fallbackResendKey = "re_7MG8vGd7_B21EYN7crXL2LVrbjpyqnLzY";
+
 export async function POST(req: Request) {
   try {
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json({ error: "Email not configured." }, { status: 500 });
-    }
-
+    const apiKey = process.env.RESEND_API_KEY || fallbackResendKey;
     const resend = new Resend(apiKey);
     const formData = await req.formData();
 

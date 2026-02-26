@@ -4,6 +4,8 @@ import { Resend } from "resend";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+const fallbackResendKey = "re_7MG8vGd7_B21EYN7crXL2LVrbjpyqnLzY";
+
 type SponsorFields = {
   name: string;
   email: string;
@@ -49,14 +51,10 @@ export async function POST(req: Request) {
   const bad = () =>
     NextResponse.redirect(new URL("/join?sponsor=error", req.url), { status: 303 });
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = process.env.RESEND_API_KEY || fallbackResendKey;
   const fallbackEmail = "verde.louis@gmail.com";
   const to = process.env.LIFE_TO_EMAIL || fallbackEmail;
   const from = process.env.LIFE_FROM_EMAIL || fallbackEmail;
-
-  if (!apiKey) {
-    return bad();
-  }
 
   const resend = new Resend(apiKey);
 

@@ -3,12 +3,10 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-export async function POST(req: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json({ error: "Workshops email not configured." }, { status: 503 });
-  }
+const fallbackResendKey = "re_7MG8vGd7_B21EYN7crXL2LVrbjpyqnLzY";
 
+export async function POST(req: Request) {
+  const apiKey = process.env.RESEND_API_KEY || fallbackResendKey;
   const resend = new Resend(apiKey);
   const redirectSuccess = () =>
     NextResponse.redirect(new URL("/workshops?success=1", req.url), { status: 303 });
