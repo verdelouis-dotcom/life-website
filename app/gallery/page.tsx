@@ -6,18 +6,18 @@ import SiteFooter from "@/components/site-footer";
 const GALLERY_ITEMS = [
   {
     src: "/images/hero-table2.jpeg",
-    location: "Lexington, KY",
-    note: "Multi-generational gathering hosted by the Patel family.",
+    location: "Peachtree City, GA",
+    note: "Pasta making workshop in a home.",
   },
   {
     src: "/images/hero-table3.jpeg",
-    location: "Nashville, TN",
-    note: "Community workshop inside a historic church hall.",
+    location: "Peachtree City, GA",
+    note: "Pasta making workshop for a couple.",
   },
   {
     src: "/images/hero-table4.jpeg",
-    location: "Cleveland, OH",
-    note: "Corporate wellness pilot featuring Mediterranean bowls.",
+    location: "Austin, TX",
+    note: "Pasta making workshop for a family.",
   },
 ];
 
