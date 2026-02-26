@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { href: "/workshops", label: "Workshops" },
   { href: "/join", label: "Join" },
   { href: "/contact", label: "Contact" },
+  { href: "/downloads/LIFE_Host_Guide_BRANDED.pdf", label: "Host Guide" },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (

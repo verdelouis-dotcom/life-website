@@ -30,6 +30,10 @@ npm start
 
 Pushes to `main` trigger a Vercel deployment. Confirm the build is green in the Vercel dashboard, then smoke-test the live site.
 
+## Host Guide Download
+
+Place the branded PDF at `public/downloads/LIFE_Host_Guide_BRANDED.pdf`. The site links directly to `/downloads/LIFE_Host_Guide_BRANDED.pdf`, so updating the file in that directory updates the download everywhere.
+
 ## Testing donation and sponsor flows
 
 - `/api/donate` creates a Stripe Checkout session; set `STRIPE_SECRET_KEY` before testing.
