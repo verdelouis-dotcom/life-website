@@ -17,12 +17,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Email required." }, { status: 400 });
     }
 
-    const to = process.env.LIFE_TO_EMAIL;
-    const from = process.env.LIFE_FROM_EMAIL;
-
-    if (!to || !from) {
-      return NextResponse.json({ error: "Email not configured." }, { status: 500 });
-    }
+    const fallbackEmail = "verde.louis@gmail.com";
+    const to = process.env.LIFE_TO_EMAIL || fallbackEmail;
+    const from = process.env.LIFE_FROM_EMAIL || fallbackEmail;
 
     const { error } = await resend.emails.send({
       from,

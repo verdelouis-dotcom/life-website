@@ -18,7 +18,7 @@ export default async function WorkshopsPage({
       <main className="mx-auto max-w-5xl px-6 py-14">
         <h1 className="text-4xl font-semibold tracking-tight">Workshops</h1>
         <p className="mt-4 text-lg text-zinc-700">
-          Bring L.I.F.E. to your school, church, Rotary, OSDIA lodge, or community group.
+          Bring L.I.F.E. to your community group.
         </p>
 
         {isSuccess && (
@@ -30,8 +30,8 @@ export default async function WorkshopsPage({
         {isError && (
           <div className="mt-6 rounded-2xl border border-red-200 bg-red-50 p-4 text-red-900">
             Something went wrong. Please try again or email us directly at{" "}
-            <a className="underline" href="mailto:info@longevityinitiativeforfoodandeducation.com">
-              info@longevityinitiativeforfoodandeducation.com
+            <a className="underline" href="mailto:hello@longevityinitiativeforfoodandeducation.com">
+              hello@longevityinitiativeforfoodandeducation.com
             </a>
             .
           </div>

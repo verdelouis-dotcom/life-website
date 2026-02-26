@@ -50,10 +50,11 @@ export async function POST(req: Request) {
     NextResponse.redirect(new URL("/join?sponsor=error", req.url), { status: 303 });
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LIFE_TO_EMAIL;
-  const from = process.env.LIFE_FROM_EMAIL ?? "L.I.F.E. <onboarding@resend.dev>";
+  const fallbackEmail = "verde.louis@gmail.com";
+  const to = process.env.LIFE_TO_EMAIL || fallbackEmail;
+  const from = process.env.LIFE_FROM_EMAIL || fallbackEmail;
 
-  if (!apiKey || !to) {
+  if (!apiKey) {
     return bad();
   }
 

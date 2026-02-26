@@ -28,10 +28,11 @@ export async function POST(req: Request) {
     const attendees = formData.get("attendees")?.toString() || "";
     const message = formData.get("message")?.toString() || "";
 
-    const to = process.env.LIFE_TO_EMAIL;
-    const from = process.env.LIFE_FROM_EMAIL;
+    const fallbackEmail = "verde.louis@gmail.com";
+    const to = process.env.LIFE_TO_EMAIL || fallbackEmail;
+    const from = process.env.LIFE_FROM_EMAIL || fallbackEmail;
 
-    if (!name || !email || !to || !from) return redirectError();
+    if (!name || !email) return redirectError();
 
     const { error } = await resend.emails.send({
       from,
