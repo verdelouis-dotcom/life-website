@@ -3,9 +3,25 @@ import Stripe from "stripe";
 
 export const runtime = "nodejs";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
-
 export async function POST() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    return NextResponse.json(
+      { ok: false, error: "Donations are not configured yet." },
+      { status: 503 },
+    );
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  if (!baseUrl) {
+    return NextResponse.json(
+      { ok: false, error: "Missing NEXT_PUBLIC_BASE_URL." },
+      { status: 500 },
+    );
+  }
+
+  const stripe = new Stripe(key);
+
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -21,8 +37,8 @@ export async function POST() {
           quantity: 1,
         },
       ],
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/join?donation=success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/join?donation=cancel`,
+      success_url: `${baseUrl}/join?donation=success`,
+      cancel_url: `${baseUrl}/join?donation=cancel`,
     });
 
     return NextResponse.redirect(session.url as string, { status: 303 });
