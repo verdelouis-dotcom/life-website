@@ -3,7 +3,7 @@ import Stripe from "stripe";
 
 export const runtime = "nodejs";
 
-export async function POST() {
+export async function POST(req: Request) {
   const key = process.env.STRIPE_SECRET_KEY;
   if (!key) {
     return NextResponse.json(
@@ -12,13 +12,8 @@ export async function POST() {
     );
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  if (!baseUrl) {
-    return NextResponse.json(
-      { ok: false, error: "Missing NEXT_PUBLIC_BASE_URL." },
-      { status: 500 },
-    );
-  }
+  const envBase = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = envBase && envBase.trim().length > 0 ? envBase : new URL(req.url).origin;
 
   const stripe = new Stripe(key);
 
@@ -37,8 +32,8 @@ export async function POST() {
           quantity: 1,
         },
       ],
-      success_url: `${baseUrl}/join?donation=success`,
-      cancel_url: `${baseUrl}/join?donation=cancel`,
+      success_url: `${baseUrl.replace(/\/$/, "")}/join?donation=success`,
+      cancel_url: `${baseUrl.replace(/\/$/, "")}/join?donation=cancel`,
     });
 
     return NextResponse.redirect(session.url as string, { status: 303 });

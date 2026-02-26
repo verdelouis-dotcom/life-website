@@ -1,40 +1,94 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-// Optional, but can help ensure it's treated as dynamic at runtime
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function POST(req: Request) {
-  // READ ENV INSIDE THE HANDLER (never at module scope)
-  const apiKey = process.env.RESEND_API_KEY;
+type SponsorFields = {
+  name: string;
+  email: string;
+  phone?: string;
+  organization?: string;
+  budget?: string;
+  message?: string;
+};
 
-  // If you want sponsor emails disabled until configured:
-  if (!apiKey) {
-    // If your frontend expects redirects, you can redirect instead of JSON:
-    // return NextResponse.redirect(new URL("/join?error=email_not_configured", req.url));
-    return NextResponse.json(
-      { ok: false, error: "Email is not configured yet." },
-      { status: 503 }
-    );
+type ParsedPayload = SponsorFields & { amount?: string };
+
+async function parsePayload(req: Request): Promise<ParsedPayload> {
+  const contentType = req.headers.get("content-type") || "";
+
+  if (contentType.includes("application/json")) {
+    const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
+    return {
+      name: String(body?.name ?? ""),
+      email: String(body?.email ?? ""),
+      phone: String(body?.phone ?? ""),
+      organization: String(body?.organization ?? ""),
+      budget: String(body?.budget ?? body?.amount ?? ""),
+      message: String(body?.message ?? ""),
+      amount: String(body?.amount ?? ""),
+    };
+  }
+
+  const formData = await req.formData();
+  return {
+    name: formData.get("name")?.toString() ?? "",
+    email: formData.get("email")?.toString() ?? "",
+    phone: formData.get("phone")?.toString() ?? "",
+    organization: formData.get("organization")?.toString() ?? "",
+    budget: formData.get("budget")?.toString() ?? "",
+    message: formData.get("message")?.toString() ?? "",
+  };
+}
+
+export async function POST(req: Request) {
+  const ok = () =>
+    NextResponse.redirect(new URL("/join?sponsor=success", req.url), { status: 303 });
+
+  const bad = () =>
+    NextResponse.redirect(new URL("/join?sponsor=error", req.url), { status: 303 });
+
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.LIFE_TO_EMAIL;
+  const from = process.env.LIFE_FROM_EMAIL ?? "L.I.F.E. <onboarding@resend.dev>";
+
+  if (!apiKey || !to) {
+    return bad();
   }
 
   const resend = new Resend(apiKey);
 
-  // Parse request safely
-  const body = await req.json().catch(() => ({}));
-  const name = String((body as any)?.name ?? "");
-  const email = String((body as any)?.email ?? "");
-  const amount = String((body as any)?.amount ?? "");
-  const message = String((body as any)?.message ?? "");
+  try {
+    const { name, email, phone, organization, budget, message, amount } = await parsePayload(req);
 
-  // Send email (adjust to your desired recipient)
-  await resend.emails.send({
-    from: "L.I.F.E. <onboarding@resend.dev>",
-    to: ["louverde@your-email.com"], // <-- put your real receiving email here
-    subject: `New sponsor inquiry${name ? ` from ${name}` : ""}`,
-    replyTo: email || undefined,
-    text: `Name: ${name}\nEmail: ${email}\nAmount: ${amount}\n\nMessage:\n${message}`,
-  });
+    if (!name || !email) {
+      return bad();
+    }
 
-  return NextResponse.json({ ok: true });
+    const { error } = await resend.emails.send({
+      from,
+      to: [to],
+      replyTo: email,
+      subject: `L.I.F.E. Sponsorship Inquiry - ${name}`,
+      html: `
+        <h2>Sponsorship Inquiry</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone ?? ""}</p>
+        <p><strong>Organization:</strong> ${organization ?? ""}</p>
+        <p><strong>Budget:</strong> ${budget || amount || ""}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message ?? ""}</p>
+      `,
+    });
+
+    if (error) {
+      return bad();
+    }
+
+    return ok();
+  } catch {
+    return bad();
+  }
 }
