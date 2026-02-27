@@ -29,6 +29,13 @@ export default function SupportPage() {
             Longevity Initiative for Food &amp; Education is a Georgia-based nonprofit corporation with 501(c)(3) status pending.
             Contributions sustain curriculum development, fresh ingredients, and sliding-scale access for community partners.
           </p>
+          <div className="mt-6 rounded-2xl border border-[#dfd4c6] bg-white p-6 text-left">
+            <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">Sponsor a Seat</p>
+            <p className="mt-2 text-[#2e2a26] font-semibold">Sponsor a seat.</p>
+            <p className="mt-2 text-[#5b5149]">
+              Cover the $50 tuition for a neighbor who needs this education but can&apos;t afford it yet.
+            </p>
+          </div>
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-3">
