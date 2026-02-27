@@ -9,10 +9,10 @@ export async function POST(req: Request) {
     const name = typeof body.name === "string" ? body.name.trim() : "";
     const email = typeof body.email === "string" ? body.email.trim() : "";
     const city = typeof body.city === "string" ? body.city.trim() : "";
-    const interest = typeof body.interest === "string" ? body.interest.trim() : "";
+    const interest = typeof body.interest === "string" && body.interest.trim() ? body.interest.trim() : "General inquiry";
     const message = typeof body.message === "string" ? body.message.trim() : "";
 
-    if (!name || !email || !city || !interest || !message) {
+    if (!name || !email || !city || !message) {
       return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
     }
 

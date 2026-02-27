@@ -18,11 +18,11 @@ export default function ContactForm() {
       name: formData.get("name")?.toString().trim() ?? "",
       email: formData.get("email")?.toString().trim() ?? "",
       city: formData.get("city")?.toString().trim() ?? "",
-      interest: formData.get("interest")?.toString().trim() ?? "",
+      interest: formData.get("interest")?.toString().trim() || "General inquiry",
       message: formData.get("message")?.toString().trim() ?? "",
     };
 
-    if (!payload.name || !payload.email || !payload.city || !payload.interest || !payload.message) {
+    if (!payload.name || !payload.email || !payload.city || !payload.message) {
       setStatus("error");
       setIsSubmitting(false);
       return;
@@ -56,12 +56,12 @@ export default function ContactForm() {
         <input name="email" type="email" placeholder="Email" required className="rounded-xl border px-4 py-3" />
       </div>
       <input name="city" placeholder="City / Organization" required className="rounded-xl border px-4 py-3" />
-      <select name="interest" required className="rounded-xl border px-4 py-3">
-        <option value="">What are you interested in?</option>
-        <option value="Host">Host a Table</option>
-        <option value="Workshop">Community Workshop</option>
-        <option value="Keynote">Educational Keynote</option>
-        <option value="Partnership">Partnership / Grant</option>
+      <select name="interest" className="rounded-xl border px-4 py-3" defaultValue="Host a Table">
+        <option value="Host a Table">Host a Table</option>
+        <option value="Community Workshop">Community Workshop</option>
+        <option value="Educational Keynote">Educational Keynote</option>
+        <option value="Partnership / Grant">Partnership / Grant</option>
+        <option value="General inquiry">General Inquiry</option>
       </select>
       <textarea
         name="message"
