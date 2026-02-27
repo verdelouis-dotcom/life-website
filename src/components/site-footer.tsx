@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function SiteFooter() {
   const year = new Date().getFullYear();
 
@@ -17,9 +15,9 @@ export default function SiteFooter() {
             <p className="font-semibold text-[#2e2a26]">Reach Us</p>
             <p className="mt-2 text-[#5b5149]">
               Email{" "}
-              <Link className="underline decoration-[#c46a3a] underline-offset-4" href="mailto:hello@longevityinitiativeforfoodandeducation.com">
+              <a className="underline decoration-[#c46a3a] underline-offset-4" href="mailto:hello@longevityinitiativeforfoodandeducation.com">
                 hello@longevityinitiativeforfoodandeducation.com
-              </Link>{" "}
+              </a>{" "}
               for workshop details or partnerships.
             </p>
           </div>

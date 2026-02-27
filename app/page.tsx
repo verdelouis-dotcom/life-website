@@ -22,23 +22,20 @@ export default function HomePage() {
               <div className="rounded-[32px] border border-[#e7dac8] bg-[#fff8ef]/90 p-8 shadow-sm backdrop-blur">
                 <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Longevity Initiative for Food &amp; Education</p>
                 <h1 className="mt-4 font-serif text-4xl leading-tight text-[#2e2a26] md:text-5xl">
-                  Rebuild Health. Restore Connection. Start at the Table.
+                  Rebuilding Health Starts at the Table.
                 </h1>
                 <p className="mt-4 text-lg leading-relaxed text-[#5b5149]">
-                  Longevity Initiative for Food &amp; Education (L.I.F.E.) is a nonprofit educational organization dedicated to strengthening health and community through shared meals, cultural food traditions, and practical lifestyle education.
+                  Longevity Initiative for Food &amp; Education (L.I.F.E.) is a nonprofit educational organization restoring the daily practices that support long-term health and human connection.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link
-                    href="/support"
-                    className="rounded-2xl bg-[#6b7a46] px-5 py-3 text-white shadow-sm transition hover:bg-[#566236]"
-                  >
-                    Host a Workshop
+                  <Link href="/host" className="rounded-2xl bg-[#6b7a46] px-5 py-3 text-white transition hover:bg-[#566236]">
+                    Host a Table
                   </Link>
                   <Link
-                    href="/founder"
+                    href="/workshops"
                     className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
                   >
-                    Learn More
+                    Attend a Workshop
                   </Link>
                 </div>
               </div>
@@ -49,7 +46,7 @@ export default function HomePage() {
                   src="/images/hero-table4.jpeg"
                   width={900}
                   height={700}
-                  alt="Family preparing a Mediterranean meal together"
+                  alt="Hands arranging fresh produce on a shared table"
                   className="h-full w-full rounded-[28px] object-cover"
                 />
               </div>
@@ -57,82 +54,110 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-16">
+        <section className="mx-auto max-w-5xl px-6 py-16 text-[#2e2a26]">
+          <h2 className="text-3xl font-semibold">The Moment We&apos;re In</h2>
+          <div className="mt-4 space-y-3 text-lg text-[#5b5149]">
+            <p>For the first time in modern history, life expectancy in the United States has declined.</p>
+            <p>Chronic disease continues to rise. Social isolation is increasing. Shared meals are disappearing.</p>
+            <p>These are not separate problems. They are signals that foundational systems have eroded.</p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-6 pb-16">
           <div className="rounded-3xl border border-[#dfd4c6] bg-white p-10">
-            <h2 className="text-3xl font-semibold text-[#2e2a26]">What we do</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Our Approach</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#2e2a26]">What we do</h2>
             <p className="mt-4 text-lg text-[#5b5149]">
-              L.I.F.E. delivers educational programming designed to improve long-term health and restore meaningful connection around the table.
+              We provide structured educational programming that helps communities rebuild practical, repeatable health-supporting routines.
             </p>
-            <div className="mt-6 grid gap-4 text-[#5b5149] sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                { title: "Community Cooking Workshops", body: "Hands-on education rooted in fresh ingredients and shared meal traditions." },
-                { title: "Educational Keynote Presentations", body: "Short-form talks for schools, workplaces, and community groups." },
-                { title: "Interactive Culinary Education Experiences", body: "Immersive programs that combine instruction, discussion, and shared dining." },
-              ].map((item) => (
-                <div key={item.title} className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-5">
-                  <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">{item.title}</p>
-                  <p className="mt-3 text-sm">{item.body}</p>
-                </div>
+            <ul className="mt-6 grid gap-4 text-[#5b5149] sm:grid-cols-2">
+              {["Fresh, simple food education", "Shared meal structure and rhythms", "Everyday activity and stress regulation", "Connection practices that strengthen belonging"].map((item) => (
+                <li key={item} className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-5 text-sm">
+                  {item}
+                </li>
               ))}
-            </div>
-            <p className="mt-6 text-sm text-[#5b5149]">
-              Each program teaches simple, fresh food preparation, shared meal traditions, and evidence-informed lifestyle practices that support longevity.
-            </p>
+            </ul>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 pb-16">
           <div className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
-            <h2 className="text-3xl font-semibold text-[#2e2a26]">Community Cooking Workshops</h2>
+            <h2 className="text-3xl font-semibold text-[#2e2a26]">Community-Based Health Education</h2>
             <p className="mt-4 text-lg text-[#5b5149]">
-              Participants are invited to support L.I.F.E.&rsquo;s educational mission through a suggested contribution of $50 per participant.
+              L.I.F.E. delivers structured, small-group educational programming designed to improve nutrition literacy, strengthen shared meal practices, and reduce social isolation at the community level.
             </p>
-            <ul className="mt-6 space-y-3 text-[#5b5149]">
-              {[
-                "Hands-on meal preparation",
-                "Education on fresh, whole ingredients",
-                "Discussion on longevity and shared meal traditions",
-                "A guided shared dining experience",
-              ].map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="text-[#6b7a46]">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-sm text-[#5b5149]">
-              L.I.F.E. is a nonprofit organization. A portion of contributions may not be tax-deductible due to goods or services received.
+            <p className="mt-3 text-lg text-[#5b5149]">
+              Our model focuses on practical instruction, measurable behavior shifts, and local replication through hosted gatherings.
             </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-4xl px-6 pb-16 text-center text-lg text-[#2e2a26]">
+          <p className="font-serif text-2xl">
+            If we want longer lives, we must rebuild the systems that once supported them.
+          </p>
+          <p className="mt-4 text-xl text-[#5b5149]">One of the most powerful was the shared table.</p>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-6 pb-16">
+          <div className="rounded-3xl border border-[#dfd4c6] bg-white p-10">
+            <h2 className="text-3xl font-semibold text-[#2e2a26]">Educational Programming</h2>
+            <p className="mt-4 text-lg text-[#5b5149]">
+              Our workshops and presentations translate evidence-informed principles into action people can repeat at home.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/workshops"
+                className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+              >
+                Attend a Workshop
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-2xl border border-[#c46a3a] px-5 py-3 text-[#c46a3a] transition hover:bg-[#fbe8df]"
+              >
+                Request a Presentation
+              </Link>
+            </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 pb-16">
-          <div className="grid gap-10 md:grid-cols-2">
-            <div className="rounded-3xl border border-[#dfd4c6] bg-white p-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Educational Keynote Presentation</p>
-              <h2 className="mt-3 text-2xl font-semibold text-[#2e2a26]">30-minute keynote</h2>
-              <p className="mt-3 text-[#5b5149]">
-                Organizations may host a L.I.F.E. keynote with a suggested program support contribution of $500. The presentation explores the relationship between shared meals, cultural traditions, and long-term health outcomes.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-[#dfd4c6] bg-white p-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Interactive Culinary Education Workshop</p>
-              <h2 className="mt-3 text-2xl font-semibold text-[#2e2a26]">3-hour experience</h2>
-              <p className="mt-3 text-[#5b5149]">
-                Suggested program support contribution: $1,000. This immersive educational workshop includes hands-on instruction, guided discussion, and practical implementation tools designed to multiply impact beyond the event.
-              </p>
-            </div>
+          <div className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
+            <h2 className="text-3xl font-semibold text-[#2e2a26]">Host a Table</h2>
+            <p className="mt-4 text-lg text-[#5b5149]">
+              Education spreads when it&apos;s shared. Participants are invited to extend what they learn by hosting a simple shared meal in their own home—creating space for conversation and connection.
+            </p>
+            <p className="mt-3 text-[#5b5149]">We provide the framework. You provide the table.</p>
+            <Link
+              href="/host"
+              className="mt-6 inline-flex rounded-2xl bg-[#6b7a46] px-6 py-3 text-white transition hover:bg-[#566236]"
+            >
+              Host a Table
+            </Link>
           </div>
         </section>
 
-        <section className="mx-auto max-w-5xl px-6 pb-24">
-          <div className="rounded-3xl border border-[#dfd4c6] bg-white p-10 text-center">
-            <h2 className="text-3xl font-semibold text-[#2e2a26]">The 30-Day Table Commitment</h2>
+        <section className="mx-auto max-w-6xl px-6 pb-16">
+          <div className="rounded-3xl border border-[#dfd4c6] bg-white p-10">
+            <h2 className="text-3xl font-semibold text-[#2e2a26]">Institutional Partnerships</h2>
             <p className="mt-4 text-lg text-[#5b5149]">
-              Participants are invited to extend the impact of their experience by hosting at least two guests within 30 days and preparing a simple shared meal using the principles learned.
+              L.I.F.E. partners with community organizations, healthcare systems, civic groups, and foundations to expand access to practical health education. Small community grants ($2,000–$10,000) accelerate pilots, resource kitchens, and underwrite hosted gatherings.
             </p>
+            <p className="mt-3 text-[#5b5149]">
+              For partnership or grant inquiries:{" "}
+              <a className="underline" href="mailto:hello@longevityinitiativeforfoodandeducation.com">
+                hello@longevityinitiativeforfoodandeducation.com
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-6 pb-24">
+          <div className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
+            <h2 className="text-2xl font-semibold text-[#2e2a26]">How we are funded</h2>
             <p className="mt-4 text-lg text-[#5b5149]">
-              This voluntary commitment strengthens community connection and expands the educational reach of the movement.
+              Longevity Initiative for Food &amp; Education is supported through a combination of individual contributions and program-related support from workshops and educational presentations. All funds advance our charitable and educational mission.
             </p>
           </div>
         </section>

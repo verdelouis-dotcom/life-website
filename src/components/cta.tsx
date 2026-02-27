@@ -7,25 +7,25 @@ export default function CTA() {
         <div className="grid gap-6 md:grid-cols-2 md:items-center">
           <div>
             <h3 className="text-2xl font-semibold text-[#2e2a26]">
-              Ready to start living the Italian way?
+              Ready to support community-based health education?
             </h3>
             <p className="mt-2 text-[#5b5149]">
-              Not a trend. Not a challenge. A lifestyle you can keep: simple ingredients,
-              daily movement, and people around the table.
+              L.I.F.E. delivers nonprofit programming that helps neighbors cook fresh food,
+              strengthen shared meals, and rebuild connection.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
             <Link
-              href="/join"
+              href="/host"
               className="rounded-xl bg-[#6b7a46] px-5 py-3 text-white transition hover:bg-[#566236]"
             >
-              Join the Table
+              Host a Table
             </Link>
             <Link
               href="/contact"
               className="rounded-xl border border-[#c46a3a]/50 px-5 py-3 text-[#c46a3a] transition hover:bg-[#fbe8df]"
             >
-              Bring L.I.F.E. to Your Group
+              Request a Presentation
             </Link>
           </div>
         </div>

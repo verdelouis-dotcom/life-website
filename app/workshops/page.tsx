@@ -1,21 +1,7 @@
+import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import WorkshopForm from "@/components/forms/workshop-form";
-
-const FORMAT_DETAILS = [
-  {
-    title: "Education",
-    body: "30 minutes on the data behind Mediterranean lifestyles, shared meals, and local health gaps.",
-  },
-  {
-    title: "Hands-on Cooking",
-    body: "We cook together using seasonal produce, beans, herbs, and olive oil. Everything is replicable at home.",
-  },
-  {
-    title: "Shared Meal",
-    body: "Phones go away. We sit, eat slowly, and walk through guided questions about family rhythms.",
-  },
-];
 
 export default function WorkshopsPage() {
   return (
@@ -23,54 +9,61 @@ export default function WorkshopsPage() {
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-6 py-16 text-[#2e2a26]">
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Community Programming</p>
-          <h1 className="mt-3 text-4xl font-semibold">Community Cooking Workshops</h1>
+          <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Educational Programming</p>
+          <h1 className="mt-3 text-4xl font-semibold">Workshops &amp; Presentations</h1>
           <p className="mt-4 text-lg text-[#5b5149]">
-            These nonprofit educational workshops blend hands-on meal preparation, evidence-informed teaching, and a guided shared dining experience. Participants are invited to support L.I.F.E.&apos;s educational mission through a suggested contribution of $50 per participant.
+            Educational programming that turns evidence-informed principles into practical routines people can repeat.
           </p>
-        </section>
-
-        <section className="mt-12 grid gap-6 md:grid-cols-3">
-          {FORMAT_DETAILS.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-[#dfd4c6] bg-white p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">{item.title}</p>
-              <p className="mt-3 text-[#5b5149]">{item.body}</p>
-            </div>
-          ))}
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
-          <h2 className="text-2xl font-semibold">Next workshop</h2>
-          <div className="mt-4 grid gap-4 text-[#5b5149] md:grid-cols-3">
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">Date</p>
-              <p className="mt-1 text-lg font-semibold text-[#2e2a26]">March 22, 2026</p>
-            </div>
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">Time</p>
-              <p className="mt-1 text-lg font-semibold text-[#2e2a26]">4:00 - 6:00 PM</p>
-            </div>
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">Location</p>
-              <p className="mt-1 text-lg font-semibold text-[#2e2a26]">Peachtree City Test Kitchen</p>
-            </div>
-          </div>
-          <p className="mt-6 text-sm text-[#5b5149]">
-            Seats are capped at 12 to keep it personal. Reserve yours below and we&apos;ll send final details.
+          <h2 className="text-3xl font-semibold">Community Cooking Workshops</h2>
+          <p className="mt-4 text-lg text-[#5b5149]">
+            Small-group nonprofit educational workshops combining practical instruction with discussion on longevity, shared meals, and connection.
           </p>
-        </section>
-
-        <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
-          <h2 className="text-2xl font-semibold">Reserve your seat</h2>
           <p className="mt-3 text-[#5b5149]">
-            Fill this out for each attendee. Phone and dietary notes are optional but helpful for planning. We&apos;ll confirm your reservation and share contribution details.
+            Participants support our educational mission through a suggested contribution (commonly $50 per participant).
           </p>
-          <div className="mt-6">
-            <WorkshopForm />
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#workshop-interest"
+              className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+            >
+              Attend a Workshop
+            </a>
+            <Link
+              href="/contact"
+              className="rounded-2xl border border-[#c46a3a] px-5 py-3 text-[#c46a3a] transition hover:bg-[#fbe8df]"
+            >
+              Request a Presentation
+            </Link>
           </div>
           <p className="mt-6 text-xs text-[#5b5149]">
             A portion of contributions associated with in-person programming may not be tax-deductible due to goods or services received.
           </p>
+        </section>
+
+        <section id="workshop-interest" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
+          <h2 className="text-2xl font-semibold">Reserve interest</h2>
+          <p className="mt-3 text-[#5b5149]">Seats are limited to keep instruction personal. Share your details and we&apos;ll follow up with scheduling and contribution information.</p>
+          <div className="mt-6">
+            <WorkshopForm />
+          </div>
+        </section>
+
+        <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
+          <h2 className="text-3xl font-semibold">Bring L.I.F.E. to Your Organization</h2>
+          <p className="mt-4 text-[#5b5149]">Structured nonprofit offerings for civic groups, employers, schools, and healthcare partners:</p>
+          <ul className="mt-4 space-y-3 text-[#5b5149]">
+            <li>• 30-minute educational keynote (suggested program support contribution: $500)</li>
+            <li>• 3-hour interactive workshop (suggested program support contribution: $1,000)</li>
+          </ul>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex rounded-2xl border border-[#c46a3a] px-6 py-3 text-[#c46a3a] transition hover:bg-[#fbe8df]"
+          >
+            Request a Presentation
+          </Link>
         </section>
       </main>
       <SiteFooter />
