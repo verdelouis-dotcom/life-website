@@ -40,6 +40,23 @@ export default function SupportPage() {
           ))}
         </section>
 
+        <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
+          <h2 className="text-2xl font-semibold">Funding tiers</h2>
+          <p className="mt-3 text-[#5b5149]">Choose the gift that keeps workshops running and accessible.</p>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {[
+              { amount: "$100", impact: "Funds a full cooking class for a family." },
+              { amount: "$500", impact: "Covers a 30-minute keynote that sparks a school or workplace to act." },
+              { amount: "$1,000", impact: "Underwrites a 60-minute interactive workshop with hands-on cooking." },
+            ].map((tier) => (
+              <div key={tier.amount} className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-6">
+                <p className="text-3xl font-serif text-[#2e2a26]">{tier.amount}</p>
+                <p className="mt-3 text-sm text-[#5b5149]">{tier.impact}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="support-form" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
           <h2 className="text-2xl font-semibold">Tell us how you&apos;d like to help</h2>
           <p className="mt-3 text-[#5b5149]">No payment is taken here. We&apos;ll follow up with wiring instructions or sponsorship packets.</p>
