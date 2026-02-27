@@ -61,25 +61,34 @@ export async function POST(req: Request) {
       .join("\n");
 
     async function send(fromAddress: string) {
-      return resend.emails.send({
-        from: fromAddress,
-        to: [to],
-        replyTo: email,
-        subject,
-        text,
-      });
+      try {
+        const response = await resend.emails.send({
+          from: fromAddress,
+          to: [to],
+          replyTo: email,
+          subject,
+          text,
+        });
+
+        if (response.error) {
+          throw response.error;
+        }
+
+        return true;
+      } catch (error) {
+        console.error("RESEND_SEND_ERROR", { fromAddress, error });
+        return false;
+      }
     }
 
     const primaryFrom = configuredFrom || fallbackFrom;
-    let result = await send(primaryFrom);
+    let sent = await send(primaryFrom);
 
-    if (result.error && configuredFrom) {
-      console.error("Resend send error with configured from", result.error);
-      result = await send(fallbackFrom);
+    if (!sent && configuredFrom) {
+      sent = await send(fallbackFrom);
     }
 
-    if (result.error) {
-      console.error("Resend send error", result.error);
+    if (!sent) {
       return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 500 });
     }
 
