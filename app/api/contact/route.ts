@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
@@ -13,7 +16,36 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
     }
 
-    console.log("CONTACT_FORM", { name, email, city, interest, message });
+    const apiKey = process.env.RESEND_API_KEY;
+    const to = process.env.LIFE_TO_EMAIL;
+    const from = process.env.LIFE_FROM_EMAIL;
+
+    if (!apiKey || !to || !from) {
+      console.error("CONTACT_FORM_EMAIL_CONFIG_MISSING");
+      return NextResponse.json({ ok: false, error: "Email service not configured" }, { status: 503 });
+    }
+
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from,
+      to: [to],
+      replyTo: email,
+      subject: `L.I.F.E. Inquiry — ${interest || "General"}`,
+      html: `
+        <h2>Contact Inquiry</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>City / Organization:</strong> ${city}</p>
+        <p><strong>Interest:</strong> ${interest}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    if (error) {
+      console.error("CONTACT_FORM_EMAIL_ERROR", error);
+      return NextResponse.json({ ok: false, error: "Unable to send email" }, { status: 500 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
