@@ -23,11 +23,10 @@ export default function WorkshopsPage() {
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-6 py-16 text-[#2e2a26]">
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Local Workshops</p>
-          <h1 className="mt-3 text-4xl font-semibold">Mediterranean cooking meets community.</h1>
+          <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Community Programming</p>
+          <h1 className="mt-3 text-4xl font-semibold">Community Cooking Workshops</h1>
           <p className="mt-4 text-lg text-[#5b5149]">
-            Every workshop blends real education, real cooking, and real conversation. Tickets are $50 per person and
-            <span className="font-semibold text-[#c46a3a]"> 100% of proceeds support the foundation.</span>
+            These nonprofit educational workshops blend hands-on meal preparation, evidence-informed teaching, and a guided shared dining experience. Participants are invited to support L.I.F.E.&apos;s educational mission through a suggested contribution of $50 per participant.
           </p>
         </section>
 
@@ -64,11 +63,14 @@ export default function WorkshopsPage() {
         <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
           <h2 className="text-2xl font-semibold">Reserve your seat</h2>
           <p className="mt-3 text-[#5b5149]">
-            Fill this out for each attendee. Phone and dietary notes are optional but helpful.
+            Fill this out for each attendee. Phone and dietary notes are optional but helpful for planning. We&apos;ll confirm your reservation and share contribution details.
           </p>
           <div className="mt-6">
             <WorkshopForm />
           </div>
+          <p className="mt-6 text-xs text-[#5b5149]">
+            A portion of contributions associated with in-person programming may not be tax-deductible due to goods or services received.
+          </p>
         </section>
       </main>
       <SiteFooter />

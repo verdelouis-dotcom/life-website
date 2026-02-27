@@ -31,9 +31,15 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-[#dfd4c6] pt-6 text-xs text-[#5b5149] md:flex-row md:items-center md:justify-between">
-          <p>© {year} L.I.F.E. Longevity Initiative for Food &amp; Education</p>
-          <p className="opacity-80">Start local. Prove the model. Expand when ready.</p>
+        <div className="mt-10 border-t border-[#dfd4c6] pt-6 text-xs text-[#5b5149] space-y-3">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <p>© {year} L.I.F.E. Longevity Initiative for Food &amp; Education</p>
+            <p className="opacity-80">Start local. Prove the model. Expand when ready.</p>
+          </div>
+          <p>
+            Longevity Initiative for Food &amp; Education is organized as a nonprofit corporation in the State of Georgia and has applied for recognition as a tax-exempt organization under Section 501(c)(3) of the Internal Revenue Code.
+          </p>
+          <p>No goods or services were provided in exchange for donations unless otherwise noted.</p>
         </div>
       </div>
     </footer>

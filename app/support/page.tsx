@@ -24,10 +24,10 @@ export default function SupportPage() {
       <main className="mx-auto max-w-5xl px-6 py-16 text-[#2e2a26]">
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
           <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Support</p>
-          <h1 className="mt-3 text-4xl font-semibold">Help the table return home.</h1>
+          <h1 className="mt-3 text-4xl font-semibold">Fuel nonprofit education at the table.</h1>
           <p className="mt-4 text-lg text-[#5b5149]">
-            We&apos;re proving this model in one city first. Your contribution fuels the kitchens, the volunteers, and the
-            curriculum so we can keep tuition accessible.
+            Longevity Initiative for Food &amp; Education is a Georgia-based nonprofit corporation with 501(c)(3) status pending.
+            Contributions sustain curriculum development, fresh ingredients, and sliding-scale access for community partners.
           </p>
         </section>
 
@@ -59,10 +59,15 @@ export default function SupportPage() {
 
         <section id="support-form" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
           <h2 className="text-2xl font-semibold">Tell us how you&apos;d like to help</h2>
-          <p className="mt-3 text-[#5b5149]">No payment is taken here. We&apos;ll follow up with wiring instructions or sponsorship packets.</p>
+          <p className="mt-3 text-[#5b5149]">
+            No payment is taken here. We&apos;ll follow up with contribution instructions, documentation, and any acknowledgments required for your records.
+          </p>
           <div className="mt-6">
             <SupportForm />
           </div>
+          <p className="mt-6 text-xs text-[#5b5149]">
+            A portion of contributions connected to in-person programming may not be tax-deductible due to goods or services received. Final documentation will clarify the deductible amount, if any.
+          </p>
         </section>
       </main>
       <SiteFooter />
