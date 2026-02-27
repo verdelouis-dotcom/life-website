@@ -8,11 +8,12 @@ type Payload = {
   email?: string;
   city?: string;
   message?: string;
+  interestType?: string;
   source?: string;
 };
 
 const FRIENDLY_ERROR =
-  "Sorry — something went wrong. Please try again or email us at verde.louis@gmail.com.";
+  "Sorry — something went wrong. Please try again or email us at info@longevityinitiativeforfoodandeducation.com.";
 
 export async function POST(req: Request) {
   try {
@@ -25,6 +26,10 @@ export async function POST(req: Request) {
 
     const name = typeof body.name === "string" && body.name.trim() ? body.name.trim() : "N/A";
     const city = typeof body.city === "string" && body.city.trim() ? body.city.trim() : "N/A";
+    const interestType =
+      typeof body.interestType === "string" && body.interestType.trim()
+        ? body.interestType.trim()
+        : "General inquiry";
     const message =
       typeof body.message === "string" && body.message.trim()
         ? body.message.trim()
@@ -42,11 +47,12 @@ export async function POST(req: Request) {
     const fallbackFrom = "L.I.F.E. <onboarding@resend.dev>";
     const resend = new Resend(apiKey);
 
-    const subject = `L.I.F.E. Form Submission${source ? ` — ${source}` : ""}`;
+    const subject = `L.I.F.E. Inquiry — ${interestType}`;
     const text = [
       `Name: ${name}`,
       `Email: ${email}`,
       `City: ${city}`,
+      `Interest: ${interestType}`,
       source ? `Source: ${source}` : undefined,
       "Message:",
       message,

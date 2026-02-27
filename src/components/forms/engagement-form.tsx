@@ -2,31 +2,38 @@
 
 import { FormEvent, useState } from "react";
 
-type Status = "idle" | "success" | "error";
+const INTEREST_OPTIONS = [
+  "Hosting a Table",
+  "Bring L.I.F.E. to My Organization (Speaking / Workshop)",
+  "Supporting the Mission (Donation)",
+  "Learning More",
+];
 
-export default function ContactForm() {
-  const [status, setStatus] = useState<Status>("idle");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+const FRIENDLY_ERROR =
+  "Something went wrong. Please try again or email info@longevityinitiativeforfoodandeducation.com.";
+
+export default function EngagementForm() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("idle");
-    setIsSubmitting(true);
+    setStatus("submitting");
+    setErrorMessage(null);
 
     const formData = new FormData(event.currentTarget);
     const payload = {
       name: formData.get("name")?.toString().trim() ?? "",
       email: formData.get("email")?.toString().trim() ?? "",
-      city: formData.get("city")?.toString().trim() ?? "",
-      interest: formData.get("interest")?.toString().trim() || "General inquiry",
-      message: formData.get("message")?.toString().trim() ?? "",
+      city: formData.get("city")?.toString().trim() || undefined,
+      message: formData.get("message")?.toString().trim() || undefined,
+      interestType: formData.get("interestType")?.toString().trim() ?? INTEREST_OPTIONS[0],
+      source: "Website Engagement Form",
     };
 
-    if (!payload.name || !payload.email || !payload.city || !payload.message) {
+    if (!payload.name || !payload.email || !payload.interestType) {
       setStatus("error");
-      setErrorMessage("Name, email, city, and message are required.");
-      setIsSubmitting(false);
+      setErrorMessage("Name, email, and interest are required.");
       return;
     }
 
@@ -41,7 +48,7 @@ export default function ContactForm() {
 
       if (!response.ok) {
         setStatus("error");
-        setErrorMessage(data?.error ?? "Unable to send your request. Please email us.");
+        setErrorMessage(data?.error ?? FRIENDLY_ERROR);
         return;
       }
 
@@ -49,11 +56,9 @@ export default function ContactForm() {
       setErrorMessage(null);
       event.currentTarget.reset();
     } catch (error) {
-      console.error("contact submission failed", error);
+      console.error("ENGAGEMENT_FORM_ERROR", error);
       setStatus("error");
-      setErrorMessage("Network error. Please email us.");
-    } finally {
-      setIsSubmitting(false);
+      setErrorMessage(FRIENDLY_ERROR);
     }
   }
 
@@ -63,36 +68,33 @@ export default function ContactForm() {
         <input name="name" placeholder="Name" required className="rounded-xl border px-4 py-3" />
         <input name="email" type="email" placeholder="Email" required className="rounded-xl border px-4 py-3" />
       </div>
-      <input name="city" placeholder="City / Organization" required className="rounded-xl border px-4 py-3" />
-      <select name="interest" className="rounded-xl border px-4 py-3" defaultValue="Host a Table">
-        <option value="Host a Table">Host a Table</option>
-        <option value="Community Workshop">Community Workshop</option>
-        <option value="Educational Keynote">Educational Keynote</option>
-        <option value="Partnership / Grant">Partnership / Grant</option>
-        <option value="General inquiry">General Inquiry</option>
+      <input name="city" placeholder="City (optional)" className="rounded-xl border px-4 py-3" />
+      <select name="interestType" required defaultValue={INTEREST_OPTIONS[0]} className="rounded-xl border px-4 py-3">
+        {INTEREST_OPTIONS.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
       </select>
       <textarea
         name="message"
-        placeholder="Message"
-        required
+        placeholder="Message (optional)"
         className="min-h-[140px] rounded-xl border px-4 py-3"
       />
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={status === "submitting"}
         className="rounded-xl bg-[#6b7a46] px-6 py-3 text-white transition hover:bg-[#566236] disabled:opacity-60"
       >
-        {isSubmitting ? "Sending..." : "Send"}
+        {status === "submitting" ? "Sending..." : "Submit"}
       </button>
       {status === "success" && (
         <p className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
-          Message received. We&apos;ll respond within two business days.
+          Thank you. We will follow up shortly.
         </p>
       )}
       {status === "error" && errorMessage && (
-        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-          {errorMessage}
-        </p>
+        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">{errorMessage}</p>
       )}
     </form>
   );

@@ -1,6 +1,6 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import SupportForm from "@/components/forms/support-form";
+import EngagementForm from "@/components/forms/engagement-form";
 
 const SUPPORT_OPTIONS = [
   {
@@ -70,7 +70,7 @@ export default function SupportPage() {
             No payment is taken here. We&apos;ll follow up with contribution instructions, documentation, and any acknowledgments required for your records.
           </p>
           <div className="mt-6">
-            <SupportForm />
+            <EngagementForm />
           </div>
           <p className="mt-6 text-xs text-[#5b5149]">
             A portion of contributions connected to in-person programming may not be tax-deductible due to goods or services received. Final documentation will clarify the deductible amount, if any.

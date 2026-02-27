@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import WorkshopForm from "@/components/forms/workshop-form";
+import EngagementForm from "@/components/forms/engagement-form";
 
 export default function WorkshopsPage() {
   return (
@@ -44,10 +44,10 @@ export default function WorkshopsPage() {
         </section>
 
         <section id="workshop-interest" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
-          <h2 className="text-2xl font-semibold">Reserve interest</h2>
+          <h2 className="text-2xl font-semibold">Workshop interest</h2>
           <p className="mt-3 text-[#5b5149]">Seats are limited to keep instruction personal. Share your details and we&apos;ll follow up with scheduling and contribution information.</p>
           <div className="mt-6">
-            <WorkshopForm />
+            <EngagementForm />
           </div>
         </section>
 

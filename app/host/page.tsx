@@ -1,4 +1,4 @@
-import HostForm from "@/components/forms/host-form";
+import EngagementForm from "@/components/forms/engagement-form";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
@@ -43,7 +43,7 @@ export default function HostPage() {
           <h2 className="text-2xl font-semibold">Become a Host</h2>
           <p className="mt-3 text-[#5b5149]">We&apos;ll send next steps and a simple hosting guide.</p>
           <div className="mt-6">
-            <HostForm />
+            <EngagementForm />
           </div>
           <p className="mt-4 text-xs text-[#5b5149]">Participation is voluntary and does not create any financial obligation.</p>
         </section>

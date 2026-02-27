@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import HomeContactForm from "@/components/forms/home-contact-form";
+import EngagementForm from "@/components/forms/engagement-form";
 
 const SECTION_CLASS = "mx-auto max-w-5xl px-6 pb-16 text-[#2e2a26]";
 const CARD_CLASS = "rounded-3xl border border-[#dfd4c6] bg-white p-10";
@@ -200,13 +200,13 @@ export default function HomePage() {
               </div>
             </div>
             <div className={CARD_CLASS}>
-              <h2 className="text-3xl font-semibold">Learn More</h2>
+              <h2 className="text-3xl font-semibold">Get Involved</h2>
               <div className="mt-4 space-y-3 text-[#5b5149]">
-                <p>Interested in hosting?<br />Want to attend a workshop?<br />Interested in bringing L.I.F.E. to your organization?<br />Want to support the mission?</p>
-                <p>We&apos;d love to hear from you.</p>
+                <p>Rebuild the rhythm locally.</p>
+                <p>Tell us how you&apos;d like to engage and we&apos;ll follow up directly.</p>
               </div>
               <div className="mt-6">
-                <HomeContactForm />
+                <EngagementForm />
               </div>
             </div>
           </div>
