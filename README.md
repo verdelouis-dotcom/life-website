@@ -9,15 +9,7 @@ npm install
 npm run dev
 ```
 
-Visit http://localhost:3000 after the dev server starts. Environment variables live in `.env.local`; copy the example below and update with your secrets:
-
-```
-RESEND_API_KEY=...
-LIFE_TO_EMAIL=...
-LIFE_FROM_EMAIL=...
-STRIPE_SECRET_KEY=...
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
-```
+Visit http://localhost:3000 after the dev server starts. No secret environment variables are required for the current local-first build.
 
 ## Production build
 
@@ -30,11 +22,10 @@ npm start
 
 Pushes to `main` trigger a Vercel deployment. Confirm the build is green in the Vercel dashboard, then smoke-test the live site.
 
-## Host Guide Assets
+## Forms & API routes
 
-Place the branded PDF at `public/downloads/LIFE_Host_Guide_BRANDED.pdf`. The `/host-guide` page references this file for its download button, so updating the file in that directory updates the guide everywhere.
+- `/api/workshop` logs workshop registrations (name, email, optional phone + dietary notes) and returns `{ ok: true }`.
+- `/api/support` logs donation or sponsorship interest (name, email, optional amount) and returns `{ ok: true }`.
+- `/api/contact` logs general messages (name, email, message) and returns `{ ok: true }`.
 
-## Testing donation and sponsor flows
-
-- `/api/donate` creates a Stripe Checkout session; set `STRIPE_SECRET_KEY` before testing.
-- `/api/sponsor`, `/api/workshop`, `/api/contact`, and `/api/subscribe` send email through Resend; set `RESEND_API_KEY`, `LIFE_TO_EMAIL`, and `LIFE_FROM_EMAIL` for live messages.
+Extend these handlers with email, CRM, or payment integrations when phase two begins.

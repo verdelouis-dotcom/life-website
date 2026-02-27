@@ -1,61 +1,22 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-
-export const runtime = "nodejs";
-
-const fallbackResendKey = "re_7MG8vGd7_B21EYN7crXL2LVrbjpyqnLzY";
 
 export async function POST(req: Request) {
-  const apiKey = process.env.RESEND_API_KEY || fallbackResendKey;
-  const resend = new Resend(apiKey);
-  const redirectSuccess = () =>
-    NextResponse.redirect(new URL("/workshops?success=1", req.url), { status: 303 });
-
-  const redirectError = () =>
-    NextResponse.redirect(new URL("/workshops?error=1", req.url), { status: 303 });
-
   try {
-    const formData = await req.formData();
+    const body = await req.json();
+    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const email = typeof body.email === "string" ? body.email.trim() : "";
+    const phone = typeof body.phone === "string" ? body.phone.trim() : undefined;
+    const dietary = typeof body.dietary === "string" ? body.dietary.trim() : undefined;
 
-    const name = formData.get("name")?.toString() || "";
-    const email = formData.get("email")?.toString() || "";
-    const phone = formData.get("phone")?.toString() || "";
-    const organization = formData.get("organization")?.toString() || "";
-    const city = formData.get("city")?.toString() || "";
-    const preferredDate = formData.get("preferredDate")?.toString() || "";
-    const attendees = formData.get("attendees")?.toString() || "";
-    const message = formData.get("message")?.toString() || "";
+    if (!name || !email) {
+      return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
+    }
 
-    const fallbackTo = "verde.louis@gmail.com";
-    const fallbackFrom = "L.I.F.E. <onboarding@resend.dev>";
-    const to = process.env.LIFE_TO_EMAIL || fallbackTo;
-    const from = process.env.LIFE_FROM_EMAIL || fallbackFrom;
+    console.log("WORKSHOP_REGISTRATION", { name, email, phone, dietary });
 
-    if (!name || !email) return redirectError();
-
-    const { error } = await resend.emails.send({
-      from,
-      to: [to],
-      replyTo: email,
-      subject: `L.I.F.E. Workshop Request - ${name}`,
-      html: `
-        <h2>Workshop Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Organization:</strong> ${organization}</p>
-        <p><strong>City:</strong> ${city}</p>
-        <p><strong>Preferred Date:</strong> ${preferredDate}</p>
-        <p><strong>Estimated Attendees:</strong> ${attendees}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    });
-
-    if (error) return redirectError();
-
-    return redirectSuccess();
-  } catch {
-    return redirectError();
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("WORKSHOP_REGISTRATION_ERROR", error);
+    return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
   }
 }
