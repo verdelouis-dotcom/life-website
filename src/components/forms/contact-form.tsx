@@ -7,6 +7,7 @@ type Status = "idle" | "success" | "error";
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,6 +25,7 @@ export default function ContactForm() {
 
     if (!payload.name || !payload.email || !payload.city || !payload.message) {
       setStatus("error");
+      setErrorMessage("Name, email, city, and message are required.");
       setIsSubmitting(false);
       return;
     }
@@ -35,15 +37,21 @@ export default function ContactForm() {
         body: JSON.stringify(payload),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Request failed");
+        setStatus("error");
+        setErrorMessage(data?.error ?? "Unable to send your request. Please email us.");
+        return;
       }
 
       setStatus("success");
+      setErrorMessage(null);
       event.currentTarget.reset();
     } catch (error) {
       console.error("contact submission failed", error);
       setStatus("error");
+      setErrorMessage("Network error. Please email us.");
     } finally {
       setIsSubmitting(false);
     }
@@ -81,9 +89,9 @@ export default function ContactForm() {
           Message received. We&apos;ll respond within two business days.
         </p>
       )}
-      {status === "error" && (
+      {status === "error" && errorMessage && (
         <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-          Please complete all required fields or try again later.
+          {errorMessage}
         </p>
       )}
     </form>

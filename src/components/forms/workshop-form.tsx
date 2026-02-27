@@ -7,6 +7,7 @@ type Status = "idle" | "success" | "error";
 export default function WorkshopForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -23,6 +24,7 @@ export default function WorkshopForm() {
 
     if (!payload.name || !payload.email) {
       setStatus("error");
+      setErrorMessage("Please provide your name and email.");
       setIsSubmitting(false);
       return;
     }
@@ -34,15 +36,21 @@ export default function WorkshopForm() {
         body: JSON.stringify(payload),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Request failed");
+        setStatus("error");
+        setErrorMessage(data?.error ?? "Unable to reserve your seat. Please email us.");
+        return;
       }
 
       setStatus("success");
+      setErrorMessage(null);
       event.currentTarget.reset();
     } catch (error) {
       console.error("workshop registration failed", error);
       setStatus("error");
+      setErrorMessage("Network error. Please email us.");
     } finally {
       setIsSubmitting(false);
     }
@@ -70,9 +78,9 @@ export default function WorkshopForm() {
           You&apos;re on the list. We&apos;ll follow up with confirmation details.
         </p>
       )}
-      {status === "error" && (
+      {status === "error" && errorMessage && (
         <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-          Something went wrong. Please try again or email us.
+          {errorMessage}
         </p>
       )}
     </form>

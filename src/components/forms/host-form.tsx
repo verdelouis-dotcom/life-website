@@ -7,6 +7,7 @@ type Status = "idle" | "success" | "error";
 export default function HostForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -23,6 +24,7 @@ export default function HostForm() {
 
     if (!payload.name || !payload.email || !payload.city) {
       setStatus("error");
+      setErrorMessage("Name, email, and city are required.");
       setIsSubmitting(false);
       return;
     }
@@ -34,15 +36,21 @@ export default function HostForm() {
         body: JSON.stringify(payload),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Request failed");
+        setStatus("error");
+        setErrorMessage(data?.error ?? "Unable to submit your interest. Please email us.");
+        return;
       }
 
       setStatus("success");
+      setErrorMessage(null);
       event.currentTarget.reset();
     } catch (error) {
       console.error("host interest failed", error);
       setStatus("error");
+      setErrorMessage("Network error. Please email us.");
     } finally {
       setIsSubmitting(false);
     }
@@ -72,9 +80,9 @@ export default function HostForm() {
           Thank you. We&apos;ll send hosting guidance shortly.
         </p>
       )}
-      {status === "error" && (
+      {status === "error" && errorMessage && (
         <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-          Please complete the required fields or try again later.
+          {errorMessage}
         </p>
       )}
     </form>

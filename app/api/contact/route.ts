@@ -44,12 +44,18 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error("CONTACT_FORM_EMAIL_ERROR", error);
-      return NextResponse.json({ ok: false, error: "Unable to send email" }, { status: 500 });
+      return NextResponse.json(
+        { ok: false, error: error.message || "Unable to send email" },
+        { status: 500 },
+      );
     }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("CONTACT_FORM_ERROR", error);
-    return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, error: error instanceof Error ? error.message : "Server error" },
+      { status: 500 },
+    );
   }
 }

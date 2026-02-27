@@ -7,6 +7,7 @@ type Status = "idle" | "success" | "error";
 export default function SupportForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -22,6 +23,7 @@ export default function SupportForm() {
 
     if (!payload.name || !payload.email) {
       setStatus("error");
+      setErrorMessage("Name and email are required.");
       setIsSubmitting(false);
       return;
     }
@@ -33,15 +35,21 @@ export default function SupportForm() {
         body: JSON.stringify(payload),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Request failed");
+        setStatus("error");
+        setErrorMessage(data?.error ?? "Unable to submit. Please email us.");
+        return;
       }
 
       setStatus("success");
+      setErrorMessage(null);
       event.currentTarget.reset();
     } catch (error) {
       console.error("support interest failed", error);
       setStatus("error");
+      setErrorMessage("Network error. Please email us.");
     } finally {
       setIsSubmitting(false);
     }
@@ -64,9 +72,9 @@ export default function SupportForm() {
           Thank you. We&apos;ll follow up with next steps.
         </p>
       )}
-      {status === "error" && (
+      {status === "error" && errorMessage && (
         <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-          Something went wrong. Please try again or email us.
+          {errorMessage}
         </p>
       )}
     </form>
