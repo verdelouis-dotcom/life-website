@@ -15,10 +15,10 @@ export async function POST(req: Request) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const to = process.env.LIFE_TO_EMAIL;
-    const from = process.env.LIFE_FROM_EMAIL;
+    const to = process.env.LIFE_TO_EMAIL || "verde.louis@gmail.com";
+    const from = process.env.LIFE_FROM_EMAIL || "L.I.F.E. <onboarding@resend.dev>";
 
-    if (!apiKey || !to || !from) {
+    if (!apiKey) {
       console.error("SUPPORT_EMAIL_CONFIG_MISSING");
       return NextResponse.json({ ok: false, error: "Email service not configured" }, { status: 503 });
     }
