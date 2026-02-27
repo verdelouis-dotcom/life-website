@@ -5,7 +5,7 @@ import SupportForm from "@/components/forms/support-form";
 const SUPPORT_OPTIONS = [
   {
     title: "Sponsor a seat",
-    body: "Cover the $50 tuition for a neighbor who needs this education but can&apos;t afford it yet.",
+    body: "Cover the $50 tuition for a neighbor who needs this education but can't afford it yet.",
   },
   {
     title: "Underwrite ingredients",
@@ -33,7 +33,7 @@ export default function SupportPage() {
             <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">Sponsor a Seat</p>
             <p className="mt-2 text-[#2e2a26] font-semibold">Sponsor a seat.</p>
             <p className="mt-2 text-[#5b5149]">
-              Cover the $50 tuition for a neighbor who needs this education but can&apos;t afford it yet.
+              {"Cover the $50 tuition for a neighbor who needs this education but can't afford it yet."}
             </p>
           </div>
         </section>
