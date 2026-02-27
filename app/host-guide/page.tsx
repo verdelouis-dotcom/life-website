@@ -62,12 +62,6 @@ export default function HostGuidePage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
-              className="rounded-2xl bg-[#6b7a46] px-5 py-3 text-white transition hover:bg-[#566236]"
-            >
-              Download the PDF
-            </Link>
-            <Link
               href="/host"
               className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
             >
@@ -106,16 +100,10 @@ export default function HostGuidePage() {
             <div>
               <h2 className="text-3xl font-semibold text-[#2e2a26]">Ready to steward the table?</h2>
               <p className="mt-4 text-lg text-[#5b5149]">
-                Download the guide, choose a date, and then log your gathering so it&apos;s counted in the national totals.
+                Study the outline, choose a date, and then log your gathering so it&apos;s counted in the national totals.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
-              <Link
-                href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
-                className="rounded-2xl bg-[#6b7a46] px-5 py-3 text-white transition hover:bg-[#566236]"
-              >
-                Download Guide
-              </Link>
               <Link
                 href="/register"
                 className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"

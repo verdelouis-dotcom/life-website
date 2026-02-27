@@ -30,7 +30,7 @@ export default async function HomePage({
           <div className="absolute inset-0">
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-[url('/images/hero-table.jpg')] bg-cover bg-center opacity-40"
+              className="absolute inset-0 bg-[url('/images/hero-table4.jpeg')] bg-cover bg-center opacity-40"
             />
             <div aria-hidden="true" className="absolute inset-0 bg-[#fff5eb]/80 backdrop-blur-sm" />
           </div>
@@ -71,10 +71,10 @@ export default async function HomePage({
               <div className="rounded-[36px] border border-[#e7dac8] bg-[#fff8ef]/80 p-6 shadow-xl">
                 <Image
                   priority
-                  src="/images/hero-table.jpg"
+                  src="/images/hero-table4.jpeg"
                   width={900}
                   height={700}
-                  alt="Hands preparing dough at a shared wooden table"
+                  alt="Multigenerational family preparing Mediterranean vegetables together"
                   className="h-full w-full rounded-[28px] object-cover"
                 />
               </div>
