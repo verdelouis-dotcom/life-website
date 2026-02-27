@@ -21,7 +21,7 @@ export default function HomeContactForm() {
       email: formData.get("email")?.toString().trim() ?? "",
       city: formData.get("city")?.toString().trim() ?? "",
       message: formData.get("message")?.toString().trim() ?? "",
-      interest: "Homepage contact",
+      source: "Homepage contact",
     };
 
     if (!payload.name || !payload.email || !payload.city || !payload.message) {
@@ -42,7 +42,7 @@ export default function HomeContactForm() {
 
       if (!response.ok) {
         setStatus("error");
-        setErrorMessage(data?.error ?? "Unable to send your message. Please email us.");
+        setErrorMessage(data?.error ?? "Sorry — something went wrong. Please try again or email us at verde.louis@gmail.com.");
         return;
       }
 
@@ -75,7 +75,7 @@ export default function HomeContactForm() {
       </button>
       {status === "success" && (
         <p className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
-          Message received. We&apos;ll follow up shortly.
+          Thanks — we received your message. We&apos;ll follow up soon.
         </p>
       )}
       {status === "error" && errorMessage && (

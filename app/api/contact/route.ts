@@ -3,60 +3,83 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
+type Payload = {
+  name?: string;
+  email?: string;
+  city?: string;
+  message?: string;
+  source?: string;
+};
+
+const FRIENDLY_ERROR =
+  "Sorry — something went wrong. Please try again or email us at verde.louis@gmail.com.";
+
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const body = (await req.json()) as Payload;
     const email = typeof body.email === "string" ? body.email.trim() : "";
-    const city = typeof body.city === "string" ? body.city.trim() : "";
-    const interest = typeof body.interest === "string" && body.interest.trim() ? body.interest.trim() : "General inquiry";
-    const message = typeof body.message === "string" ? body.message.trim() : "";
 
-    if (!name || !email || !city || !message) {
-      return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
+    if (!email) {
+      return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 400 });
     }
+
+    const name = typeof body.name === "string" && body.name.trim() ? body.name.trim() : "N/A";
+    const city = typeof body.city === "string" && body.city.trim() ? body.city.trim() : "N/A";
+    const message =
+      typeof body.message === "string" && body.message.trim()
+        ? body.message.trim()
+        : "No additional message provided.";
+    const source = typeof body.source === "string" ? body.source.trim() : undefined;
 
     const apiKey = process.env.RESEND_API_KEY;
-    const to = process.env.LIFE_TO_EMAIL || "verde.louis@gmail.com";
-    const from =
-      process.env.LIFE_FROM_EMAIL || "L.I.F.E. <info@longevityinitiativeforfoodandeducation.com>";
-
     if (!apiKey) {
-      console.error("CONTACT_FORM_EMAIL_CONFIG_MISSING");
-      return NextResponse.json({ ok: false, error: "Email service not configured" }, { status: 503 });
+      console.error("Missing RESEND_API_KEY");
+      return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 503 });
     }
 
+    const to = process.env.LIFE_TO_EMAIL || "verde.louis@gmail.com";
+    const configuredFrom = process.env.LIFE_FROM_EMAIL;
+    const fallbackFrom = "L.I.F.E. <onboarding@resend.dev>";
     const resend = new Resend(apiKey);
-    const { error } = await resend.emails.send({
-      from,
-      to: [to],
-      replyTo: email,
-      subject: `L.I.F.E. Inquiry — ${interest || "General"}`,
-      html: `
-        <h2>Contact Inquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>City / Organization:</strong> ${city}</p>
-        <p><strong>Interest:</strong> ${interest}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    });
 
-    if (error) {
-      console.error("CONTACT_FORM_EMAIL_ERROR", error);
-      return NextResponse.json(
-        { ok: false, error: error.message || "Unable to send email" },
-        { status: 500 },
-      );
+    const subject = `L.I.F.E. Form Submission${source ? ` — ${source}` : ""}`;
+    const text = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `City: ${city}`,
+      source ? `Source: ${source}` : undefined,
+      "Message:",
+      message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    async function send(fromAddress: string) {
+      return resend.emails.send({
+        from: fromAddress,
+        to: [to],
+        replyTo: email,
+        subject,
+        text,
+      });
+    }
+
+    const primaryFrom = configuredFrom || fallbackFrom;
+    let result = await send(primaryFrom);
+
+    if (result.error && configuredFrom) {
+      console.error("Resend send error with configured from", result.error);
+      result = await send(fallbackFrom);
+    }
+
+    if (result.error) {
+      console.error("Resend send error", result.error);
+      return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 500 });
     }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("CONTACT_FORM_ERROR", error);
-    return NextResponse.json(
-      { ok: false, error: error instanceof Error ? error.message : "Server error" },
-      { status: 500 },
-    );
+    return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 500 });
   }
 }

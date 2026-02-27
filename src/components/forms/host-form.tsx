@@ -15,22 +15,28 @@ export default function HostForm() {
     setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
-    const payload = {
-      name: formData.get("name")?.toString().trim() ?? "",
-      email: formData.get("email")?.toString().trim() ?? "",
-      city: formData.get("city")?.toString().trim() ?? "",
-      reason: formData.get("reason")?.toString().trim() || undefined,
-    };
+    const name = formData.get("name")?.toString().trim() ?? "";
+    const email = formData.get("email")?.toString().trim() ?? "";
+    const city = formData.get("city")?.toString().trim() ?? "";
+    const reason = formData.get("reason")?.toString().trim();
 
-    if (!payload.name || !payload.email || !payload.city) {
+    if (!name || !email || !city) {
       setStatus("error");
       setErrorMessage("Name, email, and city are required.");
       setIsSubmitting(false);
       return;
     }
 
+    const payload = {
+      name,
+      email,
+      city,
+      message: reason && reason.length > 0 ? reason : "Host interest submission",
+      source: "Host form",
+    };
+
     try {
-      const response = await fetch("/api/host", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

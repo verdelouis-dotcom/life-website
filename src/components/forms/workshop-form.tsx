@@ -15,22 +15,35 @@ export default function WorkshopForm() {
     setStatus("idle");
 
     const formData = new FormData(event.currentTarget);
-    const payload = {
-      name: formData.get("name")?.toString().trim() ?? "",
-      email: formData.get("email")?.toString().trim() ?? "",
-      phone: formData.get("phone")?.toString().trim() || undefined,
-      dietary: formData.get("dietary")?.toString().trim() || undefined,
-    };
+    const name = formData.get("name")?.toString().trim() ?? "";
+    const email = formData.get("email")?.toString().trim() ?? "";
+    const city = formData.get("city")?.toString().trim() ?? "";
+    const phone = formData.get("phone")?.toString().trim();
+    const dietary = formData.get("dietary")?.toString().trim();
 
-    if (!payload.name || !payload.email) {
+    if (!name || !email || !city) {
       setStatus("error");
-      setErrorMessage("Please provide your name and email.");
+      setErrorMessage("Please provide your name, email, and city.");
       setIsSubmitting(false);
       return;
     }
 
+    const payload = {
+      name,
+      email,
+      city,
+      message: [
+        "Workshop interest submission",
+        phone ? `Phone: ${phone}` : undefined,
+        dietary ? `Dietary notes: ${dietary}` : undefined,
+      ]
+        .filter(Boolean)
+        .join(" | "),
+      source: "Workshop reservation",
+    };
+
     try {
-      const response = await fetch("/api/workshop", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -63,9 +76,10 @@ export default function WorkshopForm() {
         <input name="email" type="email" placeholder="Email" required className="rounded-xl border px-4 py-3" />
       </div>
       <div className="grid gap-4 md:grid-cols-2">
+        <input name="city" placeholder="City" required className="rounded-xl border px-4 py-3" />
         <input name="phone" placeholder="Phone (optional)" className="rounded-xl border px-4 py-3" />
-        <input name="dietary" placeholder="Dietary restrictions (optional)" className="rounded-xl border px-4 py-3" />
       </div>
+      <input name="dietary" placeholder="Dietary notes (optional)" className="rounded-xl border px-4 py-3" />
       <button
         type="submit"
         disabled={isSubmitting}

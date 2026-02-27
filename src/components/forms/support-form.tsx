@@ -15,21 +15,27 @@ export default function SupportForm() {
     setIsSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
-    const payload = {
-      name: formData.get("name")?.toString().trim() ?? "",
-      email: formData.get("email")?.toString().trim() ?? "",
-      amount: formData.get("amount")?.toString().trim() || undefined,
-    };
+    const name = formData.get("name")?.toString().trim() ?? "";
+    const email = formData.get("email")?.toString().trim() ?? "";
+    const amount = formData.get("amount")?.toString().trim();
 
-    if (!payload.name || !payload.email) {
+    if (!name || !email) {
       setStatus("error");
       setErrorMessage("Name and email are required.");
       setIsSubmitting(false);
       return;
     }
 
+    const payload = {
+      name,
+      email,
+      city: "Support submission",
+      message: amount && amount.length > 0 ? `Support interest amount: ${amount}` : "Support interest submission",
+      source: "Support form",
+    };
+
     try {
-      const response = await fetch("/api/support", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

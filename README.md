@@ -9,7 +9,15 @@ npm install
 npm run dev
 ```
 
-Visit http://localhost:3000 after the dev server starts. No secret environment variables are required for the current local-first build.
+Visit http://localhost:3000 after the dev server starts. For local testing of emails, create a `.env.local` with:
+
+```
+RESEND_API_KEY=your_resend_key
+LIFE_TO_EMAIL=verde.louis@gmail.com
+LIFE_FROM_EMAIL=info@longevityinitiativeforfoodandeducation.com
+```
+
+When deploying to Vercel, add the same values in Project → Settings → Environment Variables. If `LIFE_FROM_EMAIL` is not available or the domain is unverified, the app automatically falls back to `onboarding@resend.dev`.
 
 ## Production build
 
@@ -24,8 +32,4 @@ Pushes to `main` trigger a Vercel deployment. Confirm the build is green in the 
 
 ## Forms & API routes
 
-- `/api/workshop` logs workshop registrations (name, email, optional phone + dietary notes) and returns `{ ok: true }`.
-- `/api/support` logs donation or sponsorship interest (name, email, optional amount) and returns `{ ok: true }`.
-- `/api/contact` logs general messages (name, email, message) and returns `{ ok: true }`.
-
-Extend these handlers with email, CRM, or payment integrations when phase two begins.
+- `/api/contact` receives all form submissions (workshop interest, hosts, support, homepage contact) and emails the details to `LIFE_TO_EMAIL` using Resend. It expects JSON `{ name, email, city, message, source }` and returns `{ ok: true }` on success.
