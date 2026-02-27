@@ -1,7 +1,6 @@
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import EngagementForm from "@/components/forms/engagement-form";
 
 export default function WorkshopsPage() {
   return (
@@ -46,9 +45,12 @@ export default function WorkshopsPage() {
         <section id="workshop-interest" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
           <h2 className="text-2xl font-semibold">Workshop interest</h2>
           <p className="mt-3 text-[#5b5149]">Seats are limited to keep instruction personal. Share your details and we&apos;ll follow up with scheduling and contribution information.</p>
-          <div className="mt-6">
-            <EngagementForm />
-          </div>
+          <a
+            href="/#get-involved"
+            className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+          >
+            Use the Get Involved form
+          </a>
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">

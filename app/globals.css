@@ -1,31 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4efe6;
-  --foreground: #2e2a26;
-  --accent-primary: #6b7a46;
-  --accent-secondary: #c46a3a;
-  --accent-muted: #b89b82;
+  --bg: #f5f1e8;
+  --surface: #fbf7ef;
+  --text: #2a2a2a;
+  --muted: #6b6b6b;
+  --olive: #4a5c40;
+  --terracotta: #b66a4a;
+  --border: rgba(42, 42, 42, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+  background-size: 120px 120px, 100%;
+  color: var(--text);
+  font-family: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading), "Cormorant Garamond", "Times New Roman", serif;
+  color: var(--text);
+  letter-spacing: 0.01em;
 }
 
 a {
-  color: var(--accent-secondary);
+  color: var(--terracotta);
+  text-decoration-color: rgba(182, 106, 74, 0.4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 a:hover {
-  color: #a84e26;
+  color: #9b4d30;
+  text-decoration-color: currentColor;
+}
+
+::selection {
+  background: rgba(74, 92, 64, 0.15);
 }

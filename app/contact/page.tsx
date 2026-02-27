@@ -1,6 +1,5 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import EngagementForm from "@/components/forms/engagement-form";
 
 export default function ContactPage() {
   return (
@@ -15,8 +14,21 @@ export default function ContactPage() {
           </p>
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
-          <EngagementForm />
+        <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10 text-[#5b5149]">
+          <p>For hosting, workshops, and partnerships, use the Get Involved form on the homepage so we can route your message immediately.</p>
+          <a
+            href="/#get-involved"
+            className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+          >
+            Go to the Get Involved form
+          </a>
+          <p className="mt-6 text-sm">
+            Prefer email? Reach us at{" "}
+            <a href="mailto:info@longevityinitiativeforfoodandeducation.com">
+              info@longevityinitiativeforfoodandeducation.com
+            </a>
+            .
+          </p>
         </section>
       </main>
       <SiteFooter />

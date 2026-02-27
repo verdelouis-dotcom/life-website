@@ -1,6 +1,5 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import EngagementForm from "@/components/forms/engagement-form";
 
 const SUPPORT_OPTIONS = [
   {
@@ -69,12 +68,18 @@ export default function SupportPage() {
           <p className="mt-3 text-[#5b5149]">
             No payment is taken here. We&apos;ll follow up with contribution instructions, documentation, and any acknowledgments required for your records.
           </p>
-          <div className="mt-6">
-            <EngagementForm />
+          <div className="mt-6 space-y-4 text-[#5b5149]">
+            <p>Tell us how you&apos;d like to help by using the Get Involved form on the homepage. We&apos;ll follow up with contribution instructions, acknowledgement letters, and reporting.</p>
+            <a
+              href="/#get-involved"
+              className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+            >
+              Share my interest
+            </a>
+            <p className="text-xs">
+              A portion of contributions connected to in-person programming may not be tax-deductible due to goods or services received. Final documentation will clarify the deductible amount, if any.
+            </p>
           </div>
-          <p className="mt-6 text-xs text-[#5b5149]">
-            A portion of contributions connected to in-person programming may not be tax-deductible due to goods or services received. Final documentation will clarify the deductible amount, if any.
-          </p>
         </section>
       </main>
       <SiteFooter />
