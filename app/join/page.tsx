@@ -20,7 +20,7 @@ export default async function JoinPage({
       <main className="mx-auto max-w-5xl px-6 py-14">
         <h1 className="text-4xl font-semibold tracking-tight">Join the Table</h1>
         <p className="mt-4 text-lg text-zinc-700">
-          "Join" doesn't mean liking a post. It means taking one real step.
+          &ldquo;Join&rdquo; doesn&apos;t mean liking a post. It means taking one real step.
           Choose the path that fits your season.
         </p>
 
@@ -66,7 +66,7 @@ export default async function JoinPage({
             </form>
 
             <p className="mt-3 text-xs text-zinc-600">
-              You'll receive the host guide + next steps.
+              You&apos;ll receive the host guide + next steps.
             </p>
           </section>
 
@@ -86,7 +86,7 @@ export default async function JoinPage({
             </form>
 
             <p className="mt-3 text-xs text-zinc-600">
-              We'll follow up with sponsorship options.
+              We&apos;ll follow up with sponsorship options.
             </p>
           </section>
 

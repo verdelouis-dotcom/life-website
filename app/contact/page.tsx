@@ -22,7 +22,7 @@ export default async function ContactPage({
 
         {isSuccess && (
           <div className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-900">
-            Message sent. We'll reply soon.
+            Message sent. We&apos;ll reply soon.
           </div>
         )}
 

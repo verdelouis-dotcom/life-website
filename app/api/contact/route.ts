@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.redirect(new URL("/contact?success=1", req.url));
-  } catch (err: any) {
+  } catch {
     return NextResponse.json({ error: "Server error." }, { status: 500 });
   }
 }

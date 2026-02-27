@@ -18,6 +18,13 @@ export default function RegisterPage() {
           <p className="mt-4 text-lg text-[#5b5149]">
             Thank you for hosting. Your table strengthens a growing national movement. This takes less than one minute.
           </p>
+          <div className="mt-6 rounded-2xl border border-dashed border-[#c9b9a3] bg-white/60 p-5 text-sm text-[#5b5149]">
+            <p className="font-semibold text-[#2e2a26]">Help inspire other hosts.</p>
+            <p className="mt-2">
+              Share a quick photo and any standout moments. Featured tables appear on the national gallery so the
+              movement feels visible.
+            </p>
+          </div>
           <form action="/api/report-table?context=register" method="post" className="mt-8 grid gap-4" encType="multipart/form-data">
             <div className="grid gap-4 md:grid-cols-2">
               <input name="name" required placeholder="Host Name" className="rounded-xl border px-4 py-3" />
@@ -62,7 +69,7 @@ export default function RegisterPage() {
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               <label className="flex flex-col text-sm text-[#5b5149]">
-                <span className="mb-2 font-semibold text-[#2e2a26]">Photo (optional)</span>
+                <span className="mb-2 font-semibold text-[#2e2a26]">Photo (optional but encouraged)</span>
                 <input name="photo" type="file" accept="image/*" className="rounded-xl border px-4 py-3 text-sm" />
                 <span className="mt-1 text-xs text-[#5b5149]">
                   Attach a table photo to be considered for the public gallery.

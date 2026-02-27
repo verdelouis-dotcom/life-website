@@ -34,10 +34,10 @@ export default function HostPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
+              href="/host-guide"
               className="rounded-2xl bg-[#6b7a46] px-5 py-3 text-white transition hover:bg-[#566236]"
             >
-              Download the Host Guide
+              View the Host Guide
             </Link>
             <Link
               href="/register"
@@ -89,10 +89,10 @@ export default function HostPage() {
               Register Your Table
             </Link>
             <Link
-              href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
+              href="/host-guide"
               className="rounded-2xl border border-[#6b7a46] px-6 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
             >
-              Download the Host Guide
+              View the Host Guide
             </Link>
           </div>
         </section>

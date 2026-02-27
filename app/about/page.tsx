@@ -27,7 +27,7 @@ export default function AboutPage() {
           <section className="rounded-2xl border p-7">
             <h2 className="text-2xl font-semibold">What makes this different</h2>
             <ul className="mt-4 list-disc pl-5 text-zinc-700 space-y-2">
-              <li>We teach a repeatable pattern, not a "challenge."</li>
+              <li>We teach a repeatable pattern, not a &ldquo;challenge.&rdquo;</li>
               <li>We combine food + connection + movement into one simple system.</li>
               <li>We scale through hosts: people opening their table and paying it forward.</li>
             </ul>
@@ -36,7 +36,7 @@ export default function AboutPage() {
           <section className="rounded-2xl border p-7">
             <h2 className="text-2xl font-semibold">Our promise</h2>
             <p className="mt-3 text-zinc-700 leading-relaxed">
-              If you show up, we'll make this practical. You'll leave with recipes you can repeat,
+              If you show up, we&apos;ll make this practical. You&apos;ll leave with recipes you can repeat,
               a simple shopping rhythm, and a weekly table habit you can actually keep.
             </p>
 

@@ -21,7 +21,7 @@ export default async function HomePage({
         {subscribed && (
           <section className="mx-auto max-w-6xl px-6 pt-6">
             <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-900">
-              You're in. Welcome to the Longevity Letter.
+              You&apos;re in. Welcome to the Longevity Letter.
             </div>
           </section>
         )}
@@ -60,10 +60,10 @@ export default async function HomePage({
                     Host a Table
                   </Link>
                   <Link
-                    href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
+                    href="/host-guide"
                     className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
                   >
-                    Download the Host Guide
+                    View the Host Guide
                   </Link>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default async function HomePage({
           <div className="rounded-3xl border border-[#dfd4c6] bg-white p-10">
             <h2 className="text-3xl font-semibold text-[#2e2a26]">How It Works</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {["Download the Host Guide", "Host a Meal", "Register Your Table", "Invite Others to Commit"].map(
+              {["Read the Host Guide", "Host a Meal", "Register Your Table", "Invite Others to Commit"].map(
                 (step, index) => (
                   <div key={step} className="rounded-2xl border border-[#dfd4c6] bg-[#fff8ef] p-5 text-center">
                     <p className="text-sm uppercase tracking-[0.3em] text-[#6b7a46]">Step {index + 1}</p>
