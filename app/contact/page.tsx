@@ -1,11 +1,12 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import EngagementForm from "@/components/forms/engagement-form";
 
 export default function ContactPage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-4xl px-6 py-16">
+      <main className="mx-auto w-full max-w-[760px] px-6 py-16">
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
           <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Contact</p>
           <h1 className="mt-3 text-4xl font-semibold text-[#2e2a26]">Request Information</h1>
@@ -17,7 +18,7 @@ export default function ContactPage() {
         <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10 text-[#5b5149]">
           <p>For hosting, workshops, and partnerships, use the Get Involved form on the homepage so we can route your message immediately.</p>
           <a
-            href="/#get-involved"
+            href="#get-involved"
             className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
           >
             Go to the Get Involved form
@@ -29,6 +30,16 @@ export default function ContactPage() {
             </a>
             .
           </p>
+        </section>
+
+        <section id="get-involved" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
+          <h2 className="text-2xl font-semibold md:text-3xl text-[#2e2a26]">Get Involved</h2>
+          <p className="mt-4 text-base leading-relaxed text-[#5b5149]">
+            Rebuild the rhythm locally. Tell us how you’d like to engage and we’ll follow up directly.
+          </p>
+          <div className="mt-6">
+            <EngagementForm />
+          </div>
         </section>
       </main>
       <SiteFooter />

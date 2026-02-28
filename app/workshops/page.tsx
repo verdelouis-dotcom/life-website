@@ -46,7 +46,7 @@ export default function WorkshopsPage() {
           <h2 className="text-2xl font-semibold">Workshop interest</h2>
           <p className="mt-3 text-[#5b5149]">Seats are limited to keep instruction personal. Share your details and we&apos;ll follow up with scheduling and contribution information.</p>
           <a
-            href="/#get-involved"
+            href="/contact#get-involved"
             className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
           >
             Use the Get Involved form

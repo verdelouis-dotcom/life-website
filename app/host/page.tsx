@@ -45,7 +45,7 @@ export default function HostPage() {
             <div className="mt-6 flex flex-col gap-4 text-left text-[#5b5149]">
               <p>Ready to host? Use the Get Involved form on our homepage so we can follow up with guidance, dates, and a 1-page host guide.</p>
               <a
-                href="/#get-involved"
+                href="/contact#get-involved"
                 className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
               >
                 Go to the Get Involved form

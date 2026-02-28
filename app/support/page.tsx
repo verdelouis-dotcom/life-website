@@ -71,7 +71,7 @@ export default function SupportPage() {
           <div className="mt-6 space-y-4 text-[#5b5149]">
             <p>Tell us how you&apos;d like to help by using the Get Involved form on the homepage. We&apos;ll follow up with contribution instructions, acknowledgement letters, and reporting.</p>
             <a
-              href="/#get-involved"
+              href="/contact#get-involved"
               className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
             >
               Share my interest
@@ -79,6 +79,23 @@ export default function SupportPage() {
             <p className="text-xs">
               A portion of contributions connected to in-person programming may not be tax-deductible due to goods or services received. Final documentation will clarify the deductible amount, if any.
             </p>
+          </div>
+        </section>
+
+        <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
+          <h2 className="text-2xl font-semibold">Support the Movement</h2>
+          <div className="mt-4 space-y-4 text-[#5b5149]">
+            <p>This work is community-funded.</p>
+            <p>Your support helps:</p>
+            <ul className="space-y-2 text-sm">
+              <li>• Sponsor workshops</li>
+              <li>• Provide table kits</li>
+              <li>• Equip hosts</li>
+              <li>• Expand outreach</li>
+              <li>• Keep participation affordable</li>
+            </ul>
+            <p>Longevity should not depend on income. It should depend on culture.</p>
+            <p>Support L.I.F.E. and help rebuild the rhythm.</p>
           </div>
         </section>
       </main>
