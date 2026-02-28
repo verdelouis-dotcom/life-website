@@ -35,7 +35,7 @@ export default function AboutPage() {
               <ul className="space-y-2 text-sm text-[var(--muted)]">
                 <li>• Shared meal frequency</li>
                 <li>• Face-to-face conversation</li>
-                <li>• Plant-forward food preparation</li>
+                <li>• Fresh food preparation</li>
                 <li>• Community connection</li>
                 <li>• Intergenerational engagement</li>
               </ul>
