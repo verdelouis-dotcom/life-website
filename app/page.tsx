@@ -36,7 +36,6 @@ export default function HomePage() {
                   <p>In one generation, daily life shifted:</p>
                   <p>Less natural movement.<br />Fewer shared meals.<br />More screens.<br />More stimulation.<br />Less face-to-face conversation.</p>
                   <p>We engineered convenience.<br />But we lost rhythm.</p>
-                  <p>Longevity is patterned.<br />And patterns can erode.</p>
                 </div>
               </div>
             </div>
@@ -53,12 +52,12 @@ export default function HomePage() {
                   {[
                     "Move naturally",
                     "Live with purpose",
-                    "Downshift daily",
-                    "Eat mostly plant-based foods",
-                    "Stop before full",
-                    "Prioritize faith or community",
-                    "Center family",
                     "Cultivate supportive social circles",
+                    "Eat mostly fresh foods",
+                    "Stop before full",
+                    "Center family",
+                    "Prioritize faith or community",
+                    "Slow Down Daily",
                   ].map((item) => (
                     <li key={item} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm">
                       {item}
@@ -91,7 +90,7 @@ export default function HomePage() {
                   <p>There used to be one place where movement, food, purpose, conversation, and belonging naturally intersected.</p>
                   <p>The table.</p>
                   <p>At the table we slowed down, ate real food, faced one another, strengthened family, and built belonging.</p>
-                  <p>We didn’t remove furniture. We dismantled a system.</p>
+                  <p>We didn’t remove the table. We dismantled a system.</p>
                 </div>
               </div>
             </div>
@@ -124,7 +123,7 @@ export default function HomePage() {
                 <div className={TEXT}>
                   <p>Once a month, we host.</p>
                   <p>Family. Friends. Neighbors.</p>
-                  <p>We cook together using simple, affordable ingredients. We eat at the table. Phones off. We clean up together.</p>
+                  <p>We prepare together, we cook together, we eat together, we clean together.</p>
                   <p>Before guests leave, they receive the recipe and ingredients.</p>
                   <p>They are challenged to host within 30 days.</p>
                   <p>
@@ -182,7 +181,7 @@ export default function HomePage() {
                       <li>• 30-day replication rate</li>
                       <li>• Shared meal frequency (before and after participation)</li>
                       <li>• Screen-free meal consistency</li>
-                      <li>• Plant-forward meal adoption</li>
+                      <li>• Fresh food based meal adoption</li>
                     </ul>
                   </div>
                   <p>Impact is not assumed. It is measured.</p>
