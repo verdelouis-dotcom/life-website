@@ -5,17 +5,17 @@ export default function HostPage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-4xl px-6 py-16 text-[#2e2a26]">
+      <main className="mx-auto w-full max-w-[760px] px-6 py-16 text-[#2e2a26]">
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">L.I.F.E.</p>
-          <h1 className="mt-4 text-4xl font-semibold">Host a Table.</h1>
-          <p className="mt-4 text-lg text-[#5b5149]">
+          <h1 className="mt-4 text-3xl font-semibold md:text-4xl">Host a Table.</h1>
+          <p className="mt-4 text-base leading-relaxed text-[#5b5149]">
             A simple shared meal can restore connection—and multiply impact beyond a single event.
           </p>
           <div className="mt-8 flex justify-center">
             <a
               href="#host-form"
-              className="rounded-2xl bg-[#6b7a46] px-6 py-3 text-white transition hover:bg-[#566236]"
+              className="inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#566236] focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
             >
               I Want to Host
             </a>
@@ -46,7 +46,7 @@ export default function HostPage() {
               <p>Ready to host? Use the Get Involved form on our homepage so we can follow up with guidance, dates, and a 1-page host guide.</p>
               <a
                 href="/#get-involved"
-                className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+                className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
               >
                 Go to the Get Involved form
               </a>

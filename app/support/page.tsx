@@ -72,7 +72,7 @@ export default function SupportPage() {
             <p>Tell us how you&apos;d like to help by using the Get Involved form on the homepage. We&apos;ll follow up with contribution instructions, acknowledgement letters, and reporting.</p>
             <a
               href="/#get-involved"
-              className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+              className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
             >
               Share my interest
             </a>

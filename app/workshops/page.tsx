@@ -26,7 +26,7 @@ export default function WorkshopsPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="#workshop-interest"
-              className="rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+              className="inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
             >
               Attend a Workshop
             </a>
@@ -47,7 +47,7 @@ export default function WorkshopsPage() {
           <p className="mt-3 text-[#5b5149]">Seats are limited to keep instruction personal. Share your details and we&apos;ll follow up with scheduling and contribution information.</p>
           <a
             href="/#get-involved"
-            className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+            className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
           >
             Use the Get Involved form
           </a>

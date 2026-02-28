@@ -18,7 +18,7 @@ export default function ContactPage() {
           <p>For hosting, workshops, and partnerships, use the Get Involved form on the homepage so we can route your message immediately.</p>
           <a
             href="/#get-involved"
-            className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-[#6b7a46] transition hover:bg-[#f5f1e6]"
+            className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
           >
             Go to the Get Involved form
           </a>

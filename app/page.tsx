@@ -3,23 +3,23 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import EngagementForm from "@/components/forms/engagement-form";
 
-const CONTAINER = "mx-auto w-full max-w-3xl px-6";
+const CONTAINER = "mx-auto w-full max-w-[760px] px-6";
 const CARD = "rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/90 p-8 shadow-sm";
-const TEXT = "mt-6 space-y-4 text-base leading-relaxed text-[var(--muted)] md:text-lg";
+const TEXT = "mt-6 space-y-4 text-base leading-relaxed text-[var(--muted)]";
 
 export default function HomePage() {
   return (
     <>
       <SiteHeader />
-      <main className="pb-20 pt-12 text-[var(--text)]">
-        <div className="space-y-16 md:space-y-24">
+      <main className="pb-24 pt-16 text-[var(--text)]">
+        <div className="space-y-20 md:space-y-28">
           <section className="pt-0">
             <div className={CONTAINER}>
               <div className={CARD}>
                 <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Declaration</p>
-                <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Longevity Starts at the Table</h1>
+                <h1 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">Longevity Starts at the Table</h1>
                 <div className={TEXT}>
-                  <p>We are the first generation with the knowledge to live longer — and the habits to live shorter.</p>
+                  <p>We are the first generation equipped with the knowledge to live longer — but the habits to live shorter.</p>
                   <p>Chronic disease is rising.<br />Life expectancy is declining.</p>
                   <p>This is not a failure of medicine.<br />It is a failure of environment.</p>
                   <p>L.I.F.E. exists to rebuild the daily structures that shape health — how we eat, gather, move, and connect.</p>
@@ -45,7 +45,7 @@ export default function HomePage() {
             <div className={CONTAINER}>
               <div className={CARD}>
                 <h2 className="text-2xl font-semibold md:text-3xl">The Longest-Living Communities Share a Pattern</h2>
-                <p className="mt-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
+                <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">
                   Communities with unusually high rates of people living into their 90s and 100s tend to:
                 </p>
                 <ul className="mt-6 grid gap-3 text-[var(--muted)]">
@@ -64,7 +64,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-base text-[var(--muted)] md:text-lg">Longevity is not accidental.<br />It is environmental.</p>
+                <p className="mt-6 text-base text-[var(--muted)]">Longevity is not accidental.<br />It is environmental.</p>
               </div>
             </div>
           </section>
@@ -232,7 +232,7 @@ export default function HomePage() {
 
               <div id="get-involved" className={CARD}>
                 <h2 className="text-2xl font-semibold md:text-3xl">Get Involved</h2>
-                <p className="mt-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
+                <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">
                   Rebuild the rhythm locally. Tell us how you’d like to engage and we’ll follow up directly.
                 </p>
                 <div className="mt-6">

@@ -1,19 +1,19 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-const CONTAINER = "mx-auto w-full max-w-3xl px-6";
+const CONTAINER = "mx-auto w-full max-w-[760px] px-6";
 const CARD = "rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/90 p-8 shadow-sm";
-const TEXT = "mt-4 space-y-4 text-base leading-relaxed text-[var(--muted)] md:text-lg";
+const TEXT = "mt-4 space-y-4 text-base leading-relaxed text-[var(--muted)]";
 
 export default function AboutPage() {
   return (
     <>
       <SiteHeader />
       <main className="pb-20 pt-12 text-[var(--text)]">
-        <div className={`${CONTAINER} space-y-12 md:space-y-16`}>
+        <div className={`${CONTAINER} space-y-16 md:space-y-20`}>
           <section className={CARD}>
-            <h1 className="text-4xl font-semibold md:text-5xl">About L.I.F.E.</h1>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-[var(--muted)] md:text-lg">
+            <h1 className="text-3xl font-semibold md:text-4xl">About L.I.F.E.</h1>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-[var(--muted)]">
               <p>The Longevity Initiative for Food &amp; Education (L.I.F.E.) exists to rebuild the daily structures that support long-term health and human connection.</p>
               <p>We focus on the environmental patterns that shape longevity — how we eat, move, gather, and belong — and translate them into practical, community-based action.</p>
             </div>
