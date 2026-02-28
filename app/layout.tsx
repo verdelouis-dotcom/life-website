@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import CanonicalRedirect from "@/components/canonical-redirect";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
+        <CanonicalRedirect />
         {children}
       </body>
     </html>
