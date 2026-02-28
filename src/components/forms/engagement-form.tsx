@@ -9,9 +9,6 @@ const INTEREST_OPTIONS = [
   "Learning More",
 ];
 
-const FRIENDLY_ERROR =
-  "Something went wrong. Please try again or email info@longevityinitiativeforfoodandeducation.com.";
-
 export default function EngagementForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -47,8 +44,9 @@ export default function EngagementForm() {
       const data = await response.json().catch(() => null);
 
       if (!response.ok) {
+        console.error("ENGAGEMENT_FORM_RESPONSE_ERROR", data);
         setStatus("error");
-        setErrorMessage(data?.error ?? FRIENDLY_ERROR);
+        setErrorMessage(null);
         return;
       }
 
@@ -58,7 +56,7 @@ export default function EngagementForm() {
     } catch (error) {
       console.error("ENGAGEMENT_FORM_ERROR", error);
       setStatus("error");
-      setErrorMessage(FRIENDLY_ERROR);
+      setErrorMessage(null);
     }
   }
 
