@@ -24,6 +24,86 @@ const GALLERY_ITEMS = [
     location: "Family Wine Press",
     note: "Generational wine making tradition.",
   },
+  {
+    src: "/images/farmtotable1.jpeg",
+    location: "Peachtree City, GA",
+    note: "Farm-to-table class prepping ingredients.",
+  },
+  {
+    src: "/images/farmtotable2.jpeg",
+    location: "Peachtree City, GA",
+    note: "Hands-on cooking demonstration.",
+  },
+  {
+    src: "/images/farmtotable3.jpeg",
+    location: "Peachtree City, GA",
+    note: "Gathered around a long table.",
+  },
+  {
+    src: "/images/hero-table5.jpeg",
+    location: "Community Workshop",
+    note: "Knife skills lesson around the island.",
+  },
+  {
+    src: "/images/hero-table7.jpeg",
+    location: "Community Workshop",
+    note: "Intergenerational table conversation.",
+  },
+  {
+    src: "/images/hero-table8.jpeg",
+    location: "Community Workshop",
+    note: "Sharing a Mediterranean spread.",
+  },
+  {
+    src: "/images/hero-table9.jpeg",
+    location: "Community Workshop",
+    note: "Setting the table before guests arrive.",
+  },
+  {
+    src: "/images/hero-table10.jpeg",
+    location: "Community Workshop",
+    note: "Warm candlelight dinner service.",
+  },
+  {
+    src: "/images/hero-workshop.jpeg",
+    location: "Kitchen Session",
+    note: "Cooking through foundational techniques.",
+  },
+  {
+    src: "/images/hero-workshop1.jpeg",
+    location: "Kitchen Session",
+    note: "Passing down recipes step-by-step.",
+  },
+  {
+    src: "/images/hero-workshop2.jpeg",
+    location: "Kitchen Session",
+    note: "Simple ingredients, shared intention.",
+  },
+  {
+    src: "/images/hero-workshop3.jpeg",
+    location: "Kitchen Session",
+    note: "Hands in motion around the table.",
+  },
+  {
+    src: "/images/hero-workshop4.jpeg",
+    location: "Kitchen Session",
+    note: "Finishing touches before serving.",
+  },
+  {
+    src: "/images/hero-tworkshop1.jpeg",
+    location: "Workshop",
+    note: "Young hosts learning to plate.",
+  },
+  {
+    src: "/images/pasta.jpeg",
+    location: "Kitchen Session",
+    note: "Fresh pasta ready for the pot.",
+  },
+  {
+    src: "/images/octopus.jpeg",
+    location: "Kitchen Session",
+    note: "Seafood lesson rooted in tradition.",
+  },
 ];
 
 export default function GalleryPage() {
