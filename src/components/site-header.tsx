@@ -19,12 +19,12 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#dfd4c6] bg-[#f4efe6]/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <div className="hidden sm:block">
-            <BrandLogo variant="lockup" size={180} />
+            <BrandLogo variant="lockup" size={220} />
           </div>
           <div className="sm:hidden">
-            <BrandLogo variant="mark" size={44} />
+            <BrandLogo variant="mark" size={56} />
           </div>
         </div>
 

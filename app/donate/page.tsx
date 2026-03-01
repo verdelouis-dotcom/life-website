@@ -27,7 +27,13 @@ const USE_OF_FUNDS = [
   "Local awareness and outreach",
 ];
 
-const DONATION_LINK = "https://donorbox.org/life-initiative";
+const DEFAULT_DONATION_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com";
+const ENV_DONATION_LINK = process.env.NEXT_PUBLIC_DONATION_LINK?.trim();
+const DONATION_LINK = ENV_DONATION_LINK?.length ? ENV_DONATION_LINK : DEFAULT_DONATION_LINK;
+const DONATION_LABEL = DONATION_LINK.startsWith("mailto:") ? "Email to Give" : "Give Online";
+const DONATION_TARGET = DONATION_LINK.startsWith("http") ? "_blank" : undefined;
+const DONATION_REL = DONATION_TARGET ? "noreferrer" : undefined;
+const IS_FALLBACK_LINK = DONATION_LINK === DEFAULT_DONATION_LINK;
 
 export default function DonatePage() {
   return (
@@ -41,14 +47,14 @@ export default function DonatePage() {
             Your support underwrites community education, cooking toolkits, and measurable program expansion.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Link
+            <a
               href={DONATION_LINK}
-              target="_blank"
-              rel="noreferrer"
+              target={DONATION_TARGET}
+              rel={DONATION_REL}
               className="inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#556236]"
             >
-              Give Online
-            </Link>
+              {DONATION_LABEL}
+            </a>
             <Link
               href="/register"
               className="inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white"
@@ -56,6 +62,11 @@ export default function DonatePage() {
               Register a Table
             </Link>
           </div>
+          {IS_FALLBACK_LINK && (
+            <p className="mt-4 text-sm text-[#5b5149]">
+              Online gifts are launching soon. Email us to underwrite a table in the meantime.
+            </p>
+          )}
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-3">

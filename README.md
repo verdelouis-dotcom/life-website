@@ -15,6 +15,7 @@ Visit http://localhost:3000 after the dev server starts. For local testing of em
 RESEND_API_KEY=your_resend_key
 LIFE_TO_EMAIL=verde.louis@gmail.com
 LIFE_FROM_EMAIL=info@longevityinitiativeforfoodandeducation.com
+NEXT_PUBLIC_DONATION_LINK=https://donorbox.org/your-campaign-slug
 ```
 
 When deploying to Vercel, add the same values in Project → Settings → Environment Variables. If `LIFE_FROM_EMAIL` is not available or the domain is unverified, the app automatically falls back to `onboarding@resend.dev`.

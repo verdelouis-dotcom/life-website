@@ -39,9 +39,7 @@ export default function WhatWeDoPage() {
                   className="h-full w-full object-cover object-top"
                 />
               </div>
-              <figcaption className="px-6 py-4 text-sm text-[var(--muted)]">
-                Peachtree City workshop — Metro Atlanta pilot
-              </figcaption>
+              <figcaption className="px-6 py-4 text-sm text-[var(--muted)]">Workshop moment from the Metro Atlanta pilot.</figcaption>
             </figure>
           </section>
         </PageShell>

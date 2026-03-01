@@ -72,21 +72,19 @@ export default function WhyThisMattersPage() {
         </PageShell>
 
         <PageShell>
-          <section aria-label="Peachtree City workshop image">
+          <section aria-label="Workshop table image">
             <figure className="overflow-hidden rounded-[32px] border border-[var(--border)] bg-white/80 shadow-sm">
               <div className="aspect-[4/3] md:aspect-[16/10]">
                 <Image
                   src="/images/workshops/pasta-lesson-2.jpg"
-                  alt="Workshop table in Peachtree City"
+                  alt="Workshop table from the Metro Atlanta pilot"
                   width={1600}
                   height={1000}
                   className="h-full w-full object-cover object-top"
                   priority
                 />
               </div>
-              <figcaption className="px-6 py-4 text-sm text-[var(--muted)]">
-                Peachtree City workshop — Metro Atlanta pilot
-              </figcaption>
+              <figcaption className="px-6 py-4 text-sm text-[var(--muted)]">Workshop moment from the Metro Atlanta pilot.</figcaption>
             </figure>
           </section>
         </PageShell>
