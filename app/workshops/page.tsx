@@ -148,9 +148,9 @@ export default function WorkshopsPage() {
           <div className="mx-auto max-w-4xl px-6">
             <Reveal className="space-y-3 text-center">
               <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Request programming</p>
-              <h2 className="text-3xl font-semibold text-[var(--text)]">Let's co-design your experience.</h2>
+              <h2 className="text-3xl font-semibold text-[var(--text)]">Let&rsquo;s co-design your experience.</h2>
               <p className="text-base text-[var(--muted)]">
-                Share a few details and we'll follow up with scheduling, contributions, and customization options.
+                Share a few details and we&rsquo;ll follow up with scheduling, contributions, and customization options.
               </p>
             </Reveal>
             <div className="mt-8 rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/80 p-8">

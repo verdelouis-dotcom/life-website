@@ -1,15 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
-const DECLARATION_LINES = [
-  "We are the first generation equipped with the knowledge to live longer — but the habits to live shorter.",
-  "Chronic disease is rising. Life expectancy is declining.",
-  "This is not a failure of medicine. It is a failure of environment.",
-  "L.I.F.E. exists to rebuild the daily structures that shape health — how we eat, gather, move, and connect.",
-];
-
-// TODO: Replace placeholder imagery with final photography (hero-table.jpg).
-
 export default function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#0e1511]">
@@ -21,39 +12,45 @@ export default function HomeHero() {
       <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
-        <div className="max-w-2xl rounded-3xl bg-[var(--surface)]/85 p-8 text-[var(--text)] shadow-2xl shadow-black/30 backdrop-blur-sm">
+        <div className="max-w-2xl rounded-3xl bg-[var(--surface)]/90 p-8 text-[var(--text)] shadow-2xl shadow-black/30 backdrop-blur-sm">
           <div className="flex flex-col gap-6">
             <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">
               Longevity Initiative for Food &amp; Education
             </Reveal>
             <Reveal>
-              <p className="text-sm font-semibold uppercase tracking-[0.5em] text-[var(--terracotta)]">
-                Longevity Starts at the Table
-              </p>
-            </Reveal>
-            <Reveal>
               <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] sm:text-5xl lg:text-6xl">
-                Rebuild the system. Start at the table.
+                Longevity Starts at the Table
               </h1>
             </Reveal>
             <Reveal className="space-y-3 text-lg leading-snug text-[var(--text)]">
-              {DECLARATION_LINES.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
+              <p>
+                L.I.F.E. is a nonprofit initiative piloting in Metro Atlanta to educate and equip communities with evidence-informed
+                fundamentals that support longer, healthier lives.
+              </p>
+              <p>
+                We restore shared meals, teach Mediterranean-style cooking with fresh ingredients, and share longevity principles grounded
+                in 9 pillars.
+              </p>
             </Reveal>
             <Reveal className="flex flex-wrap gap-4 pt-2">
               <Link
-                href="/host#engagement-form"
+                href="/host"
                 className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-[#394930]"
               >
                 Host a Table
               </Link>
               <Link
-                href="/workshops#engagement-form"
+                href="/register"
                 className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/60 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white/70"
               >
-                Explore Workshops
+                Register a Table
               </Link>
+              <a
+                href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
+                className="inline-flex items-center justify-center rounded-2xl border border-transparent px-4 py-3 text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline"
+              >
+                Download Host Guide
+              </a>
             </Reveal>
           </div>
         </div>

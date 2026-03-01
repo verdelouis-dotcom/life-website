@@ -4,16 +4,20 @@ import Reveal from "@/components/ui/reveal";
 
 const STEPS = [
   {
-    title: "Raise your hand.",
-    description: "Fill out the short form so we can understand your people, kitchen, and cadence.",
+    title: "Learn",
+    description: "Receive community education on the 9 pillars and longevity fundamentals.",
   },
   {
-    title: "Receive the host kit.",
-    description: "Menus, sourcing tips, facilitation prompts, and a simple budget so you can focus on people over perfection.",
+    title: "Cook",
+    description: "Prepare fresh, Mediterranean-style meals using seasonal, accessible ingredients.",
   },
   {
-    title: "Gather monthly.",
-    description: "We check in, capture lessons, and plug you into a network of table hosts across the city.",
+    title: "Gather",
+    description: "Host a shared table experience that reinforces connection and daily routines.",
+  },
+  {
+    title: "Register",
+    description: "Submit your table so participation is measured and counted toward the pilot.",
   },
 ];
 
@@ -26,10 +30,10 @@ export default function HowItWorks() {
         <div className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="space-y-8">
             <Reveal className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">How hosting works</p>
-              <h2 className="text-3xl font-semibold text-[var(--text)]">Host a table in three grounded steps.</h2>
+              <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Program Rhythm</p>
+              <h2 className="text-3xl font-semibold text-[var(--text)]">How It Works</h2>
               <p className="text-lg text-[var(--muted)]">
-                Momentum compounds when people gather consistently. We make that consistency doable.
+                L.I.F.E. keeps the process simple so community education can travel table to table.
               </p>
             </Reveal>
             <ol className="space-y-8">
@@ -61,6 +65,9 @@ export default function HowItWorks() {
                 Ask about support
               </Link>
             </Reveal>
+            <p className="text-sm text-[var(--muted)]">
+              Participation happens locally. Impact is measured nationally through registered tables.
+            </p>
           </div>
           <div className="space-y-6 lg:pl-8">
             <div className="relative h-[460px] overflow-hidden rounded-[32px] border border-[var(--border)] shadow-lg shadow-black/10">

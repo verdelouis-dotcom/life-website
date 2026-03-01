@@ -112,21 +112,17 @@ export default function GalleryPage() {
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-6 py-14">
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">National Movement</p>
-          <h1 className="mt-3 text-4xl font-semibold text-[#2e2a26]">Tables Across the Nation</h1>
+          <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Measured Participation</p>
+          <h1 className="mt-3 text-4xl font-semibold text-[#2e2a26]">Tables</h1>
           <p className="mt-3 text-lg text-[#5b5149]">
-            Real hosts. Real kitchens. Real community spaces. Every table strengthens the cultural restoration.
+            Shared with permission. Tables represent community participation in the L.I.F.E. pilot.
           </p>
           <p className="mt-4 text-sm text-[#5b5149]">
-            Want your table featured? Upload a photo when you{" "}
+            Upload a photo when you{" "}
             <Link className="underline" href="/register">
               register your table
             </Link>{" "}
-            or email{" "}
-            <a className="underline" href="mailto:info@longevityinitiativeforfoodandeducation.com">
-              info@longevityinitiativeforfoodandeducation.com
-            </a>
-            .
+            so impact can be documented with both data and visuals.
           </p>
         </section>
 

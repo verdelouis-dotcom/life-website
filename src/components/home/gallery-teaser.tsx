@@ -10,9 +10,9 @@ export default function GalleryTeaser() {
     <section className="bg-[#fff8ef] py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Gallery</p>
-          <h2 className="text-3xl font-semibold text-[var(--text)]">Meals that look like neighborhoods.</h2>
-          <p className="text-lg text-[var(--muted)]">Scenes from recent tables and workshops.</p>
+          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Tables</p>
+          <h2 className="text-3xl font-semibold text-[var(--text)]">Community participation.</h2>
+          <p className="text-lg text-[var(--muted)]">Shared with permission. Each table represents measurable program reach.</p>
         </Reveal>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {GALLERY_ITEMS.map((item) => (

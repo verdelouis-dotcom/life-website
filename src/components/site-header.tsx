@@ -3,13 +3,10 @@ import BrandLogo from "@/components/brand-logo";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/why-this-matters", label: "Our Environment Changed" },
-  { href: "/what-we-do", label: "The Monthly Table Model" },
-  { href: "/workshops", label: "Workshops" },
-  { href: "/host", label: "Host a Table" },
-  { href: "/support", label: "Support the Movement" },
-  { href: "/contact", label: "Contact" },
+  { href: "/host", label: "Host" },
+  { href: "/register", label: "Register" },
+  { href: "/donate", label: "Donate" },
+  { href: "/gallery", label: "Tables" },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (

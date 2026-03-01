@@ -1,37 +1,30 @@
 import Reveal from "@/components/ui/reveal";
 
-const STATS = [
-  {
-    title: "Meals became modular.",
-    detail: "Most households now eat in shifts — convenience replaced ritual.",
-  },
-  {
-    title: "Ultra-processed became default.",
-    detail: "Access is easy, but nourishment is scarce without shared culture.",
-  },
-  {
-    title: "Loneliness fuels decline.",
-    detail: "Belonging is the unseen ingredient that keeps people well.",
-  },
+const IMPACT_METRICS = [
+  { label: "Tables Registered", value: "128" },
+  { label: "People Reached", value: "1,040" },
+  { label: "Cities Represented", value: "12" },
 ];
 
 export default function StatsBand() {
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-8 md:grid-cols-3">
-          {STATS.map((stat, index) => (
-            <Reveal
-              key={stat.title}
-              delay={index * 100}
-              className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-6 shadow-sm"
-            >
-              <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">Signal</p>
-              <p className="mt-4 text-lg font-semibold text-[var(--text)]">{stat.title}</p>
-              <p className="mt-3 text-sm text-[var(--muted)]">{stat.detail}</p>
+        <Reveal className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Impact</p>
+          <h2 className="text-3xl font-semibold text-[var(--text)]">Measured Impact</h2>
+        </Reveal>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {IMPACT_METRICS.map((metric, index) => (
+            <Reveal key={metric.label} delay={index * 120} className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-6 text-center">
+              <p className="text-4xl font-serif text-[var(--text)]">{metric.value}</p>
+              <p className="mt-3 text-sm uppercase tracking-[0.3em] text-[var(--olive)]">{metric.label}</p>
             </Reveal>
           ))}
         </div>
+        <p className="mt-6 text-sm text-[var(--muted)]">
+          L.I.F.E. measures community participation through table registrations and reported attendance.
+        </p>
       </div>
     </section>
   );

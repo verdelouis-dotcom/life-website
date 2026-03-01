@@ -15,10 +15,10 @@ export default function HomePage() {
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <HomeHero />
-        <StatsBand />
         <WhySection />
         <WhatWeDo />
         <HowItWorks />
+        <StatsBand />
         <WorkshopsCard />
         <GalleryTeaser />
         <SupportBand />

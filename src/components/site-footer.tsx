@@ -41,6 +41,19 @@ export default function SiteFooter() {
           </div>
         </div>
 
+        <div className="mt-10 rounded-3xl border border-[#dfd4c6] bg-white/60 p-6 text-sm">
+          <p className="font-semibold uppercase tracking-[0.35em] text-[#6b7a46]">Keynote</p>
+          <p className="mt-3 text-[#5b5149]">
+            Invite L.I.F.E. to deliver a 30-minute nonprofit keynote on longevity, culture, and practical community tools.
+          </p>
+          <a
+            href="/speaking"
+            className="mt-4 inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-2 text-sm font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white"
+          >
+            Request a Keynote
+          </a>
+        </div>
+
         <div className="mt-10 border-t border-[#dfd4c6] pt-6 text-xs text-[#5b5149] space-y-3">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <p>© {year} L.I.F.E. Longevity Initiative for Food &amp; Education</p>
