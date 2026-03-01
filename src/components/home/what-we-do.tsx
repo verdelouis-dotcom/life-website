@@ -1,7 +1,7 @@
 import Reveal from "@/components/ui/reveal";
 
 const PROGRAM_POINTS = [
-  "Community education on longevity fundamentals (9 pillars framework)",
+  "Community education on longevity fundamentals (six pillars framework)",
   "Hands-on cooking skills using fresh, accessible ingredients",
   "Hosted tables that model shared meals and connection",
   "Toolkits that make it easy to repeat at home",

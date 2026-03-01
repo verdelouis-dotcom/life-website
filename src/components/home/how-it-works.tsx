@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/reveal";
 const STEPS = [
   {
     title: "Learn",
-    description: "Receive community education on the 9 pillars and longevity fundamentals.",
+    description: "Receive community education on the six pillars and longevity fundamentals.",
   },
   {
     title: "Cook",

@@ -29,7 +29,7 @@ export default function HomeHero() {
               </p>
               <p>
                 We restore shared meals, teach Mediterranean-style cooking with fresh ingredients, and share longevity principles grounded
-                in 9 pillars.
+                in six pillars.
               </p>
             </Reveal>
             <Reveal className="flex flex-wrap gap-4 pt-2">
