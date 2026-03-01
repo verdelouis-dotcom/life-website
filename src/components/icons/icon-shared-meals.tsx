@@ -15,12 +15,12 @@ export default function IconSharedMeals({ className }: IconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx={7.5} cy={12} r={4.5} />
-      <circle cx={16.5} cy={12} r={4.5} />
-      <path d="M3 6v2" />
-      <path d="M3 10v8" />
-      <path d="M21 6v2" />
-      <path d="M21 10v8" />
+      <circle cx={8} cy={10} r={2.5} />
+      <circle cx={16} cy={10} r={2.5} />
+      <path d="M4 14h16" />
+      <path d="M7 14v5" />
+      <path d="M17 14v5" />
+      <path d="M2 19h20" />
     </svg>
   );
 }

@@ -17,8 +17,8 @@ const STATS = [
 
 export default function StatsBand() {
   return (
-    <section className="bg-white py-16">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="bg-white py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-8 md:grid-cols-3">
           {STATS.map((stat, index) => (
             <Reveal

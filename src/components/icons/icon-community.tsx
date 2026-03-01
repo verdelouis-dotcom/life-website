@@ -15,12 +15,12 @@ export default function IconCommunity({ className }: IconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx={7} cy={9} r={3} />
-      <circle cx={17} cy={9} r={3} />
-      <path d="M3 21c0-3.5 3-6.5 7-6.5" />
-      <path d="M21 21c0-3.5-3-6.5-7-6.5" />
-      <path d="M12 12v3" />
-      <path d="M9 21h6" />
+      <circle cx={12} cy={7} r={3} />
+      <circle cx={6.5} cy={12} r={2.5} />
+      <circle cx={17.5} cy={12} r={2.5} />
+      <path d="M6 21c0-3 2.5-5.5 6-5.5s6 2.5 6 5.5" />
+      <path d="M2 21c0-2.5 1.5-4.5 4-5.5" />
+      <path d="M22 21c0-2.5-1.5-4.5-4-5.5" />
     </svg>
   );
 }

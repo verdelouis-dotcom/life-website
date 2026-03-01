@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/reveal";
 
 export default function WhySection() {
   return (
-    <section className="bg-[#fff8ef] py-20">
+    <section className="bg-[#fff8ef] py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
           <Reveal className="space-y-6">

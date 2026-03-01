@@ -12,41 +12,51 @@ const DECLARATION_LINES = [
 
 export default function HomeHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#0e1511] text-white">
+    <section className="relative isolate overflow-hidden bg-[#0e1511]">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/hero-table.jpg)" }}
+        style={{ backgroundImage: "url(/images/hero-table7.png)", filter: "brightness(0.55) saturate(0.85)" }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-28 text-white sm:py-36">
-        <Reveal className="text-xs uppercase tracking-[0.4em] text-[rgba(255,255,255,0.75)]">
-          Longevity Initiative for Food &amp; Education
-        </Reveal>
-        <Reveal>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Rebuild the system. Start at the table.
-          </h1>
-        </Reveal>
-        <Reveal className="space-y-4 text-lg leading-relaxed text-white/90">
-          {DECLARATION_LINES.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </Reveal>
-        <Reveal className="flex flex-wrap gap-4">
-          <Link
-            href="/host#engagement-form"
-            className="inline-flex items-center justify-center rounded-2xl bg-white/90 px-6 py-3 text-base font-semibold text-[#1f2a22] shadow-lg shadow-black/20 transition hover:bg-white"
-          >
-            Host a Table
-          </Link>
-          <Link
-            href="/workshops#engagement-form"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10"
-          >
-            Explore Workshops
-          </Link>
-        </Reveal>
+      <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" aria-hidden="true" />
+      <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
+        <div className="max-w-2xl rounded-3xl bg-[var(--surface)]/85 p-8 text-[var(--text)] shadow-2xl shadow-black/30 backdrop-blur-sm">
+          <div className="flex flex-col gap-6">
+            <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">
+              Longevity Initiative for Food &amp; Education
+            </Reveal>
+            <Reveal>
+              <p className="text-sm font-semibold uppercase tracking-[0.5em] text-[var(--terracotta)]">
+                Longevity Starts at the Table
+              </p>
+            </Reveal>
+            <Reveal>
+              <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] sm:text-5xl lg:text-6xl">
+                Rebuild the system. Start at the table.
+              </h1>
+            </Reveal>
+            <Reveal className="space-y-3 text-lg leading-snug text-[var(--text)]">
+              {DECLARATION_LINES.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </Reveal>
+            <Reveal className="flex flex-wrap gap-4 pt-2">
+              <Link
+                href="/host#engagement-form"
+                className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-[#394930]"
+              >
+                Host a Table
+              </Link>
+              <Link
+                href="/workshops#engagement-form"
+                className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/60 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white/70"
+              >
+                Explore Workshops
+              </Link>
+            </Reveal>
+          </div>
+        </div>
       </div>
     </section>
   );

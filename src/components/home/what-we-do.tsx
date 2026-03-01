@@ -23,7 +23,7 @@ const PROGRAMS = [
 
 export default function WhatWeDo() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="max-w-2xl space-y-3">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">What we do</p>
@@ -37,11 +37,11 @@ export default function WhatWeDo() {
             <Reveal
               key={program.title}
               delay={index * 120}
-              className="flex h-full flex-col gap-4 rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-6 shadow-sm"
+              className="flex h-full flex-col rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-6 shadow-sm"
             >
-              <program.Icon className="h-12 w-12 text-[var(--terracotta)]" />
+              <program.Icon className="mb-4 h-12 w-12 text-[var(--terracotta)]" />
               <h3 className="text-2xl font-semibold text-[var(--text)]">{program.title}</h3>
-              <p className="text-base text-[var(--muted)]">{program.description}</p>
+              <p className="mt-3 text-base text-[var(--muted)]">{program.description}</p>
             </Reveal>
           ))}
         </div>

@@ -3,8 +3,8 @@ import Reveal from "@/components/ui/reveal";
 
 export default function SupportBand() {
   return (
-    <section className="bg-[var(--terracotta)] py-16 text-white">
-      <div className="mx-auto flex max-w-5xl flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
+    <section className="bg-[var(--terracotta)] py-16 text-white md:py-20">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
         <Reveal className="space-y-3 text-white">
           <p className="text-xs uppercase tracking-[0.35em] text-white/70">Support</p>
           <h2 className="text-3xl font-semibold">Keep the tables set.</h2>

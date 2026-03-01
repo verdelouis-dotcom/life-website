@@ -7,7 +7,7 @@ const GALLERY_ITEMS = Array.from({ length: 6 }, (_, index) => index + 1);
 
 export default function GalleryTeaser() {
   return (
-    <section className="bg-[#fff8ef] py-20">
+    <section className="bg-[#fff8ef] py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="space-y-3">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Gallery</p>

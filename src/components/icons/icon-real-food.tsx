@@ -15,9 +15,10 @@ export default function IconRealFood({ className }: IconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M12 3c-2 4-2 10 0 14 2-4 2-10 0-14z" />
-      <path d="M6 7c0 7 3 12 6 12s6-5 6-12c-2.5-2-4.5-3-6-3s-3.5 1-6 3z" />
-      <path d="M9 12h6" />
+      <path d="M5 14c0-5.5 4-9.5 7-11 3 1.5 7 5.5 7 11s-4 9-7 9-7-3.5-7-9z" />
+      <path d="M12 5v14" />
+      <path d="M9 12c1.5 1.5 3 2 3 2" />
+      <path d="M15 10c-1 1.8-2 2.7-3 3" />
     </svg>
   );
 }
