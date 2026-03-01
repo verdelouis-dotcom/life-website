@@ -19,6 +19,11 @@ const GALLERY_ITEMS = [
     location: "Austin, TX",
     note: "Pasta making workshop for a family.",
   },
+  {
+    src: "/images/winemaking.jpeg",
+    location: "Family Wine Press",
+    note: "Generational wine making tradition.",
+  },
 ];
 
 export default function GalleryPage() {
