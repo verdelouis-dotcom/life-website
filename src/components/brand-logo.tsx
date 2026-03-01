@@ -8,7 +8,7 @@ type BrandLogoProps = {
   className?: string;
 };
 
-const LOCKUP_RATIO = 220 / 260;
+const LOCKUP_RATIO = 572 / 1024; // matches /images/logo.jpg dimensions
 
 export default function BrandLogo({
   variant = "lockup",
@@ -19,7 +19,7 @@ export default function BrandLogo({
   const isMark = variant === "mark";
   const width = size ?? (isMark ? 44 : 160);
   const height = isMark ? width : Math.round(width * LOCKUP_RATIO);
-  const src = isMark ? "/brand/mark.svg" : "/images/logo.png";
+  const src = isMark ? "/brand/mark.svg" : "/images/logo.jpg";
 
   const classes = ["h-auto", "w-auto", className].filter(Boolean).join(" ");
   const image = (
