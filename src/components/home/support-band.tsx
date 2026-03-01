@@ -21,7 +21,7 @@ export default function SupportBand() {
           </Link>
           <Link
             href="/register"
-            className="inline-flex items-center justify-center rounded-2xl border border-white px-6 py-3 text-base font-semibold text-white transition hover:bg-white/20"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/70 bg-white/10 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-white/20"
           >
             Register a Table
           </Link>
