@@ -23,7 +23,7 @@ export default function SiteHeader() {
             <BrandLogo variant="lockup" size={220} />
           </div>
           <div className="sm:hidden">
-            <BrandLogo variant="mark" size={56} />
+            <BrandLogo variant="lockup" size={160} />
           </div>
         </div>
 
