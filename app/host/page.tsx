@@ -17,7 +17,7 @@ const TOOLS = [
     description: "Simple prompts that strengthen connection and belonging.",
   },
   {
-    title: "9 Pillars Tips",
+    title: "Six Pillars Tips",
     description: "Practical fundamentals you can carry into everyday life.",
   },
 ];
