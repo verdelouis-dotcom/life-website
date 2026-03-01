@@ -129,7 +129,7 @@ export default function GalleryPage() {
         <section className="mt-10 grid gap-8 md:grid-cols-2">
           {GALLERY_ITEMS.map((item) => (
             <div key={item.src} className="overflow-hidden rounded-3xl border border-[#dfd4c6] bg-white shadow-sm">
-              <Image src={item.src} alt={item.location} width={1200} height={900} className="h-72 w-full object-cover" />
+              <Image src={item.src} alt={item.location} width={1200} height={900} className="h-72 w-full object-cover object-top" />
               <div className="px-5 py-4">
                 <p className="text-sm uppercase tracking-[0.2em] text-[#6b7a46]">{item.location}</p>
                 <p className="mt-2 text-[#2e2a26]">{item.note}</p>

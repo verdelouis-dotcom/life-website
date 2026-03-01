@@ -22,7 +22,7 @@ export default function GalleryTeaser() {
                   src={`/images/gallery-${item}.jpg`}
                   alt={`Community meal moment ${item}`}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </Reveal>

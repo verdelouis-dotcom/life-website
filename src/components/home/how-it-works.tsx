@@ -71,7 +71,7 @@ export default function HowItWorks() {
           </div>
           <div className="space-y-6 lg:pl-8">
             <div className="relative h-[460px] overflow-hidden rounded-[32px] border border-[var(--border)] shadow-lg shadow-black/10">
-              <Image src="/images/host-table.jpg" alt="Neighbors preparing ingredients before a shared table" fill className="object-cover" />
+              <Image src="/images/host-table.jpg" alt="Neighbors preparing ingredients before a shared table" fill className="object-cover object-top" />
             </div>
             <div className="max-w-sm rounded-3xl border border-white/40 bg-white/85 p-6 text-[var(--text)] shadow-xl backdrop-blur-sm lg:ml-auto">
               <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">Host cadence</p>

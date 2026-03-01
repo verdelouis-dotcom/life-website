@@ -36,7 +36,7 @@ export default function WhatWeDoPage() {
                   alt="Hands preparing pasta during a workshop"
                   width={1600}
                   height={1000}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                 />
               </div>
               <figcaption className="px-6 py-4 text-sm text-[var(--muted)]">

@@ -19,7 +19,7 @@ export default function WhySection() {
             </div>
           </Reveal>
           <div className="relative h-[420px] overflow-hidden rounded-[32px] border border-[var(--border)]">
-            <Image src="/images/why-table.jpg" alt="Neighbors sharing a long table meal" fill className="object-cover" />
+            <Image src="/images/why-table.jpg" alt="Neighbors sharing a long table meal" fill className="object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" aria-hidden="true" />
             <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-black/60 p-6 text-white shadow-lg">
               <p className="text-sm uppercase tracking-[0.4em] text-white/70">Field Note</p>

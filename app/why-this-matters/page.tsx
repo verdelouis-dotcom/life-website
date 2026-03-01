@@ -80,7 +80,7 @@ export default function WhyThisMattersPage() {
                   alt="Workshop table in Peachtree City"
                   width={1600}
                   height={1000}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                   priority
                 />
               </div>
