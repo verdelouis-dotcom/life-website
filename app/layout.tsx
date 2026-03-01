@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
     images: [
       {
-        url: "/images/logo.jpg",
+        url: "/images/logo.png",
         width: 1024,
         height: 572,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Longevity Initiative for Food & Education",
     description:
       "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
-    images: ["/images/logo.jpg"],
+    images: ["/images/logo.png"],
   },
   icons: {
     icon: "/brand/favicon-32.png",
