@@ -19,7 +19,7 @@ export default function BrandLogo({
   const isMark = variant === "mark";
   const width = size ?? (isMark ? 44 : 160);
   const height = isMark ? width : Math.round(width * LOCKUP_RATIO);
-  const src = isMark ? "/brand/mark.svg" : "/brand/lockup.svg";
+  const src = isMark ? "/brand/mark.svg" : "/images/logo.png";
 
   const classes = ["h-auto", "w-auto", className].filter(Boolean).join(" ");
   const image = (
