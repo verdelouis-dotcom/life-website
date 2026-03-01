@@ -6,6 +6,7 @@ import StatsBand from "@/components/home/stats-band";
 import WhySection from "@/components/home/why-section";
 import WhatWeDo from "@/components/home/what-we-do";
 import HowItWorks from "@/components/home/how-it-works";
+import GalleryTeaser from "@/components/home/gallery-teaser";
 import SupportBand from "@/components/home/support-band";
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
         <WhatWeDo />
         <HowItWorks />
         <StatsBand />
+        <GalleryTeaser />
         <SupportBand />
       </main>
       <SiteFooter />

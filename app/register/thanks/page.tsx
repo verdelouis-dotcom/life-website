@@ -25,10 +25,10 @@ export default function RegisterThanksPage() {
               Donate
             </Link>
             <Link
-              href="/gallery"
+              href="/register"
               className="inline-flex items-center justify-center rounded-2xl border border-[#dfd4c6] px-6 py-3 text-base font-semibold text-[#2e2a26] transition hover:bg-[#fff8ef]"
             >
-              View Gallery
+              Register Another Table
             </Link>
           </div>
         </section>

@@ -6,7 +6,6 @@ const NAV_ITEMS = [
   { href: "/host", label: "Host" },
   { href: "/register", label: "Register" },
   { href: "/donate", label: "Donate" },
-  { href: "/gallery", label: "Gallery" },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (
