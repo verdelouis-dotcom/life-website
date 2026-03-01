@@ -20,10 +20,10 @@ export default function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-4">
           <div className="hidden sm:block">
-            <BrandLogo variant="lockup" size={340} />
+            <BrandLogo variant="lockup" size={300} />
           </div>
           <div className="sm:hidden">
-            <BrandLogo variant="lockup" size={260} />
+            <BrandLogo variant="lockup" size={220} />
           </div>
         </div>
 
