@@ -10,7 +10,7 @@ export default function RegisterPage() {
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
           <p className="text-xs uppercase tracking-[0.35em] text-[#6b7a46]">Measurement</p>
           <h1 className="mt-3 text-4xl font-semibold">Register</h1>
-          <p className="mt-3 text-lg text-[#5b5149]">Less than one minute.</p>
+          <p className="mt-3 text-lg text-[#5b5149]">Complete the short form below.</p>
           <p className="mt-4 text-base text-[#5b5149]">
             Registration is how L.I.F.E. measures participation and reach for program evaluation and grants.
           </p>

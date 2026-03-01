@@ -64,9 +64,9 @@ export default function GalleryPage() {
       <main className="mx-auto max-w-6xl px-6 py-14">
         <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-[#6b7a46]">Measured Participation</p>
-          <h1 className="mt-3 text-4xl font-semibold text-[#2e2a26]">Tables</h1>
+          <h1 className="mt-3 text-4xl font-semibold text-[#2e2a26]">Gallery</h1>
           <p className="mt-3 text-lg text-[#5b5149]">
-            Shared with permission. Tables represent community participation in the L.I.F.E. pilot.
+            Shared with permission. Each gallery highlight represents community participation in the L.I.F.E. pilot.
           </p>
           <p className="mt-4 text-sm text-[#5b5149]">
             Upload a photo when you{" "}
@@ -80,13 +80,15 @@ export default function GalleryPage() {
         <section className="mt-10 grid gap-8 md:grid-cols-2">
           {GALLERY_ITEMS.map((item) => (
             <div key={item.src} className="overflow-hidden rounded-3xl border border-[#dfd4c6] bg-white shadow-sm">
-              <Image
-                src={item.src}
-                alt={`${item.heading} — ${item.description}`}
-                width={1200}
-                height={900}
-                className="h-72 w-full object-cover object-top"
-              />
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={item.src}
+                  alt={`${item.heading} — ${item.description}`}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover object-center"
+                />
+              </div>
               <div className="px-5 py-4">
                 <p className="text-sm uppercase tracking-[0.2em] text-[#6b7a46]">{item.heading}</p>
                 <p className="mt-2 text-[#2e2a26]">{item.description}</p>

@@ -1,7 +1,7 @@
 import Reveal from "@/components/ui/reveal";
 
 const IMPACT_METRICS = [
-  { label: "Tables Registered", value: "128" },
+  { label: "Gallery Entries", value: "128" },
   { label: "People Reached", value: "1,040" },
   { label: "Cities Represented", value: "12" },
 ];

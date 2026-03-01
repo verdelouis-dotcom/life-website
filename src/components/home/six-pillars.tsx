@@ -134,6 +134,7 @@ const ALL_SOURCES: SourceLink[] = PILLARS.flatMap((pillar) => pillar.sources).fi
 
 export default function SixPillars() {
   const [openIds, setOpenIds] = useState<string[]>([]);
+  const [showSources, setShowSources] = useState(false);
   const allExpanded = openIds.length === PILLARS.length;
 
   const toggleAll = () => {
@@ -241,27 +242,32 @@ export default function SixPillars() {
 
         <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
           <p className="font-medium text-[var(--text)]">Science sources available in each pillar.</p>
-          <a
-            href="#pillars-sources"
+          <button
+            type="button"
+            aria-expanded={showSources}
+            aria-controls="pillars-sources"
+            onClick={() => setShowSources((prev) => !prev)}
             className="inline-flex items-center text-[var(--terracotta)] underline-offset-4 hover:text-[#9b4d30] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--terracotta)]"
           >
-            View all sources
-          </a>
+            {showSources ? "Hide sources" : "Show sources"}
+          </button>
         </div>
 
-        <div id="pillars-sources" className="mt-8 rounded-[24px] border border-[var(--border)] bg-white/70 p-5 text-sm">
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--olive)]">Sources</p>
-          <ul className="mt-3 space-y-2 text-[var(--muted)]">
-            {ALL_SOURCES.map((source) => (
-              <li key={source.id}>
-                <span className="font-semibold text-[var(--text)]">{source.label}</span>{" "}
-                <a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-[var(--terracotta)]/50 underline-offset-4 hover:text-[#9b4d30]">
-                  {source.description}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {showSources && (
+          <div id="pillars-sources" className="mt-8 rounded-[24px] border border-[var(--border)] bg-white/70 p-5 text-sm">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--olive)]">Sources</p>
+            <ul className="mt-3 space-y-2 text-[var(--muted)]">
+              {ALL_SOURCES.map((source) => (
+                <li key={source.id}>
+                  <span className="font-semibold text-[var(--text)]">{source.label}</span>{" "}
+                  <a href={source.url} target="_blank" rel="noreferrer" className="underline decoration-[var(--terracotta)]/50 underline-offset-4 hover:text-[#9b4d30]">
+                    {source.description}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );
