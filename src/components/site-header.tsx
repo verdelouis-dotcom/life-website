@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/brand-logo";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
@@ -21,15 +22,14 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#dfd4c6] bg-[#f4efe6]/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#6b7a46] font-serif text-lg text-white">
-            L
-          </span>
-          <div className="leading-tight text-[#2e2a26]">
-            <p className="text-sm font-semibold tracking-wide">L.I.F.E.</p>
-            <p className="text-xs">Longevity Initiative</p>
+        <div className="flex items-center gap-3">
+          <div className="hidden sm:block">
+            <BrandLogo variant="lockup" size={180} />
           </div>
-        </Link>
+          <div className="sm:hidden">
+            <BrandLogo variant="mark" size={44} />
+          </div>
+        </div>
 
         <nav className="flex flex-wrap items-center justify-end gap-1">
           {NAV_ITEMS.map((item) => (

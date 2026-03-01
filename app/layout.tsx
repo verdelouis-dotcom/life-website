@@ -18,9 +18,26 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "L.I.F.E. — Longevity Initiative for Food & Education",
+  title: "Longevity Initiative for Food & Education",
   description:
     "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+  openGraph: {
+    title: "Longevity Initiative for Food & Education",
+    description:
+      "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+    images: [
+      {
+        url: "/brand/og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  icons: {
+    icon: "/brand/favicon-32.png",
+    shortcut: "/brand/favicon-16.png",
+    apple: "/brand/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

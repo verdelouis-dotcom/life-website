@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f5f1e8;
+  --life-forest: #1f2a22;
+  --life-black: #000000;
+  --life-cream: #f6f3ee;
+  --bg: var(--life-cream);
   --surface: #fbf7ef;
   --text: #2a2a2a;
   --muted: #6b6b6b;
@@ -18,11 +21,11 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--life-cream);
   background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0),
     linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
   background-size: 120px 120px, 100%;
-  color: var(--text);
+  color: var(--life-black);
   font-family: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.65;
 }

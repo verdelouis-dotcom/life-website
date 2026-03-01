@@ -1,0 +1,7 @@
+<!-- TODO: Replace with final LIFE lockup export -->
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="220" viewBox="0 0 260 220" fill="none">
+  <rect width="260" height="220" rx="28" fill="#F6F3EE"/>
+  <circle cx="130" cy="72" r="48" fill="#1F2A22"/>
+  <path d="M96 82V46h12v24h44v12H96Z" fill="#F6F3EE"/>
+  <text x="130" y="170" text-anchor="middle" font-family="serif" font-size="28" fill="#1F2A22" letter-spacing="4">L.I.F.E.</text>
+</svg>
