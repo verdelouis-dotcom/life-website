@@ -123,8 +123,8 @@ export default function GalleryPage() {
               register your table
             </Link>{" "}
             or email{" "}
-            <a className="underline" href="mailto:hello@longevityinitiativeforfoodandeducation.com">
-              hello@longevityinitiativeforfoodandeducation.com
+            <a className="underline" href="mailto:info@longevityinitiativeforfoodandeducation.com">
+              info@longevityinitiativeforfoodandeducation.com
             </a>
             .
           </p>

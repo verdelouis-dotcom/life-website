@@ -1,5 +1,6 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import EngagementForm from "@/components/forms/engagement-form";
 
 export default function HostPage() {
   return (
@@ -17,7 +18,7 @@ export default function HostPage() {
               href="#host-form"
               className="inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#566236] focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
             >
-              I Want to Host
+              Host a Table
             </a>
           </div>
         </section>
@@ -40,17 +41,11 @@ export default function HostPage() {
 
         <section id="host-form" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
           <h2 className="text-2xl font-semibold">Become a Host</h2>
-          <p className="mt-3 text-[#5b5149]">We&apos;ll send next steps and a simple hosting guide.</p>
+          <p className="mt-3 text-[#5b5149]">
+            Complete the form below and we&apos;ll send dates, guidance, and the 1-page host guide within two business days.
+          </p>
           <div className="mt-6">
-            <div className="mt-6 flex flex-col gap-4 text-left text-[#5b5149]">
-              <p>Ready to host? Use the Get Involved form on our homepage so we can follow up with guidance, dates, and a 1-page host guide.</p>
-              <a
-                href="/contact#get-involved"
-                className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
-              >
-                Go to the Get Involved form
-              </a>
-            </div>
+            <EngagementForm />
           </div>
           <p className="mt-4 text-xs text-[#5b5149]">Participation is voluntary and does not create any financial obligation.</p>
         </section>

@@ -28,7 +28,15 @@ export default function SiteFooter() {
             <p className="font-semibold text-[#2e2a26]">Stay in the Loop</p>
             <p className="mt-2 text-[#5b5149]">
               Follow our slow build:{" "}
-              <span className="font-semibold text-[#c46a3a]">@longevity_initiative</span> (Instagram)
+              <a
+                className="font-semibold text-[#c46a3a] underline decoration-[#c46a3a]/60"
+                href="https://www.instagram.com/longevity_initiative/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @longevity_initiative
+              </a>{" "}
+              (Instagram)
             </p>
           </div>
         </div>

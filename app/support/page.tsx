@@ -69,7 +69,7 @@ export default function SupportPage() {
             No payment is taken here. We&apos;ll follow up with contribution instructions, documentation, and any acknowledgments required for your records.
           </p>
           <div className="mt-6 space-y-4 text-[#5b5149]">
-            <p>Tell us how you&apos;d like to help by using the Get Involved form on the homepage. We&apos;ll follow up with contribution instructions, acknowledgement letters, and reporting.</p>
+            <p>Tell us how you&apos;d like to help using the Get Involved form linked below. We&apos;ll follow up with contribution instructions, acknowledgement letters, and reporting.</p>
             <a
               href="/contact#get-involved"
               className="inline-flex w-full items-center justify-center rounded-2xl border border-[#6b7a46] px-5 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
