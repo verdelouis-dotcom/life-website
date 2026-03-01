@@ -9,7 +9,10 @@ const INTEREST_OPTIONS = [
   "Learning More",
 ];
 
-export default function EngagementForm() {
+const GENERIC_ERROR_MESSAGE =
+  "Sorry — something went wrong. Please try again, or email us at info@longevityinitiativeforfoodandeducation.com.";
+
+export default function EngagementForm({ source }: { source?: string } = {}) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -25,7 +28,7 @@ export default function EngagementForm() {
       city: formData.get("city")?.toString().trim() || undefined,
       message: formData.get("message")?.toString().trim() || undefined,
       interestType: formData.get("interestType")?.toString().trim() ?? INTEREST_OPTIONS[0],
-      source: "Website Engagement Form",
+      source: source ?? "Website Engagement Form",
     };
 
     if (!payload.name || !payload.email || !payload.interestType) {
@@ -46,7 +49,7 @@ export default function EngagementForm() {
       if (!response.ok) {
         console.error("ENGAGEMENT_FORM_RESPONSE_ERROR", data);
         setStatus("error");
-        setErrorMessage(null);
+        setErrorMessage(GENERIC_ERROR_MESSAGE);
         return;
       }
 
@@ -56,7 +59,7 @@ export default function EngagementForm() {
     } catch (error) {
       console.error("ENGAGEMENT_FORM_ERROR", error);
       setStatus("error");
-      setErrorMessage(null);
+      setErrorMessage(GENERIC_ERROR_MESSAGE);
     }
   }
 

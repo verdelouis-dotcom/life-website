@@ -15,7 +15,7 @@ export default function HostPage() {
           </p>
           <div className="mt-8 flex justify-center">
             <a
-              href="#host-form"
+              href="#engagement-form"
               className="inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#566236] focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
             >
               Host a Table
@@ -39,13 +39,13 @@ export default function HostPage() {
           <p className="mt-2 text-[#5b5149]">You don&apos;t need to be a chef. You need to be willing.</p>
         </section>
 
-        <section id="host-form" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
+        <section id="engagement-form" className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
           <h2 className="text-2xl font-semibold">Become a Host</h2>
           <p className="mt-3 text-[#5b5149]">
             Complete the form below and we&apos;ll send dates, guidance, and the 1-page host guide within two business days.
           </p>
           <div className="mt-6">
-            <EngagementForm />
+            <EngagementForm source="Host Page" />
           </div>
           <p className="mt-4 text-xs text-[#5b5149]">Participation is voluntary and does not create any financial obligation.</p>
         </section>
