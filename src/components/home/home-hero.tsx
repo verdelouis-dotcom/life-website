@@ -45,12 +45,12 @@ export default function HomeHero() {
               >
                 Register a Table
               </Link>
-              <a
-                href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
+              <Link
+                href="/lifehost-guide"
                 className="inline-flex items-center justify-center rounded-2xl border border-transparent px-4 py-3 text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline"
               >
                 Download Host Guide
-              </a>
+              </Link>
             </Reveal>
           </div>
         </div>

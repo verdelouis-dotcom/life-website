@@ -6,7 +6,7 @@ const TOOLS = [
   {
     title: "Host Guide",
     description: "A structured, nonprofit toolkit to lead a meaningful table experience.",
-    href: "/downloads/LIFE_Host_Guide_BRANDED.pdf",
+    href: "/lifehost-guide",
   },
   {
     title: "Fresh Meal Ideas",
@@ -35,10 +35,10 @@ export default function HostPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
+              href="/lifehost-guide"
               className="inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#556236]"
             >
-              Download Host Guide
+              Open Host Guide
             </Link>
             <Link
               href="/register"
