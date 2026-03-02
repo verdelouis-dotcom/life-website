@@ -41,7 +41,7 @@ export default function HomeHero() {
               </Link>
               <Link
                 href="/register"
-                className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/60 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white/70"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/15"
               >
                 Register a Table
               </Link>
