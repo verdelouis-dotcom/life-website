@@ -5,6 +5,29 @@ const CONTAINER = "mx-auto w-full max-w-[760px] px-6";
 const CARD = "rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/90 p-8 shadow-sm";
 const TEXT = "mt-4 space-y-4 text-base leading-relaxed text-[var(--muted)]";
 
+const BOARD = [
+  {
+    name: "Lou Verde",
+    role: "Founder & President",
+    bio: "Community nutrition advocate and creator of the LIFE Table model, Lou guides the strategic vision and oversees pilot operations across Metro Atlanta.",
+  },
+  {
+    name: "Dr. Miles Medina",
+    role: "Treasurer",
+    bio: "Emergency medicine physician and Associate Director at Piedmont Henry Hospital, Dr. Medina stewards clinical rigor, fiscal accountability, and medical partnerships.",
+  },
+  {
+    name: "Bob Fabbio",
+    role: "Vice President",
+    bio: "Entrepreneur and founder of Norrio Capital Partners, Bob brings decades of venture-building experience to accelerate LIFE’s replication and funding strategy.",
+  },
+  {
+    name: "Kara Verde",
+    role: "Secretary",
+    bio: "Accounting graduate of Rochester Institute of Technology, Kara manages governance records and ensures LIFE’s compliance documentation stays audit-ready.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -53,22 +76,15 @@ export default function AboutPage() {
 
           <section className={CARD}>
             <h2 className="text-2xl font-semibold md:text-3xl">Board of Directors</h2>
-            <div className="mt-6 space-y-4 text-sm text-[var(--muted)] md:text-base">
-              <div>
-                <p className="font-semibold text-[var(--text)]">Lou Verde — Founder &amp; President</p>
-              </div>
-              <div>
-                <p className="font-semibold text-[var(--text)]">Dr. Miles Medina — Treasurer</p>
-                <p>Emergency Medicine Physician and Associate Director, Piedmont Henry Hospital</p>
-              </div>
-              <div>
-                <p className="font-semibold text-[var(--text)]">Bob Fabbio — Vice President</p>
-                <p>Entrepreneur and Founder, Norrio Capital Partners</p>
-              </div>
-              <div>
-                <p className="font-semibold text-[var(--text)]">Kara Verde — Secretary</p>
-                <p>Accounting Graduate, Rochester Institute of Technology</p>
-              </div>
+            <div className="mt-6 space-y-6 text-sm text-[var(--muted)] md:text-base">
+              {BOARD.map((member) => (
+                <div key={member.name}>
+                  <p className="font-semibold text-[var(--text)]">
+                    {member.name} — {member.role}
+                  </p>
+                  <p className="mt-2">{member.bio}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -77,6 +93,7 @@ export default function AboutPage() {
             <div className={TEXT}>
               <p>L.I.F.E. is organized as a Georgia nonprofit organization.</p>
               <p>501(c)(3) status: Pending.</p>
+              <p>EIN (Employer Identification Number): <span className="font-semibold text-[var(--text)]">41-4525299</span>.</p>
               <p>The organization is community-funded and operates through volunteer leadership.</p>
             </div>
           </section>
