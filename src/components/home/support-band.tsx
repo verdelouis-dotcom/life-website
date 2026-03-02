@@ -15,7 +15,7 @@ export default function SupportBand() {
         <Reveal delay={120} className="flex flex-wrap gap-3">
           <Link
             href="/donate"
-            className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-base font-semibold text-[var(--terracotta)] shadow-sm transition hover:bg-[#ffe9df]"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/70 bg-white/10 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-white/20"
           >
             Donate
           </Link>

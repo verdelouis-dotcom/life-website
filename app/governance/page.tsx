@@ -72,8 +72,8 @@ export default function GovernancePage() {
             </ul>
             <p className="mt-4 text-sm text-[var(--muted)]">
               For documentation requests, email{" "}
-              <a href="mailto:hello@longevityinitiativeforfoodandeducation.com" className="text-[var(--olive)] underline-offset-4 hover:underline">
-                hello@longevityinitiativeforfoodandeducation.com
+              <a href="mailto:info@longevityinitiativeforfoodandeducation.com" className="text-[var(--olive)] underline-offset-4 hover:underline">
+                info@longevityinitiativeforfoodandeducation.com
               </a>
               .
             </p>
