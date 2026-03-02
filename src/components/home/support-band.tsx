@@ -15,13 +15,13 @@ export default function SupportBand() {
         <Reveal delay={120} className="flex flex-wrap gap-3">
           <Link
             href="/donate"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/80 bg-white/15 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/90 bg-white/25 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/15 transition hover:bg-white/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Donate
           </Link>
           <Link
             href="/register"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/80 bg-white/5 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/90 bg-white/15 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/15 transition hover:bg-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Register a Table
           </Link>
