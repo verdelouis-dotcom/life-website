@@ -16,6 +16,7 @@ export default function RegisterForm() {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage(null);
+    const form = event.currentTarget;
 
     const formData = new FormData(event.currentTarget);
     const payload = {
@@ -65,7 +66,7 @@ export default function RegisterForm() {
 
       setStatus("idle");
       setErrorMessage(null);
-      event.currentTarget.reset();
+      form.reset();
       setPhotoData(null);
       router.push("/register/thanks");
     } catch (error) {
