@@ -1,32 +1,11 @@
+import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import { BOARD } from "@/data/board";
 
 const CONTAINER = "mx-auto w-full max-w-[760px] px-6";
 const CARD = "rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/90 p-8 shadow-sm";
 const TEXT = "mt-4 space-y-4 text-base leading-relaxed text-[var(--muted)]";
-
-const BOARD = [
-  {
-    name: "Lou Verde",
-    role: "Founder & President",
-    bio: "Community nutrition advocate and creator of the LIFE Table model, Lou guides the strategic vision and oversees pilot operations across Metro Atlanta.",
-  },
-  {
-    name: "Dr. Miles Medina",
-    role: "Treasurer",
-    bio: "Emergency medicine physician and Associate Director at Piedmont Henry Hospital, Dr. Medina stewards clinical rigor, fiscal accountability, and medical partnerships.",
-  },
-  {
-    name: "Bob Fabbio",
-    role: "Vice President",
-    bio: "Entrepreneur and founder of Norrio Capital Partners, Bob brings decades of venture-building experience to accelerate LIFE’s replication and funding strategy.",
-  },
-  {
-    name: "Kara Verde",
-    role: "Secretary",
-    bio: "Accounting graduate of Rochester Institute of Technology, Kara manages governance records and ensures LIFE’s compliance documentation stays audit-ready.",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -71,6 +50,9 @@ export default function AboutPage() {
             <div className={TEXT}>
               <p>L.I.F.E. is a Georgia nonprofit organization governed by a volunteer Board of Directors committed to advancing preventative, community-based health initiatives.</p>
               <p>The organization operates with transparency, fiscal responsibility, and a commitment to measurable impact.</p>
+              <Link href="/governance" className="inline-flex text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline">
+                View Governance & Transparency
+              </Link>
             </div>
           </section>
 
