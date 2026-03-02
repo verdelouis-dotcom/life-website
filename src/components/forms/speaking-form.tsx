@@ -13,6 +13,7 @@ export default function SpeakingForm() {
     event.preventDefault();
     setStatus("submitting");
     setErrorMessage(null);
+    const form = event.currentTarget;
 
     const formData = new FormData(event.currentTarget);
     const payload = {
@@ -47,7 +48,7 @@ export default function SpeakingForm() {
       }
 
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       console.error("SPEAKING_FORM_ERROR", error);
       setStatus("error");
