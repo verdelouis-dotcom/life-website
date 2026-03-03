@@ -69,11 +69,17 @@ export default function HowItWorks() {
               Participation happens locally. Impact is measured nationally through registered tables.
             </p>
           </div>
-          <div className="space-y-6 lg:pl-8">
-            <div className="relative h-[460px] overflow-hidden rounded-[32px] border border-[var(--border)] shadow-lg shadow-black/10">
-              <Image src="/images/host-table.jpg" alt="Neighbors preparing ingredients before a shared table" fill className="object-cover object-top" />
+          <div className="space-y-6 lg:flex lg:flex-col lg:items-end lg:pl-8">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[32px] border border-[var(--border)] shadow-lg shadow-black/10 lg:mx-0">
+              <Image
+                src="/images/host-table.jpg"
+                alt="Young boy holding tomatoes in a backyard garden"
+                fill
+                className="object-cover"
+                style={{ objectPosition: "center 80%" }}
+              />
             </div>
-            <div className="max-w-sm rounded-3xl border border-white/40 bg-white/85 p-6 text-[var(--text)] shadow-xl backdrop-blur-sm lg:ml-auto">
+            <div className="max-w-sm rounded-3xl border border-white/40 bg-white/85 p-6 text-[var(--text)] shadow-xl backdrop-blur-sm">
               <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">Host cadence</p>
               <p className="mt-3 text-lg text-[var(--text)]">1 evening per month. 90 minutes of facilitation. Infinite ripples.</p>
             </div>
