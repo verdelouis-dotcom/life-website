@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import ZeffyDonateEmbed from "@/components/zeffy-donate-embed";
 
 const TIERS = [
   {
@@ -27,7 +28,7 @@ const USE_OF_FUNDS = [
   "Local awareness and outreach",
 ];
 
-const DEFAULT_DONATION_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com";
+const DEFAULT_DONATION_LINK = "https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-9282";
 const ENV_DONATION_LINK = process.env.NEXT_PUBLIC_DONATION_LINK?.trim();
 const DONATION_LINK = ENV_DONATION_LINK?.length ? ENV_DONATION_LINK : DEFAULT_DONATION_LINK;
 const DONATION_LABEL = DONATION_LINK.startsWith("mailto:") ? "Email to Give" : "Give Online";
@@ -63,9 +64,7 @@ export default function DonatePage() {
             </Link>
           </div>
           {IS_FALLBACK_LINK && (
-            <p className="mt-4 text-sm text-[#5b5149]">
-              Online gifts are launching soon. Email us to underwrite a table in the meantime.
-            </p>
+            <p className="mt-4 text-sm text-[#5b5149]">Need help with Zeffy? Email us and we’ll walk you through it.</p>
           )}
         </section>
 
@@ -90,6 +89,7 @@ export default function DonatePage() {
             Contributions help L.I.F.E. pilot a replicable model that advances public awareness and measurable participation.
           </p>
         </section>
+        <ZeffyDonateEmbed />
       </main>
       <SiteFooter />
     </>
