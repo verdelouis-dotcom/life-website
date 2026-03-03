@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/ui/reveal";
 
-const GALLERY_IMAGES = ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpeg", "gallery-6.jpg"];
+const GALLERY_IMAGES = ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpeg", "gallery-7.jpg", "gallery-8.jpg"];
 
 export default function GalleryTeaser() {
   return (
