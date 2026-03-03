@@ -75,12 +75,6 @@ export default function LifeHostGuidePage() {
             >
               Register Your Table
             </Link>
-            <a
-              href="/downloads/LIFE_Host_Guide_BRANDED.pdf"
-              className="inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white"
-            >
-              Download PDF
-            </a>
           </div>
         </section>
 

@@ -61,7 +61,7 @@ export default function HostPage() {
                 <p className="mt-3 text-[#5b5149]">{tool.description}</p>
                 {tool.href && (
                   <Link href={tool.href} className="mt-4 inline-flex text-sm font-semibold text-[#6b7a46] underline-offset-4 hover:underline">
-                    Download
+                    Open Guide
                   </Link>
                 )}
               </div>
