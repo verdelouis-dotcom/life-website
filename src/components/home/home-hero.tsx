@@ -7,7 +7,7 @@ export default function HomeHero() {
       <div
         className="absolute inset-0 bg-cover"
         style={{
-          backgroundImage: "url(/images/hero-table7.png)",
+          backgroundImage: "url(/images/hero-table-family.jpg)",
           backgroundPosition: "top center",
           filter: "brightness(0.55) saturate(0.85)",
         }}
