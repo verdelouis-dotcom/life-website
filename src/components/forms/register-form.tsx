@@ -10,7 +10,7 @@ export default function RegisterForm() {
   const router = useRouter();
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [photoData, setPhotoData] = useState<string | null>(null);
+  const [photoAttachment, setPhotoAttachment] = useState<{ name: string; dataUrl: string } | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -28,7 +28,7 @@ export default function RegisterForm() {
       totalPeople: formData.get("totalPeople")?.toString().trim() ?? "",
       consentPhoto: formData.get("consentPhoto") === "on",
       source: "Table Registration",
-      photoData,
+      photoAttached: Boolean(photoAttachment),
     };
 
     if (!payload.name || !payload.email || !payload.dateHosted || !payload.totalPeople) {
@@ -42,7 +42,7 @@ export default function RegisterForm() {
       `Date Hosted: ${payload.dateHosted}`,
       `Total People Hosted: ${payload.totalPeople}`,
       `Photo consent: ${payload.consentPhoto ? "Yes" : "No"}`,
-      payload.photoData ? "Photo attached (base64)" : "No photo uploaded",
+      photoAttachment ? "Photo attached" : "No photo uploaded",
     ].join(" | ");
 
     try {
@@ -54,7 +54,7 @@ export default function RegisterForm() {
           email: payload.email,
           message,
           source: payload.source,
-          attachment: payload.photoData,
+          attachment: photoAttachment ? { name: photoAttachment.name, dataUrl: photoAttachment.dataUrl } : undefined,
         }),
       });
 
@@ -67,7 +67,7 @@ export default function RegisterForm() {
       setStatus("idle");
       setErrorMessage(null);
       form.reset();
-      setPhotoData(null);
+      setPhotoAttachment(null);
       router.push("/register/thanks");
     } catch (error) {
       console.error("REGISTER_FORM_ERROR", error);
@@ -80,14 +80,18 @@ export default function RegisterForm() {
     const file = event.target.files?.[0];
 
     if (!file) {
-      setPhotoData(null);
+      setPhotoAttachment(null);
       return;
     }
 
     const reader = new FileReader();
     reader.onload = () => {
       const result = reader.result?.toString() ?? null;
-      setPhotoData(result);
+      if (result) {
+        setPhotoAttachment({ name: file.name || "photo.jpg", dataUrl: result });
+      } else {
+        setPhotoAttachment(null);
+      }
     };
     reader.readAsDataURL(file);
   }

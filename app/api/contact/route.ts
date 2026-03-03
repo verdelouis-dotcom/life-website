@@ -3,6 +3,12 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
+type AttachmentPayload = {
+  name?: string;
+  dataUrl?: string;
+  base64?: string;
+};
+
 type Payload = {
   name?: string;
   email?: string;
@@ -10,6 +16,7 @@ type Payload = {
   message?: string;
   interestType?: string;
   source?: string;
+  attachment?: AttachmentPayload | string | null;
 };
 
 const FRIENDLY_ERROR =
@@ -35,6 +42,8 @@ export async function POST(req: Request) {
         ? body.message.trim()
         : "No additional message provided.";
     const source = typeof body.source === "string" ? body.source.trim() : undefined;
+    const attachment = normalizeAttachment(body.attachment);
+    const attachments = attachment ? [{ filename: attachment.filename, content: attachment.content }] : undefined;
 
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
@@ -68,6 +77,7 @@ export async function POST(req: Request) {
           replyTo: email,
           subject,
           text,
+          attachments,
         });
 
         if (response.error) {
@@ -97,4 +107,49 @@ export async function POST(req: Request) {
     console.error("CONTACT_FORM_ERROR", error);
     return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 500 });
   }
+}
+
+function normalizeAttachment(raw: unknown): { filename: string; content: string } | null {
+  if (!raw) return null;
+
+  const fallbackName = `attachment-${Date.now()}.jpg`;
+  let dataUrl: string | undefined;
+  let name: string | undefined;
+
+  if (typeof raw === "string") {
+    dataUrl = raw.trim();
+  } else if (typeof raw === "object" && raw !== null) {
+    const payload = raw as AttachmentPayload;
+    name = typeof payload.name === "string" && payload.name.trim() ? payload.name.trim() : undefined;
+    dataUrl = typeof payload.base64 === "string" && payload.base64
+      ? payload.base64
+      : typeof payload.dataUrl === "string"
+        ? payload.dataUrl
+        : undefined;
+  }
+
+  if (!dataUrl) {
+    return null;
+  }
+
+  let content = dataUrl;
+  let mime: string | undefined;
+
+  const match = dataUrl.match(/^data:(.*?);base64,(.+)$/);
+  if (match) {
+    mime = match[1];
+    content = match[2];
+  }
+
+  if (!content) {
+    return null;
+  }
+
+  let filename = name || fallbackName;
+  if (mime && !filename.includes(".")) {
+    const extension = mime.split("/")[1] || "jpg";
+    filename = `${filename}.${extension}`;
+  }
+
+  return { filename, content };
 }
