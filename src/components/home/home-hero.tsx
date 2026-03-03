@@ -5,8 +5,12 @@ export default function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#0e1511]">
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/hero-table7.png)", filter: "brightness(0.55) saturate(0.85)" }}
+        className="absolute inset-0 bg-cover"
+        style={{
+          backgroundImage: "url(/images/hero-table7.png)",
+          backgroundPosition: "top center",
+          filter: "brightness(0.55) saturate(0.85)",
+        }}
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
