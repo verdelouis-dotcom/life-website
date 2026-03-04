@@ -4,7 +4,6 @@ const SITE_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 const ROUTES = [
   "/",
   "/about",
-  "/governance",
   "/host",
   "/register",
   "/register/thanks",
