@@ -1,6 +1,6 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import { DONATION_LINKS } from "@/lib/donate-links";
+import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
 
 const TIERS = [
   {
@@ -41,6 +41,14 @@ export default function DonatePage() {
           <p className="mt-4 text-lg text-[#5b5149]">
             Your support underwrites tools, ingredients, materials, and community education.
           </p>
+          <a
+            href={PRIMARY_DONATION_LINK}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#556236]"
+          >
+            Give Online
+          </a>
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-3">
