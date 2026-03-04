@@ -1,13 +1,11 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
+import QuickActions from "@/components/home/quick-actions";
+import StoryStack from "@/components/home/story-stack";
 import SixPillars from "@/components/home/six-pillars";
-import StatsBand from "@/components/home/stats-band";
-import WhySection from "@/components/home/why-section";
-import WhatWeDo from "@/components/home/what-we-do";
-import HowItWorks from "@/components/home/how-it-works";
-import GalleryTeaser from "@/components/home/gallery-teaser";
-import SupportBand from "@/components/home/support-band";
+import ImpactSnapshot from "@/components/home/impact-snapshot";
+import ContactStrip from "@/components/home/contact-strip";
 
 export default function HomePage() {
   return (
@@ -15,13 +13,11 @@ export default function HomePage() {
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <HomeHero />
+        <QuickActions />
+        <StoryStack />
         <SixPillars />
-        <WhySection />
-        <WhatWeDo />
-        <HowItWorks />
-        <StatsBand />
-        <GalleryTeaser />
-        <SupportBand />
+        <ImpactSnapshot />
+        <ContactStrip />
       </main>
       <SiteFooter />
     </>

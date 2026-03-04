@@ -18,22 +18,20 @@ export default function HomeHero() {
       <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
         <div className="max-w-2xl rounded-3xl bg-[var(--surface)]/90 p-8 text-[var(--text)] shadow-2xl shadow-black/30 backdrop-blur-sm">
           <div className="flex flex-col gap-6">
-            <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">
-              Longevity Initiative for Food &amp; Education
-            </Reveal>
+            <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">Longevity Initiative</Reveal>
             <Reveal>
               <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] sm:text-5xl lg:text-6xl">
-                Longevity Starts at the Table
+                A calmer path to longer lives.
               </h1>
             </Reveal>
             <Reveal className="space-y-3 text-lg leading-snug text-[var(--text)]">
               <p>
-                L.I.F.E. is a nonprofit initiative piloting in Metro Atlanta to educate and equip communities with evidence-informed
-                fundamentals that support longer, healthier lives.
+                One shared table each month. Fresh food, unhurried conversation, and a simple rhythm any neighbor can repeat. We make the kit,
+                train the host, and support the follow-up.
               </p>
               <p>
-                We restore shared meals, teach Mediterranean-style cooking with fresh ingredients, and share longevity principles grounded
-                in six pillars.
+                Visitors can see the whole picture at a glance—why the environment changed, what our Monthly Table Model looks like, and the
+                metrics that prove it&apos;s working.
               </p>
             </Reveal>
             <Reveal className="flex flex-wrap gap-4 pt-2">
@@ -41,19 +39,13 @@ export default function HomeHero() {
                 href="/host"
                 className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-[#394930]"
               >
-                Host a Table
+                Start Hosting
               </Link>
               <Link
-                href="/register"
+                href="/what-we-do"
                 className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/15"
               >
-                Register a Table
-              </Link>
-              <Link
-                href="/lifehost-guide"
-                className="inline-flex items-center justify-center rounded-2xl border border-transparent px-4 py-3 text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline"
-              >
-                Download Host Guide
+                See the Pilot Plan
               </Link>
             </Reveal>
           </div>
