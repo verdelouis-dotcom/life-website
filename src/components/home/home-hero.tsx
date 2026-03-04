@@ -28,15 +28,12 @@ export default function HomeHero() {
             </Reveal>
             <Reveal className="space-y-3 text-lg leading-snug text-[var(--text)]">
               <p>
-                We recruit, train, and support community hosts to hold monthly shared meals that measurably improve nutrition habits, social
-                connection, and health outcomes over time.
+                L.I.F.E. is a nonprofit initiative piloting in Metro Atlanta to educate and equip communities with evidence-informed
+                fundamentals that support longer, healthier lives.
               </p>
               <p>
-                Families, neighbors, and multi-generational households gather around L.I.F.E. tables to learn Mediterranean-inspired cooking,
-                screen-free conversation rhythms, and a repeatable operating model.
-              </p>
-              <p>
-                Every pilot table is tracked for households reached, 30-day replication, and shared-meal frequency so impact is earned—not assumed.
+                We restore shared meals, teach Mediterranean-style cooking with fresh ingredients, and share longevity principles grounded
+                in six pillars.
               </p>
             </Reveal>
             <Reveal className="flex flex-wrap gap-4 pt-2">

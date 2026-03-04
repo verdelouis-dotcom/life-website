@@ -101,6 +101,7 @@ export default function AboutPage() {
               <li>• Quarterly board reviews covering program data, financial reports, and risk assessment.</li>
               <li>• Expense approvals require dual sign-off from the Treasurer and one additional officer.</li>
               <li>• Program metrics (tables hosted, participants, replication rate) published via the LIFE register portal.</li>
+              <li>• Donor receipts issued within 48 hours with transparent use-of-funds summaries.</li>
             </ul>
             <p className="mt-4 text-sm text-[var(--muted)]">
               Documentation requests: <a href="mailto:info@longevityinitiativeforfoodandeducation.com" className="text-[var(--olive)] underline-offset-4 hover:underline">info@longevityinitiativeforfoodandeducation.com</a>
