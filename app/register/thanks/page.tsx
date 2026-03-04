@@ -13,12 +13,6 @@ export default function RegisterThanksPage() {
           <p className="mt-4 text-lg text-[#5b5149]">Your table has been recorded as community participation.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/host"
-              className="inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#556236]"
-            >
-              Host Again
-            </Link>
-            <Link
               href="/donate"
               className="inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white"
             >

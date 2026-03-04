@@ -1,20 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const SITE_URL = "https://www.longevityinitiativeforfoodandeducation.com";
-const ROUTES = [
-  "/",
-  "/about",
-  "/host",
-  "/register",
-  "/register/thanks",
-  "/donate",
-  "/speaking",
-  "/workshops",
-  "/lifehost-guide",
-  "/why-this-matters",
-  "/what-we-do",
-  "/contact",
-];
+const ROUTES = ["/", "/register", "/register/thanks", "/donate", "/keynote", "/gallery"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

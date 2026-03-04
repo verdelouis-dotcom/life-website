@@ -18,35 +18,39 @@ export default function HomeHero() {
       <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
         <div className="max-w-2xl rounded-3xl bg-[var(--surface)]/90 p-8 text-[var(--text)] shadow-2xl shadow-black/30 backdrop-blur-sm">
           <div className="flex flex-col gap-6">
-            <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">Longevity Initiative</Reveal>
+            <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">Public-Benefit Initiative</Reveal>
             <Reveal>
               <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] sm:text-5xl lg:text-6xl">
-                A calmer path to longer lives.
+                Longevity Starts Here
               </h1>
             </Reveal>
             <Reveal className="space-y-3 text-lg leading-snug text-[var(--text)]">
-              <p>We recruit, train, and support community hosts to hold monthly shared meals that measurably improve nutrition habits, social connection, and health outcomes over time.</p>
               <p>
-                One shared table each month. Fresh food, unhurried conversation, and a simple rhythm any neighbor can repeat. We make the kit,
-                train the host, and support the follow-up.
-              </p>
-              <p>
-                Visitors can see the whole picture at a glance—why the environment changed, what our Monthly Table Model looks like, and the
-                metrics that prove it&apos;s working.
+                L.I.F.E. is a nonprofit initiative piloting in Metro Atlanta.
+                <br />
+                We teach longevity fundamentals and Mediterranean home cooking.
+                <br />
+                We restore shared meals as a practical cultural structure.
               </p>
             </Reveal>
-            <Reveal className="flex flex-wrap gap-4 pt-2">
+            <Reveal className="flex flex-wrap items-center gap-4">
               <Link
-                href="/host"
+                href="/register"
                 className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-[#394930]"
               >
-                Start Hosting
+                Register a Table
               </Link>
               <Link
-                href="/what-we-do"
+                href="/donate"
                 className="inline-flex items-center justify-center rounded-2xl border border-white/70 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/15"
               >
-                See the Pilot Plan
+                Donate
+              </Link>
+              <Link
+                href="/keynote"
+                className="text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline"
+              >
+                Request a Keynote
               </Link>
             </Reveal>
           </div>

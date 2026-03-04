@@ -1,14 +1,15 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
-import QuickActions from "@/components/home/quick-actions";
-import WhySection from "@/components/home/why-section";
-import WhatWeDo from "@/components/home/what-we-do";
-import HowItWorks from "@/components/home/how-it-works";
-import SixPillars from "@/components/home/six-pillars";
-import StatsBand from "@/components/home/stats-band";
-import GalleryTeaser from "@/components/home/gallery-teaser";
-import SupportBand from "@/components/home/support-band";
+import SectionWho from "@/components/home/section-who";
+import SectionWhy from "@/components/home/section-why";
+import SectionWhat from "@/components/home/section-what";
+import SectionHow from "@/components/home/section-how";
+import SectionCycle from "@/components/home/section-cycle";
+import SectionImpact from "@/components/home/section-impact";
+import SectionPillars from "@/components/home/section-pillars";
+import SectionLeadership from "@/components/home/section-leadership";
+import SectionFunding from "@/components/home/section-funding";
 
 export default function HomePage() {
   return (
@@ -16,14 +17,15 @@ export default function HomePage() {
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <HomeHero />
-        <QuickActions />
-        <WhySection />
-        <WhatWeDo />
-        <HowItWorks />
-        <SixPillars />
-        <StatsBand />
-        <GalleryTeaser />
-        <SupportBand />
+        <SectionWho />
+        <SectionWhy />
+        <SectionWhat />
+        <SectionHow />
+        <SectionCycle />
+        <SectionImpact />
+        <SectionPillars />
+        <SectionLeadership />
+        <SectionFunding />
       </main>
       <SiteFooter />
     </>

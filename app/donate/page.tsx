@@ -1,79 +1,62 @@
-import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import ZeffyDonateEmbed from "@/components/zeffy-donate-embed";
+import { DONATION_LINKS } from "@/lib/donate-links";
 
 const TIERS = [
   {
     amount: "$50",
-    title: "Sponsor a Table",
-    description: "Helps fund host toolkits and ingredients for community education tables.",
+    title: "Tools & Ingredients",
+    description: "Helps underwrite materials and fresh ingredients for one hosted table.",
+    key: 50,
   },
   {
     amount: "$100",
-    title: "Fund Toolkits",
-    description: "Supports multiple host toolkits and resource distribution.",
+    title: "Education Support",
+    description: "Supports multiple tables and educational resources.",
+    key: 100,
   },
   {
     amount: "$500",
-    title: "Underwrite Outreach",
-    description: "Helps underwrite a local keynote and educational materials for a community group.",
+    title: "Program Underwriting",
+    description: "Helps underwrite a month of materials, toolkits, and community education.",
+    key: 500,
   },
 ];
 
 const USE_OF_FUNDS = [
   "Educational materials and toolkits",
-  "Community tables and ingredient support",
+  "Ingredients and table supplies",
   "Program measurement and reporting",
-  "Local awareness and outreach",
+  "Local outreach and awareness",
 ];
-
-const DEFAULT_DONATION_LINK = "https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-9282";
-const ENV_DONATION_LINK = process.env.NEXT_PUBLIC_DONATION_LINK?.trim();
-const DONATION_LINK = ENV_DONATION_LINK?.length ? ENV_DONATION_LINK : DEFAULT_DONATION_LINK;
-const DONATION_LABEL = DONATION_LINK.startsWith("mailto:") ? "Email to Give" : "Give Online";
-const DONATION_TARGET = DONATION_LINK.startsWith("http") ? "_blank" : undefined;
-const DONATION_REL = DONATION_TARGET ? "noreferrer" : undefined;
-const IS_FALLBACK_LINK = DONATION_LINK === DEFAULT_DONATION_LINK;
 
 export default function DonatePage() {
   return (
     <>
       <SiteHeader />
       <main className="mx-auto max-w-5xl px-6 py-16 text-[#2e2a26]">
-        <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10">
+        <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
           <p className="text-xs uppercase tracking-[0.35em] text-[#6b7a46]">Nonprofit Support</p>
           <h1 className="mt-4 text-4xl font-semibold">Donate</h1>
           <p className="mt-4 text-lg text-[#5b5149]">
-            Your support underwrites community education, cooking toolkits, and measurable program expansion.
+            Your support underwrites tools, ingredients, materials, and community education.
           </p>
-          <div className="mt-6 flex flex-wrap gap-4">
-            <a
-              href={DONATION_LINK}
-              target={DONATION_TARGET}
-              rel={DONATION_REL}
-              className="inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#556236]"
-            >
-              {DONATION_LABEL}
-            </a>
-            <Link
-              href="/register"
-              className="inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white"
-            >
-              Register a Table
-            </Link>
-          </div>
-          {IS_FALLBACK_LINK && (
-            <p className="mt-4 text-sm text-[#5b5149]">Need help with Zeffy? Email us and we’ll walk you through it.</p>
-          )}
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-3">
           {TIERS.map((tier) => (
-            <div key={tier.amount} className="rounded-3xl border border-[#dfd4c6] bg-white p-6">
+            <div key={tier.amount} className="flex flex-col rounded-3xl border border-[#dfd4c6] bg-white p-6 shadow-sm">
               <p className="text-3xl font-serif">{tier.amount}</p>
               <p className="mt-2 text-sm uppercase tracking-[0.3em] text-[#6b7a46]">{tier.title}</p>
               <p className="mt-3 text-sm text-[#5b5149]">{tier.description}</p>
+              <a
+                href={DONATION_LINKS[tier.key as 50 | 100 | 500]}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#556236]"
+              >
+                Give {tier.amount}
+              </a>
             </div>
           ))}
         </section>
@@ -89,7 +72,6 @@ export default function DonatePage() {
             Contributions help L.I.F.E. pilot a replicable model that advances public awareness and measurable participation.
           </p>
         </section>
-        <ZeffyDonateEmbed />
       </main>
       <SiteFooter />
     </>
