@@ -4,23 +4,27 @@ import Reveal from "@/components/ui/reveal";
 const ACTIONS = [
   {
     title: "Donate",
-    description: "Fuel neighborhood tables and data tracking.",
+    description: "Support our neighborhood tables.",
     href: "/donate",
+    cta: "Give Today",
   },
   {
     title: "Become a Host",
-    description: "Lead a monthly table with a ready-made kit.",
+    description: "Lead a monthly L.I.F.E. table.",
     href: "/host",
+    cta: "Start Hosting",
   },
   {
-    title: "Workshops",
-    description: "Bring the conversation to your campus or company.",
+    title: "Learn More",
+    description: "Workshops & educational programming.",
     href: "/workshops",
+    cta: "See Workshops",
   },
   {
-    title: "Contact",
-    description: "Ask a question or schedule a quick call.",
-    href: "/contact",
+    title: "Impact",
+    description: "See what we’ve accomplished.",
+    href: "/what-we-do#pilot",
+    cta: "View Impact",
   },
 ];
 
@@ -37,11 +41,8 @@ export default function QuickActions() {
             >
               <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">{action.title}</p>
               <p className="mt-2 text-sm text-[var(--muted)]">{action.description}</p>
-              <Link
-                href={action.href}
-                className="mt-4 inline-flex text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline"
-              >
-                Go
+              <Link href={action.href} className="mt-4 inline-flex text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline">
+                {action.cta}
               </Link>
             </Reveal>
           ))}

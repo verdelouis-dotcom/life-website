@@ -25,6 +25,7 @@ export default function HomeHero() {
               </h1>
             </Reveal>
             <Reveal className="space-y-3 text-lg leading-snug text-[var(--text)]">
+              <p>We recruit, train, and support community hosts to hold monthly shared meals that measurably improve nutrition habits, social connection, and health outcomes over time.</p>
               <p>
                 One shared table each month. Fresh food, unhurried conversation, and a simple rhythm any neighbor can repeat. We make the kit,
                 train the host, and support the follow-up.
