@@ -10,7 +10,7 @@ type RevealProps = {
 
 export default function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => typeof window === "undefined");
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -31,6 +31,8 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
         if (entry.isIntersecting) {
           setIsVisible(true);
           observer.disconnect();
+        } else {
+          setIsVisible(false);
         }
       },
       { threshold: 0.2 }
@@ -49,6 +51,7 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
   return (
     <div
       ref={ref}
+      data-reveal="true"
       className={[className, transitionClasses, isShown ? visibleState : hiddenState].join(" ").trim()}
       style={!prefersReducedMotion && delay ? { transitionDelay: `${delay}ms` } : undefined}
     >

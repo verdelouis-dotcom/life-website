@@ -4,6 +4,8 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import CanonicalRedirect from "@/components/canonical-redirect";
 
+const SITE_URL = "https://www.longevityinitiativeforfoodandeducation.com";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
@@ -18,9 +20,13 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Longevity Initiative for Food & Education",
   description:
     "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     title: "Longevity Initiative for Food & Education",
     description:
@@ -57,6 +63,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
         <CanonicalRedirect />
         {children}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
       </body>
     </html>
   );
