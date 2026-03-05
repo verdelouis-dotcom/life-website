@@ -28,7 +28,7 @@ export default function HomeHero() {
           <Reveal className="flex flex-wrap items-center gap-4">
             <Link
               href="/register"
-              className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-[#394930]"
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
             >
               Register a Table
             </Link>
@@ -38,7 +38,8 @@ export default function HomeHero() {
             >
               Donate
             </Link>
-            <Link href="/keynote" className="text-sm font-semibold text-[var(--olive)] underline-offset-4 hover:underline">
+            <Link href="/keynote" className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
+            >
               Request a Keynote
             </Link>
           </Reveal>
