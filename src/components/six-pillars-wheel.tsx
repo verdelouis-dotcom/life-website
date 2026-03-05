@@ -10,15 +10,15 @@ const SEGMENTS = [
 ];
 
 const GROUP_BADGES = [
-  { label: "Physical", details: "Food • Movement", style: { top: "4%", left: "12%" } },
-  { label: "Social", details: "Connection • Community", style: { top: "36%", right: "4%" } },
-  { label: "Psychological", details: "Purpose • Stress Regulation", style: { bottom: "4%", left: "20%" } },
+  { label: "Physical", details: "Food • Movement", style: { top: "2%", left: "8%" } },
+  { label: "Social", details: "Connection • Community", style: { top: "38%", right: "8%" } },
+  { label: "Psychological", details: "Purpose • Stress Regulation", style: { bottom: "6%", left: "18%" } },
 ];
 
-const SIZE = 360;
+const SIZE = 420;
 const CENTER = SIZE / 2;
-const RADIUS = 150;
-const LABEL_RADIUS = 115;
+const RADIUS = 180;
+const LABEL_RADIUS = 140;
 
 function polarToCartesian(angle: number, radius: number) {
   const rad = ((angle - 90) * Math.PI) / 180;
@@ -43,7 +43,7 @@ function describeSector(startAngle: number, endAngle: number) {
 
 export default function SixPillarsWheel() {
   return (
-    <div className="relative mx-auto w-full max-w-[420px]">
+    <div className="relative mx-auto w-full max-w-[480px]">
       <svg viewBox={`0 0 ${SIZE} ${SIZE}`} role="img" aria-labelledby="six-pillars-title six-pillars-desc">
         <title id="six-pillars-title">Six Pillars of Longevity Wheel</title>
         <desc id="six-pillars-desc">A circular diagram showing Food, Movement, Connection, Community, Purpose, and Stress Regulation surrounding the shared table.</desc>
@@ -59,22 +59,22 @@ export default function SixPillarsWheel() {
               x={pos.x}
               y={pos.y}
               textAnchor="middle"
-              className="fill-white text-[12px] font-semibold uppercase tracking-[0.2em]"
+              className="fill-white text-[14px] font-semibold uppercase tracking-[0.2em]"
             >
               {segment.label}
             </text>
           );
         })}
-        <circle cx={CENTER} cy={CENTER} r={90} fill="#fff8ef" stroke="rgba(42,42,42,0.15)" strokeWidth={2} />
+        <circle cx={CENTER} cy={CENTER} r={110} fill="#fff8ef" stroke="rgba(42,42,42,0.15)" strokeWidth={2} />
         <text
           x={CENTER}
-          y={CENTER - 10}
+          y={CENTER - 6}
           textAnchor="middle"
-          className="fill-[var(--life-forest)] text-xl font-semibold"
+          className="fill-[var(--life-forest)] text-2xl font-semibold"
         >
           The Shared Table
         </text>
-        <text x={CENTER} y={CENTER + 20} textAnchor="middle" className="fill-[var(--muted)] text-[10px] tracking-[0.3em] uppercase">
+        <text x={CENTER} y={CENTER + 26} textAnchor="middle" className="fill-[var(--muted)] text-[11px] tracking-[0.3em] uppercase">
           Cooking • Conversation • Community
         </text>
       </svg>

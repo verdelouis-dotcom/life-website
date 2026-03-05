@@ -7,15 +7,7 @@ export default function HomeHero() {
     <section className="bg-gradient-to-br from-[#fff1e2] via-[#fffdf7] to-[#f4efe6]">
       <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 py-16 md:grid-cols-[1.1fr,0.9fr] md:items-stretch md:py-24">
         <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 p-8 shadow-lg">
-          <Reveal className="flex items-center gap-4 text-xs uppercase tracking-[0.4em] text-[var(--olive)]">
-            <span>Public-Benefit Initiative</span>
-            <Link
-              href="/host"
-              className="rounded-full border border-[var(--olive)]/40 px-4 py-1 text-[0.7rem] font-semibold tracking-[0.2em] text-[var(--olive)] transition hover:bg-white"
-            >
-              Host a Table
-            </Link>
-          </Reveal>
+          <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">Public-Benefit Initiative</Reveal>
           <Reveal>
             <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] sm:text-5xl lg:text-6xl">
               Longevity Starts Here
@@ -39,6 +31,12 @@ export default function HomeHero() {
               className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
             >
               Register a Table
+            </Link>
+            <Link
+              href="/host"
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
+            >
+              Host a Table
             </Link>
             <Link
               href="/donate"
