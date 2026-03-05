@@ -12,6 +12,7 @@ import SectionLooks from "@/components/home/section-looks";
 import SectionLeadership from "@/components/home/section-leadership";
 import SectionBoard from "@/components/home/section-board";
 import SectionFunding from "@/components/home/section-funding";
+import SectionNewsletter from "@/components/home/section-newsletter";
 
 export default function HomePage() {
   return (
@@ -29,6 +30,7 @@ export default function HomePage() {
         <SectionLooks />
         <SectionLeadership />
         <SectionBoard />
+        <SectionNewsletter />
         <SectionFunding />
       </main>
       <SiteFooter />

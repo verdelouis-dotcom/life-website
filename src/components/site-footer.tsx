@@ -1,8 +1,12 @@
+import SharedTableCTA from "@/components/shared-table-cta";
+
 export default function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#dfd4c6] bg-[#f4efe6]">
+    <>
+      <SharedTableCTA />
+      <footer className="border-t border-[#dfd4c6] bg-[#f4efe6]">
       <div className="mx-auto max-w-6xl px-6 py-10 text-[#2e2a26]">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
@@ -57,6 +61,7 @@ export default function SiteFooter() {
           <p>No goods or services were provided in exchange for donations unless otherwise noted.</p>
         </div>
       </div>
-    </footer>
+      </footer>
+    </>
   );
 }

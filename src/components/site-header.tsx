@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { href: "/host", label: "Become a Host" },
   { href: "/register", label: "Register a Table" },
   { href: "/donate", label: "Donate" },
+  { href: "/newsletter", label: "Newsletter" },
   { href: "/keynote", label: "Keynote" },
   { href: "mailto:info@longevityinitiativeforfoodandeducation.com", label: "Contact Us" },
 ];
