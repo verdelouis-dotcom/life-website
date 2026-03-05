@@ -66,7 +66,7 @@ export default function SixPillarsWheel() {
       </svg>
       <ul className="sr-only">
         {SEGMENTS.map((segment) => (
-          <li key={`sr-${segment.label}`}>{segment.label}</li>
+          <li key={`sr-${segment.title}`}>{segment.title}</li>
         ))}
       </ul>
     </div>
