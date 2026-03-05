@@ -8,10 +8,10 @@ import SectionHow from "@/components/home/section-how";
 import SectionSpread from "@/components/home/section-spread";
 import SectionImpact from "@/components/home/section-impact";
 import SectionPillars from "@/components/home/section-pillars";
+import SectionLooks from "@/components/home/section-looks";
 import SectionLeadership from "@/components/home/section-leadership";
 import SectionBoard from "@/components/home/section-board";
 import SectionFunding from "@/components/home/section-funding";
-import SectionLooks from "@/components/home/section-looks";
 
 export default function HomePage() {
   return (
@@ -26,10 +26,10 @@ export default function HomePage() {
         <SectionSpread />
         <SectionImpact />
         <SectionPillars />
+        <SectionLooks />
         <SectionLeadership />
         <SectionBoard />
         <SectionFunding />
-        <SectionLooks />
       </main>
       <SiteFooter />
     </>

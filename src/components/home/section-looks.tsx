@@ -1,5 +1,5 @@
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
 const WORKSHOP_IMAGES = [
@@ -31,8 +31,12 @@ const FOOD_IMAGES = [
 ];
 
 const IMAGES = [...WORKSHOP_IMAGES, ...FOOD_IMAGES];
+const INITIAL_COUNT = 4;
 
 export default function SectionLooks() {
+  const [showAll, setShowAll] = useState(false);
+  const imagesToShow = showAll ? IMAGES : IMAGES.slice(0, INITIAL_COUNT);
+
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
@@ -41,7 +45,7 @@ export default function SectionLooks() {
           <p className="text-sm text-[var(--muted)]">Images shared with permission from the Metro Atlanta pilot.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
-          {IMAGES.map((image, index) => (
+          {imagesToShow.map((image, index) => (
             <Reveal key={image.src} delay={index * 80} className="overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-sm">
               <div className="relative aspect-square w-full">
                 <Image src={image.src} alt={image.alt} fill className="object-cover object-center" sizes="(min-width: 768px) 50vw, 100vw" />
@@ -49,6 +53,17 @@ export default function SectionLooks() {
             </Reveal>
           ))}
         </div>
+        {!showAll && IMAGES.length > INITIAL_COUNT && (
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
+            >
+              View All Photos
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
