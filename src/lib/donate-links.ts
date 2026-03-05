@@ -14,4 +14,5 @@ export const DONATION_LINKS = {
   50: normalize(process.env.NEXT_PUBLIC_DONATION_50),
   100: normalize(process.env.NEXT_PUBLIC_DONATION_100),
   500: normalize(process.env.NEXT_PUBLIC_DONATION_500),
+  1000: normalize(process.env.NEXT_PUBLIC_DONATION_1000),
 };

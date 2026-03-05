@@ -5,21 +5,28 @@ import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
 const TIERS = [
   {
     amount: "$50",
-    title: "Tools & Ingredients",
-    description: "Helps underwrite materials and fresh ingredients for one hosted table.",
+    title: "One Shared Table",
+    description:
+      "Provides ingredients and basic tools for one L.I.F.E. table where people gather to cook, learn, and share a Mediterranean meal together.",
     key: 50,
   },
   {
     amount: "$100",
-    title: "Education Support",
-    description: "Supports multiple tables and educational resources.",
+    title: "Two Shared Tables",
+    description: "Provides ingredients and tools for two L.I.F.E. tables, helping more families experience the power of cooking and eating together.",
     key: 100,
   },
   {
     amount: "$500",
-    title: "Program Underwriting",
-    description: "Helps underwrite a month of materials, toolkits, and community education.",
+    title: "Host a Year of Tables",
+    description: "Funds a L.I.F.E. host with the equipment, tools, and educational resources needed to lead shared meals throughout the year.",
     key: 500,
+  },
+  {
+    amount: "$1,000",
+    title: "Community Impact",
+    description: "Helps fund multiple months of L.I.F.E. tables and supports the launch of new hosts in the community.",
+    key: 1000,
   },
 ];
 
@@ -51,14 +58,14 @@ export default function DonatePage() {
           </a>
         </section>
 
-        <section className="mt-12 grid gap-6 md:grid-cols-3">
+        <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {TIERS.map((tier) => (
             <div key={tier.amount} className="flex flex-col rounded-3xl border border-[#dfd4c6] bg-white p-6 shadow-sm">
               <p className="text-3xl font-serif">{tier.amount}</p>
               <p className="mt-2 text-sm uppercase tracking-[0.3em] text-[#6b7a46]">{tier.title}</p>
               <p className="mt-3 text-sm text-[#5b5149]">{tier.description}</p>
               <a
-                href={DONATION_LINKS[tier.key as 50 | 100 | 500]}
+                href={DONATION_LINKS[tier.key as 50 | 100 | 500 | 1000]}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#556236]"
