@@ -20,6 +20,8 @@ export default function NewsletterSignup({ title, description, compact = false, 
     setStatus("loading");
     setMessage(null);
 
+    let serverError: string | null = null;
+
     try {
       const response = await fetch("/api/newsletter", {
         method: "POST",
@@ -28,29 +30,32 @@ export default function NewsletterSignup({ title, description, compact = false, 
       });
 
       const data = await response.json().catch(() => null);
+      if (typeof data?.error === "string") {
+        serverError = data.error;
+      }
 
       if (!response.ok) {
-        throw new Error("Request failed");
+        throw new Error(serverError || "Request failed");
       }
 
       setStatus("success");
       if (data?.alreadySubscribed) {
-        setMessage("You&apos;re already part of The Shared Table.");
+        setMessage("You're already part of The Shared Table.");
       } else {
-        setMessage("You&apos;re now part of The Shared Table.");
+        setMessage("You're now part of The Shared Table.");
         setEmail("");
       }
     } catch (error) {
       console.error("NEWSLETTER_SIGNUP_ERROR", error);
       setStatus("error");
-      setMessage("Something went wrong. Please try again.");
+      setMessage(serverError || "Something went wrong. Please try again.");
     }
   }
 
   if (status === "success" && compact) {
     return (
       <div className="rounded-2xl border border-[var(--border)] bg-white/80 px-4 py-3 text-sm text-[var(--olive)] shadow-sm">
-        You&apos;re subscribed to The Shared Table. Welcome.
+        {"You're subscribed to The Shared Table. Welcome."}
       </div>
     );
   }
