@@ -1,20 +1,32 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/reveal";
 
 export default function SectionWhy() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
-      <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
-        <Reveal>
-          <h2 className="section-heading">Why Now</h2>
-        </Reveal>
-        <Reveal>
-          <p className="text-lg leading-relaxed text-[var(--muted)]">
-            U.S. life expectancy is declining. Chronic disease is rising. Isolation is increasing.
-            <br />
-            Shared meals are disappearing—along with routines that once reinforced connection, real food, and healthier daily habits.
-            <br />
-             L.I.F.E. restores practical fundamentals people can use at home.
-          </p>
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2">
+        <div className="space-y-5 text-left">
+          <Reveal>
+            <h2 className="section-heading text-left md:text-left">Why Now</h2>
+          </Reveal>
+          <Reveal className="space-y-3 text-lg leading-relaxed text-[var(--muted)]">
+            <div className="space-y-1">
+              <p>U.S. life expectancy is declining.</p>
+              <p>Chronic disease is rising.</p>
+              <p>Isolation is increasing.</p>
+            </div>
+            <p>Shared meals are disappearing—along with routines that once reinforced connection, real food, and healthier daily habits.</p>
+            <p>L.I.F.E. restores practical habits people can use at home.</p>
+          </Reveal>
+        </div>
+        <Reveal delay={120} className="relative aspect-square w-full overflow-hidden rounded-[28px] border border-[var(--border)] shadow-lg">
+          <Image
+            src="/images/fat-kits-eating-mcdonalds.jpg"
+            alt="Children eating fast food alone"
+            fill
+            className="object-cover"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
         </Reveal>
       </div>
     </section>
