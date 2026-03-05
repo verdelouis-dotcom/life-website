@@ -25,7 +25,6 @@ export default function SectionNewsletter() {
           ))}
         </div>
         <NewsletterSignup buttonLabel="Join the Newsletter" description="" />
-        <p className="text-center text-xs uppercase tracking-[0.3em] text-[var(--olive)]">No spam. Just thoughtful updates from the table.</p>
       </div>
     </section>
   );

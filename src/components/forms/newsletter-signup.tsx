@@ -27,17 +27,23 @@ export default function NewsletterSignup({ title, description, compact = false, 
         body: JSON.stringify({ email }),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
         throw new Error("Request failed");
       }
 
       setStatus("success");
-      setMessage("You are on the list. Thank you for being part of the table.");
-      setEmail("");
+      if (data?.alreadySubscribed) {
+        setMessage("You&apos;re already part of The Shared Table.");
+      } else {
+        setMessage("You&apos;re now part of The Shared Table.");
+        setEmail("");
+      }
     } catch (error) {
       console.error("NEWSLETTER_SIGNUP_ERROR", error);
       setStatus("error");
-      setMessage("Something went wrong. Please try again or email info@longevityinitiativeforfoodandeducation.com.");
+      setMessage("Something went wrong. Please try again.");
     }
   }
 
@@ -63,7 +69,7 @@ export default function NewsletterSignup({ title, description, compact = false, 
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           required
-          placeholder="you@email.com"
+          placeholder="Enter your email"
           className="flex-1 rounded-2xl border border-[var(--border)] bg-white/80 px-4 py-3 text-base text-[var(--text)] shadow-sm focus:border-[var(--olive)] focus:outline-none"
         />
         <button
@@ -77,6 +83,9 @@ export default function NewsletterSignup({ title, description, compact = false, 
       {message && (
         <p className={`text-sm ${status === "success" ? "text-[var(--olive)]" : "text-[var(--terracotta)]"}`}>{message}</p>
       )}
+      <p className={`text-xs uppercase tracking-[0.3em] text-[var(--olive)] ${compact ? "text-left" : "text-center"}`}>
+        No spam. Just thoughtful updates from the table.
+      </p>
     </div>
   );
 }
