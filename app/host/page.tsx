@@ -1,4 +1,4 @@
-import Link from "next/link";
+import type { ReactNode } from "react";
 
 const CTA_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=Become%20a%20LIFE%20Host";
 
@@ -95,15 +95,7 @@ export default function HostPage() {
   );
 }
 
-function SectionBlock({
-  title,
-  description,
-  children,
-}: {
-  title: string;
-  description: string;
-  children: React.ReactNode;
-}) {
+function SectionBlock({ title, description, children }: { title: string; description: string; children: ReactNode }) {
   return (
     <section className="py-14">
       <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
