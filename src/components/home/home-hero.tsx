@@ -45,8 +45,8 @@ export default function HomeHero() {
         </div>
         <Reveal delay={120} className="relative h-[420px] w-full overflow-hidden rounded-[36px] border border-[var(--border)] shadow-xl">
           <Image
-            src="/images/pasta.jpeg"
-            alt="Pasta, olive oil, and tomatoes ready for a LIFE table"
+            src="/images/farm/farm.jpg"
+            alt="Fresh produce and olive oil set out for a LIFE table"
             fill
             className="object-cover"
             priority

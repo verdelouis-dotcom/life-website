@@ -1,9 +1,9 @@
 import Reveal from "@/components/ui/reveal";
 
 const IMPACT_CARDS = [
-  { label: "Pilot (1 Host)", tables: "78 Tables / Year", people: "≈ 624 People" },
-  { label: "10 Hosts", tables: "780 Tables / Year", people: "≈ 6,240 People" },
-  { label: "Measured", tables: "Tables • People • Cities", people: "Register portal reporting" },
+  { label: "Host-Led", tables: "12 Tables / Year", people: "Personally led by each LIFE Host" },
+  { label: "Activated Cycle", tables: "78 Tables / Year", people: "Total shared meal experiences sparked" },
+  { label: "10 Hosts", tables: "780 Tables / Year", people: "≈ 6,240 People engaged" },
 ];
 
 export default function SectionImpact() {
@@ -15,8 +15,8 @@ export default function SectionImpact() {
         </Reveal>
         <Reveal>
           <p className="text-base text-[var(--muted)]">
-            Each hosted table invites one new table. Over 12 months, one L.I.F.E. host produces a minimum of 78 tables per year. 10 L.I.F.E.
-            hosts produce 780 tables per year.
+            Every host personally leads 12 monthly tables. Because each gathering equips a guest to host the next, the invite cycle activates
+            a minimum of 78 shared meal experiences per host each year. Scaling to 10 hosts produces 780 registered tables annually.
           </p>
         </Reveal>
         <div className="grid gap-4 md:grid-cols-3">

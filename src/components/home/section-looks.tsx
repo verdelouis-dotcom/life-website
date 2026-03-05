@@ -2,28 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
-const IMAGES = [
-  {
-    src: "/images/workshops/pasta-lesson-1.jpg",
-    alt: "Hands guiding pasta dough through a machine",
-  },
-  {
-    src: "/images/workshops/pasta-lesson-2.jpg",
-    alt: "Fresh pasta sheets resting on a kitchen counter",
-  },
-  {
-    src: "/images/workshops/pasta-lesson-3.jpeg",
-    alt: "Neighbors rolling dough side-by-side",
-  },
-  {
-    src: "/images/workshops/pasta-lesson-4.jpeg",
-    alt: "Community members sharing a laugh over mixing bowls",
-  },
-  {
-    src: "/images/workshops/pasta-lesson-5.jpeg",
-    alt: "Finished pasta plated for guests",
-  },
+const WORKSHOP_IMAGES = [
+  { src: "/images/workshops/pasta-lesson-1.jpg", alt: "Hands guiding pasta dough through a roller" },
+  { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Fresh pasta sheets resting on a counter" },
+  { src: "/images/workshops/pasta-lesson-3.jpeg", alt: "Neighbors rolling dough together" },
+  { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Community members mixing ingredients" },
+  { src: "/images/workshops/pasta-lesson-5.jpeg", alt: "Finished pasta plated for guests" },
+  { src: "/images/workshops/IMG_4252.jpeg", alt: "Workshop guests laughing around the table" },
+  { src: "/images/workshops/IMG_6709.jpeg", alt: "Host demonstrating sauce prep" },
+  { src: "/images/workshops/IMG_6843.jpeg", alt: "Hands kneading dough during a LIFE table" },
+  { src: "/images/workshops/IMG_8060.jpeg", alt: "Neighbors folding pasta sheets" },
+  { src: "/images/workshops/IMG_8145.JPG", alt: "Guests plating pasta together" },
 ];
+
+const FOOD_IMAGES = [
+  { src: "/images/Food/octopus.jpeg", alt: "Seafood ingredients staged for cooking" },
+  { src: "/images/Food/pasta.jpeg", alt: "Fresh pasta with tomatoes and olive oil" },
+  { src: "/images/Food/pasta2.jpeg", alt: "Close-up of handmade pasta nests" },
+  { src: "/images/Food/pasta3.jpeg", alt: "Plated pasta topped with herbs" },
+  { src: "/images/Food/pasta4.jpeg", alt: "Pasta drying on a rack" },
+  { src: "/images/Food/pasta5.jpeg", alt: "Rolling pin over thin pasta sheets" },
+  { src: "/images/Food/pasta6.jpeg", alt: "Cut pasta strands ready to cook" },
+  { src: "/images/Food/pasta7.jpeg", alt: "Rustic board with pasta dough" },
+  { src: "/images/Food/pasta9.png", alt: "Bowls of Mediterranean ingredients" },
+  { src: "/images/Food/veggies.jpeg", alt: "Fresh vegetables arranged for chopping" },
+  { src: "/images/Food/veggies2.jpeg", alt: "Colorful produce laid out for a meal" },
+  { src: "/images/Food/veggies3.jpeg", alt: "Tomatoes and greens ready for prep" },
+];
+
+const IMAGES = [...WORKSHOP_IMAGES, ...FOOD_IMAGES];
 
 export default function SectionLooks() {
   return (
@@ -41,14 +48,6 @@ export default function SectionLooks() {
               </div>
             </Reveal>
           ))}
-        </div>
-        <div className="text-center">
-          <Link
-            href="/gallery"
-            className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
-          >
-            View Gallery
-          </Link>
         </div>
       </div>
     </section>
