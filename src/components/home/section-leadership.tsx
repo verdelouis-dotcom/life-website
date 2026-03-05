@@ -8,9 +8,10 @@ export default function SectionLeadership() {
         <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Leadership</Reveal>
         <Reveal>
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            Founder Lou Verde delivers community education on L.I.F.E. principles and longevity fundamentals. Lou has traveled
-            internationally—with an emphasis on Italy—to study cultural patterns linked to longer, healthier lives, and continues this field
-            research to enrich the program.
+            Founder Lou Verde delivers community education on L.I.F.E. principles and longevity fundamentals.
+            <br />
+            Lou has traveled internationally—with an emphasis on Italy—to study cultural patterns linked to longer, healthier lives, and
+            continues this field research to enrich the program.
           </p>
         </Reveal>
         <Reveal delay={120}>

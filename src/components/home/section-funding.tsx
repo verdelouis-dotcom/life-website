@@ -20,6 +20,9 @@ export default function SectionFunding() {
             Donate
           </Link>
         </Reveal>
+        <p className="text-xs text-[var(--muted)]">
+          Funding streams include individual donations, local sponsorships, keynote honoraria, and grants.
+        </p>
       </div>
     </section>
   );

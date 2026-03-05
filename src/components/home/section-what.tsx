@@ -3,7 +3,7 @@ import Reveal from "@/components/ui/reveal";
 const CARDS = [
   {
     title: "Teach",
-    description: "Longevity fundamentals based on 9 pillars, translated into practical daily habits.",
+    description: "Longevity fundamentals across six pillars, translated into practical daily habits.",
   },
   {
     title: "Cook",
@@ -23,7 +23,7 @@ export default function SectionWhat() {
   return (
     <section className="bg-white py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-8 px-6">
-        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)] text-center">What We Do</Reveal>
+        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)] text-center">The Program</Reveal>
         <div className="grid gap-6 md:grid-cols-2">
           {CARDS.map((card, index) => (
             <Reveal

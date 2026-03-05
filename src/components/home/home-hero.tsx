@@ -1,19 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
 export default function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#0e1511]">
-      <div
-        className="absolute inset-0 bg-cover"
-        style={{
-          backgroundImage: "url(/images/hero-table-family.jpg)",
-          backgroundPosition: "top center",
-          filter: "brightness(0.55) saturate(0.85)",
-        }}
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-table-family.jpg"
+          alt="Neighbors sharing a long table meal"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+      <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
         <div className="max-w-2xl rounded-3xl bg-[var(--surface)]/90 p-8 text-[var(--text)] shadow-2xl shadow-black/30 backdrop-blur-sm">
@@ -24,13 +25,16 @@ export default function HomeHero() {
                 Longevity Starts Here
               </h1>
             </Reveal>
+            <Reveal>
+              <p className="text-lg font-medium text-[var(--text)]">Restoring the table as a foundation for healthier, longer lives.</p>
+            </Reveal>
             <Reveal className="space-y-3 text-lg leading-snug text-[var(--text)]">
-              <p>
-                L.I.F.E. is a nonprofit initiative piloting in Metro Atlanta.
-                <br />
-                We teach longevity fundamentals and Mediterranean home cooking.
-                <br />
-                We restore shared meals as a practical cultural structure.
+              <p>L.I.F.E. is a nonprofit initiative piloting in Metro Atlanta.</p>
+              <p>We teach longevity fundamentals through Mediterranean cooking and shared meals.</p>
+            </Reveal>
+            <Reveal>
+              <p className="text-sm uppercase tracking-[0.2em] text-[var(--olive)]">
+                Each L.I.F.E. host leads one table per month, creating 78 shared meal experiences annually.
               </p>
             </Reveal>
             <Reveal className="flex flex-wrap items-center gap-4">

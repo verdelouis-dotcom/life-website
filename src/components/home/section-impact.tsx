@@ -1,9 +1,9 @@
 import Reveal from "@/components/ui/reveal";
 
 const IMPACT_CARDS = [
-  { label: "1 Host", value: "78 Tables / Year" },
-  { label: "10 Hosts", value: "780 Tables / Year" },
-  { label: "Measured by Registration", value: "Tables • People • Cities" },
+  { label: "Pilot (1 Host)", tables: "78 Tables / Year", people: "≈ 624 People" },
+  { label: "10 Hosts", tables: "780 Tables / Year", people: "≈ 6,240 People" },
+  { label: "Measured", tables: "Tables • People • Cities", people: "Register portal reporting" },
 ];
 
 export default function SectionImpact() {
@@ -21,7 +21,8 @@ export default function SectionImpact() {
           {IMPACT_CARDS.map((card, index) => (
             <Reveal key={card.label} delay={index * 80} className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-sm">
               <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">{card.label}</p>
-              <p className="mt-3 text-xl font-semibold">{card.value}</p>
+              <p className="mt-3 text-xl font-semibold">{card.tables}</p>
+              <p className="mt-1 text-sm text-[var(--muted)]">{card.people}</p>
             </Reveal>
           ))}
         </div>
