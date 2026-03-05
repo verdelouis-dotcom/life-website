@@ -5,8 +5,8 @@ import Reveal from "@/components/ui/reveal";
 export default function HomeHero() {
   return (
     <section className="bg-gradient-to-br from-[#fff1e2] via-[#fffdf7] to-[#f4efe6]">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-[1.1fr,0.9fr] md:py-24">
-        <div className="flex flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 p-8 shadow-lg">
+      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 py-16 md:grid-cols-[1.1fr,0.9fr] md:items-stretch md:py-24">
+        <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 p-8 shadow-lg">
           <Reveal className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">Public-Benefit Initiative</Reveal>
           <Reveal>
             <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] sm:text-5xl lg:text-6xl">
@@ -43,7 +43,10 @@ export default function HomeHero() {
             </Link>
           </Reveal>
         </div>
-        <Reveal delay={120} className="relative h-[420px] w-full overflow-hidden rounded-[36px] border border-[var(--border)] shadow-xl">
+        <Reveal
+          delay={120}
+          className="relative w-full overflow-hidden rounded-[36px] border border-[var(--border)] shadow-xl min-h-[360px] md:min-h-[520px]"
+        >
           <Image
             src="/images/farm/farm.jpg"
             alt="Fresh produce and olive oil set out for a LIFE table"
