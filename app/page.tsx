@@ -6,7 +6,6 @@ import SectionWhy from "@/components/home/section-why";
 import SectionWhat from "@/components/home/section-what";
 import SectionHow from "@/components/home/section-how";
 import SectionSpread from "@/components/home/section-spread";
-import SectionCycle from "@/components/home/section-cycle";
 import SectionLooks from "@/components/home/section-looks";
 import SectionImpact from "@/components/home/section-impact";
 import SectionPillars from "@/components/home/section-pillars";
@@ -25,7 +24,6 @@ export default function HomePage() {
         <SectionWhat />
         <SectionHow />
         <SectionSpread />
-        <SectionCycle />
         <SectionLooks />
         <SectionImpact />
         <SectionPillars />
