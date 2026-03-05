@@ -1,21 +1,29 @@
+import IconEducation from "@/components/icons/icon-education";
+import IconRealFood from "@/components/icons/icon-real-food";
+import IconSharedMeals from "@/components/icons/icon-shared-meals";
+import IconToolkit from "@/components/icons/icon-toolkit";
 import Reveal from "@/components/ui/reveal";
 
 const CARDS = [
   {
     title: "Teach",
-    description: "Longevity fundamentals across six pillars, translated into practical daily habits.",
+    description: "Longevity fundamentals people can practice at home.",
+    Icon: IconEducation,
   },
   {
     title: "Cook",
-    description: "Mediterranean-style home cooking using fresh, accessible ingredients.",
+    description: "Mediterranean-style meals with simple ingredients.",
+    Icon: IconRealFood,
   },
   {
     title: "Gather",
-    description: "A structured shared-meal experience that restores connection and routine.",
+    description: "Shared meals that rebuild connection.",
+    Icon: IconSharedMeals,
   },
   {
     title: "Equip",
-    description: "Tools, recipes, prompts, and materials designed to be repeated at home.",
+    description: "Tools and recipes designed to be passed on.",
+    Icon: IconToolkit,
   },
 ];
 
@@ -23,21 +31,22 @@ export default function SectionWhat() {
   return (
     <section className="bg-white py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-8 px-6">
-        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)] text-center">The Program</Reveal>
-        <div className="grid gap-6 md:grid-cols-2">
-          {CARDS.map((card, index) => (
+        <Reveal className="space-y-3 text-center">
+          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">The Program</p>
+          <h2 className="section-heading">The Program</h2>
+        </Reveal>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {CARDS.map(({ title, description, Icon }, index) => (
             <Reveal
-              key={card.title}
+              key={title}
               delay={index * 80}
-              className="flex h-full flex-col rounded-[28px] border border-[var(--border)] bg-[var(--surface)]/95 p-6 shadow-sm"
+              className="flex h-full flex-col rounded-[28px] border border-[var(--border)] bg-[var(--surface)]/95 p-6 text-left shadow-sm"
             >
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--olive)]/15 text-sm font-semibold text-[var(--olive)]">
-                  {card.title[0]}
-                </span>
-                <p className="text-lg font-semibold">{card.title}</p>
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--olive)]/10">
+                <Icon className="h-6 w-6 text-[var(--olive)]" />
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{card.description}</p>
+              <p className="mt-4 text-lg font-semibold text-[var(--text)]">{title}</p>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{description}</p>
             </Reveal>
           ))}
         </div>

@@ -13,7 +13,7 @@ export default function SectionSpread() {
       <div className="mx-auto max-w-6xl space-y-6 px-6 text-center">
         <Reveal className="space-y-3">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">How It Spreads</p>
-          <h2 className="text-3xl font-semibold">Pilot math, made visible.</h2>
+          <h2 className="section-heading">Pilot math, made visible.</h2>
         </Reveal>
         <div className="grid gap-4 md:grid-cols-4">
           {SPREAD_CARDS.map((card, index) => (

@@ -6,6 +6,9 @@ export default function SectionWhy() {
       <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
         <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Why Now</Reveal>
         <Reveal>
+          <h2 className="section-heading">Why Now</h2>
+        </Reveal>
+        <Reveal>
           <p className="text-lg leading-relaxed text-[var(--muted)]">
             U.S. life expectancy is declining. Chronic disease is rising. Isolation is increasing.
             <br />

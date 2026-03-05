@@ -29,9 +29,9 @@ export default function SectionLooks() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
-        <Reveal className="text-center">
+        <Reveal className="text-center space-y-3">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">What It Looks Like</p>
-          <h2 className="mt-3 text-3xl font-semibold">Images shared with permission from the Metro Atlanta pilot.</h2>
+          <h2 className="section-heading">Images shared with permission from the Metro Atlanta pilot.</h2>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
           {IMAGES.map((image, index) => (

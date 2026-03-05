@@ -10,7 +10,10 @@ export default function SectionImpact() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
-        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Impact Model</Reveal>
+        <Reveal className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Impact Model</p>
+          <h2 className="section-heading">Impact Model</h2>
+        </Reveal>
         <Reveal>
           <p className="text-base text-[var(--muted)]">
             Each hosted table invites one new table. Over 12 months, one L.I.F.E. host produces a minimum of 78 tables per year. 10 L.I.F.E.

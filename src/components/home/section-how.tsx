@@ -6,7 +6,10 @@ export default function SectionHow() {
   return (
     <section className="bg-[#f8f4ec] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
-        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">How It Works</Reveal>
+        <Reveal className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">How It Works</p>
+          <h2 className="section-heading">How It Works</h2>
+        </Reveal>
         <div className="grid gap-4 text-left sm:grid-cols-2 md:grid-cols-4">
           {STEPS.map((step, index) => (
             <Reveal key={step} delay={index * 70} className="rounded-[24px] border border-[var(--border)] bg-white p-5 text-center shadow-sm">
