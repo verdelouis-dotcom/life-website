@@ -1,6 +1,11 @@
 import Reveal from "@/components/ui/reveal";
 
-const STEPS = ["Host Table", "Teach Meal", "Invite Next", "Register Impact"];
+const STEPS = [
+  { title: "Host", description: "Invite a small group to cook and share a meal." },
+  { title: "Cook", description: "Learn longevity fundamentals while preparing the meal." },
+  { title: "Pass It On", description: "One guest hosts the next table within 30 days." },
+  { title: "Register", description: "Record the table to track community impact." },
+];
 
 export default function SectionHow() {
   return (
@@ -11,9 +16,10 @@ export default function SectionHow() {
         </Reveal>
         <div className="grid gap-4 text-left sm:grid-cols-2 md:grid-cols-4">
           {STEPS.map((step, index) => (
-            <Reveal key={step} delay={index * 70} className="rounded-[24px] border border-[var(--border)] bg-white p-5 text-center shadow-sm">
+            <Reveal key={step.title} delay={index * 70} className="rounded-[24px] border border-[var(--border)] bg-white p-5 text-center shadow-sm">
               <p className="text-xs uppercase tracking-[0.4em] text-[var(--olive)]">Step {index + 1}</p>
-              <p className="mt-2 text-lg font-semibold">{step}</p>
+              <p className="mt-2 text-lg font-semibold">{step.title}</p>
+              <p className="mt-2 text-sm text-[var(--muted)]">{step.description}</p>
             </Reveal>
           ))}
         </div>
