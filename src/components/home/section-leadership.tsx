@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
@@ -13,6 +14,9 @@ export default function SectionLeadership() {
             Lou has traveled internationally—with an emphasis on Italy—to study cultural patterns linked to longer, healthier lives, and
             continues this field research to enrich the program.
           </p>
+        </Reveal>
+        <Reveal className="mx-auto h-64 w-64 overflow-hidden rounded-full border border-[var(--border)] shadow-sm">
+          <Image src="/images/founder2.jpeg" alt="Founder Lou Verde" width={256} height={256} className="h-full w-full object-cover" />
         </Reveal>
         <Reveal delay={120}>
           <Link
