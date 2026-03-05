@@ -10,15 +10,15 @@ const SEGMENTS = [
 ];
 
 const GROUP_BADGES = [
-  { label: "Physical", details: "Food • Movement", style: { top: "-6%", left: "10%" } },
-  { label: "Social", details: "Connection • Community", style: { top: "32%", right: "-8%" } },
-  { label: "Psychological", details: "Purpose • Stress Regulation", style: { bottom: "-6%", left: "20%" } },
+  { label: "Physical", details: "Food • Movement", style: { top: "-8%", left: "15%" } },
+  { label: "Social", details: "Connection • Community", style: { top: "28%", right: "-10%" } },
+  { label: "Psychological", details: "Purpose • Stress Regulation", style: { bottom: "-10%", left: "22%" } },
 ];
 
-const SIZE = 460;
+const SIZE = 520;
 const CENTER = SIZE / 2;
-const RADIUS = 200;
-const LABEL_RADIUS = 165;
+const RADIUS = 220;
+const LABEL_RADIUS = 190;
 
 function polarToCartesian(angle: number, radius: number) {
   const rad = ((angle - 90) * Math.PI) / 180;
@@ -50,7 +50,7 @@ export default function SixPillarsWheel() {
         {SEGMENTS.map((segment) => (
           <path key={segment.label} d={describeSector(segment.start, segment.end)} fill={segment.color} opacity={0.92} />
         ))}
-        <circle cx={CENTER} cy={CENTER} r={95} fill="#fff8ef" stroke="rgba(42,42,42,0.12)" strokeWidth={2} />
+        <circle cx={CENTER} cy={CENTER} r={110} fill="#fff8ef" stroke="rgba(42,42,42,0.12)" strokeWidth={2} />
         {SEGMENTS.map((segment) => {
           const midAngle = (segment.start + segment.end) / 2;
           const pos = polarToCartesian(midAngle, LABEL_RADIUS);
@@ -60,6 +60,7 @@ export default function SixPillarsWheel() {
               x={pos.x}
               y={pos.y}
               textAnchor="middle"
+              dominantBaseline="middle"
               className="fill-white text-[16px] font-semibold uppercase tracking-[0.1em]"
               stroke="rgba(0,0,0,0.3)"
               strokeWidth={1}
