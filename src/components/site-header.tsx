@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: "/register", label: "Register" },
   { href: "/donate", label: "Donate" },
   { href: "/keynote", label: "Keynote" },
+  { href: "mailto:info@longevityinitiativeforfoodandeducation.com", label: "Contact Us" },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (
