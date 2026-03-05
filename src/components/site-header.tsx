@@ -4,7 +4,7 @@ import BrandLogo from "@/components/brand-logo";
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/host", label: "Become a Host" },
-  { href: "/register", label: "Register" },
+  { href: "/register", label: "Register a Table" },
   { href: "/donate", label: "Donate" },
   { href: "/keynote", label: "Keynote" },
   { href: "mailto:info@longevityinitiativeforfoodandeducation.com", label: "Contact Us" },
