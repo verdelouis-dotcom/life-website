@@ -27,24 +27,26 @@ export default function HomeHero() {
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
             <Link
-              href="/register"
-              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
-            >
-              Register a Table
-            </Link>
-            <Link
               href="/host"
-              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
             >
               Host a Table
             </Link>
             <Link
+              href="/register"
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
+            >
+              Register a Table
+            </Link>
+            <Link
               href="/donate"
-              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
             >
               Donate
             </Link>
-            <Link href="/keynote" className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
+            <Link
+              href="/keynote"
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/30 px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
             >
               Request a Keynote
             </Link>
