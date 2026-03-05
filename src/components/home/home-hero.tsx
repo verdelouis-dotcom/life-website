@@ -49,8 +49,8 @@ export default function HomeHero() {
           className="relative w-full overflow-hidden rounded-[36px] border border-[var(--border)] shadow-xl min-h-[360px] md:min-h-[520px]"
         >
           <Image
-            src="/images/farm/farm.jpg"
-            alt="Fresh produce and olive oil set out for a LIFE table"
+            src="/images/table/table2.jpeg"
+            alt="Set LIFE table with neighbors gathered"
             fill
             className="object-cover object-center"
             priority
