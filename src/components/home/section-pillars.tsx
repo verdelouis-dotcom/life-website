@@ -1,7 +1,5 @@
-import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 import SixPillarsWheel from "@/components/six-pillars-wheel";
-import { PILLARS } from "@/data/pillars";
 
 export default function SectionPillars() {
   return (
@@ -16,20 +14,7 @@ export default function SectionPillars() {
         <Reveal>
           <SixPillarsWheel />
         </Reveal>
-        <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">Select a pillar to learn why it matters for longevity.</p>
-        <p className="text-xs uppercase tracking-[0.3em] text-[var(--olive)]/70">The shared table naturally activates all six pillars.</p>
-        <div className="mx-auto grid max-w-4xl gap-4 text-left sm:grid-cols-2">
-          {PILLARS.map((pillar) => (
-            <Link
-              key={pillar.slug}
-              href={`/pillars/${pillar.slug}`}
-              className="rounded-3xl border border-[var(--border)] bg-white/90 p-4 shadow-sm transition hover:border-[var(--olive)]"
-            >
-              <p className="text-base font-semibold text-[var(--life-forest)]">{pillar.title}</p>
-              <p className="mt-1 text-sm text-[var(--muted)]">{pillar.summary}</p>
-            </Link>
-          ))}
-        </div>
+        <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">The shared table naturally activates all six pillars.</p>
       </div>
     </section>
   );
