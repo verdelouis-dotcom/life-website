@@ -9,19 +9,19 @@ const IMAGES = [
     caption: "Hands-on pasta lesson",
   },
   {
-    src: "/images/gallery-3.jpg",
+    src: "/images/hero-table8.jpeg",
     alt: "Fresh ingredients together",
     caption: "Fresh ingredients together",
   },
   {
-    src: "/images/farmtotable2.jpeg",
-    alt: "Real conversation",
-    caption: "Real conversation",
-  },
-  {
-    src: "/images/hero-table3.jpeg",
+    src: "/images/hero-workshop3.jpeg",
     alt: "Neighbors cooking",
     caption: "Neighbors cooking",
+  },
+  {
+    src: "/images/farmtotable3.jpeg",
+    alt: "Real conversation",
+    caption: "Real conversation",
   },
 ];
 
