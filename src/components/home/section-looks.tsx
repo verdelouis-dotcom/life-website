@@ -43,7 +43,7 @@ export default function SectionLooks() {
         <div className="grid gap-6 md:grid-cols-2">
           {IMAGES.map((image, index) => (
             <Reveal key={image.src} delay={index * 80} className="overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-sm">
-              <div className="relative h-64 w-full">
+              <div className="relative aspect-[4/3] w-full">
                 <Image src={image.src} alt={image.alt} fill className="object-cover object-top" sizes="(min-width: 768px) 50vw, 100vw" />
               </div>
             </Reveal>
