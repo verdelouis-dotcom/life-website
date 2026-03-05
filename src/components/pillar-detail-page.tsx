@@ -1,27 +1,10 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { PILLARS, getPillarBySlug } from "@/data/pillars";
+import { getPillarBySlug } from "@/data/pillars";
 
-export function generateStaticParams() {
-  return PILLARS.map((pillar) => ({ slug: pillar.slug }));
-}
-
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const pillar = getPillarBySlug(params.slug);
+export default function PillarDetailPage({ slug }: { slug: string }) {
+  const pillar = getPillarBySlug(slug);
   if (!pillar) {
-    return { title: "Pillar not found" };
-  }
-  return {
-    title: `${pillar.title} Pillar | L.I.F.E.`,
-    description: pillar.summary,
-  };
-}
-
-export default function PillarPage({ params }: { params: { slug: string } }) {
-  const pillar = getPillarBySlug(params.slug);
-  if (!pillar) {
-    notFound();
+    return null;
   }
 
   return (
