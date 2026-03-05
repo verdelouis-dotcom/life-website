@@ -42,8 +42,8 @@ export default function SixPillarsWheel() {
         {SEGMENTS.map((segment) => {
           const mid = polarToCartesian((segment.start + segment.end) / 2, LABEL_RADIUS);
           return (
-            <a key={segment.slug} href={`/pillars/${segment.slug}`} aria-label={`Learn why ${segment.title} supports longevity`}>
-              <path d={describeSector(segment.start, segment.end)} fill={segment.color} opacity={0.92} className="transition hover:opacity-100" />
+            <g key={segment.slug}>
+              <path d={describeSector(segment.start, segment.end)} fill={segment.color} opacity={0.92} />
               <text
                 x={mid.x}
                 y={mid.y}
@@ -56,7 +56,7 @@ export default function SixPillarsWheel() {
               >
                 {segment.title}
               </text>
-            </a>
+            </g>
           );
         })}
         <circle cx={CENTER} cy={CENTER} r={110} fill="#fff8ef" stroke="rgba(42,42,42,0.12)" strokeWidth={2} />
