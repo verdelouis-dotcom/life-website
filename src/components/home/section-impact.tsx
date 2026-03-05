@@ -3,7 +3,7 @@ import Reveal from "@/components/ui/reveal";
 const IMPACT_CARDS = [
   { label: "Host-Led", tables: "12 Tables / Year", people: "Personally led by each LIFE Host" },
   { label: "Activated Cycle", tables: "78 Tables / Year", people: "Total shared meal experiences sparked" },
-  { label: "10 Hosts", tables: "780 Tables / Year", people: "≈ 6,240 People engaged" },
+  { label: "10 Hosts", tables: "780 Tables / Year", people: "≈ 3,120 People engaged" },
 ];
 
 export default function SectionImpact() {
