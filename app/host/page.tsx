@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
 
 const CTA_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=Become%20a%20LIFE%20Host";
 
@@ -30,8 +32,10 @@ const HOW_TO_BEGIN = [
 
 export default function HostPage() {
   return (
-    <main className="bg-[var(--bg)] text-[var(--text)]">
-      <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-20">
+    <>
+      <SiteHeader />
+      <main className="bg-[var(--bg)] text-[var(--text)]">
+        <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-20">
         <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Become a Host</p>
           <h1 className="text-4xl font-semibold text-[var(--life-forest)] sm:text-5xl">Lead A L.I.F.E. Table</h1>
@@ -74,24 +78,26 @@ export default function HostPage() {
         </ul>
       </SectionBlock>
 
-      <SectionBlock title="How to Begin" description="Four steps to join the pilot host cohort.">
-        <ol className="space-y-3 text-[var(--muted)]">
-          {HOW_TO_BEGIN.map((item, index) => (
-            <li key={item}>
-              <span className="font-semibold text-[var(--olive)]">Step {index + 1}.</span> {item}
-            </li>
-          ))}
-        </ol>
-        <div className="mt-8 text-center">
-          <a
-            href={CTA_LINK}
-            className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-8 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
-          >
-            Become a Host
-          </a>
-        </div>
-      </SectionBlock>
-    </main>
+        <SectionBlock title="How to Begin" description="Four steps to join the pilot host cohort.">
+          <ol className="space-y-3 text-[var(--muted)]">
+            {HOW_TO_BEGIN.map((item, index) => (
+              <li key={item}>
+                <span className="font-semibold text-[var(--olive)]">Step {index + 1}.</span> {item}
+              </li>
+            ))}
+          </ol>
+          <div className="mt-8 text-center">
+            <a
+              href={CTA_LINK}
+              className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-8 py-3 text-base font-semibold text-[var(--olive)] transition hover:bg-white"
+            >
+              Become a Host
+            </a>
+          </div>
+        </SectionBlock>
+      </main>
+      <SiteFooter />
+    </>
   );
 }
 
