@@ -4,7 +4,7 @@ const SPREAD_CARDS = [
   { label: "Pilot Host", value: "1", detail: "Start with one LIFE Host" },
   { label: "Tables Led", value: "12", detail: "One hosted cooking table each month" },
   { label: "Annual Tables", value: "78", detail: "Minimum shared meal experiences" },
-  { label: "People Reached", value: "≈ 624", detail: "Assumes 8 participants per table" },
+  { label: "People Reached", value: "≈ 312", detail: "Assumes 4 participants per table" },
 ];
 
 export default function SectionSpread() {
