@@ -52,7 +52,7 @@ export default function HomeHero() {
             src="/images/farm/farm.jpg"
             alt="Fresh produce and olive oil set out for a LIFE table"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
         </Reveal>
