@@ -6,7 +6,9 @@ export default function SectionLeadership() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-4xl space-y-5 px-6 text-center">
-        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Leadership</Reveal>
+        <Reveal>
+          <h2 className="section-heading">Leadership</h2>
+        </Reveal>
         <Reveal>
           <p className="text-base leading-relaxed text-[var(--muted)]">
             Founder Lou Verde delivers community education on L.I.F.E. principles and longevity fundamentals.

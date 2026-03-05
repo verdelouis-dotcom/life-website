@@ -40,9 +40,9 @@ export default function SectionBoard() {
   return (
     <section className="bg-white py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-8 px-6">
-        <Reveal className="text-center space-y-2">
-          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Board</p>
-          <h2 className="text-3xl font-semibold">Strategic oversight, fiscal accountability, responsible growth.</h2>
+        <Reveal className="text-center space-y-3">
+          <h2 className="section-heading">Board</h2>
+          <p className="text-sm text-[var(--muted)]">Strategic oversight, fiscal accountability, responsible growth.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
           {BOARD_MEMBERS.map((member, index) => (

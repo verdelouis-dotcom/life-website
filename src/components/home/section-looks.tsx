@@ -44,7 +44,7 @@ export default function SectionLooks() {
           {IMAGES.map((image, index) => (
             <Reveal key={image.src} delay={index * 80} className="overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-sm">
               <div className="relative h-64 w-full">
-                <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
+                <Image src={image.src} alt={image.alt} fill className="object-cover object-top" sizes="(min-width: 768px) 50vw, 100vw" />
               </div>
             </Reveal>
           ))}
