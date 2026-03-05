@@ -6,27 +6,22 @@ const IMAGES = [
   {
     src: "/images/workshops/pasta-lesson-1.jpg",
     alt: "Hands guiding pasta dough through a machine",
-    caption: "Hands-on pasta lesson",
   },
   {
     src: "/images/workshops/pasta-lesson-2.jpg",
     alt: "Fresh pasta sheets resting on a kitchen counter",
-    caption: "Fresh ingredients together",
   },
   {
     src: "/images/workshops/pasta-lesson-3.jpeg",
     alt: "Neighbors rolling dough side-by-side",
-    caption: "Neighbors cooking",
   },
   {
     src: "/images/workshops/pasta-lesson-4.jpeg",
     alt: "Community members sharing a laugh over mixing bowls",
-    caption: "Real conversation",
   },
   {
     src: "/images/workshops/pasta-lesson-5.jpeg",
     alt: "Finished pasta plated for guests",
-    caption: "Shared meal moment",
   },
 ];
 
@@ -44,7 +39,6 @@ export default function SectionLooks() {
               <div className="relative h-64 w-full">
                 <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
               </div>
-              <p className="px-5 py-4 text-sm text-[var(--muted)]">{image.caption}</p>
             </Reveal>
           ))}
         </div>

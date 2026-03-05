@@ -19,12 +19,6 @@ export default function GalleryPage() {
               <div className="relative h-64 w-full">
                 <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
               </div>
-              <figcaption className="flex items-center justify-between px-4 py-3 text-sm text-[#5b5149]">
-                <span>
-                  {photo.city}, {photo.state}
-                </span>
-                <span>{photo.hostedDate}</span>
-              </figcaption>
             </figure>
           ))}
         </section>
