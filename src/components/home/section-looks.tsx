@@ -5,23 +5,28 @@ import Reveal from "@/components/ui/reveal";
 const IMAGES = [
   {
     src: "/images/workshops/pasta-lesson-1.jpg",
-    alt: "Hands-on pasta lesson",
+    alt: "Hands guiding pasta dough through a machine",
     caption: "Hands-on pasta lesson",
   },
   {
-    src: "/images/hero-table8.jpeg",
-    alt: "Fresh ingredients together",
+    src: "/images/workshops/pasta-lesson-2.jpg",
+    alt: "Fresh pasta sheets resting on a kitchen counter",
     caption: "Fresh ingredients together",
   },
   {
-    src: "/images/hero-workshop3.jpeg",
-    alt: "Neighbors cooking",
+    src: "/images/workshops/pasta-lesson-3.jpeg",
+    alt: "Neighbors rolling dough side-by-side",
     caption: "Neighbors cooking",
   },
   {
-    src: "/images/farmtotable3.jpeg",
-    alt: "Real conversation",
+    src: "/images/workshops/pasta-lesson-4.jpeg",
+    alt: "Community members sharing a laugh over mixing bowls",
     caption: "Real conversation",
+  },
+  {
+    src: "/images/workshops/pasta-lesson-5.jpeg",
+    alt: "Finished pasta plated for guests",
+    caption: "Shared meal moment",
   },
 ];
 
@@ -30,8 +35,8 @@ export default function SectionLooks() {
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
         <Reveal className="text-center space-y-3">
-          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">What It Looks Like</p>
-          <h2 className="section-heading">Images shared with permission from the Metro Atlanta pilot.</h2>
+          <h2 className="section-heading">What It Looks Like</h2>
+          <p className="text-sm text-[var(--muted)]">Images shared with permission from the Metro Atlanta pilot.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
           {IMAGES.map((image, index) => (

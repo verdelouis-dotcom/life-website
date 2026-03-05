@@ -4,7 +4,6 @@ export default function SectionWho() {
   return (
     <section className="bg-white py-14 text-[var(--text)]">
       <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
-        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Who We Are</Reveal>
         <Reveal>
           <h2 className="section-heading">Who We Are</h2>
         </Reveal>

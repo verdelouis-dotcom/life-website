@@ -10,8 +10,7 @@ export default function SectionImpact() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
-        <Reveal className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Impact Model</p>
+        <Reveal>
           <h2 className="section-heading">Impact Model</h2>
         </Reveal>
         <Reveal>

@@ -6,8 +6,7 @@ export default function SectionHow() {
   return (
     <section className="bg-[#f8f4ec] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
-        <Reveal className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">How It Works</p>
+        <Reveal>
           <h2 className="section-heading">How It Works</h2>
         </Reveal>
         <div className="grid gap-4 text-left sm:grid-cols-2 md:grid-cols-4">

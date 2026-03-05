@@ -8,31 +8,38 @@ export type GalleryPhoto = {
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
   {
-    src: "/images/gallery-1.jpg",
-    alt: "Neighbors preparing vegetables together",
+    src: "/images/workshops/pasta-lesson-1.jpg",
+    alt: "Host demonstrating how to feed pasta dough through a roller",
     city: "Atlanta",
     state: "GA",
     hostedDate: "January 2026",
   },
   {
-    src: "/images/gallery-3.jpg",
-    alt: "Family-style meal with fresh produce",
+    src: "/images/workshops/pasta-lesson-2.jpg",
+    alt: "Fresh pasta dough resting before cutting",
     city: "Decatur",
     state: "GA",
     hostedDate: "February 2026",
   },
   {
-    src: "/images/gallery-5.jpeg",
-    alt: "Hands-on pasta lesson",
-    city: "Peachtree City",
+    src: "/images/workshops/pasta-lesson-3.jpeg",
+    alt: "Neighbors pressing dough together during a cooking table",
+    city: "Smyrna",
     state: "GA",
     hostedDate: "March 2026",
   },
   {
-    src: "/images/gallery-7.jpg",
-    alt: "Outdoor hosted cooking table",
+    src: "/images/workshops/pasta-lesson-4.jpeg",
+    alt: "Community members mixing ingredients around a shared counter",
     city: "Marietta",
     state: "GA",
-    hostedDate: "March 2026",
+    hostedDate: "April 2026",
+  },
+  {
+    src: "/images/workshops/pasta-lesson-5.jpeg",
+    alt: "Completed pasta dishes being plated for guests",
+    city: "Roswell",
+    state: "GA",
+    hostedDate: "April 2026",
   },
 ];

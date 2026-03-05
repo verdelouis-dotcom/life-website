@@ -4,7 +4,6 @@ export default function SectionWhy() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
-        <Reveal className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Why Now</Reveal>
         <Reveal>
           <h2 className="section-heading">Why Now</h2>
         </Reveal>
