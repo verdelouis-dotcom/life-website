@@ -13,7 +13,7 @@ export default function SectionWhy() {
             <br />
             Shared meals are disappearing—along with routines that once reinforced connection, real food, and healthier daily habits.
             <br />
-            L.I.F.E. restores practical fundamentals people can use at home.
+             L.I.F.E. restores practical fundamentals people can use at home.
           </p>
         </Reveal>
       </div>
