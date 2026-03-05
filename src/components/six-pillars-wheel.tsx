@@ -1,24 +1,24 @@
 import type { CSSProperties } from "react";
 
 const SEGMENTS = [
-  { label: "Food", start: -90, end: -30, color: "#4f6f52" },
-  { label: "Movement", start: -30, end: 30, color: "#6d8c4b" },
-  { label: "Connection", start: 30, end: 90, color: "#3c6e9b" },
-  { label: "Community", start: 90, end: 150, color: "#5c8cc7" },
-  { label: "Purpose", start: 150, end: 210, color: "#c36a3a" },
-  { label: "Stress Regulation", start: 210, end: 270, color: "#e49a4a" },
+  { label: "Food", start: -90, end: -30, color: "#5e7d5a" },
+  { label: "Movement", start: -30, end: 30, color: "#7fa064" },
+  { label: "Connection", start: 30, end: 90, color: "#4b82b3" },
+  { label: "Community", start: 90, end: 150, color: "#6ea1d4" },
+  { label: "Purpose", start: 150, end: 210, color: "#d17a4e" },
+  { label: "Stress Regulation", start: 210, end: 270, color: "#f0ad63" },
 ];
 
 const GROUP_BADGES = [
-  { label: "Physical", details: "Food • Movement", style: { top: "2%", left: "8%" } },
-  { label: "Social", details: "Connection • Community", style: { top: "38%", right: "8%" } },
-  { label: "Psychological", details: "Purpose • Stress Regulation", style: { bottom: "6%", left: "18%" } },
+  { label: "Physical", details: "Food • Movement", style: { top: "-4%", left: "8%" } },
+  { label: "Social", details: "Connection • Community", style: { top: "34%", right: "-6%" } },
+  { label: "Psychological", details: "Purpose • Stress Regulation", style: { bottom: "-4%", left: "18%" } },
 ];
 
 const SIZE = 420;
 const CENTER = SIZE / 2;
 const RADIUS = 180;
-const LABEL_RADIUS = 140;
+const LABEL_RADIUS = 150;
 
 function polarToCartesian(angle: number, radius: number) {
   const rad = ((angle - 90) * Math.PI) / 180;
@@ -50,6 +50,7 @@ export default function SixPillarsWheel() {
         {SEGMENTS.map((segment) => (
           <path key={segment.label} d={describeSector(segment.start, segment.end)} fill={segment.color} opacity={0.92} />
         ))}
+        <circle cx={CENTER} cy={CENTER} r={110} fill="#fff8ef" stroke="rgba(42,42,42,0.15)" strokeWidth={2} />
         {SEGMENTS.map((segment) => {
           const midAngle = (segment.start + segment.end) / 2;
           const pos = polarToCartesian(midAngle, LABEL_RADIUS);
@@ -59,13 +60,15 @@ export default function SixPillarsWheel() {
               x={pos.x}
               y={pos.y}
               textAnchor="middle"
-              className="fill-white text-[14px] font-semibold uppercase tracking-[0.2em]"
+              className="fill-white text-[15px] font-semibold uppercase tracking-[0.15em]"
+              stroke="rgba(0,0,0,0.35)"
+              strokeWidth={1}
+              paintOrder="stroke"
             >
               {segment.label}
             </text>
           );
         })}
-        <circle cx={CENTER} cy={CENTER} r={110} fill="#fff8ef" stroke="rgba(42,42,42,0.15)" strokeWidth={2} />
         <text
           x={CENTER}
           y={CENTER - 6}
@@ -74,8 +77,8 @@ export default function SixPillarsWheel() {
         >
           The Shared Table
         </text>
-        <text x={CENTER} y={CENTER + 26} textAnchor="middle" className="fill-[var(--muted)] text-[11px] tracking-[0.3em] uppercase">
-          Cooking • Conversation • Community
+        <text x={CENTER} y={CENTER + 24} textAnchor="middle" className="fill-[var(--muted)] text-[12px] tracking-[0.15em] uppercase">
+          Cooking · Conversation · Community
         </text>
       </svg>
       {GROUP_BADGES.map((badge) => (
