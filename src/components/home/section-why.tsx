@@ -4,10 +4,10 @@ import Reveal from "@/components/ui/reveal";
 export default function SectionWhy() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2">
-        <div className="space-y-5 text-left">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 text-center md:grid-cols-2 md:text-left">
+        <div className="space-y-5">
           <Reveal>
-            <h2 className="section-heading text-left md:text-left">Why Now</h2>
+            <h2 className="section-heading">Why Now</h2>
           </Reveal>
           <Reveal className="space-y-3 text-lg leading-relaxed text-[var(--muted)]">
             <div className="space-y-1">
