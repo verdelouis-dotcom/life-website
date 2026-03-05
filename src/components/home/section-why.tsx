@@ -21,8 +21,8 @@ export default function SectionWhy() {
         </div>
         <Reveal delay={120} className="relative aspect-square w-full overflow-hidden rounded-[28px] border border-[var(--border)] shadow-lg">
           <Image
-            src="/images/workshops/pasta-lesson-4.jpeg"
-            alt="Neighbors sharing a handmade pasta lesson"
+            src="/images/workshops/IMG_6843.jpeg"
+            alt="Neighbors kneading dough during a LIFE table"
             fill
             className="object-cover"
             sizes="(min-width: 768px) 50vw, 100vw"
