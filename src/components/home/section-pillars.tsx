@@ -14,7 +14,8 @@ export default function SectionPillars() {
         <Reveal>
           <SixPillarsWheel />
         </Reveal>
-        <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">The shared table naturally activates all six pillars.</p>
+        <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">Tap a pillar to see the detailed longevity science.</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--olive)]/70">The shared table naturally activates all six pillars.</p>
       </div>
     </section>
   );
