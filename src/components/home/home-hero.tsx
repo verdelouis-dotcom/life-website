@@ -13,13 +13,13 @@ export default function HomeHero() {
           </Reveal>
           <Reveal>
             <p className="type-lede text-[var(--text)]">
-              L.I.F.E. helps people build longer, healthier lives through Mediterranean cooking, shared meals, and community connection.
+              The Longevity Initiative for Food &amp; Education brings people together to cook, share meals, and practice the habits that support
+              longer, healthier lives.
             </p>
           </Reveal>
           <Reveal>
             <p className="type-body max-w-2xl text-[var(--text)]">
-              Now piloting in Metro Atlanta, the Longevity Initiative for Food &amp; Education restores the table as a place to learn, gather,
-              and practice everyday longevity habits.
+              Launching in Metro Atlanta in 2026, L.I.F.E. restores the table as a place to learn, gather, and build everyday longevity habits.
             </p>
           </Reveal>
           <Reveal>
