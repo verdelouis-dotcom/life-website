@@ -100,7 +100,7 @@ export default function RegisterForm() {
     <form onSubmit={handleSubmit} className="grid gap-5">
       <div className="grid gap-4 md:grid-cols-2">
         <div className="grid gap-2">
-          <label htmlFor="name" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="name" className="type-eyebrow">
             Name
           </label>
           <input
@@ -112,7 +112,7 @@ export default function RegisterForm() {
           />
         </div>
         <div className="grid gap-2">
-          <label htmlFor="email" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="email" className="type-eyebrow">
             Email
           </label>
           <input
@@ -127,7 +127,7 @@ export default function RegisterForm() {
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         <div className="grid gap-2">
-          <label htmlFor="city" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="city" className="type-eyebrow">
             City
           </label>
           <input
@@ -138,7 +138,7 @@ export default function RegisterForm() {
           />
         </div>
         <div className="grid gap-2">
-          <label htmlFor="state" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="state" className="type-eyebrow">
             State
           </label>
           <input
@@ -151,7 +151,7 @@ export default function RegisterForm() {
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         <div className="grid gap-2">
-          <label htmlFor="dateHosted" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="dateHosted" className="type-eyebrow">
             Date Hosted
           </label>
           <input
@@ -163,7 +163,7 @@ export default function RegisterForm() {
           />
         </div>
         <div className="grid gap-2">
-          <label htmlFor="totalPeople" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="totalPeople" className="type-eyebrow">
             Total People Hosted
           </label>
           <input
@@ -178,7 +178,7 @@ export default function RegisterForm() {
         </div>
       </div>
       <div className="grid gap-2">
-        <label htmlFor="photo" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+        <label htmlFor="photo" className="type-eyebrow">
           Optional Photo
         </label>
         <input
@@ -190,21 +190,17 @@ export default function RegisterForm() {
           onChange={handlePhotoChange}
         />
       </div>
-      <label className="flex items-start gap-3 text-sm text-[var(--text)]">
+      <label className="flex items-start gap-3 type-detail text-[var(--text)]">
         <input type="checkbox" name="consentPhoto" className="mt-1" />
         <span>Yes, L.I.F.E. may share this photo publicly.</span>
       </label>
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#3a4a33] disabled:opacity-60"
-      >
+      <button type="submit" disabled={status === "submitting"} className="btn-solid text-base disabled:opacity-60">
         {status === "submitting" ? "Submitting..." : "Submit Registration"}
       </button>
       {status === "error" && errorMessage && (
         <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">{errorMessage}</p>
       )}
-      <p className="text-xs text-[var(--muted)]">Your submission helps L.I.F.E. report measurable community impact.</p>
+      <p className="type-detail">Your submission helps L.I.F.E. report measurable community impact.</p>
     </form>
   );
 }

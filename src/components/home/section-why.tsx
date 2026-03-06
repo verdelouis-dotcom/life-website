@@ -9,7 +9,7 @@ export default function SectionWhy() {
           <Reveal>
             <h2 className="section-heading">Why Now</h2>
           </Reveal>
-          <Reveal className="space-y-3 text-lg leading-relaxed text-[var(--muted)]">
+          <Reveal className="space-y-3 type-body-muted">
             <div className="space-y-1">
               <p>U.S. life expectancy is declining.</p>
               <p>Chronic disease is rising.</p>

@@ -41,18 +41,16 @@ export default function DonatePage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-5xl px-6 py-16 text-[#2e2a26]">
-        <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
-          <p className="text-xs uppercase tracking-[0.35em] text-[#6b7a46]">Nonprofit Support</p>
-          <h1 className="mt-4 text-4xl font-semibold">Donate</h1>
-          <p className="mt-4 text-lg text-[#5b5149]">
-            Your support underwrites tools, ingredients, materials, and community education.
-          </p>
+      <main className="mx-auto max-w-5xl px-6 py-16 text-[var(--text)]">
+        <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
+          <p className="type-eyebrow">Nonprofit Support</p>
+          <h1 className="section-heading">Donate</h1>
+          <p className="mt-4 type-body-muted">Your support underwrites tools, ingredients, materials, and community education.</p>
           <a
             href={PRIMARY_DONATION_LINK}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#556236]"
+            className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#394930]"
           >
             Give Online
           </a>
@@ -60,15 +58,15 @@ export default function DonatePage() {
 
         <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {TIERS.map((tier) => (
-            <div key={tier.amount} className="flex flex-col rounded-3xl border border-[#dfd4c6] bg-white p-6 shadow-sm">
-              <p className="text-3xl font-serif">{tier.amount}</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.3em] text-[#6b7a46]">{tier.title}</p>
-              <p className="mt-3 text-sm text-[#5b5149]">{tier.description}</p>
+            <div key={tier.amount} className="flex flex-col rounded-3xl border border-[var(--border)] bg-white p-6 shadow-sm">
+              <p className="text-3xl font-serif text-[var(--life-forest)]">{tier.amount}</p>
+              <p className="mt-2 type-detail uppercase tracking-[0.3em] text-[var(--olive)]">{tier.title}</p>
+              <p className="mt-3 type-detail">{tier.description}</p>
               <a
                 href={DONATION_LINKS[tier.key as 50 | 100 | 500 | 1000]}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[#6b7a46] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#556236]"
+                className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#394930]"
               >
                 Give {tier.amount}
               </a>
@@ -76,14 +74,14 @@ export default function DonatePage() {
           ))}
         </section>
 
-        <section className="mt-12 rounded-3xl border border-[#dfd4c6] bg-white p-10">
-          <p className="text-xs uppercase tracking-[0.35em] text-[#6b7a46]">Use of Funds</p>
-          <ul className="mt-4 space-y-2 text-sm text-[#5b5149]">
+        <section className="mt-12 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
+          <p className="type-eyebrow">Use of Funds</p>
+          <ul className="mt-4 space-y-2 type-detail">
             {USE_OF_FUNDS.map((item) => (
               <li key={item}>• {item}</li>
             ))}
           </ul>
-          <p className="mt-4 text-xs text-[#5b5149]">
+          <p className="mt-4 type-detail">
             Contributions help L.I.F.E. pilot a replicable model that advances public awareness and measurable participation.
           </p>
         </section>

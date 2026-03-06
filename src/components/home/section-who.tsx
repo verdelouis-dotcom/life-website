@@ -8,7 +8,7 @@ export default function SectionWho() {
           <h2 className="section-heading">Who We Are</h2>
         </Reveal>
         <Reveal>
-          <p className="text-lg leading-relaxed text-[var(--muted)]">
+          <p className="type-body-muted">
             The Longevity Initiative for Food &amp; Education (L.I.F.E.) is a public-benefit initiative focused on community education,
             skill-building, and cultural restoration—grounded in evidence-informed longevity principles. We are piloting in Metro Atlanta with
             a replicable model designed for national scalability.

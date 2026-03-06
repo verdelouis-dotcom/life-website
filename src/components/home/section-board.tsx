@@ -40,9 +40,9 @@ export default function SectionBoard() {
   return (
     <section className="bg-white py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-8 px-6">
-        <Reveal className="text-center space-y-3">
+        <Reveal className="space-y-3 text-center">
           <h2 className="section-heading">Board</h2>
-          <p className="text-sm text-[var(--muted)]">Strategic oversight, fiscal accountability, responsible growth.</p>
+          <p className="type-detail">Strategic oversight, fiscal accountability, responsible growth.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
           {BOARD_MEMBERS.map((member, index) => (
@@ -51,25 +51,25 @@ export default function SectionBoard() {
               delay={index * 80}
               className="rounded-[28px] border border-[var(--border)] bg-[var(--surface)]/90 p-6 shadow-sm"
             >
-              <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Board of Directors</p>
+              <p className="type-eyebrow">Board of Directors</p>
               <h3 className="mt-2 text-xl font-semibold">{member.name}</h3>
-              <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">{member.role}</p>
-              <p className="mt-3 text-sm text-[var(--muted)]">{member.bio}</p>
+              <p className="type-detail uppercase tracking-[0.3em] text-[var(--olive)]">{member.role}</p>
+              <p className="mt-3 type-detail">{member.bio}</p>
             </Reveal>
           ))}
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           <Reveal className="rounded-[28px] border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm">
-            <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Organizational Status</p>
-            <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+            <p className="type-eyebrow">Organizational Status</p>
+            <ul className="mt-4 space-y-2 type-detail">
               {STATUS_LINES.map((line) => (
                 <li key={line}>• {line}</li>
               ))}
             </ul>
           </Reveal>
           <Reveal className="rounded-[28px] border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm">
-            <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">Accountability Practices</p>
-            <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+            <p className="type-eyebrow">Accountability Practices</p>
+            <ul className="mt-4 space-y-2 type-detail">
               {ACCOUNTABILITY.map((item) => (
                 <li key={item}>• {item}</li>
               ))}

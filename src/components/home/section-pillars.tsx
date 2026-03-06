@@ -8,7 +8,7 @@ export default function SectionPillars() {
       <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
         <Reveal className="space-y-3">
           <h2 className="section-heading">Six Pillars of Longevity</h2>
-          <p className="text-sm text-[var(--muted)]">
+          <p className="type-detail">
             L.I.F.E. teaches evidence-informed fundamentals across these six pillars through home-based cooking tables.
           </p>
         </Reveal>
@@ -16,12 +16,12 @@ export default function SectionPillars() {
           {PILLARS.map((pillar) => (
             <Reveal key={pillar.slug}>
               <article className="flex h-full flex-col rounded-3xl border border-[var(--border)] bg-[var(--surface)]/90 p-5 text-left shadow-sm">
-                <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">{pillar.title}</p>
-                <p className="mt-2 text-base text-[var(--muted)]">{pillar.summary}</p>
+                <p className="type-eyebrow">{pillar.title}</p>
+                <p className="mt-2 type-body-muted">{pillar.summary}</p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <Link
                     href={`/pillars/${pillar.slug}`}
-                    className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-5 py-2 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
+                    className="btn-outline px-5"
                   >
                     Learn More
                   </Link>
@@ -30,7 +30,9 @@ export default function SectionPillars() {
             </Reveal>
           ))}
         </div>
-        <p className="text-sm uppercase tracking-[0.3em] text-[var(--olive)]">Each pillar stands alone—and hosts weave them together across the year.</p>
+        <p className="type-detail uppercase tracking-[0.3em] text-[var(--olive)]">
+          Each pillar stands alone—and hosts weave them together across the year.
+        </p>
       </div>
     </section>
   );

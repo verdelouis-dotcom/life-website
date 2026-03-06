@@ -1,38 +1,50 @@
 import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
+const SUPPORT_ITEMS = [
+  "ingredients and cooking materials for hosted tables",
+  "educational resources and host toolkits",
+  "program measurement and impact reporting",
+  "research and development to refine and expand the model",
+];
+
 export default function SectionFunding() {
   return (
-    <section className="bg-white py-14 text-[var(--text)]">
-      <div className="mx-auto max-w-4xl space-y-6 px-6 text-center">
-        <Reveal>
-          <h2 className="section-heading">Funding</h2>
-        </Reveal>
-        <Reveal>
-          <p className="text-base leading-relaxed text-[var(--muted)]">
-            Hosting the L.I.F.E. pilot activates 78 shared meal experiences each year through one host cycle.
-          </p>
-        </Reveal>
-        <Reveal className="text-left">
-          <div className="mx-auto max-w-xl space-y-3 text-sm leading-relaxed text-[var(--muted)]">
-            <p>Donations support:</p>
-            <ul className="list-disc space-y-1 pl-5">
-              <li>ingredients and cooking materials for hosted tables</li>
-              <li>educational resources and host toolkits</li>
-              <li>program measurement and impact reporting</li>
-              <li>research and development to refine and expand the model</li>
-            </ul>
-            <p>Your support helps the program grow responsibly while maintaining a simple, replicable structure.</p>
-          </div>
-        </Reveal>
-        <Reveal delay={120}>
-          <Link
-            href="/donate"
-            className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#394930]"
-          >
-            Donate
-          </Link>
-        </Reveal>
+    <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="space-y-8 rounded-[40px] border border-[var(--border)] bg-white/90 px-8 py-10 text-center shadow-sm">
+          <Reveal className="space-y-3">
+            <h2 className="section-heading">Funding</h2>
+            <p className="type-body-muted">
+              Hosting the L.I.F.E. pilot activates 78 shared meal experiences each year through one host cycle.
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="type-detail uppercase tracking-[0.3em] text-[var(--olive)]">Donations support</p>
+          </Reveal>
+          <Reveal>
+            <div className="grid gap-4 text-left type-detail md:grid-cols-2">
+              {SUPPORT_ITEMS.map((item) => (
+                <div key={item} className="rounded-3xl border border-[var(--border)] bg-[#fffaf4] p-4">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal>
+            <p className="type-body-muted">
+              Your support helps the program grow responsibly while maintaining a simple, replicable structure.
+            </p>
+          </Reveal>
+          <Reveal>
+            <Link
+              href="/donate"
+              className="btn-outline px-8"
+            >
+              Donate
+            </Link>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

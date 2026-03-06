@@ -14,7 +14,7 @@ const NAV_ITEMS = [
 const NavLink = ({ href, label }: { href: string; label: string }) => (
   <Link
     href={href}
-    className="rounded-full px-3 py-2 text-sm text-[#2e2a26] transition hover:bg-[#dcd3c5] hover:text-[#2e2a26]"
+    className="rounded-full px-3 py-2 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
     prefetch={false}
   >
     {label}

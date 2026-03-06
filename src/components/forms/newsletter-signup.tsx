@@ -60,10 +60,12 @@ export default function NewsletterSignup({ title, description, compact = false, 
     );
   }
 
+  const titleClass = compact ? "text-xl font-semibold text-[var(--life-forest)]" : "section-heading";
+
   return (
     <div className={`space-y-4 ${compact ? "text-left" : "text-center"}`}>
-      {title && <h3 className={`${compact ? "text-lg" : "text-2xl"} font-semibold text-[var(--life-forest)]`}>{title}</h3>}
-      {description && <p className="text-sm text-[var(--muted)]">{description}</p>}
+      {title && <h3 className={titleClass}>{title}</h3>}
+      {description && <p className="type-detail">{description}</p>}
       <form onSubmit={handleSubmit} className={`flex w-full flex-col gap-3 ${compact ? "sm:flex-row" : "sm:flex-row"}`}>
         <label className="sr-only" htmlFor={`newsletter-email-${compact ? "compact" : "full"}`}>
           Email address
@@ -86,11 +88,9 @@ export default function NewsletterSignup({ title, description, compact = false, 
         </button>
       </form>
       {message && (
-        <p className={`text-sm ${status === "success" ? "text-[var(--olive)]" : "text-[var(--terracotta)]"}`}>{message}</p>
+        <p className={`type-detail ${status === "success" ? "text-[var(--olive)]" : "text-[var(--terracotta)]"}`}>{message}</p>
       )}
-      <p className={`text-xs uppercase tracking-[0.3em] text-[var(--olive)] ${compact ? "text-left" : "text-center"}`}>
-        No spam. Just thoughtful updates from the table.
-      </p>
+      <p className={`${compact ? "text-left" : "text-center"} type-eyebrow`}>No spam. Just thoughtful updates from the table.</p>
     </div>
   );
 }

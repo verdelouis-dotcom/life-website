@@ -55,6 +55,58 @@ a:hover {
 
 @layer components {
   .section-heading {
-    @apply text-4xl font-bold tracking-tight text-[var(--text)] sm:text-5xl md:text-6xl;
+    font-family: var(--font-heading), "Cormorant Garamond", serif;
+    font-weight: 600;
+    color: var(--life-forest);
+    line-height: 1.15;
+    font-size: clamp(2.25rem, 4vw, 3rem);
+  }
+
+  .type-display {
+    font-family: var(--font-heading), "Cormorant Garamond", serif;
+    font-weight: 600;
+    color: var(--life-forest);
+    line-height: 1.1;
+    font-size: clamp(2.75rem, 6vw, 3.75rem);
+  }
+
+  .type-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--olive);
+    font-weight: 600;
+  }
+
+  .type-lede {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text);
+  }
+
+  .type-body-muted {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .type-detail {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-2xl border border-[var(--olive)]/40 px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white;
+  }
+
+  .btn-solid {
+    @apply inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#394930];
   }
 }

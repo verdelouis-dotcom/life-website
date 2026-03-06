@@ -6,21 +6,21 @@ export default function RegisterThanksPage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-3xl px-6 py-16 text-[#2e2a26]">
-        <section className="rounded-3xl border border-[#dfd4c6] bg-[#fff8ef] p-10 text-center">
-          <p className="text-xs uppercase tracking-[0.35em] text-[#6b7a46]">Thank you</p>
-          <h1 className="mt-4 text-4xl font-semibold">Thank you</h1>
-          <p className="mt-4 text-lg text-[#5b5149]">Your table has been recorded as community participation.</p>
+      <main className="mx-auto max-w-3xl px-6 py-16 text-[var(--text)]">
+        <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
+          <p className="type-eyebrow">Thank you</p>
+          <h1 className="section-heading">Thank you</h1>
+          <p className="mt-4 type-lede text-[var(--muted)]">Your table has been recorded as community participation.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/donate"
-              className="inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-6 py-3 text-base font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white"
+              className="btn-solid px-6 text-base"
             >
               Donate
             </Link>
             <Link
               href="/register"
-              className="inline-flex items-center justify-center rounded-2xl border border-[#dfd4c6] px-6 py-3 text-base font-semibold text-[#2e2a26] transition hover:bg-[#fff8ef]"
+              className="btn-outline px-6 text-base"
             >
               Register Another Table
             </Link>

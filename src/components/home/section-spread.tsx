@@ -17,13 +17,13 @@ export default function SectionSpread() {
         <div className="grid gap-4 md:grid-cols-4">
           {SPREAD_CARDS.map((card, index) => (
             <Reveal key={card.label} delay={index * 80} className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-sm">
-              <p className="text-xs uppercase tracking-[0.35em] text-[var(--olive)]">{card.label}</p>
-              <p className="mt-3 text-4xl font-serif">{card.value}</p>
-              <p className="mt-2 text-xs text-[var(--muted)]">{card.detail}</p>
+              <p className="type-eyebrow">{card.label}</p>
+              <p className="mt-3 text-4xl font-serif text-[var(--life-forest)]">{card.value}</p>
+              <p className="mt-2 type-detail">{card.detail}</p>
             </Reveal>
           ))}
         </div>
-        <p className="text-sm text-[var(--muted)]">Impact is measured through registered tables—not assumptions.</p>
+        <p className="type-detail">Impact is measured through registered tables—not assumptions.</p>
       </div>
     </section>
   );

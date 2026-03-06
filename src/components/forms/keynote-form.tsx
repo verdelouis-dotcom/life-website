@@ -65,7 +65,7 @@ export default function KeynoteForm() {
   return (
     <form onSubmit={handleSubmit} className="grid gap-4">
       <div className="grid gap-1">
-        <label htmlFor="name" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+        <label htmlFor="name" className="type-eyebrow">
           Name
         </label>
         <input
@@ -77,7 +77,7 @@ export default function KeynoteForm() {
         />
       </div>
       <div className="grid gap-1">
-        <label htmlFor="organization" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+        <label htmlFor="organization" className="type-eyebrow">
           Organization
         </label>
         <input
@@ -88,7 +88,7 @@ export default function KeynoteForm() {
         />
       </div>
       <div className="grid gap-1">
-        <label htmlFor="email" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+        <label htmlFor="email" className="type-eyebrow">
           Email
         </label>
         <input
@@ -102,7 +102,7 @@ export default function KeynoteForm() {
       </div>
       <div className="grid gap-1 md:grid-cols-2 md:gap-4">
         <div className="grid gap-1">
-          <label htmlFor="preferredDate" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="preferredDate" className="type-eyebrow">
             Preferred Date
           </label>
           <input
@@ -113,7 +113,7 @@ export default function KeynoteForm() {
           />
         </div>
         <div className="grid gap-1">
-          <label htmlFor="location" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+          <label htmlFor="location" className="type-eyebrow">
             Location
           </label>
           <input
@@ -125,7 +125,7 @@ export default function KeynoteForm() {
         </div>
       </div>
       <div className="grid gap-1">
-        <label htmlFor="notes" className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
+        <label htmlFor="notes" className="type-eyebrow">
           Notes
         </label>
         <textarea
@@ -135,11 +135,7 @@ export default function KeynoteForm() {
           placeholder="Context, audience, or format."
         />
       </div>
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#394930] disabled:opacity-60"
-      >
+      <button type="submit" disabled={status === "submitting"} className="btn-solid text-base disabled:opacity-60">
         {status === "submitting" ? "Sending…" : "Submit"}
       </button>
       {status === "success" && (

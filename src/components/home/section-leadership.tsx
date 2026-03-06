@@ -10,7 +10,7 @@ export default function SectionLeadership() {
           <h2 className="section-heading">Leadership</h2>
         </Reveal>
         <Reveal>
-          <p className="text-base leading-relaxed text-[var(--muted)]">
+          <p className="type-body-muted">
             Founder Lou Verde delivers community education on L.I.F.E. principles and longevity fundamentals.
             <br />
             Lou has traveled internationally—with an emphasis on Italy—to study cultural patterns linked to longer, healthier lives, and
@@ -23,7 +23,7 @@ export default function SectionLeadership() {
         <Reveal delay={120}>
           <Link
             href="/keynote"
-            className="inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
+            className="btn-outline"
           >
             Request a 30-Minute Keynote
           </Link>
