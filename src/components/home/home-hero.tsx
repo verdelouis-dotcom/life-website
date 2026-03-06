@@ -9,7 +9,7 @@ export default function HomeHero() {
         <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 p-8 shadow-lg">
           <Reveal className="type-eyebrow text-[var(--olive)]">Nonprofit Initiative</Reveal>
           <Reveal>
-            <h1 className="type-display">Rebuilding Health and Community One Table at a Time</h1>
+            <h1 className="type-display">Longevity Starts at the Table</h1>
           </Reveal>
           <Reveal>
             <p className="type-lede text-[var(--text)]">
@@ -21,12 +21,6 @@ export default function HomeHero() {
             <p className="type-body max-w-2xl text-[var(--text)]">
               Launching in Metro Atlanta in 2026, L.I.F.E. restores the table as a place to learn, gather, and build everyday longevity habits.
             </p>
-          </Reveal>
-          <Reveal>
-            <div className="inline-flex max-w-sm items-center gap-3 rounded-2xl border border-[var(--olive)]/30 bg-[#f7f2e9] px-5 py-3 shadow-inner">
-              <span className="text-3xl font-serif text-[var(--life-forest)]">78</span>
-              <p className="type-detail text-left text-[var(--text)]">One L.I.F.E. host can spark 78 shared meal experiences each year.</p>
-            </div>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
             <Link
