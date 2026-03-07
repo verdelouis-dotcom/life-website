@@ -11,7 +11,7 @@ export default function KeynotePage() {
           <p className="type-eyebrow">Community Education</p>
           <h1 className="section-heading">Keynote</h1>
           <p className="mt-4 type-body-muted">
-            30-minute nonprofit keynote on L.I.F.E., longevity fundamentals, and cultural restoration through the table.
+            30-minute nonprofit keynote on LIFE, longevity fundamentals, and cultural restoration through the table.
           </p>
         </section>
         <section className="mt-10 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">

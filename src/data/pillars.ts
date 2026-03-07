@@ -15,7 +15,7 @@ export const PILLARS: PillarDetail[] = [
     color: "#5e7d5a",
     summary: "Mediterranean-style meals rich in plants, healthy fats, and minimal ultra-processed foods reduce chronic disease risk.",
     intro:
-      "L.I.F.E. teaches hosts how to center every table on Mediterranean eating patterns that prioritize vegetables, legumes, olive oil, and seafood while limiting added sugars and refined oils.",
+      "LIFE teaches hosts how to center every table on Mediterranean eating patterns that prioritize vegetables, legumes, olive oil, and seafood while limiting added sugars and refined oils.",
     reasons: [
       {
         heading: "Cardiometabolic protection",
@@ -45,7 +45,7 @@ export const PILLARS: PillarDetail[] = [
     reasons: [
       {
         heading: "Metabolic boosts",
-        text: "WHO guidelines show that 150 minutes of moderate activity weekly lowers all-cause mortality by 20–30%. L.I.F.E. tables encourage cumulative movement bursts every month.",
+        text: "WHO guidelines show that 150 minutes of moderate activity weekly lowers all-cause mortality by 20–30%. LIFE tables encourage cumulative movement bursts every month.",
       },
       {
         heading: "Functional strength",
@@ -67,7 +67,7 @@ export const PILLARS: PillarDetail[] = [
     color: "#4b82b3",
     summary: "Shared meals combat isolation—a risk factor comparable to smoking 15 cigarettes per day, according to the U.S. Surgeon General.",
     intro:
-      "The L.I.F.E. table requires eye contact, gratitude rituals, and intentional prompts so every guest is seen and heard.",
+      "The LIFE table requires eye contact, gratitude rituals, and intentional prompts so every guest is seen and heard.",
     reasons: [
       {
         heading: "Reduced loneliness",

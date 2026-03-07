@@ -30,7 +30,7 @@ export default function NewsletterPage() {
 
         <section className="mt-10 space-y-4 type-body-muted">
           <p>
-            The Shared Table is the monthly publication of L.I.F.E. It shares founder letters, community stories, and reflections on food,
+            The Shared Table is the monthly publication of LIFE It shares founder letters, community stories, and reflections on food,
             connection, and practical longevity. It is designed for donors, hosts, supporters, and anyone who believes meaningful change can
             begin around a shared meal.
           </p>

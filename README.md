@@ -1,6 +1,6 @@
-# L.I.F.E. Website
+# LIFE Website
 
-The Longevity Initiative for Food & Education (L.I.F.E.) website shares Mediterranean-inspired habits, promotes workshops, and collects donations and sponsorship inquiries.
+The Longevity Initiative for Food & Education (LIFE) website shares Mediterranean-inspired habits, promotes workshops, and collects donations and sponsorship inquiries.
 
 ## Local development
 

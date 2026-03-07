@@ -9,7 +9,7 @@ export default function SectionWho() {
         </Reveal>
         <Reveal>
           <p className="type-body-muted">
-            The Longevity Initiative for Food &amp; Education (L.I.F.E.) is a public-benefit initiative focused on community education,
+            The Longevity Initiative for Food &amp; Education (LIFE) is a public-benefit initiative focused on community education,
             skill-building, and cultural restoration—grounded in evidence-informed longevity principles. We are piloting in Metro Atlanta with
             a replicable model designed for national scalability.
           </p>

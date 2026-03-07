@@ -7,25 +7,25 @@ const TIERS = [
     amount: "$50",
     title: "One Shared Table",
     description:
-      "Provides ingredients and basic tools for one L.I.F.E. table where people gather to cook, learn, and share a Mediterranean meal together.",
+      "Provides ingredients and basic tools for one LIFE table where people gather to cook, learn, and share a Mediterranean meal together.",
     key: 50,
   },
   {
     amount: "$100",
     title: "Two Shared Tables",
-    description: "Provides ingredients and tools for two L.I.F.E. tables, helping more families experience the power of cooking and eating together.",
+    description: "Provides ingredients and tools for two LIFE tables, helping more families experience the power of cooking and eating together.",
     key: 100,
   },
   {
     amount: "$500",
     title: "Host a Year of Tables",
-    description: "Funds a L.I.F.E. host with the equipment, tools, and educational resources needed to lead shared meals throughout the year.",
+    description: "Funds a LIFE host with the equipment, tools, and educational resources needed to lead shared meals throughout the year.",
     key: 500,
   },
   {
     amount: "$1,000",
     title: "Community Impact",
-    description: "Helps fund multiple months of L.I.F.E. tables and supports the launch of new hosts in the community.",
+    description: "Helps fund multiple months of LIFE tables and supports the launch of new hosts in the community.",
     key: 1000,
   },
 ];
@@ -82,7 +82,7 @@ export default function DonatePage() {
             ))}
           </ul>
           <p className="mt-4 type-detail">
-            Contributions help L.I.F.E. pilot a replicable model that advances public awareness and measurable participation.
+            Contributions help LIFE pilot a replicable model that advances public awareness and measurable participation.
           </p>
         </section>
       </main>

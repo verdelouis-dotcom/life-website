@@ -6,7 +6,7 @@ const slug = "movement";
 const pillar = getPillarBySlug(slug);
 
 export const metadata: Metadata = {
-  title: `${pillar?.title ?? "Movement"} Pillar | L.I.F.E.`,
+  title: `${pillar?.title ?? "Movement"} Pillar | LIFE`,
   description: pillar?.summary,
 };
 

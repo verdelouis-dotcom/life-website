@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Longevity Initiative for Food & Education",
   description:
-    "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+    "Longevity Initiative for Food & Education (LIFE) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: "Longevity Initiative for Food & Education",
     description:
-      "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+      "Longevity Initiative for Food & Education (LIFE) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
     images: [
       {
         url: "/images/logo.png",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Longevity Initiative for Food & Education",
     description:
-      "Longevity Initiative for Food & Education (L.I.F.E.) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+      "Longevity Initiative for Food & Education (LIFE) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
     images: ["/images/logo.png"],
   },
   icons: {

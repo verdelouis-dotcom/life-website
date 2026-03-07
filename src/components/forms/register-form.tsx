@@ -192,7 +192,7 @@ export default function RegisterForm() {
       </div>
       <label className="flex items-start gap-3 type-detail text-[var(--text)]">
         <input type="checkbox" name="consentPhoto" className="mt-1" />
-        <span>Yes, L.I.F.E. may share this photo publicly.</span>
+        <span>Yes, LIFE may share this photo publicly.</span>
       </label>
       <button type="submit" disabled={status === "submitting"} className="btn-solid text-base disabled:opacity-60">
         {status === "submitting" ? "Submitting..." : "Submit Registration"}
@@ -200,7 +200,7 @@ export default function RegisterForm() {
       {status === "error" && errorMessage && (
         <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">{errorMessage}</p>
       )}
-      <p className="type-detail">Your submission helps L.I.F.E. report measurable community impact.</p>
+      <p className="type-detail">Your submission helps LIFE report measurable community impact.</p>
     </form>
   );
 }

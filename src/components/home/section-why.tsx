@@ -16,7 +16,7 @@ export default function SectionWhy() {
               <p>Isolation is increasing.</p>
             </div>
             <p>Shared meals are disappearing—along with routines that once reinforced connection, real food, and healthier daily habits.</p>
-            <p>L.I.F.E. restores practical habits people can use at home.</p>
+            <p>LIFE restores practical habits people can use at home.</p>
           </Reveal>
         </div>
         <Reveal delay={120} className="relative aspect-square w-full overflow-hidden rounded-[28px] border border-[var(--border)] shadow-lg">

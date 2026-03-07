@@ -9,7 +9,7 @@ export default function SectionPillars() {
         <Reveal className="space-y-3">
           <h2 className="section-heading">Six Pillars of Longevity</h2>
           <p className="type-detail">
-            L.I.F.E. teaches evidence-informed fundamentals across these six pillars through home-based cooking tables.
+            LIFE teaches evidence-informed fundamentals across these six pillars through home-based cooking tables.
           </p>
         </Reveal>
         <div className="grid gap-5 text-left md:grid-cols-2">

@@ -7,7 +7,7 @@ export default function SectionWhat() {
         <Reveal className="space-y-4 text-center">
           <h2 className="section-heading">The Program</h2>
           <p className="type-body-muted">
-            L.I.F.E. recruits, trains, and supports community hosts to lead monthly shared meals. Through Mediterranean cooking and shared
+            LIFE recruits, trains, and supports community hosts to lead monthly shared meals. Through Mediterranean cooking and shared
             tables, the program reinforces practical longevity habits and social connection. Impact is measured through registered tables.
           </p>
         </Reveal>

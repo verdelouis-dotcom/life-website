@@ -6,14 +6,14 @@ const CTA_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject
 
 const WHAT_HOSTS_DO = [
   "Invite neighbors into their homes for one hosted cooking table each month.",
-  "Teach the six L.I.F.E. pillars through Mediterranean cooking, conversation, and repetition.",
+  "Teach the six LIFE pillars through Mediterranean cooking, conversation, and repetition.",
   "Register every table so impact is tracked across people, tables, and cities.",
 ];
 
 const HOST_SUPPORT = [
   "Evidence-informed curriculum covering longevity fundamentals and Mediterranean cooking techniques.",
   "Digital and physical toolkits: menus, shopping lists, facilitation prompts, measurement templates.",
-  "Quarterly cohort calls plus on-demand guidance from the L.I.F.E. leadership team.",
+  "Quarterly cohort calls plus on-demand guidance from the LIFE leadership team.",
 ];
 
 const IDEAL_HOSTS = [
@@ -38,7 +38,7 @@ export default function HostPage() {
         <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-20">
           <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
             <p className="type-eyebrow">Become a Host</p>
-            <h1 className="type-display">Lead a L.I.F.E. Table</h1>
+            <h1 className="type-display">Lead a LIFE Table</h1>
             <p className="type-lede text-[var(--muted)]">
               Hosts restore the table as a cultural structure. Each host leads one cooking table per month, equips a guest to host next, and
               logs every gathering for measurable reporting. The pilot begins in Metro Atlanta with a model built for national replication.
@@ -59,7 +59,7 @@ export default function HostPage() {
           </ul>
         </SectionBlock>
 
-        <SectionBlock title="Host Support" description="L.I.F.E. equips every host with proven tools and real-time guidance.">
+        <SectionBlock title="Host Support" description="LIFE equips every host with proven tools and real-time guidance.">
           <ul className="space-y-3 type-body-muted">
             {HOST_SUPPORT.map((item) => (
               <li key={item}>• {item}</li>

@@ -14,7 +14,7 @@ export default function SectionNewsletter() {
           <p className="type-eyebrow">The Shared Table</p>
           <h2 className="section-heading">The Shared Table</h2>
           <p className="type-body-muted">
-            A monthly letter from L.I.F.E. sharing stories, ideas, and updates about food, connection, and the movement to bring people back to the table.
+            A monthly letter from LIFE sharing stories, ideas, and updates about food, connection, and the movement to bring people back to the table.
           </p>
         </div>
         <div className="grid gap-4 type-detail md:grid-cols-3">

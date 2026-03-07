@@ -53,10 +53,10 @@ export async function POST(req: Request) {
 
     const to = process.env.LIFE_TO_EMAIL || "verde.louis@gmail.com";
     const configuredFrom = process.env.LIFE_FROM_EMAIL;
-    const fallbackFrom = "L.I.F.E. <onboarding@resend.dev>";
+    const fallbackFrom = "LIFE <onboarding@resend.dev>";
     const resend = new Resend(apiKey);
 
-    const subject = `L.I.F.E. Inquiry — ${interestType}`;
+    const subject = `LIFE Inquiry — ${interestType}`;
     const text = [
       `Name: ${name}`,
       `Email: ${email}`,

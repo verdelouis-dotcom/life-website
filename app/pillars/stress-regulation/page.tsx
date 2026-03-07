@@ -6,7 +6,7 @@ const slug = "stress-regulation";
 const pillar = getPillarBySlug(slug);
 
 export const metadata: Metadata = {
-  title: `${pillar?.title ?? "Stress Regulation"} Pillar | L.I.F.E.`,
+  title: `${pillar?.title ?? "Stress Regulation"} Pillar | LIFE`,
   description: pillar?.summary,
 };
 

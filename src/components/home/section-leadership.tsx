@@ -11,7 +11,7 @@ export default function SectionLeadership() {
         </Reveal>
         <Reveal>
           <p className="type-body-muted">
-            Founder Lou Verde delivers community education on L.I.F.E. principles and longevity fundamentals.
+            Founder Lou Verde delivers community education on LIFE principles and longevity fundamentals.
             <br />
             Lou has traveled internationally—with an emphasis on Italy—to study cultural patterns linked to longer, healthier lives, and
             continues this field research to enrich the program.

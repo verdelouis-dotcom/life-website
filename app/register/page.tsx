@@ -12,7 +12,7 @@ export default function RegisterPage() {
           <h1 className="section-heading">Register</h1>
           <p className="mt-3 type-lede">Less than one minute.</p>
           <p className="mt-4 type-body-muted">
-            Registration is how L.I.F.E. measures participation and reach for reporting and grants. Optional: upload a photo and provide consent
+            Registration is how LIFE measures participation and reach for reporting and grants. Optional: upload a photo and provide consent
             so we can share the rhythm publicly.
           </p>
         </section>

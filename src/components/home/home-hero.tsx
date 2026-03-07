@@ -18,9 +18,7 @@ export default function HomeHero() {
             </p>
           </Reveal>
           <Reveal>
-            <p className="type-body max-w-2xl text-[var(--text)]">
-              Launching in Metro Atlanta in 2026, L.I.F.E. restores the table as a place to learn, gather, and build everyday longevity habits.
-            </p>
+            <p className="type-body max-w-2xl text-[var(--text)]">Launching in Metro Atlanta in 2026.</p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
             <Link
