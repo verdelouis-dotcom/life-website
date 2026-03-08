@@ -20,11 +20,11 @@ export default function HomeHero() {
           <Reveal>
             <p className="type-body max-w-2xl text-[var(--text)]">Launching in Metro Atlanta in 2026.</p>
           </Reveal>
-          <Reveal className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/host"
-              className="btn-outline"
-            >
+        <Reveal className="flex flex-wrap items-center gap-4">
+          <Link
+            href="/host"
+            className="btn-outline"
+          >
               Host a Table
             </Link>
             <Link
@@ -43,10 +43,15 @@ export default function HomeHero() {
               href="/keynote"
               className="btn-outline"
             >
-              Request a Keynote
-            </Link>
-          </Reveal>
-        </div>
+            Request a Keynote
+          </Link>
+        </Reveal>
+        <Reveal>
+          <p className="type-detail text-[var(--muted)]">
+            Participation starts locally. Registered tables help us understand how the experience is spreading across homes, families, and neighborhoods.
+          </p>
+        </Reveal>
+      </div>
         <Reveal
           delay={120}
           className="relative w-full overflow-hidden rounded-[36px] border border-[var(--border)] shadow-xl min-h-[360px] md:min-h-[520px]"

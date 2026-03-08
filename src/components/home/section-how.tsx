@@ -23,7 +23,10 @@ export default function SectionHow() {
             </Reveal>
           ))}
         </div>
-        <p className="type-detail">The “workshop” is a hosted cooking table in a home—where guests learn by doing.</p>
+        <p className="type-detail">
+          LIFE keeps the process simple so shared meals, practical habits, and connection can be passed forward from one home to the next. The
+          “workshop” is a hosted cooking table in a home—where guests learn by doing.
+        </p>
       </div>
     </section>
   );

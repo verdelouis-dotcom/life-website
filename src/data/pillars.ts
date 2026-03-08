@@ -91,9 +91,9 @@ export const PILLARS: PillarDetail[] = [
     slug: "community",
     title: "Community",
     color: "#6ea1d4",
-    summary: "Scaling from one host to neighborhoods multiplies the impact—78 tables per year from one pilot becomes hundreds across zip codes.",
+    summary: "Shared meals travel person-to-person as each host invites a guest to open their own table.",
     intro:
-      "The replication math invites guests to host the next table within 30 days, creating a daisy chain of shared meals measured through the register portal.",
+      "Instead of complex math, LIFE relies on simple invitations: cook together, invite someone else within 30 days, and register the table so we can see where participation is growing.",
     reasons: [
       {
         heading: "Civic trust",

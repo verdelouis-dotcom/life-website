@@ -41,7 +41,8 @@ export default function HostPage() {
             <h1 className="type-display">Lead a LIFE Table</h1>
             <p className="type-lede text-[var(--muted)]">
               Hosts restore the table as a cultural structure. Each host leads one cooking table per month, equips a guest to host next, and
-              logs every gathering for measurable reporting. The pilot begins in Metro Atlanta with a model built for national replication.
+              logs every gathering so we can see where participation is growing. The pilot begins in Metro Atlanta with a model built for
+              national replication.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href={CTA_LINK} className="btn-solid px-8 text-base">
@@ -51,7 +52,7 @@ export default function HostPage() {
           </div>
         </section>
 
-        <SectionBlock title="What Hosts Do" description="A simple monthly cycle that creates exponential impact.">
+        <SectionBlock title="What Hosts Do" description="A simple monthly cycle that invites people to pass it forward.">
           <ul className="space-y-3 type-body-muted">
             {WHAT_HOSTS_DO.map((item) => (
               <li key={item}>• {item}</li>

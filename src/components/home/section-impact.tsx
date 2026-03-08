@@ -1,9 +1,9 @@
 import Reveal from "@/components/ui/reveal";
 
 const IMPACT_CARDS = [
-  { label: "Host-Led", tables: "12 Tables / Year", people: "Personally led by each LIFE Host" },
-  { label: "Activated Cycle", tables: "78 Tables / Year", people: "Total shared meal experiences sparked" },
-  { label: "10 Hosts", tables: "780 Tables / Year", people: "≈ 3,120 People engaged" },
+  { label: "Gather", tables: "One evening per month", people: "Hosts bring neighbors together around a shared meal." },
+  { label: "Pass It Forward", tables: "Simple invitation", people: "A guest agrees to host the next table within 30 days." },
+  { label: "Register Growth", tables: "Log each table", people: "Registrations show where participation is growing." },
 ];
 
 export default function SectionImpact() {
@@ -15,8 +15,12 @@ export default function SectionImpact() {
         </Reveal>
         <Reveal>
           <p className="type-body-muted">
-            Every host personally leads 12 monthly tables. Because each gathering equips a guest to host the next, the invite cycle activates
-            a minimum of 78 shared meal experiences per host each year. Scaling to 10 hosts produces 780 registered tables annually.
+            LIFE grows through shared meals and relationships. Each gathering creates an opportunity for someone else to open their home,
+            share a meal, and pass it forward. Registered tables help us understand how participation is growing across homes, families, and
+            neighborhoods. LIFE begins with a simple shared meal. People gather around the table to cook, eat, and talk about practical
+            habits that support long and healthy lives. At the end of the evening, there is one simple invitation: pass it forward. Within
+            the next 30 days, invite someone to your own table and share a meal together. Each table is registered so we can understand
+            participation and see where the movement is growing.
           </p>
         </Reveal>
         <div className="grid gap-4 md:grid-cols-3">
@@ -28,7 +32,7 @@ export default function SectionImpact() {
             </Reveal>
           ))}
         </div>
-        <p className="type-detail">Impact is measured through registered tables—not assumptions.</p>
+        <p className="type-detail">1 evening per month. 90 minutes together. One simple invitation to pass it forward.</p>
       </div>
     </section>
   );

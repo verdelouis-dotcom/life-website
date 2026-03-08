@@ -1,10 +1,10 @@
 import Reveal from "@/components/ui/reveal";
 
 const SPREAD_CARDS = [
-  { label: "Pilot Host", value: "1", detail: "Start with one LIFE Host" },
-  { label: "Tables Led", value: "12", detail: "One hosted cooking table each month" },
-  { label: "Annual Tables", value: "78", detail: "Minimum shared meal experiences" },
-  { label: "People Reached", value: "≈ 312", detail: "Assumes 4 participants per table" },
+  { label: "Start Local", value: "One Host", detail: "Invite neighbors into your kitchen." },
+  { label: "Shared Meal", value: "Monthly Rhythm", detail: "Cook, learn, and connect together." },
+  { label: "Pass It Forward", value: "Next Table", detail: "A guest hosts within 30 days." },
+  { label: "Register Growth", value: "Track Tables", detail: "Log gatherings so we see participation." },
 ];
 
 export default function SectionSpread() {
@@ -12,7 +12,7 @@ export default function SectionSpread() {
     <section className="bg-[#f8f4ec] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-6 px-6 text-center">
         <Reveal>
-          <h2 className="section-heading">Pilot math, made visible.</h2>
+          <h2 className="section-heading">Pass It Forward.</h2>
         </Reveal>
         <div className="grid gap-4 md:grid-cols-4">
           {SPREAD_CARDS.map((card, index) => (
@@ -23,7 +23,7 @@ export default function SectionSpread() {
             </Reveal>
           ))}
         </div>
-        <p className="type-detail">Impact is measured through registered tables—not assumptions.</p>
+        <p className="type-detail">Participation starts locally. Registered tables help us understand how the experience is spreading across homes, families, and neighborhoods.</p>
       </div>
     </section>
   );

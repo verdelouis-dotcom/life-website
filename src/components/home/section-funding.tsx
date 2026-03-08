@@ -16,7 +16,7 @@ export default function SectionFunding() {
           <Reveal className="space-y-3">
             <h2 className="section-heading">Funding</h2>
             <p className="type-body-muted">
-              Hosting the LIFE pilot activates 78 shared meal experiences each year through one host cycle.
+              Gifts support community education, host resources, and outreach that helps more people gather around the table.
             </p>
           </Reveal>
           <Reveal>
