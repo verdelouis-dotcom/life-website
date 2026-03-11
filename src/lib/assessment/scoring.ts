@@ -309,7 +309,7 @@ const PILLAR_LIBRARY_METADATA: Record<PillarKey, { title: string }> = {
   stress: { title: "Stress Regulation" },
 };
 
-function projectImprovedAnswers(answers: AssessmentAnswers): AssessmentAnswers {
+function getRealisticImprovedAnswers(answers: AssessmentAnswers): AssessmentAnswers {
   const next: AssessmentAnswers = { ...answers };
 
   // Food
@@ -389,37 +389,49 @@ function projectImprovedAnswers(answers: AssessmentAnswers): AssessmentAnswers {
   return next;
 }
 
-function calculateMetrics(answers: AssessmentAnswers, normalizedScore: number, optionalNormalized: number) {
-  const chronologicalAge = answers.age ?? 40;
-  const baselineLifeExpectancy = answers.sex === "female" ? 81 : answers.sex === "male" ? 76 : 78;
-
-  const lifespanAdjustment = clamp((normalizedScore - 0.5) * 20, -10, 10);
-  const optionalAdjustment = clamp((optionalNormalized - 0.5) * 4, -2, 2);
-  const estimatedLifespanRaw = baselineLifeExpectancy + lifespanAdjustment + optionalAdjustment;
-  const estimatedLifespan = clamp(estimatedLifespanRaw, chronologicalAge + 2, 100);
-
-  const biologicalAgeAdjustment = clamp((0.5 - normalizedScore) * 10, -8, 8);
-  const surveyBiologicalAge = Math.round(chronologicalAge + biologicalAgeAdjustment);
-
-  return { baselineLifeExpectancy, estimatedLifespan, surveyBiologicalAge };
-}
-
 export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResultsPayload {
-  const { normalizedScore, optionalNormalized } = calculateScoreSummary(answers);
+  const { normalizedScore } = calculateScoreSummary(answers);
   const pillarScores = calculatePillarScores(answers);
-
-  const { baselineLifeExpectancy, estimatedLifespan, surveyBiologicalAge } = calculateMetrics(
-    answers,
-    normalizedScore,
-    optionalNormalized,
+  const chronologicalAge = answers.age ?? 40;
+  const baselineLifeExpectancy = getBaselineLifeExpectancy(answers.sex);
+  const baseAdjustment = clamp((normalizedScore - 0.5) * 28, -14, 14);
+  const biomarkerModifier = getMarkerAdjustment(answers);
+  const eliteLifestyleBonus = getEliteLifestyleBonus(answers);
+  const estimatedLifespan = clamp(
+    baselineLifeExpectancy + baseAdjustment + biomarkerModifier + eliteLifestyleBonus,
+    chronologicalAge + 2,
+    95,
+  );
+  let biologicalAgeAdjustment = (0.5 - normalizedScore) * 12 - eliteLifestyleBonus * 0.4;
+  biologicalAgeAdjustment = clamp(biologicalAgeAdjustment, -10, 10);
+  const surveyBiologicalAge = Math.round(
+    clamp(chronologicalAge + biologicalAgeAdjustment, chronologicalAge - 10, chronologicalAge + 10),
   );
 
-  const improvedAnswers = projectImprovedAnswers(answers);
+  const improvedAnswers = getRealisticImprovedAnswers(answers);
   const improvedSummary = calculateScoreSummary(improvedAnswers);
-  const improvedMetrics = calculateMetrics(improvedAnswers, improvedSummary.normalizedScore, optionalNormalized);
+  const improvedBaseAdjustment = clamp((improvedSummary.normalizedScore - 0.5) * 28, -14, 14);
+  const improvedEliteBonus = getEliteLifestyleBonus(improvedAnswers);
 
-  const longevityPotential = clamp(improvedMetrics.estimatedLifespan, estimatedLifespan, 100);
-  const yearsYouCouldGain = clamp(longevityPotential - estimatedLifespan, 0, 15);
+  let longevityPotential = clamp(
+    Math.max(
+      estimatedLifespan,
+      baselineLifeExpectancy + improvedBaseAdjustment + biomarkerModifier + improvedEliteBonus,
+    ),
+    estimatedLifespan,
+    100,
+  );
+
+  const potentialGain = longevityPotential - estimatedLifespan;
+  if (normalizedScore >= 0.65 && normalizedScore < 0.9 && potentialGain < 4) {
+    longevityPotential = Math.min(100, estimatedLifespan + 4);
+  }
+  if (normalizedScore >= 0.75 && eliteLifestyleBonus >= 3 && longevityPotential < 92) {
+    longevityPotential = Math.min(100, Math.max(longevityPotential, 92));
+  }
+
+  let yearsYouCouldGain = Math.round(longevityPotential - estimatedLifespan);
+  yearsYouCouldGain = clamp(yearsYouCouldGain, 0, 20);
 
   const metrics = {
     surveyBiologicalAge,
@@ -439,4 +451,94 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
     recommendations,
     baselineLifeExpectancy,
   } satisfies AssessmentResultsPayload;
+}
+
+function getBaselineLifeExpectancy(sex: AssessmentAnswers["sex"]) {
+  if (sex === "male") return 76.5;
+  if (sex === "female") return 81.4;
+  return 79.0;
+}
+
+function getMarkerAdjustment(answers: AssessmentAnswers) {
+  let total = 0;
+
+  switch (answers.bloodPressure) {
+    case "high":
+      total -= 2;
+      break;
+    case "elevated":
+      total -= 1;
+      break;
+    case "normal":
+      total += 1;
+      break;
+    case "dontKnow":
+      total -= 0.5;
+      break;
+    default:
+      total -= 0.25;
+  }
+
+  switch (answers.ldl) {
+    case "high":
+      total -= 1.5;
+      break;
+    case "borderline":
+      total -= 0.5;
+      break;
+    case "optimal":
+      total += 1;
+      break;
+    case "dontKnow":
+      total -= 0.25;
+      break;
+    default:
+      total -= 0.25;
+  }
+
+  switch (answers.fastingGlucose) {
+    case "diabetes":
+      total -= 2;
+      break;
+    case "prediabetes":
+      total -= 1;
+      break;
+    case "normal":
+      total += 1;
+      break;
+    case "dontKnow":
+      total -= 0.5;
+      break;
+    default:
+      total -= 0.25;
+  }
+
+  return clamp(total, -4, 3);
+}
+
+function getEliteLifestyleBonus(answers: AssessmentAnswers) {
+  const protectiveChecks = [
+    answers.nicotine === "neverUsed" || answers.nicotine === "formerUser",
+    answers.chronicDisease === "no",
+    answers.selfRatedHealth === "good" || answers.selfRatedHealth === "excellent",
+    ["from150To300", "over300"].includes(answers.cardio ?? ""),
+    ["good", "excellent"].includes(answers.fitnessLevel ?? ""),
+    ["often", "almostAlways"].includes(answers.sleepDuration ?? ""),
+    ["oneToTwoNights", "rarelyOrNever"].includes(answers.sleepQuality ?? ""),
+    ["fairlySupportive", "verySupportive"].includes(answers.socialSupport ?? ""),
+    ["weekly", "mostDays"].includes(answers.sharedMeals ?? ""),
+    ["strongPurpose", "deepSenseOfPurpose"].includes(answers.purpose ?? ""),
+    ["occasionally", "rarely"].includes(answers.stressFrequency ?? ""),
+  ].filter(Boolean).length;
+
+  if (protectiveChecks >= 8) {
+    return 5;
+  }
+  if (protectiveChecks >= 6) {
+    return 3;
+  }
+  if (protectiveChecks >= 4) {
+    return 1;
+  }
+  return 0;
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from "react";
 import AssessmentIntro from "@/components/assessment/AssessmentIntro";
 import ProgressBar from "@/components/assessment/ProgressBar";
@@ -191,7 +192,17 @@ export default function AssessmentWizard() {
     return null;
   }
 
-  return <div className="mx-auto max-w-5xl space-y-8 px-6 py-12 text-[var(--text)]">{renderContent()}</div>;
+  return (
+    <div className="mx-auto max-w-5xl space-y-8 px-6 py-12 text-[var(--text)]">
+      <div className="flex flex-col gap-2 text-center text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
+        <span>Survey-based educational experience</span>
+        <Link href="/assessment/methodology" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+          Review the LIFE Assessment methodology
+        </Link>
+      </div>
+      {renderContent()}
+    </div>
+  );
 }
 
 function hasAnyResponses(candidate: AssessmentAnswers) {

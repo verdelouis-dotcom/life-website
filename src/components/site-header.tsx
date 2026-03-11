@@ -3,6 +3,7 @@ import BrandLogo from "@/components/brand-logo";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
+  { href: "/assessment", label: "Assessment" },
   { href: "/host", label: "Become a Host" },
   { href: "/register", label: "Register a Table" },
   { href: "/donate", label: "Donate" },
@@ -14,7 +15,7 @@ const NAV_ITEMS = [
 const NavLink = ({ href, label }: { href: string; label: string }) => (
   <Link
     href={href}
-    className="rounded-full px-3 py-2 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
+    className="rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
     prefetch={false}
   >
     {label}
@@ -28,17 +29,17 @@ export default function SiteHeader() {
         501(c)(3) status pending • Metro Atlanta pilot • Building a scalable national model
       </div>
       <header className="border-b border-[#dfd4c6] bg-[#f4efe6]/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-4">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3">
             <div className="hidden sm:block">
-              <BrandLogo variant="lockup" size={240} />
+              <BrandLogo variant="lockup" size={210} />
             </div>
             <div className="sm:hidden">
-              <BrandLogo variant="lockup" size={200} />
+              <BrandLogo variant="lockup" size={160} />
             </div>
           </div>
 
-          <nav className="flex flex-wrap items-center gap-1 md:justify-end">
+          <nav className="flex flex-wrap items-center gap-2 text-sm md:justify-end">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}

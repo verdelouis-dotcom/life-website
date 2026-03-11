@@ -24,6 +24,14 @@ export default function SiteFooter() {
               </a>{" "}
               with program or partnership questions.
             </p>
+            <p className="mt-4">
+              <a
+                href="/assessment/methodology"
+                className="inline-flex text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4"
+              >
+                Review the LIFE Assessment methodology
+              </a>
+            </p>
           </div>
           <div className="type-detail">
             <p className="font-semibold text-[var(--life-forest)]">Keynote</p>
