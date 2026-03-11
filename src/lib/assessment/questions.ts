@@ -44,7 +44,7 @@ export const ASSESSMENT_SECTIONS: AssessmentSectionConfig[] = [
   },
 ];
 
-const OPTION_LABELS: Record<AssessmentQuestionId, AssessmentOption[]> = {
+const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> = {
   fruitsVeg: [
     { value: "rarely", label: "Rarely" },
     { value: "severalTimesPerWeek", label: "Several times per week" },
