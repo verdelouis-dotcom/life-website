@@ -11,10 +11,15 @@ const INVALID_CREDENTIAL_HINTS = ["invalid api key", "unauthorized", "missing ap
 const DUPLICATE_HINTS = ["already", "exists", "duplicate"];
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.longevityinitiativeforfoodandeducation.com";
 
-type AssessmentReportPayload = Pick<
-  AssessmentResultsPayload,
-  "metrics" | "pillarScores" | "strengths" | "opportunities" | "recommendations" | "baselineLifeExpectancy" | "normalizedScore"
->;
+type AssessmentReportPayload = {
+  metrics: AssessmentResultsPayload["metrics"];
+  pillarScores: AssessmentResultsPayload["pillarScores"];
+  strengths: AssessmentResultsPayload["strengths"];
+  opportunities: AssessmentResultsPayload["opportunities"];
+  recommendations: AssessmentResultsPayload["recommendations"];
+  baselineLifeExpectancy?: AssessmentResultsPayload["baselineLifeExpectancy"];
+  normalizedScore?: AssessmentResultsPayload["normalizedScore"];
+};
 
 function resolveEnv(...keys: string[]) {
   for (const key of keys) {
