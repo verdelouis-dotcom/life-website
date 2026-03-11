@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import PillarDetailPage from "@/components/pillar-detail-page";
-import { getPillarBySlug } from "@/data/pillars";
-
-const slug = "community";
-const pillar = getPillarBySlug(slug);
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: `${pillar?.title ?? "Community"} Pillar | LIFE`,
-  description: pillar?.summary,
+  title: "Connection Pillar | LIFE",
+  description: "Connection and belonging are part of LIFE’s six-pillar longevity framework.",
 };
 
-export default function CommunityPillarPage() {
-  return <PillarDetailPage slug={slug} />;
+export default function CommunityPillarRedirectPage() {
+  redirect("/pillars/connection");
 }
