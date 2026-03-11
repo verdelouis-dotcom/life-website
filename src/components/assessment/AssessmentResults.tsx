@@ -123,7 +123,7 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         )}
       </section>
 
-      <EmailCaptureCard defaultFirstName={firstName} metrics={results.metrics} />
+      <EmailCaptureCard defaultFirstName={firstName} report={results} />
 
       <DonationSupportCard />
 
