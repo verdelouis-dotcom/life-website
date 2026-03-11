@@ -79,6 +79,7 @@ export type AssessmentQuestionId =
 export interface HeightAnswer {
   feet?: number;
   inches?: number;
+  [key: string]: number | undefined;
 }
 
 export interface AssessmentAnswers {
