@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { AssessmentAnswers, AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
 import LifeTimeline from "@/components/assessment/LifeTimeline";
 import PillarScoreBars from "@/components/assessment/PillarScoreBars";
@@ -130,10 +131,9 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         <p>
           This assessment provides an educational estimate based on lifestyle and health factors associated with healthy aging. It is not a medical diagnosis and should not replace professional medical advice.
         </p>
-        {/* TODO: Update link destination when methodology page launches. */}
-        <a href="#" className="mt-3 inline-flex text-[var(--olive)]">
+        <Link href="/assessment/methodology" className="mt-3 inline-flex text-[var(--olive)]">
           Learn about the research behind this assessment
-        </a>
+        </Link>
       </section>
     </div>
   );

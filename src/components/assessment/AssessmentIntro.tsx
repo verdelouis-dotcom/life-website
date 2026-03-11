@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface AssessmentIntroProps {
   onStart: () => void;
   hasProgress: boolean;
@@ -40,10 +42,12 @@ export default function AssessmentIntro({ onStart, hasProgress }: AssessmentIntr
       </button>
 
       <p className="mt-4 text-sm text-[var(--muted)]">Free to take • Results in minutes</p>
-      {/* TODO: Replace placeholder link once methodology page goes live. */}
-      <a href="#" className="mt-5 inline-flex items-center justify-center text-sm font-semibold text-[var(--olive)] hover:text-[#2f3a29]">
+      <Link
+        href="/assessment/methodology"
+        className="mt-5 inline-flex items-center justify-center text-sm font-semibold text-[var(--olive)] hover:text-[#2f3a29]"
+      >
         Learn about the research behind this assessment
-      </a>
+      </Link>
     </section>
   );
 }
