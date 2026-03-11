@@ -39,7 +39,7 @@ const SCORE_KEYS: (AssessmentQuestionId | OptionalMarkerKey)[] = [
 
 const OPTIONAL_MARKER_KEYS: OptionalMarkerKey[] = ["bloodPressure", "ldl", "fastingGlucose"];
 
-const QUESTION_WEIGHTS: Record<(typeof SCORE_KEYS)[number], number> = {
+const QUESTION_WEIGHTS: Partial<Record<(typeof SCORE_KEYS)[number], number>> = {
   fruitsVeg: 3,
   processedFoods: 3,
   sugarIntake: 2,
