@@ -67,7 +67,7 @@ const QUESTION_WEIGHTS: Partial<Record<(typeof SCORE_KEYS)[number], number>> = {
   fastingGlucose: 3,
 };
 
-const SCORE_TABLE: Record<(typeof SCORE_KEYS)[number], Record<string, number>> = {
+const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, number>>> = {
   fruitsVeg: {
     rarely: 0,
     severalTimesPerWeek: 1,
