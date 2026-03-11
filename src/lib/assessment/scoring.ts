@@ -257,7 +257,7 @@ function calculateScoreSummary(answers: AssessmentAnswers): ScoreSummary {
   let optionalMax = 0;
 
   for (const key of SCORE_KEYS) {
-    const weight = QUESTION_WEIGHTS[key];
+    const weight = QUESTION_WEIGHTS[key] ?? 0;
     const value = answers[key as keyof AssessmentAnswers];
     const score = scoreValue(key, typeof value === "string" ? value : undefined);
     weightedScore += score * weight;
@@ -282,7 +282,7 @@ function calculatePillarScores(answers: AssessmentAnswers): PillarScore[] {
     let maxSum = 0;
 
     questionIds.forEach((id) => {
-      const weight = QUESTION_WEIGHTS[id];
+      const weight = QUESTION_WEIGHTS[id] ?? 0;
       const value = answers[id];
       const score = scoreValue(id, typeof value === "string" ? value : undefined);
       scoreSum += score * weight;
