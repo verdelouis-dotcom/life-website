@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import type { LongevityMetrics } from "@/components/assessment/AssessmentTypes";
+import type { AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
 
 interface EmailCaptureCardProps {
   defaultFirstName?: string;
-  metrics: LongevityMetrics;
+  report: AssessmentResultsPayload;
 }
 
-export default function EmailCaptureCard({ defaultFirstName = "", metrics }: EmailCaptureCardProps) {
+export default function EmailCaptureCard({ defaultFirstName = "", report }: EmailCaptureCardProps) {
   const [firstName, setFirstName] = useState(defaultFirstName);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -25,7 +25,16 @@ export default function EmailCaptureCard({ defaultFirstName = "", metrics }: Ema
       firstName: firstName || undefined,
       context: {
         source: "life-assessment",
-        metrics,
+        metrics: report.metrics,
+      },
+      report: {
+        metrics: report.metrics,
+        pillarScores: report.pillarScores,
+        strengths: report.strengths,
+        opportunities: report.opportunities,
+        recommendations: report.recommendations,
+        baselineLifeExpectancy: report.baselineLifeExpectancy,
+        normalizedScore: report.normalizedScore,
       },
     };
 
@@ -42,12 +51,18 @@ export default function EmailCaptureCard({ defaultFirstName = "", metrics }: Ema
       }
 
       setStatus("success");
-      setMessage(data?.alreadySubscribed ? "You’re already on the LIFE newsletter." : "Report on the way—check your inbox soon.");
+      const successMessage =
+        data?.alreadySubscribed && typeof data?.message === "string"
+          ? data.message
+          : data?.message ?? (data?.alreadySubscribed ? "You’re already on the LIFE newsletter." : "Report on the way—check your inbox soon.");
+      setMessage(successMessage);
       setEmail("");
     } catch (error) {
       console.error("ASSESSMENT_EMAIL_CAPTURE_ERROR", error);
       setStatus("error");
-      setMessage("We couldn’t send the report right now. Please try again.");
+      const friendly =
+        error instanceof Error && error.message ? error.message : "We couldn’t send the report right now. Please try again.";
+      setMessage(friendly);
     }
   }
 
