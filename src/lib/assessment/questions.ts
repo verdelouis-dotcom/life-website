@@ -42,6 +42,11 @@ export const ASSESSMENT_SECTIONS: AssessmentSectionConfig[] = [
     title: "Health & Habits",
     description: "Substances and overall health perceptions.",
   },
+  {
+    id: "familyContext",
+    title: "Family & Context",
+    description: "Background factors that add context to your current profile.",
+  },
 ];
 
 const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> = {
@@ -56,7 +61,7 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> =
     { value: "severalTimesPerWeek", label: "Several times per week" },
     { value: "daily", label: "Daily" },
     { value: "multipleTimesPerDay", label: "Multiple times per day" },
-  ].reverse(),
+  ],
   sugarIntake: [
     { value: "severalTimesDaily", label: "Several times per day" },
     { value: "dailyTreat", label: "Daily treat" },
@@ -68,6 +73,12 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> =
     { value: "oneToTwoPerWeek", label: "1–2 per week" },
     { value: "threeToFivePerWeek", label: "3–5 per week" },
     { value: "mostDays", label: "Most days" },
+  ],
+  waterIntake: [
+    { value: "lessThanOneGlass", label: "Less than 1 glass" },
+    { value: "twoToFive", label: "2–5 glasses" },
+    { value: "sixToNine", label: "6–9 glasses" },
+    { value: "tenPlus", label: "10+ glasses" },
   ],
   cardio: [
     { value: "rarelyOrNever", label: "Rarely or never" },
@@ -93,6 +104,12 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> =
     { value: "good", label: "Good" },
     { value: "excellent", label: "Excellent" },
   ],
+  mobility: [
+    { value: "never", label: "Never" },
+    { value: "fewTimesPerMonth", label: "Few times per month" },
+    { value: "oneToTwoPerWeek", label: "1–2 times per week" },
+    { value: "threePlusPerWeek", label: "3+ times per week" },
+  ],
   sleepDuration: [
     { value: "rarely", label: "Rarely" },
     { value: "sometimes", label: "Sometimes" },
@@ -112,7 +129,7 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> =
     { value: "almostAlways", label: "Almost always" },
   ],
   timeWithOthers: [
-    { value: "rarely", label: "Rarely" },
+    { value: "never", label: "Never" },
     { value: "fewTimesPerMonth", label: "Few times per month" },
     { value: "weekly", label: "Weekly" },
     { value: "daily", label: "Daily" },
@@ -176,6 +193,25 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> =
     { value: "fair", label: "Fair" },
     { value: "good", label: "Good" },
     { value: "excellent", label: "Excellent" },
+  ],
+  grandparents85: [
+    { value: "zero", label: "Zero" },
+    { value: "one", label: "One" },
+    { value: "two", label: "Two" },
+    { value: "threeOrFour", label: "Three or four" },
+  ],
+  preventiveCare: [
+    { value: "never", label: "Never" },
+    { value: "everyFiveYears", label: "Every five years" },
+    { value: "everyTwoToThreeYears", label: "Every two to three years" },
+    { value: "yearly", label: "Yearly" },
+  ],
+  weightDistribution: [
+    { value: "leanMuscular", label: "Lean/muscular" },
+    { value: "mostlyWaist", label: "Mostly around the waist" },
+    { value: "mostlyHipsThighs", label: "Mostly hips/thighs" },
+    { value: "evenlyDistributed", label: "Evenly distributed" },
+    { value: "notSure", label: "Not sure" },
   ],
 };
 
@@ -263,6 +299,14 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: OPTION_LABELS.homePreparedMeals,
   },
   {
+    id: "waterIntake",
+    prompt: "How much water do you typically drink per day?",
+    sectionId: "food",
+    type: "singleSelect",
+    required: true,
+    options: OPTION_LABELS.waterIntake,
+  },
+  {
     id: "cardio",
     prompt: "How much cardio exercise do you do each week?",
     sectionId: "movement",
@@ -295,6 +339,14 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: OPTION_LABELS.fitnessLevel,
   },
   {
+    id: "mobility",
+    prompt: "How often do you perform mobility or stretching exercises?",
+    sectionId: "movement",
+    type: "singleSelect",
+    required: true,
+    options: OPTION_LABELS.mobility,
+  },
+  {
     id: "sleepDuration",
     prompt: "How often do you get at least 7 hours of sleep?",
     sectionId: "sleep",
@@ -320,7 +372,7 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   },
   {
     id: "timeWithOthers",
-    prompt: "How often do you spend time with friends or family?",
+    prompt: "How often do you spend time with friends, family, or community?",
     sectionId: "connection",
     type: "singleSelect",
     required: true,
@@ -406,6 +458,30 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     type: "singleSelect",
     required: true,
     options: OPTION_LABELS.selfRatedHealth,
+  },
+  {
+    id: "grandparents85",
+    prompt: "How many of your biological grandparents lived to age 85 or older?",
+    sectionId: "familyContext",
+    type: "singleSelect",
+    required: true,
+    options: OPTION_LABELS.grandparents85,
+  },
+  {
+    id: "preventiveCare",
+    prompt: "How often do you receive routine medical check-ups or preventive care?",
+    sectionId: "familyContext",
+    type: "singleSelect",
+    required: true,
+    options: OPTION_LABELS.preventiveCare,
+  },
+  {
+    id: "weightDistribution",
+    prompt: "Which best describes your weight distribution?",
+    sectionId: "familyContext",
+    type: "singleSelect",
+    required: true,
+    options: OPTION_LABELS.weightDistribution,
   },
 ];
 

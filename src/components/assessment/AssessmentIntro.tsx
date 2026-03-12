@@ -8,7 +8,7 @@ interface AssessmentIntroProps {
 }
 
 const TRUST_POINTS = [
-  "Takes about 3 minutes",
+  "Takes about 3–4 minutes",
   "Personalized report",
   "Research-informed and educational",
 ];
@@ -22,7 +22,7 @@ export default function AssessmentIntro({ onStart, hasProgress }: AssessmentIntr
         Discover how your daily habits may be shaping your long-term health.
       </p>
       <p className="mt-2 text-base text-[var(--text)]">
-        This short assessment provides an educational estimate of biological age, lifespan potential, and lifestyle opportunities associated with healthy aging.
+        This short assessment provides an educational estimate of survey-based biological age, lifespan potential, and lifestyle opportunities associated with healthy aging.
       </p>
 
       <ul className="mt-6 flex flex-col gap-3 text-sm text-[var(--text)] sm:flex-row sm:justify-center">

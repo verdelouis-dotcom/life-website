@@ -14,10 +14,12 @@ const SCORE_KEYS: (AssessmentQuestionId | OptionalMarkerKey)[] = [
   "processedFoods",
   "sugarIntake",
   "homePreparedMeals",
+  "waterIntake",
   "cardio",
   "strengthTraining",
   "dailyMovement",
   "fitnessLevel",
+  "mobility",
   "sleepDuration",
   "sleepQuality",
   "sleepSchedule",
@@ -32,6 +34,9 @@ const SCORE_KEYS: (AssessmentQuestionId | OptionalMarkerKey)[] = [
   "nicotine",
   "chronicDisease",
   "selfRatedHealth",
+  "grandparents85",
+  "preventiveCare",
+  "weightDistribution",
   "bloodPressure",
   "ldl",
   "fastingGlucose",
@@ -44,10 +49,12 @@ const QUESTION_WEIGHTS: Partial<Record<(typeof SCORE_KEYS)[number], number>> = {
   processedFoods: 3,
   sugarIntake: 2,
   homePreparedMeals: 2,
+  waterIntake: 1,
   cardio: 4,
   strengthTraining: 3,
   dailyMovement: 3,
-  fitnessLevel: 3,
+  fitnessLevel: 4,
+  mobility: 1,
   sleepDuration: 3,
   sleepQuality: 2,
   sleepSchedule: 1,
@@ -62,6 +69,9 @@ const QUESTION_WEIGHTS: Partial<Record<(typeof SCORE_KEYS)[number], number>> = {
   nicotine: 4,
   chronicDisease: 4,
   selfRatedHealth: 3,
+  grandparents85: 1,
+  preventiveCare: 1,
+  weightDistribution: 3,
   bloodPressure: 3,
   ldl: 2,
   fastingGlucose: 3,
@@ -92,6 +102,12 @@ const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, nu
     threeToFivePerWeek: 2,
     mostDays: 3,
   },
+  waterIntake: {
+    lessThanOneGlass: 0,
+    twoToFive: 1,
+    sixToNine: 2,
+    tenPlus: 3,
+  },
   cardio: {
     rarelyOrNever: 0,
     under150: 1,
@@ -116,6 +132,12 @@ const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, nu
     good: 2,
     excellent: 3,
   },
+  mobility: {
+    never: 0,
+    fewTimesPerMonth: 1,
+    oneToTwoPerWeek: 2,
+    threePlusPerWeek: 3,
+  },
   sleepDuration: {
     rarely: 0,
     sometimes: 1,
@@ -135,7 +157,7 @@ const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, nu
     almostAlways: 3,
   },
   timeWithOthers: {
-    rarely: 0,
+    never: 0,
     fewTimesPerMonth: 1,
     weekly: 2,
     daily: 3,
@@ -200,6 +222,25 @@ const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, nu
     good: 2,
     excellent: 3,
   },
+  grandparents85: {
+    zero: 0,
+    one: 1,
+    two: 2,
+    threeOrFour: 3,
+  },
+  preventiveCare: {
+    never: 0,
+    everyFiveYears: 1,
+    everyTwoToThreeYears: 2,
+    yearly: 3,
+  },
+  weightDistribution: {
+    mostlyWaist: 0,
+    evenlyDistributed: 1,
+    mostlyHipsThighs: 2,
+    leanMuscular: 3,
+    notSure: 1,
+  },
   bloodPressure: {
     high: 0,
     elevated: 1,
@@ -221,8 +262,8 @@ const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, nu
 };
 
 const PILLAR_GROUPS: Record<PillarKey, AssessmentQuestionId[]> = {
-  food: ["fruitsVeg", "processedFoods", "sugarIntake", "homePreparedMeals"],
-  movement: ["cardio", "strengthTraining", "dailyMovement", "fitnessLevel"],
+  food: ["fruitsVeg", "processedFoods", "sugarIntake", "homePreparedMeals", "waterIntake"],
+  movement: ["cardio", "strengthTraining", "dailyMovement", "fitnessLevel", "mobility"],
   sleep: ["sleepDuration", "sleepQuality", "sleepSchedule"],
   connection: ["timeWithOthers", "socialSupport", "sharedMeals", "screenFreeMeals"],
   purpose: ["purpose"],
@@ -230,12 +271,12 @@ const PILLAR_GROUPS: Record<PillarKey, AssessmentQuestionId[]> = {
 };
 
 const PILLAR_DESCRIPTIONS: Record<PillarKey, string> = {
-  food: "Nutrition choices linked to metabolic and cognitive longevity markers.",
-  movement: "Cardiorespiratory fitness, strength, and daily movement volume.",
-  sleep: "Sleep quantity, quality, and rhythm cues.",
-  connection: "Protective relationships and shared meals that buffer stress.",
-  purpose: "Meaning, direction, and contribution that motivate healthy routines.",
-  stress: "Stress load and mental health impact on daily functioning.",
+  food: "Mediterranean-style meals rich in plants, healthy fats, and minimal ultra-processed foods support long-term health and reduce chronic disease risk.",
+  movement: "Regular movement, strength, and everyday physical activity support metabolic health, mobility, and healthy aging.",
+  sleep: "Consistent, restorative sleep supports metabolic function, mental wellbeing, recovery, and long-term health.",
+  connection: "Strong relationships, shared meals, and social support help reduce isolation and reinforce healthier, longer lives.",
+  purpose: "A clear sense of meaning, contribution, and direction is associated with resilience, wellbeing, and healthy aging.",
+  stress: "Daily practices that calm the nervous system support emotional wellbeing, recovery, and long-term health.",
 };
 
 interface ScoreSummary {
@@ -325,6 +366,9 @@ function getRealisticImprovedAnswers(answers: AssessmentAnswers): AssessmentAnsw
   next.homePreparedMeals = answers.homePreparedMeals && ["threeToFivePerWeek", "mostDays"].includes(answers.homePreparedMeals)
     ? answers.homePreparedMeals
     : "threeToFivePerWeek";
+  next.waterIntake = answers.waterIntake && ["sixToNine", "tenPlus"].includes(answers.waterIntake)
+    ? answers.waterIntake
+    : "sixToNine";
 
   // Movement
   next.cardio = answers.cardio && ["from150To300", "over300"].includes(answers.cardio) ? answers.cardio : "from150To300";
@@ -336,6 +380,9 @@ function getRealisticImprovedAnswers(answers: AssessmentAnswers): AssessmentAnsw
     ? answers.dailyMovement
     : "frequentlyMoving";
   next.fitnessLevel = answers.fitnessLevel && ["good", "excellent"].includes(answers.fitnessLevel) ? answers.fitnessLevel : "good";
+  next.mobility = answers.mobility && ["oneToTwoPerWeek", "threePlusPerWeek"].includes(answers.mobility)
+    ? answers.mobility
+    : "oneToTwoPerWeek";
 
   // Sleep
   next.sleepDuration = answers.sleepDuration && ["often", "almostAlways"].includes(answers.sleepDuration)
@@ -385,6 +432,10 @@ function getRealisticImprovedAnswers(answers: AssessmentAnswers): AssessmentAnsw
   } else {
     next.selfRatedHealth = "good";
   }
+  next.preventiveCare =
+    answers.preventiveCare && ["everyTwoToThreeYears", "yearly"].includes(answers.preventiveCare)
+      ? answers.preventiveCare
+      : "everyTwoToThreeYears";
 
   return next;
 }
@@ -397,8 +448,9 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
   const baseAdjustment = clamp((normalizedScore - 0.5) * 28, -14, 14);
   const biomarkerModifier = getMarkerAdjustment(answers);
   const eliteLifestyleBonus = getEliteLifestyleBonus(answers);
+  const bmiModifier = getBmiModifier(answers);
   const estimatedLifespan = clamp(
-    baselineLifeExpectancy + baseAdjustment + biomarkerModifier + eliteLifestyleBonus,
+    baselineLifeExpectancy + baseAdjustment + biomarkerModifier + eliteLifestyleBonus + bmiModifier,
     chronologicalAge + 2,
     95,
   );
@@ -416,7 +468,7 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
   let longevityPotential = clamp(
     Math.max(
       estimatedLifespan,
-      baselineLifeExpectancy + improvedBaseAdjustment + biomarkerModifier + improvedEliteBonus,
+      baselineLifeExpectancy + improvedBaseAdjustment + biomarkerModifier + improvedEliteBonus + bmiModifier,
     ),
     estimatedLifespan,
     100,
@@ -457,6 +509,49 @@ function getBaselineLifeExpectancy(sex: AssessmentAnswers["sex"]) {
   if (sex === "male") return 76.5;
   if (sex === "female") return 81.4;
   return 79.0;
+}
+
+function getBmiModifier(answers: AssessmentAnswers) {
+  const weight = typeof answers.weight === "number" ? answers.weight : undefined;
+  const heightInches = getHeightInInches(answers.height);
+  if (!weight || !heightInches) {
+    return 0;
+  }
+
+  const bmi = (weight / (heightInches * heightInches)) * 703;
+  if (!Number.isFinite(bmi)) {
+    return 0;
+  }
+
+  let modifier = 0;
+  if (bmi >= 32) {
+    modifier = -2;
+  } else if (bmi >= 28) {
+    modifier = -1;
+  } else if (bmi >= 20 && bmi <= 26) {
+    modifier = 0.5;
+  }
+
+  if (answers.weightDistribution === "leanMuscular" && modifier < 0) {
+    modifier = 0;
+  }
+
+  if (answers.weightDistribution === "mostlyWaist" && bmi >= 28) {
+    modifier -= 0.5;
+  }
+
+  return clamp(modifier, -3, 1);
+}
+
+function getHeightInInches(height?: AssessmentAnswers["height"]) {
+  if (!height) return undefined;
+  const feet = typeof height.feet === "number" ? height.feet : undefined;
+  const inches = typeof height.inches === "number" ? height.inches : undefined;
+  if (typeof feet !== "number" || typeof inches !== "number") {
+    return undefined;
+  }
+  const total = feet * 12 + inches;
+  return Number.isFinite(total) ? total : undefined;
 }
 
 function getMarkerAdjustment(answers: AssessmentAnswers) {

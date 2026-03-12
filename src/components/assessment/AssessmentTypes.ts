@@ -5,7 +5,8 @@ export type AssessmentSectionId =
   | "sleep"
   | "connection"
   | "purposeStress"
-  | "healthHabits";
+  | "healthHabits"
+  | "familyContext";
 
 export type QuestionInputType = "text" | "number" | "singleSelect" | "composite";
 
@@ -57,10 +58,12 @@ export type AssessmentQuestionId =
   | "processedFoods"
   | "sugarIntake"
   | "homePreparedMeals"
+  | "waterIntake"
   | "cardio"
   | "strengthTraining"
   | "dailyMovement"
   | "fitnessLevel"
+  | "mobility"
   | "sleepDuration"
   | "sleepQuality"
   | "sleepSchedule"
@@ -74,7 +77,10 @@ export type AssessmentQuestionId =
   | "alcohol"
   | "nicotine"
   | "chronicDisease"
-  | "selfRatedHealth";
+  | "selfRatedHealth"
+  | "grandparents85"
+  | "preventiveCare"
+  | "weightDistribution";
 
 export interface HeightAnswer {
   feet?: number;
@@ -92,10 +98,12 @@ export interface AssessmentAnswers {
   processedFoods?: string;
   sugarIntake?: string;
   homePreparedMeals?: string;
+  waterIntake?: string;
   cardio?: string;
   strengthTraining?: string;
   dailyMovement?: string;
   fitnessLevel?: string;
+  mobility?: string;
   sleepDuration?: string;
   sleepQuality?: string;
   sleepSchedule?: string;
@@ -110,6 +118,9 @@ export interface AssessmentAnswers {
   nicotine?: string;
   chronicDisease?: string;
   selfRatedHealth?: string;
+  grandparents85?: string;
+  preventiveCare?: string;
+  weightDistribution?: string;
   bloodPressure?: string;
   ldl?: string;
   fastingGlucose?: string;
