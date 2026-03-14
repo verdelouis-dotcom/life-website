@@ -16,11 +16,11 @@ export default function SectionImpact() {
         <Reveal>
           <p className="type-body-muted">
             LIFE grows through shared meals and relationships. Each gathering creates an opportunity for someone else to open their home,
-            share a meal, and pass it forward. Registered tables help us understand how participation is growing across homes, families, and
-            neighborhoods. LIFE begins with a simple shared meal. People gather around the table to cook, eat, and talk about practical
-            habits that support long and healthy lives. At the end of the evening, there is one simple invitation: pass it forward. Within
-            the next 30 days, invite someone to your own table and share a meal together. Each table is registered so we can understand
-            participation and see where the movement is growing.
+            share a meal, and pass it forward. When tables are registered, we can see how participation expands from one household to the
+            next across homes, families, and neighborhoods. LIFE begins with a simple shared meal. People gather around the table to cook,
+            eat, and talk about practical habits that support long and healthy lives. At the end of the evening, there is one simple
+            invitation: pass it forward. Within the next 30 days, invite someone to your own table and share a meal together. Each table is
+            registered so we can understand participation and see where the movement is growing.
           </p>
         </Reveal>
         <div className="grid gap-4 md:grid-cols-3">

@@ -23,7 +23,10 @@ export default function SectionSpread() {
             </Reveal>
           ))}
         </div>
-        <p className="type-detail">Participation starts locally. Registered tables help us understand how the experience is spreading across homes, families, and neighborhoods.</p>
+        <p className="type-detail">
+          Participation starts locally. Registering each gathering lets us follow how neighbors inspire neighbors and where the movement is
+          taking root.
+        </p>
       </div>
     </section>
   );

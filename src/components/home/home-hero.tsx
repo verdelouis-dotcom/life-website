@@ -12,13 +12,10 @@ export default function HomeHero() {
             <h1 className="type-display">Longevity Starts at the Table</h1>
           </Reveal>
           <Reveal>
-            <p className="type-lede text-[var(--text)]">
-              The Longevity Initiative for Food &amp; Education brings people together to cook, share meals, and practice the habits that support
-              longer, healthier lives.
-            </p>
+            <p className="type-lede text-[var(--text)]">One shared meal. One invitation. A healthier community.</p>
           </Reveal>
           <Reveal>
-            <p className="type-body max-w-2xl text-[var(--text)]">Launching in Metro Atlanta in 2026.</p>
+            <p className="type-body max-w-2xl text-[var(--text)]">Now Piloting in Metro Atlanta.</p>
           </Reveal>
         <Reveal className="flex flex-wrap items-center gap-4">
           <Link

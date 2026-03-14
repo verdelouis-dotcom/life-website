@@ -8,8 +8,8 @@ export default function SectionWhat() {
           <h2 className="section-heading">The Program</h2>
           <p className="type-body-muted">
             LIFE recruits, trains, and supports community hosts to lead monthly shared meals. Through Mediterranean cooking and shared
-            tables, the program reinforces practical longevity habits and social connection. Registered tables help us understand how the
-            experience is spreading across homes, families, and neighborhoods.
+            tables, the program reinforces practical longevity habits and social connection. Tracking registered tables shows where momentum
+            is building in homes, families, and neighborhoods.
           </p>
         </Reveal>
       </div>

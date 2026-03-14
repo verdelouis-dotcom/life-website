@@ -6,21 +6,31 @@ const NAV_ITEMS = [
   { href: "/assessment", label: "Assessment" },
   { href: "/host", label: "Become a Host" },
   { href: "/register", label: "Register a Table" },
-  { href: "/donate", label: "Donate" },
+  { href: "/donate", label: "Donate", highlight: true },
   { href: "/newsletter", label: "Newsletter" },
   { href: "/keynote", label: "Keynote" },
   { href: "mailto:info@longevityinitiativeforfoodandeducation.com", label: "Contact Us" },
 ];
 
-const NavLink = ({ href, label }: { href: string; label: string }) => (
-  <Link
-    href={href}
-    className="rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
-    prefetch={false}
-  >
-    {label}
-  </Link>
-);
+const NavLink = ({ href, label, highlight }: { href: string; label: string; highlight?: boolean }) => {
+  if (highlight) {
+    return (
+      <Link href={href} className="btn-solid px-5 py-2 text-sm shadow-md" prefetch={false}>
+        {label}
+      </Link>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className="rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
+      prefetch={false}
+    >
+      {label}
+    </Link>
+  );
+};
 
 export default function SiteHeader() {
   return (
