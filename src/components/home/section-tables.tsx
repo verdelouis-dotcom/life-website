@@ -35,7 +35,7 @@ const FOOD_IMAGES = [
 const IMAGES = [...WORKSHOP_IMAGES, ...FOOD_IMAGES];
 const INITIAL_COUNT = 4;
 
-export default function SectionLooks() {
+export default function SectionTables() {
   const [showAll, setShowAll] = useState(false);
   const imagesToShow = showAll ? IMAGES : IMAGES.slice(0, INITIAL_COUNT);
 
@@ -43,7 +43,7 @@ export default function SectionLooks() {
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-6 px-6">
         <Reveal className="space-y-3 text-center">
-          <h2 className="section-heading">What It Looks Like</h2>
+          <h2 className="section-heading">Tables</h2>
           <p className="type-detail">Images shared with permission from the Metro Atlanta pilot.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">

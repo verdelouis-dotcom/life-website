@@ -9,12 +9,12 @@ export default function SectionLeadership() {
         <Reveal>
           <h2 className="section-heading">Leadership</h2>
         </Reveal>
-        <Reveal>
+        <Reveal className="space-y-3">
           <p className="type-body-muted">
-            Founder Lou Verde delivers community education on LIFE principles and longevity fundamentals.
-            <br />
-            Lou has traveled internationally—with an emphasis on Italy—to study cultural patterns linked to longer, healthier lives, and
-            continues this field research to enrich the program.
+            Founder Lou Verde leads LIFE through community education, hosted workshops, and 30-minute keynote presentations on longevity and healthy living.
+          </p>
+          <p className="type-body-muted">
+            Lou continues to travel internationally—with a focus on Italy—to study cultural patterns associated with long-living communities and bring those insights back to the program.
           </p>
         </Reveal>
         <Reveal className="mx-auto h-64 w-64 overflow-hidden rounded-full border border-[var(--border)] shadow-sm">

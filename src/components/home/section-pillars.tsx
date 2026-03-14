@@ -7,10 +7,8 @@ export default function SectionPillars() {
     <section className="bg-white py-14 text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
         <Reveal className="space-y-3">
-          <h2 className="section-heading">Six Pillars of Longevity</h2>
-          <p className="type-detail">
-            LIFE teaches evidence-informed fundamentals across these six pillars through home-based cooking tables.
-          </p>
+          <h2 className="section-heading">Six Pillars</h2>
+          <p className="type-body-muted">LIFE teaches practical longevity fundamentals through six core pillars.</p>
         </Reveal>
         <div className="grid gap-5 text-left md:grid-cols-2">
           {PILLARS.map((pillar) => (
@@ -30,9 +28,6 @@ export default function SectionPillars() {
             </Reveal>
           ))}
         </div>
-        <p className="type-detail uppercase tracking-[0.3em] text-[var(--olive)]">
-          Each pillar stands alone—and hosts weave them together across the year.
-        </p>
       </div>
     </section>
   );

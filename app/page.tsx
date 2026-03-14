@@ -3,12 +3,11 @@ import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
 import SectionWho from "@/components/home/section-who";
 import SectionWhy from "@/components/home/section-why";
-import SectionWhat from "@/components/home/section-what";
-import SectionHow from "@/components/home/section-how";
-import SectionSpread from "@/components/home/section-spread";
-import SectionImpact from "@/components/home/section-impact";
+import SectionModel from "@/components/home/section-model";
 import SectionPillars from "@/components/home/section-pillars";
-import SectionLooks from "@/components/home/section-looks";
+import SectionAssessment from "@/components/home/section-assessment";
+import SectionPilot from "@/components/home/section-pilot";
+import SectionTables from "@/components/home/section-tables";
 import SectionLeadership from "@/components/home/section-leadership";
 import SectionBoard from "@/components/home/section-board";
 import SectionFunding from "@/components/home/section-funding";
@@ -22,16 +21,15 @@ export default function HomePage() {
         <HomeHero />
         <SectionWho />
         <SectionWhy />
-        <SectionWhat />
-        <SectionHow />
-        <SectionSpread />
-        <SectionImpact />
+        <SectionModel />
         <SectionPillars />
-        <SectionLooks />
+        <SectionAssessment />
+        <SectionPilot />
+        <SectionTables />
         <SectionLeadership />
         <SectionBoard />
-        <SectionNewsletter />
         <SectionFunding />
+        <SectionNewsletter />
       </main>
       <SiteFooter />
     </>

@@ -30,19 +30,19 @@ const PILLAR_LIBRARY: Record<PillarKey, PillarMessaging> = {
   movement: {
     title: "Movement",
     strength: "Your movement volume is signaling metabolic and cardiovascular resilience.",
-    opportunity: "Mix cardio, strength, and daily movement snacks to keep muscle and insulin sensitivity strong.",
+    opportunity: "Blend natural movement, practical strength, and daily walks to keep muscle and insulin sensitivity strong.",
     recommendations: [
       {
-        title: "Log 150–300 minutes of cardio",
-        detail: "Schedule brisk walks, cycling, or swimming sessions to reach the evidence-backed aerobic target.",
+        title: "Walk or cycle most days",
+        detail: "Layer brisk walks, hikes, or casual rides so your heart rate comes up regularly without needing a gym setting.",
       },
       {
-        title: "Strength train twice weekly",
-        detail: "Compound lifts or bodyweight circuits twice per week maintain muscle, posture, and glucose control.",
+        title: "Lift, carry, or climb twice weekly",
+        detail: "Use bodyweight work, resistance bands, gardening, or carrying loads to challenge muscles and preserve strength.",
       },
       {
-        title: "Interrupt long sitting streaks",
-        detail: "Stand, stretch, or take 2-minute walks every hour to keep circulation and mitochondrial activity high.",
+        title: "Break up long sitting",
+        detail: "Stand, stretch, or take short movement snacks every hour to keep circulation, lymph, and mitochondrial activity high.",
       },
     ],
   },

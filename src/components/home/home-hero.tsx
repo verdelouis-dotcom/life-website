@@ -12,43 +12,29 @@ export default function HomeHero() {
             <h1 className="type-display">Longevity Starts at the Table</h1>
           </Reveal>
           <Reveal>
-            <p className="type-lede text-[var(--text)]">One shared meal. One invitation. A healthier community.</p>
+            <p className="type-lede text-[var(--text)]">
+              LIFE is a nonprofit initiative piloting in Metro Atlanta that teaches longevity fundamentals through shared meals,
+              fresh-ingredient cooking, and practical community education.
+            </p>
+          </Reveal>
+          <Reveal className="flex flex-wrap items-center gap-4">
+            <Link href="#model" className="btn-solid px-8 text-base" prefetch={false}>
+              Learn the Model
+            </Link>
+            <Link
+              href="/assessment"
+              className="btn-outline px-8 text-base"
+            >
+              Take the Assessment
+            </Link>
+            <Link href="/keynote" className="text-sm font-semibold text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+              Request a Keynote
+            </Link>
           </Reveal>
           <Reveal>
-            <p className="type-body max-w-2xl text-[var(--text)]">Now Piloting in Metro Atlanta.</p>
+            <p className="type-detail text-[var(--muted)]">Piloting now in Metro Atlanta with a model built for accountable growth.</p>
           </Reveal>
-        <Reveal className="flex flex-wrap items-center gap-4">
-          <Link
-            href="/host"
-            className="btn-outline"
-          >
-              Host a Table
-            </Link>
-            <Link
-              href="/register"
-              className="btn-outline"
-            >
-              Register a Table
-            </Link>
-            <Link
-              href="/donate"
-              className="btn-outline"
-            >
-              Donate
-            </Link>
-            <Link
-              href="/keynote"
-              className="btn-outline"
-            >
-            Request a Keynote
-          </Link>
-        </Reveal>
-        <Reveal>
-          <p className="type-detail text-[var(--muted)]">
-            Participation starts locally. Registered tables help us understand how the experience is spreading across homes, families, and neighborhoods.
-          </p>
-        </Reveal>
-      </div>
+        </div>
         <Reveal
           delay={120}
           className="relative w-full overflow-hidden rounded-[36px] border border-[var(--border)] shadow-xl min-h-[360px] md:min-h-[520px]"

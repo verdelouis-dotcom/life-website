@@ -217,7 +217,7 @@ export default function AssessmentMethodologyPage() {
               <section id="disclaimer" className="space-y-3 rounded-[32px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Disclaimer</p>
                 <p className="text-sm text-[var(--text)]">
-                  The LIFE Longevity Assessment provides an educational estimate based on lifestyle and health factors associated with healthy aging. It is not a medical diagnosis, medical advice, or a prediction of individual lifespan, and it should not replace consultation with a qualified healthcare professional.
+                  This assessment provides an educational estimate based on lifestyle and health factors associated with healthy aging. It is not a medical diagnosis and should not replace professional medical advice.
                 </p>
               </section>
 

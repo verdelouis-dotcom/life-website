@@ -2,10 +2,10 @@ import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
 const SUPPORT_ITEMS = [
-  "ingredients and cooking materials for hosted tables",
+  "ingredients and cooking materials",
   "educational resources and host toolkits",
-  "program measurement and impact reporting",
-  "research and development to refine and expand the model",
+  "program measurement and reporting",
+  "research and development",
 ];
 
 export default function SectionFunding() {
@@ -14,9 +14,10 @@ export default function SectionFunding() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="space-y-8 rounded-[40px] border border-[var(--border)] bg-white/90 px-8 py-10 text-center shadow-sm">
           <Reveal className="space-y-3">
-            <h2 className="section-heading">Funding</h2>
+            <h2 className="section-heading">Donate</h2>
             <p className="type-body-muted">
-              Gifts support community education, host resources, and outreach that helps more people gather around the table.
+              Hosting twelve workshops each year requires ingredients, tools, and educational materials. Donations help LIFE provide those
+              resources, support community education, and measure participation responsibly.
             </p>
           </Reveal>
           <Reveal>
@@ -32,9 +33,7 @@ export default function SectionFunding() {
             </div>
           </Reveal>
           <Reveal>
-            <p className="type-body-muted">
-              Your support helps the program grow responsibly while maintaining a simple, replicable structure.
-            </p>
+            <p className="type-body-muted">Your support helps the program grow responsibly while maintaining a simple, replicable structure.</p>
           </Reveal>
           <Reveal>
             <Link

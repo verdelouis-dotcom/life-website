@@ -4,12 +4,9 @@ import BrandLogo from "@/components/brand-logo";
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/assessment", label: "Assessment" },
-  { href: "/host", label: "Become a Host" },
-  { href: "/register", label: "Register a Table" },
+  { href: "/register", label: "Register" },
   { href: "/donate", label: "Donate", highlight: true },
-  { href: "/newsletter", label: "Newsletter" },
   { href: "/keynote", label: "Keynote" },
-  { href: "mailto:info@longevityinitiativeforfoodandeducation.com", label: "Contact Us" },
 ];
 
 const NavLink = ({ href, label, highlight }: { href: string; label: string; highlight?: boolean }) => {
