@@ -5,29 +5,19 @@ const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/assessment", label: "Assessment" },
   { href: "/register", label: "Register" },
-  { href: "/donate", label: "Donate", highlight: true },
+  { href: "/donate", label: "Donate" },
   { href: "/keynote", label: "Keynote" },
 ];
 
-const NavLink = ({ href, label, highlight }: { href: string; label: string; highlight?: boolean }) => {
-  if (highlight) {
-    return (
-      <Link href={href} className="btn-solid px-5 py-2 text-sm shadow-md" prefetch={false}>
-        {label}
-      </Link>
-    );
-  }
-
-  return (
-    <Link
-      href={href}
-      className="rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
-      prefetch={false}
-    >
-      {label}
-    </Link>
-  );
-};
+const NavLink = ({ href, label }: { href: string; label: string }) => (
+  <Link
+    href={href}
+    className="rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
+    prefetch={false}
+  >
+    {label}
+  </Link>
+);
 
 export default function SiteHeader() {
   return (

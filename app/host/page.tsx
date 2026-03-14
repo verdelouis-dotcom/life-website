@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
+const HOST_PRIMARY_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=Host%20a%20LIFE%20Workshop";
 const HOST_GUIDE_LINK = "/host-guide.pdf";
 const REGISTER_LINK = "/register";
 const CONTACT_EMAIL = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Support";
@@ -43,8 +44,14 @@ export default function HostPage() {
             </ul>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href={HOST_GUIDE_LINK}
+                href={HOST_PRIMARY_LINK}
                 className="btn-solid px-8 text-base"
+              >
+                Host a Workshop
+              </a>
+              <a
+                href={HOST_GUIDE_LINK}
+                className="btn-outline px-8 text-base"
               >
                 Download Host Guide
               </a>
