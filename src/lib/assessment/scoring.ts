@@ -26,7 +26,6 @@ const SCORE_KEYS: (AssessmentQuestionId | OptionalMarkerKey)[] = [
   "timeWithOthers",
   "socialSupport",
   "sharedMeals",
-  "sharedTable",
   "screenFreeMeals",
   "stressFrequency",
   "mentalHealthImpact",
@@ -62,7 +61,6 @@ const QUESTION_WEIGHTS: Partial<Record<(typeof SCORE_KEYS)[number], number>> = {
   timeWithOthers: 2,
   socialSupport: 2,
   sharedMeals: 2,
-  sharedTable: 2,
   screenFreeMeals: 1,
   stressFrequency: 2,
   mentalHealthImpact: 2,
@@ -176,13 +174,6 @@ const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, nu
     weekly: 2,
     mostDays: 3,
   },
-  sharedTable: {
-    rarely: 0,
-    fewTimesPerMonth: 1,
-    weekly: 2,
-    severalTimesPerWeek: 3,
-    daily: 3,
-  },
   screenFreeMeals: {
     almostAlwaysWithScreens: 0,
     oftenWithScreens: 1,
@@ -274,7 +265,7 @@ const PILLAR_GROUPS: Record<PillarKey, AssessmentQuestionId[]> = {
   food: ["fruitsVeg", "processedFoods", "sugarIntake", "homePreparedMeals", "waterIntake"],
   movement: ["cardio", "strengthTraining", "dailyMovement", "fitnessLevel", "mobility"],
   sleep: ["sleepDuration", "sleepQuality", "sleepSchedule"],
-  connection: ["timeWithOthers", "socialSupport", "sharedMeals", "sharedTable", "screenFreeMeals"],
+  connection: ["timeWithOthers", "socialSupport", "sharedMeals", "screenFreeMeals"],
   purpose: ["purpose"],
   stress: ["stressFrequency", "mentalHealthImpact"],
 };
@@ -411,10 +402,6 @@ function getRealisticImprovedAnswers(answers: AssessmentAnswers): AssessmentAnsw
   next.sharedMeals = answers.sharedMeals && ["weekly", "mostDays"].includes(answers.sharedMeals)
     ? answers.sharedMeals
     : "weekly";
-  next.sharedTable =
-    answers.sharedTable && ["weekly", "severalTimesPerWeek", "daily"].includes(answers.sharedTable)
-      ? answers.sharedTable
-      : "weekly";
   next.screenFreeMeals = answers.screenFreeMeals && ["sometimesWithoutScreens", "usuallyScreenFree"].includes(answers.screenFreeMeals)
     ? answers.screenFreeMeals
     : "sometimesWithoutScreens";
@@ -635,7 +622,6 @@ function getEliteLifestyleBonus(answers: AssessmentAnswers) {
     ["oneToTwoNights", "rarelyOrNever"].includes(answers.sleepQuality ?? ""),
     ["fairlySupportive", "verySupportive"].includes(answers.socialSupport ?? ""),
     ["weekly", "mostDays"].includes(answers.sharedMeals ?? ""),
-    ["weekly", "severalTimesPerWeek", "daily"].includes(answers.sharedTable ?? ""),
     ["strongPurpose", "deepSenseOfPurpose"].includes(answers.purpose ?? ""),
     ["occasionally", "rarely"].includes(answers.stressFrequency ?? ""),
   ].filter(Boolean).length;

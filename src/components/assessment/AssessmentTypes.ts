@@ -70,7 +70,6 @@ export type AssessmentQuestionId =
   | "timeWithOthers"
   | "socialSupport"
   | "sharedMeals"
-  | "sharedTable"
   | "screenFreeMeals"
   | "stressFrequency"
   | "mentalHealthImpact"
@@ -111,7 +110,6 @@ export interface AssessmentAnswers {
   timeWithOthers?: string;
   socialSupport?: string;
   sharedMeals?: string;
-  sharedTable?: string;
   screenFreeMeals?: string;
   stressFrequency?: string;
   mentalHealthImpact?: string;

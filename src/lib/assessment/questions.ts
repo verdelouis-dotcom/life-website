@@ -146,13 +146,6 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId, AssessmentOption[]>> =
     { value: "weekly", label: "Weekly" },
     { value: "mostDays", label: "Most days" },
   ],
-  sharedTable: [
-    { value: "rarely", label: "Rarely" },
-    { value: "fewTimesPerMonth", label: "A few times per month" },
-    { value: "weekly", label: "Weekly" },
-    { value: "severalTimesPerWeek", label: "Several times per week" },
-    { value: "daily", label: "Daily" },
-  ],
   screenFreeMeals: [
     { value: "almostAlwaysWithScreens", label: "Almost always with screens" },
     { value: "oftenWithScreens", label: "Often with screens" },
@@ -395,7 +388,7 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   },
   {
     id: "sharedMeals",
-    prompt: "How often do you share meals with other people?",
+    prompt: "How often do you share meals with others at a table?",
     sectionId: "connection",
     type: "singleSelect",
     required: true,
@@ -408,14 +401,6 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     type: "singleSelect",
     required: true,
     options: OPTION_LABELS.screenFreeMeals,
-  },
-  {
-    id: "sharedTable",
-    prompt: "How often do you share meals with others at a table?",
-    sectionId: "connection",
-    type: "singleSelect",
-    required: true,
-    options: OPTION_LABELS.sharedTable,
   },
   {
     id: "stressFrequency",
