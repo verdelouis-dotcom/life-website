@@ -23,6 +23,14 @@ const HABIT_PILLAR_MAP: Record<PillarKey, AssessmentQuestionId[]> = {
   stressRegulation: ["overwhelmFrequency", "recoveryHabits", "outdoorQuietTime"],
 };
 
+const CONNECTION_WEIGHTS: Partial<Record<AssessmentQuestionId, number>> = {
+  meaningfulTime: 0.2,
+  supportSystem: 0.15,
+  sharedMeals: 0.4,
+  screenFreeMeals: 0.15,
+  communityBelonging: 0.1,
+};
+
 const HABIT_OPTION_SCORES: Partial<Record<AssessmentQuestionId, Record<string, number>>> = {
   fruitsVegServings: buildScoreMap(["underOne", "oneToTwo", "threeToFour", "fivePlus"]),
   processedMeals: buildScoreMap(["mostMeals", "onePerDay", "fewPerWeek", "rarely"]),
@@ -85,7 +93,7 @@ const PILLAR_DESCRIPTIONS: Record<PillarKey, string> = {
   food: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health.",
   movement: "Natural movement, strength, and lower sedentary time protect metabolic health.",
   sleep: "Consistent, restorative sleep enables recovery and hormone balance.",
-  connection: "Strong relationships, shared meals, and belonging reinforce healthy aging.",
+  connection: "Shared tables, supportive relationships, and belonging reinforce healthy aging.",
   purpose: "A clear sense of purpose and contribution keeps habits mission-driven.",
   stressRegulation: "Daily recovery practices calm the nervous system and reduce wear and tear.",
 };
@@ -103,7 +111,7 @@ const QUESTION_LOOKUP = new Map(ASSESSMENT_QUESTIONS.map((question) => [question
 
 export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResultsPayload {
   const pillarScores = calculatePillarScores(answers);
-  const lifeHabitsScore = roundScore(average(pillarScores.map((pillar) => pillar.score)));
+  const lifeHabitsScore = roundScore(calculateWeightedHabitScore(pillarScores));
   const healthContextScore = roundScore(calculateHealthContextScore(answers));
   const currentLongevityBaseline = roundScore(lifeHabitsScore * 0.7 + healthContextScore * 0.3);
   const longevityPotential = roundScore(calculateLongevityPotential(lifeHabitsScore, pillarScores, answers));
@@ -143,23 +151,47 @@ function calculatePillarScores(answers: AssessmentAnswers): PillarScore[] {
   return (Object.keys(HABIT_PILLAR_MAP) as PillarKey[]).map((pillar) => {
     const questionIds = HABIT_PILLAR_MAP[pillar];
     const scores = questionIds.map((id) => scoreQuestion(id, answers[id] as string | undefined));
-    const score = roundScore(average(scores));
+    const score =
+      pillar === "connection"
+        ? roundScore(weightedConnectionScore(questionIds, scores))
+        : roundScore(average(scores));
     return {
       key: pillar,
-      label: PILLAR_LIBRARY[pillar],
+      label: PILLAR_LIBRARY[pillar].label,
       score,
       description: PILLAR_DESCRIPTIONS[pillar],
     };
   });
 }
 
-const PILLAR_LIBRARY: Record<PillarKey, string> = {
-  food: "Food",
-  movement: "Movement",
-  sleep: "Sleep",
-  connection: "Connection",
-  purpose: "Purpose",
-  stressRegulation: "Stress Regulation",
+function weightedConnectionScore(questionIds: AssessmentQuestionId[], scores: number[]) {
+  let weightedTotal = 0;
+  let totalWeight = 0;
+  questionIds.forEach((id, index) => {
+    const weight = CONNECTION_WEIGHTS[id] ?? 0;
+    weightedTotal += scores[index] * weight;
+    totalWeight += weight;
+  });
+  if (!totalWeight) return average(scores);
+  return weightedTotal / totalWeight;
+}
+
+function calculateWeightedHabitScore(pillarScores: PillarScore[]) {
+  let total = 0;
+  pillarScores.forEach((pillar) => {
+    const weight = PILLAR_LIBRARY[pillar.key].weight;
+    total += weight * pillar.score;
+  });
+  return total;
+}
+
+const PILLAR_LIBRARY: Record<PillarKey, { label: string; weight: number }> = {
+  food: { label: "Food", weight: 0.21 },
+  movement: { label: "Movement", weight: 0.2 },
+  sleep: { label: "Sleep", weight: 0.15 },
+  connection: { label: "Connection", weight: 0.18 },
+  purpose: { label: "Purpose", weight: 0.13 },
+  stressRegulation: { label: "Stress Regulation", weight: 0.13 },
 };
 
 function calculateHealthContextScore(answers: AssessmentAnswers) {
