@@ -162,7 +162,7 @@ function calculateHealthContextScore(answers: AssessmentAnswers) {
 
   CONTEXT_QUESTION_IDS.forEach((id) => {
     const value = answers[id];
-    const score = scoreQuestion(id, value);
+    const score = scoreQuestion(id, value as string | undefined);
     contextScores.push(score);
   });
 
