@@ -15,19 +15,18 @@ import { calculateLongevityProjection } from "@/lib/assessment/longevityProjecti
 const SCORE_SCALE = [25, 50, 75, 100] as const;
 
 const HABIT_PILLAR_MAP: Record<PillarKey, AssessmentQuestionId[]> = {
-  food: ["fruitsVegServings", "processedMeals", "addedSugar", "homeCookedMeals", "hydrationChoice", "fiberFoods"],
-  movement: ["moderateActivity", "strengthDays", "sedentaryTime", "lifestyleMovement", "mobilityPractice"],
-  sleep: ["sleepHours", "wakeRested", "sleepConsistency", "sleepHygiene"],
-  connection: ["meaningfulTime", "supportSystem", "sharedMeals", "screenFreeMeals", "communityBelonging"],
+  food: ["fruitsVegServings", "processedMeals", "addedSugar", "homeCookedMeals", "hydrationChoice"],
+  movement: ["moderateActivity", "strengthDays", "sedentaryTime", "lifestyleMovement"],
+  sleep: ["sleepHours", "wakeRested", "sleepConsistency"],
+  connection: ["meaningfulTime", "sharedMeals", "screenFreeMeals", "communityBelonging"],
   purpose: ["senseOfPurpose", "meaningfulActivities", "contributionFrequency"],
-  stressRegulation: ["overwhelmFrequency", "recoveryHabits", "outdoorQuietTime"],
+  stressRegulation: ["overwhelmFrequency", "outdoorQuietTime"],
 };
 
 const CONNECTION_WEIGHTS: Partial<Record<AssessmentQuestionId, number>> = {
-  meaningfulTime: 0.2,
-  supportSystem: 0.15,
-  sharedMeals: 0.4,
-  screenFreeMeals: 0.15,
+  meaningfulTime: 0.25,
+  sharedMeals: 0.45,
+  screenFreeMeals: 0.2,
   communityBelonging: 0.1,
 };
 
@@ -37,18 +36,14 @@ const HABIT_OPTION_SCORES: Partial<Record<AssessmentQuestionId, Record<string, n
   addedSugar: buildScoreMap(["multiDaily", "daily", "fewPerWeek", "rarely"]),
   homeCookedMeals: buildScoreMap(["underTwo", "threeToFour", "fiveToSix", "mostDays"]),
   hydrationChoice: buildScoreMap(["mostlySugary", "sweetenedMix", "waterPlus", "mostlyWater"]),
-  fiberFoods: buildScoreMap(["rarely", "weekly", "mostDays", "daily"]),
   moderateActivity: buildScoreMap(["lessThanWeekly", "oneToTwoPerWeek", "threeToFourPerWeek", "mostDays"]),
   strengthDays: buildScoreMap(["none", "oneDay", "twoDays", "threePlusDays"]),
   sedentaryTime: buildScoreMap(["overTenHours", "sevenToTenHours", "fourToSixHours", "underFourHours"]),
   lifestyleMovement: buildScoreMap(["mostlySeated", "mixed", "onFeet", "activeAllDay"]),
-  mobilityPractice: buildScoreMap(["rarely", "monthly", "weekly", "severalPerWeek"]),
   sleepHours: buildScoreMap(["underSix", "sixToSeven", "sevenToEight", "overEight"]),
   wakeRested: buildScoreMap(["rarelyRested", "sometimesRested", "mostMornings", "almostAlwaysRested"]),
   sleepConsistency: buildScoreMap(["inconsistent", "somewhatConsistent", "mostlyConsistent", "veryConsistent"]),
-  sleepHygiene: buildScoreMap(["chaoticEvenings", "occasionalWindDown", "mostNights", "intentionalRoutine"]),
   meaningfulTime: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "severalPerWeek"]),
-  supportSystem: buildScoreMap(["noSupport", "someSupport", "reliableSupport", "strongSupport"]),
   sharedMeals: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "mostDays"]),
   screenFreeMeals: buildScoreMap(["almostAlwaysWithScreens", "oftenWithScreens", "sometimesWithoutScreens", "usuallyScreenFree"]),
   communityBelonging: buildScoreMap(["disconnected", "someBelonging", "solidBelonging", "deepBelonging"]),
@@ -56,12 +51,10 @@ const HABIT_OPTION_SCORES: Partial<Record<AssessmentQuestionId, Record<string, n
   meaningfulActivities: buildScoreMap(["lessThanMonthly", "monthly", "weekly", "severalPerWeek"]),
   contributionFrequency: buildScoreMap(["rarely", "fewTimesPerYear", "monthly", "weekly"]),
   overwhelmFrequency: buildScoreMap(["almostDaily", "fewTimesPerWeek", "sometimes", "rarely"]),
-  recoveryHabits: buildScoreMap(["rarely", "weekly", "severalPerWeek", "daily"]),
   outdoorQuietTime: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "severalPerWeek"]),
   alcohol: buildScoreMap(["fifteenPlus", "eightToFourteen", "oneToSeven", "none"]),
   nicotine: buildScoreMap(["dailyUser", "occasionalUser", "formerUser", "neverUsed"]),
   chronicCondition: buildScoreMap(["yes", "riskFactors", "unsure", "no"]),
-  selfRatedHealth: buildScoreMap(["poor", "fair", "good", "excellent"]),
   preventiveCare: buildScoreMap(["never", "everyFiveYears", "everyTwoToThreeYears", "yearly"]),
   grandparents85: buildScoreMap(["zero", "one", "two", "threeOrFour"]),
 };
@@ -102,7 +95,6 @@ const CONTEXT_QUESTION_IDS: AssessmentQuestionId[] = [
   "alcohol",
   "nicotine",
   "chronicCondition",
-  "selfRatedHealth",
   "preventiveCare",
   "grandparents85",
 ];

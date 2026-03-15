@@ -59,18 +59,14 @@ export type AssessmentQuestionId =
   | "addedSugar"
   | "homeCookedMeals"
   | "hydrationChoice"
-  | "fiberFoods"
   | "moderateActivity"
   | "strengthDays"
   | "sedentaryTime"
   | "lifestyleMovement"
-  | "mobilityPractice"
   | "sleepHours"
   | "wakeRested"
   | "sleepConsistency"
-  | "sleepHygiene"
   | "meaningfulTime"
-  | "supportSystem"
   | "sharedMeals"
   | "screenFreeMeals"
   | "communityBelonging"
@@ -78,12 +74,10 @@ export type AssessmentQuestionId =
   | "meaningfulActivities"
   | "contributionFrequency"
   | "overwhelmFrequency"
-  | "recoveryHabits"
   | "outdoorQuietTime"
   | "alcohol"
   | "nicotine"
   | "chronicCondition"
-  | "selfRatedHealth"
   | "preventiveCare"
   | "grandparents85"
   | OptionalMarkerKey;
@@ -105,18 +99,14 @@ export interface AssessmentAnswers {
   addedSugar?: string;
   homeCookedMeals?: string;
   hydrationChoice?: string;
-  fiberFoods?: string;
   moderateActivity?: string;
   strengthDays?: string;
   sedentaryTime?: string;
   lifestyleMovement?: string;
-  mobilityPractice?: string;
   sleepHours?: string;
   wakeRested?: string;
   sleepConsistency?: string;
-  sleepHygiene?: string;
   meaningfulTime?: string;
-  supportSystem?: string;
   sharedMeals?: string;
   screenFreeMeals?: string;
   communityBelonging?: string;
@@ -124,12 +114,10 @@ export interface AssessmentAnswers {
   meaningfulActivities?: string;
   contributionFrequency?: string;
   overwhelmFrequency?: string;
-  recoveryHabits?: string;
   outdoorQuietTime?: string;
   alcohol?: string;
   nicotine?: string;
   chronicCondition?: string;
-  selfRatedHealth?: string;
   preventiveCare?: string;
   grandparents85?: string;
   bloodPressure?: string;

@@ -80,12 +80,6 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId | OptionalMarkerKey, As
     { value: "waterPlus", label: "Mostly water or unsweet tea with occasional flavored drinks" },
     { value: "mostlyWater", label: "Nearly all water, unsweet tea, or sparkling water" },
   ],
-  fiberFoods: [
-    { value: "rarely", label: "Rarely" },
-    { value: "weekly", label: "About once per week" },
-    { value: "mostDays", label: "Most days" },
-    { value: "daily", label: "Daily" },
-  ],
   moderateActivity: [
     { value: "lessThanWeekly", label: "Less than once per week" },
     { value: "oneToTwoPerWeek", label: "1–2 times per week" },
@@ -110,12 +104,6 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId | OptionalMarkerKey, As
     { value: "onFeet", label: "On your feet or walking much of the day" },
     { value: "activeAllDay", label: "Very active lifestyle (walking, chores, caregiving)" },
   ],
-  mobilityPractice: [
-    { value: "rarely", label: "Rarely" },
-    { value: "monthly", label: "A few times per month" },
-    { value: "weekly", label: "1–2 times per week" },
-    { value: "severalPerWeek", label: "3+ times per week" },
-  ],
   sleepHours: [
     { value: "underSix", label: "Under 6 hours" },
     { value: "sixToSeven", label: "6–7 hours" },
@@ -134,23 +122,11 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId | OptionalMarkerKey, As
     { value: "mostlyConsistent", label: "Within a 1-hour window" },
     { value: "veryConsistent", label: "Within the same 30-minute window" },
   ],
-  sleepHygiene: [
-    { value: "chaoticEvenings", label: "Rarely protect a wind-down hour" },
-    { value: "occasionalWindDown", label: "Occasionally protect the hour before bed" },
-    { value: "mostNights", label: "Most nights have a calm wind-down" },
-    { value: "intentionalRoutine", label: "Daily routine: low lights, no screens, light stretching/reading" },
-  ],
   meaningfulTime: [
     { value: "rarely", label: "Rarely" },
     { value: "fewTimesPerMonth", label: "A few times per month" },
     { value: "weekly", label: "Weekly" },
     { value: "severalPerWeek", label: "Several times per week" },
-  ],
-  supportSystem: [
-    { value: "noSupport", label: "I don’t feel supported" },
-    { value: "someSupport", label: "A small support system" },
-    { value: "reliableSupport", label: "Reliable support when needed" },
-    { value: "strongSupport", label: "Strong support and I offer it back" },
   ],
   sharedMeals: [
     { value: "rarely", label: "Rarely" },
@@ -194,12 +170,6 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId | OptionalMarkerKey, As
     { value: "sometimes", label: "Sometimes" },
     { value: "rarely", label: "Rarely" },
   ],
-  recoveryHabits: [
-    { value: "rarely", label: "Rarely" },
-    { value: "weekly", label: "About once per week" },
-    { value: "severalPerWeek", label: "2–3 times per week" },
-    { value: "daily", label: "Daily or near-daily" },
-  ],
   outdoorQuietTime: [
     { value: "rarely", label: "Rarely" },
     { value: "fewTimesPerMonth", label: "A few times per month" },
@@ -223,12 +193,6 @@ const OPTION_LABELS: Partial<Record<AssessmentQuestionId | OptionalMarkerKey, As
     { value: "riskFactors", label: "I have risk factors or symptoms" },
     { value: "unsure", label: "Unsure / being evaluated" },
     { value: "no", label: "No chronic conditions" },
-  ],
-  selfRatedHealth: [
-    { value: "poor", label: "Poor" },
-    { value: "fair", label: "Fair" },
-    { value: "good", label: "Good" },
-    { value: "excellent", label: "Excellent" },
   ],
   preventiveCare: [
     { value: "never", label: "Rarely or never" },
@@ -349,13 +313,6 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: OPTION_LABELS.hydrationChoice,
   },
   {
-    id: "fiberFoods",
-    prompt: "How often do you include beans, lentils, whole grains, or seeds at meals?",
-    sectionId: "food",
-    type: "singleSelect",
-    options: OPTION_LABELS.fiberFoods,
-  },
-  {
     id: "moderateActivity",
     prompt: "How often do you get at least 30 minutes of moderate activity (walking, hiking, cycling)?",
     sectionId: "movement",
@@ -384,13 +341,6 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: OPTION_LABELS.lifestyleMovement,
   },
   {
-    id: "mobilityPractice",
-    prompt: "How often do you stretch, practice mobility, or move your joints through their full range?",
-    sectionId: "movement",
-    type: "singleSelect",
-    options: OPTION_LABELS.mobilityPractice,
-  },
-  {
     id: "sleepHours",
     prompt: "How often do you sleep 7–8 hours per night?",
     sectionId: "sleep",
@@ -412,25 +362,11 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: OPTION_LABELS.sleepConsistency,
   },
   {
-    id: "sleepHygiene",
-    prompt: "How often do you protect the hour before bed with calm, screen-free habits?",
-    sectionId: "sleep",
-    type: "singleSelect",
-    options: OPTION_LABELS.sleepHygiene,
-  },
-  {
     id: "meaningfulTime",
     prompt: "How often do you spend meaningful, in-person time with friends, family, or neighbors?",
     sectionId: "connection",
     type: "singleSelect",
     options: OPTION_LABELS.meaningfulTime,
-  },
-  {
-    id: "supportSystem",
-    prompt: "How supported do you feel by your relationships?",
-    sectionId: "connection",
-    type: "singleSelect",
-    options: OPTION_LABELS.supportSystem,
   },
   {
     id: "sharedMeals",
@@ -482,13 +418,6 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: OPTION_LABELS.overwhelmFrequency,
   },
   {
-    id: "recoveryHabits",
-    prompt: "How often do you use intentional practices (breathwork, prayer, journaling) to reset?",
-    sectionId: "stressRegulation",
-    type: "singleSelect",
-    options: OPTION_LABELS.recoveryHabits,
-  },
-  {
     id: "outdoorQuietTime",
     prompt: "How often do you spend time outdoors or in quiet spaces to calm your nervous system?",
     sectionId: "stressRegulation",
@@ -515,13 +444,6 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     sectionId: "healthContext",
     type: "singleSelect",
     options: OPTION_LABELS.chronicCondition,
-  },
-  {
-    id: "selfRatedHealth",
-    prompt: "How would you describe your current health?",
-    sectionId: "healthContext",
-    type: "singleSelect",
-    options: OPTION_LABELS.selfRatedHealth,
   },
   {
     id: "preventiveCare",

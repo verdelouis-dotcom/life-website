@@ -7,7 +7,6 @@ import EmailCaptureCard from "@/components/assessment/EmailCaptureCard";
 import DonationSupportCard from "@/components/assessment/DonationSupportCard";
 import { LIFE_HABIT_LIBRARY } from "@/lib/assessment/lifeHabitLibrary";
 import { HABIT_RECOMMENDATIONS } from "@/lib/assessment/habitRecommendations";
-import ShareableLongevityCard from "@/components/assessment/ShareableLongevityCard";
 
 interface AssessmentResultsProps {
   answers: AssessmentAnswers;
@@ -83,19 +82,6 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
           {heroCards.map((card) => (
             <SummaryCard key={card.title} title={card.title} value={card.value} detail={card.detail} />
           ))}
-        </div>
-      </section>
-
-      <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Shareable Snapshot</p>
-        <p className="mt-1 text-sm text-[var(--muted)]">Use this lightweight card when sharing your results publicly.</p>
-        <div className="mt-4">
-          <ShareableLongevityCard
-            yearsGained={results.metrics.yearsGained}
-            lifeHabitsScore={results.metrics.lifeHabitsScore}
-            strongestPillar={results.metrics.strongestPillar}
-            weakestPillar={results.metrics.weakestPillar}
-          />
         </div>
       </section>
 

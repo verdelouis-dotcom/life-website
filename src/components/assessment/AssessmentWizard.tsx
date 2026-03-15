@@ -150,13 +150,13 @@ export default function AssessmentWizard() {
 
     clearAutoAdvanceTimer();
 
-    if (currentIndex === TOTAL_QUESTION_COUNT - 1) {
-      return;
-    }
-
     autoAdvanceTimerRef.current = setTimeout(() => {
       autoAdvanceTimerRef.current = null;
-      setCurrentIndex((prev) => Math.min(prev + 1, TOTAL_QUESTION_COUNT - 1));
+      if (currentIndex === TOTAL_QUESTION_COUNT - 1) {
+        handleNext();
+      } else {
+        setCurrentIndex((prev) => Math.min(prev + 1, TOTAL_QUESTION_COUNT - 1));
+      }
     }, AUTO_ADVANCE_DELAY_MS);
   }
 
