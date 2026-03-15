@@ -182,7 +182,7 @@ function calculateHealthContextScore(answers: AssessmentAnswers) {
   return contextScores.length ? average(contextScores) : 60;
 }
 
-function calculateLongevityPotential(lifeHabitsScore: number, pillarScores: PillarScore[], answers: AssessmentAnswers) {
+export function calculateLongevityPotential(lifeHabitsScore: number, pillarScores: PillarScore[], answers: AssessmentAnswers) {
   const headroomGains = pillarScores.map((pillar) => (100 - pillar.score) * 0.55);
   const averageGain = average(headroomGains);
   let potential = lifeHabitsScore + averageGain;

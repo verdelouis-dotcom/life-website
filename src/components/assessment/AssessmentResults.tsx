@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { AssessmentAnswers, AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
 import LifeTimeline from "@/components/assessment/LifeTimeline";
+import LongevitySimulator from "@/components/assessment/LongevitySimulator";
 import PillarScoreBars from "@/components/assessment/PillarScoreBars";
 import ResultsSummaryCard from "@/components/assessment/ResultsSummaryCard";
 import EmailCaptureCard from "@/components/assessment/EmailCaptureCard";
@@ -71,6 +72,14 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
           ))}
         </div>
       </section>
+
+      <LongevitySimulator
+        age={answers.age ?? 40}
+        sex={answers.sex ?? "female"}
+        pillarScores={results.pillarScores}
+        healthContextScore={results.metrics.healthContextScore}
+        answers={answers}
+      />
 
       {(results.metrics.strongestPillar || results.metrics.weakestPillar) && (
         <section className="grid gap-6 md:grid-cols-2">
