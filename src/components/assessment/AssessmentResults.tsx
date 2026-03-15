@@ -3,7 +3,6 @@
 import Link from "next/link";
 import type { AssessmentAnswers, AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
 import LifeTimeline from "@/components/assessment/LifeTimeline";
-import LongevitySimulator from "@/components/assessment/LongevitySimulator";
 import PillarScoreBars from "@/components/assessment/PillarScoreBars";
 import ResultsSummaryCard from "@/components/assessment/ResultsSummaryCard";
 import EmailCaptureCard from "@/components/assessment/EmailCaptureCard";
@@ -73,13 +72,37 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         </div>
       </section>
 
-      <LongevitySimulator
-        age={answers.age ?? 40}
-        sex={answers.sex ?? "female"}
-        pillarScores={results.pillarScores}
-        healthContextScore={results.metrics.healthContextScore}
-        answers={answers}
-      />
+      <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm space-y-4">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <OpportunityCard
+            title="Current trajectory"
+            value={`${results.metrics.currentExpectedAge} yrs`}
+            detail={`≈ Year ${results.metrics.currentExpectedYear}`}
+          />
+          <OpportunityCard
+            title="With consistent LIFE habits"
+            value={`${results.metrics.potentialExpectedAge} yrs`}
+            detail={`≈ Year ${results.metrics.potentialExpectedYear}`}
+          />
+          <OpportunityCard title="Years you could gain" value={`+${results.metrics.yearsGained} yrs`} detail="Educational estimate" />
+        </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Habits that could drive the biggest improvement</p>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            These habits represent the areas with the most room for improvement across the LIFE pillars.
+          </p>
+          <ul className="mt-4 space-y-3 text-sm text-[var(--text)]">
+            {results.metrics.habitOpportunities.map((item) => (
+              <li key={item.questionId} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
+                <p className="font-semibold text-[var(--life-forest)]">{item.prompt}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
+                  {results.pillarScores.find((pillar) => pillar.key === item.pillar)?.label ?? item.pillar}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {(results.metrics.strongestPillar || results.metrics.weakestPillar) && (
         <section className="grid gap-6 md:grid-cols-2">
@@ -197,5 +220,20 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         </Link>
       </section>
     </div>
+  );
+}
+interface OpportunityCardProps {
+  title: string;
+  value: string;
+  detail: string;
+}
+
+function OpportunityCard({ title, value, detail }: OpportunityCardProps) {
+  return (
+    <article className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-4 text-left">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">{title}</p>
+      <p className="mt-3 text-3xl font-semibold text-[var(--life-forest)]">{value}</p>
+      <p className="mt-1 text-sm text-[var(--muted)]">{detail}</p>
+    </article>
   );
 }
