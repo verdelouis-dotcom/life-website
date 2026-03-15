@@ -6,7 +6,7 @@ import AssessmentIntro from "@/components/assessment/AssessmentIntro";
 import ProgressBar from "@/components/assessment/ProgressBar";
 import QuestionStep from "@/components/assessment/QuestionStep";
 import AssessmentResults from "@/components/assessment/AssessmentResults";
-import type { AssessmentAnswers, AssessmentQuestion } from "@/components/assessment/AssessmentTypes";
+import type { AssessmentAnswers, AssessmentQuestion, OptionalMarkerKey } from "@/components/assessment/AssessmentTypes";
 import { ASSESSMENT_QUESTIONS, ASSESSMENT_SECTIONS, OPTIONAL_MARKER_QUESTIONS, TOTAL_QUESTION_COUNT } from "@/lib/assessment/questions";
 import { evaluateAssessment } from "@/lib/assessment/scoring";
 import {
@@ -221,7 +221,8 @@ function applyOptionalDefaults(candidate: AssessmentAnswers) {
   let mutated = false;
   OPTIONAL_MARKER_QUESTIONS.forEach((marker) => {
     if (!next[marker.id]) {
-      next[marker.id] = "dontKnow";
+      const markerId = marker.id as OptionalMarkerKey;
+      next[markerId] = "dontKnow";
       mutated = true;
     }
   });
