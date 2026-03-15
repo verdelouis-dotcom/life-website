@@ -270,7 +270,7 @@ function scoreBmi(height: AssessmentAnswers["height"], weight: AssessmentAnswers
 function buildHabitOpportunities(answers: AssessmentAnswers): HabitOpportunityInsight[] {
   const habitQuestionIds = Object.values(HABIT_PILLAR_MAP).flat();
   const scoredQuestions = habitQuestionIds.map((questionId) => {
-    const score = scoreQuestion(questionId, answers[questionId]);
+    const score = scoreQuestion(questionId, answers[questionId] as string | undefined);
     const pillar = getPillarForQuestion(questionId);
     const prompt = QUESTION_LOOKUP.get(questionId)?.prompt ?? questionId;
     return { questionId, pillar, prompt, score };
