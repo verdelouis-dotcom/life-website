@@ -269,7 +269,7 @@ function OptionalMarkersStep({ answers, onChange, onBack, onContinue }: Optional
                 }
                 className="mt-2 w-full rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--text)] focus:border-[var(--olive)] focus:outline-none"
               >
-                {question.options.map((option) => (
+                {(question.options ?? []).map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
