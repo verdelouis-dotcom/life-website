@@ -58,19 +58,19 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         </button>
       </div>
 
+      <LifeTimeline metrics={results.metrics} />
+
       <section className="space-y-4">
         <p className="text-sm text-[var(--muted)]">
           LIFE Habits reflects the six pillars you can influence each day. Health Context summarizes the risk factors you carry right now. Your
           Current Longevity Baseline blends the two, while Longevity Potential shows how far consistent LIFE habits can move the trajectory.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-        {metricCards.map((card) => (
-          <ResultsSummaryCard key={card.label} label={card.label} value={card.value} detail={card.detail} />
-        ))}
+          {metricCards.map((card) => (
+            <ResultsSummaryCard key={card.label} label={card.label} value={card.value} detail={card.detail} />
+          ))}
         </div>
       </section>
-
-      <LifeTimeline metrics={results.metrics} />
 
       {(results.metrics.strongestPillar || results.metrics.weakestPillar) && (
         <section className="grid gap-6 md:grid-cols-2">

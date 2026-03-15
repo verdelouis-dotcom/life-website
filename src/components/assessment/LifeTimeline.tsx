@@ -9,7 +9,7 @@ export default function LifeTimeline({ metrics }: LifeTimelineProps) {
 
   return (
     <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">LIFE Longevity Timeline</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">LIFE LONGEVITY TIMELINE</p>
       <h3 className="mt-2 text-2xl font-semibold text-[var(--life-forest)]">LIFE Longevity Timeline</h3>
       <p className="mt-2 text-sm text-[var(--muted)]">
         This educational estimate shows how your current habits and your potential LIFE habits may influence long-term health over time. It is
@@ -17,19 +17,19 @@ export default function LifeTimeline({ metrics }: LifeTimelineProps) {
       </p>
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         <TimelineCard
-          title="Current trajectory"
+          title="CURRENT TRAJECTORY"
           age={currentExpectedAge}
           year={currentExpectedYear}
           description="Where your current habits are pointing today."
         />
         <TimelineCard
-          title="Potential with LIFE habits"
+          title="POTENTIAL WITH LIFE HABITS"
           age={potentialExpectedAge}
           year={potentialExpectedYear}
           description="A realistic target if LIFE pillars stay consistent."
         />
         <TimelineCard
-          title="Potential years gained"
+          title="POTENTIAL YEARS GAINED"
           age={yearsGained}
           year={undefined}
           description="Additional healthy years you could work toward."

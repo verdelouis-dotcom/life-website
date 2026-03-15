@@ -15,7 +15,7 @@ export const ASSESSMENT_SECTIONS: AssessmentSectionConfig[] = [
   {
     id: "food",
     title: "Food",
-    description: "Daily eating habits that shape long-term health.",
+    description: "Everyday eating habits that shape long-term health.",
   },
   {
     id: "movement",
@@ -322,7 +322,7 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   },
   {
     id: "processedMeals",
-    prompt: "How often are your meals primarily processed or packaged foods?",
+    prompt: "How often do you eat fast food, takeout, or highly processed packaged meals?",
     sectionId: "food",
     type: "singleSelect",
     options: OPTION_LABELS.processedMeals,
