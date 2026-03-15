@@ -85,7 +85,8 @@ export type AssessmentQuestionId =
   | "chronicCondition"
   | "selfRatedHealth"
   | "preventiveCare"
-  | "grandparents85";
+  | "grandparents85"
+  | OptionalMarkerKey;
 
 export interface HeightAnswer {
   feet?: number;
