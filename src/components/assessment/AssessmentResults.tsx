@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import type { AssessmentAnswers, AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
+import type { AssessmentAnswers, AssessmentQuestionId, AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
 import ResultsSummaryCard from "@/components/assessment/ResultsSummaryCard";
 import EmailCaptureCard from "@/components/assessment/EmailCaptureCard";
 import DonationSupportCard from "@/components/assessment/DonationSupportCard";
 import { LIFE_HABIT_LIBRARY } from "@/lib/assessment/lifeHabitLibrary";
+import { HABIT_RECOMMENDATIONS } from "@/lib/assessment/habitRecommendations";
 
 interface AssessmentResultsProps {
   answers: AssessmentAnswers;
@@ -97,7 +98,9 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
           <ul className="mt-4 space-y-3 text-sm text-[var(--text)]">
             {topHabits.map((item) => (
               <li key={item.questionId} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
-                <p className="font-semibold text-[var(--life-forest)]">{item.prompt}</p>
+                <p className="font-semibold text-[var(--life-forest)]">
+                  {getHabitRecommendation(item.questionId as AssessmentQuestionId, item.prompt)}
+                </p>
                 <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
                   {results.pillarScores.find((pillar) => pillar.key === item.pillar)?.label ?? item.pillar}
                 </p>
@@ -161,9 +164,13 @@ function PillarCard({
       {summary && <p className="mt-2 text-sm text-[var(--muted)]">{summary}</p>}
       {habit && (
         <p className="mt-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">
-          Try: <span className="normal-case text-[var(--text)]">{habit}</span>
+          Start with: <span className="normal-case text-[var(--text)]">{habit}</span>
         </p>
       )}
     </article>
   );
+}
+
+function getHabitRecommendation(questionId: AssessmentQuestionId, fallback: string) {
+  return HABIT_RECOMMENDATIONS[questionId] ?? fallback;
 }
