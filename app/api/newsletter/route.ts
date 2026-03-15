@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 import type { AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
-import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
@@ -89,8 +89,8 @@ export async function POST(request: Request) {
     console.info("NEWSLETTER_ROUTE_CONFIG", {
       hasBeehiivKey: Boolean(apiKey),
       hasPublicationId: Boolean(publicationId),
-      hasResendKey: Boolean(process.env.RESEND_API_KEY),
-      hasFromEmail: Boolean(process.env.LIFE_FROM_EMAIL),
+      hasGmailUser: Boolean(process.env.GMAIL_USER),
+      hasGmailAppPassword: Boolean(process.env.GMAIL_APP_PASSWORD),
       hasToEmail: Boolean(process.env.LIFE_TO_EMAIL),
     });
 
@@ -213,6 +213,23 @@ function normalizeReport(raw: unknown): AssessmentReportPayload | null {
   };
 }
 
+function getGmailTransport() {
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+
+  if (!user || !pass) {
+    throw new Error("Missing Gmail credentials");
+  }
+
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user,
+      pass,
+    },
+  });
+}
+
 async function sendAssessmentReportEmail({
   email,
   firstName,
@@ -222,57 +239,24 @@ async function sendAssessmentReportEmail({
   firstName?: string;
   report: AssessmentReportPayload;
 }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    throw new Error("Missing RESEND_API_KEY");
-  }
-
-  const resend = new Resend(apiKey);
-  const configuredFrom = process.env.LIFE_FROM_EMAIL;
-  const fallbackFrom = "LIFE <onboarding@resend.dev>";
+  const transporter = getGmailTransport();
+  const from = `"LIFE" <${process.env.GMAIL_USER}>`;
   const adminCopy = process.env.LIFE_TO_EMAIL;
+  const bcc = adminCopy ? [adminCopy] : undefined;
   const subject = "Your LIFE Longevity Assessment report";
   const html = buildReportHtml(firstName, report);
   const text = buildReportText(firstName, report);
-  const bcc = adminCopy ? [adminCopy] : undefined;
 
-  async function deliver(fromAddress: string) {
-    try {
-      const response = await resend.emails.send({
-        from: fromAddress,
-        to: [email],
-        bcc,
-        subject,
-        html,
-        text,
-      });
+  await transporter.sendMail({
+    from,
+    to: email,
+    bcc,
+    subject,
+    html,
+    text,
+  });
 
-      if (response.error) {
-        throw response.error;
-      }
-      console.info("ASSESSMENT_REPORT_EMAIL_SENT", {
-        to: email,
-        from: fromAddress,
-        bcc: adminCopy,
-      });
-
-      return true;
-    } catch (error) {
-      console.error("ASSESSMENT_EMAIL_SEND_ERROR", { fromAddress, error });
-      return false;
-    }
-  }
-
-  const primaryFrom = configuredFrom || fallbackFrom;
-  let sent = await deliver(primaryFrom);
-
-  if (!sent && configuredFrom) {
-    sent = await deliver(fallbackFrom);
-  }
-
-  if (!sent) {
-    throw new Error("Unable to send assessment report email");
-  }
+  console.info("ASSESSMENT_REPORT_EMAIL_SENT", { to: email, from, bcc: adminCopy });
 }
 
 function buildReportHtml(firstName: string | undefined, report: AssessmentReportPayload) {
