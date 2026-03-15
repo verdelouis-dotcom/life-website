@@ -1,48 +1,68 @@
 import type { LongevityMetrics } from "@/components/assessment/AssessmentTypes";
 
 interface LifeTimelineProps {
-  age: number;
   metrics: LongevityMetrics;
 }
 
-export default function LifeTimeline({ age, metrics }: LifeTimelineProps) {
-  const baseline = clampPercent(metrics.currentLongevityBaseline);
-  const potential = clampPercent(metrics.longevityPotential);
+export default function LifeTimeline({ metrics }: LifeTimelineProps) {
+  const { currentExpectedAge, potentialExpectedAge, yearsGained, currentExpectedYear, potentialExpectedYear } = metrics;
 
   return (
-    <section className="rounded-[32px] border border-[var(--border)] bg-white/80 p-6">
-      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Longevity trajectory</p>
+    <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
+      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">LIFE Longevity Timeline</p>
+      <h3 className="mt-2 text-2xl font-semibold text-[var(--life-forest)]">LIFE Longevity Timeline</h3>
       <p className="mt-2 text-sm text-[var(--muted)]">
-        Current age: <span className="font-semibold text-[var(--life-forest)]">{Math.round(age)} yrs</span>
+        This educational estimate shows how your current habits and your potential LIFE habits may influence long-term health over time. It is
+        not a medical prediction, but a simple way to visualize how daily choices can shape your future.
       </p>
-      <div className="mt-4 h-3 rounded-full bg-[var(--surface)]">
-        <div className="relative h-full rounded-full bg-[var(--border)]" />
-        <div className="relative -mt-3 h-3">
-          <div className="absolute left-0 top-0 h-3 rounded-full bg-[var(--olive)]/70" style={{ width: `${baseline}%` }} />
-          <div
-            className="absolute top-0 h-3 rounded-full bg-[var(--terracotta)]/50"
-            style={{ left: `${baseline}%`, width: `${Math.max(potential - baseline, 0)}%` }}
-          />
-        </div>
-      </div>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <TimelineLegend label="Current longevity baseline" value={`${Math.round(metrics.currentLongevityBaseline)}%`} color="text-[var(--olive)]" />
-        <TimelineLegend label="Longevity potential" value={`${Math.round(metrics.longevityPotential)}%`} color="text-[var(--terracotta)]" />
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <TimelineCard
+          title="Current trajectory"
+          age={currentExpectedAge}
+          year={currentExpectedYear}
+          description="Where your current habits are pointing today."
+        />
+        <TimelineCard
+          title="Potential with LIFE habits"
+          age={potentialExpectedAge}
+          year={potentialExpectedYear}
+          description="A realistic target if LIFE pillars stay consistent."
+        />
+        <TimelineCard
+          title="Potential years gained"
+          age={yearsGained}
+          year={undefined}
+          description="Additional healthy years you could work toward."
+          isGain
+        />
       </div>
     </section>
   );
 }
 
-function TimelineLegend({ label, value, color }: { label: string; value: string; color: string }) {
+function TimelineCard({
+  title,
+  age,
+  year,
+  description,
+  isGain = false,
+}: {
+  title: string;
+  age: number;
+  year?: number;
+  description: string;
+  isGain?: boolean;
+}) {
   return (
-    <div>
-      <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">{label}</p>
-      <p className={`text-xl font-semibold ${color}`}>{value}</p>
-    </div>
+    <article className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-5 text-left">
+      <p className={`text-xs font-semibold uppercase tracking-[0.3em] ${isGain ? "text-[var(--terracotta)]" : "text-[var(--olive)]"}`}>
+        {title}
+      </p>
+      <p className="mt-3 text-3xl font-semibold text-[var(--life-forest)]">{isGain ? `+${age}` : `${age}`} yrs</p>
+      {typeof year === "number" && (
+        <p className="text-sm font-semibold text-[var(--olive)]">≈ Year {year}</p>
+      )}
+      <p className="mt-2 text-sm text-[var(--muted)]">{description}</p>
+    </article>
   );
-}
-
-function clampPercent(value: number) {
-  if (!Number.isFinite(value)) return 0;
-  return Math.min(Math.max(value, 0), 100);
 }

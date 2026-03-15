@@ -16,7 +16,6 @@ interface AssessmentResultsProps {
 
 export default function AssessmentResults({ answers, results, onRestart }: AssessmentResultsProps) {
   const firstName = answers.firstName?.trim() || "Friend";
-  const age = answers.age ?? 40;
   const formatPercent = (value: number) => `${Math.round(value)}%`;
 
   const metricCards = [
@@ -71,7 +70,7 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         </div>
       </section>
 
-      <LifeTimeline age={age} metrics={results.metrics} />
+      <LifeTimeline metrics={results.metrics} />
 
       {(results.metrics.strongestPillar || results.metrics.weakestPillar) && (
         <section className="grid gap-6 md:grid-cols-2">

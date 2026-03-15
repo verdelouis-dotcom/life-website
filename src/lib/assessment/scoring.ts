@@ -10,6 +10,7 @@ import type {
 import { buildRecommendations } from "@/lib/assessment/recommendations";
 import { ASSESSMENT_QUESTIONS } from "@/lib/assessment/questions";
 import { clamp, safeNumber } from "@/lib/assessment/utils";
+import { calculateLongevityProjection } from "@/lib/assessment/longevityProjection";
 
 const SCORE_SCALE = [25, 50, 75, 100] as const;
 
@@ -110,6 +111,12 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
   const strongestPillar = [...pillarScores].sort((a, b) => b.score - a.score)[0];
   const weakestPillar = [...pillarScores].sort((a, b) => a.score - b.score)[0];
   const habitOpportunities = buildHabitOpportunities(answers);
+  const projection = calculateLongevityProjection({
+    age: answers.age ?? 40,
+    sex: answers.sex ?? "female",
+    currentLongevityBaseline,
+    longevityPotential,
+  });
 
   const { strengths, opportunities, recommendations } = buildRecommendations(pillarScores);
 
@@ -122,6 +129,7 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
       strongestPillar,
       weakestPillar,
       habitOpportunities,
+      ...projection,
     },
     pillarScores,
     strengths,

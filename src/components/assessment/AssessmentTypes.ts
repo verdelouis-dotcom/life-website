@@ -166,6 +166,11 @@ export interface LongevityMetrics {
   strongestPillar?: PillarScore;
   weakestPillar?: PillarScore;
   habitOpportunities: HabitOpportunityInsight[];
+  currentExpectedAge: number;
+  potentialExpectedAge: number;
+  yearsGained: number;
+  currentExpectedYear: number;
+  potentialExpectedYear: number;
 }
 
 export interface AssessmentStrengthOpportunity {
