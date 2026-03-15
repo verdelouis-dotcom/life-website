@@ -342,7 +342,7 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   },
   {
     id: "sleepHours",
-    prompt: "How often do you sleep 7–8 hours per night?",
+    prompt: "On most nights, how many hours of sleep do you get?",
     sectionId: "sleep",
     type: "singleSelect",
     options: OPTION_LABELS.sleepHours,
