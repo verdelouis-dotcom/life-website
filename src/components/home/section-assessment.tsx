@@ -8,7 +8,8 @@ export default function SectionAssessment() {
         <Reveal className="space-y-3">
           <h2 className="section-heading">Assessment</h2>
           <p className="type-body-muted">
-            This short assessment provides an educational estimate of lifespan potential, and lifestyle opportunities associated with healthy aging.
+            The LIFE Longevity Assessment provides an educational estimate of lifestyle patterns associated with healthy aging across six
+            pillars: Food, Movement, Sleep, Connection, Purpose, and Stress Regulation.
           </p>
         </Reveal>
         <div className="flex flex-wrap justify-center gap-4">

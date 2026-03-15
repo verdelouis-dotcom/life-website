@@ -13,14 +13,13 @@ export const PILLARS: PillarDetail[] = [
     slug: "food",
     title: "Food",
     color: "#5e7d5a",
-    summary:
-      "Mediterranean-style meals rich in plants, healthy fats, and minimal ultra-processed foods support long-term health and reduce chronic disease risk.",
+    summary: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health and reduce chronic disease risk.",
     intro:
-      "LIFE teaches hosts how to center every table on Mediterranean eating patterns that prioritize vegetables, legumes, olive oil, and seafood while limiting added sugars and refined oils.",
+      "LIFE teaches hosts how to center every table on cooking with fresh ingredients—vegetables, legumes, olive oil, and seafood—while limiting added sugars and refined oils.",
     reasons: [
       {
         heading: "Cardiometabolic protection",
-        text: "The PREDIMED randomized trial showed a 31% reduction in major cardiovascular events among adults following a Mediterranean dietary pattern supplemented with extra-virgin olive oil or nuts compared with a low-fat control diet.",
+        text: "The PREDIMED randomized trial showed a 31% reduction in major cardiovascular events among adults following a whole-food dietary pattern supplemented with extra-virgin olive oil or nuts compared with a low-fat control diet.",
       },
       {
         heading: "Longevity-linked nutrients",
@@ -32,8 +31,8 @@ export const PILLARS: PillarDetail[] = [
       },
     ],
     references: [
-      { label: "PREDIMED Trial, NEJM 2013", detail: "Mediterranean diet for primary prevention of cardiovascular disease." },
-      { label: "Harvard T.H. Chan School of Public Health, 2022", detail: "Mediterranean diet overview." },
+      { label: "PREDIMED Trial, NEJM 2013", detail: "Whole-food dietary pattern for primary prevention of cardiovascular disease." },
+      { label: "Harvard T.H. Chan School of Public Health, 2022", detail: "Whole-food dietary pattern overview." },
     ],
   },
   {

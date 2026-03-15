@@ -12,15 +12,12 @@ export default function RegisterThanksPage() {
           <h1 className="section-heading">Thank you</h1>
           <p className="mt-4 type-lede text-[var(--muted)]">Your table has been recorded as community participation.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/donate"
-              className="btn-solid px-6 text-base"
-            >
+            <Link href="/donate" className="btn-outline px-6 text-base">
               Donate
             </Link>
             <Link
               href="/register"
-              className="btn-outline px-6 text-base"
+              className="btn-solid px-6 text-base"
             >
               Register Another Table
             </Link>

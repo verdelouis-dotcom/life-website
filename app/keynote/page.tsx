@@ -20,7 +20,7 @@ export default function KeynotePage() {
             <ul className="mt-3 space-y-2">
               <li>• the longevity crisis</li>
               <li>• the six pillars of healthy living</li>
-              <li>• shared meals and healthy communities</li>
+              <li>• fresh-ingredient cooking, shared meals, and healthy communities</li>
               <li>• practical ways to improve longevity</li>
             </ul>
           </div>

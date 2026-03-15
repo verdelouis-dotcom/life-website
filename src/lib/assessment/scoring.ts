@@ -271,7 +271,7 @@ const PILLAR_GROUPS: Record<PillarKey, AssessmentQuestionId[]> = {
 };
 
 const PILLAR_DESCRIPTIONS: Record<PillarKey, string> = {
-  food: "Mediterranean-style meals rich in plants, healthy fats, and minimal ultra-processed foods support long-term health and reduce chronic disease risk.",
+  food: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health and reduce chronic disease risk.",
   movement: "Regular movement, strength, and everyday physical activity support metabolic health, mobility, and healthy aging.",
   sleep: "Consistent, restorative sleep supports metabolic function, mental wellbeing, recovery, and long-term health.",
   connection: "Strong relationships, shared meals, and social support help reduce isolation and reinforce healthier, longer lives.",

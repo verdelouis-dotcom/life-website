@@ -1,6 +1,6 @@
 # LIFE Website
 
-The Longevity Initiative for Food & Education (LIFE) website shares Mediterranean-inspired habits, promotes workshops, and collects donations and sponsorship inquiries.
+The Longevity Initiative for Food & Education (LIFE) website shares fresh-ingredient cooking habits, promotes workshops, and collects donations and sponsorship inquiries.
 
 ## Local development
 

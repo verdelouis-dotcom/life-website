@@ -7,7 +7,7 @@ const TIERS = [
     amount: "$50",
     title: "One Shared Table",
     description:
-      "Provides ingredients and basic tools for one LIFE table where people gather to cook, learn, and share a Mediterranean meal together.",
+      "Provides ingredients and basic tools for one LIFE table where people gather to cook, learn, and share a meal prepared with fresh ingredients.",
     key: 50,
   },
   {
@@ -46,12 +46,7 @@ export default function DonatePage() {
           <p className="type-eyebrow">Nonprofit Support</p>
           <h1 className="section-heading">Donate</h1>
           <p className="mt-4 type-body-muted">Your support underwrites tools, ingredients, materials, and community education.</p>
-          <a
-            href={PRIMARY_DONATION_LINK}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#394930]"
-          >
+          <a href={PRIMARY_DONATION_LINK} target="_blank" rel="noreferrer" className="btn-solid mt-6 px-6 text-base">
             Give Online
           </a>
         </section>
@@ -66,7 +61,7 @@ export default function DonatePage() {
                 href={DONATION_LINKS[tier.key as 50 | 100 | 500 | 1000]}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#394930]"
+                className="btn-outline mt-6 w-full justify-center"
               >
                 Give {tier.amount}
               </a>

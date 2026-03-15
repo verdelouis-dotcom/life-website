@@ -24,7 +24,9 @@ export default function HostPage() {
             <h1 className="type-display">Share What You Learned</h1>
             <p className="type-lede text-[var(--muted)]">
               After attending a LIFE workshop, participants are invited to host one of their own. Hosting keeps the movement simple: invite
-              people you care about, cook with fresh ingredients, teach the six pillars, and register the gathering afterward.
+              people you care about, cook with fresh ingredients, teach the six pillars, and register the gathering afterward. Hosts can cook
+              any cuisine they know well—Italian, Japanese, Mexican, or others—as long as the meal emphasizes fresh ingredients and shared
+              preparation.
             </p>
           </div>
         </section>

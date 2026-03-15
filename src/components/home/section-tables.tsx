@@ -26,7 +26,7 @@ const FOOD_IMAGES = [
   { src: "/images/Food/pasta5.jpeg", alt: "Rolling pin over thin pasta sheets" },
   { src: "/images/Food/pasta6.jpeg", alt: "Cut pasta strands ready to cook" },
   { src: "/images/Food/pasta7.jpeg", alt: "Rustic board with pasta dough" },
-  { src: "/images/Food/pasta9.png", alt: "Bowls of Mediterranean ingredients" },
+  { src: "/images/Food/pasta9.png", alt: "Bowls of fresh ingredients ready for cooking" },
   { src: "/images/Food/veggies.jpeg", alt: "Fresh vegetables arranged for chopping" },
   { src: "/images/Food/veggies2.jpeg", alt: "Colorful produce laid out for a meal" },
   { src: "/images/Food/veggies3.jpeg", alt: "Tomatoes and greens ready for prep" },
