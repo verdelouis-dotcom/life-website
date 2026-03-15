@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 export const runtime = "nodejs";
 
@@ -45,16 +45,22 @@ export async function POST(req: Request) {
     const attachment = normalizeAttachment(body.attachment);
     const attachments = attachment ? [{ filename: attachment.filename, content: attachment.content }] : undefined;
 
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      console.error("Missing RESEND_API_KEY");
+    const gmailUser = process.env.GMAIL_USER;
+    const gmailPass = process.env.GMAIL_APP_PASSWORD;
+    if (!gmailUser || !gmailPass) {
+      console.error("Missing Gmail credentials for contact form.");
       return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 503 });
     }
 
-    const to = process.env.LIFE_TO_EMAIL || "verde.louis@gmail.com";
-    const configuredFrom = process.env.LIFE_FROM_EMAIL;
-    const fallbackFrom = "LIFE <onboarding@resend.dev>";
-    const resend = new Resend(apiKey);
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: gmailUser,
+        pass: gmailPass,
+      },
+    });
+
+    const to = process.env.LIFE_TO_EMAIL || gmailUser;
 
     const subject = `LIFE Inquiry — ${interestType}`;
     const text = [
@@ -69,36 +75,21 @@ export async function POST(req: Request) {
       .filter(Boolean)
       .join("\n");
 
-    async function send(fromAddress: string) {
-      try {
-        const response = await resend.emails.send({
-          from: fromAddress,
-          to: [to],
-          replyTo: email,
-          subject,
-          text,
-          attachments,
-        });
-
-        if (response.error) {
-          throw response.error;
-        }
-
-        return true;
-      } catch (error) {
-        console.error("RESEND_SEND_ERROR", { fromAddress, error });
-        return false;
-      }
-    }
-
-    const primaryFrom = configuredFrom || fallbackFrom;
-    let sent = await send(primaryFrom);
-
-    if (!sent && configuredFrom) {
-      sent = await send(fallbackFrom);
-    }
-
-    if (!sent) {
+    try {
+      await transporter.sendMail({
+        from: `"LIFE" <${gmailUser}>`,
+        to,
+        replyTo: email,
+        subject,
+        text,
+        attachments: attachments?.map((attachment) => ({
+          filename: attachment.filename,
+          content: attachment.content,
+          encoding: "base64",
+        })),
+      });
+    } catch (error) {
+      console.error("CONTACT_EMAIL_SEND_ERROR", error);
       return NextResponse.json({ ok: false, error: FRIENDLY_ERROR }, { status: 500 });
     }
 
