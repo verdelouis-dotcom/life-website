@@ -111,15 +111,12 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
   const strongestPillar = [...pillarScores].sort((a, b) => b.score - a.score)[0];
   const weakestPillar = [...pillarScores].sort((a, b) => a.score - b.score)[0];
   const habitOpportunities = buildHabitOpportunities(answers);
-  const transformedHabitsForProjection = transformHabitScore(lifeHabitsScore);
-  const transformedPotentialForProjection = transformHabitScore(longevityPotential);
-  const projectionBaseline = Math.round(transformedHabitsForProjection * 0.7 + healthContextScore * 0.3);
-
   const projection = calculateLongevityProjection({
     age: answers.age ?? 40,
     sex: answers.sex ?? "female",
-    currentLongevityBaseline: projectionBaseline,
-    longevityPotential: transformedPotentialForProjection,
+    lifeHabitsScore,
+    longevityPotential,
+    answers,
   });
 
   const { strengths, opportunities, recommendations } = buildRecommendations(pillarScores);
@@ -217,14 +214,6 @@ export function calculateLongevityPotential(lifeHabitsScore: number, pillarScore
   }
 
   return clamp(potential, 0, 100);
-}
-
-// Transform habit-driven scores so poor daily patterns feel costlier and improvements feel more noticeable
-// without changing the underlying educational model.
-function transformHabitScore(score: number) {
-  const normalized = Math.max(0, Math.min(1, score / 100));
-  const curved = Math.pow(normalized, 0.9);
-  return curved * 100;
 }
 
 function scoreQuestion(id: AssessmentQuestionId, value: string | undefined): number {
