@@ -22,7 +22,7 @@ const HABIT_PILLAR_MAP: Record<PillarKey, AssessmentQuestionId[]> = {
   stressRegulation: ["overwhelmFrequency", "recoveryHabits", "outdoorQuietTime"],
 };
 
-const HABIT_OPTION_SCORES: Record<AssessmentQuestionId, Record<string, number>> = {
+const HABIT_OPTION_SCORES: Partial<Record<AssessmentQuestionId, Record<string, number>>> = {
   fruitsVegServings: buildScoreMap(["underOne", "oneToTwo", "threeToFour", "fivePlus"]),
   processedMeals: buildScoreMap(["mostMeals", "onePerDay", "fewPerWeek", "rarely"]),
   addedSugar: buildScoreMap(["multiDaily", "daily", "fewPerWeek", "rarely"]),
