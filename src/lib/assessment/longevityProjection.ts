@@ -48,8 +48,8 @@ export function calculateLongevityProjection(input: LongevityProjectionInput): L
 }
 
 function calculateHabitAdjustment(score: number) {
-  // Allow ±12 years swing based on habits to highlight how daily routines influence lifespan
-  return ((score - 50) / 50) * 12;
+  // Allow ±15 years swing so poor habits feel costly and excellent habits visibly extend the trajectory.
+  return ((score - 50) / 50) * 15;
 }
 
 function calculateFamilyModifier(grandparents85?: string) {
@@ -77,9 +77,8 @@ function calculateContextPenalty(answers: AssessmentAnswers) {
 
   const bpHigh = answers.bloodPressure === "high";
   const glucoseHigh = answers.fastingGlucose === "diabetes" || answers.fastingGlucose === "prediabetes";
-  if (bpHigh || glucoseHigh) {
-    penalty -= 1.5;
-  }
+  if (bpHigh) penalty -= 1.5;
+  if (glucoseHigh) penalty -= 1;
 
   return penalty;
 }
