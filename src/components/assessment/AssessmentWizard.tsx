@@ -21,6 +21,7 @@ import {
 } from "@/lib/assessment/utils";
 
 const CALCULATION_DELAY_MS = 1900;
+const AUTO_ADVANCE_DELAY_MS = 180;
 
 type Phase = "intro" | "questions" | "optional" | "calculating" | "results";
 
@@ -30,6 +31,7 @@ export default function AssessmentWizard() {
   const [answers, setAnswers] = useState<AssessmentAnswers>(() => loadAssessmentProgress() ?? {});
   const [results, setResults] = useState<ReturnType<typeof evaluateAssessment> | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!hasAnyResponses(answers)) {
@@ -43,6 +45,9 @@ export default function AssessmentWizard() {
     return () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
+      }
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
       }
     };
   }, []);
@@ -59,13 +64,22 @@ export default function AssessmentWizard() {
     return ASSESSMENT_QUESTIONS.findIndex((question) => !isQuestionComplete(question));
   }
 
+  function clearAutoAdvanceTimer() {
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+      autoAdvanceTimerRef.current = null;
+    }
+  }
+
   function handleStart() {
+    clearAutoAdvanceTimer();
     const firstIncomplete = findFirstIncompleteIndex();
     setCurrentIndex(firstIncomplete === -1 ? 0 : firstIncomplete);
     setPhase("questions");
   }
 
   function handleBack() {
+    clearAutoAdvanceTimer();
     if (phase === "optional") {
       setPhase("questions");
       setCurrentIndex(TOTAL_QUESTION_COUNT - 1);
@@ -81,6 +95,7 @@ export default function AssessmentWizard() {
   }
 
   function handleNext() {
+    clearAutoAdvanceTimer();
     if (!currentQuestion) return;
 
     if (currentIndex === TOTAL_QUESTION_COUNT - 1) {
@@ -124,7 +139,29 @@ export default function AssessmentWizard() {
   const section = currentQuestion ? sections.get(currentQuestion.sectionId) : undefined;
   const isNextDisabled = currentQuestion ? !isQuestionComplete(currentQuestion) : true;
 
+  function handleOptionSelect(value: string) {
+    if (!currentQuestion) return;
+
+    setAnswers((prev) => ({ ...prev, [currentQuestion.id]: value }));
+
+    if (currentQuestion.type !== "singleSelect") {
+      return;
+    }
+
+    clearAutoAdvanceTimer();
+
+    if (currentIndex === TOTAL_QUESTION_COUNT - 1) {
+      return;
+    }
+
+    autoAdvanceTimerRef.current = setTimeout(() => {
+      autoAdvanceTimerRef.current = null;
+      setCurrentIndex((prev) => Math.min(prev + 1, TOTAL_QUESTION_COUNT - 1));
+    }, AUTO_ADVANCE_DELAY_MS);
+  }
+
   function handleSubmitResults() {
+    clearAutoAdvanceTimer();
     setPhase("calculating");
     timerRef.current = setTimeout(() => {
       const computed = evaluateAssessment(answers);
@@ -134,6 +171,7 @@ export default function AssessmentWizard() {
   }
 
   function handleRestart() {
+    clearAutoAdvanceTimer();
     clearAssessmentProgress();
     setAnswers({});
     setCurrentIndex(0);
@@ -166,7 +204,7 @@ export default function AssessmentWizard() {
                 [currentQuestion.id]: typeof value === "number" ? value : undefined,
               }))
             }
-            onOptionSelect={(value) => setAnswers((prev) => ({ ...prev, [currentQuestion.id]: value }))}
+            onOptionSelect={handleOptionSelect}
             onCompositeChange={handleCompositeChange}
             onBack={handleBack}
             onNext={handleNext}
