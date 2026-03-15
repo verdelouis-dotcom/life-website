@@ -1,12 +1,13 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 const ERROR_MESSAGE =
   "Sorry — something went wrong. Please try again or email info@longevityinitiativeforfoodandeducation.com.";
 
 export default function KeynoteForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -53,7 +54,7 @@ export default function KeynoteForm() {
       }
 
       setStatus("success");
-      event.currentTarget.reset();
+      formRef.current?.reset();
     } catch (error) {
       console.error("KEYNOTE_FORM_ERROR", error);
       setStatus("error");
@@ -63,7 +64,7 @@ export default function KeynoteForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4">
+    <form ref={formRef} onSubmit={handleSubmit} className="grid gap-4">
       <div className="grid gap-1">
         <label htmlFor="name" className="type-eyebrow">
           Name
