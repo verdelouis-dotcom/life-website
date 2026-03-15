@@ -2,638 +2,287 @@ import type {
   AssessmentAnswers,
   AssessmentQuestionId,
   AssessmentResultsPayload,
+  HabitOpportunityInsight,
   OptionalMarkerKey,
   PillarKey,
   PillarScore,
 } from "@/components/assessment/AssessmentTypes";
 import { buildRecommendations } from "@/lib/assessment/recommendations";
-import { clamp } from "@/lib/assessment/utils";
+import { ASSESSMENT_QUESTIONS } from "@/lib/assessment/questions";
+import { clamp, safeNumber } from "@/lib/assessment/utils";
 
-const SCORE_KEYS: (AssessmentQuestionId | OptionalMarkerKey)[] = [
-  "fruitsVeg",
-  "processedFoods",
-  "sugarIntake",
-  "homePreparedMeals",
-  "waterIntake",
-  "cardio",
-  "strengthTraining",
-  "dailyMovement",
-  "fitnessLevel",
-  "mobility",
-  "sleepDuration",
-  "sleepQuality",
-  "sleepSchedule",
-  "timeWithOthers",
-  "socialSupport",
-  "sharedMeals",
-  "screenFreeMeals",
-  "stressFrequency",
-  "mentalHealthImpact",
-  "purpose",
-  "alcohol",
-  "nicotine",
-  "chronicDisease",
-  "selfRatedHealth",
-  "grandparents85",
-  "preventiveCare",
-  "weightDistribution",
-  "bloodPressure",
-  "ldl",
-  "fastingGlucose",
-];
+const SCORE_SCALE = [25, 50, 75, 100] as const;
+
+const HABIT_PILLAR_MAP: Record<PillarKey, AssessmentQuestionId[]> = {
+  food: ["fruitsVegServings", "processedMeals", "addedSugar", "homeCookedMeals", "hydrationChoice", "fiberFoods"],
+  movement: ["moderateActivity", "strengthDays", "sedentaryTime", "lifestyleMovement", "mobilityPractice"],
+  sleep: ["sleepHours", "wakeRested", "sleepConsistency", "sleepHygiene"],
+  connection: ["meaningfulTime", "supportSystem", "sharedMeals", "screenFreeMeals", "communityBelonging"],
+  purpose: ["senseOfPurpose", "meaningfulActivities", "contributionFrequency"],
+  stressRegulation: ["overwhelmFrequency", "recoveryHabits", "outdoorQuietTime"],
+};
+
+const HABIT_OPTION_SCORES: Record<AssessmentQuestionId, Record<string, number>> = {
+  fruitsVegServings: buildScoreMap(["underOne", "oneToTwo", "threeToFour", "fivePlus"]),
+  processedMeals: buildScoreMap(["mostMeals", "onePerDay", "fewPerWeek", "rarely"]),
+  addedSugar: buildScoreMap(["multiDaily", "daily", "fewPerWeek", "rarely"]),
+  homeCookedMeals: buildScoreMap(["underTwo", "threeToFour", "fiveToSix", "mostDays"]),
+  hydrationChoice: buildScoreMap(["mostlySugary", "sweetenedMix", "waterPlus", "mostlyWater"]),
+  fiberFoods: buildScoreMap(["rarely", "weekly", "mostDays", "daily"]),
+  moderateActivity: buildScoreMap(["lessThanWeekly", "oneToTwoPerWeek", "threeToFourPerWeek", "mostDays"]),
+  strengthDays: buildScoreMap(["none", "oneDay", "twoDays", "threePlusDays"]),
+  sedentaryTime: buildScoreMap(["overTenHours", "sevenToTenHours", "fourToSixHours", "underFourHours"]),
+  lifestyleMovement: buildScoreMap(["mostlySeated", "mixed", "onFeet", "activeAllDay"]),
+  mobilityPractice: buildScoreMap(["rarely", "monthly", "weekly", "severalPerWeek"]),
+  sleepHours: buildScoreMap(["underSix", "sixToSeven", "sevenToEight", "overEight"]),
+  wakeRested: buildScoreMap(["rarelyRested", "sometimesRested", "mostMornings", "almostAlwaysRested"]),
+  sleepConsistency: buildScoreMap(["inconsistent", "somewhatConsistent", "mostlyConsistent", "veryConsistent"]),
+  sleepHygiene: buildScoreMap(["chaoticEvenings", "occasionalWindDown", "mostNights", "intentionalRoutine"]),
+  meaningfulTime: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "severalPerWeek"]),
+  supportSystem: buildScoreMap(["noSupport", "someSupport", "reliableSupport", "strongSupport"]),
+  sharedMeals: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "mostDays"]),
+  screenFreeMeals: buildScoreMap(["almostAlwaysWithScreens", "oftenWithScreens", "sometimesWithoutScreens", "usuallyScreenFree"]),
+  communityBelonging: buildScoreMap(["disconnected", "someBelonging", "solidBelonging", "deepBelonging"]),
+  senseOfPurpose: buildScoreMap(["noClearPurpose", "emergingPurpose", "clearPurpose", "anchoredPurpose"]),
+  meaningfulActivities: buildScoreMap(["lessThanMonthly", "monthly", "weekly", "severalPerWeek"]),
+  contributionFrequency: buildScoreMap(["rarely", "fewTimesPerYear", "monthly", "weekly"]),
+  overwhelmFrequency: buildScoreMap(["almostDaily", "fewTimesPerWeek", "sometimes", "rarely"]),
+  recoveryHabits: buildScoreMap(["rarely", "weekly", "severalPerWeek", "daily"]),
+  outdoorQuietTime: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "severalPerWeek"]),
+  alcohol: buildScoreMap(["fifteenPlus", "eightToFourteen", "oneToSeven", "none"]),
+  nicotine: buildScoreMap(["dailyUser", "occasionalUser", "formerUser", "neverUsed"]),
+  chronicCondition: buildScoreMap(["yes", "riskFactors", "unsure", "no"]),
+  selfRatedHealth: buildScoreMap(["poor", "fair", "good", "excellent"]),
+  preventiveCare: buildScoreMap(["never", "everyFiveYears", "everyTwoToThreeYears", "yearly"]),
+  grandparents85: buildScoreMap(["zero", "one", "two", "threeOrFour"]),
+};
 
 const OPTIONAL_MARKER_KEYS: OptionalMarkerKey[] = ["bloodPressure", "ldl", "fastingGlucose"];
 
-const QUESTION_WEIGHTS: Partial<Record<(typeof SCORE_KEYS)[number], number>> = {
-  fruitsVeg: 3,
-  processedFoods: 3,
-  sugarIntake: 2,
-  homePreparedMeals: 2,
-  waterIntake: 1,
-  cardio: 4,
-  strengthTraining: 3,
-  dailyMovement: 3,
-  fitnessLevel: 4,
-  mobility: 1,
-  sleepDuration: 3,
-  sleepQuality: 2,
-  sleepSchedule: 1,
-  timeWithOthers: 2,
-  socialSupport: 2,
-  sharedMeals: 2,
-  screenFreeMeals: 1,
-  stressFrequency: 2,
-  mentalHealthImpact: 2,
-  purpose: 2,
-  alcohol: 3,
-  nicotine: 4,
-  chronicDisease: 4,
-  selfRatedHealth: 3,
-  grandparents85: 1,
-  preventiveCare: 1,
-  weightDistribution: 3,
-  bloodPressure: 3,
-  ldl: 2,
-  fastingGlucose: 3,
-};
-
-const SCORE_TABLE: Partial<Record<(typeof SCORE_KEYS)[number], Record<string, number>>> = {
-  fruitsVeg: {
-    rarely: 0,
-    severalTimesPerWeek: 1,
-    daily: 2,
-    fivePlusServings: 3,
-  },
-  processedFoods: {
-    multipleTimesPerDay: 0,
-    daily: 1,
-    severalTimesPerWeek: 2,
-    rarely: 3,
-  },
-  sugarIntake: {
-    severalTimesDaily: 0,
-    dailyTreat: 1,
-    fewTreatsPerWeek: 2,
-    rarelyOrNone: 3,
-  },
-  homePreparedMeals: {
-    rarely: 0,
-    oneToTwoPerWeek: 1,
-    threeToFivePerWeek: 2,
-    mostDays: 3,
-  },
-  waterIntake: {
-    lessThanOneGlass: 0,
-    twoToFive: 1,
-    sixToNine: 2,
-    tenPlus: 3,
-  },
-  cardio: {
-    rarelyOrNever: 0,
-    under150: 1,
-    from150To300: 2,
-    over300: 3,
-  },
-  strengthTraining: {
-    rarelyOrNever: 0,
-    lessThanOnceWeekly: 1,
-    oneToTwoPerWeek: 2,
-    moreThanTwoPerWeek: 3,
-  },
-  dailyMovement: {
-    mostlySitting: 0,
-    someMovement: 1,
-    frequentlyMoving: 2,
-    veryActive: 3,
-  },
-  fitnessLevel: {
-    poor: 0,
-    moderate: 1,
-    good: 2,
-    excellent: 3,
-  },
-  mobility: {
-    never: 0,
-    fewTimesPerMonth: 1,
-    oneToTwoPerWeek: 2,
-    threePlusPerWeek: 3,
-  },
-  sleepDuration: {
-    rarely: 0,
-    sometimes: 1,
-    often: 2,
-    almostAlways: 3,
-  },
-  sleepQuality: {
-    fivePlusNights: 0,
-    threeToFourNights: 1,
-    oneToTwoNights: 2,
-    rarelyOrNever: 3,
-  },
-  sleepSchedule: {
-    rarely: 0,
-    sometimes: 1,
-    often: 2,
-    almostAlways: 3,
-  },
-  timeWithOthers: {
-    never: 0,
-    fewTimesPerMonth: 1,
-    weekly: 2,
-    daily: 3,
-  },
-  socialSupport: {
-    notSupportive: 0,
-    slightlySupportive: 1,
-    fairlySupportive: 2,
-    verySupportive: 3,
-  },
-  sharedMeals: {
-    rarely: 0,
-    fewTimesPerMonth: 1,
-    weekly: 2,
-    mostDays: 3,
-  },
-  screenFreeMeals: {
-    almostAlwaysWithScreens: 0,
-    oftenWithScreens: 1,
-    sometimesWithoutScreens: 2,
-    usuallyScreenFree: 3,
-  },
-  stressFrequency: {
-    almostAllTheTime: 0,
-    frequently: 1,
-    occasionally: 2,
-    rarely: 3,
-  },
-  mentalHealthImpact: {
-    severely: 0,
-    moderately: 1,
-    mildly: 2,
-    notAtAll: 3,
-  },
-  purpose: {
-    noClearPurpose: 0,
-    someDirection: 1,
-    strongPurpose: 2,
-    deepSenseOfPurpose: 3,
-  },
-  alcohol: {
-    fifteenPlus: 0,
-    eightToFourteen: 1,
-    oneToSeven: 2,
-    none: 3,
-  },
-  nicotine: {
-    dailyUser: 0,
-    occasionalUser: 1,
-    formerUser: 2,
-    neverUsed: 3,
-  },
-  chronicDisease: {
-    yes: 0,
-    riskFactors: 1,
-    unsure: 2,
-    no: 3,
-  },
-  selfRatedHealth: {
-    poor: 0,
-    fair: 1,
-    good: 2,
-    excellent: 3,
-  },
-  grandparents85: {
-    zero: 0,
-    one: 1,
-    two: 2,
-    threeOrFour: 3,
-  },
-  preventiveCare: {
-    never: 0,
-    everyFiveYears: 1,
-    everyTwoToThreeYears: 2,
-    yearly: 3,
-  },
-  weightDistribution: {
-    mostlyWaist: 0,
-    evenlyDistributed: 1,
-    mostlyHipsThighs: 2,
-    leanMuscular: 3,
-    notSure: 1,
-  },
+const OPTIONAL_MARKER_SCORES: Record<OptionalMarkerKey, Record<string, number>> = {
   bloodPressure: {
-    high: 0,
-    elevated: 1,
-    normal: 3,
-    dontKnow: 1,
+    high: 35,
+    elevated: 70,
+    normal: 100,
+    dontKnow: 60,
   },
   ldl: {
-    high: 0,
-    borderline: 1,
-    optimal: 3,
-    dontKnow: 1,
+    high: 35,
+    borderline: 70,
+    optimal: 100,
+    dontKnow: 60,
   },
   fastingGlucose: {
-    diabetes: 0,
-    prediabetes: 1,
-    normal: 3,
-    dontKnow: 1,
+    diabetes: 30,
+    prediabetes: 70,
+    normal: 100,
+    dontKnow: 60,
   },
-};
-
-const PILLAR_GROUPS: Record<PillarKey, AssessmentQuestionId[]> = {
-  food: ["fruitsVeg", "processedFoods", "sugarIntake", "homePreparedMeals", "waterIntake"],
-  movement: ["cardio", "strengthTraining", "dailyMovement", "fitnessLevel", "mobility"],
-  sleep: ["sleepDuration", "sleepQuality", "sleepSchedule"],
-  connection: ["timeWithOthers", "socialSupport", "sharedMeals", "screenFreeMeals"],
-  purpose: ["purpose"],
-  stress: ["stressFrequency", "mentalHealthImpact"],
 };
 
 const PILLAR_DESCRIPTIONS: Record<PillarKey, string> = {
-  food: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health and reduce chronic disease risk.",
-  movement: "Regular movement, strength, and everyday physical activity support metabolic health, mobility, and healthy aging.",
-  sleep: "Consistent, restorative sleep supports metabolic function, mental wellbeing, recovery, and long-term health.",
-  connection: "Strong relationships, shared meals, and social support help reduce isolation and reinforce healthier, longer lives.",
-  purpose: "A clear sense of meaning, contribution, and direction is associated with resilience, wellbeing, and healthy aging.",
-  stress: "Daily practices that calm the nervous system support emotional wellbeing, recovery, and long-term health.",
+  food: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health.",
+  movement: "Natural movement, strength, and lower sedentary time protect metabolic health.",
+  sleep: "Consistent, restorative sleep enables recovery and hormone balance.",
+  connection: "Strong relationships, shared meals, and belonging reinforce healthy aging.",
+  purpose: "A clear sense of purpose and contribution keeps habits mission-driven.",
+  stressRegulation: "Daily recovery practices calm the nervous system and reduce wear and tear.",
 };
 
-interface ScoreSummary {
-  weightedScore: number;
-  maxScore: number;
-  normalizedScore: number;
-  optionalNormalized: number;
-}
+const CONTEXT_QUESTION_IDS: AssessmentQuestionId[] = [
+  "alcohol",
+  "nicotine",
+  "chronicCondition",
+  "selfRatedHealth",
+  "preventiveCare",
+  "grandparents85",
+];
 
-function scoreValue(key: (typeof SCORE_KEYS)[number], value: string | undefined) {
-  if (!value) return 0;
-  return SCORE_TABLE[key]?.[value] ?? 0;
-}
-
-function calculateScoreSummary(answers: AssessmentAnswers): ScoreSummary {
-  let weightedScore = 0;
-  let maxScore = 0;
-  let optionalWeighted = 0;
-  let optionalMax = 0;
-
-  for (const key of SCORE_KEYS) {
-    const weight = QUESTION_WEIGHTS[key] ?? 0;
-    const value = answers[key as keyof AssessmentAnswers];
-    const score = scoreValue(key, typeof value === "string" ? value : undefined);
-    weightedScore += score * weight;
-    maxScore += 3 * weight;
-
-    if (OPTIONAL_MARKER_KEYS.includes(key as OptionalMarkerKey)) {
-      optionalWeighted += score * weight;
-      optionalMax += 3 * weight;
-    }
-  }
-
-  const normalizedScore = maxScore ? weightedScore / maxScore : 0;
-  const optionalNormalized = optionalMax ? optionalWeighted / optionalMax : 0.5;
-
-  return { weightedScore, maxScore, normalizedScore, optionalNormalized };
-}
-
-function calculatePillarScores(answers: AssessmentAnswers): PillarScore[] {
-  return (Object.keys(PILLAR_GROUPS) as PillarKey[]).map((pillar) => {
-    const questionIds = PILLAR_GROUPS[pillar];
-    let scoreSum = 0;
-    let maxSum = 0;
-
-    questionIds.forEach((id) => {
-      const weight = QUESTION_WEIGHTS[id] ?? 0;
-      const value = answers[id];
-      const score = scoreValue(id, typeof value === "string" ? value : undefined);
-      scoreSum += score * weight;
-      maxSum += 3 * weight;
-    });
-
-    const normalized = maxSum ? Math.round((scoreSum / maxSum) * 100) : 0;
-
-    return {
-      key: pillar,
-      label: PILLAR_LIBRARY_METADATA[pillar].title,
-      score: normalized,
-      description: PILLAR_DESCRIPTIONS[pillar],
-    } satisfies PillarScore;
-  });
-}
-
-const PILLAR_LIBRARY_METADATA: Record<PillarKey, { title: string }> = {
-  food: { title: "Food" },
-  movement: { title: "Movement" },
-  sleep: { title: "Sleep" },
-  connection: { title: "Connection" },
-  purpose: { title: "Purpose" },
-  stress: { title: "Stress Regulation" },
-};
-
-function getRealisticImprovedAnswers(answers: AssessmentAnswers): AssessmentAnswers {
-  const next: AssessmentAnswers = { ...answers };
-
-  // Food
-  next.fruitsVeg = answers.fruitsVeg && ["daily", "fivePlusServings"].includes(answers.fruitsVeg)
-    ? answers.fruitsVeg
-    : "daily";
-  next.processedFoods = answers.processedFoods && ["rarely", "severalTimesPerWeek"].includes(answers.processedFoods)
-    ? answers.processedFoods
-    : "severalTimesPerWeek";
-  next.sugarIntake = answers.sugarIntake && ["fewTreatsPerWeek", "rarelyOrNone"].includes(answers.sugarIntake)
-    ? answers.sugarIntake
-    : "fewTreatsPerWeek";
-  next.homePreparedMeals = answers.homePreparedMeals && ["threeToFivePerWeek", "mostDays"].includes(answers.homePreparedMeals)
-    ? answers.homePreparedMeals
-    : "threeToFivePerWeek";
-  next.waterIntake = answers.waterIntake && ["sixToNine", "tenPlus"].includes(answers.waterIntake)
-    ? answers.waterIntake
-    : "sixToNine";
-
-  // Movement
-  next.cardio = answers.cardio && ["from150To300", "over300"].includes(answers.cardio) ? answers.cardio : "from150To300";
-  next.strengthTraining =
-    answers.strengthTraining && ["oneToTwoPerWeek", "moreThanTwoPerWeek"].includes(answers.strengthTraining)
-      ? answers.strengthTraining
-      : "oneToTwoPerWeek";
-  next.dailyMovement = answers.dailyMovement && ["frequentlyMoving", "veryActive"].includes(answers.dailyMovement)
-    ? answers.dailyMovement
-    : "frequentlyMoving";
-  next.fitnessLevel = answers.fitnessLevel && ["good", "excellent"].includes(answers.fitnessLevel) ? answers.fitnessLevel : "good";
-  next.mobility = answers.mobility && ["oneToTwoPerWeek", "threePlusPerWeek"].includes(answers.mobility)
-    ? answers.mobility
-    : "oneToTwoPerWeek";
-
-  // Sleep
-  next.sleepDuration = answers.sleepDuration && ["often", "almostAlways"].includes(answers.sleepDuration)
-    ? answers.sleepDuration
-    : "often";
-  next.sleepQuality = answers.sleepQuality && ["oneToTwoNights", "rarelyOrNever"].includes(answers.sleepQuality)
-    ? answers.sleepQuality
-    : "oneToTwoNights";
-  next.sleepSchedule = answers.sleepSchedule && ["often", "almostAlways"].includes(answers.sleepSchedule)
-    ? answers.sleepSchedule
-    : "often";
-
-  // Connection
-  next.timeWithOthers = answers.timeWithOthers && ["weekly", "daily"].includes(answers.timeWithOthers)
-    ? answers.timeWithOthers
-    : "weekly";
-  next.sharedMeals = answers.sharedMeals && ["weekly", "mostDays"].includes(answers.sharedMeals)
-    ? answers.sharedMeals
-    : "weekly";
-  next.screenFreeMeals = answers.screenFreeMeals && ["sometimesWithoutScreens", "usuallyScreenFree"].includes(answers.screenFreeMeals)
-    ? answers.screenFreeMeals
-    : "sometimesWithoutScreens";
-
-  // Purpose & stress
-  next.stressFrequency = answers.stressFrequency && ["occasionally", "rarely"].includes(answers.stressFrequency)
-    ? answers.stressFrequency
-    : "occasionally";
-  next.mentalHealthImpact = answers.mentalHealthImpact && ["mildly", "notAtAll"].includes(answers.mentalHealthImpact)
-    ? answers.mentalHealthImpact
-    : "mildly";
-  next.purpose = answers.purpose && ["strongPurpose", "deepSenseOfPurpose"].includes(answers.purpose)
-    ? answers.purpose
-    : "strongPurpose";
-
-  // Health & habits
-  next.alcohol = answers.alcohol && ["oneToSeven", "none"].includes(answers.alcohol) ? answers.alcohol : "oneToSeven";
-  if (answers.nicotine === "neverUsed") {
-    next.nicotine = "neverUsed";
-  } else if (answers.nicotine === "formerUser" || !answers.nicotine) {
-    next.nicotine = "formerUser";
-  } else {
-    next.nicotine = "formerUser";
-  }
-  next.chronicDisease = answers.chronicDisease;
-  if (answers.selfRatedHealth === "excellent" || answers.selfRatedHealth === "good") {
-    next.selfRatedHealth = answers.selfRatedHealth;
-  } else {
-    next.selfRatedHealth = "good";
-  }
-  next.preventiveCare =
-    answers.preventiveCare && ["everyTwoToThreeYears", "yearly"].includes(answers.preventiveCare)
-      ? answers.preventiveCare
-      : "everyTwoToThreeYears";
-
-  return next;
-}
+const QUESTION_LOOKUP = new Map(ASSESSMENT_QUESTIONS.map((question) => [question.id, question]));
 
 export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResultsPayload {
-  const { normalizedScore } = calculateScoreSummary(answers);
   const pillarScores = calculatePillarScores(answers);
-  const chronologicalAge = answers.age ?? 40;
-  const baselineLifeExpectancy = getBaselineLifeExpectancy(answers.sex);
-  const baseAdjustment = clamp((normalizedScore - 0.5) * 28, -14, 14);
-  const biomarkerModifier = getMarkerAdjustment(answers);
-  const eliteLifestyleBonus = getEliteLifestyleBonus(answers);
-  const bmiModifier = getBmiModifier(answers);
-  const estimatedLifespan = clamp(
-    baselineLifeExpectancy + baseAdjustment + biomarkerModifier + eliteLifestyleBonus + bmiModifier,
-    chronologicalAge + 2,
-    95,
-  );
-  let biologicalAgeAdjustment = (0.5 - normalizedScore) * 12 - eliteLifestyleBonus * 0.4;
-  biologicalAgeAdjustment = clamp(biologicalAgeAdjustment, -10, 10);
-  const surveyBiologicalAge = Math.round(
-    clamp(chronologicalAge + biologicalAgeAdjustment, chronologicalAge - 10, chronologicalAge + 10),
-  );
+  const lifeHabitsScore = roundScore(average(pillarScores.map((pillar) => pillar.score)));
+  const healthContextScore = roundScore(calculateHealthContextScore(answers));
+  const currentLongevityBaseline = roundScore(lifeHabitsScore * 0.7 + healthContextScore * 0.3);
+  const longevityPotential = roundScore(calculateLongevityPotential(lifeHabitsScore, pillarScores, answers));
 
-  const improvedAnswers = getRealisticImprovedAnswers(answers);
-  const improvedSummary = calculateScoreSummary(improvedAnswers);
-  const improvedBaseAdjustment = clamp((improvedSummary.normalizedScore - 0.5) * 28, -14, 14);
-  const improvedEliteBonus = getEliteLifestyleBonus(improvedAnswers);
-
-  let longevityPotential = clamp(
-    Math.max(
-      estimatedLifespan,
-      baselineLifeExpectancy + improvedBaseAdjustment + biomarkerModifier + improvedEliteBonus + bmiModifier,
-    ),
-    estimatedLifespan,
-    100,
-  );
-
-  const potentialGain = longevityPotential - estimatedLifespan;
-  if (normalizedScore >= 0.65 && normalizedScore < 0.9 && potentialGain < 4) {
-    longevityPotential = Math.min(100, estimatedLifespan + 4);
-  }
-  if (normalizedScore >= 0.75 && eliteLifestyleBonus >= 3 && longevityPotential < 92) {
-    longevityPotential = Math.min(100, Math.max(longevityPotential, 92));
-  }
-
-  let yearsYouCouldGain = Math.round(longevityPotential - estimatedLifespan);
-  yearsYouCouldGain = clamp(yearsYouCouldGain, 0, 20);
-
-  const metrics = {
-    surveyBiologicalAge,
-    estimatedLifespan,
-    longevityPotential,
-    yearsYouCouldGain,
-  };
+  const strongestPillar = [...pillarScores].sort((a, b) => b.score - a.score)[0];
+  const weakestPillar = [...pillarScores].sort((a, b) => a.score - b.score)[0];
+  const habitOpportunities = buildHabitOpportunities(answers);
 
   const { strengths, opportunities, recommendations } = buildRecommendations(pillarScores);
 
   return {
-    metrics,
+    metrics: {
+      lifeHabitsScore,
+      healthContextScore,
+      currentLongevityBaseline,
+      longevityPotential,
+      strongestPillar,
+      weakestPillar,
+      habitOpportunities,
+    },
     pillarScores,
-    normalizedScore,
     strengths,
     opportunities,
     recommendations,
-    baselineLifeExpectancy,
-  } satisfies AssessmentResultsPayload;
+  };
 }
 
-function getBaselineLifeExpectancy(sex: AssessmentAnswers["sex"]) {
-  if (sex === "male") return 76.5;
-  if (sex === "female") return 81.4;
-  return 79.0;
+function calculatePillarScores(answers: AssessmentAnswers): PillarScore[] {
+  return (Object.keys(HABIT_PILLAR_MAP) as PillarKey[]).map((pillar) => {
+    const questionIds = HABIT_PILLAR_MAP[pillar];
+    const scores = questionIds.map((id) => scoreQuestion(id, answers[id]));
+    const score = roundScore(average(scores));
+    return {
+      key: pillar,
+      label: PILLAR_LIBRARY[pillar],
+      score,
+      description: PILLAR_DESCRIPTIONS[pillar],
+    };
+  });
 }
 
-function getBmiModifier(answers: AssessmentAnswers) {
-  const weight = typeof answers.weight === "number" ? answers.weight : undefined;
-  const heightInches = getHeightInInches(answers.height);
-  if (!weight || !heightInches) {
-    return 0;
+const PILLAR_LIBRARY: Record<PillarKey, string> = {
+  food: "Food",
+  movement: "Movement",
+  sleep: "Sleep",
+  connection: "Connection",
+  purpose: "Purpose",
+  stressRegulation: "Stress Regulation",
+};
+
+function calculateHealthContextScore(answers: AssessmentAnswers) {
+  const contextScores: number[] = [];
+  const bmiScore = scoreBmi(answers.height, answers.weight);
+  if (bmiScore !== null) {
+    contextScores.push(bmiScore);
   }
 
-  const bmi = (weight / (heightInches * heightInches)) * 703;
-  if (!Number.isFinite(bmi)) {
-    return 0;
-  }
+  CONTEXT_QUESTION_IDS.forEach((id) => {
+    const value = answers[id];
+    const score = scoreQuestion(id, value);
+    contextScores.push(score);
+  });
 
-  let modifier = 0;
-  if (bmi >= 32) {
-    modifier = -2;
-  } else if (bmi >= 28) {
-    modifier = -1;
-  } else if (bmi >= 20 && bmi <= 26) {
-    modifier = 0.5;
-  }
+  OPTIONAL_MARKER_KEYS.forEach((marker) => {
+    const value = answers[marker];
+    contextScores.push(scoreOptionalMarker(marker, value));
+  });
 
-  if (answers.weightDistribution === "leanMuscular" && modifier < 0) {
-    modifier = 0;
-  }
-
-  if (answers.weightDistribution === "mostlyWaist" && bmi >= 28) {
-    modifier -= 0.5;
-  }
-
-  return clamp(modifier, -3, 1);
+  return contextScores.length ? average(contextScores) : 60;
 }
 
-function getHeightInInches(height?: AssessmentAnswers["height"]) {
-  if (!height) return undefined;
-  const feet = typeof height.feet === "number" ? height.feet : undefined;
-  const inches = typeof height.inches === "number" ? height.inches : undefined;
-  if (typeof feet !== "number" || typeof inches !== "number") {
-    return undefined;
+function calculateLongevityPotential(lifeHabitsScore: number, pillarScores: PillarScore[], answers: AssessmentAnswers) {
+  const headroomGains = pillarScores.map((pillar) => (100 - pillar.score) * 0.55);
+  const averageGain = average(headroomGains);
+  let potential = lifeHabitsScore + averageGain;
+
+  // Light penalties for major risk factors
+  if (answers.nicotine === "dailyUser") {
+    potential -= 12;
+  } else if (answers.nicotine === "occasionalUser") {
+    potential -= 5;
   }
-  const total = feet * 12 + inches;
-  return Number.isFinite(total) ? total : undefined;
+
+  if (answers.chronicCondition === "yes") {
+    potential -= 10;
+  } else if (answers.chronicCondition === "riskFactors") {
+    potential -= 6;
+  }
+
+  if (answers.bloodPressure === "high") {
+    potential -= 6;
+  } else if (answers.bloodPressure === "elevated") {
+    potential -= 3;
+  }
+
+  if (answers.fastingGlucose === "diabetes") {
+    potential -= 6;
+  } else if (answers.fastingGlucose === "prediabetes") {
+    potential -= 3;
+  }
+
+  return clamp(potential, 0, 100);
 }
 
-function getMarkerAdjustment(answers: AssessmentAnswers) {
-  let total = 0;
-
-  switch (answers.bloodPressure) {
-    case "high":
-      total -= 2;
-      break;
-    case "elevated":
-      total -= 1;
-      break;
-    case "normal":
-      total += 1;
-      break;
-    case "dontKnow":
-      total -= 0.5;
-      break;
-    default:
-      total -= 0.25;
+function scoreQuestion(id: AssessmentQuestionId, value: string | undefined): number {
+  const table = HABIT_OPTION_SCORES[id];
+  if (!table) {
+    return 60;
   }
 
-  switch (answers.ldl) {
-    case "high":
-      total -= 1.5;
-      break;
-    case "borderline":
-      total -= 0.5;
-      break;
-    case "optimal":
-      total += 1;
-      break;
-    case "dontKnow":
-      total -= 0.25;
-      break;
-    default:
-      total -= 0.25;
+  if (!value) {
+    return 60;
   }
-
-  switch (answers.fastingGlucose) {
-    case "diabetes":
-      total -= 2;
-      break;
-    case "prediabetes":
-      total -= 1;
-      break;
-    case "normal":
-      total += 1;
-      break;
-    case "dontKnow":
-      total -= 0.5;
-      break;
-    default:
-      total -= 0.25;
-  }
-
-  return clamp(total, -4, 3);
+  return table[value] ?? 60;
 }
 
-function getEliteLifestyleBonus(answers: AssessmentAnswers) {
-  const protectiveChecks = [
-    answers.nicotine === "neverUsed" || answers.nicotine === "formerUser",
-    answers.chronicDisease === "no",
-    answers.selfRatedHealth === "good" || answers.selfRatedHealth === "excellent",
-    ["from150To300", "over300"].includes(answers.cardio ?? ""),
-    ["good", "excellent"].includes(answers.fitnessLevel ?? ""),
-    ["often", "almostAlways"].includes(answers.sleepDuration ?? ""),
-    ["oneToTwoNights", "rarelyOrNever"].includes(answers.sleepQuality ?? ""),
-    ["fairlySupportive", "verySupportive"].includes(answers.socialSupport ?? ""),
-    ["weekly", "mostDays"].includes(answers.sharedMeals ?? ""),
-    ["strongPurpose", "deepSenseOfPurpose"].includes(answers.purpose ?? ""),
-    ["occasionally", "rarely"].includes(answers.stressFrequency ?? ""),
-  ].filter(Boolean).length;
+function scoreOptionalMarker(key: OptionalMarkerKey, value: string | undefined) {
+  if (!value) {
+    return 60;
+  }
+  const table = OPTIONAL_MARKER_SCORES[key];
+  return table[value] ?? 60;
+}
 
-  if (protectiveChecks >= 8) {
-    return 5;
+function buildScoreMap(values: string[], scale: readonly number[] = SCORE_SCALE) {
+  return values.reduce<Record<string, number>>((acc, value, index) => {
+    acc[value] = scale[index] ?? scale[scale.length - 1];
+    return acc;
+  }, {});
+}
+
+function average(values: number[]) {
+  if (!values.length) return 0;
+  const sum = values.reduce((total, value) => total + value, 0);
+  return sum / values.length;
+}
+
+function roundScore(value: number) {
+  if (!Number.isFinite(value)) return 0;
+  return Math.round(value);
+}
+
+function scoreBmi(height: AssessmentAnswers["height"], weight: AssessmentAnswers["weight"]) {
+  const safeHeightFeet = safeNumber(height?.feet ?? undefined);
+  const safeHeightInches = safeNumber(height?.inches ?? undefined);
+  const safeWeight = safeNumber(weight);
+  if (safeHeightFeet === undefined || safeHeightInches === undefined || safeWeight === undefined) {
+    return null;
   }
-  if (protectiveChecks >= 6) {
-    return 3;
-  }
-  if (protectiveChecks >= 4) {
-    return 1;
-  }
-  return 0;
+  const totalInches = safeHeightFeet * 12 + safeHeightInches;
+  if (!totalInches) return null;
+  const bmi = (safeWeight / (totalInches * totalInches)) * 703;
+  if (!Number.isFinite(bmi)) return null;
+
+  if (bmi >= 18.5 && bmi < 25) return 100;
+  if (bmi >= 25 && bmi < 28) return 85;
+  if (bmi >= 28 && bmi < 31) return 70;
+  if (bmi >= 31 && bmi < 35) return 50;
+  if (bmi >= 35) return 35;
+  if (bmi < 18.5 && bmi >= 17) return 70;
+  if (bmi < 17) return 55;
+  return 60;
+}
+
+function buildHabitOpportunities(answers: AssessmentAnswers): HabitOpportunityInsight[] {
+  const habitQuestionIds = Object.values(HABIT_PILLAR_MAP).flat();
+  const scoredQuestions = habitQuestionIds.map((questionId) => {
+    const score = scoreQuestion(questionId, answers[questionId]);
+    const pillar = getPillarForQuestion(questionId);
+    const prompt = QUESTION_LOOKUP.get(questionId)?.prompt ?? questionId;
+    return { questionId, pillar, prompt, score };
+  });
+
+  const opportunities = scoredQuestions.sort((a, b) => a.score - b.score).slice(0, 3);
+  return opportunities;
+}
+
+function getPillarForQuestion(questionId: AssessmentQuestionId): PillarKey {
+  const entry = (Object.entries(HABIT_PILLAR_MAP) as [PillarKey, AssessmentQuestionId[]][]).find(([, questions]) =>
+    questions.includes(questionId),
+  );
+  return entry ? entry[0] : "food";
 }

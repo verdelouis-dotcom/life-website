@@ -33,8 +33,6 @@ export default function EmailCaptureCard({ defaultFirstName = "", report }: Emai
         strengths: report.strengths,
         opportunities: report.opportunities,
         recommendations: report.recommendations,
-        baselineLifeExpectancy: report.baselineLifeExpectancy,
-        normalizedScore: report.normalizedScore,
       },
     };
 

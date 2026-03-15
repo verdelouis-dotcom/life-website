@@ -14,7 +14,7 @@ export default function PillarScoreBars({ scores }: PillarScoreBarsProps) {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">{pillar.label}</p>
               <p className="text-sm text-[var(--muted)]">{pillar.description}</p>
             </div>
-            <span className="text-2xl font-semibold text-[var(--life-forest)]">{pillar.score}</span>
+            <span className="text-2xl font-semibold text-[var(--life-forest)]">{Math.round(pillar.score)}%</span>
           </div>
           <div className="mt-3 h-2 rounded-full bg-[var(--surface)]">
             <div className="h-full rounded-full bg-[var(--olive)]" style={{ width: `${pillar.score}%` }} />

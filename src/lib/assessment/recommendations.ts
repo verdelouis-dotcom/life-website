@@ -103,7 +103,7 @@ const PILLAR_LIBRARY: Record<PillarKey, PillarMessaging> = {
       },
     ],
   },
-  stress: {
+  stressRegulation: {
     title: "Stress Regulation",
     strength: "You appear to have tools for resetting your nervous system.",
     opportunity: "Daily decompression practices can prevent chronic stress from accelerating aging biology.",

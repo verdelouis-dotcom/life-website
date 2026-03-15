@@ -17,8 +17,6 @@ type AssessmentReportPayload = {
   strengths: AssessmentResultsPayload["strengths"];
   opportunities: AssessmentResultsPayload["opportunities"];
   recommendations: AssessmentResultsPayload["recommendations"];
-  baselineLifeExpectancy?: AssessmentResultsPayload["baselineLifeExpectancy"];
-  normalizedScore?: AssessmentResultsPayload["normalizedScore"];
 };
 
 function resolveEnv(...keys: string[]) {
@@ -207,9 +205,6 @@ function normalizeReport(raw: unknown): AssessmentReportPayload | null {
     strengths: Array.isArray(payload.strengths) ? payload.strengths : [],
     opportunities: Array.isArray(payload.opportunities) ? payload.opportunities : [],
     recommendations: Array.isArray(payload.recommendations) ? payload.recommendations : [],
-    baselineLifeExpectancy:
-      typeof payload.baselineLifeExpectancy === "number" ? payload.baselineLifeExpectancy : undefined,
-    normalizedScore: typeof payload.normalizedScore === "number" ? payload.normalizedScore : undefined,
   };
 }
 
@@ -262,10 +257,10 @@ async function sendAssessmentReportEmail({
 function buildReportHtml(firstName: string | undefined, report: AssessmentReportPayload) {
   const greetingName = firstName || "there";
   const metricsRows = [
-    { label: "Survey-Based Biological Age", value: formatYears(report.metrics?.surveyBiologicalAge) },
-    { label: "Estimated Lifespan", value: formatYears(report.metrics?.estimatedLifespan) },
-    { label: "Longevity Potential", value: formatYears(report.metrics?.longevityPotential) },
-    { label: "Years You Could Gain", value: formatYears(report.metrics?.yearsYouCouldGain) },
+    { label: "LIFE Habits Score", value: formatScore(report.metrics?.lifeHabitsScore) },
+    { label: "Health Context Score", value: formatScore(report.metrics?.healthContextScore) },
+    { label: "Current Longevity Baseline", value: formatScore(report.metrics?.currentLongevityBaseline) },
+    { label: "Longevity Potential", value: formatScore(report.metrics?.longevityPotential) },
   ]
     .map(
       (item) => `
@@ -349,10 +344,10 @@ function buildReportHtml(firstName: string | undefined, report: AssessmentReport
 function buildReportText(firstName: string | undefined, report: AssessmentReportPayload) {
   const greetingName = firstName || "there";
   const metricsBlock = [
-    `- Survey-Based Biological Age: ${formatYears(report.metrics?.surveyBiologicalAge)}`,
-    `- Estimated Lifespan: ${formatYears(report.metrics?.estimatedLifespan)}`,
-    `- Longevity Potential: ${formatYears(report.metrics?.longevityPotential)}`,
-    `- Years You Could Gain: ${formatYears(report.metrics?.yearsYouCouldGain)}`,
+    `- LIFE Habits Score: ${formatScore(report.metrics?.lifeHabitsScore)}`,
+    `- Health Context Score: ${formatScore(report.metrics?.healthContextScore)}`,
+    `- Current Longevity Baseline: ${formatScore(report.metrics?.currentLongevityBaseline)}`,
+    `- Longevity Potential: ${formatScore(report.metrics?.longevityPotential)}`,
   ].join("\n");
 
   const pillarBlock = (report.pillarScores ?? [])
@@ -429,13 +424,6 @@ function renderPlainList(
     return fallback;
   }
   return items.map((item) => `- ${item.title}: ${item.description ?? item.detail ?? ""}`).join("\n");
-}
-
-function formatYears(value: number | undefined) {
-  if (typeof value !== "number" || Number.isNaN(value)) {
-    return "—";
-  }
-  return `${Math.round(value)} yrs`;
 }
 
 function formatScore(value: number | undefined) {

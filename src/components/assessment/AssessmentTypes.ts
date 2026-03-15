@@ -1,12 +1,12 @@
 export type AssessmentSectionId =
-  | "basicHealth"
+  | "startingPoint"
   | "food"
   | "movement"
   | "sleep"
   | "connection"
-  | "purposeStress"
-  | "healthHabits"
-  | "familyContext";
+  | "purpose"
+  | "stressRegulation"
+  | "healthContext";
 
 export type QuestionInputType = "text" | "number" | "singleSelect" | "composite";
 
@@ -54,33 +54,38 @@ export type AssessmentQuestionId =
   | "sex"
   | "height"
   | "weight"
-  | "fruitsVeg"
-  | "processedFoods"
-  | "sugarIntake"
-  | "homePreparedMeals"
-  | "waterIntake"
-  | "cardio"
-  | "strengthTraining"
-  | "dailyMovement"
-  | "fitnessLevel"
-  | "mobility"
-  | "sleepDuration"
-  | "sleepQuality"
-  | "sleepSchedule"
-  | "timeWithOthers"
-  | "socialSupport"
+  | "fruitsVegServings"
+  | "processedMeals"
+  | "addedSugar"
+  | "homeCookedMeals"
+  | "hydrationChoice"
+  | "fiberFoods"
+  | "moderateActivity"
+  | "strengthDays"
+  | "sedentaryTime"
+  | "lifestyleMovement"
+  | "mobilityPractice"
+  | "sleepHours"
+  | "wakeRested"
+  | "sleepConsistency"
+  | "sleepHygiene"
+  | "meaningfulTime"
+  | "supportSystem"
   | "sharedMeals"
   | "screenFreeMeals"
-  | "stressFrequency"
-  | "mentalHealthImpact"
-  | "purpose"
+  | "communityBelonging"
+  | "senseOfPurpose"
+  | "meaningfulActivities"
+  | "contributionFrequency"
+  | "overwhelmFrequency"
+  | "recoveryHabits"
+  | "outdoorQuietTime"
   | "alcohol"
   | "nicotine"
-  | "chronicDisease"
+  | "chronicCondition"
   | "selfRatedHealth"
-  | "grandparents85"
   | "preventiveCare"
-  | "weightDistribution";
+  | "grandparents85";
 
 export interface HeightAnswer {
   feet?: number;
@@ -94,39 +99,44 @@ export interface AssessmentAnswers {
   sex?: SexOption;
   height?: HeightAnswer;
   weight?: number;
-  fruitsVeg?: string;
-  processedFoods?: string;
-  sugarIntake?: string;
-  homePreparedMeals?: string;
-  waterIntake?: string;
-  cardio?: string;
-  strengthTraining?: string;
-  dailyMovement?: string;
-  fitnessLevel?: string;
-  mobility?: string;
-  sleepDuration?: string;
-  sleepQuality?: string;
-  sleepSchedule?: string;
-  timeWithOthers?: string;
-  socialSupport?: string;
+  fruitsVegServings?: string;
+  processedMeals?: string;
+  addedSugar?: string;
+  homeCookedMeals?: string;
+  hydrationChoice?: string;
+  fiberFoods?: string;
+  moderateActivity?: string;
+  strengthDays?: string;
+  sedentaryTime?: string;
+  lifestyleMovement?: string;
+  mobilityPractice?: string;
+  sleepHours?: string;
+  wakeRested?: string;
+  sleepConsistency?: string;
+  sleepHygiene?: string;
+  meaningfulTime?: string;
+  supportSystem?: string;
   sharedMeals?: string;
   screenFreeMeals?: string;
-  stressFrequency?: string;
-  mentalHealthImpact?: string;
-  purpose?: string;
+  communityBelonging?: string;
+  senseOfPurpose?: string;
+  meaningfulActivities?: string;
+  contributionFrequency?: string;
+  overwhelmFrequency?: string;
+  recoveryHabits?: string;
+  outdoorQuietTime?: string;
   alcohol?: string;
   nicotine?: string;
-  chronicDisease?: string;
+  chronicCondition?: string;
   selfRatedHealth?: string;
-  grandparents85?: string;
   preventiveCare?: string;
-  weightDistribution?: string;
+  grandparents85?: string;
   bloodPressure?: string;
   ldl?: string;
   fastingGlucose?: string;
 }
 
-export type PillarKey = "food" | "movement" | "sleep" | "connection" | "purpose" | "stress";
+export type PillarKey = "food" | "movement" | "sleep" | "connection" | "purpose" | "stressRegulation";
 
 export interface PillarScore {
   key: PillarKey;
@@ -140,11 +150,21 @@ export interface TimelinePoint {
   value: number;
 }
 
+export interface HabitOpportunityInsight {
+  questionId: AssessmentQuestionId;
+  pillar: PillarKey;
+  prompt: string;
+  score: number;
+}
+
 export interface LongevityMetrics {
-  surveyBiologicalAge: number;
-  estimatedLifespan: number;
+  lifeHabitsScore: number;
+  healthContextScore: number;
+  currentLongevityBaseline: number;
   longevityPotential: number;
-  yearsYouCouldGain: number;
+  strongestPillar?: PillarScore;
+  weakestPillar?: PillarScore;
+  habitOpportunities: HabitOpportunityInsight[];
 }
 
 export interface AssessmentStrengthOpportunity {
@@ -160,9 +180,7 @@ export interface GeneralRecommendation {
 export interface AssessmentResultsPayload {
   metrics: LongevityMetrics;
   pillarScores: PillarScore[];
-  normalizedScore: number;
   strengths: AssessmentStrengthOpportunity[];
   opportunities: AssessmentStrengthOpportunity[];
   recommendations: GeneralRecommendation[];
-  baselineLifeExpectancy: number;
 }

@@ -17,28 +17,28 @@ interface AssessmentResultsProps {
 export default function AssessmentResults({ answers, results, onRestart }: AssessmentResultsProps) {
   const firstName = answers.firstName?.trim() || "Friend";
   const age = answers.age ?? 40;
-  const formatYears = (value: number) => `${Math.round(value)} yrs`;
+  const formatPercent = (value: number) => `${Math.round(value)}%`;
 
   const metricCards = [
     {
-      label: "Survey-Based Biological Age",
-      value: formatYears(results.metrics.surveyBiologicalAge),
-      detail: "Compared to your chronological age",
+      label: "LIFE Habits Score",
+      value: formatPercent(results.metrics.lifeHabitsScore),
+      detail: "Average of Food, Movement, Sleep, Connection, Purpose, Stress Regulation pillars.",
     },
     {
-      label: "Estimated Lifespan",
-      value: formatYears(results.metrics.estimatedLifespan),
-      detail: "Based on current lifestyle inputs",
+      label: "Health Context Score",
+      value: formatPercent(results.metrics.healthContextScore),
+      detail: "Body composition, alcohol/nicotine patterns, preventive care, family longevity, optional markers.",
+    },
+    {
+      label: "Current Longevity Baseline",
+      value: formatPercent(results.metrics.currentLongevityBaseline),
+      detail: "70% LIFE habits + 30% health context—your modeled trajectory today.",
     },
     {
       label: "Longevity Potential",
-      value: formatYears(results.metrics.longevityPotential),
-      detail: "If realistic habit upgrades stick",
-    },
-    {
-      label: "Years You Could Gain",
-      value: formatYears(results.metrics.yearsYouCouldGain),
-      detail: "Additional healthy years to work toward",
+      value: formatPercent(results.metrics.longevityPotential),
+      detail: "Where your trajectory can go if consistent LIFE habits keep compounding.",
     },
   ];
 
@@ -48,7 +48,7 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         <p className="type-eyebrow">Results</p>
         <h2 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">{firstName}, here is your longevity report</h2>
         <p className="mt-3 text-base text-[var(--muted)]">
-          These estimates translate your answers into a lifestyle-informed snapshot of biological aging, lifespan, and the possibilities ahead.
+          These scores translate your answers into the LIFE framework—showing how daily habits, background context, and future headroom work together.
         </p>
         <button
           type="button"
@@ -59,13 +59,66 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         </button>
       </div>
 
-      <section className="grid gap-6 md:grid-cols-2">
+      <section className="space-y-4">
+        <p className="text-sm text-[var(--muted)]">
+          LIFE Habits reflects the six pillars you can influence each day. Health Context summarizes the risk factors you carry right now. Your
+          Current Longevity Baseline blends the two, while Longevity Potential shows how far consistent LIFE habits can move the trajectory.
+        </p>
+        <div className="grid gap-6 md:grid-cols-2">
         {metricCards.map((card) => (
           <ResultsSummaryCard key={card.label} label={card.label} value={card.value} detail={card.detail} />
         ))}
+        </div>
       </section>
 
       <LifeTimeline age={age} metrics={results.metrics} />
+
+      {(results.metrics.strongestPillar || results.metrics.weakestPillar) && (
+        <section className="grid gap-6 md:grid-cols-2">
+          {results.metrics.strongestPillar ? (
+            <article className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Strongest pillar</p>
+              <h3 className="mt-2 text-xl font-semibold text-[var(--life-forest)]">
+                {results.metrics.strongestPillar.label} • {Math.round(results.metrics.strongestPillar.score)}%
+              </h3>
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                Keep reinforcing the habits that make this pillar feel dependable—share them with others at the table.
+              </p>
+            </article>
+          ) : null}
+          {results.metrics.weakestPillar ? (
+            <article className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--terracotta)]">Growth pillar</p>
+              <h3 className="mt-2 text-xl font-semibold text-[var(--life-forest)]">
+                {results.metrics.weakestPillar.label} • {Math.round(results.metrics.weakestPillar.score)}%
+              </h3>
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                This is where consistent LIFE habits can add the most momentum. Focus here first to unlock the next phase of longevity
+                potential.
+              </p>
+            </article>
+          ) : null}
+        </section>
+      )}
+
+      {results.metrics.habitOpportunities.length ? (
+        <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--terracotta)]">Habit opportunities</p>
+          <h3 className="mt-2 text-2xl font-semibold text-[var(--life-forest)]">Three places to focus next</h3>
+          <p className="mt-2 text-sm text-[var(--muted)]">Each cue below points to a single behavior that can raise your LIFE Habits Score.</p>
+          <ul className="mt-4 space-y-3 text-sm text-[var(--text)]">
+            {results.metrics.habitOpportunities.map((item) => (
+              <li key={item.questionId} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
+                <p className="font-semibold text-[var(--life-forest)]">{item.prompt}</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
+                  {results.pillarScores.find((pillar) => pillar.key === item.pillar)?.label ?? item.pillar} • current score{" "}
+                  {Math.round(item.score)}%
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section>
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Pillar snapshot</p>
