@@ -133,7 +133,7 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
 function calculatePillarScores(answers: AssessmentAnswers): PillarScore[] {
   return (Object.keys(HABIT_PILLAR_MAP) as PillarKey[]).map((pillar) => {
     const questionIds = HABIT_PILLAR_MAP[pillar];
-    const scores = questionIds.map((id) => scoreQuestion(id, answers[id]));
+    const scores = questionIds.map((id) => scoreQuestion(id, answers[id] as string | undefined));
     const score = roundScore(average(scores));
     return {
       key: pillar,
