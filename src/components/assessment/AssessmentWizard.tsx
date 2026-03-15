@@ -7,7 +7,12 @@ import ProgressBar from "@/components/assessment/ProgressBar";
 import QuestionStep from "@/components/assessment/QuestionStep";
 import AssessmentResults from "@/components/assessment/AssessmentResults";
 import type { AssessmentAnswers, AssessmentQuestion, OptionalMarkerKey } from "@/components/assessment/AssessmentTypes";
-import { ASSESSMENT_QUESTIONS, ASSESSMENT_SECTIONS, OPTIONAL_MARKER_QUESTIONS, TOTAL_QUESTION_COUNT } from "@/lib/assessment/questions";
+import {
+  ASSESSMENT_QUESTIONS,
+  ASSESSMENT_SECTIONS,
+  OPTIONAL_MARKER_QUESTIONS,
+  TOTAL_QUESTION_COUNT,
+} from "@/lib/assessment/questions";
 import { evaluateAssessment } from "@/lib/assessment/scoring";
 import {
   clearAssessmentProgress,
@@ -250,9 +255,9 @@ function OptionalMarkersStep({ answers, onChange, onBack, onContinue }: Optional
           {OPTIONAL_MARKER_QUESTIONS.map((question) => (
             <div key={question.id} className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-4">
               <label className="block text-sm font-semibold text-[var(--life-forest)]" htmlFor={`optional-${question.id}`}>
-                {question.label}
+                {question.prompt}
               </label>
-              {question.description && <p className="text-xs text-[var(--muted)]">{question.description}</p>}
+              {question.helperText && <p className="text-xs text-[var(--muted)]">{question.helperText}</p>}
               <select
                 id={`optional-${question.id}`}
                 value={(answers[question.id] as string) ?? "dontKnow"}
