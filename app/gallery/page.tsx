@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import { GALLERY_PHOTOS } from "@/data/gallery";
+
+const GALLERY_URL = "https://www.longevityinitiativeforfoodandeducation.com/gallery";
+
+export const metadata: Metadata = {
+  title: "LIFE Tables Photo Gallery | Longevity Initiative",
+  description: "Browse the LIFE shared table gallery for real photos from Metro Atlanta workshops and community meals.",
+  alternates: {
+    canonical: GALLERY_URL,
+  },
+  openGraph: {
+    title: "LIFE Tables Photo Gallery | Longevity Initiative",
+    description: "Browse the LIFE shared table gallery for real photos from Metro Atlanta workshops and community meals.",
+    url: GALLERY_URL,
+  },
+  twitter: {
+    title: "LIFE Tables Photo Gallery | Longevity Initiative",
+    description: "Browse the LIFE shared table gallery for real photos from Metro Atlanta workshops and community meals.",
+  },
+};
 
 export default function GalleryPage() {
   return (

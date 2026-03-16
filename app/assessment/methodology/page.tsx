@@ -66,10 +66,26 @@ const REFERENCE_LIST = [
   "Peer-reviewed research in epidemiology, preventive medicine, and behavioral health",
 ];
 
+const METHODOLOGY_URL = "https://www.longevityinitiativeforfoodandeducation.com/assessment/methodology";
+
 export const metadata: Metadata = {
   title: "LIFE Longevity Assessment Methodology",
   description:
     "Learn how the LIFE Longevity Assessment works, what it measures, and the research areas that inform its survey-based longevity estimates.",
+  alternates: {
+    canonical: METHODOLOGY_URL,
+  },
+  openGraph: {
+    title: "LIFE Longevity Assessment Methodology",
+    description:
+      "Learn how the LIFE Longevity Assessment works, what it measures, and the research areas that inform its survey-based longevity estimates.",
+    url: METHODOLOGY_URL,
+  },
+  twitter: {
+    title: "LIFE Longevity Assessment Methodology",
+    description:
+      "Learn how the LIFE Longevity Assessment works, what it measures, and the research areas that inform its survey-based longevity estimates.",
+  },
 };
 
 export default function AssessmentMethodologyPage() {

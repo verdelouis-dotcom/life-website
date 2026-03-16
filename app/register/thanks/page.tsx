@@ -1,6 +1,26 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+
+const REGISTER_THANKS_URL = "https://www.longevityinitiativeforfoodandeducation.com/register/thanks";
+
+export const metadata: Metadata = {
+  title: "Thank You for Registering | LIFE Table Recorded",
+  description: "Thanks for registering your LIFE table. Your gathering now counts toward the movement’s measurable community impact.",
+  alternates: {
+    canonical: REGISTER_THANKS_URL,
+  },
+  openGraph: {
+    title: "Thank You for Registering | LIFE Table Recorded",
+    description: "Thanks for registering your LIFE table. Your gathering now counts toward the movement’s measurable community impact.",
+    url: REGISTER_THANKS_URL,
+  },
+  twitter: {
+    title: "Thank You for Registering | LIFE Table Recorded",
+    description: "Thanks for registering your LIFE table. Your gathering now counts toward the movement’s measurable community impact.",
+  },
+};
 
 export default function RegisterThanksPage() {
   return (

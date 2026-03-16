@@ -6,6 +6,33 @@ import CanonicalRedirect from "@/components/canonical-redirect";
 
 const SITE_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
+const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Longevity Initiative for Food & Education",
+  alternateName: "LIFE",
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo.png`,
+  description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "general",
+    email: "info@longevityinitiativeforfoodandeducation.com",
+  },
+};
+
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Longevity Initiative for Food & Education",
+  url: SITE_URL,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/?s={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
@@ -60,6 +87,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
         <CanonicalRedirect />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }}
+        />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
+        />
         {children}
         <noscript>
           <style>{`[data-reveal]{opacity:1 !important;transform:none !important;}`}</style>
