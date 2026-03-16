@@ -47,8 +47,8 @@ export default function HowItWorksPage() {
             <p className="type-eyebrow text-[var(--olive)]">Program Overview</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">How LIFE Works</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              LIFE keeps the movement simple: Attend a workshop, host a table, register the gathering. Every step reinforces measurable
-              longevity habits rooted in shared meals and education.
+              LIFE keeps the movement simple: Attend a workshop, host a table, register the gathering. The Metro Atlanta pilot is where each
+              step is field-tested before expanding to additional regions.
             </p>
           </div>
         </section>
@@ -67,9 +67,32 @@ export default function HowItWorksPage() {
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">How We Measure Impact</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--text)]">
               Registration data, workshop attendance, and host follow-up allow LIFE to report on reach, repeat gatherings, and qualitative
-              stories. The LIFE Longevity Assessment ties the six pillars to personal reflection, while the pilot&apos;s governance structure
-              keeps reporting honest.
+              stories. During the pilot we share quarterly summaries with donors and partners so replication decisions stay rooted in data.
             </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-6 pb-12">
+          <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Frequently Asked Questions</h2>
+            <div className="mt-4 space-y-4">
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Do I need experience to host a LIFE table?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">No. Hosts receive the LIFE guide, ingredient templates, and facilitation prompts. Any cuisine works as long as it uses fresh ingredients and includes a seated conversation.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What happens after I host?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">You register the table online, submit attendance, and note any stories. The LIFE team follows up with resources so you can host again or mentor another host.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Is registering a table required?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Yes. Registration is how LIFE proves impact to grants and keeps ingredients flowing to the next host. Without it, we can’t responsibly expand.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Who can participate?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Workshops currently focus on Metro Atlanta neighborhoods, churches, and nonprofit partners. We welcome inquiries from other regions for future phases.</p>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -76,6 +76,14 @@ export default function AboutPage() {
               <li>• Donations underwrite ingredients, host toolkits, and reporting—not overhead.</li>
             </ul>
           </article>
+          <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Service Area &amp; Partners</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--text)]">
+              LIFE currently operates in Metro Atlanta with partnerships across neighborhood associations, faith communities, and local
+              food access nonprofits. Interested collaborators can help host tables, fund ingredients, or connect the assessment with
+              preventive care clinics. Expansion will happen only when the pilot data proves readiness.
+            </p>
+          </article>
         </section>
 
         <section className="mx-auto max-w-4xl px-6 pb-16">

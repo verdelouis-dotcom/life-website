@@ -14,6 +14,7 @@ const ROUTES = [
   "/donate",
   "/keynote",
   "/contact",
+  "/impact",
   "/newsletter",
   "/gallery",
   "/pillars/food",

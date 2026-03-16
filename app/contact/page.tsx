@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import ContactForm from "@/components/forms/contact-form";
@@ -32,8 +33,8 @@ export default function ContactPage() {
             <p className="type-eyebrow text-[var(--olive)]">Contact</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">Contact LIFE</h1>
             <p className="mt-4 text-base text-[var(--muted)]">
-              We welcome partnerships, workshop invitations, keynote requests, and community questions. Tell us a bit about your interest and
-              we&apos;ll respond within two business days.
+              We welcome partnerships, workshop invitations, keynote requests, and community questions—especially within the Metro Atlanta pilot.
+              Tell us a bit about your interest and we&apos;ll respond within two business days.
             </p>
           </div>
         </section>
@@ -70,6 +71,43 @@ export default function ContactPage() {
               <p>Atlanta, GA 30308</p>
             </div>
           </aside>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-6 pb-12">
+          <div className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Frequently Asked Questions</h2>
+            <div className="mt-4 space-y-4">
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What types of inquiries can I send?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Program partnerships, keynote or workshop requests, donation questions, and general volunteering interest are all welcome through this form.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">How quickly will someone respond?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">The LIFE volunteer team replies within two business days and routes urgent needs to the appropriate board lead.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can I ask about partnerships, workshops, or speaking?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Yes. Include your organization name, desired dates, and location so we can determine whether the Metro Atlanta pilot or a virtual option fits.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-4xl px-6 pb-16">
+          <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
+            <p className="type-eyebrow text-[var(--olive)]">Next steps</p>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              <Link href="/assessment" className="btn-solid px-8 text-base">
+                Take the Assessment
+              </Link>
+              <Link href="/host" className="btn-outline px-8 text-base">
+                Host a Table
+              </Link>
+              <Link href="/donate" className="btn-outline px-8 text-base">
+                Donate
+              </Link>
+            </div>
+          </div>
         </section>
       </main>
       <SiteFooter />

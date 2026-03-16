@@ -35,8 +35,8 @@ export default function WorkshopsPage() {
             <p className="type-eyebrow text-[var(--olive)]">Workshops</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Workshops</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              Workshops are the front door to the LIFE movement. Participants cook together, learn the six-pillars framework, and leave
-              prepared to host their own table.
+              Workshops are the front door to the LIFE movement. In Metro Atlanta they give neighbors, faith communities, and partner
+              organizations a chance to practice the six pillars before launching their own tables.
             </p>
           </div>
         </section>
@@ -52,8 +52,8 @@ export default function WorkshopsPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Who Workshops Are For</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text)]">
-              Neighbors, families, faith communities, and community health partners who want to restore shared meals and adopt practical
-              longevity habits—no culinary degree required.
+              Neighbors, families, clinics, and community health partners who want to restore shared meals and adopt practical longevity
+              habits—no culinary degree required. Organizations outside Metro Atlanta can request future cohorts via the keynote inquiry form.
             </p>
           </article>
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
@@ -72,6 +72,26 @@ export default function WorkshopsPage() {
               the table.
             </p>
           </article>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-6 pb-12">
+          <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Frequently Asked Questions</h2>
+            <div className="mt-4 space-y-4">
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What does a LIFE workshop include?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Each session involves cooking together, the LIFE Longevity Assessment, and facilitation practice so attendees feel confident hosting the next table.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Who are workshops for?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">We currently serve Metro Atlanta households, churches, nonprofits, and corporate wellness teams looking for a service project rooted in real food.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can LIFE lead workshops for organizations?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Yes. Organizations can request hosted workshops or private cohorts through the keynote/contact forms so we can align goals, audiences, and budgets.</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
