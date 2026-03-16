@@ -59,6 +59,11 @@ export default function SiteFooter() {
                 </a>
               </li>
               <li>
+                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/host">
+                  Host a Table
+                </a>
+              </li>
+              <li>
                 <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/contact">
                   Contact LIFE
                 </a>

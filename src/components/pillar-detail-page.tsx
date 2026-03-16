@@ -1,4 +1,6 @@
 import Link from "next/link";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
 import { getPillarBySlug } from "@/data/pillars";
 
 export default function PillarDetailPage({ slug }: { slug: string }) {
@@ -8,8 +10,10 @@ export default function PillarDetailPage({ slug }: { slug: string }) {
   }
 
   return (
-    <main className="bg-[var(--bg)] text-[var(--text)]">
-      <section className="bg-[#fff8ef] py-16">
+    <>
+      <SiteHeader />
+      <main className="bg-[var(--bg)] text-[var(--text)]">
+        <section className="bg-[#fff8ef] py-16">
         <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
           <p className="type-eyebrow">Longevity Pillar</p>
           <h1 className="section-heading">{pillar.title}</h1>
@@ -19,8 +23,8 @@ export default function PillarDetailPage({ slug }: { slug: string }) {
               Home
             </Link>
             <span>•</span>
-            <Link href="/host" className="underline">
-              Become a Host
+            <Link href="/how-it-works" className="underline">
+              How LIFE Works
             </Link>
           </div>
         </div>
@@ -47,13 +51,21 @@ export default function PillarDetailPage({ slug }: { slug: string }) {
               ))}
             </ul>
           </div>
-          <div className="text-center">
-            <Link href="/host" className="btn-outline">
-              Become a Host
-            </Link>
+          <div className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 text-center shadow-sm">
+            <p className="type-eyebrow text-[var(--olive)]">Next steps</p>
+            <div className="mt-4 flex flex-wrap justify-center gap-4">
+              <Link href="/assessment" className="btn-solid">
+                Take the Assessment
+              </Link>
+              <Link href="/assessment/methodology" className="btn-outline">
+                Review Methodology
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

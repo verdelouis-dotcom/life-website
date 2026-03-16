@@ -98,11 +98,14 @@ export default function WorkshopsPage() {
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
             <p className="type-eyebrow text-[var(--olive)]">Bring a workshop to your community</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link href="/keynote" className="btn-solid px-8 text-base">
+              <Link href="/contact" className="btn-solid px-8 text-base">
+                Contact LIFE
+              </Link>
+              <Link href="/keynote" className="btn-outline px-8 text-base">
                 Request a Workshop or Keynote
               </Link>
-              <Link href="/contact" className="btn-outline px-8 text-base">
-                Contact LIFE
+              <Link href="/host" className="btn-outline px-8 text-base">
+                Host a Table
               </Link>
             </div>
           </div>

@@ -18,14 +18,14 @@ export default function HomeHero() {
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
-            <Link href="#model" className="btn-solid px-8 text-base" prefetch={false}>
-              Learn the Model
-            </Link>
             <Link
               href="/assessment"
-              className="btn-outline px-8 text-base"
+              className="btn-solid px-8 text-base"
             >
               Take the Assessment
+            </Link>
+            <Link href="/how-it-works" className="btn-outline px-8 text-base">
+              How LIFE Works
             </Link>
             <Link href="/keynote" className="text-sm font-semibold text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
               Request a Keynote

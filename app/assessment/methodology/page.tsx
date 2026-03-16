@@ -246,7 +246,7 @@ export default function AssessmentMethodologyPage() {
                     href="/assessment"
                     className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#394930]"
                   >
-                    Take the LIFE Longevity Assessment
+                    Take the Assessment
                   </Link>
                   <Link href="/assessment" className="text-sm text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4">
                     Back to the LIFE assessment overview
