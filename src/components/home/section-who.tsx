@@ -15,7 +15,9 @@ export default function SectionWho() {
           <p className="type-body-muted">
             We help neighbors cook with fresh ingredients, share meals, and learn practical longevity habits together.
           </p>
-          <p className="type-body-muted">The Metro Atlanta pilot proves a measurable, replicable structure designed for national scale.</p>
+          <p className="type-body-muted">
+            The Georgia pilot now informs early hosts in Atlanta, Rochester, and Austin so the structure can stay measurable as it travels.
+          </p>
           <div className="pt-2">
             <a href="/about" className="btn-outline px-6 text-sm">
               Learn More About LIFE

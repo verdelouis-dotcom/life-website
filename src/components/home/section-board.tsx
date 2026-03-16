@@ -4,7 +4,7 @@ const BOARD_MEMBERS = [
   {
     name: "Lou Verde",
     role: "Founder & President",
-    bio: "Community nutrition advocate and creator of the LIFE Longevity Assessment, Lou guides the organization’s strategic vision and oversees pilot operations across Metro Atlanta.",
+    bio: "Community nutrition advocate and creator of the LIFE Longevity Assessment, Lou guides the organization’s strategic vision and supports early hosts in Atlanta, Rochester, and Austin.",
   },
   {
     name: "Dr. Miles Medina",

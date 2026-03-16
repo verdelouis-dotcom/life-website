@@ -33,7 +33,7 @@ export default function ResourcesPage() {
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Resources</h1>
             <p className="mt-4 text-base leading-7 text-[var(--muted)]">
               LIFE shares practical education about longevity, Mediterranean-inspired cooking, and the power of community tables. Explore the
-              guides below to understand the philosophy behind our Metro Atlanta pilot and how it can serve your neighborhood.
+              guides below to understand the philosophy that began in Georgia and how early hosts are carrying it to Atlanta, Rochester, and Austin.
             </p>
           </div>
         </section>

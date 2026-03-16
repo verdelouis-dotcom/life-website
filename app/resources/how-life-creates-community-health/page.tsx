@@ -33,7 +33,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
           <Link href="/workshops" className="text-[var(--terracotta)] underline">
             LIFE workshops
           </Link>{" "}
-          in Metro Atlanta teach basic cooking, facilitation, and assessment skills. They are the beginning of the {" "}
+          in Georgia and early host cities teach basic cooking, facilitation, and assessment skills. They are the beginning of the {" "}
           <Link href="/how-it-works" className="text-[var(--terracotta)] underline">
             Attend → Host → Register
           </Link>{" "}
@@ -79,7 +79,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
       <ResourceSection title="Partners join when results are transparent">
         <p>
           As LIFE publishes more pilot metrics, hospitals, schools, and grantmakers can see how shared meals translate into real community health
-          markers. That transparency builds confidence for expansion beyond Metro Atlanta.
+          markers. That transparency builds confidence for every new city—including Rochester and Austin—to adopt the framework responsibly.
         </p>
       </ResourceSection>
     </ResourceArticleLayout>

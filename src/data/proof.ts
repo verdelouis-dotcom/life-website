@@ -13,7 +13,7 @@ export interface ProofHighlight {
 export const PILOT_QUOTES: ProofQuote[] = [
   {
     quote: "Hosting a LIFE table in our apartment building reminded neighbors that cooking together is still possible, even on busy weeks.",
-    attribution: "Metro Atlanta host",
+    attribution: "Atlanta host",
     context: "Pilot year gathering",
   },
   {
@@ -30,7 +30,7 @@ export const PILOT_QUOTES: ProofQuote[] = [
 
 export const PARTNER_READY_HIGHLIGHTS: ProofHighlight[] = [
   {
-    title: "Pilot in Metro Atlanta",
+    title: "Rooted in Georgia",
     detail: "Built with neighborhoods, congregations, and clinics that want to restore shared meals close to home.",
     tag: "Pilot Stage",
   },
@@ -48,8 +48,8 @@ export const PARTNER_READY_HIGHLIGHTS: ProofHighlight[] = [
 
 export const ABOUT_PROOF: ProofHighlight[] = [
   {
-    title: "Metro Atlanta Focus",
-    detail: "Launching locally allows LIFE to gather stories, refine the curriculum, and publish honest pilot learnings.",
+    title: "Georgia Beginnings",
+    detail: "Launching locally allowed LIFE to gather stories, refine the curriculum, and publish honest pilot learnings before traveling.",
   },
   {
     title: "Community + Board Leadership",
@@ -72,7 +72,7 @@ export const WORKSHOP_PROOF: ProofHighlight[] = [
   },
   {
     title: "Easy to Request",
-    detail: "Metro Atlanta partners can book directly through the contact form; national partners can plan virtual cohorts.",
+    detail: "Partners in Atlanta, Rochester, and Austin can book directly through the contact form; other cities may request virtual cohorts.",
   },
 ];
 
@@ -87,7 +87,7 @@ export const IMPACT_PROOF: ProofHighlight[] = [
   },
   {
     title: "Expansion Criteria",
-    detail: "Scaling beyond Metro Atlanta depends on consistent host retention, assessment completion, and documented outcomes.",
+    detail: "Early expansion (Atlanta, Rochester, Austin) depends on consistent host retention, assessment completion, and documented outcomes.",
   },
 ];
 

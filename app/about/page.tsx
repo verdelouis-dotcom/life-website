@@ -65,9 +65,9 @@ export default function AboutPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Founder Story</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--text)]">
-              Lou Verde created LIFE after years of studying long-lived cultures and seeing how meals reinforced responsibility. The pilot
-              began in Metro Atlanta so the structure could be tested transparently before scaling. Board governance, pro-bono leadership,
-              and quarterly reporting protect the nonprofit mission.
+              Lou Verde created LIFE after years of studying long-lived cultures and seeing how meals reinforced responsibility. The first
+              gatherings happened in Georgia so the structure could be tested transparently before traveling to other cities. Board governance,
+              pro-bono leadership, and quarterly reporting protect the nonprofit mission.
             </p>
           </article>
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
@@ -82,9 +82,8 @@ export default function AboutPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Service Area &amp; Partners</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text)]">
-              LIFE currently operates in Metro Atlanta with partnerships across neighborhood associations, faith communities, and local
-              food access nonprofits. Interested collaborators can help host tables, fund ingredients, or connect the assessment with
-              preventive care clinics. Expansion will happen only when the pilot data proves readiness.
+              LIFE began in Georgia and now works with early hosts in Atlanta, Rochester, and Austin. Neighborhood associations, faith communities,
+              and local food nonprofits help bring the model to life while data from each city determines when new locations are ready.
             </p>
           </article>
         </section>

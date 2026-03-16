@@ -39,7 +39,7 @@ const CONTACT_FAQ = [
   {
     question: "Can I ask about partnerships, workshops, or speaking?",
     answer:
-      "Yes. Include your organization name, desired dates, and location so we can determine whether the Metro Atlanta pilot or a virtual option fits.",
+      "Yes. Include your organization name, desired dates, and location so we can determine whether current host cities or a virtual option fit.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
             <p className="type-eyebrow text-[var(--olive)]">Contact</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">Contact LIFE</h1>
             <p className="mt-4 text-base text-[var(--muted)]">
-              We welcome partnerships, workshop invitations, keynote requests, and community questions—especially within the Metro Atlanta pilot.
+              We welcome partnerships, workshop invitations, keynote requests, and community questions—especially in Atlanta, Rochester, and Austin where early hosts are active.
               Tell us a bit about your interest and we&apos;ll respond within two business days.
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can I ask about partnerships, workshops, or speaking?</h3>
-                <p className="mt-2 text-sm text-[var(--text)]">Yes. Include your organization name, desired dates, and location so we can determine whether the Metro Atlanta pilot or a virtual option fits.</p>
+                <p className="mt-2 text-sm text-[var(--text)]">Yes. Include your organization name, desired dates, and location so we can determine whether current host cities or a virtual option fit.</p>
               </div>
             </div>
           </div>

@@ -37,7 +37,7 @@ const TRACKING_POINTS = [
 const PILOT_METRICS = [
   {
     title: "Tables Registered",
-    detail: "Every Metro Atlanta table is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
+    detail: "Every table hosted in Atlanta, Rochester, and Austin is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
   },
   {
     title: "People Reached",
@@ -70,8 +70,8 @@ export default function ImpactPage() {
             <p className="type-eyebrow text-[var(--olive)]">Impact</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Impact</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              LIFE began in Metro Atlanta so the model could be tracked, reported, and responsibly scaled. We publish pilot-stage categories now so
-              partners can see what will be measured as tables expand.
+              LIFE began in Georgia so the model could be tracked, reported, and responsibly scaled. Early hosts in Atlanta, Rochester, and Austin
+              now help prove that the same shared-table approach can travel while remaining accountable.
             </p>
           </div>
         </section>
@@ -81,7 +81,7 @@ export default function ImpactPage() {
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Why We Measure Impact</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--text)]">
               Grants, donors, and public schools need proof that a shared table movement moves real numbers. Measurement keeps the nonprofit mission
-              accountable, protects families who volunteer their time, and ensures the LIFE framework remains replicable nationwide.
+              accountable, protects families who volunteer their time, and ensures the LIFE framework remains replicable as it reaches new communities.
             </p>
           </article>
 
@@ -118,14 +118,14 @@ export default function ImpactPage() {
                 <li key={point}>• {point}</li>
               ))}
             </ul>
-            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Pilot observations • Metro Atlanta</p>
+            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Pilot observations • Georgia hosts</p>
           </div>
         </section>
 
         <PhotoStrip
           eyebrow="Pilot photos"
           title="How the shared table looks in practice"
-          description="Images from Metro Atlanta show small, measurable gatherings where meals become a framework for accountability."
+          description="Images from Georgia and early partner cities show small, measurable gatherings where meals become a framework for accountability."
           photos={[
             { src: "/images/table/IMG_9433.jpeg", alt: "Families preparing a LIFE meal", caption: "Cooking together" },
             { src: "/images/table/table3.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE table" },

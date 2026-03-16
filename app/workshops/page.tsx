@@ -38,7 +38,7 @@ const WORKSHOPS_FAQ = [
   {
     question: "Who are workshops for?",
     answer:
-      "We currently serve Metro Atlanta households, churches, nonprofits, and corporate wellness teams looking for a service project rooted in real food.",
+      "We currently serve households, churches, nonprofits, and corporate wellness teams in Atlanta, Rochester, and Austin who want a shared-meal service project rooted in real food.",
   },
   {
     question: "Can LIFE lead workshops for organizations?",
@@ -57,8 +57,8 @@ export default function WorkshopsPage() {
             <p className="type-eyebrow text-[var(--olive)]">Workshops</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Workshops</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              Workshops are the front door to the LIFE movement. In Metro Atlanta they give neighbors, faith communities, and partner
-              organizations a chance to practice the six pillars before launching their own tables.
+              Workshops are the front door to the LIFE movement. They began in Georgia and now give early hosts in Atlanta, Rochester, and Austin a chance to
+              practice the six pillars before launching their own tables.
             </p>
           </div>
         </section>
@@ -69,7 +69,7 @@ export default function WorkshopsPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm">
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">What We Teach</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text)]">
-              Every session covers fresh ingredient prep, the LIFE Longevity Assessment, and real stories from Metro Atlanta pilots. We link
+              Every session covers fresh ingredient prep, the LIFE Longevity Assessment, and real stories from the Georgia pilot and early host cities. We link
               daily routines to measurable health improvements.
             </p>
           </article>
@@ -77,7 +77,7 @@ export default function WorkshopsPage() {
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Who Workshops Are For</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text)]">
               Neighbors, families, clinics, and community health partners who want to restore shared meals and adopt practical longevity
-              habits—no culinary degree required. Organizations outside Metro Atlanta can request future cohorts via the keynote inquiry form.
+              habits—no culinary degree required. Cities beyond Atlanta, Rochester, and Austin can request future cohorts via the keynote inquiry form.
             </p>
           </article>
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
@@ -126,7 +126,7 @@ export default function WorkshopsPage() {
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Who are workshops for?</h3>
-                <p className="mt-2 text-sm text-[var(--text)]">We currently serve Metro Atlanta households, churches, nonprofits, and corporate wellness teams looking for a service project rooted in real food.</p>
+                <p className="mt-2 text-sm text-[var(--text)]">We currently serve households, churches, nonprofits, and corporate wellness teams in Atlanta, Rochester, and Austin looking for a service project rooted in real food.</p>
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can LIFE lead workshops for organizations?</h3>

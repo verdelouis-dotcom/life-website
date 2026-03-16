@@ -8,9 +8,9 @@ export default function SectionPilot() {
           <h2 className="section-heading">Pilot Commitment</h2>
         </Reveal>
         <Reveal className="space-y-3 type-body-muted">
-          <p>During the Metro Atlanta pilot, LIFE board members commit to hosting twelve workshops each year.</p>
-          <p>These gatherings model the program structure and help establish the foundation for broader community participation.</p>
-          <p>Participants who attend are encouraged to host a workshop of their own and continue sharing what they learned.</p>
+          <p>LIFE began in Georgia, where board members still commit to hosting twelve workshops per year to keep the model accountable.</p>
+          <p>Those gatherings fuel early hosts in Atlanta, Rochester, and Austin who are adapting the same shared-table framework for their communities.</p>
+          <p>Everyone who attends is encouraged to host, register their table, and keep the ripple effect measurable.</p>
         </Reveal>
       </div>
     </section>

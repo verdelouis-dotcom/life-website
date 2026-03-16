@@ -54,7 +54,7 @@ const HOW_IT_WORKS_FAQ = [
   },
   {
     question: "Who can participate?",
-    answer: "Workshops currently focus on Metro Atlanta neighborhoods, churches, and nonprofit partners. We welcome inquiries from other regions for future phases.",
+    answer: "Workshops currently focus on the communities where hosts are active—Atlanta, Rochester, and Austin. We welcome inquiries from other regions for future phases.",
   },
 ];
 
@@ -68,8 +68,7 @@ export default function HowItWorksPage() {
             <p className="type-eyebrow text-[var(--olive)]">Program Overview</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">How LIFE Works</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              LIFE keeps the movement simple: Attend a workshop, host a table, register the gathering. The Metro Atlanta pilot is where each
-              step is field-tested before expanding to additional regions.
+              LIFE keeps the movement simple: Attend a workshop, host a table, register the gathering. Georgia remains the proving ground, and early hosts in Atlanta, Rochester, and Austin help us field-test each step before serving additional regions.
             </p>
           </div>
         </section>
@@ -113,7 +112,7 @@ export default function HowItWorksPage() {
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Who can participate?</h3>
-                <p className="mt-2 text-sm text-[var(--text)]">Workshops currently focus on Metro Atlanta neighborhoods, churches, and nonprofit partners. We welcome inquiries from other regions for future phases.</p>
+                <p className="mt-2 text-sm text-[var(--text)]">Workshops currently focus on the communities where hosts are active—Atlanta, Rochester, and Austin. We welcome inquiries from other regions for future phases.</p>
               </div>
             </div>
           </div>

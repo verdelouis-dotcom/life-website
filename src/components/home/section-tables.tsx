@@ -44,7 +44,7 @@ export default function SectionTables() {
       <div className="mx-auto max-w-6xl space-y-6 px-6">
         <Reveal className="space-y-3 text-center">
           <h2 className="section-heading">Tables</h2>
-          <p className="type-detail">Images shared with permission from the Metro Atlanta pilot.</p>
+          <p className="type-detail">Images shared with permission from LIFE hosts in Georgia and partner cities.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
           {imagesToShow.map((image, index) => (

@@ -9,6 +9,7 @@ import SectionPillars from "@/components/home/section-pillars";
 import SectionAssessment from "@/components/home/section-assessment";
 import SectionPilot from "@/components/home/section-pilot";
 import SectionProof from "@/components/home/section-proof";
+import SectionCommunities from "@/components/home/section-communities";
 import SectionVisualProof from "@/components/home/section-visual-proof";
 import SectionTables from "@/components/home/section-tables";
 import SectionLeadership from "@/components/home/section-leadership";
@@ -51,6 +52,7 @@ export default function HomePage() {
         <SectionAssessment />
         <SectionPilot />
         <SectionProof />
+        <SectionCommunities />
         <SectionVisualProof />
         <SectionTables />
         <SectionLeadership />

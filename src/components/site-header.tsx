@@ -28,7 +28,7 @@ export default function SiteHeader() {
   return (
     <div className="sticky top-0 z-50 shadow-sm">
       <div className="bg-[#0e1511] py-2 text-center text-[11px] uppercase tracking-[0.3em] text-white">
-        501(c)(3) status pending • Metro Atlanta pilot • Building a scalable national model
+        501(c)(3) status pending • Began in Georgia • Early hosts in Atlanta • Rochester • Austin
       </div>
       <header className="border-b border-[#dfd4c6] bg-[#f4efe6]/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-3 md:flex-row md:items-center md:justify-between">

@@ -8,18 +8,18 @@ const GALLERY_URL = "https://www.longevityinitiativeforfoodandeducation.com/gall
 
 export const metadata: Metadata = {
   title: "LIFE Tables Photo Gallery | Longevity Initiative",
-  description: "Browse the LIFE shared table gallery for real photos from Metro Atlanta workshops and community meals.",
+  description: "Browse the LIFE shared table gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia workshops.",
   alternates: {
     canonical: GALLERY_URL,
   },
   openGraph: {
     title: "LIFE Tables Photo Gallery | Longevity Initiative",
-    description: "Browse the LIFE shared table gallery for real photos from Metro Atlanta workshops and community meals.",
+    description: "Browse the LIFE shared table gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia workshops.",
     url: GALLERY_URL,
   },
   twitter: {
     title: "LIFE Tables Photo Gallery | Longevity Initiative",
-    description: "Browse the LIFE shared table gallery for real photos from Metro Atlanta workshops and community meals.",
+    description: "Browse the LIFE shared table gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia workshops.",
   },
 };
 
