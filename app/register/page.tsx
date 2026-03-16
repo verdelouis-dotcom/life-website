@@ -1,6 +1,26 @@
+import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import RegisterForm from "@/components/forms/register-form";
+
+const REGISTER_URL = "https://www.longevityinitiativeforfoodandeducation.com/register";
+
+export const metadata: Metadata = {
+  title: "Register a LIFE Table | Track Community Impact",
+  description: "Hosted a LIFE table? Register your event to help track community impact and expand the shared table movement.",
+  alternates: {
+    canonical: REGISTER_URL,
+  },
+  openGraph: {
+    title: "Register a LIFE Table | Track Community Impact",
+    description: "Hosted a LIFE table? Register your event to help track community impact and expand the shared table movement.",
+    url: REGISTER_URL,
+  },
+  twitter: {
+    title: "Register a LIFE Table | Track Community Impact",
+    description: "Hosted a LIFE table? Register your event to help track community impact and expand the shared table movement.",
+  },
+};
 
 export default function RegisterPage() {
   return (

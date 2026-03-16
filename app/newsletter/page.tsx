@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import NewsletterSignup from "@/components/forms/newsletter-signup";
@@ -16,6 +17,25 @@ const CARDS = [
     description: "Simple, evidence-informed ideas on food, connection, and healthier living.",
   },
 ];
+
+const NEWSLETTER_URL = "https://www.longevityinitiativeforfoodandeducation.com/newsletter";
+
+export const metadata: Metadata = {
+  title: "The Shared Table Newsletter | Longevity & Food Education",
+  description: "Join The Shared Table newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
+  alternates: {
+    canonical: NEWSLETTER_URL,
+  },
+  openGraph: {
+    title: "The Shared Table Newsletter | Longevity & Food Education",
+    description: "Join The Shared Table newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
+    url: NEWSLETTER_URL,
+  },
+  twitter: {
+    title: "The Shared Table Newsletter | Longevity & Food Education",
+    description: "Join The Shared Table newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
+  },
+};
 
 export default function NewsletterPage() {
   return (

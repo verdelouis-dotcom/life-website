@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
@@ -5,6 +6,24 @@ const HOST_PRIMARY_LINK = "mailto:info@longevityinitiativeforfoodandeducation.co
 const HOST_GUIDE_LINK = "/host-guide.pdf";
 const REGISTER_LINK = "/register";
 const CONTACT_EMAIL = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Support";
+const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
+
+export const metadata: Metadata = {
+  title: "Host a LIFE Table | Lead a Longevity Dinner in Your Community",
+  description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
+  alternates: {
+    canonical: HOST_URL,
+  },
+  openGraph: {
+    title: "Host a LIFE Table | Lead a Longevity Dinner in Your Community",
+    description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
+    url: HOST_URL,
+  },
+  twitter: {
+    title: "Host a LIFE Table | Lead a Longevity Dinner in Your Community",
+    description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
+  },
+};
 
 const HOST_STEPS = [
   "Invite friends, neighbors, or family once you have attended a LIFE workshop.",

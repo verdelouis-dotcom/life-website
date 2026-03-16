@@ -3,10 +3,23 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import AssessmentWizard from "@/components/assessment/AssessmentWizard";
 
+const ASSESSMENT_URL = "https://www.longevityinitiativeforfoodandeducation.com/assessment";
+
 export const metadata: Metadata = {
-  title: "LIFE Longevity Assessment",
-  description:
-    "Take the LIFE Longevity Assessment to explore your survey-based biological age, estimated lifespan, and lifestyle opportunities associated with healthy aging.",
+  title: "Longevity Assessment | Discover Your Health & Lifestyle Score",
+  description: "Take the LIFE Longevity Assessment to see how your daily habits impact your potential lifespan and learn how to improve your health.",
+  alternates: {
+    canonical: ASSESSMENT_URL,
+  },
+  openGraph: {
+    title: "Longevity Assessment | Discover Your Health & Lifestyle Score",
+    description: "Take the LIFE Longevity Assessment to see how your daily habits impact your potential lifespan and learn how to improve your health.",
+    url: ASSESSMENT_URL,
+  },
+  twitter: {
+    title: "Longevity Assessment | Discover Your Health & Lifestyle Score",
+    description: "Take the LIFE Longevity Assessment to see how your daily habits impact your potential lifespan and learn how to improve your health.",
+  },
 };
 
 export default function AssessmentPage() {

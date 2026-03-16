@@ -21,16 +21,15 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Longevity Initiative for Food & Education",
-  description:
-    "Longevity Initiative for Food & Education (LIFE) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+  title: "LIFE | Longevity Initiative for Food & Education",
+  description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Longevity Initiative for Food & Education",
-    description:
-      "Longevity Initiative for Food & Education (LIFE) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+    title: "LIFE | Longevity Initiative for Food & Education",
+    description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
+    url: SITE_URL,
     images: [
       {
         url: "/images/logo.png",
@@ -41,9 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Longevity Initiative for Food & Education",
-    description:
-      "Longevity Initiative for Food & Education (LIFE) delivers community-based health education through shared meals, fresh food preparation, and connection practices.",
+    title: "LIFE | Longevity Initiative for Food & Education",
+    description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
     images: ["/images/logo.png"],
   },
   icons: {

@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import KeynoteForm from "@/components/forms/keynote-form";
+
+const KEYNOTE_URL = "https://www.longevityinitiativeforfoodandeducation.com/keynote";
+
+export const metadata: Metadata = {
+  title: "Longevity Keynote Speaker | Food, Health & Community",
+  description: "Book a keynote on longevity, nutrition, and community health exploring how shared meals can transform wellness and connection.",
+  alternates: {
+    canonical: KEYNOTE_URL,
+  },
+  openGraph: {
+    title: "Longevity Keynote Speaker | Food, Health & Community",
+    description: "Book a keynote on longevity, nutrition, and community health exploring how shared meals can transform wellness and connection.",
+    url: KEYNOTE_URL,
+  },
+  twitter: {
+    title: "Longevity Keynote Speaker | Food, Health & Community",
+    description: "Book a keynote on longevity, nutrition, and community health exploring how shared meals can transform wellness and connection.",
+  },
+};
 
 export default function KeynotePage() {
   return (

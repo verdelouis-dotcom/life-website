@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
@@ -36,6 +37,28 @@ const USE_OF_FUNDS = [
   "Program measurement and reporting",
   "Local outreach and awareness",
 ];
+
+const DONATE_URL = "https://www.longevityinitiativeforfoodandeducation.com/donate";
+
+export const metadata: Metadata = {
+  title: "Support LIFE | Donate to Longevity Food Education",
+  description:
+    "Support the Longevity Initiative for Food & Education and help expand community tables that teach nutrition, connection, and longevity.",
+  alternates: {
+    canonical: DONATE_URL,
+  },
+  openGraph: {
+    title: "Support LIFE | Donate to Longevity Food Education",
+    description:
+      "Support the Longevity Initiative for Food & Education and help expand community tables that teach nutrition, connection, and longevity.",
+    url: DONATE_URL,
+  },
+  twitter: {
+    title: "Support LIFE | Donate to Longevity Food Education",
+    description:
+      "Support the Longevity Initiative for Food & Education and help expand community tables that teach nutrition, connection, and longevity.",
+  },
+};
 
 export default function DonatePage() {
   return (
