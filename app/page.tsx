@@ -5,6 +5,7 @@ import HomeHero from "@/components/home/home-hero";
 import SectionWho from "@/components/home/section-who";
 import SectionWhy from "@/components/home/section-why";
 import SectionModel from "@/components/home/section-model";
+import SectionHostReassurance from "@/components/home/section-host-reassurance";
 import SectionPillars from "@/components/home/section-pillars";
 import SectionAssessment from "@/components/home/section-assessment";
 import SectionPilot from "@/components/home/section-pilot";
@@ -48,6 +49,7 @@ export default function HomePage() {
         <SectionWho />
         <SectionWhy />
         <SectionModel />
+        <SectionHostReassurance />
         <SectionPillars />
         <SectionAssessment />
         <SectionPilot />
