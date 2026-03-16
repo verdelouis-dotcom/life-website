@@ -1,0 +1,101 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
+
+const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/about";
+
+export const metadata: Metadata = {
+  title: "About LIFE | Longevity Initiative for Food & Education",
+  description:
+    "Learn about the mission behind LIFE and how shared meals, nutrition education, and community connection help improve health and longevity.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "About LIFE | Longevity Initiative for Food & Education",
+    description:
+      "Learn about the mission behind LIFE and how shared meals, nutrition education, and community connection help improve health and longevity.",
+    url: PAGE_URL,
+  },
+  twitter: {
+    title: "About LIFE | Longevity Initiative for Food & Education",
+    description:
+      "Learn about the mission behind LIFE and how shared meals, nutrition education, and community connection help improve health and longevity.",
+  },
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <SiteHeader />
+      <main className="bg-[var(--bg)] text-[var(--text)]">
+        <section className="mx-auto max-w-5xl px-6 py-16">
+          <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
+            <p className="type-eyebrow text-[var(--olive)]">About LIFE</p>
+            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">About LIFE</h1>
+            <p className="mt-4 text-lg text-[var(--muted)]">
+              The Longevity Initiative for Food &amp; Education (LIFE) is a nonprofit movement rebuilding the rituals that once made healthy
+              communities possible: fresh ingredients, shared tables, and long-term accountability.
+            </p>
+          </div>
+        </section>
+
+        <section className="mx-auto grid max-w-5xl gap-6 px-6 pb-12 md:grid-cols-2">
+          <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Our Mission</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--text)]">
+              LIFE exists to teach practical longevity habits through community cooking, measurable participation, and nonprofit
+              transparency. Every gathering focuses on food quality, connection, and replicable education.
+            </p>
+          </article>
+          <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Why the Table Matters</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--text)]">
+              Shared meals reduce isolation, improve food choices, and make healthier defaults easier to sustain. They also provide the best
+              setting to teach the LIFE pillars: food, movement, sleep, connection, purpose, and stress regulation.
+            </p>
+          </article>
+        </section>
+
+        <section className="mx-auto max-w-5xl space-y-6 px-6 pb-12">
+          <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Founder Story</h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--text)]">
+              Lou Verde created LIFE after years of studying long-lived cultures and seeing how meals reinforced responsibility. The pilot
+              began in Metro Atlanta so the structure could be tested transparently before scaling. Board governance, pro-bono leadership,
+              and quarterly reporting protect the nonprofit mission.
+            </p>
+          </article>
+          <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">What Makes LIFE Different</h2>
+            <ul className="mt-4 space-y-3 text-sm text-[var(--text)]">
+              <li>• Mediterranean-inspired cooking techniques adapted to any cuisine.</li>
+              <li>• Hosts register every table so reach, attendance, and impact are measurable.</li>
+              <li>• The LIFE Longevity Assessment connects personal habits to the six pillars.</li>
+              <li>• Donations underwrite ingredients, host toolkits, and reporting—not overhead.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section className="mx-auto max-w-4xl px-6 pb-16">
+          <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
+            <p className="type-eyebrow text-[var(--olive)]">Continue the Work</p>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              <Link href="/assessment" className="btn-solid px-8 text-base">
+                Take the Assessment
+              </Link>
+              <Link href="/host" className="btn-outline px-8 text-base">
+                Host a Table
+              </Link>
+              <Link href="/donate" className="btn-outline px-8 text-base">
+                Support LIFE
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}

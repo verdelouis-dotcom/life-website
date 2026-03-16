@@ -41,6 +41,11 @@ export default function SectionModel() {
         <div className="space-y-2 text-sm text-[var(--muted)]">
           <p>This is how the movement becomes measurable.</p>
           <p>Participation starts locally. Impact is measured through registered workshops.</p>
+          <p>
+            <a href="/how-it-works" className="text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4">
+              See the full LIFE model
+            </a>
+          </p>
         </div>
       </div>
     </section>

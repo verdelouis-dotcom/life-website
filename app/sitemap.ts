@@ -3,13 +3,17 @@ import type { MetadataRoute } from "next";
 const SITE_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 const ROUTES = [
   "/",
+  "/about",
+  "/how-it-works",
   "/assessment",
   "/assessment/methodology",
   "/host",
+  "/workshops",
   "/register",
   "/register/thanks",
   "/donate",
   "/keynote",
+  "/contact",
   "/newsletter",
   "/gallery",
   "/pillars/food",

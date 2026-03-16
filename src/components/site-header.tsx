@@ -3,10 +3,14 @@ import BrandLogo from "@/components/brand-logo";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/how-it-works", label: "How It Works" },
   { href: "/assessment", label: "Assessment" },
+  { href: "/workshops", label: "Workshops" },
   { href: "/register", label: "Register" },
   { href: "/donate", label: "Donate" },
   { href: "/keynote", label: "Keynote" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (

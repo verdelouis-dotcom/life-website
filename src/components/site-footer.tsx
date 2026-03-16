@@ -4,7 +4,7 @@ export default function SiteFooter() {
   return (
     <footer className="border-t border-[var(--border)] bg-[#f4efe6]">
       <div className="mx-auto max-w-6xl px-6 py-10 text-[var(--text)]">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-4">
           <div>
             <p className="type-eyebrow tracking-[0.2em]">LIFE</p>
             <p className="mt-2 type-detail">
@@ -39,6 +39,31 @@ export default function SiteFooter() {
             <a href="/keynote" className="mt-4 btn-outline px-5">
               Request a Keynote
             </a>
+          </div>
+          <div className="type-detail">
+            <p className="font-semibold text-[var(--life-forest)]">Quick Links</p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/about">
+                  About LIFE
+                </a>
+              </li>
+              <li>
+                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/how-it-works">
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/workshops">
+                  Workshops
+                </a>
+              </li>
+              <li>
+                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/contact">
+                  Contact LIFE
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
