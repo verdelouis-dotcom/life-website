@@ -93,8 +93,9 @@ export default function AboutPage() {
           alt="Founder Lou Verde leading a LIFE dinner"
           eyebrow="Founder-led pilot"
           title="Why LIFE started at a single shared table"
-          body="Lou Verde began hosting small dinners to translate longevity research into a community practice. Every workshop photo, registered table, and assessment reflection feeds the next host so the model stays grounded in real families."
-          caption="Photo: Founder-led workshop in Atlanta"
+          body="Lou Verde traveled to Italy to study longevity traditions firsthand, learning the art of making pasta from scratch before translating those lessons into small shared tables back home. Every workshop photo, registered table, and assessment reflection feeds the next host so the model stays grounded in real families."
+          caption="Photo: Longevity research trip in Italy"
+          imageClassName="object-[center_top]"
         />
 
         <ProofHighlightList eyebrow="Credibility" title="How LIFE stays accountable" items={ABOUT_PROOF} background="accent" />

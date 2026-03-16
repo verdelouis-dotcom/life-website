@@ -10,9 +10,10 @@ interface PhotoHighlightProps {
   eyebrow?: string;
   caption?: string;
   reverse?: boolean;
+  imageClassName?: string;
 }
 
-export default function PhotoHighlight({ imageSrc, alt, title, body, eyebrow, caption, reverse }: PhotoHighlightProps) {
+export default function PhotoHighlight({ imageSrc, alt, title, body, eyebrow, caption, reverse, imageClassName }: PhotoHighlightProps) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
       <div
@@ -22,7 +23,13 @@ export default function PhotoHighlight({ imageSrc, alt, title, body, eyebrow, ca
       >
         <div className="md:w-1/2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[32px] border border-[var(--border)] bg-[var(--surface)]">
-            <Image src={imageSrc} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            <Image
+              src={imageSrc}
+              alt={alt}
+              fill
+              className={["object-cover", imageClassName].filter(Boolean).join(" ")}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
           {caption && <p className="mt-3 text-xs text-[var(--muted)]">{caption}</p>}
         </div>
