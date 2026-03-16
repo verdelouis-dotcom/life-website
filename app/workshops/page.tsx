@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import FaqSchema from "@/components/seo/FaqSchema";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/workshops";
 
@@ -25,6 +26,24 @@ export const metadata: Metadata = {
   },
 };
 
+const WORKSHOPS_FAQ = [
+  {
+    question: "What does a LIFE workshop include?",
+    answer:
+      "Each session involves cooking together, the LIFE Longevity Assessment, and facilitation practice so attendees feel confident hosting the next table.",
+  },
+  {
+    question: "Who are workshops for?",
+    answer:
+      "We currently serve Metro Atlanta households, churches, nonprofits, and corporate wellness teams looking for a service project rooted in real food.",
+  },
+  {
+    question: "Can LIFE lead workshops for organizations?",
+    answer:
+      "Yes. Organizations can request hosted workshops or private cohorts through the keynote/contact forms so we can align goals, audiences, and budgets.",
+  },
+];
+
 export default function WorkshopsPage() {
   return (
     <>
@@ -40,6 +59,8 @@ export default function WorkshopsPage() {
             </p>
           </div>
         </section>
+
+        <FaqSchema items={WORKSHOPS_FAQ} />
 
         <section className="mx-auto grid max-w-5xl gap-6 px-6 pb-12 md:grid-cols-2">
           <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import FaqSchema from "@/components/seo/FaqSchema";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/how-it-works";
 
@@ -37,6 +38,26 @@ const STEP_CONTENT = [
   },
 ];
 
+const HOW_IT_WORKS_FAQ = [
+  {
+    question: "Do I need experience to host a LIFE table?",
+    answer:
+      "No. Hosts receive the LIFE guide, ingredient templates, and facilitation prompts. Any cuisine works as long as it uses fresh ingredients and includes a seated conversation.",
+  },
+  {
+    question: "What happens after I host?",
+    answer: "You register the table online, submit attendance, and note any stories. The LIFE team follows up with resources so you can host again or mentor another host.",
+  },
+  {
+    question: "Is registering a table required?",
+    answer: "Yes. Registration is how LIFE proves impact to grants and keeps ingredients flowing to the next host. Without it, we can’t responsibly expand.",
+  },
+  {
+    question: "Who can participate?",
+    answer: "Workshops currently focus on Metro Atlanta neighborhoods, churches, and nonprofit partners. We welcome inquiries from other regions for future phases.",
+  },
+];
+
 export default function HowItWorksPage() {
   return (
     <>
@@ -52,6 +73,8 @@ export default function HowItWorksPage() {
             </p>
           </div>
         </section>
+
+        <FaqSchema items={HOW_IT_WORKS_FAQ} />
 
         <section className="mx-auto grid max-w-5xl gap-6 px-6 pb-12 md:grid-cols-3">
           {STEP_CONTENT.map((step) => (

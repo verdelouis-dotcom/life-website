@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import ContactForm from "@/components/forms/contact-form";
+import FaqSchema from "@/components/seo/FaqSchema";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/contact";
 
@@ -22,6 +23,23 @@ export const metadata: Metadata = {
     description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, workshops, or community table programs.",
   },
 };
+
+const CONTACT_FAQ = [
+  {
+    question: "What types of inquiries can I send?",
+    answer:
+      "Program partnerships, keynote or workshop requests, donation questions, and general volunteering interest are all welcome through this form.",
+  },
+  {
+    question: "How quickly will someone respond?",
+    answer: "The LIFE volunteer team replies within two business days and routes urgent needs to the appropriate board lead.",
+  },
+  {
+    question: "Can I ask about partnerships, workshops, or speaking?",
+    answer:
+      "Yes. Include your organization name, desired dates, and location so we can determine whether the Metro Atlanta pilot or a virtual option fits.",
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -92,6 +110,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        <FaqSchema items={CONTACT_FAQ} />
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
