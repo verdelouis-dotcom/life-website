@@ -14,15 +14,15 @@ export default function SiteFooter() {
           </div>
           <div className="type-detail">
             <p className="font-semibold text-[var(--life-forest)]">Reach Us</p>
-            <p className="mt-2">
-              Email{" "}
+            <p className="mt-2 flex flex-col gap-2">
+              <span>Email</span>
               <a
-                className="underline decoration-[#c46a3a] underline-offset-4"
+                className="block max-w-xs break-words underline decoration-[#c46a3a] underline-offset-4"
                 href="mailto:info@longevityinitiativeforfoodandeducation.com"
               >
                 info@longevityinitiativeforfoodandeducation.com
               </a>{" "}
-              with program or partnership questions.
+              <span>with program or partnership questions.</span>
             </p>
             <p className="mt-4">
               <a
