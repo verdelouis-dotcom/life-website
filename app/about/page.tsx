@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import ProofHighlightList from "@/components/proof/ProofHighlightList";
+import PhotoHighlight from "@/components/proof/PhotoHighlight";
+import { ABOUT_PROOF } from "@/data/proof";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/about";
 
@@ -85,6 +88,17 @@ export default function AboutPage() {
             </p>
           </article>
         </section>
+
+        <PhotoHighlight
+          imageSrc="/images/founder.jpeg"
+          alt="Founder Lou Verde leading a LIFE dinner"
+          eyebrow="Founder-led pilot"
+          title="Why LIFE started at a single shared table"
+          body="Lou Verde began hosting small dinners to translate longevity research into a community practice. Every workshop photo, registered table, and assessment reflection feeds the next host so the model stays grounded in real families."
+          caption="Photo: Founder-led workshop in Atlanta"
+        />
+
+        <ProofHighlightList eyebrow="Credibility" title="How LIFE stays accountable" items={ABOUT_PROOF} background="accent" />
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">

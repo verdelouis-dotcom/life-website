@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import ProofHighlightList from "@/components/proof/ProofHighlightList";
+import PhotoStrip from "@/components/proof/PhotoStrip";
+import { IMPACT_PROOF } from "@/data/proof";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/impact";
 
@@ -118,6 +121,24 @@ export default function ImpactPage() {
             <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Pilot observations • Metro Atlanta</p>
           </div>
         </section>
+
+        <PhotoStrip
+          eyebrow="Pilot photos"
+          title="How the shared table looks in practice"
+          description="Images from Metro Atlanta show small, measurable gatherings where meals become a framework for accountability."
+          photos={[
+            { src: "/images/table/IMG_9433.jpeg", alt: "Families preparing a LIFE meal", caption: "Cooking together" },
+            { src: "/images/table/table3.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE table" },
+            { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Workshop leader guiding participants", caption: "Pilot workshop coaching" },
+          ]}
+        />
+
+        <ProofHighlightList
+          eyebrow="What early proof looks like"
+          title="How LIFE is validating the shared table model"
+          items={IMPACT_PROOF}
+          background="surface"
+        />
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">

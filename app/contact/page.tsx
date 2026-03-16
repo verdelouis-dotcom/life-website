@@ -4,6 +4,8 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import ContactForm from "@/components/forms/contact-form";
 import FaqSchema from "@/components/seo/FaqSchema";
+import ProofHighlightList from "@/components/proof/ProofHighlightList";
+import { CONTACT_PROOF } from "@/data/proof";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/contact";
 
@@ -90,6 +92,8 @@ export default function ContactPage() {
             </div>
           </aside>
         </section>
+
+        <ProofHighlightList eyebrow="Why reach out" title="What to expect after you contact LIFE" items={CONTACT_PROOF} background="accent" />
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
           <div className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">

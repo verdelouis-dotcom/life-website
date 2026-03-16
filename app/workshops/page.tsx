@@ -3,6 +3,9 @@ import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import FaqSchema from "@/components/seo/FaqSchema";
+import ProofHighlightList from "@/components/proof/ProofHighlightList";
+import PhotoStrip from "@/components/proof/PhotoStrip";
+import { WORKSHOP_PROOF } from "@/data/proof";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/workshops";
 
@@ -94,6 +97,24 @@ export default function WorkshopsPage() {
             </p>
           </article>
         </section>
+
+        <PhotoStrip
+          eyebrow="Workshop snapshots"
+          title="Hands-on cooking moments"
+          description="Pilot gatherings focus on cooking with fresh ingredients, practicing the LIFE assessment, and equipping new hosts to lead the next table."
+          photos={[
+            { src: "/images/workshops/IMG_8060.jpeg", alt: "Volunteers preparing vegetables", caption: "Fresh ingredient prep" },
+            { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Workshop participants rolling pasta", caption: "Hands-on learning" },
+            { src: "/images/workshops/IMG_8145.JPG", alt: "Group meal at a LIFE workshop", caption: "Shared table reflection" },
+          ]}
+        />
+
+        <ProofHighlightList
+          eyebrow="Ready for partners"
+          title="Why organizations book LIFE workshops"
+          items={WORKSHOP_PROOF}
+          background="accent"
+        />
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
           <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
