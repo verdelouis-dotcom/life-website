@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import KeynoteForm from "@/components/forms/keynote-form";
@@ -24,6 +25,21 @@ export default function KeynotePage() {
               <li>• practical ways to improve longevity</li>
             </ul>
           </div>
+        </section>
+        <section className="mt-10 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
+          <div className="overflow-hidden rounded-3xl border border-[var(--border)]">
+            <Image
+              src="/images/keynote.png"
+              alt="Lou Verde presenting the LIFE six pillars slide during a keynote"
+              width={1200}
+              height={750}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
+          <p className="mt-6 text-sm text-[var(--muted)]">
+            Lou highlights LIFE&apos;s six pillars and how shared meals build practical longevity habits during every keynote.
+          </p>
         </section>
         <section className="mt-10 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
           <p className="type-detail">
