@@ -21,6 +21,13 @@ export default function SectionWho() {
               Learn More About LIFE
             </a>
           </div>
+          <p className="type-detail">
+            Looking for educational guides? Visit the {" "}
+            <a href="/resources" className="text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4">
+              LIFE Resources hub
+            </a>
+            .
+          </p>
         </Reveal>
       </div>
     </section>
