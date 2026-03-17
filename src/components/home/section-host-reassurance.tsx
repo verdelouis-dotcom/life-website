@@ -13,14 +13,6 @@ export default function SectionHostReassurance() {
           </p>
         </Reveal>
 
-        <Reveal className="rounded-[28px] border border-[var(--border)] bg-white/90 p-6 text-center shadow-sm">
-          <p className="heading-md text-[var(--life-forest)]">Start simple. Stay consistent.</p>
-          <p className="body-md mt-3 text-[var(--text)]">
-            Host a small table. Cook a real meal. Share the experience.
-            <br />That’s how the model grows.
-          </p>
-        </Reveal>
-
         <Reveal className="text-center space-y-2">
           <Link href="/host" className="btn-solid px-8 text-base">
             Host a LIFE Table
