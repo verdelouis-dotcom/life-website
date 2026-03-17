@@ -68,6 +68,33 @@ export default function HostPage() {
         </section>
 
         <section className="py-14">
+          <div className="mx-auto max-w-4xl space-y-4 rounded-[36px] border border-[var(--border)] bg-[var(--surface)]/80 p-10 text-center shadow-sm">
+            <h2 className="section-heading">What happens when I host?</h2>
+            <p className="type-body-muted">Hosting a LIFE table is simple:</p>
+            <ul className="grid gap-3 text-left text-sm text-[var(--text)] md:grid-cols-2">
+              {[
+                "Prepare and cook together",
+                "Share a meal",
+                "Talk about LIFE",
+                "Play a simple game",
+                "Clean up together",
+                "Share the recipe",
+                "Capture the moment",
+                "Register your table",
+              ].map((item) => (
+                <li key={item} className="rounded-2xl border border-[var(--border)] bg-white px-4 py-3">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="type-body-muted">That’s it. Most LIFE hosts start with friends or family.</p>
+            <a href="/life-table-guide.pdf" className="btn-outline inline-flex px-8 text-base">
+              Download the LIFE Table Guide
+            </a>
+          </div>
+        </section>
+
+        <section className="py-14">
           <div className="mx-auto max-w-3xl space-y-8 rounded-[36px] border border-[var(--border)] bg-white p-10 shadow-sm">
             <div className="space-y-2 text-center">
               <h2 className="section-heading text-xl">How Hosting Works</h2>
