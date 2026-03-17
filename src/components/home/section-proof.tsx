@@ -1,7 +1,7 @@
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
 import { PARTNER_READY_HIGHLIGHTS, PILOT_QUOTES } from "@/data/proof";
 
-const FEATURED_QUOTE = PILOT_QUOTES[0];
+const FEATURED_QUOTE = PILOT_QUOTES[1];
 
 export default function SectionProof() {
   return (
