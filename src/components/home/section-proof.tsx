@@ -14,7 +14,7 @@ export default function SectionProof() {
           <p className="mt-2 text-sm font-semibold text-[var(--life-forest)]">{FEATURED_QUOTE.attribution}</p>
           <p className="text-xs text-[var(--muted)]">{FEATURED_QUOTE.context}</p>
           <a href="/impact" className="btn-outline mt-4 inline-flex px-6 text-sm">
-            See Impact
+            See the Impact
           </a>
         </div>
       </div>

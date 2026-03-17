@@ -40,7 +40,7 @@ export default function SectionModel() {
         </div>
         <div className="text-center">
           <a href="/how-it-works" className="btn-outline px-6 text-sm">
-            Learn How It Works
+            Explore the Model
           </a>
         </div>
       </div>

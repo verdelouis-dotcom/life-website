@@ -26,7 +26,7 @@ export default function SectionWho() {
             </ul>
             <div>
               <a href="/how-it-works" className="btn-outline px-6 text-sm">
-                See How LIFE Works
+                See the Model
               </a>
             </div>
           </div>

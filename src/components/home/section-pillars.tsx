@@ -21,9 +21,9 @@ export default function SectionPillars() {
         </Reveal>
         <Reveal>
           <p className="type-body-muted">
-            See how each pillar works and explore practical recommendations inside the{" "}
+            See how each pillar works and explore practical recommendations inside{" "}
             <Link href="/resources/the-six-pillars-of-life" className="text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4">
-              LIFE Resources hub
+              the LIFE framework
             </Link>
             .
           </p>

@@ -5,17 +5,17 @@ const OPTIONS = [
   {
     title: "Host a LIFE Table",
     description: "Invite friends or neighbors, cook something simple, and register the gathering so it counts.",
-    cta: { label: "Host a Table", href: "/host" },
+    cta: { label: "Start Hosting", href: "/host" },
   },
   {
     title: "Donate Ingredients",
     description: "Underwrite workshops, ingredients, and educational tools so more tables can launch.",
-    cta: { label: "Donate", href: "/donate" },
+    cta: { label: "Support a Table", href: "/donate" },
   },
   {
     title: "Bring LIFE to Your Group",
     description: "Bring a LIFE workshop or keynote to your organization, faith community, or company.",
-    cta: { label: "Bring LIFE", href: "/contact" },
+    cta: { label: "Bring LIFE to Your Community", href: "/contact" },
   },
 ];
 
