@@ -25,16 +25,16 @@ export const metadata: Metadata = {
 
 const STEP_CONTENT = [
   {
-    title: "Step 1: Attend a Workshop",
-    body: "Participants cook together, learn the six LIFE pillars, and see the rhythm first-hand. Workshops prioritize fresh ingredients, shared preparation, and accountability.",
+    title: "1. Attend a Table",
+    body: "Experience it. Sit down, share a meal, and take part in real conversation.",
   },
   {
-    title: "Step 2: Host a LIFE Table",
-    body: "After attending, participants host a meal for friends or neighbors using the LIFE host guide. Any cuisine works—as long as it emphasizes real food and conversation.",
+    title: "2. Host a Table",
+    body: "Bring people together. We guide you through it—step by step. Most hosts start with friends or family.",
   },
   {
-    title: "Step 3: Register the Table",
-    body: "Every table is registered online so participation, attendance, and reach can be measured. Share your experience and help grow the movement.",
+    title: "3. Register Your Table",
+    body: "Share what happened. Each table helps grow the movement—one gathering at a time.",
   },
 ];
 
@@ -54,7 +54,8 @@ const HOW_IT_WORKS_FAQ = [
   },
   {
     question: "Who can participate?",
-    answer: "Workshops currently focus on the communities where hosts are active—Atlanta, Rochester, and Austin. We welcome inquiries from other regions for future phases.",
+    answer:
+      "We focus on communities where LIFE hosts are active. If you’d like to bring the model to your area, reach out and we’ll share how the process works.",
   },
 ];
 
@@ -65,23 +66,29 @@ export default function HowItWorksPage() {
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="mx-auto max-w-5xl px-6 py-16">
           <div className="rounded-[40px] border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Program Overview</p>
+            <p className="type-eyebrow text-[var(--olive)]">The Model</p>
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">How LIFE Works</h1>
-            <p className="mt-4 text-lg text-[var(--muted)]">
-              LIFE keeps the movement simple: Attend a workshop, host a table, register the gathering. Georgia remains the proving ground, and early hosts in Atlanta, Rochester, and Austin help us field-test each step before serving additional regions.
-            </p>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Simple. Shared. Meant to be repeated.</p>
+            <p className="mt-4 text-lg text-[var(--muted)]">LIFE is built around one idea: bring people together around the table.</p>
           </div>
         </section>
 
         <FaqSchema items={HOW_IT_WORKS_FAQ} />
 
-        <section className="mx-auto grid max-w-5xl gap-6 px-6 pb-12 md:grid-cols-3">
-          {STEP_CONTENT.map((step) => (
-            <article key={step.title} className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-              <h2 className="text-xl font-semibold text-[var(--life-forest)]">{step.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-[var(--text)]">{step.body}</p>
-            </article>
-          ))}
+        <section className="mx-auto max-w-5xl px-6 pb-12">
+          <div className="grid gap-6 md:grid-cols-3">
+            {STEP_CONTENT.map((step) => (
+              <article key={step.title} className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
+                <h2 className="text-xl font-semibold text-[var(--life-forest)]">{step.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-[var(--text)]">{step.body}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/host" className="btn-solid px-8 text-base">
+              Host a LIFE Table
+            </Link>
+          </div>
         </section>
 
         <section className="mx-auto max-w-4xl px-6 pb-8">
