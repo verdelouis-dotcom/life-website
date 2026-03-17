@@ -13,21 +13,15 @@ export default function HomeHero() {
           </Reveal>
           <Reveal>
             <p className="type-lede text-[var(--text)]">
-              LIFE is a nonprofit initiative teaching longevity fundamentals through shared meals, fresh ingredients, and practical community education across growing U.S. communities.
+              LIFE brings people together for shared meals, fresh ingredients, and practical longevity habits guided by community hosts.
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/assessment"
-              className="btn-solid px-8 text-base"
-            >
-              Take the Assessment
+            <Link href="/host" className="btn-solid px-8 text-base">
+              Get Involved
             </Link>
             <Link href="/how-it-works" className="btn-outline px-8 text-base">
-              How LIFE Works
-            </Link>
-            <Link href="/keynote" className="text-sm font-semibold text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
-              Request a Keynote
+              How It Works
             </Link>
           </Reveal>
           <Reveal>

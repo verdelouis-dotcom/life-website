@@ -11,14 +11,8 @@ export default function SectionAssessment() {
           <p className="type-body-muted text-sm">Understand how your daily habits influence your long-term health—and where you can improve.</p>
         </Reveal>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href="/assessment"
-            className="btn-solid px-8 text-base"
-          >
+          <Link href="/assessment" className="btn-solid px-8 text-base">
             Take the Assessment
-          </Link>
-          <Link href="/assessment/methodology" className="text-sm font-semibold text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
-            Review Methodology
           </Link>
         </div>
       </div>

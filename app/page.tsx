@@ -4,14 +4,16 @@ import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
 import SectionWho from "@/components/home/section-who";
 import SectionModel from "@/components/home/section-model";
+import SectionHostReassurance from "@/components/home/section-host-reassurance";
 import SectionPillars from "@/components/home/section-pillars";
 import SectionAssessment from "@/components/home/section-assessment";
 import SectionProof from "@/components/home/section-proof";
-import SectionVisualProof from "@/components/home/section-visual-proof";
 import SectionPilot from "@/components/home/section-pilot";
 import SectionBoard from "@/components/home/section-board";
 import SectionNextSteps from "@/components/home/section-next-steps";
 import SectionTables from "@/components/home/section-tables";
+import SectionGetInvolved from "@/components/home/section-get-involved";
+import SectionFinalCTA from "@/components/home/section-final-cta";
 
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
@@ -43,14 +45,15 @@ export default function HomePage() {
         <HomeHero />
         <SectionWho />
         <SectionModel />
-        <SectionAssessment />
+        <SectionHostReassurance />
         <SectionPillars />
         <SectionProof />
-        <SectionVisualProof />
         <SectionPilot />
         <SectionBoard />
-        <SectionNextSteps />
+        <SectionGetInvolved />
+        <SectionAssessment />
         <SectionTables />
+        <SectionFinalCTA />
       </main>
       <SiteFooter />
     </>

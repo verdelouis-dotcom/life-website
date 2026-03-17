@@ -16,8 +16,6 @@ const REASSURANCES = [
   },
 ];
 
-const EXAMPLES = ["Family dinner at home", "Church small group meal", "Neighborhood potluck", "Workplace lunch-and-learn", "Community cooking night"];
-
 export default function SectionHostReassurance() {
   return (
     <section className="bg-[#fff8ef] py-16 text-[var(--text)]">
@@ -39,26 +37,10 @@ export default function SectionHostReassurance() {
           ))}
         </div>
 
-        <Reveal className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-          <p className="type-eyebrow text-[var(--olive)]">What a LIFE table can look like</p>
-          <ul className="mt-3 grid gap-3 text-sm text-[var(--text)] md:grid-cols-2">
-            {EXAMPLES.map((example) => (
-              <li key={example} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/70 px-4 py-3">
-                {example}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
         <Reveal className="text-center">
-          <div className="mt-4 flex flex-wrap justify-center gap-4">
-            <Link href="/host" className="btn-solid px-8 text-base">
-              Host a Table
-            </Link>
-            <Link href="/how-it-works" className="btn-outline px-8 text-base">
-              How LIFE Works
-            </Link>
-          </div>
+          <Link href="/host" className="btn-solid px-8 text-base">
+            Host a Table
+          </Link>
         </Reveal>
       </div>
     </section>

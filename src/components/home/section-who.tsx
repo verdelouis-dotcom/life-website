@@ -24,19 +24,17 @@ export default function SectionWho() {
                 <li key={point}>• {point}</li>
               ))}
             </ul>
+            <div>
+              <a href="/how-it-works" className="btn-outline px-6 text-sm">
+                See How LIFE Works
+              </a>
+            </div>
           </div>
           <div className="space-y-3 rounded-[32px] border border-[var(--border)] bg-[#fff8ef] p-6 text-center shadow-sm">
             <p className="type-body-muted">Want the full story?</p>
             <a href="/about" className="btn-outline px-6 text-sm">
               Learn About LIFE
             </a>
-            <p className="type-detail">
-              Explore the{" "}
-              <a href="/resources" className="text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4">
-                LIFE Resources
-              </a>{" "}
-              for deeper guides.
-            </p>
           </div>
         </Reveal>
       </div>
