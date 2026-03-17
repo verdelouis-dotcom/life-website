@@ -17,10 +17,7 @@ export default function HomeHero() {
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
-            <Link href="/host" className="btn-solid px-8 text-base">
-              Get Involved
-            </Link>
-            <Link href="/how-it-works" className="btn-outline px-8 text-base">
+            <Link href="/how-it-works" className="btn-solid px-8 text-base">
               How It Works
             </Link>
           </Reveal>

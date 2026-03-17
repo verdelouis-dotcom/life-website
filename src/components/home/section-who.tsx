@@ -18,7 +18,7 @@ export default function SectionWho() {
             <p className="type-body-muted">
               The habits that once supported long-term health are disappearing from everyday life. LIFE helps neighbors cook with fresh ingredients, share meals, and learn practical longevity habits together.
             </p>
-            <p className="type-body-muted">We turn everyday tables into measurable community education so the model can scale responsibly.</p>
+            <p className="type-body-muted">These principles have been lived for generations—LIFE simply turns those routines into measurable community education.</p>
             <ul className="space-y-1 rounded-3xl border border-[var(--border)] bg-[var(--surface)]/60 px-5 py-4 text-left text-sm text-[var(--text)]">
               {WHY_POINTS.map((point) => (
                 <li key={point}>• {point}</li>

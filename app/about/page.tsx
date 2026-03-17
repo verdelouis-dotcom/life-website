@@ -65,9 +65,10 @@ export default function AboutPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Founder Story</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--text)]">
-              Lou Verde created LIFE after years of studying long-lived cultures and seeing how meals reinforced responsibility. The first
-              gatherings happened in Georgia so the structure could be tested transparently before traveling to other cities. Board governance,
-              pro-bono leadership, and quarterly reporting protect the nonprofit mission.
+              Lou Verde grew up in a home where the table was sacred—three generations cooking, eating, and taking care of each other with fresh ingredients.
+              Those lived patterns became the blueprint for LIFE long before any formal study. Later trips to Italy and longevity research simply confirmed
+              what he already knew: shared meals, purpose, and responsibility extend healthy years. The first public gatherings piloted in Georgia so the
+              structure could be tested transparently before traveling to other cities.
             </p>
           </article>
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">

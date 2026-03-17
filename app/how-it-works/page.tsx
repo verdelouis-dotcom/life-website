@@ -89,8 +89,8 @@ export default function HowItWorksPage() {
             <h3 className="text-2xl font-semibold text-[var(--life-forest)]">Some hosts continue beyond their first table.</h3>
             <p className="mt-3 text-sm text-[var(--text)]">
               After hosting once, many neighbors choose to become <strong>LIFE Host Champions</strong>—volunteers who host multiple tables each year,
-              mentor new hosts, and keep their community’s momentum going. Their simple commitment (typically three or more tables annually) helps the
-              Attend → Host → Register cycle multiply without adding complexity to the public path.
+              mentor new hosts, and keep their community’s momentum going. Their commitment is grounded in the same generational habits LIFE is built on,
+              now reinforced by modern longevity research and measured through simple registration.
             </p>
           </div>
         </section>
