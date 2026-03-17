@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/reveal";
 
 const EXPERIENCE_IMAGES = [
   { src: "/images/workshops/pasta-lesson-1.jpg", alt: "Hands guiding pasta dough through a roller" },
-  { src: "/images/workshops/IMG_6709.jpeg", alt: "Host demonstrating sauce prep" },
+  { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Couple making pasta together" },
   { src: "/images/workshops/IMG_8145.JPG", alt: "Guests plating pasta together" },
 ];
 
