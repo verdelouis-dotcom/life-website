@@ -8,16 +8,13 @@ export default function HomeHero() {
       <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 py-16 md:grid-cols-[1.1fr,0.9fr] md:items-stretch md:py-24">
         <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 p-8 shadow-lg">
           <Reveal>
-            <h1 className="type-display">Longevity starts at the table.</h1>
+            <h1 className="text-4xl font-semibold leading-tight text-[var(--text)] md:text-5xl">Longevity starts at the table.</h1>
           </Reveal>
           <Reveal>
-            <p className="text-xl font-semibold leading-relaxed text-[var(--text)]">
-              This isn’t something new.<br />It’s something we’ve lost.
-            </p>
-          </Reveal>
-          <Reveal>
-            <p className="type-body-muted">
-              Shared meals. Real conversation. Simple habits—lived, practiced, and passed down through generations.
+            <p className="text-lg leading-relaxed text-[var(--text)] md:text-xl">
+              Shared meals. Real conversation.
+              <br />
+              Simple habits—lived, practiced, and passed down through generations.
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
