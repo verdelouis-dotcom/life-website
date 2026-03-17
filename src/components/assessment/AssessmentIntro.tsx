@@ -18,12 +18,8 @@ export default function AssessmentIntro({ onStart, hasProgress }: AssessmentIntr
     <section className="mx-auto max-w-4xl rounded-[40px] border border-[var(--border)] bg-white/80 p-10 text-center shadow-sm">
       <p className="type-eyebrow text-[var(--olive)]">LIFE Longevity Assessment</p>
       <h1 className="mt-3 type-display">LIFE Longevity Assessment</h1>
-      <p className="mt-4 text-lg leading-7 text-[var(--muted)]">
-        Discover how your daily habits may be shaping your long-term health.
-      </p>
-      <p className="mt-2 text-base text-[var(--text)]">
-        This short assessment provides an educational estimate of survey-based biological age, lifespan potential, and lifestyle opportunities associated with healthy aging.
-      </p>
+      <p className="mt-4 text-lg leading-7 text-[var(--muted)]">See your potential lifespan based on your current habits.</p>
+      <p className="mt-2 text-base text-[var(--text)]">Understand how your daily habits influence your long-term health—and where you can improve.</p>
 
       <ul className="mt-6 flex flex-col gap-3 text-sm text-[var(--text)] sm:flex-row sm:justify-center">
         {TRUST_POINTS.map((point) => (
