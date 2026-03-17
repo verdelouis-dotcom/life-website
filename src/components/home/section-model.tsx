@@ -12,6 +12,7 @@ export default function SectionModel() {
           <p>It starts with one table.</p>
           <p>One shared meal.</p>
           <p>One conversation.</p>
+          <p>People cook together, share a meal, and learn something they can use right away.</p>
           <p className="pt-2">Then it continues.</p>
         </Reveal>
         <Reveal className="rounded-[28px] border border-[var(--border)] bg-white/90 card-padding text-center shadow-sm">
