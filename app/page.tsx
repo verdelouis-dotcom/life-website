@@ -4,7 +4,6 @@ import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
 import SectionWho from "@/components/home/section-who";
 import SectionModel from "@/components/home/section-model";
-import SectionHostReassurance from "@/components/home/section-host-reassurance";
 import SectionPillars from "@/components/home/section-pillars";
 import SectionAssessment from "@/components/home/section-assessment";
 import SectionProof from "@/components/home/section-proof";
@@ -44,7 +43,6 @@ export default function HomePage() {
         <HomeHero />
         <SectionWho />
         <SectionModel />
-        <SectionHostReassurance />
         <SectionAssessment />
         <SectionPillars />
         <SectionProof />
