@@ -75,8 +75,7 @@ export default function HostPage() {
               {[
                 "Prepare and cook together",
                 "Share a meal",
-                "Talk about LIFE",
-                "Play a simple game",
+                "Use simple prompts to guide conversation. Share what works for you and listen to others.",
                 "Clean up together",
                 "Share the recipe",
                 "Capture the moment",
@@ -87,7 +86,26 @@ export default function HostPage() {
                 </li>
               ))}
             </ul>
-            <p className="type-body-muted">That’s it. Most LIFE hosts start with friends or family.</p>
+            <div className="space-y-2 rounded-2xl border border-[var(--border)] bg-white px-5 py-4 text-left text-sm text-[var(--muted)]">
+              <p className="font-semibold text-[var(--text)]">Conversation Ideas (optional)</p>
+              <p>You can naturally explore topics like:</p>
+              <ul className="list-disc space-y-1 pl-5 text-[var(--text)]">
+                <li>Food — What are you eating more or less of?</li>
+                <li>Movement — How are you staying active each day?</li>
+                <li>Sleep — What helps you rest well?</li>
+                <li>Connection — Who are you spending time with?</li>
+                <li>Purpose — What gives your day meaning?</li>
+                <li>Stress — How do you reset and slow down?</li>
+              </ul>
+              <p>There’s no need to cover everything—let the conversation flow.</p>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-dashed border-[var(--border)] bg-white/70 px-5 py-4 text-left text-sm text-[var(--muted)]">
+              <p className="font-semibold text-[var(--text)]">Make it your own</p>
+              <p className="text-[var(--text)]">Play a simple game—cards, bocce, dice, or something you grew up with.</p>
+              <p>Set screens aside and enjoy time together—talking, moving, and having fun.</p>
+              <p>Most LIFE hosts start with friends or family. Keep it small, grounded, and real.</p>
+            </div>
+            <p className="type-body-muted">That’s it. Share what you learn so the next host feels ready.</p>
             <a href="/life-table-guide.pdf" className="btn-outline inline-flex px-8 text-base">
               Download the LIFE Table Guide
             </a>

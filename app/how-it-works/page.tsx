@@ -34,7 +34,7 @@ const STEP_CONTENT = [
   },
   {
     title: "Step 3: Register the Table",
-    body: "Every table is registered online so participation, attendance, and reach can be measured. This keeps the model grant-ready and transparent.",
+    body: "Every table is registered online so participation, attendance, and reach can be measured. Share your experience and help grow the movement.",
   },
 ];
 
