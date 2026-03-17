@@ -57,7 +57,7 @@ export default function ResourcesPage() {
                 Explore Workshops
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
-                Support LIFE
+                Donate
               </Link>
             </div>
           </div>

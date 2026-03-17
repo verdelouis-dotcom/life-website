@@ -37,10 +37,11 @@ export default function SectionHostReassurance() {
           ))}
         </div>
 
-        <Reveal className="text-center">
+        <Reveal className="text-center space-y-2">
           <Link href="/host" className="btn-solid px-8 text-base">
-            Host a Table
+            Host a LIFE Table
           </Link>
+          <p className="text-sm text-[var(--muted)]">Simple, guided, and repeatable.</p>
         </Reveal>
       </div>
     </section>

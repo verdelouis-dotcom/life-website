@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
 export default function SectionPilot() {
@@ -12,11 +11,6 @@ export default function SectionPilot() {
           <p>LIFE began in Georgia, where board members host twelve workshops each year to stress-test the model.</p>
           <p>Registered tables, host follow-up, and quarterly board reviews keep the pilot transparent as it expands.</p>
           <p className="font-semibold text-[var(--life-forest)]">Currently piloting in select U.S. communities.</p>
-        </Reveal>
-        <Reveal>
-          <Link href="/impact" className="btn-outline px-6">
-            Review Accountability
-          </Link>
         </Reveal>
       </div>
     </section>

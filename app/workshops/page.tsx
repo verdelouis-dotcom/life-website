@@ -144,10 +144,10 @@ export default function WorkshopsPage() {
                 Contact LIFE
               </Link>
               <Link href="/keynote" className="btn-outline px-8 text-base">
-                Request a Workshop or Keynote
+                Request a Keynote
               </Link>
               <Link href="/host" className="btn-outline px-8 text-base">
-                Host a Table
+                Host a LIFE Table
               </Link>
             </div>
           </div>

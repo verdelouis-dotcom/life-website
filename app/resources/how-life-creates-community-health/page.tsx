@@ -26,7 +26,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
       title="How LIFE Creates Community Health"
       intro="LIFE is designed as a simple, replicable framework: attend a workshop, host a table, register the gathering. Each step adds data and trust, making it easier to serve more neighborhoods without diluting the mission."
       primaryCta={{ href: "/how-it-works", label: "Learn How LIFE Works" }}
-      secondaryCta={{ href: "/donate", label: "Support LIFE", variant: "outline" }}
+      secondaryCta={{ href: "/donate", label: "Donate", variant: "outline" }}
     >
       <ResourceSection title="Workshops transfer practical skills">
         <p>

@@ -157,7 +157,7 @@ export default function ImpactPage() {
             <p className="type-eyebrow text-[var(--olive)]">Help grow the impact</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/host" className="btn-solid px-8 text-base">
-                Host a Table
+                Host a LIFE Table
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Donate

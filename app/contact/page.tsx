@@ -125,7 +125,7 @@ export default function ContactPage() {
                 Take the Assessment
               </Link>
               <Link href="/host" className="btn-outline px-8 text-base">
-                Host a Table
+                Host a LIFE Table
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Donate

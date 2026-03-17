@@ -25,7 +25,7 @@ export default function WhySharedMealsMatterPage() {
     <ResourceArticleLayout
       title="Why Shared Meals Matter"
       intro="LIFE focuses on shared meals because the table is where habits, trust, and accountability intersect. When people prepare food together and take a seat together, they are more likely to remember the six LIFE pillars throughout the week."
-      primaryCta={{ href: "/host", label: "Host a Table" }}
+      primaryCta={{ href: "/host", label: "Host a LIFE Table" }}
       secondaryCta={{ href: "/assessment", label: "Take the Assessment", variant: "outline" }}
     >
       <ResourceSection title="Shared meals anchor healthy routines">

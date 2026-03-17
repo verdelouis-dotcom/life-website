@@ -25,7 +25,7 @@ export default function SocialConnectionLongevityPage() {
     <ResourceArticleLayout
       title="Social Connection and Longevity"
       intro="People with strong social ties tend to live longer, recover faster, and make healthier choices. LIFE tables create the setting for those ties to form and for hosts to notice who might need extra support."
-      primaryCta={{ href: "/host", label: "Host a Table" }}
+      primaryCta={{ href: "/host", label: "Host a LIFE Table" }}
       secondaryCta={{ href: "/how-it-works", label: "Learn How LIFE Works", variant: "outline" }}
     >
       <ResourceSection title="Belonging protects physical and emotional health">

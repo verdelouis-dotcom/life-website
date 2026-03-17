@@ -10,8 +10,8 @@ const PRIMARY_NAV = [
 ];
 
 const GET_INVOLVED_LINKS = [
-  { href: "/host", label: "Host a Table" },
-  { href: "/register", label: "Register Your Table" },
+  { href: "/host", label: "Host a LIFE Table" },
+  { href: "/register", label: "Share Your Table" },
   { href: "/assessment", label: "Take the Assessment" },
   { href: "/get-involved", label: "All Paths" },
   { href: "/workshops", label: "Workshops" },

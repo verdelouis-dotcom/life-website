@@ -130,7 +130,7 @@ export default function HowItWorksPage() {
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Who can participate?</h3>
-                <p className="mt-2 text-sm text-[var(--text)]">Workshops currently focus on the communities where hosts are active—Atlanta, Rochester, and Austin. We welcome inquiries from other regions for future phases.</p>
+                <p className="mt-2 text-sm text-[var(--text)]">We focus on communities where LIFE hosts are active. Reach out if you’d like to bring the model to your area and we’ll share what it takes.</p>
               </div>
             </div>
           </div>
@@ -144,10 +144,10 @@ export default function HowItWorksPage() {
                 Take the Assessment
               </Link>
               <Link href="/host" className="btn-outline px-8 text-base">
-                Host a Table
+                Host a LIFE Table
               </Link>
               <Link href="/register" className="btn-outline px-8 text-base">
-                Register a Table
+                Share Your Table
               </Link>
             </div>
           </div>

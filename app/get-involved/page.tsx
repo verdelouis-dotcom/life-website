@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 
 const PATHS = [
   {
-    title: "Host a Table",
+    title: "Host a LIFE Table",
     description: "Invite people you care about, cook something simple, and register the gathering so it counts toward the movement.",
-    ctaLabel: "Start Hosting",
+    ctaLabel: "Host a LIFE Table",
     href: "/host",
     highlight: true,
     guideText: "Hosting is simple and guided.",

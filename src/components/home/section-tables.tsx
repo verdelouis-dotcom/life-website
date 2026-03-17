@@ -27,9 +27,12 @@ export default function SectionTables() {
           ))}
         </div>
         <Reveal>
-          <a href="/host" className="btn-solid px-8 text-base">
-            Host a Table
-          </a>
+          <div className="space-y-2">
+            <a href="/host" className="btn-solid px-8 text-base">
+              Host a LIFE Table
+            </a>
+            <p className="text-sm text-[var(--muted)]">Most hosts start with friends or family.</p>
+          </div>
         </Reveal>
       </div>
     </section>

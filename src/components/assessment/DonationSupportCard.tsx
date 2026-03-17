@@ -14,7 +14,7 @@ export default function DonationSupportCard({ href = "/donate" }: DonationSuppor
         href={href}
         className="mt-5 inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
       >
-        Support the Mission
+        Support the Movement
       </a>
     </section>
   );

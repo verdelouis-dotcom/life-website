@@ -126,23 +126,14 @@ export default function HostPage() {
               ))}
             </ul>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={HOST_PRIMARY_LINK}
-                className="btn-solid px-8 text-base"
-              >
-                Host a Workshop
+              <a href={HOST_PRIMARY_LINK} className="btn-solid px-8 text-base">
+                Host a LIFE Table
               </a>
-              <a
-                href={HOST_GUIDE_LINK}
-                className="btn-outline px-8 text-base"
-              >
-                Download Host Guide
+              <a href={HOST_GUIDE_LINK} className="btn-outline px-8 text-base">
+                Download the LIFE Table Guide
               </a>
-              <a
-                href={REGISTER_LINK}
-                className="btn-outline px-8 text-base"
-              >
-                Register Workshop
+              <a href={REGISTER_LINK} className="btn-outline px-8 text-base">
+                Share Your Table
               </a>
             </div>
             <p className="type-detail text-center">

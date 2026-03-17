@@ -11,10 +11,11 @@ export default function SectionFinalCTA() {
         <Reveal>
           <p className="type-body-muted">The movement grows one shared meal at a time. Take the assessment to see where to focus next.</p>
         </Reveal>
-        <Reveal>
-          <Link href="/get-involved" className="btn-solid px-8 text-base">
-            Get Involved
+        <Reveal className="space-y-2">
+          <Link href="/host" className="btn-solid px-8 text-base">
+            Host a LIFE Table
           </Link>
+          <p className="text-sm text-[var(--muted)]">It takes just one table to begin.</p>
         </Reveal>
       </div>
     </section>

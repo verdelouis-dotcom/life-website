@@ -15,7 +15,7 @@ export default function SectionProof() {
           <p className="text-xs text-[var(--muted)]">{FEATURED_QUOTE.context}</p>
           <p className="mt-3 text-sm text-[var(--text)]">LIFE Host Champions now mentor new hosts and lead multiple tables each year.</p>
           <a href="/impact" className="btn-outline mt-4 inline-flex px-6 text-sm">
-            Impact Snapshot
+            See the Impact
           </a>
         </div>
       </div>
