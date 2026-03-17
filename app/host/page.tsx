@@ -75,7 +75,7 @@ export default function HostPage() {
               {[
                 "Prepare and cook together",
                 "Share a meal",
-                "Use simple prompts to guide conversation. Share what works for you and listen to others.",
+                "Keep it simple. Share what works for you and listen to others.",
                 "Clean up together",
                 "Share the recipe",
                 "Capture the moment",
