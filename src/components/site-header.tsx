@@ -1,17 +1,21 @@
 import Link from "next/link";
 import BrandLogo from "@/components/brand-logo";
 
-const NAV_ITEMS = [
-  { href: "/", label: "Home" },
+const PRIMARY_NAV = [
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/assessment", label: "Assessment" },
-  { href: "/workshops", label: "Workshops" },
-  { href: "/host", label: "Host" },
-  { href: "/register", label: "Register" },
+  { href: "/impact", label: "Impact" },
   { href: "/donate", label: "Donate" },
-  { href: "/keynote", label: "Keynote" },
   { href: "/contact", label: "Contact" },
+];
+
+const GET_INVOLVED_LINKS = [
+  { href: "/host", label: "Host a Table" },
+  { href: "/register", label: "Register Your Table" },
+  { href: "/assessment", label: "Take the Assessment" },
+  { href: "/get-involved", label: "All Paths" },
+  { href: "/workshops", label: "Workshops" },
+  { href: "/keynote", label: "Request a Keynote" },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (
@@ -22,6 +26,31 @@ const NavLink = ({ href, label }: { href: string; label: string }) => (
   >
     {label}
   </Link>
+);
+
+const GetInvolvedMenu = () => (
+  <details className="relative">
+    <summary className="flex cursor-pointer items-center gap-1 rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] [&::-webkit-details-marker]:hidden">
+      Get Involved
+      <span aria-hidden="true" className="text-xs">
+        ▾
+      </span>
+    </summary>
+    <div className="absolute right-0 mt-2 w-56 rounded-2xl border border-[var(--border)] bg-white p-3 shadow-lg">
+      <div className="flex flex-col gap-1 text-sm">
+        {GET_INVOLVED_LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            prefetch={false}
+            className="rounded-xl px-3 py-2 text-left text-[var(--text)] transition hover:bg-[var(--surface)]"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  </details>
 );
 
 export default function SiteHeader() {
@@ -42,9 +71,10 @@ export default function SiteHeader() {
           </div>
 
           <nav className="flex flex-wrap items-center gap-2 text-sm md:justify-end">
-            {NAV_ITEMS.map((item) => (
+            {PRIMARY_NAV.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
+            <GetInvolvedMenu />
           </nav>
         </div>
       </header>

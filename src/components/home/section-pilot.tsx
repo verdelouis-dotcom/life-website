@@ -15,7 +15,7 @@ export default function SectionPilot() {
         </Reveal>
         <Reveal>
           <Link href="/impact" className="btn-outline px-6">
-            See the Impact
+            Review Accountability
           </Link>
         </Reveal>
       </div>

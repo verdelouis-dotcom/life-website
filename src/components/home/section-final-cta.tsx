@@ -12,7 +12,7 @@ export default function SectionFinalCTA() {
           <p className="type-body-muted">The movement grows one shared meal at a time. Take the assessment to see where to focus next.</p>
         </Reveal>
         <Reveal>
-          <Link href="/host" className="btn-solid px-8 text-base">
+          <Link href="/get-involved" className="btn-solid px-8 text-base">
             Get Involved
           </Link>
         </Reveal>

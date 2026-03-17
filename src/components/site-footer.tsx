@@ -43,36 +43,22 @@ export default function SiteFooter() {
           <div className="type-detail">
             <p className="font-semibold text-[var(--life-forest)]">Quick Links</p>
             <ul className="mt-3 space-y-2">
-              <li>
-                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/about">
-                  About LIFE
-                </a>
-              </li>
-              <li>
-                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/how-it-works">
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/workshops">
-                  Workshops
-                </a>
-              </li>
-              <li>
-                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/resources">
-                  Resources
-                </a>
-              </li>
-              <li>
-                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/host">
-                  Host a Table
-                </a>
-              </li>
-              <li>
-                <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href="/contact">
-                  Contact LIFE
-                </a>
-              </li>
+              {[
+                { href: "/about", label: "About LIFE" },
+                { href: "/how-it-works", label: "How It Works" },
+                { href: "/impact", label: "Impact" },
+                { href: "/host", label: "Host a Table" },
+                { href: "/donate", label: "Donate" },
+                { href: "/get-involved", label: "Get Involved" },
+                { href: "/resources", label: "Resources" },
+                { href: "/contact", label: "Contact LIFE" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

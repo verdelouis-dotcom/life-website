@@ -27,6 +27,9 @@ const PATHS = [
     ctaLabel: "Start Hosting",
     href: "/host",
     highlight: true,
+    guideText: "Hosting is simple and guided.",
+    guideLabel: "Download the LIFE Table Guide",
+    guideHref: "/life-table-guide.pdf",
   },
   {
     title: "Support the Movement",
@@ -67,6 +70,17 @@ export default function GetInvolvedPage() {
                 <p className="type-eyebrow text-[var(--olive)]">{path.highlight ? "Primary Path" : "Supporting Path"}</p>
                 <h2 className="mt-2 text-2xl font-semibold text-[var(--life-forest)]">{path.title}</h2>
                 <p className="mt-3 text-sm leading-6 text-[var(--text)]">{path.description}</p>
+                {path.guideText && path.guideHref && path.guideLabel && (
+                  <div className="mt-3 space-y-1 text-xs text-[var(--muted)]">
+                    <p>{path.guideText}</p>
+                    <Link
+                      href={path.guideHref}
+                      className="text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4"
+                    >
+                      {path.guideLabel}
+                    </Link>
+                  </div>
+                )}
                 <Link href={path.href} className={`btn-${path.highlight ? "solid" : "outline"} mt-6 inline-flex px-6 text-sm`}>
                   {path.ctaLabel}
                 </Link>

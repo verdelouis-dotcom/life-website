@@ -10,7 +10,6 @@ import SectionAssessment from "@/components/home/section-assessment";
 import SectionProof from "@/components/home/section-proof";
 import SectionPilot from "@/components/home/section-pilot";
 import SectionBoard from "@/components/home/section-board";
-import SectionNextSteps from "@/components/home/section-next-steps";
 import SectionTables from "@/components/home/section-tables";
 import SectionGetInvolved from "@/components/home/section-get-involved";
 import SectionFinalCTA from "@/components/home/section-final-cta";

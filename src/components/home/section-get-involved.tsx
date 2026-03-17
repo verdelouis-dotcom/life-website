@@ -6,6 +6,7 @@ const OPTIONS = [
     title: "Host a LIFE Table",
     description: "Invite friends or neighbors, cook something simple, and register the gathering so it counts.",
     cta: { label: "Start Hosting", href: "/host" },
+    guide: { text: "Hosting is simple and guided.", label: "Download the LIFE Table Guide", href: "/life-table-guide.pdf" },
   },
   {
     title: "Donate Ingredients",
@@ -35,6 +36,14 @@ export default function SectionGetInvolved() {
             >
               <p className="text-lg font-semibold text-[var(--life-forest)]">{option.title}</p>
               <p className="mt-2 text-sm text-[var(--text)]">{option.description}</p>
+              {option.guide && (
+                <div className="mt-3 space-y-1 text-xs text-[var(--muted)]">
+                  <p>{option.guide.text}</p>
+                  <a href={option.guide.href} className="text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4">
+                    {option.guide.label}
+                  </a>
+                </div>
+              )}
               <Link href={option.cta.href} className="btn-outline mt-4 inline-flex px-5 text-sm">
                 {option.cta.label}
               </Link>
