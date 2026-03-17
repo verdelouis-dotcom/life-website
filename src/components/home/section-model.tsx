@@ -12,15 +12,12 @@ export default function SectionModel() {
           <p>It starts with one table.</p>
           <p>One shared meal.</p>
           <p>One conversation.</p>
-          <p className="pt-2">Someone attends.</p>
-          <p>Then they host.</p>
-          <p className="pt-2">That’s how it grows.</p>
+          <p className="pt-2">Then it continues.</p>
         </Reveal>
         <Reveal className="rounded-[28px] border border-[var(--border)] bg-white/90 card-padding text-center shadow-sm">
           <p className="heading-md text-[var(--life-forest)]">Start simple. Stay consistent.</p>
           <p className="body-md mt-3 text-[var(--text)]">
             Host a small table. Cook a real meal. Share the experience.
-            <br />That’s how the model grows.
           </p>
         </Reveal>
       </div>
