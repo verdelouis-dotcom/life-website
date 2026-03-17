@@ -25,16 +25,16 @@ export const metadata: Metadata = {
 
 const STEP_CONTENT = [
   {
-    title: "1. Attend a Table",
-    body: "Experience it. Sit down, share a meal, and take part in real conversation.",
+    title: "1. Experience a Table",
+    body: "Sit down, share a meal, and take part in real conversation.",
   },
   {
-    title: "2. Host a Table",
-    body: "Bring people together. We guide you through it—step by step. Most hosts start with friends or family.",
+    title: "2. Bring People Together",
+    body: "Host a simple table with friends, family, or your community. We guide you through it—step by step. Most hosts start small.",
   },
   {
-    title: "3. Register Your Table",
-    body: "Share what happened. Each table helps grow the movement—one gathering at a time.",
+    title: "3. Share What Happened",
+    body: "After your table, share your experience. Each gathering helps grow the movement—one table at a time.",
   },
 ];
 

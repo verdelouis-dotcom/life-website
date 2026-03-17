@@ -38,15 +38,15 @@ export default function HostPage() {
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-20">
-          <div className="mx-auto max-w-4xl space-y-6 px-6 text-center">
-            <p className="type-eyebrow">Host</p>
-            <h1 className="type-display">Share What You Learned</h1>
-            <p className="type-lede text-[var(--muted)]">
-              After attending a LIFE workshop, participants are invited to host one of their own. Hosting keeps the movement simple: invite
-              people you care about, cook with fresh ingredients, teach the six pillars, and register the gathering afterward. Hosts can cook
-              any cuisine they know well—Italian, Japanese, Mexican, or others—as long as the meal emphasizes fresh ingredients and shared
-              preparation.
-            </p>
+          <div className="mx-auto max-w-4xl space-y-6 px-6 text-center text-[var(--text)]">
+            <h1 className="type-display">Host a LIFE Table</h1>
+            <p className="text-lg font-semibold text-[var(--muted)]">We’ll guide you through it. Hosting a LIFE table is simple—but it’s done with intention.</p>
+            <div className="space-y-3 text-base text-[var(--text)]">
+              <p>You don’t need prior experience—but you do need a willingness to bring people together.</p>
+              <p>We provide the structure, prompts, and guidance to help you do it well.</p>
+              <p>Most LIFE hosts start with friends or family.</p>
+              <p>Most tables are simple, relaxed, and hosted at home.</p>
+            </div>
           </div>
         </section>
 
