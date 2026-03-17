@@ -37,11 +37,11 @@ export default function HostPage() {
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
-        <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-20">
+        <section className="section-spacing bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6]">
           <div className="mx-auto max-w-4xl space-y-6 px-6 text-center text-[var(--text)]">
-            <h1 className="type-display">Host a LIFE Table</h1>
-            <p className="text-lg font-semibold text-[var(--muted)]">We’ll guide you through it. Hosting a LIFE table is simple—but it’s done with intention.</p>
-            <div className="space-y-3 text-base text-[var(--text)]">
+            <h1 className="heading-xl">Host a LIFE Table</h1>
+            <p className="body-lg text-[var(--muted)]">We’ll guide you through it. Hosting a LIFE table is simple—but it’s done with intention.</p>
+            <div className="space-y-3 body-md text-[var(--text)]">
               <p>You don’t need prior experience—but you do need a willingness to bring people together.</p>
               <p>We provide the structure, prompts, and guidance to help you do it well.</p>
               <p>Most LIFE hosts start with friends or family.</p>
@@ -50,11 +50,11 @@ export default function HostPage() {
           </div>
         </section>
 
-        <section className="bg-white py-14">
+        <section className="section-spacing bg-white">
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
-            <p className="type-eyebrow text-[var(--olive)]">LIFE Host Champions</p>
-            <h2 className="type-display text-3xl">Become a LIFE Host Champion</h2>
-            <p className="type-body-muted">
+            <p className="label-text">LIFE Host Champions</p>
+            <h2 className="heading-lg">Become a LIFE Host Champion</h2>
+            <p className="body-md text-[var(--muted)]">
               Host Champions are volunteer leaders who commit to hosting at least three LIFE tables per year, mentoring new hosts, and helping LIFE
               measure reach in their city. Champions keep ingredients simple, register every gathering, and share feedback so future tables are
               even stronger.
@@ -67,11 +67,11 @@ export default function HostPage() {
           </div>
         </section>
 
-        <section className="py-14">
+        <section className="section-spacing">
           <div className="mx-auto max-w-4xl space-y-4 rounded-[36px] border border-[var(--border)] bg-[var(--surface)]/80 p-10 text-center shadow-sm">
-            <h2 className="section-heading">What happens when I host?</h2>
-            <p className="type-body-muted">Hosting a LIFE table is simple:</p>
-            <ul className="grid gap-3 text-left text-sm text-[var(--text)] md:grid-cols-2">
+            <h2 className="heading-lg">What happens when I host?</h2>
+            <p className="body-md text-[var(--muted)]">Hosting a LIFE table is simple:</p>
+            <ul className="grid gap-3 text-left body-sm text-[var(--text)] md:grid-cols-2">
               {[
                 "Prepare and cook together",
                 "Share a meal",

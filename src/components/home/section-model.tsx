@@ -20,21 +20,21 @@ const MODEL_STEPS = [
 
 export default function SectionModel() {
   return (
-    <section id="model" className="bg-[#fff8ef] py-14 text-[var(--text)]">
+    <section id="model" className="section-spacing bg-[#fff8ef] text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-8 px-6 text-center">
         <Reveal className="space-y-3">
-          <h2 className="section-heading">The Model</h2>
-          <p className="type-body-muted">LIFE grows through a simple three-step cycle.</p>
+          <h2 className="heading-lg">The Model</h2>
+          <p className="body-md text-[var(--muted)]">LIFE grows through a simple three-step cycle.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
           {MODEL_STEPS.map((step, index) => (
             <Reveal
               key={step.title}
               delay={index * 80}
-              className="h-full rounded-[28px] border border-[var(--border)] bg-white/90 p-6 text-left shadow-sm"
+              className="h-full rounded-[28px] border border-[var(--border)] bg-white/90 card-padding text-left shadow-sm"
             >
-              <p className="type-eyebrow">{step.title}</p>
-              <p className="mt-3 text-sm text-[var(--text)]">{step.description}</p>
+              <p className="label-text">{step.title}</p>
+              <p className="mt-3 body-sm text-[var(--text)]">{step.description}</p>
             </Reveal>
           ))}
         </div>

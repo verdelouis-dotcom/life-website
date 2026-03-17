@@ -38,38 +38,38 @@ const ACCOUNTABILITY = [
 
 export default function SectionBoard() {
   return (
-    <section className="bg-white py-14 text-[var(--text)]">
+    <section className="section-spacing bg-white text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-8 px-6">
         <Reveal className="space-y-3 text-center">
-          <h2 className="section-heading">Board</h2>
-          <p className="type-detail">Strategic oversight, fiscal accountability, responsible growth.</p>
+          <h2 className="heading-lg">Board</h2>
+          <p className="body-sm">Strategic oversight, fiscal accountability, responsible growth.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
           {BOARD_MEMBERS.map((member, index) => (
             <Reveal
               key={member.name}
               delay={index * 80}
-              className="rounded-[28px] border border-[var(--border)] bg-[var(--surface)]/90 p-6 shadow-sm"
+              className="rounded-[28px] border border-[var(--border)] bg-[var(--surface)]/90 card-padding shadow-sm"
             >
-              <p className="type-eyebrow">Board of Directors</p>
-              <h3 className="mt-2 text-xl font-semibold">{member.name}</h3>
-              <p className="type-detail uppercase tracking-[0.3em] text-[var(--olive)]">{member.role}</p>
-              <p className="mt-3 type-detail">{member.bio}</p>
+              <p className="label-text">Board of Directors</p>
+              <h3 className="heading-md mt-2 text-2xl">{member.name}</h3>
+              <p className="label-text text-[var(--olive)]">{member.role}</p>
+              <p className="mt-3 body-sm">{member.bio}</p>
             </Reveal>
           ))}
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          <Reveal className="rounded-[28px] border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm">
-            <p className="type-eyebrow">Organizational Status</p>
-            <ul className="mt-4 space-y-2 type-detail">
+          <Reveal className="rounded-[28px] border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
+            <p className="label-text">Organizational Status</p>
+            <ul className="mt-4 space-y-2 body-sm">
               {STATUS_LINES.map((line) => (
                 <li key={line}>• {line}</li>
               ))}
             </ul>
           </Reveal>
-          <Reveal className="rounded-[28px] border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm">
-            <p className="type-eyebrow">Accountability Practices</p>
-            <ul className="mt-4 space-y-2 type-detail">
+          <Reveal className="rounded-[28px] border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
+            <p className="label-text">Accountability Practices</p>
+            <ul className="mt-4 space-y-2 body-sm">
               {ACCOUNTABILITY.map((item) => (
                 <li key={item}>• {item}</li>
               ))}

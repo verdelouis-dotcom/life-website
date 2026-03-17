@@ -18,12 +18,12 @@ const REASSURANCES = [
 
 export default function SectionHostReassurance() {
   return (
-    <section className="bg-[#fff8ef] py-16 text-[var(--text)]">
+    <section className="section-spacing bg-[#fff8ef] text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-8 px-6">
         <Reveal className="space-y-3 text-center">
-          <p className="type-eyebrow text-[var(--olive)]">Hosting support</p>
-          <h2 className="section-heading">Hosting a LIFE Table Is Simpler Than You Think</h2>
-          <p className="type-body-muted">
+          <p className="label-text">Hosting support</p>
+          <h2 className="heading-lg">Hosting a LIFE Table Is Simpler Than You Think</h2>
+          <p className="body-md text-[var(--muted)]">
             You do not need to be a chef, nutrition expert, or event planner. A LIFE table starts with a shared meal, the six pillars, and a short conversation about everyday habits.
           </p>
         </Reveal>
@@ -31,8 +31,8 @@ export default function SectionHostReassurance() {
         <div className="grid gap-5 md:grid-cols-3">
           {REASSURANCES.map((item, index) => (
             <Reveal key={item.title} delay={index * 100} className="rounded-[28px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-              <p className="text-lg font-semibold text-[var(--life-forest)]">{item.title}</p>
-              <p className="mt-3 text-sm leading-6 text-[var(--text)]">{item.detail}</p>
+              <p className="heading-md text-xl text-[var(--life-forest)]">{item.title}</p>
+              <p className="mt-3 body-sm text-[var(--text)] leading-relaxed">{item.detail}</p>
             </Reveal>
           ))}
         </div>

@@ -64,12 +64,12 @@ export default function HowItWorksPage() {
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
-        <section className="mx-auto max-w-5xl px-6 py-16">
-          <div className="rounded-[40px] border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">The Model</p>
-            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">How LIFE Works</h1>
-            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Simple. Shared. Meant to be repeated.</p>
-            <p className="mt-4 text-lg text-[var(--muted)]">LIFE is built around one idea: bring people together around the table.</p>
+        <section className="section-spacing">
+          <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
+            <p className="label-text">The Model</p>
+            <h1 className="heading-xl mt-2">How LIFE Works</h1>
+            <p className="label-text mt-3 text-[var(--muted)]">Simple. Shared. Meant to be repeated.</p>
+            <p className="mt-4 body-lg text-[var(--muted)]">LIFE is built around one idea: bring people together around the table.</p>
           </div>
         </section>
 
@@ -79,8 +79,8 @@ export default function HowItWorksPage() {
           <div className="grid gap-6 md:grid-cols-3">
             {STEP_CONTENT.map((step) => (
               <article key={step.title} className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-                <h2 className="text-xl font-semibold text-[var(--life-forest)]">{step.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-[var(--text)]">{step.body}</p>
+                <h2 className="heading-md text-[var(--life-forest)]">{step.title}</h2>
+                <p className="mt-3 body-sm text-[var(--text)]">{step.body}</p>
               </article>
             ))}
           </div>

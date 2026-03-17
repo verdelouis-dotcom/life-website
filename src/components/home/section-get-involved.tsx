@@ -22,22 +22,22 @@ const OPTIONS = [
 
 export default function SectionGetInvolved() {
   return (
-    <section id="get-involved" className="bg-[#fff8ef] py-14 text-[var(--text)]">
+    <section id="get-involved" className="section-spacing bg-[#fff8ef] text-[var(--text)]">
       <div className="mx-auto max-w-6xl space-y-6 px-6 text-center">
         <Reveal>
-          <h2 className="section-heading">Get Involved</h2>
+          <h2 className="heading-lg">Get Involved</h2>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
           {OPTIONS.map((option, index) => (
             <Reveal
               key={option.title}
               delay={index * 80}
-              className="rounded-[28px] border border-[var(--border)] bg-white p-6 text-left shadow-sm"
+              className="rounded-[28px] border border-[var(--border)] bg-white card-padding text-left shadow-sm"
             >
-              <p className="text-lg font-semibold text-[var(--life-forest)]">{option.title}</p>
-              <p className="mt-2 text-sm text-[var(--text)]">{option.description}</p>
+              <p className="heading-md text-[var(--life-forest)]">{option.title}</p>
+              <p className="mt-2 body-sm text-[var(--text)]">{option.description}</p>
               {option.guide && (
-                <div className="mt-3 space-y-1 text-xs text-[var(--muted)]">
+                <div className="mt-3 space-y-1 body-sm text-[var(--muted)]">
                   <p>{option.guide.text}</p>
                   <a href={option.guide.href} className="text-[var(--terracotta)] underline decoration-[rgba(182,106,74,0.4)] underline-offset-4">
                     {option.guide.label}

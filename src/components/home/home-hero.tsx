@@ -4,17 +4,16 @@ import Reveal from "@/components/ui/reveal";
 
 export default function HomeHero() {
   return (
-    <section className="bg-gradient-to-br from-[#fff1e2] via-[#fffdf7] to-[#f4efe6]">
-      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 py-16 md:grid-cols-[1.1fr,0.9fr] md:items-stretch md:py-24">
-        <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 p-8 shadow-lg">
+    <section className="section-spacing bg-gradient-to-br from-[#fff1e2] via-[#fffdf7] to-[#f4efe6]">
+      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1.1fr,0.9fr] md:items-stretch">
+        <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 card-padding shadow-lg">
           <Reveal>
-            <h1 className="text-4xl font-semibold leading-tight text-[var(--text)] md:text-5xl">Longevity starts at the table.</h1>
+            <h1 className="heading-xl">Longevity starts at the table.</h1>
           </Reveal>
           <Reveal>
-            <p className="text-lg leading-relaxed text-[var(--text)] md:text-xl">
+            <p className="body-lg text-[var(--text)]">
               Shared meals. Real conversation.
-              <br />
-              Simple habits—lived, practiced, and passed down through generations.
+              <br />Simple habits—lived, practiced, and passed down through generations.
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
