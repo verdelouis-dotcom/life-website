@@ -3,7 +3,7 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const HOST_PRIMARY_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=Host%20a%20LIFE%20Workshop";
-const HOST_GUIDE_LINK = "/host-guide.pdf";
+const HOST_GUIDE_LINK = "/host/guide";
 const REGISTER_LINK = "/register";
 const CONTACT_EMAIL = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Support";
 const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
@@ -47,6 +47,23 @@ export default function HostPage() {
               any cuisine they know well—Italian, Japanese, Mexican, or others—as long as the meal emphasizes fresh ingredients and shared
               preparation.
             </p>
+          </div>
+        </section>
+
+        <section className="bg-white py-14">
+          <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
+            <p className="type-eyebrow text-[var(--olive)]">LIFE Host Champions</p>
+            <h2 className="type-display text-3xl">Become a LIFE Host Champion</h2>
+            <p className="type-body-muted">
+              Host Champions are volunteer leaders who commit to hosting at least three LIFE tables per year, mentoring new hosts, and helping LIFE
+              measure reach in their city. Champions keep ingredients simple, register every gathering, and share feedback so future tables are
+              even stronger.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <a href="mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Champion" className="btn-solid px-8 text-base">
+                Become a Host Champion
+              </a>
+            </div>
           </div>
         </section>
 

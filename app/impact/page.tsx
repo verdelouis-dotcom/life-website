@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 const TRACKING_POINTS = [
   "Tables hosted and attendance by neighborhood",
   "Workshop participation and host readiness",
+  "Host Champions who lead multiple tables each year and mentor new hosts",
   "Longevity Assessment completions tied to the six pillars",
   "Stories and qualitative feedback from families",
   "Donor-supported toolkits and ingredients distributed",
@@ -49,7 +50,7 @@ const PILOT_METRICS = [
   },
   {
     title: "Host Progression",
-    detail: "Hosts who advance from attendee → host → multi-table champion signal that the replication model is working. This cohort is currently in early collection.",
+    detail: "Hosts who advance from attendee → host → multi-table champion signal that the replication model is working. We currently count each Champion who commits to three or more tables per year.",
   },
 ];
 
@@ -107,6 +108,17 @@ export default function ImpactPage() {
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-6 pb-12">
+          <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Host Champions multiply the work</h2>
+            <p className="mt-3 text-sm text-[var(--text)]">
+              LIFE Host Champions are volunteer leaders who commit to at least three tables per year. They mentor new hosts, keep ingredients simple, and
+              share data after every gathering. Their commitment is what turns a single table into a measurable neighborhood movement.
+            </p>
+            <p className="mt-3 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Current pilot goal: 12 Champions per city</p>
           </div>
         </section>
 

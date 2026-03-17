@@ -13,6 +13,7 @@ export default function SectionProof() {
           <p className="mt-3 text-lg italic text-[var(--text)]">“{FEATURED_QUOTE.quote}”</p>
           <p className="mt-2 text-sm font-semibold text-[var(--life-forest)]">{FEATURED_QUOTE.attribution}</p>
           <p className="text-xs text-[var(--muted)]">{FEATURED_QUOTE.context}</p>
+          <p className="mt-3 text-sm text-[var(--text)]">LIFE Host Champions now mentor new hosts and lead multiple tables each year.</p>
           <a href="/impact" className="btn-outline mt-4 inline-flex px-6 text-sm">
             See the Impact
           </a>

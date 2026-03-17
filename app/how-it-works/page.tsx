@@ -84,6 +84,17 @@ export default function HowItWorksPage() {
           ))}
         </section>
 
+        <section className="mx-auto max-w-4xl px-6 pb-8">
+          <div className="rounded-[32px] border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm">
+            <h3 className="text-2xl font-semibold text-[var(--life-forest)]">Some hosts continue beyond their first table.</h3>
+            <p className="mt-3 text-sm text-[var(--text)]">
+              After hosting once, many neighbors choose to become <strong>LIFE Host Champions</strong>—volunteers who host multiple tables each year,
+              mentor new hosts, and keep their community’s momentum going. Their simple commitment (typically three or more tables annually) helps the
+              Attend → Host → Register cycle multiply without adding complexity to the public path.
+            </p>
+          </div>
+        </section>
+
         <section className="mx-auto max-w-5xl px-6 pb-12">
           <div className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">How We Measure Impact</h2>
