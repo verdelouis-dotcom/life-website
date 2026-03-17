@@ -13,8 +13,7 @@ export default function HomeHero() {
           </Reveal>
           <Reveal>
             <p className="type-lede text-[var(--text)]">
-              LIFE is a nonprofit initiative that began in Georgia and now grows through early hosts in Atlanta, Rochester, and Austin—teaching
-              longevity fundamentals with shared meals, fresh ingredients, and practical community education.
+              LIFE is a nonprofit initiative teaching longevity fundamentals through shared meals, fresh ingredients, and practical community education across growing U.S. communities.
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-4">
@@ -32,7 +31,7 @@ export default function HomeHero() {
             </Link>
           </Reveal>
           <Reveal>
-            <p className="type-detail text-[var(--muted)]">Rooted in Georgia • Early hosts in Atlanta, Rochester, Austin • Built for accountable growth.</p>
+            <p className="type-detail text-[var(--muted)]">Rooted in Georgia • Piloting in select U.S. communities • Built for accountable growth.</p>
           </Reveal>
         </div>
         <Reveal

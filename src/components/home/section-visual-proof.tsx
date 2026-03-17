@@ -8,8 +8,8 @@ export default function SectionVisualProof() {
         alt="Neighbors sharing a LIFE table meal"
         eyebrow="Community proof"
         title="Shared tables are already happening"
-        body="Hosts in Atlanta, Rochester, and Austin are gathering friends, family, and neighbors to cook with fresh ingredients, complete the LIFE Longevity Assessment, and register each table so progress stays measurable."
-        caption="Photo: LIFE dinner hosted in Rochester"
+        body="Hosts are gathering friends, family, and neighbors to cook with fresh ingredients, complete the LIFE Longevity Assessment, and register each table so progress stays measurable."
+        caption="Photo: LIFE dinner hosted by one of our volunteers"
       />
     </section>
   );

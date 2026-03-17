@@ -1,16 +1,22 @@
+import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
 export default function SectionPilot() {
   return (
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
-      <div className="mx-auto max-w-5xl space-y-4 px-6 text-center">
+      <div className="mx-auto max-w-4xl space-y-5 px-6 text-center">
         <Reveal>
-          <h2 className="section-heading">Pilot Commitment</h2>
+          <h2 className="section-heading">Pilot Accountability</h2>
         </Reveal>
         <Reveal className="space-y-3 type-body-muted">
-          <p>LIFE began in Georgia, where board members still commit to hosting twelve workshops per year to keep the model accountable.</p>
-          <p>Those gatherings fuel early hosts in Atlanta, Rochester, and Austin who are adapting the same shared-table framework for their communities.</p>
-          <p>Everyone who attends is encouraged to host, register their table, and keep the ripple effect measurable.</p>
+          <p>LIFE began in Georgia, where board members host twelve workshops each year to stress-test the model.</p>
+          <p>Registered tables, host follow-up, and quarterly board reviews keep the pilot transparent as it expands.</p>
+          <p className="font-semibold text-[var(--life-forest)]">Currently piloting in select U.S. communities.</p>
+        </Reveal>
+        <Reveal>
+          <Link href="/impact" className="btn-outline px-6">
+            See Impact &amp; Reporting
+          </Link>
         </Reveal>
       </div>
     </section>

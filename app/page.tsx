@@ -3,20 +3,16 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
 import SectionWho from "@/components/home/section-who";
-import SectionWhy from "@/components/home/section-why";
 import SectionModel from "@/components/home/section-model";
 import SectionHostReassurance from "@/components/home/section-host-reassurance";
 import SectionPillars from "@/components/home/section-pillars";
 import SectionAssessment from "@/components/home/section-assessment";
-import SectionPilot from "@/components/home/section-pilot";
 import SectionProof from "@/components/home/section-proof";
-import SectionCommunities from "@/components/home/section-communities";
 import SectionVisualProof from "@/components/home/section-visual-proof";
+import SectionCommunities from "@/components/home/section-communities";
 import SectionTables from "@/components/home/section-tables";
-import SectionLeadership from "@/components/home/section-leadership";
-import SectionBoard from "@/components/home/section-board";
-import SectionFunding from "@/components/home/section-funding";
-import SectionNewsletter from "@/components/home/section-newsletter";
+import SectionPilot from "@/components/home/section-pilot";
+import SectionNextSteps from "@/components/home/section-next-steps";
 
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
@@ -47,20 +43,16 @@ export default function HomePage() {
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <HomeHero />
         <SectionWho />
-        <SectionWhy />
         <SectionModel />
         <SectionHostReassurance />
-        <SectionPillars />
         <SectionAssessment />
-        <SectionPilot />
+        <SectionPillars />
         <SectionProof />
-        <SectionCommunities />
         <SectionVisualProof />
+        <SectionCommunities />
         <SectionTables />
-        <SectionLeadership />
-        <SectionBoard />
-        <SectionFunding />
-        <SectionNewsletter />
+        <SectionPilot />
+        <SectionNextSteps />
       </main>
       <SiteFooter />
     </>

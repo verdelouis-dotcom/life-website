@@ -1,12 +1,20 @@
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
-import ProofQuoteGrid from "@/components/proof/ProofQuoteGrid";
 import { PARTNER_READY_HIGHLIGHTS, PILOT_QUOTES } from "@/data/proof";
+
+const FEATURED_QUOTE = PILOT_QUOTES[0];
 
 export default function SectionProof() {
   return (
-    <div className="bg-[var(--bg)] text-[var(--text)]">
-      <ProofHighlightList eyebrow="Pilot momentum" title="Signals that LIFE is real and accountable" items={PARTNER_READY_HIGHLIGHTS} />
-      <ProofQuoteGrid eyebrow="Voices from the tables" title="What people are saying during the pilot" quotes={PILOT_QUOTES} />
-    </div>
+    <section className="bg-[var(--bg)] py-14 text-[var(--text)]">
+      <div className="mx-auto max-w-5xl space-y-8 px-6">
+        <ProofHighlightList eyebrow="Proof of progress" title="Signals that LIFE is accountable" items={PARTNER_READY_HIGHLIGHTS} />
+        <div className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 text-center shadow-sm">
+          <p className="type-eyebrow text-[var(--olive)]">From our hosts</p>
+          <p className="mt-3 text-lg italic text-[var(--text)]">“{FEATURED_QUOTE.quote}”</p>
+          <p className="mt-2 text-sm font-semibold text-[var(--life-forest)]">{FEATURED_QUOTE.attribution}</p>
+          <p className="text-xs text-[var(--muted)]">{FEATURED_QUOTE.context}</p>
+        </div>
+      </div>
+    </section>
   );
 }
