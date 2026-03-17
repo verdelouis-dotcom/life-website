@@ -22,11 +22,11 @@ export default function ResourceArticleLayout({ title, intro, children, primaryC
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
-        <section className="mx-auto max-w-5xl px-6 py-16">
-          <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">LIFE Resources</p>
-            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">{title}</h1>
-            <p className="mt-4 text-base leading-7 text-[var(--muted)]">{intro}</p>
+        <section className="section-spacing">
+          <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
+            <p className="label-text">LIFE Resources</p>
+            <h1 className="mt-2 heading-xl">{title}</h1>
+            <p className="mt-4 body-md text-[var(--muted)]">{intro}</p>
           </div>
         </section>
 
@@ -34,7 +34,7 @@ export default function ResourceArticleLayout({ title, intro, children, primaryC
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Next steps</p>
+            <p className="label-text">Next steps</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href={primaryCta.href} className={`btn-${primaryCta.variant === "outline" ? "outline" : "solid"} px-8 text-base`}>
                 {primaryCta.label}

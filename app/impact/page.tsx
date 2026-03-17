@@ -66,11 +66,11 @@ export default function ImpactPage() {
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
-        <section className="mx-auto max-w-5xl px-6 py-16">
-          <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Impact</p>
-            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Impact</h1>
-            <p className="mt-4 text-lg text-[var(--muted)]">
+        <section className="section-spacing">
+          <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
+            <p className="label-text">Impact</p>
+            <h1 className="mt-2 heading-xl">LIFE Impact</h1>
+            <p className="mt-4 body-lg text-[var(--muted)]">
               LIFE began in Georgia so the model could be tracked, reported, and responsibly scaled. Early hosts in Atlanta, Rochester, and Austin
               now help prove that the same shared-table approach can travel while remaining accountable.
             </p>
@@ -78,17 +78,17 @@ export default function ImpactPage() {
         </section>
 
         <section className="mx-auto max-w-5xl space-y-6 px-6 pb-12">
-          <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Why We Measure Impact</h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--text)]">
+          <article className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
+            <h2 className="heading-lg">Why We Measure Impact</h2>
+            <p className="mt-3 body-md text-[var(--text)]">
               Grants, donors, and public schools need proof that a shared table movement moves real numbers. Measurement keeps the nonprofit mission
               accountable, protects families who volunteer their time, and ensures the LIFE framework remains replicable as it reaches new communities.
             </p>
           </article>
 
-          <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">What We Track</h2>
-            <ul className="mt-4 space-y-2 text-sm text-[var(--text)]">
+          <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
+            <h2 className="heading-lg">What We Track</h2>
+            <ul className="mt-4 space-y-2 body-sm text-[var(--text)]">
               {TRACKING_POINTS.map((point) => (
                 <li key={point}>• {point}</li>
               ))}
@@ -97,14 +97,14 @@ export default function ImpactPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
-          <div className="space-y-4 rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Early Pilot Metrics</h2>
-            <p className="text-sm text-[var(--muted)]">Values are reported quarterly. Categories below show what is being logged today.</p>
+          <div className="space-y-4 rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
+            <h2 className="heading-lg">Early Pilot Metrics</h2>
+            <p className="body-sm text-[var(--muted)]">Values are reported quarterly. Categories below show what is being logged today.</p>
             <div className="grid gap-5 md:grid-cols-2">
               {PILOT_METRICS.map((metric) => (
                 <article key={metric.title} className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-5">
-                  <p className="type-eyebrow text-[var(--olive)]">{metric.title}</p>
-                  <p className="mt-2 text-sm text-[var(--text)]">{metric.detail}</p>
+                  <p className="label-text text-[var(--olive)]">{metric.title}</p>
+                  <p className="mt-2 body-sm text-[var(--text)]">{metric.detail}</p>
                 </article>
               ))}
             </div>
@@ -112,25 +112,25 @@ export default function ImpactPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
-          <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Host Champions multiply the work</h2>
-            <p className="mt-3 text-sm text-[var(--text)]">
+          <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
+            <h2 className="heading-lg">Host Champions multiply the work</h2>
+            <p className="mt-3 body-sm text-[var(--text)]">
               LIFE Host Champions are volunteer leaders who commit to at least three tables per year. They mentor new hosts, keep ingredients simple, and
               share data after every gathering. Their commitment is what turns a single table into a measurable neighborhood movement.
             </p>
-            <p className="mt-3 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Current pilot goal: 12 Champions per city</p>
+            <p className="mt-3 label-text text-[var(--muted)]">Current pilot goal: 12 Champions per city</p>
           </div>
         </section>
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
-          <div className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">How a Table Creates Ripple Effects</h2>
-            <ul className="mt-4 space-y-2 text-sm text-[var(--text)]">
+          <div className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
+            <h2 className="heading-lg">How a Table Creates Ripple Effects</h2>
+            <ul className="mt-4 space-y-2 body-sm text-[var(--text)]">
               {RIPPLE_POINTS.map((point) => (
                 <li key={point}>• {point}</li>
               ))}
             </ul>
-            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Pilot observations • Georgia hosts</p>
+            <p className="mt-4 label-text text-[var(--muted)]">Pilot observations • Georgia hosts</p>
           </div>
         </section>
 

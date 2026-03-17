@@ -48,11 +48,11 @@ export default function ContactPage() {
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
-        <section className="mx-auto max-w-4xl px-6 py-16">
-          <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Contact</p>
-            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">Contact LIFE</h1>
-            <p className="mt-4 text-base text-[var(--muted)]">
+        <section className="section-spacing">
+          <div className="mx-auto max-w-4xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
+            <p className="label-text">Contact</p>
+            <h1 className="mt-2 heading-xl">Contact LIFE</h1>
+            <p className="mt-4 body-md text-[var(--muted)]">
               We welcome partnerships, workshop invitations, keynote requests, and community questions—especially in Atlanta, Rochester, and Austin where early hosts are active.
               Tell us a bit about your interest and we&apos;ll respond within two business days.
             </p>
@@ -60,16 +60,16 @@ export default function ContactPage() {
         </section>
 
         <section className="mx-auto grid max-w-5xl gap-8 px-6 pb-16 lg:grid-cols-[1.1fr,0.9fr]">
-          <div className="rounded-3xl border border-[var(--border)] bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Send us a note</h2>
-            <p className="mt-3 text-sm text-[var(--text)]">All fields are optional except name and email.</p>
+          <div className="rounded-3xl border border-[var(--border)] bg-white card-padding shadow-sm">
+            <h2 className="heading-lg">Send us a note</h2>
+            <p className="mt-3 body-sm text-[var(--text)]">All fields are optional except name and email.</p>
             <div className="mt-6">
               <ContactForm />
             </div>
           </div>
-          <aside className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
-            <h2 className="text-xl font-semibold text-[var(--life-forest)]">How to reach us</h2>
-            <ul className="mt-4 space-y-3 text-sm text-[var(--text)]">
+          <aside className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
+            <h2 className="heading-md">How to reach us</h2>
+            <ul className="mt-4 space-y-3 body-sm text-[var(--text)]">
               <li>
                 <span className="font-semibold">Email:</span>{" "}
                 <a className="text-[var(--terracotta)] underline" href="mailto:info@longevityinitiativeforfoodandeducation.com">

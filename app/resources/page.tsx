@@ -27,11 +27,11 @@ export default function ResourcesPage() {
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
-        <section className="mx-auto max-w-5xl px-6 py-16">
-          <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">LIFE Resources</p>
-            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Resources</h1>
-            <p className="mt-4 text-base leading-7 text-[var(--muted)]">
+        <section className="section-spacing">
+          <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
+            <p className="label-text">LIFE Resources</p>
+            <h1 className="mt-2 heading-xl">LIFE Resources</h1>
+            <p className="mt-4 body-md text-[var(--muted)]">
               LIFE shares practical education about longevity, Mediterranean-inspired cooking, and the power of community tables. Explore the
               guides below to understand the philosophy that began in Georgia and how early hosts are carrying it to Atlanta, Rochester, and Austin.
             </p>
@@ -48,7 +48,7 @@ export default function ResourcesPage() {
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Explore the LIFE model</p>
+            <p className="label-text">Explore the LIFE model</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/assessment" className="btn-solid px-8 text-base">
                 Take the Assessment

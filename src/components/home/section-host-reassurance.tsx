@@ -1,21 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
-const REASSURANCES = [
-  {
-    title: "Keep it simple",
-    detail: "Invite a handful of people, serve one main dish, and print the LIFE prompts. The goal is conversation, not culinary perfection.",
-  },
-  {
-    title: "Use what you have",
-    detail: "Apartments, church kitchens, break rooms, and back patios all work. Hosts get a guide, ingredient ideas, and the LIFE Assessment flow.",
-  },
-  {
-    title: "Create a ripple effect",
-    detail: "After you host, you register the table, share what worked, and help the next host feel ready. That’s how reach becomes measurable.",
-  },
-];
-
 export default function SectionHostReassurance() {
   return (
     <section className="section-spacing bg-[#fff8ef] text-[var(--text)]">
@@ -28,14 +13,13 @@ export default function SectionHostReassurance() {
           </p>
         </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          {REASSURANCES.map((item, index) => (
-            <Reveal key={item.title} delay={index * 100} className="rounded-[28px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-              <p className="heading-md text-xl text-[var(--life-forest)]">{item.title}</p>
-              <p className="mt-3 body-sm text-[var(--text)] leading-relaxed">{item.detail}</p>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal className="rounded-[28px] border border-[var(--border)] bg-white/90 p-6 text-center shadow-sm">
+          <p className="heading-md text-[var(--life-forest)]">Start simple. Stay consistent.</p>
+          <p className="body-md mt-3 text-[var(--text)]">
+            Host a small table. Cook a real meal. Share the experience.
+            <br />That’s how the model grows.
+          </p>
+        </Reveal>
 
         <Reveal className="text-center space-y-2">
           <Link href="/host" className="btn-solid px-8 text-base">

@@ -52,6 +52,9 @@ a:hover {
 }
 
 @layer components {
+  /* Use the typography classes below (heading-*, body-*, label-text) for all text.
+     Avoid raw Tailwind text utilities to keep the scale consistent. */
+
   .heading-xl {
     font-family: var(--font-heading), "Cormorant Garamond", serif;
     font-weight: 600;
