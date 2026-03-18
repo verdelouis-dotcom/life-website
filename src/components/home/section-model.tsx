@@ -9,10 +9,7 @@ export default function SectionModel() {
           <p className="heading-md text-[var(--life-forest)]">Attend. Host. Repeat.</p>
         </Reveal>
         <Reveal className="space-y-2 body-md text-[var(--text)]">
-          <p>It starts with one table.</p>
-          <p>One shared meal.</p>
-          <p>One conversation.</p>
-          <p>People cook together, share a meal, and learn something they can use right away.</p>
+          <p>Each table is a single shared meal where people cook together, learn something useful, and register what happened.</p>
           <p>Hosts teach a favorite recipe or family tradition while creating space for learning, connection, and community.</p>
           <p className="pt-2">Then it continues—LIFE grows one table at a time.</p>
         </Reveal>
