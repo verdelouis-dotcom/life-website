@@ -65,13 +65,23 @@ export default function DonatePage() {
     <>
       <SiteHeader />
       <main className="mx-auto max-w-5xl px-6 py-16 text-[var(--text)]">
-        <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
-          <p className="type-eyebrow">Nonprofit Support</p>
-          <h1 className="section-heading">Donate</h1>
-          <p className="mt-4 type-body-muted">Your support underwrites tools, ingredients, materials, and community education.</p>
-          <a href={PRIMARY_DONATION_LINK} target="_blank" rel="noreferrer" className="btn-solid mt-6 px-6 text-base">
-            Give Online
-          </a>
+        <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
+          <p className="type-eyebrow text-center">Nonprofit Support</p>
+          <h1 className="section-heading text-center">Fund more LIFE tables</h1>
+          <p className="mt-4 type-body-muted text-center">
+            Every contribution underwrites ingredients, host toolkits, and the reporting that keeps this pilot accountable.
+          </p>
+          <ul className="mt-5 space-y-2 body-sm text-[var(--text)]">
+            {USE_OF_FUNDS.map((item) => (
+              <li key={item}>• {item}</li>
+            ))}
+          </ul>
+          <div className="mt-6 flex justify-center">
+            <a href={PRIMARY_DONATION_LINK} target="_blank" rel="noreferrer" className="btn-solid px-6 text-base">
+              Give Online
+            </a>
+          </div>
+          <p className="mt-3 text-center text-sm text-[var(--muted)]">Prefer to discuss a grant or in-kind gift? Email info@longevityinitiativeforfoodandeducation.com.</p>
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -93,14 +103,10 @@ export default function DonatePage() {
         </section>
 
         <section className="mt-12 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
-          <p className="type-eyebrow">Use of Funds</p>
-          <ul className="mt-4 space-y-2 type-detail">
-            {USE_OF_FUNDS.map((item) => (
-              <li key={item}>• {item}</li>
-            ))}
-          </ul>
-          <p className="mt-4 type-detail">
-            Contributions help LIFE pilot a replicable model that advances public awareness and measurable participation.
+          <p className="type-eyebrow">Accountability</p>
+          <p className="type-detail">
+            LIFE is a Georgia nonprofit with 501(c)(3) determination pending. Registered tables, board reviews, and public reporting keep donors informed
+            about how shared meals are spreading.
           </p>
         </section>
       </main>

@@ -40,13 +40,23 @@ export default function HostPage() {
         <section className="section-spacing bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6]">
           <div className="mx-auto max-w-4xl space-y-6 px-6 text-center text-[var(--text)]">
             <h1 className="heading-xl">Host a LIFE Table</h1>
-            <p className="body-lg text-[var(--muted)]">We’ll guide you through it. Hosting a LIFE table is simple—but it’s done with intention.</p>
-            <div className="space-y-3 body-md text-[var(--text)]">
-              <p>You don’t need prior experience—but you do need a willingness to bring people together.</p>
-              <p>We provide the structure, prompts, and guidance to help you do it well.</p>
-              <p>Most LIFE hosts start with friends or family.</p>
-              <p>Most tables are simple, relaxed, and hosted at home.</p>
+            <p className="body-lg text-[var(--muted)]">
+              A LIFE table is a shared meal where you cook what you know, guide a short conversation, and register what happens.
+            </p>
+            <ul className="body-md text-[var(--text)] space-y-2 text-left md:text-center md:inline-block">
+              <li>• Invite people you already know.</li>
+              <li>• Cook a favorite recipe or family tradition.</li>
+              <li>• Follow the guide—we stay with you from invite to registration.</li>
+            </ul>
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <a href={HOST_PRIMARY_LINK} className="btn-solid px-8 text-base">
+                Host a LIFE Table
+              </a>
+              <a href={HOST_GUIDE_LINK} className="text-sm text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                Download the LIFE Table Guide
+              </a>
             </div>
+            <p className="text-sm text-[var(--muted)]">Attend a table first, then host within 30 days so the movement keeps momentum.</p>
           </div>
         </section>
 
@@ -55,13 +65,12 @@ export default function HostPage() {
             <p className="label-text">LIFE Host Champions</p>
             <h2 className="heading-lg">Become a LIFE Host Champion</h2>
             <p className="body-md text-[var(--muted)]">
-              Host Champions are volunteer leaders who commit to hosting at least three LIFE tables per year, mentoring new hosts, and helping LIFE
-              measure reach in their city. Champions keep ingredients simple, register every gathering, and share feedback so future tables are
-              even stronger.
+              Champions commit to at least three tables per year, mentor new hosts, and share data after every gathering. If you love bringing people together,
+              this is how you multiply the movement.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <a href="mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Champion" className="btn-solid px-8 text-base">
-                Become a Host Champion
+              <a href="mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Champion" className="btn-outline px-8 text-base">
+                Tell us you’re interested
               </a>
             </div>
           </div>
@@ -105,18 +114,21 @@ export default function HostPage() {
               <p>Set screens aside and enjoy time together—talking, moving, and having fun.</p>
               <p>Most LIFE hosts start with friends or family. Keep it small, grounded, and real.</p>
             </div>
-            <p className="type-body-muted">That’s it. Share what you learn so the next host feels ready.</p>
-            <a href="/life-table-guide.pdf" className="btn-outline inline-flex px-8 text-base">
-              Download the LIFE Table Guide
-            </a>
+            <p className="type-body-muted">
+              That’s it. Share what you learn so the next host feels ready.{" "}
+              <a href="/life-table-guide.pdf" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                Download the LIFE Table Guide
+              </a>
+              .
+            </p>
           </div>
         </section>
 
         <section className="py-14">
-          <div className="mx-auto max-w-3xl space-y-8 rounded-[36px] border border-[var(--border)] bg-white p-10 shadow-sm">
+          <div className="mx-auto max-w-3xl space-y-6 rounded-[36px] border border-[var(--border)] bg-white p-10 shadow-sm">
             <div className="space-y-2 text-center">
-              <h2 className="section-heading text-xl">How Hosting Works</h2>
-              <p className="type-detail uppercase tracking-[0.3em] text-[var(--olive)]">Attend → Host → Register</p>
+              <h2 className="section-heading text-xl">Attend → Host → Register</h2>
+              <p className="type-detail uppercase tracking-[0.3em] text-[var(--olive)]">One table at a time</p>
             </div>
             <ul className="space-y-4 text-left type-body-muted">
               {HOST_STEPS.map((step) => (
@@ -125,24 +137,34 @@ export default function HostPage() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex justify-center">
               <a href={HOST_PRIMARY_LINK} className="btn-solid px-8 text-base">
                 Host a LIFE Table
               </a>
-              <a href={HOST_GUIDE_LINK} className="btn-outline px-8 text-base">
-                Download the LIFE Table Guide
-              </a>
-              <a href={REGISTER_LINK} className="btn-outline px-8 text-base">
-                Register a Table
-              </a>
             </div>
-            <p className="type-detail text-center">
-              Need support?{" "}
-              <a href={CONTACT_EMAIL} className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
-                Email the LIFE team
-              </a>
-              .
-            </p>
+            <div className="space-y-1 text-center text-sm text-[var(--muted)]">
+              <p>
+                Need the walkthrough?{" "}
+                <a href={HOST_GUIDE_LINK} className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                  Download the LIFE Table Guide
+                </a>
+                .
+              </p>
+              <p>
+                Already hosted?{" "}
+                <a href={REGISTER_LINK} className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                  Register your table
+                </a>
+                .
+              </p>
+              <p>
+                Need support?{" "}
+                <a href={CONTACT_EMAIL} className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                  Email the LIFE team
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </section>
       </main>

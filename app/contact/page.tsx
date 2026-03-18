@@ -53,9 +53,14 @@ export default function ContactPage() {
             <p className="label-text">Contact</p>
             <h1 className="mt-2 heading-xl">Contact LIFE</h1>
             <p className="mt-4 body-md text-[var(--muted)]">
-              We welcome partnerships, table invitations, keynote requests, and community questions—especially in Atlanta, Rochester, and Austin where early hosts are active.
-              Tell us a bit about your interest and we&apos;ll respond within two business days.
+              Use this form for partnerships, hosted table requests, keynote inquiries, or general questions. We respond within two business days.
             </p>
+            <ul className="mt-4 space-y-2 body-sm text-[var(--text)] text-left">
+              <li>• Partnership or hosted table requests</li>
+              <li>• Host or table support questions</li>
+              <li>• Keynote, speaking, or media inquiries</li>
+            </ul>
+            <p className="mt-3 text-sm text-[var(--muted)]">Choose the interest type that fits best—we’ll route it to the right board lead.</p>
           </div>
         </section>
 

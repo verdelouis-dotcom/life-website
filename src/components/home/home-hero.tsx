@@ -12,14 +12,19 @@ export default function HomeHero() {
           </Reveal>
           <Reveal>
             <p className="body-lg text-[var(--text)]">
-              Shared meals. Real conversation.
-              <br />Simple habits—lived, practiced, and passed down through generations.
+              LIFE tables are simple, shared meals where people cook, learn, and register what happens so healthier habits spread.
             </p>
           </Reveal>
-          <Reveal className="flex flex-wrap items-center gap-4">
-            <Link href="/how-it-works" className="btn-solid px-8 text-base">
-              How It Works
+          <Reveal className="flex flex-wrap items-center gap-3">
+            <Link href="/assessment" className="btn-solid px-8 text-base">
+              Take the Assessment
             </Link>
+            <Link href="/host" className="btn-outline px-8 text-base">
+              Host a LIFE Table
+            </Link>
+          </Reveal>
+          <Reveal>
+            <p className="text-sm text-[var(--muted)]">Every table is registered so the movement stays measurable.</p>
           </Reveal>
         </div>
         <Reveal
