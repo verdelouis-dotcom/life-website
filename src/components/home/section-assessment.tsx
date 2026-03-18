@@ -6,11 +6,11 @@ export default function SectionAssessment() {
     <section className="section-spacing bg-white text-[var(--text)]">
       <div className="mx-auto max-w-4xl space-y-6 rounded-[36px] border border-[var(--border)] bg-[var(--surface)]/80 px-6 py-10 text-center shadow-sm">
         <Reveal className="space-y-3">
-          <p className="label-text text-[var(--olive)]">Reveal</p>
-          <h2 className="heading-lg">See your current path—and how much it could change.</h2>
+          <p className="label-text text-[var(--olive)]">Where are your habits taking you?</p>
+          <h2 className="heading-lg">The LIFE Assessment shows your current path—and how much it could change.</h2>
           <p className="body-md text-[var(--muted)]">
-            The LIFE Assessment shows where your habits are leading, projects your current trajectory, and estimates the potential if you stay consistent
-            with LIFE pillars.
+            Most people don’t know their trajectory until they see it clearly. The assessment projects today’s path and the potential if LIFE pillars stay
+            consistent.
           </p>
         </Reveal>
         <div className="flex flex-wrap justify-center gap-4">
