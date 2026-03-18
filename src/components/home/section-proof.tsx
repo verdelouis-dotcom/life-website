@@ -14,8 +14,8 @@ export default function SectionProof() {
       <div className="mx-auto max-w-5xl space-y-8 px-6">
         <Reveal className="space-y-3 text-center">
           <p className="label-text">Proof</p>
-          <h2 className="heading-lg">Shared tables already underway</h2>
-          <p className="body-md text-[var(--muted)]">Images shared with permission from LIFE hosts.</p>
+          <h2 className="heading-lg">This is a LIFE table</h2>
+          <p className="body-md text-[var(--muted)]">Scenes shared with permission from current hosts.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
           {PROOF_IMAGES.map((image, index) => (
@@ -28,10 +28,8 @@ export default function SectionProof() {
         </div>
         <Reveal className="rounded-[36px] border border-[var(--border)] bg-[#fff8ef] card-padding text-center shadow-sm">
           <p className="label-text">Accountability</p>
-          <p className="mt-3 body-md text-[var(--text)]">
-            Volunteer board members host tables, log attendance, and publish pilot data so growth stays transparent.
-          </p>
-          <p className="mt-2 body-sm text-[var(--muted)]">Incorporated nonprofit • EIN 41-4525299 • 501(c)(3) determination pending</p>
+          <p className="mt-3 body-md text-[var(--text)]">LIFE registers every table, reviews it with the board, and publishes pilot data.</p>
+          <p className="mt-2 body-sm text-[var(--muted)]">Incorporated nonprofit • EIN 41-4525299 • 501(c)(3) pending</p>
           <Link href="/about" className="btn-outline mx-auto mt-4 inline-flex px-6 text-sm">
             Meet the Leadership
           </Link>

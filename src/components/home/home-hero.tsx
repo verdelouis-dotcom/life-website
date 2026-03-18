@@ -12,7 +12,8 @@ export default function HomeHero() {
           </Reveal>
           <Reveal>
             <p className="body-lg text-[var(--text)]">
-              Processed food, isolation, and rushed routines shorten healthy years. LIFE tables rebuild measurable habits one shared meal at a time.
+              Processed food, isolation, and rushed routines cut healthy years short. LIFE tables bring people back to the same table and keep every
+              gathering measurable.
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-3">

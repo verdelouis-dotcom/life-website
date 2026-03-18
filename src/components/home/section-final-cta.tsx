@@ -6,10 +6,10 @@ export default function SectionFinalCTA() {
     <section className="section-spacing bg-[#fff1e2] text-[var(--text)]">
       <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
         <Reveal>
-          <h2 className="heading-lg">Ready to keep the movement growing?</h2>
+          <h2 className="heading-lg">Choose your next step</h2>
         </Reveal>
         <Reveal>
-          <p className="body-md text-[var(--muted)]">Every shared meal adds proof. Choose the next step that keeps the momentum going.</p>
+          <p className="body-md text-[var(--muted)]">Pick the action that keeps LIFE tables moving.</p>
         </Reveal>
         <Reveal>
           <div className="flex flex-wrap justify-center gap-3">
