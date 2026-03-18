@@ -13,12 +13,13 @@ export default function SectionModel() {
           <p>One shared meal.</p>
           <p>One conversation.</p>
           <p>People cook together, share a meal, and learn something they can use right away.</p>
-          <p className="pt-2">Then it continues.</p>
+          <p>Hosts teach a favorite recipe or family tradition while creating space for learning, connection, and community.</p>
+          <p className="pt-2">Then it continues—LIFE grows one table at a time.</p>
         </Reveal>
         <Reveal className="rounded-[28px] border border-[var(--border)] bg-white/90 card-padding text-center shadow-sm">
           <p className="heading-md text-[var(--life-forest)]">Start simple. Stay consistent.</p>
           <p className="body-md mt-3 text-[var(--text)]">
-            Host a small table. Cook a real meal. Share the experience.
+            Host a small table. Cook a real meal. Share what you know and register it so the next host is ready.
           </p>
         </Reveal>
       </div>

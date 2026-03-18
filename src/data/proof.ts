@@ -23,7 +23,7 @@ export const PILOT_QUOTES: ProofQuote[] = [
   },
   {
     quote: "The assessment opened up honest conversations about sleep, stress, and what’s really happening at home.",
-    attribution: "Workshop participant",
+    attribution: "Table participant",
     context: "Community kitchen cohort",
   },
 ];
@@ -41,7 +41,7 @@ export const PARTNER_READY_HIGHLIGHTS: ProofHighlight[] = [
   },
   {
     title: "Partnership-Ready Programming",
-    detail: "Workshops, keynotes, and hosted tables can be adapted for schools, employers, and community health teams.",
+    detail: "Tables, keynotes, and hosted tables can be adapted for schools, employers, and community health teams.",
     tag: "Collaboration",
   },
 ];
@@ -64,7 +64,7 @@ export const ABOUT_PROOF: ProofHighlight[] = [
 export const WORKSHOP_PROOF: ProofHighlight[] = [
   {
     title: "Ready for Community Groups",
-    detail: "Neighborhood associations, wellness teams, and nonprofits use the workshop to prepare hosts and measure follow-up tables.",
+    detail: "Neighborhood associations, wellness teams, and nonprofits use the table to prepare hosts and measure follow-up tables.",
   },
   {
     title: "Hands-On Practice",
@@ -97,7 +97,7 @@ export const CONTACT_PROOF: ProofHighlight[] = [
     detail: "Community partners receive a response within two business days from the board member overseeing the pilot.",
   },
   {
-    title: "Workshop + Keynote Requests",
+    title: "Table + Keynote Requests",
     detail: "Organizations receive a prep checklist so they know what ingredients, equipment, and follow-up are expected.",
   },
   {

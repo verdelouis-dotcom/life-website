@@ -25,16 +25,16 @@ export const metadata: Metadata = {
 
 const STEP_CONTENT = [
   {
-    title: "1. Experience a Table",
-    body: "Sit down, share a meal, and take part in real conversation.",
+    title: "1. Attend a Table",
+    body: "Sit down, share a meal, and take part in real conversation so you can see how LIFE feels.",
   },
   {
-    title: "2. Bring People Together",
-    body: "Host a simple table with friends, family, or your community. We guide you through it—step by step. Most hosts start small.",
+    title: "2. Host a Table",
+    body: "Within 30 days, host a simple table of your own. Teach a favorite recipe or family tradition while sharing the LIFE pillars.",
   },
   {
-    title: "3. Share What Happened",
-    body: "After your table, share your experience. Each gathering helps grow the movement—one table at a time.",
+    title: "3. Register a Table",
+    body: "Log the gathering, attendance, and stories. Each registration keeps the movement measurable and ready for the next host.",
   },
 ];
 
@@ -85,6 +85,9 @@ export default function HowItWorksPage() {
               </article>
             ))}
           </div>
+          <p className="mt-8 text-center body-md text-[var(--text)]">
+            LIFE grows one table at a time: people attend, host within 30 days, teach what they know, and register so every gathering adds proof.
+          </p>
           <div className="mt-8 text-center">
             <Link href="/host" className="btn-solid px-8 text-base">
               Host a LIFE Table
@@ -148,7 +151,7 @@ export default function HowItWorksPage() {
                 Host a LIFE Table
               </Link>
               <Link href="/register" className="btn-outline px-8 text-base">
-                Share Your Table
+                Register a Table
               </Link>
             </div>
           </div>

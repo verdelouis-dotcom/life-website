@@ -28,6 +28,6 @@ export const RESOURCE_ENTRIES: ResourceEntry[] = [
   {
     slug: "how-life-creates-community-health",
     title: "How LIFE Creates Community Health",
-    description: "Follow the LIFE workshop → host → register cycle and how it builds measurable community health.",
+    description: "Follow the LIFE table → host → register cycle and how it builds measurable community health.",
   },
 ];

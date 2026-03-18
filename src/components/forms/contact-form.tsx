@@ -7,7 +7,7 @@ const ERROR_MESSAGE =
 
 const INTEREST_OPTIONS = [
   "Partnership inquiry",
-  "Host or workshop support",
+  "Host or table support",
   "Keynote or speaking",
   "Press / storytelling",
   "General question",

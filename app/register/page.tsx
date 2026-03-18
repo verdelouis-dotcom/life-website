@@ -29,10 +29,10 @@ export default function RegisterPage() {
       <main className="mx-auto max-w-3xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
           <p className="type-eyebrow">Measurement</p>
-          <h1 className="section-heading">Register</h1>
-          <p className="mt-2 type-detail uppercase tracking-[0.3em] text-[var(--olive)]">For hosted workshops only</p>
+          <h1 className="section-heading">Register a LIFE Table</h1>
+          <p className="mt-2 type-detail uppercase tracking-[0.3em] text-[var(--olive)]">For hosted tables only</p>
           <p className="mt-4 type-body-muted">
-            Use this form after you have hosted a LIFE workshop. Registration is how LIFE measures participation and reach for grants,
+            Use this form after you have hosted a LIFE table. Registration is how LIFE measures participation and reach for grants,
             accountability, and replication. Optional: upload a photo and provide consent so we can share the rhythm publicly.
           </p>
         </section>

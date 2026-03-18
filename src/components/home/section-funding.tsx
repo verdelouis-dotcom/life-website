@@ -16,7 +16,7 @@ export default function SectionFunding() {
           <Reveal className="space-y-3">
             <h2 className="section-heading">Donate</h2>
             <p className="type-body-muted">
-              Hosting twelve workshops each year requires ingredients, tools, and educational materials. Donations help LIFE provide those
+              Hosting twelve tables each year requires ingredients, tools, and educational materials. Donations help LIFE provide those
               resources, support community education, and measure participation responsibly.
             </p>
           </Reveal>

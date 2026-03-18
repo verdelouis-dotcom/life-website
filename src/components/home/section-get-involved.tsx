@@ -10,12 +10,12 @@ const OPTIONS = [
   },
   {
     title: "Support the Movement",
-    description: "Underwrite workshops, ingredients, and educational tools so more tables can launch.",
+    description: "Underwrite tables, ingredients, and educational tools so more tables can launch.",
     cta: { label: "Donate", href: "/donate" },
   },
   {
     title: "Bring LIFE to Your Group",
-    description: "Bring a LIFE workshop or keynote to your organization, faith community, or company.",
+    description: "Bring a LIFE table or keynote to your organization, faith community, or company.",
     cta: { label: "Request a Keynote", href: "/contact" },
   },
 ];

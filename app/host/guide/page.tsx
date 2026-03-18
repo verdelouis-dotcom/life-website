@@ -70,7 +70,7 @@ export default function HostGuidePage() {
             <p className="type-eyebrow text-[var(--olive)]">Host Guide</p>
             <h1 className="type-display">How to Lead a LIFE Table</h1>
             <p className="type-lede text-[var(--muted)]">
-              Use this guide after you attend a LIFE workshop. It covers how to plan the meal, share the six pillars, and register the gathering so it
+              Use this guide after you attend a LIFE table. It covers how to plan the meal, share the six pillars, and register the gathering so it
               supports the movement.
             </p>
           </div>

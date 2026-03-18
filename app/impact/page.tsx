@@ -11,24 +11,24 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/impact"
 export const metadata: Metadata = {
   title: "LIFE Impact | Longevity Initiative for Food & Education",
   description:
-    "See how LIFE tracks community impact through shared meals, workshops, and longevity education designed to improve health and connection.",
+    "See how LIFE tracks community impact through shared meals, tables, and longevity education designed to improve health and connection.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "LIFE Impact | Longevity Initiative for Food & Education",
     description:
-      "See how LIFE tracks community impact through shared meals, workshops, and longevity education designed to improve health and connection.",
+      "See how LIFE tracks community impact through shared meals, tables, and longevity education designed to improve health and connection.",
     url: PAGE_URL,
   },
   twitter: {
     title: "LIFE Impact | Longevity Initiative for Food & Education",
     description:
-      "See how LIFE tracks community impact through shared meals, workshops, and longevity education designed to improve health and connection.",
+      "See how LIFE tracks community impact through shared meals, tables, and longevity education designed to improve health and connection.",
   },
 };
 
 const TRACKING_POINTS = [
   "Tables hosted and attendance by neighborhood",
-  "Workshop participation and host readiness",
+  "Table participation and host readiness",
   "Host Champions who lead multiple tables each year and mentor new hosts",
   "Longevity Assessment completions tied to the six pillars",
   "Stories and qualitative feedback from families",
@@ -141,7 +141,7 @@ export default function ImpactPage() {
           photos={[
             { src: "/images/table/IMG_9433.jpeg", alt: "Families preparing a LIFE meal", caption: "Cooking together" },
             { src: "/images/table/table3.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE table" },
-            { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Workshop leader guiding participants", caption: "Pilot workshop coaching" },
+            { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Table leader guiding participants", caption: "Pilot table coaching" },
           ]}
         />
 

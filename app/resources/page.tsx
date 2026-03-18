@@ -54,7 +54,7 @@ export default function ResourcesPage() {
                 Take the Assessment
               </Link>
               <Link href="/workshops" className="btn-outline px-8 text-base">
-                Explore Workshops
+                Explore Tables
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Donate

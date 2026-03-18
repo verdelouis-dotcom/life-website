@@ -41,6 +41,7 @@ export default function AboutPage() {
               The Longevity Initiative for Food &amp; Education (LIFE) is a nonprofit movement rebuilding the rituals that once made healthy
               communities possible: fresh ingredients, shared tables, and long-term accountability.
             </p>
+            <p className="mt-4 body-md text-[var(--text)]">A LIFE table is a shared meal where people cook, learn, and connect.</p>
           </div>
         </section>
 
@@ -94,7 +95,7 @@ export default function AboutPage() {
           alt="Founder Lou Verde leading a LIFE dinner"
           eyebrow="Founder-led pilot"
           title="Why LIFE started at a single shared table"
-          body="Lou Verde traveled to Italy to study longevity traditions firsthand, learning the art of making pasta from scratch before translating those lessons into small shared tables back home. Every workshop photo, registered table, and assessment reflection feeds the next host so the model stays grounded in real families."
+          body="Lou Verde traveled to Italy to study longevity traditions firsthand, learning the art of making pasta from scratch before translating those lessons into small shared tables back home. Every table photo, registered table, and assessment reflection feeds the next host so the model stays grounded in real families."
           caption="Photo: Longevity research trip in Italy"
           imageClassName="object-[center_top]"
         />

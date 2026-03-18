@@ -33,14 +33,14 @@ const PATHS = [
   },
   {
     title: "Support the Movement",
-    description: "Underwrite ingredients, workshops, and educational tools so more LIFE tables can launch across communities.",
+    description: "Underwrite ingredients, tables, and educational tools so more LIFE tables can launch across communities.",
     ctaLabel: "Donate",
     href: "/donate",
     highlight: false,
   },
   {
     title: "Bring LIFE to Your Community",
-    description: "Request a LIFE workshop or keynote for your organization, congregation, or company to spark local tables.",
+    description: "Request a LIFE table or keynote for your organization, congregation, or company to spark local tables.",
     ctaLabel: "Request a Keynote",
     href: "/keynote",
     highlight: false,

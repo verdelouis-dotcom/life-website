@@ -41,6 +41,7 @@ export default function SiteFooter() {
                   { href: "/", label: "Home" },
                   { href: "/about", label: "About" },
                   { href: "/how-it-works", label: "How It Works" },
+                  { href: "/workshops", label: "Tables" },
                   { href: "/assessment", label: "Assessment" },
                   { href: "/host", label: "Host a LIFE Table" },
                   { href: "/donate", label: "Donate" },

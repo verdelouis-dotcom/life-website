@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-const HOST_PRIMARY_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=Host%20a%20LIFE%20Workshop";
+const HOST_PRIMARY_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=Host%20a%20LIFE%20Table";
 const HOST_GUIDE_LINK = "/host/guide";
 const REGISTER_LINK = "/register";
 const CONTACT_EMAIL = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Support";
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
 };
 
 const HOST_STEPS = [
-  "Invite friends, neighbors, or family once you have attended a LIFE workshop.",
-  "Prepare a meal together using fresh ingredients and the LIFE host guide.",
-  "Share the six LIFE pillars and longevity principles in your own words.",
-  "Register the workshop afterward so participation can be measured.",
+  "Attend a LIFE table and commit to hosting your own within 30 days.",
+  "Invite friends, neighbors, or family once you have a date confirmed.",
+  "Cook together, teach a favorite recipe or family tradition, and share the LIFE pillars in your own words.",
+  "Register the table afterward so participation and stories can be measured.",
 ];
 
 export default function HostPage() {
@@ -77,7 +77,7 @@ export default function HostPage() {
                 "Share a meal",
                 "Keep it simple. Share what works for you and listen to others.",
                 "Clean up together",
-                "Share the recipe",
+                "Teach a favorite recipe or family tradition",
                 "Capture the moment",
                 "Register your table",
               ].map((item) => (
@@ -133,7 +133,7 @@ export default function HostPage() {
                 Download the LIFE Table Guide
               </a>
               <a href={REGISTER_LINK} className="btn-outline px-8 text-base">
-                Share Your Table
+                Register a Table
               </a>
             </div>
             <p className="type-detail text-center">

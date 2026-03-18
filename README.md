@@ -1,6 +1,6 @@
 # LIFE Website
 
-The Longevity Initiative for Food & Education (LIFE) website shares fresh-ingredient cooking habits, promotes workshops, and collects donations and sponsorship inquiries.
+The Longevity Initiative for Food & Education (LIFE) website shares fresh-ingredient cooking habits, promotes tables, and collects donations and sponsorship inquiries.
 
 ## Local development
 
@@ -33,4 +33,4 @@ Pushes to `main` trigger a Vercel deployment. Confirm the build is green in the 
 
 ## Forms & API routes
 
-- `/api/contact` receives all form submissions (workshop interest, hosts, support, homepage contact) and emails the details to `LIFE_TO_EMAIL` using Resend. It expects JSON `{ name, email, city, message, source }` and returns `{ ok: true }` on success.
+- `/api/contact` receives all form submissions (table interest, hosts, support, homepage contact) and emails the details to `LIFE_TO_EMAIL` using Resend. It expects JSON `{ name, email, city, message, source }` and returns `{ ok: true }` on success.
