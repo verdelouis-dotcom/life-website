@@ -26,15 +26,7 @@ export function SectionPillars() {
                 href={pillar.href}
                 className="group block h-full rounded-[28px] border border-[var(--border)] bg-[var(--surface)]/70 p-6 shadow-sm transition hover:-translate-y-0.5 hover:bg-white focus-visible:-translate-y-0.5 focus-visible:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--olive)]"
               >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="label-text text-[var(--olive)]">0{index + 1}</span>
-                    <h3 className="heading-md mt-2 text-[var(--text)]">{pillar.title}</h3>
-                  </div>
-                  <span className="text-2xl text-[var(--olive)] transition-transform group-hover:translate-x-1 group-focus-visible:translate-x-1" aria-hidden="true">
-                    →
-                  </span>
-                </div>
+                <h3 className="heading-md text-[var(--text)]">{pillar.title}</h3>
               </Link>
             </Reveal>
           ))}

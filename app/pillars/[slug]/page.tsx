@@ -70,6 +70,10 @@ type PillarPageProps = {
   params: { slug: string };
 };
 
+export function generateStaticParams() {
+  return Object.keys(PILLAR_CONTENT).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: PillarPageProps): Promise<Metadata> {
   const slug = params.slug as PillarSlug;
   const pillar = PILLAR_CONTENT[slug];
