@@ -28,6 +28,35 @@ export const metadata: Metadata = {
   },
 };
 
+const BOARD_MEMBERS = [
+  {
+    name: "Lou Verde",
+    role: "Founder & President",
+    bio: "Community nutrition advocate and creator of the LIFE Longevity Assessment. Leads strategy and supports early hosts.",
+  },
+  {
+    name: "Dr. Miles Medina",
+    role: "Treasurer",
+    bio: "Emergency medicine physician at Piedmont Henry Hospital. Oversees fiscal controls and medical rigor.",
+  },
+  {
+    name: "Bob Fabbio",
+    role: "Vice President",
+    bio: "Entrepreneur and founder of Norrio Capital Partners. Guides replication strategy and philanthropic partnerships.",
+  },
+  {
+    name: "Kara Verde",
+    role: "Secretary",
+    bio: "Accounting graduate of Rochester Institute of Technology. Manages governance records and compliance documentation.",
+  },
+];
+
+const BOARD_PRACTICES = [
+  "Quarterly reviews covering table registrations, donations, and pilot risks.",
+  "Dual-approval process for program expenses and grant disbursements.",
+  "Public reporting on registered tables, host commitments, and assessment insights.",
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -101,6 +130,32 @@ export default function AboutPage() {
         />
 
         <ProofHighlightList eyebrow="Credibility" title="How LIFE stays accountable" items={ABOUT_PROOF} background="accent" />
+
+        <section className="mx-auto max-w-6xl px-6 pb-12">
+          <div className="space-y-6 rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
+            <div className="text-center space-y-2">
+              <p className="type-eyebrow text-[var(--olive)]">Board & Leadership</p>
+              <h2 className="heading-lg">Volunteer-led, accountable leadership</h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {BOARD_MEMBERS.map((member) => (
+                <article key={member.name} className="rounded-[28px] border border-[var(--border)] bg-white p-6 shadow-sm text-left">
+                  <p className="label-text text-[var(--olive)]">{member.role}</p>
+                  <h3 className="heading-md mt-1">{member.name}</h3>
+                  <p className="body-sm mt-3 text-[var(--text)]">{member.bio}</p>
+                </article>
+              ))}
+            </div>
+            <div className="rounded-[28px] border border-[var(--border)] bg-[#fff8ef] p-6 text-left shadow-sm">
+              <p className="label-text text-[var(--olive)]">Governance Practices</p>
+              <ul className="mt-3 space-y-2 body-sm">
+                {BOARD_PRACTICES.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
