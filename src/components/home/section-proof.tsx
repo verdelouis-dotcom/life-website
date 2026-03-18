@@ -3,9 +3,9 @@ import Image from "next/image";
 import Reveal from "@/components/ui/reveal";
 
 const PROOF_IMAGES = [
-  { src: "/images/workshops/IMG_8060.jpeg", alt: "Neighbors preparing vegetables together" },
-  { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Couple rolling pasta dough during a LIFE table" },
-  { src: "/images/workshops/IMG_9432.jpeg", alt: "Guests sharing a plated meal" },
+  { src: "/images/workshops/pasta-lesson-1.jpg", alt: "Hands guiding pasta dough through a roller" },
+  { src: "/images/workshops/pasta-lesson-3.jpeg", alt: "Hosts shaping fresh pasta together" },
+  { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Table leader guiding guests through the meal" },
 ];
 
 export default function SectionProof() {
