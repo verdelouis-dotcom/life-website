@@ -33,33 +33,46 @@ export default function SiteFooter() {
               </a>
             </p>
           </div>
-          <div className="type-detail">
-            <p className="font-semibold text-[var(--life-forest)]">Keynote</p>
-            <p className="mt-2">Request a 30-minute nonprofit keynote on longevity fundamentals.</p>
-            <a href="/keynote" className="mt-4 btn-outline px-5">
-              Request a Keynote
-            </a>
-          </div>
-          <div className="type-detail">
-            <p className="font-semibold text-[var(--life-forest)]">Quick Links</p>
-            <ul className="mt-3 space-y-2">
-              {[
-                { href: "/about", label: "About LIFE" },
-                { href: "/how-it-works", label: "How It Works" },
-                { href: "/impact", label: "Impact" },
-                { href: "/host", label: "Host a LIFE Table" },
-                { href: "/donate", label: "Donate" },
-                { href: "/get-involved", label: "Get Involved" },
-                { href: "/resources", label: "Resources" },
-                { href: "/contact", label: "Contact LIFE" },
-              ].map((item) => (
-                <li key={item.href}>
-                  <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href={item.href}>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="type-detail space-y-5">
+            <div>
+              <p className="font-semibold text-[var(--life-forest)]">Quick Links</p>
+              <ul className="mt-3 space-y-2">
+                {[
+                  { href: "/", label: "Home" },
+                  { href: "/about", label: "About" },
+                  { href: "/how-it-works", label: "How It Works" },
+                  { href: "/assessment", label: "Assessment" },
+                  { href: "/host", label: "Host a LIFE Table" },
+                  { href: "/donate", label: "Donate" },
+                  { href: "/contact", label: "Contact LIFE" },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href={item.href}>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-[var(--life-forest)]">More from LIFE</p>
+              <ul className="mt-3 space-y-2">
+                {[
+                  { href: "/resources", label: "Resources" },
+                  { href: "/impact", label: "Impact" },
+                  { href: "/newsletter", label: "Newsletter" },
+                  { href: "/keynote", label: "Keynote" },
+                  { href: "/gallery", label: "Gallery" },
+                  { href: "/assessment/methodology", label: "Methodology" },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <a className="underline decoration-[rgba(74,92,64,0.3)] underline-offset-4" href={item.href}>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 

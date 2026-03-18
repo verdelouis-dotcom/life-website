@@ -1,23 +1,41 @@
-import ProofHighlightList from "@/components/proof/ProofHighlightList";
-import { PARTNER_READY_HIGHLIGHTS, PILOT_QUOTES } from "@/data/proof";
+import Link from "next/link";
+import Image from "next/image";
+import Reveal from "@/components/ui/reveal";
 
-const FEATURED_QUOTE = PILOT_QUOTES[1];
+const PROOF_IMAGES = [
+  { src: "/images/workshops/IMG_8060.jpeg", alt: "Neighbors preparing vegetables together" },
+  { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Couple rolling pasta dough during a LIFE table" },
+  { src: "/images/workshops/IMG_8145.JPG", alt: "Guests sharing a plated meal" },
+];
 
 export default function SectionProof() {
   return (
-    <section className="section-spacing bg-[var(--bg)] text-[var(--text)]">
+    <section className="section-spacing bg-white text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-8 px-6">
-        <ProofHighlightList eyebrow="Proof of progress" title="Signals that LIFE is accountable" items={PARTNER_READY_HIGHLIGHTS} />
-        <div className="rounded-[32px] border border-[var(--border)] bg-white/90 card-padding text-center shadow-sm">
-          <p className="label-text">From our hosts</p>
-          <p className="mt-3 body-md italic text-[var(--text)]">“{FEATURED_QUOTE.quote}”</p>
-          <p className="mt-2 body-sm font-semibold text-[var(--life-forest)]">{FEATURED_QUOTE.attribution}</p>
-          <p className="body-sm text-[var(--muted)]">{FEATURED_QUOTE.context}</p>
-          <p className="mt-3 body-sm text-[var(--text)]">LIFE Host Champions now mentor new hosts and lead multiple tables each year.</p>
-          <a href="/impact" className="btn-outline mt-4 inline-flex px-6 text-sm">
-            See the Impact
-          </a>
+        <Reveal className="space-y-3 text-center">
+          <p className="label-text">Proof</p>
+          <h2 className="heading-lg">Shared tables already underway</h2>
+          <p className="body-md text-[var(--muted)]">Images shared with permission from LIFE hosts.</p>
+        </Reveal>
+        <div className="grid gap-6 md:grid-cols-3">
+          {PROOF_IMAGES.map((image, index) => (
+            <Reveal key={image.src} delay={index * 80} className="overflow-hidden rounded-[28px] border border-[var(--border)] shadow-sm">
+              <div className="relative aspect-square w-full">
+                <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(min-width: 768px) 33vw, 100vw" />
+              </div>
+            </Reveal>
+          ))}
         </div>
+        <Reveal className="rounded-[36px] border border-[var(--border)] bg-[#fff8ef] card-padding text-center shadow-sm">
+          <p className="label-text">Accountability</p>
+          <p className="mt-3 body-md text-[var(--text)]">
+            Volunteer board members host tables, log attendance, and publish pilot data so growth stays transparent.
+          </p>
+          <p className="mt-2 body-sm text-[var(--muted)]">Incorporated nonprofit • EIN 41-4525299 • 501(c)(3) determination pending</p>
+          <Link href="/about" className="btn-outline mx-auto mt-4 inline-flex px-6 text-sm">
+            Meet the Leadership
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

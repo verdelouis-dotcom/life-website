@@ -7,16 +7,11 @@ export default function SectionWhy() {
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 text-center md:grid-cols-2 md:text-left">
         <div className="space-y-5">
           <Reveal>
-            <h2 className="section-heading">Why Now</h2>
+            <h2 className="section-heading">Why It Matters</h2>
           </Reveal>
           <Reveal className="space-y-3 type-body-muted">
-            <div className="space-y-1">
-              <p>U.S. life expectancy is declining.</p>
-              <p>Chronic disease is rising.</p>
-              <p>Isolation is increasing.</p>
-              <p>Family meals are disappearing.</p>
-            </div>
-            <p>LIFE reintroduces practical habits people can use at home through food, connection, and shared responsibility.</p>
+            <p>U.S. life expectancy is declining. Chronic disease and isolation are rising. Shared meals—the habits that hold families together—are disappearing.</p>
+            <p>LIFE keeps the fix simple: gather people, cook real food, and keep the conversation going so healthier routines stick.</p>
           </Reveal>
         </div>
         <Reveal delay={120} className="relative aspect-square w-full overflow-hidden rounded-[28px] border border-[var(--border)] shadow-lg">
