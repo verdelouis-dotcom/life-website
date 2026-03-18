@@ -8,12 +8,11 @@ export default function HomeHero() {
       <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1.1fr,0.9fr] md:items-stretch">
         <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 card-padding shadow-lg">
           <Reveal>
-            <h1 className="heading-xl">Life expectancy is falling. Daily habits are slipping.</h1>
+            <h1 className="heading-xl">Longevity starts at the table.</h1>
           </Reveal>
           <Reveal>
             <p className="body-lg text-[var(--text)]">
-              Processed food, isolation, and rushed routines cut healthy years short. LIFE tables bring people back to the same table and keep every
-              gathering measurable.
+              LIFE is a nonprofit that brings people together to cook, share a meal, and build simple habits that support long-term health.
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-3">
@@ -21,11 +20,8 @@ export default function HomeHero() {
               Take the Assessment
             </Link>
             <Link href="/host" className="btn-outline px-8 text-base">
-              Host a LIFE Table
+              Host a Table
             </Link>
-          </Reveal>
-          <Reveal>
-            <p className="text-sm text-[var(--muted)]">Every table is registered so the movement stays measurable.</p>
           </Reveal>
         </div>
         <Reveal
