@@ -8,6 +8,7 @@ const PRIMARY_NAV = [
   { href: "/assessment", label: "Assessment" },
   { href: "/host", label: "Host" },
   { href: "/workshops", label: "Tables" },
+  { href: "/the-life-challenge", label: "The LIFE Challenge" },
   { href: "/donate", label: "Donate" },
   { href: "/contact", label: "Contact" },
 ];
