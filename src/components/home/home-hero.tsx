@@ -11,7 +11,8 @@ export default function HomeHero() {
           </Reveal>
           <Reveal>
             <p className="body-lg text-[var(--text)]">
-              LIFE is a nonprofit that brings people together to cook, share a meal, and build simple habits that support long-term health.
+              LIFE is a nonprofit that provides you with the proven steps to strip away the habits that negatively impact your long-term health
+              and intimacy with your loved ones.
             </p>
           </Reveal>
         </div>
