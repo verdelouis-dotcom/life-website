@@ -1,26 +1,29 @@
 import Reveal from "@/components/ui/reveal";
 
-const LINES = [
-  "We believe health starts at the table.",
-  "We believe in simple habits, practiced daily.",
-  "We believe in doing it together.",
-  "",
-  "What was once normal is now rare.",
-  "LIFE brings it back.",
-];
-
 export default function SectionWho() {
   return (
     <section className="section-spacing bg-white text-[var(--text)]">
-      <div className="mx-auto max-w-4xl space-y-6 px-6 text-center">
-        <Reveal className="space-y-4">
-          {LINES.map((line, index) => (
-            <p
-              key={`${line}-${index}`}
-              className={index < 3 ? "heading-md" : "body-md text-[var(--muted)]"}
-            >
-              {line || "\u00A0"}
-            </p>
+      <div className="mx-auto max-w-4xl space-y-5 px-6 text-center">
+        <Reveal>
+          <p className="label-text text-[var(--olive)]">The LIFE approach</p>
+        </Reveal>
+        <Reveal>
+          <h2 className="heading-lg">Shared meals that stay measurable</h2>
+        </Reveal>
+        <Reveal>
+          <p className="body-md text-[var(--muted)]">
+            LIFE helps neighbors host simple tables, teach practical habits, and register what happens so healthier routines spread city by city.
+          </p>
+        </Reveal>
+        <Reveal className="grid gap-4 text-left body-sm text-[var(--text)] md:grid-cols-3">
+          {[
+            "Fresh ingredients and family traditions make healthier defaults feel doable.",
+            "Hosts commit to register each table within 24 hours so progress stays visible.",
+            "Shared data keeps donors, partners, and new hosts confident the model works.",
+          ].map((detail) => (
+            <div key={detail} className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-4 text-center">
+              {detail}
+            </div>
           ))}
         </Reveal>
       </div>

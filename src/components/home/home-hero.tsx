@@ -8,11 +8,11 @@ export default function HomeHero() {
       <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1.1fr,0.9fr] md:items-stretch">
         <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 card-padding shadow-lg">
           <Reveal>
-            <h1 className="heading-xl">Longevity starts at the table.</h1>
+            <h1 className="heading-xl">Life expectancy is falling. Daily habits are slipping.</h1>
           </Reveal>
           <Reveal>
             <p className="body-lg text-[var(--text)]">
-              LIFE tables are simple, shared meals where people cook, learn, and register what happens so healthier habits spread.
+              Processed food, isolation, and rushed routines shorten healthy years. LIFE tables rebuild measurable habits one shared meal at a time.
             </p>
           </Reveal>
           <Reveal className="flex flex-wrap items-center gap-3">
