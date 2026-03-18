@@ -19,9 +19,6 @@ export default function SectionFinalCTA() {
             <Link href="/host" className="btn-outline px-8 text-base">
               Host a LIFE Table
             </Link>
-            <Link href="/donate" className="btn-outline px-8 text-base">
-              Donate
-            </Link>
           </div>
           <p className="mt-3 text-sm text-[var(--muted)]">Most hosts start with friends or family. It takes just one table to begin.</p>
         </Reveal>

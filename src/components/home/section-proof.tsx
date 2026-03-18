@@ -30,8 +30,8 @@ export default function SectionProof() {
           <p className="label-text">Accountability</p>
           <p className="mt-3 body-md text-[var(--text)]">LIFE registers every table, reviews it with the board, and publishes pilot data.</p>
           <p className="mt-2 body-sm text-[var(--muted)]">Incorporated nonprofit • EIN 41-4525299 • 501(c)(3) pending</p>
-          <Link href="/about" className="btn-outline mx-auto mt-4 inline-flex px-6 text-sm">
-            Meet the Leadership
+          <Link href="/about" className="mt-4 inline-flex justify-center text-sm text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+            Meet the leadership team
           </Link>
         </Reveal>
       </div>

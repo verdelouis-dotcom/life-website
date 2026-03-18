@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
 export default function HomeHero() {
@@ -15,14 +14,7 @@ export default function HomeHero() {
               LIFE is a nonprofit that brings people together to cook, share a meal, and build simple habits that support long-term health.
             </p>
           </Reveal>
-          <Reveal className="flex flex-wrap items-center gap-3">
-            <Link href="/assessment" className="btn-solid px-8 text-base">
-              Take the Assessment
-            </Link>
-            <Link href="/host" className="btn-outline px-8 text-base">
-              Host a Table
-            </Link>
-          </Reveal>
+          <div aria-hidden />
         </div>
         <Reveal
           delay={120}

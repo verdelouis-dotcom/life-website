@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
-import SectionAssessment from "@/components/home/section-assessment";
-import SectionWho from "@/components/home/section-who";
 import SectionModel from "@/components/home/section-model";
+import SectionPrimaryCta from "@/components/home/section-primary-cta";
+import SectionWhy from "@/components/home/section-why";
+import SectionAssessment from "@/components/home/section-assessment";
 import SectionProof from "@/components/home/section-proof";
 import SectionFinalCTA from "@/components/home/section-final-cta";
 
@@ -36,8 +37,9 @@ export default function HomePage() {
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <HomeHero />
-        <SectionWho />
         <SectionModel />
+        <SectionPrimaryCta />
+        <SectionWhy />
         <SectionAssessment />
         <SectionProof />
         <SectionFinalCTA />
