@@ -144,10 +144,7 @@ export default function HowItWorksPage() {
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
             <p className="type-eyebrow text-[var(--olive)]">Ready to participate?</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link href="/assessment" className="btn-solid px-8 text-base">
-                Take the Assessment
-              </Link>
-              <Link href="/host" className="btn-outline px-8 text-base">
+              <Link href="/host" className="btn-solid px-8 text-base">
                 Host a LIFE Table
               </Link>
               <Link href="/register" className="btn-outline px-8 text-base">
