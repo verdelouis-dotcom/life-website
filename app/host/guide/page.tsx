@@ -27,36 +27,20 @@ export const metadata: Metadata = {
 
 const GUIDE_SECTIONS = [
   {
-    title: "1. Plan Your Gathering",
-    details: [
-      "Invite 6–10 people you know from family, neighbors, work, or faith communities.",
-      "Choose a simple date and time. Weeknight dinners or Saturday afternoons both work.",
-      "Aim for 90 minutes total: 45 minutes to cook or plate food, 30 minutes for the LIFE conversation, and 15 minutes to wrap up.",
-    ],
+    title: "1. Plan Your Table",
+    details: ["Invite family, friends, or neighbors over for dinner."],
   },
   {
-    title: "2. Prepare a Fresh, Shared Meal",
-    details: [
-      "Cook what you already know—Italian, Mexican, Japanese, or a favorite family recipe—as long as it uses fresh ingredients.",
-      "Ask guests to help prep vegetables, stir sauces, or set the table so the experience stays collaborative.",
-      "Serve water or unsweetened beverages and encourage everyone to sit down together before the conversation begins.",
-    ],
+    title: "2. Share the Meal",
+    details: ["Cook your favorite recipe or something you learned at a LIFE table.", "Prepare, cook, and eat together."],
   },
   {
-    title: "3. Share the Six LIFE Pillars",
-    details: [
-      "Introduce the pillars: Food, Movement, Sleep, Connection, Purpose, and Stress Regulation.",
-      "Use your own language—share why each habit matters to you and ask guests what works in their homes.",
-      "Pass around a printed or digital version of the pillars so guests can follow along.",
-    ],
+    title: "3. Talk About What Matters",
+    details: ["Share why LIFE matters to you.", "Ask others what works in their lives."],
   },
   {
-    title: "4. Close with the LIFE Assessment & Next Steps",
-    details: [
-      "Invite guests to take the LIFE Longevity Assessment within the next week to see their potential lifespan based on current habits.",
-      "Encourage one guest to volunteer as the next host. Offer to mentor them through their first table.",
-      "Register your gathering using the LIFE register form so attendance and stories are captured.",
-    ],
+    title: "4. Pass It Forward",
+    details: ["Invite someone to host next."],
   },
 ];
 
@@ -88,6 +72,10 @@ export default function HostGuidePage() {
                 </ul>
               </article>
             ))}
+            <div className="text-center">
+              <p className="text-sm text-[var(--muted)]">Optional: Play a game, take a walk, or spend a little more time together.</p>
+              <p className="mt-1 type-body-muted">That’s how LIFE grows.</p>
+            </div>
           </div>
         </section>
 
