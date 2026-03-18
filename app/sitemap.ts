@@ -28,8 +28,7 @@ const ROUTES = [
   "/pillars/sleep",
   "/pillars/connection",
   "/pillars/purpose",
-  "/pillars/stress-regulation",
-  "/pillars/community",
+  "/pillars/stress",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

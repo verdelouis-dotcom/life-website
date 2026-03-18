@@ -3,6 +3,7 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
 import SectionModel from "@/components/home/section-model";
+import { SectionPillars } from "@/components/home/section-pillars";
 import SectionWhy from "@/components/home/section-why";
 import SectionProof from "@/components/home/section-proof";
 import SectionFinalCTA from "@/components/home/section-final-cta";
@@ -36,6 +37,7 @@ export default function HomePage() {
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <HomeHero />
         <SectionModel />
+        <SectionPillars />
         <SectionWhy />
         <SectionProof />
         <SectionFinalCTA />

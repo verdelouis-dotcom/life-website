@@ -26,7 +26,7 @@ const PILLAR_LINKS = {
   sleep: "/pillars/sleep",
   connection: "/pillars/connection",
   purpose: "/pillars/purpose",
-  stress: "/pillars/stress-regulation",
+  stress: "/pillars/stress",
 };
 
 export default function SixPillarsPage() {
