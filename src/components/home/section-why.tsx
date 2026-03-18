@@ -6,21 +6,11 @@ export default function SectionWhy() {
       <div className="mx-auto grid max-w-5xl items-center gap-8 px-6 md:grid-cols-2">
         <div className="rounded-[32px] border border-[var(--border)] bg-[#fff8ef] card-padding text-center shadow-sm space-y-6">
           <p className="label-text text-[var(--olive)]">Why It Matters</p>
-          <p className="body-lg leading-relaxed">
-            We didn’t lose our health overnight.
-            <br />
-            <br />
-            We lost it slowly—one missed meal, one broken routine, one empty table at a time.
-            <br />
-            <br />
-            Now people are living sicker, lonelier, and more disconnected than ever.
-            <br />
-            <br />
-            Because no one is holding the habits in place.
-            <br />
-            <br />
-            LIFE rebuilds what we lost—starting at the table.
-          </p>
+          <div className="space-y-4 body-md leading-relaxed">
+            <p>We didn’t lose our health overnight. We lost it slowly—one missed meal, one broken routine, one empty table at a time.</p>
+            <p>Now people are living sicker, lonelier, and more disconnected than ever because no one is holding the habits in place.</p>
+            <p>LIFE rebuilds what we lost—starting at the table.</p>
+          </div>
         </div>
         <div className="relative aspect-square w-full overflow-hidden rounded-[32px] border border-[var(--border)] shadow-lg">
           <Image
