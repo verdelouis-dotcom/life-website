@@ -25,23 +25,23 @@ export const metadata: Metadata = {
   },
 };
 
-const GUIDE_SECTIONS = [
-  {
-    title: "1. Plan Your Table",
-    details: ["Invite family, friends, or neighbors over for dinner."],
-  },
-  {
-    title: "2. Share the Meal",
-    details: ["Cook your favorite recipe or something you learned at a LIFE table.", "Prepare, cook, and eat together."],
-  },
-  {
-    title: "3. Talk About What Matters",
-    details: ["Share why LIFE matters to you.", "Ask others what works in their lives."],
-  },
-  {
-    title: "4. Pass It Forward",
-    details: ["Invite someone to host next."],
-  },
+const CORE_FLOW = [
+  "Prepare and cook together.",
+  "Share a meal.",
+  "Use simple prompts to guide conversation. Share what works for you and listen to others.",
+  "Clean up together.",
+  "Share the recipe.",
+  "Capture the moment.",
+  "Register your table.",
+];
+
+const CONVERSATION_TOPICS = [
+  "Food — What are you eating more or less of?",
+  "Movement — How are you staying active each day?",
+  "Sleep — What helps you rest well?",
+  "Connection — Who are you spending time with?",
+  "Purpose — What gives your day meaning?",
+  "Stress — How do you reset and slow down?",
 ];
 
 export default function HostGuidePage() {
@@ -62,20 +62,37 @@ export default function HostGuidePage() {
 
         <section className="py-14">
           <div className="mx-auto max-w-4xl space-y-8 px-6">
-            {GUIDE_SECTIONS.map((section) => (
-              <article key={section.title} className="space-y-3 rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-                <h2 className="text-xl font-semibold text-[var(--life-forest)]">{section.title}</h2>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-[var(--text)]">
-                  {section.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
+            <article className="space-y-4 rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm text-left">
+              <div className="text-center space-y-2">
+                <h2 className="heading-lg">The LIFE Table Guide</h2>
+                <p className="body-md text-[var(--muted)]">Hosting is simple, personal, and driven by the people you invite.</p>
+              </div>
+              <div className="space-y-3">
+                <p className="label-text text-[var(--olive)]">Core Flow</p>
+                <ol className="space-y-2 body-sm text-[var(--text)] list-decimal pl-5">
+                  {CORE_FLOW.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              </div>
+              <div className="space-y-3">
+                <p className="label-text text-[var(--olive)]">Conversation ideas (optional)</p>
+                <p className="body-sm text-[var(--text)]">You can naturally explore topics like:</p>
+                <ul className="space-y-1 body-sm text-[var(--text)] list-disc pl-5">
+                  {CONVERSATION_TOPICS.map((topic) => (
+                    <li key={topic}>{topic}</li>
                   ))}
                 </ul>
-              </article>
-            ))}
-            <div className="text-center">
-              <p className="text-sm text-[var(--muted)]">Optional: Play a game, take a walk, or spend a little more time together.</p>
-              <p className="mt-1 type-body-muted">That’s how LIFE grows.</p>
-            </div>
+                <p className="body-sm text-[var(--muted)]">There’s no need to cover everything—let the conversation flow.</p>
+              </div>
+              <div className="space-y-2">
+                <p className="label-text text-[var(--olive)]">Make it your own</p>
+                <p className="body-sm text-[var(--text)]">Play a simple game—cards, bocce, dice, or something you grew up with.</p>
+                <p className="body-sm text-[var(--text)]">Set screens aside and enjoy time together—talking, moving, and having fun.</p>
+                <p className="body-sm text-[var(--text)]">Most LIFE hosts start with friends or family. Keep it small, grounded, and real.</p>
+                <p className="body-sm text-[var(--text)]">Share what you learn so the next host feels ready.</p>
+              </div>
+            </article>
           </div>
         </section>
 

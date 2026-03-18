@@ -3,7 +3,6 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const HOST_PRIMARY_LINK = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=Host%20a%20LIFE%20Table";
-const HOST_GUIDE_LINK = "/host/guide";
 const REGISTER_LINK = "/register";
 const CONTACT_EMAIL = "mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Support";
 const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
@@ -51,9 +50,6 @@ export default function HostPage() {
             <div className="flex flex-wrap justify-center gap-4 pt-2">
               <a href={HOST_PRIMARY_LINK} className="btn-solid px-8 text-base">
                 Host a LIFE Table
-              </a>
-              <a href={HOST_GUIDE_LINK} className="text-sm text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
-                Download the LIFE Table Guide
               </a>
             </div>
             <p className="text-sm text-[var(--muted)]">Attend a table first, then host within 30 days so the movement keeps momentum.</p>
@@ -114,13 +110,7 @@ export default function HostPage() {
               <p>Set screens aside and enjoy time together—talking, moving, and having fun.</p>
               <p>Most LIFE hosts start with friends or family. Keep it small, grounded, and real.</p>
             </div>
-            <p className="type-body-muted">
-              That’s it. Share what you learn so the next host feels ready.{" "}
-              <a href="/life-table-guide.pdf" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
-                Download the LIFE Table Guide
-              </a>
-              .
-            </p>
+            <p className="type-body-muted">That’s it. Share what you learn so the next host feels ready.</p>
           </div>
         </section>
 
@@ -145,7 +135,7 @@ export default function HostPage() {
             <div className="space-y-1 text-center text-sm text-[var(--muted)]">
               <p>
                 Need the walkthrough?{" "}
-                <a href={HOST_GUIDE_LINK} className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                <a href="/life-table-guide.pdf" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
                   Download the LIFE Table Guide
                 </a>
                 .
