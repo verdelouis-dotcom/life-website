@@ -70,6 +70,7 @@ export default function HowItWorksPage() {
             <h1 className="heading-xl mt-2">How LIFE Works</h1>
             <p className="label-text mt-3 text-[var(--muted)]">Simple. Shared. Meant to be repeated.</p>
             <p className="mt-4 body-lg text-[var(--muted)]">LIFE is built around one idea: bring people together around the table.</p>
+            <p className="mt-3 body-md text-[var(--text)]">A LIFE table is a simple, shared meal where people cook, learn, and connect.</p>
           </div>
         </section>
 
@@ -106,7 +107,7 @@ export default function HowItWorksPage() {
           <div className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
             <h2 className="heading-lg">How We Measure Impact</h2>
             <p className="mt-3 body-md text-[var(--text)]">
-              Registration data, workshop attendance, and host follow-up allow LIFE to report on reach, repeat gatherings, and qualitative
+              Registration data, table attendance, and host follow-up allow LIFE to report on reach, repeat gatherings, and qualitative
               stories. During the pilot we share quarterly summaries with donors and partners so replication decisions stay rooted in data.
             </p>
           </div>
