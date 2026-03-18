@@ -14,7 +14,6 @@ export default function HomeHero() {
               LIFE is a nonprofit that brings people together to cook, share a meal, and build simple habits that support long-term health.
             </p>
           </Reveal>
-          <div aria-hidden />
         </div>
         <Reveal
           delay={120}
