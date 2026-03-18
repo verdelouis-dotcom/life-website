@@ -70,6 +70,8 @@ type PillarPageProps = {
   params: { slug: string };
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return Object.keys(PILLAR_CONTENT).map((slug) => ({ slug }));
 }
