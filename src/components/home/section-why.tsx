@@ -6,7 +6,7 @@ export default function SectionWhy() {
       <div className="mx-auto grid max-w-5xl items-center gap-8 px-6 md:grid-cols-2">
         <div className="rounded-[32px] border border-[var(--border)] bg-[#fff8ef] card-padding text-center shadow-sm space-y-6">
           <p className="label-text text-[var(--olive)]">Why It Matters</p>
-          <p className="heading-lg leading-relaxed">
+          <p className="body-lg leading-relaxed">
             We didn’t lose our health overnight.
             <br />
             <br />
