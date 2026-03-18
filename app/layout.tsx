@@ -48,33 +48,34 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "LIFE | Longevity Initiative for Food & Education",
-  description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
+  title: "Longevity Initiative for Food & Education",
+  description: "Rebuilding health and community one table at a time.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "LIFE | Longevity Initiative for Food & Education",
-    description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
+    title: "Longevity Initiative for Food & Education",
+    description: "Rebuilding health and community one table at a time.",
     url: SITE_URL,
+    siteName: "Longevity Initiative for Food & Education",
     images: [
       {
-        url: "/images/logo.png",
-        width: 1024,
-        height: 572,
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LIFE | Longevity Initiative for Food & Education",
-    description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
-    images: ["/images/logo.png"],
+    title: "Longevity Initiative for Food & Education",
+    description: "Rebuilding health and community one table at a time.",
+    images: ["/twitter-image.png"],
   },
   icons: {
-    icon: "/brand/favicon-32.png",
-    shortcut: "/brand/favicon-16.png",
-    apple: "/brand/apple-touch-icon.png",
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 };
 
