@@ -5,8 +5,8 @@ import Reveal from "@/components/ui/reveal";
 
 const EXPERIENCE_IMAGES = [
   { src: "/images/workshops/pasta-lesson-1.jpg", alt: "Hands guiding pasta dough through a roller" },
-  { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Couple making pasta together" },
-  { src: "/images/workshops/IMG_9432.jpeg", alt: "Guests plating pasta together" },
+  { src: "/images/workshops/pasta-lesson-3.jpeg", alt: "Hosts shaping fresh pasta" },
+  { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Table leader coaching guests" },
 ];
 
 export default function SectionTables() {
@@ -20,7 +20,7 @@ export default function SectionTables() {
         <div className="grid gap-6 md:grid-cols-3">
           {EXPERIENCE_IMAGES.map((image, index) => (
             <Reveal key={image.src} delay={index * 80} className="overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-sm">
-              <div className="relative aspect-square w-full">
+              <div className="relative aspect-[3/4] w-full">
                 <Image src={image.src} alt={image.alt} fill className="object-cover object-center" sizes="(min-width: 768px) 33vw, 100vw" />
               </div>
             </Reveal>

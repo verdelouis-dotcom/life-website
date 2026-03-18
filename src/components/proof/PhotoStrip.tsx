@@ -13,10 +13,13 @@ interface PhotoStripProps {
   title?: string;
   description?: string;
   photos: PhotoItem[];
+  imageAspect?: "landscape" | "portrait";
 }
 
-export default function PhotoStrip({ eyebrow, title, description, photos }: PhotoStripProps) {
+export default function PhotoStrip({ eyebrow, title, description, photos, imageAspect = "landscape" }: PhotoStripProps) {
   if (!photos.length) return null;
+
+  const aspectClass = imageAspect === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]";
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-14">
@@ -27,7 +30,7 @@ export default function PhotoStrip({ eyebrow, title, description, photos }: Phot
         <div className="mt-6 grid gap-5 md:grid-cols-3">
           {photos.map((photo) => (
             <figure key={photo.src} className="space-y-2">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[32px] border border-[var(--border)] bg-[var(--surface)]">
+              <div className={`relative ${aspectClass} overflow-hidden rounded-[32px] border border-[var(--border)] bg-[var(--surface)]`}>
                 <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
               {photo.caption && <figcaption className="text-xs text-[var(--muted)]">{photo.caption}</figcaption>}

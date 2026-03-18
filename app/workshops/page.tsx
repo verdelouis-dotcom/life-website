@@ -102,10 +102,11 @@ export default function TablesPage() {
           eyebrow="Table snapshots"
           title="Hands-on cooking moments"
           description="Pilot gatherings focus on cooking with fresh ingredients, practicing the LIFE assessment, and equipping new hosts to lead the next table."
+          imageAspect="portrait"
           photos={[
-            { src: "/images/workshops/IMG_8060.jpeg", alt: "Volunteers preparing vegetables", caption: "Fresh ingredient prep" },
+            { src: "/images/workshops/IMG_6709.jpeg", alt: "Hosts guiding pasta at the stove", caption: "Fresh ingredient prep" },
             { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Table participants rolling pasta", caption: "Hands-on learning" },
-            { src: "/images/workshops/IMG_9432.jpeg", alt: "Group meal at a LIFE table", caption: "Shared table reflection" },
+            { src: "/images/workshops/31525/IMG_9391.jpeg", alt: "Guests sharing the finished meal", caption: "Shared table reflection" },
           ]}
         />
 
