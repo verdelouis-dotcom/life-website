@@ -6,7 +6,7 @@ import Reveal from "@/components/ui/reveal";
 const EXPERIENCE_IMAGES = [
   { src: "/images/workshops/pasta-lesson-1.jpg", alt: "Hands guiding pasta dough through a roller" },
   { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Couple making pasta together" },
-  { src: "/images/workshops/IMG_8145.JPG", alt: "Guests plating pasta together" },
+  { src: "/images/workshops/IMG_9432.jpeg", alt: "Guests plating pasta together" },
 ];
 
 export default function SectionTables() {

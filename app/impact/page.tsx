@@ -139,8 +139,8 @@ export default function ImpactPage() {
           title="How the shared table looks in practice"
           description="Images from Georgia and early partner cities show small, measurable gatherings where meals become a framework for accountability."
           photos={[
-            { src: "/images/table/IMG_9433.jpeg", alt: "Families preparing a LIFE meal", caption: "Cooking together" },
-            { src: "/images/table/table3.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE table" },
+            { src: "/images/table/IMG_9449.JPG", alt: "Families preparing a LIFE meal", caption: "Cooking together" },
+            { src: "/images/table/table4.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE table" },
             { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Table leader guiding participants", caption: "Pilot table coaching" },
           ]}
         />

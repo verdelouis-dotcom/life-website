@@ -110,13 +110,6 @@ export default function AboutPage() {
               <li>• Donations underwrite ingredients, host toolkits, and reporting—not overhead.</li>
             </ul>
           </article>
-          <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Service Area &amp; Partners</h2>
-            <p className="mt-3 text-sm leading-6 text-[var(--text)]">
-              LIFE began in Georgia and now works with early hosts in Atlanta, Rochester, and Austin. Neighborhood associations, faith communities,
-              and local food nonprofits help bring the model to life while data from each city determines when new locations are ready.
-            </p>
-          </article>
         </section>
 
         <PhotoHighlight

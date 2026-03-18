@@ -36,7 +36,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     hostedDate: "April 2026",
   },
   {
-    src: "/images/table/table3.jpeg",
+    src: "/images/table/table4.jpeg",
     alt: "Set table with olive oil and herbs",
     city: "Roswell",
     state: "GA",

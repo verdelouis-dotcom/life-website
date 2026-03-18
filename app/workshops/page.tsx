@@ -105,7 +105,7 @@ export default function TablesPage() {
           photos={[
             { src: "/images/workshops/IMG_8060.jpeg", alt: "Volunteers preparing vegetables", caption: "Fresh ingredient prep" },
             { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Table participants rolling pasta", caption: "Hands-on learning" },
-            { src: "/images/workshops/IMG_8145.JPG", alt: "Group meal at a LIFE table", caption: "Shared table reflection" },
+            { src: "/images/workshops/IMG_9432.jpeg", alt: "Group meal at a LIFE table", caption: "Shared table reflection" },
           ]}
         />
 

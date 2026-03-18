@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/reveal";
 const PROOF_IMAGES = [
   { src: "/images/workshops/IMG_8060.jpeg", alt: "Neighbors preparing vegetables together" },
   { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Couple rolling pasta dough during a LIFE table" },
-  { src: "/images/workshops/IMG_8145.JPG", alt: "Guests sharing a plated meal" },
+  { src: "/images/workshops/IMG_9432.jpeg", alt: "Guests sharing a plated meal" },
 ];
 
 export default function SectionProof() {
