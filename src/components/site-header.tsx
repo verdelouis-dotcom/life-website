@@ -2,6 +2,7 @@ import Link from "next/link";
 import BrandLogo from "@/components/brand-logo";
 
 type NavItem = { href?: string; label?: string; type?: "resources" };
+type ResourceLink = { href: string; label: string; external?: boolean };
 
 const PRIMARY_NAV: NavItem[] = [
   { href: "/", label: "Home" },
@@ -13,7 +14,7 @@ const PRIMARY_NAV: NavItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
-const RESOURCE_LINKS = [
+const RESOURCE_LINKS: ResourceLink[] = [
   { href: "/assessment", label: "Take the Assessment" },
   { href: "/life-guide", label: "LIFE Guide" },
   { href: "/host/guide", label: "Host Guide" },
