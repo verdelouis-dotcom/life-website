@@ -5,12 +5,17 @@ const PRIMARY_NAV = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/assessment", label: "Assessment" },
   { href: "/host", label: "Host" },
   { href: "/workshops", label: "Tables" },
   { href: "/the-life-challenge", label: "The LIFE Challenge" },
   { href: "/donate", label: "Donate" },
   { href: "/contact", label: "Contact" },
+];
+
+const RESOURCE_LINKS = [
+  { href: "/assessment", label: "Take the Assessment" },
+  { href: "/host/guide", label: "Host Guide" },
+  { href: "/life-coach-guide.pdf", label: "LIFE Coach Guide", external: true },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (
@@ -44,9 +49,37 @@ export default function SiteHeader() {
             {PRIMARY_NAV.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
+            <ResourcesMenu />
           </nav>
         </div>
       </header>
     </div>
+  );
+}
+
+function ResourcesMenu() {
+  return (
+    <details className="group relative [&>summary::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer items-center rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] focus:outline-none">
+        Resources
+      </summary>
+      <div className="absolute right-0 mt-2 w-56 rounded-2xl border border-[var(--border)] bg-white/95 p-4 text-left shadow-xl">
+        <ul className="space-y-2">
+          {RESOURCE_LINKS.map((link) => (
+            <li key={link.href}>
+              {link.external ? (
+                <a href={link.href} target="_blank" rel="noreferrer" className="text-sm text-[var(--text)] transition hover:text-[var(--life-forest)]">
+                  {link.label}
+                </a>
+              ) : (
+                <Link href={link.href} className="text-sm text-[var(--text)] transition hover:text-[var(--life-forest)]" prefetch={false}>
+                  {link.label}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
   );
 }

@@ -6,6 +6,7 @@ import SectionWhoWeAre from "@/components/home/section-who-we-are";
 import SectionHowWeDoIt from "@/components/home/section-how-we-do-it";
 import SectionWhy from "@/components/home/section-why";
 import { SectionPillars } from "@/components/home/section-pillars";
+import SectionNextStep from "@/components/home/section-next-step";
 
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
@@ -39,6 +40,7 @@ export default function HomePage() {
         <SectionHowWeDoIt />
         <SectionWhy />
         <SectionPillars />
+        <SectionNextStep />
       </main>
       <SiteFooter />
     </>

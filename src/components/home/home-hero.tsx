@@ -18,11 +18,11 @@ export default function HomeHero() {
         </Reveal>
         <Reveal delay={180}>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link href="/assessment" className="btn-solid px-8 text-base">
-              Take the Assessment
-            </Link>
-            <Link href="/host" className="btn-outline px-8 text-base">
+            <Link href="/host" className="btn-solid px-8 text-base">
               Host a LIFE Table
+            </Link>
+            <Link href="/donate" className="btn-outline px-8 text-base">
+              Donate
             </Link>
           </div>
         </Reveal>
