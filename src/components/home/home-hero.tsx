@@ -9,12 +9,10 @@ export default function HomeHero() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">Public-Benefit Initiative</p>
         </Reveal>
         <Reveal delay={60}>
-          <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] md:text-5xl">
-            The table used to bring us together. Now it’s disappearing—and it’s costing us.
-          </h1>
+          <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] md:text-5xl">Longevity starts at the table.</h1>
         </Reveal>
         <Reveal delay={120}>
-          <p className="mt-4 text-lg text-[var(--muted)]">Longevity starts at the table.</p>
+          <p className="mt-4 text-lg text-[var(--muted)]">And it’s disappearing.</p>
         </Reveal>
         <Reveal delay={180}>
           <div className="mt-8 flex flex-wrap justify-center gap-4">

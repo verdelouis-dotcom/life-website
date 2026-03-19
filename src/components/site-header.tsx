@@ -1,21 +1,22 @@
 import Link from "next/link";
 import BrandLogo from "@/components/brand-logo";
 
-const PRIMARY_NAV = [
+type NavItem = { href?: string; label?: string; type?: "resources" };
+
+const PRIMARY_NAV: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/host", label: "Host" },
-  { href: "/workshops", label: "LIFE Workshops" },
-  { href: "/the-life-challenge", label: "The LIFE Challenge" },
+  { type: "resources" },
   { href: "/donate", label: "Donate" },
   { href: "/contact", label: "Contact" },
 ];
 
 const RESOURCE_LINKS = [
   { href: "/assessment", label: "Take the Assessment" },
+  { href: "/life-guide", label: "LIFE Guide" },
   { href: "/host/guide", label: "Host Guide" },
-  { href: "/life-coach-guide.pdf", label: "LIFE Coach Guide", external: true },
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (
@@ -46,10 +47,9 @@ export default function SiteHeader() {
           </div>
 
           <nav className="flex flex-wrap items-center gap-2 text-sm md:justify-end">
-            {PRIMARY_NAV.map((item) => (
-              <NavLink key={item.href} {...item} />
-            ))}
-            <ResourcesMenu />
+            {PRIMARY_NAV.map((item, index) =>
+              item.type === "resources" ? <ResourcesMenu key={`resources-${index}`} /> : <NavLink key={item.href} href={item.href!} label={item.label!} />
+            )}
           </nav>
         </div>
       </header>

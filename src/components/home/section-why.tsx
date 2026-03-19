@@ -5,7 +5,7 @@ Chronic illness is accelerating.
 
 These aren’t separate problems—they’re all connected.
 
-LIFE exists to restore the daily habits that bring people back to health, back to connection, and back to the LIFE workshop—where those habits actually stick.`;
+LIFE exists to restore the daily habits that bring people back to health, back to connection, and back to the table—where those habits actually stick.`;
 
 export default function SectionWhy() {
   return (

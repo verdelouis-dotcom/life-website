@@ -3,7 +3,7 @@ import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/the-life-challenge";
+const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/life-guide";
 const GUIDE_ITEMS = [
   { title: "Recipes", body: "Simple meal ideas built around real, fresh ingredients." },
   { title: "Daily Habit Tracker", body: "A printable list of habits participants can check off throughout the week." },
@@ -17,8 +17,8 @@ const STEPS = [
     body: "Participants gather around the LIFE workshop, share a meal, and experience the LIFE model firsthand.",
   },
   {
-    title: "Take the challenge home",
-    body: "Each participant receives the full LIFE Challenge guide with recipes, tips, and the full list of habits.",
+    title: "Take the guide home",
+    body: "Each participant receives the full LIFE Guide with recipes, tips, and the full list of habits.",
   },
   {
     title: "Put it into practice",
@@ -27,27 +27,27 @@ const STEPS = [
 ];
 
 const WORKSHOP_LINK = "/workshops";
-const CHALLENGE_PDF = "/life-7-day-challenge.pdf";
+const GUIDE_PDF = "/life-7-day-challenge.pdf";
 
 export const metadata: Metadata = {
-  title: "The LIFE Challenge | Longevity Initiative for Food & Education",
+  title: "LIFE Guide | Longevity Initiative for Food & Education",
   description:
-    "Learn how the LIFE Challenge take-home guide helps workshop participants keep building healthier habits with recipes, tips, and daily practices.",
+    "Learn how the LIFE Guide helps workshop participants keep building healthier habits with recipes, tips, and daily practices.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "The LIFE Challenge",
+    title: "LIFE Guide",
     description:
-      "Workshop participants receive the LIFE Challenge guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
+      "Workshop participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
     url: PAGE_URL,
   },
   twitter: {
-    title: "The LIFE Challenge",
+    title: "LIFE Guide",
     description:
-      "Workshop participants receive the LIFE Challenge guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
+      "Workshop participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
   },
 };
 
-export default function LifeChallengePage() {
+export default function LifeGuidePage() {
   return (
     <>
       <SiteHeader />
@@ -55,15 +55,15 @@ export default function LifeChallengePage() {
         <section className="mx-auto max-w-5xl px-6 py-16">
           <div className="space-y-5 rounded-[40px] border border-[var(--border)] bg-white/95 p-10 shadow-sm">
             <p className="type-eyebrow text-[var(--olive)]">TAKE IT HOME</p>
-            <h1 className="text-4xl font-semibold text-[var(--life-forest)]">The LIFE Challenge</h1>
+            <h1 className="text-4xl font-semibold text-[var(--life-forest)]">The LIFE Guide</h1>
             <p className="text-lg text-[var(--muted)]">
-              After attending a LIFE workshop, participants receive the complete LIFE Challenge guide — a practical take-home resource filled with recipes, simple tips, and daily habits that help bring healthier, more connected living into the home.
+              After attending a LIFE workshop, participants receive the complete LIFE Guide — a practical take-home resource filled with recipes, simple tips, and daily habits that help bring healthier, more connected living into the home.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href={WORKSHOP_LINK} className="btn-solid px-8 text-base">
                 Attend a Workshop
               </Link>
-              <a href={CHALLENGE_PDF} className="btn-outline px-8 text-base" target="_blank" rel="noreferrer">
+              <a href={GUIDE_PDF} className="btn-outline px-8 text-base" target="_blank" rel="noreferrer">
                 Download the 7-Day Challenge
               </a>
             </div>
@@ -74,7 +74,7 @@ export default function LifeChallengePage() {
           <div className="space-y-4 rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
             <h2 className="text-3xl font-semibold text-[var(--life-forest)]">What’s inside the guide</h2>
             <p className="text-sm leading-6 text-[var(--text)]">
-              The LIFE Challenge is designed to help people take what they experienced at the LIFE workshop and continue it at home. It turns the workshop into something practical, repeatable, and easy to share with others.
+              The LIFE Guide is designed to help people take what they experienced at the LIFE workshop and continue it at home. It turns the workshop into something practical, repeatable, and easy to share with others.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               {GUIDE_ITEMS.map((item) => (
@@ -93,7 +93,7 @@ export default function LifeChallengePage() {
             <p className="text-sm leading-6 text-[var(--text)]">
               The goal of LIFE is not just to create a meaningful workshop experience. It is to help people bring healthier habits, stronger connection, and a more intentional way of living into their everyday routine.
             </p>
-            <p className="text-sm leading-6 text-[var(--text)]">The challenge guide helps turn one experience into repeated action.</p>
+            <p className="text-sm leading-6 text-[var(--text)]">The guide helps turn one experience into repeated action.</p>
           </div>
         </section>
 
@@ -116,7 +116,7 @@ export default function LifeChallengePage() {
           <div className="space-y-4 rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
             <h2 className="text-3xl font-semibold text-[var(--life-forest)]">Built for real life</h2>
             <p className="text-sm leading-6 text-[var(--text)]">
-              The LIFE Challenge is meant to work in real homes, with real schedules, and real families. The habits are simple, practical, and designed to fit into daily life one step at a time.
+              The LIFE Guide is meant to work in real homes, with real schedules, and real families. The habits are simple, practical, and designed to fit into daily life one step at a time.
             </p>
           </div>
         </section>
@@ -132,7 +132,7 @@ export default function LifeChallengePage() {
               <Link href={WORKSHOP_LINK} className="btn-solid px-8 text-base">
                 Attend a Workshop
               </Link>
-              <a href={CHALLENGE_PDF} className="btn-outline px-8 text-base" target="_blank" rel="noreferrer">
+              <a href={GUIDE_PDF} className="btn-outline px-8 text-base" target="_blank" rel="noreferrer">
                 Download the 7-Day Challenge
               </a>
             </div>
