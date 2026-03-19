@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import HomeHero from "@/components/home/home-hero";
 import SectionWhoWeAre from "@/components/home/section-who-we-are";
 import SectionWhy from "@/components/home/section-why";
 import SectionHowWeDoIt from "@/components/home/section-how-we-do-it";
@@ -36,7 +35,6 @@ export default function HomePage() {
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
-        <HomeHero />
         <SectionWhoWeAre />
         <SectionWhy />
         <SectionHowWeDoIt />

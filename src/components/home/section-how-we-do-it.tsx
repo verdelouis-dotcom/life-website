@@ -7,9 +7,9 @@ const CARDS = [
 export default function SectionHowWeDoIt() {
   return (
     <section className="bg-white text-[var(--text)]">
-      <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">How We Do It</p>
-        <h2 className="mb-4 text-3xl font-semibold tracking-tight text-[var(--life-forest)] md:text-4xl">Attend. Apply. Host.</h2>
+      <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">How We Do It</p>
+        <h2 className="mb-6 text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">Simple habits. Shared meals. Repeated.</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {CARDS.map((card) => (
             <article key={card.title} className="rounded-3xl border border-[var(--border)] bg-[#fffdf9] p-6 shadow-sm">
@@ -18,7 +18,7 @@ export default function SectionHowWeDoIt() {
             </article>
           ))}
         </div>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-700 md:text-lg">
+        <p className="mt-8 max-w-3xl text-base leading-relaxed text-neutral-700 md:text-lg">
           People come together for a shared meal, learn simple habits they can apply in their own lives, and pass them on by hosting others—growing the movement one table at a time.
         </p>
       </div>
