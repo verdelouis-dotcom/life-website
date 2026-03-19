@@ -241,23 +241,23 @@ export function calculateLongevityPotential(lifeHabitsScore: number, pillarScore
 }
 
 function scoreQuestion(id: AssessmentQuestionId, value: string | undefined): number {
-  const LIFE workshop = HABIT_OPTION_SCORES[id];
-  if (!LIFE workshop) {
+  const optionScores = HABIT_OPTION_SCORES[id];
+  if (!optionScores) {
     return 60;
   }
 
   if (!value) {
     return 60;
   }
-  return LIFE workshop[value] ?? 60;
+  return optionScores[value] ?? 60;
 }
 
 function scoreOptionalMarker(key: OptionalMarkerKey, value: string | undefined) {
   if (!value) {
     return 60;
   }
-  const LIFE workshop = OPTIONAL_MARKER_SCORES[key];
-  return LIFE workshop[value] ?? 60;
+  const markerScores = OPTIONAL_MARKER_SCORES[key];
+  return markerScores[value] ?? 60;
 }
 
 function buildScoreMap(values: string[], scale: readonly number[] = SCORE_SCALE) {
