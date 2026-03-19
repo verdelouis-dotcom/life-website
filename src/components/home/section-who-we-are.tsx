@@ -15,9 +15,6 @@ export default function SectionWhoWeAre() {
           <Link href="/how-it-works" className="btn-solid px-6 text-sm md:px-8">
             Start Here
           </Link>
-          <Link href="/support-us" className="btn-outline px-6 text-sm md:px-8">
-            Support LIFE
-          </Link>
         </div>
       </div>
     </section>
