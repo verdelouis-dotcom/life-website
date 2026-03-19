@@ -11,7 +11,7 @@ const OPTIONS = [
   {
     title: "Support the Movement",
     description: "Underwrite LIFE workshops, ingredients, and educational tools so more LIFE workshops can launch.",
-    cta: { label: "Donate", href: "/donate" },
+    cta: { label: "Support Us", href: "/donate" },
   },
   {
     title: "Bring LIFE to Your Group",

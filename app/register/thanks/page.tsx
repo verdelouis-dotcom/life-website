@@ -33,7 +33,7 @@ export default function RegisterThanksPage() {
           <p className="mt-4 type-lede text-[var(--muted)]">Your LIFE workshop has been recorded as community participation.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/donate" className="btn-outline px-6 text-base">
-              Donate
+              Support Us
             </Link>
             <Link
               href="/register"

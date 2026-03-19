@@ -34,7 +34,7 @@ const PATHS = [
   {
     title: "Support the Movement",
     description: "Underwrite ingredients, LIFE workshops, and educational tools so more LIFE workshops can launch across communities.",
-    ctaLabel: "Donate",
+    ctaLabel: "Support Us",
     href: "/donate",
     highlight: false,
   },

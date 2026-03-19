@@ -10,7 +10,7 @@ const PRIMARY_NAV: NavItem[] = [
   { href: "/how-it-works", label: "How It Works" },
   { href: "/host", label: "Host" },
   { type: "resources" },
-  { href: "/donate", label: "Donate" },
+  { href: "/donate", label: "Support Us" },
   { href: "/contact", label: "Contact" },
 ];
 

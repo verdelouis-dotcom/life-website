@@ -5,7 +5,7 @@ const LINKS = [
   { label: "About LIFE", href: "/about" },
   { label: "Impact & Accountability", href: "/impact" },
   { label: "Resources & Pillars", href: "/resources" },
-  { label: "Donate", href: "/donate" },
+  { label: "Support Us", href: "/donate" },
   { label: "Newsletter", href: "/newsletter" },
 ];
 

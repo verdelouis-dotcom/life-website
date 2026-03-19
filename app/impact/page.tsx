@@ -160,7 +160,7 @@ export default function ImpactPage() {
                 Host a LIFE Workshop
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
-                Donate
+                Support Us
               </Link>
               <Link href="/contact" className="btn-outline px-8 text-base">
                 Contact LIFE

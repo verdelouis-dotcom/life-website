@@ -5,7 +5,7 @@ const LINKS = [
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/host", label: "Host a LIFE Workshop" },
-  { href: "/donate", label: "Donate" },
+  { href: "/donate", label: "Support Us" },
   { href: "/contact", label: "Contact LIFE" },
 ];
 

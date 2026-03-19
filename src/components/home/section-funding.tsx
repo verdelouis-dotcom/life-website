@@ -14,7 +14,7 @@ export default function SectionFunding() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="space-y-8 rounded-[40px] border border-[var(--border)] bg-white/90 px-8 py-10 text-center shadow-sm">
           <Reveal className="space-y-3">
-            <h2 className="section-heading">Donate</h2>
+            <h2 className="section-heading">Support Us</h2>
             <p className="type-body-muted">
               Hosting twelve LIFE workshops each year requires ingredients, tools, and educational materials. Donations help LIFE provide those
               resources, support community education, and measure participation responsibly.
@@ -36,11 +36,8 @@ export default function SectionFunding() {
             <p className="type-body-muted">Your support helps the program grow responsibly while maintaining a simple, replicable structure.</p>
           </Reveal>
           <Reveal>
-            <Link
-              href="/donate"
-              className="btn-outline px-8"
-            >
-              Donate
+            <Link href="/donate" className="btn-outline px-8">
+              Support Us
             </Link>
           </Reveal>
         </div>

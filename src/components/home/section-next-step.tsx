@@ -15,7 +15,7 @@ export default function SectionNextStep() {
             Host a LIFE Workshop
           </Link>
           <Link href={DONATE_LINK} className="btn-outline px-8 text-base">
-            Donate
+            Support Us
           </Link>
         </div>
       </div>
