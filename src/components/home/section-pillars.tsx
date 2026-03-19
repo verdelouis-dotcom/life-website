@@ -15,7 +15,7 @@ export function SectionPillars() {
     <section className="bg-white text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-8 px-6 py-24 text-center md:py-32">
         <Reveal className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">The Six Pillars</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:text-base">The Six Pillars</p>
           <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">The 6 Pillars of LIFE</h2>
           <p className="text-base leading-relaxed text-[var(--muted)] md:text-lg">Each pillar represents a simple foundation of long-term health. Click to explore how it shows up at a LIFE workshop.</p>
         </Reveal>
