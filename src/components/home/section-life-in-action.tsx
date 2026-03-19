@@ -14,8 +14,9 @@ export default function SectionLifeInAction() {
     <section className="bg-[#fff8ef] text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-8 px-6 py-24 text-center md:py-32">
         <Reveal className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:text-base">Life in Action</p>
-          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">Real people. Real workshops. Real connection.</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:text-base">Proof</p>
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">Life in Action</h2>
+          <p className="text-lg leading-relaxed text-neutral-800">Real people. Real workshops. Real connection.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
           {EXPERIENCE_IMAGES.map((image, index) => (

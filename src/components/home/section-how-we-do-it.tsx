@@ -8,8 +8,9 @@ export default function SectionHowWeDoIt() {
   return (
     <section className="bg-white text-[var(--text)]">
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-        <p className="mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:mb-8 md:text-base">How We Do It</p>
-        <h2 className="mb-6 text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">Simple habits. Shared meals. Repeated.</h2>
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:mb-6 md:text-base">The LIFE Model</p>
+        <h2 className="mb-6 text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">How We Do It</h2>
+        <p className="mb-8 text-lg leading-relaxed text-neutral-800">Simple habits. Shared meals. Repeated.</p>
         <div className="grid gap-4 md:grid-cols-3">
           {CARDS.map((card) => (
             <article key={card.title} className="rounded-3xl border border-[var(--border)] bg-[#fffdf9] p-6 shadow-sm">
