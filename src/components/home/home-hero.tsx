@@ -1,32 +1,30 @@
-import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
 
 export default function HomeHero() {
   return (
-    <section className="section-spacing bg-gradient-to-br from-[#fff1e2] via-[#fffdf7] to-[#f4efe6]">
-      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-[1.1fr,0.9fr] md:items-stretch">
-        <div className="flex h-full flex-col gap-6 rounded-[32px] border border-[var(--border)] bg-white/90 card-padding shadow-lg">
-          <Reveal>
-            <h1 className="heading-xl">Longevity starts at the table.</h1>
-          </Reveal>
-          <Reveal>
-            <p className="body-lg text-[var(--text)]">
-              LIFE is a nonprofit that provides you with the proven steps to strip away the habits that negatively impact your long-term health
-              and intimacy with your loved ones.
-            </p>
-          </Reveal>
-        </div>
-        <Reveal
-          delay={120}
-          className="relative w-full overflow-hidden rounded-[36px] border border-[var(--border)] shadow-xl min-h-[360px] md:min-h-[520px]"
-        >
-          <Image
-            src="/images/farm/farm3.jpg"
-            alt="Community members preparing ingredients at a LIFE table"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+    <section className="bg-gradient-to-br from-[#fff1e2] via-[#fffdf7] to-[#f4efe6]">
+      <div className="mx-auto flex max-w-3xl flex-col items-center px-6 py-20 text-center md:py-28">
+        <Reveal>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500">Public-Benefit Initiative</p>
+        </Reveal>
+        <Reveal delay={60}>
+          <h1 className="text-4xl font-semibold leading-tight text-[var(--life-forest)] md:text-5xl">
+            The table used to bring us together. Now it’s disappearing—and it’s costing us.
+          </h1>
+        </Reveal>
+        <Reveal delay={120}>
+          <p className="mt-4 text-lg text-[var(--muted)]">Longevity starts at the table.</p>
+        </Reveal>
+        <Reveal delay={180}>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link href="/assessment" className="btn-solid px-8 text-base">
+              Take the Assessment
+            </Link>
+            <Link href="/host" className="btn-outline px-8 text-base">
+              Host a LIFE Table
+            </Link>
+          </div>
         </Reveal>
       </div>
     </section>

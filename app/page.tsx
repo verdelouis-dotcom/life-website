@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import HomeHero from "@/components/home/home-hero";
-import SectionModel from "@/components/home/section-model";
-import { SectionPillars } from "@/components/home/section-pillars";
+import SectionWhoWeAre from "@/components/home/section-who-we-are";
+import SectionHowWeDoIt from "@/components/home/section-how-we-do-it";
 import SectionWhy from "@/components/home/section-why";
-import SectionProof from "@/components/home/section-proof";
-import SectionFinalCTA from "@/components/home/section-final-cta";
+import { SectionPillars } from "@/components/home/section-pillars";
 
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
@@ -36,11 +35,10 @@ export default function HomePage() {
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <HomeHero />
-        <SectionModel />
-        <SectionPillars />
+        <SectionWhoWeAre />
+        <SectionHowWeDoIt />
         <SectionWhy />
-        <SectionProof />
-        <SectionFinalCTA />
+        <SectionPillars />
       </main>
       <SiteFooter />
     </>

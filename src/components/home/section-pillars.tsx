@@ -12,8 +12,8 @@ const PILLARS = [
 
 export function SectionPillars() {
   return (
-    <section className="section-spacing bg-white text-[var(--text)]">
-      <div className="mx-auto max-w-5xl space-y-8 px-6">
+    <section className="bg-white text-[var(--text)]">
+      <div className="mx-auto max-w-5xl space-y-8 px-6 py-20 md:py-28">
         <Reveal className="space-y-3 text-center">
           <p className="label-text text-[var(--olive)]">The LIFE Framework</p>
           <h2 className="heading-lg">The 6 Pillars of LIFE</h2>
