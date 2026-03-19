@@ -7,7 +7,7 @@ const CARDS = [
 export default function SectionHowWeDoIt() {
   return (
     <section className="bg-white text-[var(--text)]">
-      <div className="mx-auto max-w-5xl px-6 py-20 md:py-24">
+      <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
         <h2 className="mb-6 text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">How We Do It</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {CARDS.map((card) => (
