@@ -15,7 +15,7 @@ export const PILLARS: PillarDetail[] = [
     color: "#5e7d5a",
     summary: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health and reduce chronic disease risk.",
     intro:
-      "LIFE teaches hosts how to center every table on cooking with fresh ingredients—vegetables, legumes, olive oil, and seafood—while limiting added sugars and refined oils.",
+      "LIFE teaches hosts how to center every LIFE workshop on cooking with fresh ingredients—vegetables, legumes, olive oil, and seafood—while limiting added sugars and refined oils.",
     reasons: [
       {
         heading: "Cardiometabolic protection",
@@ -46,11 +46,11 @@ export const PILLARS: PillarDetail[] = [
     reasons: [
       {
         heading: "Metabolic boosts",
-        text: "WHO guidelines show that 150 minutes of moderate activity weekly lowers all-cause mortality by 20–30%. LIFE tables encourage cumulative movement bursts every month.",
+        text: "WHO guidelines show that 150 minutes of moderate activity weekly lowers all-cause mortality by 20–30%. LIFE workshops encourage cumulative movement bursts every month.",
       },
       {
         heading: "Functional strength",
-        text: "Handling ingredients, stirring, kneading dough, and setting tables train grip strength and balance—predictors of independence in longevity research.",
+        text: "Handling ingredients, stirring, kneading dough, and setting LIFE workshops train grip strength and balance—predictors of independence in longevity research.",
       },
       {
         heading: "Social accountability",
@@ -80,7 +80,7 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Recovery ritual",
-        text: "LIFE tables end with calming tea, breathwork, and screen-free commitments so the nervous system can downshift before bed and make the next day’s routines easier to sustain.",
+        text: "LIFE workshops end with calming tea, breathwork, and screen-free commitments so the nervous system can downshift before bed and make the next day’s routines easier to sustain.",
       },
     ],
     references: [
@@ -95,7 +95,7 @@ export const PILLARS: PillarDetail[] = [
     summary:
       "Strong relationships, shared meals, and social support help reduce isolation and reinforce healthier, longer lives.",
     intro:
-      "Every LIFE table is facilitated eye contact, gratitude rituals, and intentional prompts so each guest is seen, heard, and encouraged to invite the next table—creating a replicating, community-powered network of care.",
+      "Every LIFE workshop is facilitated eye contact, gratitude rituals, and intentional prompts so each guest is seen, heard, and encouraged to invite the next LIFE workshop—creating a replicating, community-powered network of care.",
     reasons: [
       {
         heading: "Reduced loneliness",
@@ -107,7 +107,7 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Shared-resource safety net",
-        text: "Hosts log each table, trade produce and caregiving time, and keep invitations circulating so neighbors have a reliable micro-community for future support or emergencies.",
+        text: "Hosts log each LIFE workshop, trade produce and caregiving time, and keep invitations circulating so neighbors have a reliable micro-community for future support or emergencies.",
       },
     ],
     references: [
@@ -162,7 +162,7 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Sleep readiness",
-        text: "Evening tables end with reflective prompts and herbal teas, improving sleep onset per American Academy of Sleep Medicine guidance.",
+        text: "Evening LIFE workshops end with reflective prompts and herbal teas, improving sleep onset per American Academy of Sleep Medicine guidance.",
       },
     ],
     references: [

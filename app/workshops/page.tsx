@@ -10,55 +10,55 @@ import { WORKSHOP_PROOF } from "@/data/proof";
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/workshops";
 
 export const metadata: Metadata = {
-  title: "Longevity Cooking Tables | LIFE Community Program",
+  title: "LIFE Workshops | Longevity Cooking Gatherings",
   description:
-    "Learn longevity principles through Mediterranean cooking tables and shared meals designed to improve health and connection.",
+    "Learn longevity principles through Mediterranean cooking workshops and shared meals designed to improve health and connection.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Longevity Cooking Tables | LIFE Community Program",
+    title: "LIFE Workshops | Longevity Cooking Gatherings",
     description:
-      "Learn longevity principles through Mediterranean cooking tables and shared meals designed to improve health and connection.",
+      "Learn longevity principles through Mediterranean cooking workshops and shared meals designed to improve health and connection.",
     url: PAGE_URL,
   },
   twitter: {
-    title: "Longevity Cooking Tables | LIFE Community Program",
+    title: "LIFE Workshops | Longevity Cooking Gatherings",
     description:
-      "Learn longevity principles through Mediterranean cooking tables and shared meals designed to improve health and connection.",
+      "Learn longevity principles through Mediterranean cooking workshops and shared meals designed to improve health and connection.",
   },
 };
 
 const WORKSHOPS_FAQ = [
   {
-    question: "What does a LIFE table include?",
+    question: "What does a LIFE workshop include?",
     answer:
-      "Each session involves cooking together, the LIFE Longevity Assessment, and facilitation practice so attendees feel confident hosting the next table.",
+      "Each session involves cooking together, the LIFE Longevity Assessment, and facilitation practice so attendees feel confident hosting the next LIFE workshop.",
   },
   {
-    question: "Who are tables for?",
+    question: "Who are LIFE workshops for?",
     answer:
       "We currently serve households, churches, nonprofits, and corporate wellness teams in Atlanta, Rochester, and Austin who want a shared-meal service project rooted in real food.",
   },
   {
-    question: "Can LIFE lead tables for organizations?",
+    question: "Can LIFE lead workshops for organizations?",
     answer:
-      "Yes. Organizations can request hosted tables or private cohorts through the keynote/contact forms so we can align goals, audiences, and budgets.",
+      "Yes. Organizations can request hosted LIFE workshops or private cohorts through the keynote/contact forms so we can align goals, audiences, and budgets.",
   },
 ];
 
-export default function TablesPage() {
+export default function WorkshopsPage() {
   return (
     <>
       <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="mx-auto max-w-5xl px-6 py-16">
           <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Tables</p>
-            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Tables</h1>
+            <p className="type-eyebrow text-[var(--olive)]">LIFE Workshops</p>
+            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">LIFE Workshops</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
-              Tables are the front door to the LIFE movement. They began in Georgia and now give early hosts in Atlanta, Rochester, and Austin a chance to
-              practice the six pillars before launching their own tables.
+              LIFE workshops are the front door to the LIFE movement. They began in Georgia and now give early hosts in Atlanta, Rochester, and Austin a chance to
+              practice the six pillars before launching their own LIFE workshops.
             </p>
           </div>
         </section>
@@ -74,7 +74,7 @@ export default function TablesPage() {
             </p>
           </article>
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Who Tables Are For</h2>
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Who LIFE Workshops Are For</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text)]">
               Neighbors, families, clinics, and community health partners who want to restore shared meals and adopt practical longevity
               habits—no culinary degree required. Cities beyond Atlanta, Rochester, and Austin can request future cohorts via the keynote inquiry form.
@@ -86,33 +86,32 @@ export default function TablesPage() {
               <li>• Fresh ingredient cooking demo tailored to local budgets.</li>
               <li>• Guided LIFE Longevity Assessment conversation.</li>
               <li>• Host guide and follow-up checklist.</li>
-              <li>• Commitment to register the next table.</li>
+              <li>• Commitment to register the next LIFE workshop.</li>
             </ul>
           </article>
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Table Outcomes</h2>
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Workshop Outcomes</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text)]">
-              Participants leave with a plan to host, a deeper understanding of the six pillars, and renewed connection with others around
-              the table.
+              Participants leave with a plan to host, a deeper understanding of the six pillars, and renewed connection with others around the LIFE workshop experience.
             </p>
           </article>
         </section>
 
         <PhotoStrip
-          eyebrow="Table snapshots"
+          eyebrow="Workshop snapshots"
           title="Hands-on cooking moments"
-          description="Pilot gatherings focus on cooking with fresh ingredients, practicing the LIFE assessment, and equipping new hosts to lead the next table."
+          description="Pilot gatherings focus on cooking with fresh ingredients, practicing the LIFE assessment, and equipping new hosts to lead the next LIFE workshop."
           imageAspect="portrait"
           photos={[
             { src: "/images/workshops/IMG_6709.jpeg", alt: "Hosts guiding pasta at the stove", caption: "Fresh ingredient prep" },
-            { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Table participants rolling pasta", caption: "Hands-on learning" },
-            { src: "/images/workshops/31525/IMG_9391.jpeg", alt: "Guests sharing the finished meal", caption: "Shared table reflection" },
+            { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Participants rolling pasta", caption: "Hands-on learning" },
+            { src: "/images/workshops/31525/IMG_9391.jpeg", alt: "Guests sharing the finished meal", caption: "Shared workshop reflection" },
           ]}
         />
 
         <ProofHighlightList
           eyebrow="Ready for partners"
-          title="Why organizations book LIFE tables"
+          title="Why organizations book LIFE workshops"
           items={WORKSHOP_PROOF}
           background="accent"
         />
@@ -122,16 +121,16 @@ export default function TablesPage() {
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Frequently Asked Questions</h2>
             <div className="mt-4 space-y-4">
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What does a LIFE table include?</h3>
-                <p className="mt-2 text-sm text-[var(--text)]">Each session involves cooking together, the LIFE Longevity Assessment, and facilitation practice so attendees feel confident hosting the next table.</p>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What does a LIFE workshop include?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Each session involves cooking together, the LIFE Longevity Assessment, and facilitation practice so attendees feel confident hosting the next LIFE workshop.</p>
               </div>
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Who are tables for?</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Who are LIFE workshops for?</h3>
                 <p className="mt-2 text-sm text-[var(--text)]">We currently serve households, churches, nonprofits, and corporate wellness teams in Atlanta, Rochester, and Austin looking for a service project rooted in real food.</p>
               </div>
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can LIFE lead tables for organizations?</h3>
-                <p className="mt-2 text-sm text-[var(--text)]">Yes. Organizations can request hosted tables or private cohorts through the keynote/contact forms so we can align goals, audiences, and budgets.</p>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can LIFE lead workshops for organizations?</h3>
+                <p className="mt-2 text-sm text-[var(--text)]">Yes. Organizations can request hosted LIFE workshops or private cohorts through the keynote/contact forms so we can align goals, audiences, and budgets.</p>
               </div>
             </div>
           </div>
@@ -139,7 +138,7 @@ export default function TablesPage() {
 
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Bring a table to your community</p>
+            <p className="type-eyebrow text-[var(--olive)]">Bring a LIFE workshop to your community</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/contact" className="btn-solid px-8 text-base">
                 Contact LIFE
@@ -148,7 +147,7 @@ export default function TablesPage() {
                 Request a Keynote
               </Link>
               <Link href="/host" className="btn-outline px-8 text-base">
-                Host a LIFE Table
+                Host a LIFE Workshop
               </Link>
             </div>
           </div>

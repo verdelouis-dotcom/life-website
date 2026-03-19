@@ -6,34 +6,34 @@ import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
 const TIERS = [
   {
     amount: "$50",
-    title: "One Shared Table",
+    title: "One Shared LIFE Workshop",
     description:
-      "Provides ingredients and basic tools for one LIFE table where people gather to cook, learn, and share a meal prepared with fresh ingredients.",
+      "Provides ingredients and basic tools for one LIFE workshop where people gather to cook, learn, and share a meal prepared with fresh ingredients.",
     key: 50,
   },
   {
     amount: "$100",
-    title: "Two Shared Tables",
-    description: "Provides ingredients and tools for two LIFE tables, helping more families experience the power of cooking and eating together.",
+    title: "Two Shared LIFE Workshops",
+    description: "Provides ingredients and tools for two LIFE workshops, helping more families experience the power of cooking and eating together.",
     key: 100,
   },
   {
     amount: "$500",
-    title: "Host a Year of Tables",
+    title: "Host a Year of LIFE Workshops",
     description: "Funds a LIFE host with the equipment, tools, and educational resources needed to lead shared meals throughout the year.",
     key: 500,
   },
   {
     amount: "$1,000",
     title: "Community Impact",
-    description: "Helps fund multiple months of LIFE tables and supports the launch of new hosts in the community.",
+    description: "Helps fund multiple months of LIFE workshops and supports the launch of new hosts in the community.",
     key: 1000,
   },
 ];
 
 const USE_OF_FUNDS = [
   "Educational materials and toolkits",
-  "Ingredients and table supplies",
+  "Ingredients and LIFE workshop supplies",
   "Program measurement and reporting",
   "Local outreach and awareness",
 ];
@@ -43,20 +43,20 @@ const DONATE_URL = "https://www.longevityinitiativeforfoodandeducation.com/donat
 export const metadata: Metadata = {
   title: "Support LIFE | Donate to Longevity Food Education",
   description:
-    "Support the Longevity Initiative for Food & Education and help expand community tables that teach nutrition, connection, and longevity.",
+    "Support the Longevity Initiative for Food & Education and help expand community LIFE workshops that teach nutrition, connection, and longevity.",
   alternates: {
     canonical: DONATE_URL,
   },
   openGraph: {
     title: "Support LIFE | Donate to Longevity Food Education",
     description:
-      "Support the Longevity Initiative for Food & Education and help expand community tables that teach nutrition, connection, and longevity.",
+      "Support the Longevity Initiative for Food & Education and help expand community LIFE workshops that teach nutrition, connection, and longevity.",
     url: DONATE_URL,
   },
   twitter: {
     title: "Support LIFE | Donate to Longevity Food Education",
     description:
-      "Support the Longevity Initiative for Food & Education and help expand community tables that teach nutrition, connection, and longevity.",
+      "Support the Longevity Initiative for Food & Education and help expand community LIFE workshops that teach nutrition, connection, and longevity.",
   },
 };
 
@@ -67,7 +67,7 @@ export default function DonatePage() {
       <main className="mx-auto max-w-5xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
           <p className="type-eyebrow text-center">Nonprofit Support</p>
-          <h1 className="section-heading text-center">Fund more LIFE tables</h1>
+          <h1 className="section-heading text-center">Fund more LIFE workshops</h1>
           <p className="mt-4 type-body-muted text-center">
             Every contribution underwrites ingredients, host toolkits, and the reporting that keeps this pilot accountable.
           </p>
@@ -105,7 +105,7 @@ export default function DonatePage() {
         <section className="mt-12 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
           <p className="type-eyebrow">Accountability</p>
           <p className="type-detail">
-            LIFE is a Georgia nonprofit with 501(c)(3) determination pending. Registered tables, board reviews, and public reporting keep donors informed
+            LIFE is a Georgia nonprofit with 501(c)(3) determination pending. Registered LIFE workshops, board reviews, and public reporting keep donors informed
             about how shared meals are spreading.
           </p>
         </section>

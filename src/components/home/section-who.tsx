@@ -12,13 +12,13 @@ export default function SectionWho() {
         </Reveal>
         <Reveal>
           <p className="body-md text-[var(--muted)]">
-            LIFE helps neighbors host simple tables, teach practical habits, and register what happens so healthier routines spread city by city.
+            LIFE helps neighbors host simple LIFE workshops, teach practical habits, and register what happens so healthier routines spread city by city.
           </p>
         </Reveal>
         <Reveal className="grid gap-4 text-left body-sm text-[var(--text)] md:grid-cols-3">
           {[
             "Fresh ingredients and family traditions make healthier defaults feel doable.",
-            "Hosts commit to register each table within 24 hours so progress stays visible.",
+            "Hosts commit to register each LIFE workshop within 24 hours so progress stays visible.",
             "Shared data keeps donors, partners, and new hosts confident the model works.",
           ].map((detail) => (
             <div key={detail} className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-4 text-center">

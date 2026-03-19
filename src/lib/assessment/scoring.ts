@@ -86,7 +86,7 @@ const PILLAR_DESCRIPTIONS: Record<PillarKey, string> = {
   food: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health.",
   movement: "Natural movement, strength, and lower sedentary time protect metabolic health.",
   sleep: "Consistent, restorative sleep enables recovery and hormone balance.",
-  connection: "Shared tables, supportive relationships, and belonging reinforce healthy aging.",
+  connection: "Shared LIFE workshops, supportive relationships, and belonging reinforce healthy aging.",
   purpose: "A clear sense of purpose and contribution keeps habits mission-driven.",
   stressRegulation: "Daily recovery practices calm the nervous system and reduce wear and tear.",
 };
@@ -241,23 +241,23 @@ export function calculateLongevityPotential(lifeHabitsScore: number, pillarScore
 }
 
 function scoreQuestion(id: AssessmentQuestionId, value: string | undefined): number {
-  const table = HABIT_OPTION_SCORES[id];
-  if (!table) {
+  const LIFE workshop = HABIT_OPTION_SCORES[id];
+  if (!LIFE workshop) {
     return 60;
   }
 
   if (!value) {
     return 60;
   }
-  return table[value] ?? 60;
+  return LIFE workshop[value] ?? 60;
 }
 
 function scoreOptionalMarker(key: OptionalMarkerKey, value: string | undefined) {
   if (!value) {
     return 60;
   }
-  const table = OPTIONAL_MARKER_SCORES[key];
-  return table[value] ?? 60;
+  const LIFE workshop = OPTIONAL_MARKER_SCORES[key];
+  return LIFE workshop[value] ?? 60;
 }
 
 function buildScoreMap(values: string[], scale: readonly number[] = SCORE_SCALE) {

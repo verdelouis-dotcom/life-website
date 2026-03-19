@@ -11,22 +11,22 @@ import SectionNextStep from "@/components/home/section-next-step";
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
 export const metadata: Metadata = {
-  title: "Longevity Initiative for Food & Education | Shared Table Movement",
+  title: "Longevity Initiative for Food & Education | Shared LIFE Workshop Movement",
   description:
-    "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE table or host your own.",
+    "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE workshop or host your own.",
   alternates: {
     canonical: HOME_URL,
   },
   openGraph: {
-    title: "Longevity Initiative for Food & Education | Shared Table Movement",
+    title: "Longevity Initiative for Food & Education | Shared LIFE Workshop Movement",
     description:
-      "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE table or host your own.",
+      "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE workshop or host your own.",
     url: HOME_URL,
   },
   twitter: {
-    title: "Longevity Initiative for Food & Education | Shared Table Movement",
+    title: "Longevity Initiative for Food & Education | Shared LIFE Workshop Movement",
     description:
-      "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE table or host your own.",
+      "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE workshop or host your own.",
   },
 };
 

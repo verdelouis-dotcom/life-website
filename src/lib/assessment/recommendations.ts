@@ -76,7 +76,7 @@ const PILLAR_LIBRARY: Record<PillarKey, PillarMessaging> = {
       },
       {
         title: "Practice phone-free meals",
-        detail: "Place devices away from the table and focus on conversation to strengthen emotional safety cues.",
+        detail: "Place devices away from the LIFE workshop and focus on conversation to strengthen emotional safety cues.",
       },
       {
         title: "Invest in reciprocity",

@@ -37,14 +37,14 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
   },
   {
     src: "/images/table/table4.jpeg",
-    alt: "Set table with olive oil and herbs",
+    alt: "Set LIFE workshop with olive oil and herbs",
     city: "Roswell",
     state: "GA",
     hostedDate: "May 2026",
   },
   {
     src: "/images/table/table6.jpeg",
-    alt: "Guests seated for a hosted cooking table",
+    alt: "Guests seated for a hosted cooking LIFE workshop",
     city: "Peachtree City",
     state: "GA",
     hostedDate: "June 2026",

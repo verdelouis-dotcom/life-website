@@ -38,7 +38,7 @@ export default function SixPillarsWheel() {
     <div className="relative mx-auto w-full max-w-[480px]">
       <svg viewBox={`0 0 ${SIZE} ${SIZE}`} role="img" aria-labelledby="six-pillars-title six-pillars-desc">
         <title id="six-pillars-title">Six Pillars of Longevity Wheel</title>
-        <desc id="six-pillars-desc">A circular diagram showing Food, Movement, Sleep, Connection, Purpose, and Stress Regulation surrounding the shared table.</desc>
+        <desc id="six-pillars-desc">A circular diagram showing Food, Movement, Sleep, Connection, Purpose, and Stress Regulation surrounding the shared LIFE workshop.</desc>
         {SEGMENTS.map((segment) => {
           const mid = polarToCartesian((segment.start + segment.end) / 2, LABEL_RADIUS);
           return (
@@ -61,7 +61,7 @@ export default function SixPillarsWheel() {
         })}
         <circle cx={CENTER} cy={CENTER} r={110} fill="#fff8ef" stroke="rgba(42,42,42,0.12)" strokeWidth={2} />
         <text x={CENTER} y={CENTER - 4} textAnchor="middle" className="fill-[var(--life-forest)] text-2xl font-semibold">
-          The Shared Table
+          The Shared LIFE Workshop
         </text>
       </svg>
       <ul className="sr-only">

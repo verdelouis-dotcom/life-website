@@ -14,7 +14,7 @@ const GUIDE_ITEMS = [
 const STEPS = [
   {
     title: "Attend a LIFE workshop",
-    body: "Participants gather around the table, share a meal, and experience the LIFE model firsthand.",
+    body: "Participants gather around the LIFE workshop, share a meal, and experience the LIFE model firsthand.",
   },
   {
     title: "Take the challenge home",
@@ -74,7 +74,7 @@ export default function LifeChallengePage() {
           <div className="space-y-4 rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
             <h2 className="text-3xl font-semibold text-[var(--life-forest)]">What’s inside the guide</h2>
             <p className="text-sm leading-6 text-[var(--text)]">
-              The LIFE Challenge is designed to help people take what they experienced at the table and continue it at home. It turns the workshop into something practical, repeatable, and easy to share with others.
+              The LIFE Challenge is designed to help people take what they experienced at the LIFE workshop and continue it at home. It turns the workshop into something practical, repeatable, and easy to share with others.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               {GUIDE_ITEMS.map((item) => (
@@ -124,7 +124,7 @@ export default function LifeChallengePage() {
         <section className="mx-auto max-w-5xl px-6 pb-16">
           <div className="space-y-4 rounded-[40px] border border-[var(--border)] bg-white/95 p-10 text-center shadow-sm">
             <p className="type-eyebrow text-[var(--olive)]">Keep Going</p>
-            <h2 className="text-3xl font-semibold text-[var(--life-forest)]">Start with the table. Keep it going at home.</h2>
+            <h2 className="text-3xl font-semibold text-[var(--life-forest)]">Start with the LIFE workshop. Keep it going at home.</h2>
             <p className="text-sm leading-6 text-[var(--text)]">
               Attend a LIFE workshop and receive the complete guide designed to help you carry the experience into everyday life.
             </p>

@@ -24,8 +24,8 @@ export default function SocialConnectionLongevityPage() {
   return (
     <ResourceArticleLayout
       title="Social Connection and Longevity"
-      intro="People with strong social ties tend to live longer, recover faster, and make healthier choices. LIFE tables create the setting for those ties to form and for hosts to notice who might need extra support."
-      primaryCta={{ href: "/host", label: "Host a LIFE Table" }}
+      intro="People with strong social ties tend to live longer, recover faster, and make healthier choices. LIFE workshops create the setting for those ties to form and for hosts to notice who might need extra support."
+      primaryCta={{ href: "/host", label: "Host a LIFE Workshop" }}
       secondaryCta={{ href: "/how-it-works", label: "Learn How LIFE Works", variant: "outline" }}
     >
       <ResourceSection title="Belonging protects physical and emotional health">
@@ -34,11 +34,11 @@ export default function SocialConnectionLongevityPage() {
           <Link href="/pillars/connection" className="text-[var(--terracotta)] underline">
             Connection pillar
           </Link>{" "}
-          keeps this insight front and center so LIFE tables never feel transactional—they feel relational.
+          keeps this insight front and center so LIFE workshops never feel transactional—they feel relational.
         </p>
       </ResourceSection>
 
-      <ResourceSection title="Shared tables reveal who needs help">
+      <ResourceSection title="Shared LIFE workshops reveal who needs help">
         <p>
           When people cook together, it becomes clear who is exhausted, who skipped meals, or who is caring for a relative. Hosts log those
           observations when they register gatherings, feeding LIFE&apos;s {" "}
@@ -62,13 +62,13 @@ export default function SocialConnectionLongevityPage() {
       <ResourceSection title="Connection supports the other pillars">
         <p>
           Sleep routines improve when people are less stressed. Movement increases when friends invite each other on walks. Purpose grows when someone
-          feels responsible for their table. Connection is the thread tying the other pillars together.
+          feels responsible for their LIFE workshop. Connection is the thread tying the other pillars together.
         </p>
       </ResourceSection>
 
       <ResourceSection title="Practical ways to strengthen connection">
         <p>
-          Start with consistent meal times, limit screens at the table, invite neighbors who might not otherwise be included, and rotate hosting
+          Start with consistent meal times, limit screens at the LIFE workshop, invite neighbors who might not otherwise be included, and rotate hosting
           responsibilities. Each small practice makes the next gathering easier and keeps the LIFE mission community-owned.
         </p>
       </ResourceSection>

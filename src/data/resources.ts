@@ -8,7 +8,7 @@ export const RESOURCE_ENTRIES: ResourceEntry[] = [
   {
     slug: "why-shared-meals-matter",
     title: "Why Shared Meals Matter",
-    description: "Understand why gathering at the table supports healthier habits, relationships, and the LIFE model.",
+    description: "Understand why gathering at the LIFE workshop supports healthier habits, relationships, and the LIFE model.",
   },
   {
     slug: "mediterranean-cooking-for-longevity",
@@ -28,6 +28,6 @@ export const RESOURCE_ENTRIES: ResourceEntry[] = [
   {
     slug: "how-life-creates-community-health",
     title: "How LIFE Creates Community Health",
-    description: "Follow the LIFE table → host → register cycle and how it builds measurable community health.",
+    description: "Follow the LIFE workshop → host → register cycle and how it builds measurable community health.",
   },
 ];

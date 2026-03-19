@@ -14,7 +14,7 @@ export const HABIT_RECOMMENDATIONS: Partial<Record<AssessmentQuestionId, string>
   wakeRested: "Aim to wake feeling rested by improving sleep routines.",
   sleepConsistency: "Keep bed and wake times within a consistent window.",
   meaningfulTime: "Spend regular, meaningful time with friends or family.",
-  sharedMeals: "Share more meals at a table with others.",
+  sharedMeals: "Share more meals at a LIFE workshop with others.",
   screenFreeMeals: "Enjoy meals without screens so you can connect and slow down.",
   communityBelonging: "Engage with a group, class, or gathering that feels supportive.",
   senseOfPurpose: "Clarify what gives you meaning and align habits with that purpose.",

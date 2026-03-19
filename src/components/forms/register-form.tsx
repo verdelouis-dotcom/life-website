@@ -27,7 +27,7 @@ export default function RegisterForm() {
       dateHosted: formData.get("dateHosted")?.toString().trim() ?? "",
       totalPeople: formData.get("totalPeople")?.toString().trim() ?? "",
       consentPhoto: formData.get("consentPhoto") === "on",
-      source: "Table Registration",
+      source: "LIFE Workshop Registration",
       photoAttached: Boolean(photoAttachment),
     };
 

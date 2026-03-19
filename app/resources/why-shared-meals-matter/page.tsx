@@ -24,8 +24,8 @@ export default function WhySharedMealsMatterPage() {
   return (
     <ResourceArticleLayout
       title="Why Shared Meals Matter"
-      intro="LIFE focuses on shared meals because the table is where habits, trust, and accountability intersect. When people prepare food together and take a seat together, they are more likely to remember the six LIFE pillars throughout the week."
-      primaryCta={{ href: "/host", label: "Host a LIFE Table" }}
+      intro="LIFE focuses on shared meals because the LIFE workshop is where habits, trust, and accountability intersect. When people prepare food together and take a seat together, they are more likely to remember the six LIFE pillars throughout the week."
+      primaryCta={{ href: "/host", label: "Host a LIFE Workshop" }}
       secondaryCta={{ href: "/assessment", label: "Take the Assessment", variant: "outline" }}
     >
       <ResourceSection title="Shared meals anchor healthy routines">
@@ -35,11 +35,11 @@ export default function WhySharedMealsMatterPage() {
           <Link href="/how-it-works" className="text-[var(--terracotta)] underline">
             How LIFE Works
           </Link>{" "}
-          shows how one table can influence the rest of the week.
+          shows how one LIFE workshop can influence the rest of the week.
         </p>
       </ResourceSection>
 
-      <ResourceSection title="The table builds accountability">
+      <ResourceSection title="The LIFE workshop builds accountability">
         <p>
           When neighbors or family members host each other, they notice how stress, work, or isolation affects everyday choices. LIFE hosts share
           what is working, what feels hard, and what resources they need. Over time, those conversations become a light-touch support system that
@@ -56,7 +56,7 @@ export default function WhySharedMealsMatterPage() {
 
       <ResourceSection title="Meals surface real stories and needs">
         <p>
-          LIFE tables often reveal who needs help getting produce, who is caring for an aging parent, or who is struggling with sleep. These stories
+          LIFE workshops often reveal who needs help getting produce, who is caring for an aging parent, or who is struggling with sleep. These stories
           feed into the organization’s {" "}
           <Link href="/impact" className="text-[var(--terracotta)] underline">
             impact work
@@ -72,13 +72,13 @@ export default function WhySharedMealsMatterPage() {
             LIFE Longevity Assessment
           </Link>
           . Hosts do not diagnose or coach; they simply provide a structured way to notice patterns in Food, Movement, Sleep, Connection, Purpose,
-          and Stress Regulation. When tables register their events online, assessment insights can be tracked over time.
+          and Stress Regulation. When LIFE workshops register their events online, assessment insights can be tracked over time.
         </p>
       </ResourceSection>
 
       <ResourceSection title="Shared meals invite everyone to contribute">
         <p>
-          The table is one of the few places where children, grandparents, neighbors, and volunteers all have a role. Someone sets the table, someone
+          The LIFE workshop is one of the few places where children, grandparents, neighbors, and volunteers all have a role. Someone sets the LIFE workshop, someone
           chops vegetables, someone tells the story behind the recipe. That shared ownership keeps the LIFE model inclusive and ensures the mission
           belongs to the community—not to a single program director.
         </p>

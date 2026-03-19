@@ -7,40 +7,40 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/get-inv
 
 export const metadata: Metadata = {
   title: "Get Involved | Longevity Initiative for Food & Education",
-  description: "Share what you’ve learned through LIFE: host a table, support ingredients, or bring LIFE to your community.",
+  description: "Share what you’ve learned through LIFE: host a LIFE workshop, support ingredients, or bring LIFE to your community.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Get Involved | Longevity Initiative for Food & Education",
-    description: "Share what you’ve learned through LIFE: host a table, support ingredients, or bring LIFE to your community.",
+    description: "Share what you’ve learned through LIFE: host a LIFE workshop, support ingredients, or bring LIFE to your community.",
     url: PAGE_URL,
   },
   twitter: {
     title: "Get Involved | Longevity Initiative for Food & Education",
-    description: "Share what you’ve learned through LIFE: host a table, support ingredients, or bring LIFE to your community.",
+    description: "Share what you’ve learned through LIFE: host a LIFE workshop, support ingredients, or bring LIFE to your community.",
   },
 };
 
 const PATHS = [
   {
-    title: "Host a LIFE Table",
+    title: "Host a LIFE Workshop",
     description: "Invite people you care about, cook something simple, and register the gathering so it counts toward the movement.",
-    ctaLabel: "Host a LIFE Table",
+    ctaLabel: "Host a LIFE Workshop",
     href: "/host",
     highlight: true,
     guideText: "Hosting is simple and guided.",
-    guideLabel: "Download the LIFE Table Guide",
-    guideHref: "/life-table-guide.pdf",
+    guideLabel: "Download the LIFE Workshop Guide",
+    guideHref: "/life-workshop-guide.pdf",
   },
   {
     title: "Support the Movement",
-    description: "Underwrite ingredients, tables, and educational tools so more LIFE tables can launch across communities.",
+    description: "Underwrite ingredients, LIFE workshops, and educational tools so more LIFE workshops can launch across communities.",
     ctaLabel: "Donate",
     href: "/donate",
     highlight: false,
   },
   {
     title: "Bring LIFE to Your Community",
-    description: "Request a LIFE table or keynote for your organization, congregation, or company to spark local tables.",
+    description: "Request a LIFE workshop or keynote for your organization, congregation, or company to spark local LIFE workshops.",
     ctaLabel: "Request a Keynote",
     href: "/keynote",
     highlight: false,
@@ -56,7 +56,7 @@ export default function GetInvolvedPage() {
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
             <p className="type-eyebrow text-[var(--olive)]">Get Involved</p>
             <h1 className="type-display">Share What You’ve Learned</h1>
-            <p className="type-lede text-[var(--muted)]">LIFE grows when people bring others to the table.</p>
+            <p className="type-lede text-[var(--muted)]">LIFE grows when people bring others to the LIFE workshop.</p>
           </div>
         </section>
 

@@ -11,25 +11,25 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/impact"
 export const metadata: Metadata = {
   title: "LIFE Impact | Longevity Initiative for Food & Education",
   description:
-    "See how LIFE tracks community impact through shared meals, tables, and longevity education designed to improve health and connection.",
+    "See how LIFE tracks community impact through shared meals, LIFE workshops, and longevity education designed to improve health and connection.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "LIFE Impact | Longevity Initiative for Food & Education",
     description:
-      "See how LIFE tracks community impact through shared meals, tables, and longevity education designed to improve health and connection.",
+      "See how LIFE tracks community impact through shared meals, LIFE workshops, and longevity education designed to improve health and connection.",
     url: PAGE_URL,
   },
   twitter: {
     title: "LIFE Impact | Longevity Initiative for Food & Education",
     description:
-      "See how LIFE tracks community impact through shared meals, tables, and longevity education designed to improve health and connection.",
+      "See how LIFE tracks community impact through shared meals, LIFE workshops, and longevity education designed to improve health and connection.",
   },
 };
 
 const TRACKING_POINTS = [
-  "Tables hosted and attendance by neighborhood",
-  "Table participation and host readiness",
-  "Host Champions who lead multiple tables each year and mentor new hosts",
+  "LIFE Workshops hosted and attendance by neighborhood",
+  "LIFE Workshop participation and host readiness",
+  "Host Champions who lead multiple LIFE workshops each year and mentor new hosts",
   "Longevity Assessment completions tied to the six pillars",
   "Stories and qualitative feedback from families",
   "Donor-supported toolkits and ingredients distributed",
@@ -37,8 +37,8 @@ const TRACKING_POINTS = [
 
 const PILOT_METRICS = [
   {
-    title: "Tables Registered",
-    detail: "Every table hosted in Atlanta, Rochester, and Austin is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
+    title: "LIFE Workshops Registered",
+    detail: "Every LIFE workshop hosted in Atlanta, Rochester, and Austin is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
   },
   {
     title: "People Reached",
@@ -50,14 +50,14 @@ const PILOT_METRICS = [
   },
   {
     title: "Host Progression",
-    detail: "Hosts who advance from attendee → host → multi-table champion signal that the replication model is working. We currently count each Champion who commits to three or more tables per year.",
+    detail: "Hosts who advance from attendee → host → multi-LIFE workshop champion signal that the replication model is working. We currently count each Champion who commits to three or more LIFE workshops per year.",
   },
 ];
 
 const RIPPLE_POINTS = [
   "Fresh ingredient shopping becomes a shared responsibility instead of an individual burden.",
   "Children and teens learn to cook alongside adults, normalizing healthier defaults.",
-  "Neighbors start informal walking groups or shared garden plots after a LIFE table.",
+  "Neighbors start informal walking groups or shared garden plots after a LIFE workshop.",
   "Assessment reflections motivate doctor visits, preventive screenings, or sleep upgrades.",
 ];
 
@@ -72,7 +72,7 @@ export default function ImpactPage() {
             <h1 className="mt-2 heading-xl">LIFE Impact</h1>
             <p className="mt-4 body-lg text-[var(--muted)]">
               LIFE began in Georgia so the model could be tracked, reported, and responsibly scaled. Early hosts in Atlanta, Rochester, and Austin
-              now help prove that the same shared-table approach can travel while remaining accountable.
+              now help prove that the same shared-LIFE workshop approach can travel while remaining accountable.
             </p>
           </div>
         </section>
@@ -81,7 +81,7 @@ export default function ImpactPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
             <h2 className="heading-lg">Why We Measure Impact</h2>
             <p className="mt-3 body-md text-[var(--text)]">
-              Grants, donors, and public schools need proof that a shared table movement moves real numbers. Measurement keeps the nonprofit mission
+              Grants, donors, and public schools need proof that a shared LIFE workshop movement moves real numbers. Measurement keeps the nonprofit mission
               accountable, protects families who volunteer their time, and ensures the LIFE framework remains replicable as it reaches new communities.
             </p>
           </article>
@@ -115,8 +115,8 @@ export default function ImpactPage() {
           <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
             <h2 className="heading-lg">Host Champions multiply the work</h2>
             <p className="mt-3 body-sm text-[var(--text)]">
-              LIFE Host Champions are volunteer leaders who commit to at least three tables per year. They mentor new hosts, keep ingredients simple, and
-              share data after every gathering. Their commitment is what turns a single table into a measurable neighborhood movement.
+              LIFE Host Champions are volunteer leaders who commit to at least three LIFE workshops per year. They mentor new hosts, keep ingredients simple, and
+              share data after every gathering. Their commitment is what turns a single LIFE workshop into a measurable neighborhood movement.
             </p>
             <p className="mt-3 label-text text-[var(--muted)]">Current pilot goal: 12 Champions per city</p>
           </div>
@@ -124,7 +124,7 @@ export default function ImpactPage() {
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
           <div className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
-            <h2 className="heading-lg">How a Table Creates Ripple Effects</h2>
+            <h2 className="heading-lg">How a LIFE Workshop Creates Ripple Effects</h2>
             <ul className="mt-4 space-y-2 body-sm text-[var(--text)]">
               {RIPPLE_POINTS.map((point) => (
                 <li key={point}>• {point}</li>
@@ -136,18 +136,18 @@ export default function ImpactPage() {
 
         <PhotoStrip
           eyebrow="Pilot photos"
-          title="How the shared table looks in practice"
+          title="How a LIFE workshop looks in practice"
           description="Images from Georgia and early partner cities show small, measurable gatherings where meals become a framework for accountability."
           photos={[
             { src: "/images/table/IMG_9449.JPG", alt: "Families preparing a LIFE meal", caption: "Cooking together" },
-            { src: "/images/table/table4.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE table" },
-            { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Table leader guiding participants", caption: "Pilot table coaching" },
+            { src: "/images/table/table4.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE workshop" },
+            { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "LIFE workshop leader guiding participants", caption: "Pilot LIFE workshop coaching" },
           ]}
         />
 
         <ProofHighlightList
           eyebrow="What early proof looks like"
-          title="How LIFE is validating the shared table model"
+          title="How LIFE is validating the shared LIFE workshop model"
           items={IMPACT_PROOF}
           background="surface"
         />
@@ -157,7 +157,7 @@ export default function ImpactPage() {
             <p className="type-eyebrow text-[var(--olive)]">Help grow the impact</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/host" className="btn-solid px-8 text-base">
-                Host a LIFE Table
+                Host a LIFE Workshop
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Donate

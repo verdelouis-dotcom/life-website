@@ -19,7 +19,7 @@ export const LIFE_HABIT_LIBRARY: Record<PillarKey, LifeHabitGuide> = {
     key: "food",
     title: "Food",
     summary:
-      "Meals built from fresh ingredients, plants, and healthy fats stabilize blood sugar, reduce inflammation, and reinforce shared tables.",
+      "Meals built from fresh ingredients, plants, and healthy fats stabilize blood sugar, reduce inflammation, and reinforce shared LIFE workshops.",
     habits: [
       {
         title: "Half-plate produce",
@@ -93,7 +93,7 @@ export const LIFE_HABIT_LIBRARY: Record<PillarKey, LifeHabitGuide> = {
       },
       {
         title: "Community loop",
-        description: "Join or create a simple gathering: walking club, volunteer shift, neighborhood table.",
+        description: "Join or create a simple gathering: walking club, volunteer shift, neighborhood LIFE workshop.",
       },
     ],
     reinforcementIdeas: ["Use the LIFE host guide", "Rotate potluck roles", "Keep a gratitude list for friends and neighbors"],
@@ -116,7 +116,7 @@ export const LIFE_HABIT_LIBRARY: Record<PillarKey, LifeHabitGuide> = {
         description: "Block monthly service, mentoring, or caregiving time to reinforce identity.",
       },
     ],
-    reinforcementIdeas: ["Share goals at LIFE tables", "Track purpose wins", "Mentor someone learning the model"],
+    reinforcementIdeas: ["Share goals at LIFE workshops", "Track purpose wins", "Mentor someone learning the model"],
   },
   stressRegulation: {
     key: "stressRegulation",
@@ -136,6 +136,6 @@ export const LIFE_HABIT_LIBRARY: Record<PillarKey, LifeHabitGuide> = {
         description: "Add short buffers before/after stressful meetings, news, or social media.",
       },
     ],
-    reinforcementIdeas: ["Keep a regulation toolkit (tea, journal, mat)", "Stack breathwork onto existing routines", "Share calming rituals at LIFE tables"],
+    reinforcementIdeas: ["Keep a regulation toolkit (tea, journal, mat)", "Stack breathwork onto existing routines", "Share calming rituals at LIFE workshops"],
   },
 };

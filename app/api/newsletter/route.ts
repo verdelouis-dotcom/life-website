@@ -5,7 +5,7 @@ import type { AssessmentResultsPayload } from "@/components/assessment/Assessmen
 export const runtime = "nodejs";
 
 const FRIENDLY_FAILURE_MESSAGE =
-  "We couldn’t connect to The Shared Table newsletter. Please try again soon or email info@longevityinitiativeforfoodandeducation.com.";
+  "We couldn’t connect to The Shared LIFE Workshop newsletter. Please try again soon or email info@longevityinitiativeforfoodandeducation.com.";
 
 const INVALID_CREDENTIAL_HINTS = ["invalid api key", "unauthorized", "missing api key", "forbidden", "not allowed"];
 const DUPLICATE_HINTS = ["already", "exists", "duplicate"];
@@ -181,7 +181,7 @@ export async function POST(request: Request) {
     console.info("NEWSLETTER_ROUTE_SUCCESS", { email, sentReport: Boolean(report) });
     return NextResponse.json({
       ok: true,
-      message: report ? "Report on the way—check your inbox soon." : "You’re now part of The Shared Table.",
+      message: report ? "Report on the way—check your inbox soon." : "You’re now part of The Shared LIFE Workshop.",
     });
   } catch (error) {
     console.error("NEWSLETTER_ROUTE_ERROR", { stage: "unhandled", error });
@@ -306,16 +306,16 @@ function buildReportHtml(firstName: string | undefined, report: AssessmentReport
       </p>
 
       <h2 style="margin-top:24px;font-size:18px;color:#2f402c;">Key Metrics</h2>
-      <table style="width:100%;border-collapse:collapse;background:#fffdf9;border:1px solid #e1d9ce;border-radius:12px;overflow:hidden;">
+      <LIFE workshop style="width:100%;border-collapse:collapse;background:#fffdf9;border:1px solid #e1d9ce;border-radius:12px;overflow:hidden;">
         <tbody>${metricsRows}</tbody>
-      </table>
+      </LIFE workshop>
 
       <h2 style="margin-top:24px;font-size:18px;color:#2f402c;">Pillar Snapshot</h2>
       ${
         pillarRows
-          ? `<table style="width:100%;border-collapse:collapse;background:#fbf7ef;border:1px solid #f0ebe2;border-radius:12px;overflow:hidden;">
+          ? `<LIFE workshop style="width:100%;border-collapse:collapse;background:#fbf7ef;border:1px solid #f0ebe2;border-radius:12px;overflow:hidden;">
               <tbody>${pillarRows}</tbody>
-            </table>`
+            </LIFE workshop>`
           : `<p style="font-size:15px;color:#5c574d;">Your pillar scores will appear after you complete the assessment.</p>`
       }
 

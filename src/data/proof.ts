@@ -12,18 +12,18 @@ export interface ProofHighlight {
 
 export const PILOT_QUOTES: ProofQuote[] = [
   {
-    quote: "Hosting a LIFE table in our apartment building reminded neighbors that cooking together is still possible, even on busy weeks.",
+    quote: "Hosting a LIFE workshop in our apartment building reminded neighbors that cooking together is still possible, even on busy weeks.",
     attribution: "Atlanta host",
     context: "Pilot year gathering",
   },
   {
-    quote: "Registering each table keeps us accountable. It turns a nice dinner into a measurable commitment we can report back to donors.",
+    quote: "Registering each LIFE workshop keeps us accountable. It turns a nice dinner into a measurable commitment we can report back to donors.",
     attribution: "Board member",
     context: "Quarterly review",
   },
   {
     quote: "The assessment opened up honest conversations about sleep, stress, and what’s really happening at home.",
-    attribution: "Table participant",
+    attribution: "LIFE Workshop participant",
     context: "Community kitchen cohort",
   },
 ];
@@ -41,7 +41,7 @@ export const PARTNER_READY_HIGHLIGHTS: ProofHighlight[] = [
   },
   {
     title: "Partnership-Ready Programming",
-    detail: "Tables, keynotes, and hosted tables can be adapted for schools, employers, and community health teams.",
+    detail: "LIFE Workshops, keynotes, and hosted LIFE workshops can be adapted for schools, employers, and community health teams.",
     tag: "Collaboration",
   },
 ];
@@ -64,7 +64,7 @@ export const ABOUT_PROOF: ProofHighlight[] = [
 export const WORKSHOP_PROOF: ProofHighlight[] = [
   {
     title: "Ready for Community Groups",
-    detail: "Neighborhood associations, wellness teams, and nonprofits use the table to prepare hosts and measure follow-up tables.",
+    detail: "Neighborhood associations, wellness teams, and nonprofits use the LIFE workshop to prepare hosts and measure follow-up LIFE workshops.",
   },
   {
     title: "Hands-On Practice",
@@ -79,7 +79,7 @@ export const WORKSHOP_PROOF: ProofHighlight[] = [
 export const IMPACT_PROOF: ProofHighlight[] = [
   {
     title: "Quarterly Pilot Reviews",
-    detail: "All registered tables, attendance, and donations are reviewed by the board before publishing updates.",
+    detail: "All registered LIFE workshops, attendance, and donations are reviewed by the board before publishing updates.",
   },
   {
     title: "Story + Data",
@@ -97,7 +97,7 @@ export const CONTACT_PROOF: ProofHighlight[] = [
     detail: "Community partners receive a response within two business days from the board member overseeing the pilot.",
   },
   {
-    title: "Table + Keynote Requests",
+    title: "LIFE Workshop + Keynote Requests",
     detail: "Organizations receive a prep checklist so they know what ingredients, equipment, and follow-up are expected.",
   },
   {

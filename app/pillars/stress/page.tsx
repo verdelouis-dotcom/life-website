@@ -25,7 +25,7 @@ const RESEARCH = [
 
 const LIFE_TIE_IN = [
   "LIFE creates conditions that can reduce overwhelm: shared meals, calmer rhythms, meaningful conversation, hands-on cooking, and time away from constant distraction.",
-  "The table is not a cure-all, but it is a practical setting for nervous-system-friendly habits. It gives people a repeatable way to slow down, connect, and reset.",
+  "The LIFE workshop is not a cure-all, but it is a practical setting for nervous-system-friendly habits. It gives people a repeatable way to slow down, connect, and reset.",
 ];
 
 const TAKEAWAYS = [

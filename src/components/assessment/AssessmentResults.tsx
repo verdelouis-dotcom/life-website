@@ -274,7 +274,7 @@ function getScoreMessage(score: number) {
     return "You have a solid foundation. Consistent focus on the weaker pillars can unlock even more years of healthy living.";
   }
   if (score >= 50) {
-    return "You’re building awareness. Pick one pillar to improve this month and measure again after your next LIFE table.";
+    return "You’re building awareness. Pick one pillar to improve this month and measure again after your next LIFE workshop.";
   }
   return "This score is a starting point. Use the recommendations below and LIFE Resources to create small, sustainable shifts.";
 }

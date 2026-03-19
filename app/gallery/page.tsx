@@ -7,19 +7,19 @@ import { GALLERY_PHOTOS } from "@/data/gallery";
 const GALLERY_URL = "https://www.longevityinitiativeforfoodandeducation.com/gallery";
 
 export const metadata: Metadata = {
-  title: "LIFE Tables Photo Gallery | Longevity Initiative",
-  description: "Browse the LIFE shared table gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia tables.",
+  title: "LIFE Workshops Photo Gallery | Longevity Initiative",
+  description: "Browse the LIFE shared LIFE workshop gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia LIFE workshops.",
   alternates: {
     canonical: GALLERY_URL,
   },
   openGraph: {
-    title: "LIFE Tables Photo Gallery | Longevity Initiative",
-    description: "Browse the LIFE shared table gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia tables.",
+    title: "LIFE Workshops Photo Gallery | Longevity Initiative",
+    description: "Browse the LIFE shared LIFE workshop gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia LIFE workshops.",
     url: GALLERY_URL,
   },
   twitter: {
-    title: "LIFE Tables Photo Gallery | Longevity Initiative",
-    description: "Browse the LIFE shared table gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia tables.",
+    title: "LIFE Workshops Photo Gallery | Longevity Initiative",
+    description: "Browse the LIFE shared LIFE workshop gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia LIFE workshops.",
   },
 };
 
@@ -29,8 +29,8 @@ export default function GalleryPage() {
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-6 py-16 text-[var(--text)]">
         <section className="text-center">
-          <p className="type-eyebrow">Tables</p>
-          <h1 className="section-heading">Tables</h1>
+          <p className="type-eyebrow">LIFE Workshops</p>
+          <h1 className="section-heading">LIFE Workshops</h1>
           <p className="mt-3 type-detail">Shared with permission.</p>
         </section>
         <section className="mt-10 grid gap-6 md:grid-cols-2">

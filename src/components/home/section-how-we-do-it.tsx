@@ -19,7 +19,7 @@ export default function SectionHowWeDoIt() {
           ))}
         </div>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-700 md:text-lg">
-          People come together for a shared meal, learn simple habits they can apply in their own lives, and pass them on by hosting others—growing the movement one table at a time.
+          People come together for a shared meal, learn simple habits they can apply in their own lives, and pass them on by hosting others—growing the movement one LIFE workshop at a time.
         </p>
       </div>
     </section>

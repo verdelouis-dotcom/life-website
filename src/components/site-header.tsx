@@ -6,7 +6,7 @@ const PRIMARY_NAV = [
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/host", label: "Host" },
-  { href: "/workshops", label: "Tables" },
+  { href: "/workshops", label: "LIFE Workshops" },
   { href: "/the-life-challenge", label: "The LIFE Challenge" },
   { href: "/donate", label: "Donate" },
   { href: "/contact", label: "Contact" },

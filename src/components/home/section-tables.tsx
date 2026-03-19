@@ -6,7 +6,7 @@ import Reveal from "@/components/ui/reveal";
 const EXPERIENCE_IMAGES = [
   { src: "/images/workshops/pasta-lesson-1.jpg", alt: "Hands guiding pasta dough through a roller" },
   { src: "/images/workshops/pasta-lesson-3.jpeg", alt: "Hosts shaping fresh pasta" },
-  { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "Table leader coaching guests" },
+  { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "LIFE Workshop leader coaching guests" },
 ];
 
 export default function SectionTables() {
@@ -14,7 +14,7 @@ export default function SectionTables() {
     <section className="bg-[#fff8ef] py-14 text-[var(--text)]">
       <div className="mx-auto max-w-5xl space-y-6 px-6 text-center">
         <Reveal className="space-y-3">
-          <h2 className="section-heading">Experience LIFE Tables</h2>
+          <h2 className="section-heading">Experience LIFE Workshops</h2>
           <p className="type-detail">Images shared with permission from LIFE hosts.</p>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
@@ -29,7 +29,7 @@ export default function SectionTables() {
         <Reveal>
           <div className="space-y-2">
             <a href="/host" className="btn-solid px-8 text-base">
-              Host a LIFE Table
+              Host a LIFE Workshop
             </a>
             <p className="text-sm text-[var(--muted)]">Most hosts start with friends or family.</p>
           </div>

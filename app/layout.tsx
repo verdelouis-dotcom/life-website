@@ -49,13 +49,13 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Longevity Initiative for Food & Education",
-  description: "Rebuilding health and community one table at a time.",
+  description: "Rebuilding health and community one LIFE workshop at a time.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: "Longevity Initiative for Food & Education",
-    description: "Rebuilding health and community one table at a time.",
+    description: "Rebuilding health and community one LIFE workshop at a time.",
     url: SITE_URL,
     siteName: "Longevity Initiative for Food & Education",
     images: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Longevity Initiative for Food & Education",
-    description: "Rebuilding health and community one table at a time.",
+    description: "Rebuilding health and community one LIFE workshop at a time.",
     images: ["/twitter-image.png"],
   },
   icons: {

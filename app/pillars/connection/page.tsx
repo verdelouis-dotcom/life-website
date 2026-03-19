@@ -2,7 +2,7 @@ import PillarPage from "../_components/pillar-page";
 
 const WHY = [
   "Modern life often fragments connection. Many people are busy, isolated, or surrounded by interaction that feels fast but not meaningful.",
-  "The table slows people down long enough to listen, learn, and build relationships that can actually support healthier living.",
+  "The LIFE workshop slows people down long enough to listen, learn, and build relationships that can actually support healthier living.",
 ];
 
 const RESEARCH = [
@@ -30,7 +30,7 @@ const LIFE_TIE_IN = [
 
 const TAKEAWAYS = [
   "Share meals with other people more often",
-  "Use the table for real conversation, not just eating",
+  "Use the LIFE workshop for real conversation, not just eating",
   "Learn and teach recipes across generations",
   "Build healthier routines through community, not willpower alone",
 ];
@@ -46,7 +46,7 @@ export default function ConnectionPillarPage() {
     <PillarPage
       title="Connection"
       subtitle="Strong relationships are one of the clearest and most consistent predictors of long-term well-being."
-      intro="People live better when they feel known, supported, and connected. LIFE centers the shared table because meals create one of the simplest and most human spaces for conversation, belonging, and trust."
+      intro="People live better when they feel known, supported, and connected. LIFE centers the shared LIFE workshop because meals create one of the simplest and most human spaces for conversation, belonging, and trust."
       why={WHY}
       research={RESEARCH}
       lifeTieIn={LIFE_TIE_IN}

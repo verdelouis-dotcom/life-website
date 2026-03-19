@@ -6,22 +6,22 @@ import SiteFooter from "@/components/site-footer";
 const GUIDE_URL = "https://www.longevityinitiativeforfoodandeducation.com/host/guide";
 
 export const metadata: Metadata = {
-  title: "LIFE Host Guide | How to Lead a Table",
+  title: "LIFE Host Guide | How to Lead a LIFE Workshop",
   description:
-    "Step-by-step guidance for hosting a LIFE table: invite, prepare, share the pillars, and register the gathering so it counts toward the movement.",
+    "Step-by-step guidance for hosting a LIFE workshop: invite, prepare, share the pillars, and register the gathering so it counts toward the movement.",
   alternates: {
     canonical: GUIDE_URL,
   },
   openGraph: {
-    title: "LIFE Host Guide | How to Lead a Table",
+    title: "LIFE Host Guide | How to Lead a LIFE Workshop",
     description:
-      "Learn how to plan, cook, facilitate, and register a LIFE table so your gathering supports the six pillars of healthy aging.",
+      "Learn how to plan, cook, facilitate, and register a LIFE workshop so your gathering supports the six pillars of healthy aging.",
     url: GUIDE_URL,
   },
   twitter: {
-    title: "LIFE Host Guide | How to Lead a Table",
+    title: "LIFE Host Guide | How to Lead a LIFE Workshop",
     description:
-      "Learn how to plan, cook, facilitate, and register a LIFE table so your gathering supports the six pillars of healthy aging.",
+      "Learn how to plan, cook, facilitate, and register a LIFE workshop so your gathering supports the six pillars of healthy aging.",
   },
 };
 
@@ -32,7 +32,7 @@ const CORE_FLOW = [
   "Clean up together.",
   "Share the recipe.",
   "Capture the moment.",
-  "Register your table.",
+  "Register your LIFE workshop.",
 ];
 
 const CONVERSATION_TOPICS = [
@@ -52,9 +52,9 @@ export default function HostGuidePage() {
         <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-16">
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
             <p className="type-eyebrow text-[var(--olive)]">Host Guide</p>
-            <h1 className="type-display">How to Lead a LIFE Table</h1>
+            <h1 className="type-display">How to Lead a LIFE Workshop</h1>
             <p className="type-lede text-[var(--muted)]">
-              Use this guide after you attend a LIFE table. It covers how to plan the meal, share the six pillars, and register the gathering so it
+              Use this guide after you attend a LIFE workshop. It covers how to plan the meal, share the six pillars, and register the gathering so it
               supports the movement.
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function HostGuidePage() {
           <div className="mx-auto max-w-4xl space-y-8 px-6">
             <article className="space-y-4 rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm text-left">
               <div className="text-center space-y-2">
-                <h2 className="heading-lg">The LIFE Table Guide</h2>
+                <h2 className="heading-lg">The LIFE Workshop Guide</h2>
                 <p className="body-md text-[var(--muted)]">Hosting is simple, personal, and driven by the people you invite.</p>
               </div>
               <div className="space-y-3">

@@ -11,7 +11,7 @@ export default function SectionLeadership() {
         </Reveal>
         <Reveal className="space-y-3">
           <p className="type-body-muted">
-            Founder Lou Verde leads LIFE through community education, hosted tables, and 30-minute keynote presentations on longevity and healthy living.
+            Founder Lou Verde leads LIFE through community education, hosted LIFE workshops, and 30-minute keynote presentations on longevity and healthy living.
           </p>
           <p className="type-body-muted">
             Lou continues to travel internationally—with a focus on Italy—to study cultural patterns associated with long-living communities and bring those insights back to the program.
