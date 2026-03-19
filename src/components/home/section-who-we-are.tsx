@@ -1,12 +1,21 @@
+import Link from "next/link";
+
 export default function SectionWhoWeAre() {
   return (
     <section className="bg-white text-[var(--text)]">
-      <div className="mx-auto max-w-4xl px-6 py-16 md:py-20">
-        <h2 className="mb-4 text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">Who We Are</h2>
-        <p className="text-lg leading-relaxed text-neutral-800 md:text-xl">
-          LIFE is a nonprofit helping people remove the habits that harm long-term health and weaken connection—and replace them with simple, proven practices
-          for longer, healthier, more connected lives.
+      <div className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+        <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">Together, we can bring back the table.</h1>
+        <p className="mt-6 text-lg leading-relaxed text-neutral-800 md:text-xl">
+          Shared meals are disappearing—and with them, connection, health, and the daily habits that help people live longer, stronger lives.
         </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/how-it-works" className="btn-solid px-6 text-sm md:px-8">
+            Start Here
+          </Link>
+          <Link href="/donate" className="btn-outline px-6 text-sm md:px-8">
+            Support LIFE
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 const CARDS = [
   { title: "Attend", body: "Join a shared meal where people cook, learn, and connect." },
-  { title: "Practice", body: "Use the LIFE Guide to practice simple habits in daily life." },
+  { title: "Practice", body: "Use the LIFE Guide to bring simple habits into daily life." },
   { title: "Host", body: "Use the Host Guide to lead your own LIFE workshop and bring others together." },
 ];
 
@@ -18,7 +18,7 @@ export default function SectionHowWeDoIt() {
           ))}
         </div>
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-neutral-700 md:text-lg">
-          People come together for a shared meal, practice what they’ve learned in their own lives through the LIFE Guide, and pass it on by hosting others—growing the movement one table at a time.
+          People come together for a shared meal, practice what they’ve learned in daily life, and pass it on by hosting others—growing the movement one table at a time.
         </p>
       </div>
     </section>

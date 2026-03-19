@@ -15,8 +15,11 @@ export default function SectionLifeInAction() {
       <div className="mx-auto max-w-5xl space-y-8 px-6 py-24 text-center md:py-32">
         <Reveal className="space-y-2">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:text-base">Proof</p>
-          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">Life in Action</h2>
-          <p className="text-lg leading-relaxed text-neutral-800">Real people. Real workshops. Real connection.</p>
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">LIFE in Action</h2>
+          <div className="space-y-2 text-lg leading-relaxed text-neutral-800">
+            <p>Families are cooking together again. Neighbors are meeting for the first time. Traditions are being shared across generations.</p>
+            <p>LIFE is designed to be simple, practical, and repeatable—so what happens at one table can continue at the next.</p>
+          </div>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
           {EXPERIENCE_IMAGES.map((image, index) => (
