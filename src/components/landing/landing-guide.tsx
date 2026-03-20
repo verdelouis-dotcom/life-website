@@ -1,9 +1,10 @@
+import type { ReactElement } from "react";
 import styles from "./landing.module.css";
 
 type Pillar = {
   title: string;
   body: string;
-  icon: JSX.Element;
+  icon: ReactElement;
 };
 
 const pillars: Pillar[] = [
