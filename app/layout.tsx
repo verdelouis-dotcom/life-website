@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Instrument_Sans, Lora } from "next/font/google";
+import { Instrument_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import CanonicalRedirect from "@/components/canonical-redirect";
 
@@ -33,23 +33,10 @@ const WEBSITE_SCHEMA = {
   },
 };
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-landing-body",
+  weight: ["300", "400", "500"],
+  variable: "--font-instrument",
   display: "swap",
 });
 
@@ -57,7 +44,7 @@ const lora = Lora({
   subsets: ["latin"],
   weight: ["400", "600"],
   style: ["normal", "italic"],
-  variable: "--font-landing-heading",
+  variable: "--font-lora",
   display: "swap",
 });
 
@@ -100,8 +87,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${instrumentSans.variable} ${lora.variable} antialiased`}>
+    <html lang="en" className={`${lora.variable} ${instrumentSans.variable}`}>
+      <body className="antialiased">
         <CanonicalRedirect />
         <script
           type="application/ld+json"

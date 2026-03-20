@@ -6,7 +6,7 @@
   --bg: #faf7f2;
   --surface: #f4eee6;
   --text: #1f1f1f;
-  --muted: #5a5a5a;
+  --muted: #8a7060;
   --olive: #5e7d4f;
   --terracotta: #c96a4a;
   --sand: #d8c3a5;
@@ -23,27 +23,26 @@
   --sage-pale: #e4ebe0;
   --ink: #1e140a;
   --muted-earth: #8a7060;
+  --rule: rgba(62, 46, 30, 0.12);
+  --font-body: var(--font-instrument);
+  --font-heading: var(--font-lora);
 }
 
-html,
 body {
-  background-color: var(--bg);
-  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0), linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
-  background-size: 120px 120px, 100%;
-  color: var(--text);
-  font-family: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-instrument), "Arial", sans-serif;
+  background-color: var(--offwhite);
+  color: var(--ink);
   font-size: 16px;
   line-height: 1.65;
 }
 
 h1,
 h2,
-h3,
-h4 {
-  font-family: var(--font-heading), "Playfair Display", "Times New Roman", serif;
-  color: var(--text);
-  letter-spacing: -0.01em;
+h3 {
+  font-family: var(--font-lora), "Georgia", serif;
+  font-weight: 600;
   line-height: 1.2;
+  color: var(--ink);
 }
 
 a {
@@ -283,6 +282,18 @@ a:hover {
   }
   50% {
     transform: translateY(-5px);
+  }
+}
+
+@keyframes lifeRipple {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
   }
 }
 
