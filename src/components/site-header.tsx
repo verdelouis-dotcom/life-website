@@ -8,9 +8,8 @@ const PRIMARY_NAV: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/host", label: "Host" },
   { type: "resources" },
-  { href: "/donate", label: "Support Us" },
+  { href: "/donate", label: "Support LIFE" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -21,23 +20,19 @@ const RESOURCE_LINKS: ResourceLink[] = [
 ];
 
 const NavLink = ({ href, label }: { href: string; label: string }) => (
-  <Link
-    href={href}
-    className="rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-[#dcd3c5] hover:text-[var(--text)]"
-    prefetch={false}
-  >
+  <Link href={href} className="rounded-full px-3 py-1.5 text-sm text-[var(--text)] transition hover:bg-white/60" prefetch={false}>
     {label}
   </Link>
 );
 
 export default function SiteHeader() {
   return (
-    <div className="sticky top-0 z-50 shadow-sm">
-      <div className="bg-[#0e1511] py-2 text-center text-[11px] uppercase tracking-[0.3em] text-white">
+    <div className="sticky top-0 z-50">
+      <div className="bg-[#1f1f1f] py-2 text-center text-[11px] uppercase tracking-[0.3em] text-white">
         501(c)(3) status pending • Began in Georgia • Piloting in select U.S. communities
       </div>
-      <header className="border-b border-[#dfd4c6] bg-[#f4efe6]/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-3 md:flex-row md:items-center md:justify-between">
+      <header className="border-b border-[#e6d9c7] bg-[#f7f1e8]/90 backdrop-blur-lg supports-[backdrop-filter]:backdrop-blur">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-3">
             <div className="hidden sm:block">
               <BrandLogo variant="lockup" size={210} />
@@ -47,10 +42,13 @@ export default function SiteHeader() {
             </div>
           </div>
 
-          <nav className="flex flex-wrap items-center gap-2 text-sm md:justify-end">
+          <nav className="flex flex-wrap items-center gap-3 text-sm md:justify-end">
             {PRIMARY_NAV.map((item, index) =>
               item.type === "resources" ? <ResourcesMenu key={`resources-${index}`} /> : <NavLink key={item.href} href={item.href!} label={item.label!} />
             )}
+            <Link href="/host" className="btn-solid px-5 text-xs md:text-sm" prefetch={false}>
+              Host a Table
+            </Link>
           </nav>
         </div>
       </header>

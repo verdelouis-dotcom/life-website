@@ -21,14 +21,21 @@ export default function SectionLifeInAction() {
             <p>LIFE is designed to be simple, practical, and repeatable—so what happens at one table can continue at the next.</p>
           </div>
         </Reveal>
-        <div className="grid gap-6 md:grid-cols-3">
-          {EXPERIENCE_IMAGES.map((image, index) => (
-            <Reveal key={image.src} delay={index * 80} className="overflow-hidden rounded-[32px] border border-[var(--border)] bg-white shadow-sm">
-              <div className="relative aspect-[4/3] w-full">
-                <Image src={image.src} alt={image.alt} fill className="object-cover object-center" sizes="(min-width: 768px) 33vw, 100vw" />
-              </div>
-            </Reveal>
-          ))}
+        <div className="grid gap-6 md:grid-cols-12">
+          <Reveal delay={0} className="md:col-span-7">
+            <div className="relative h-[320px] overflow-hidden rounded-[36px] border border-[var(--border)] bg-white shadow-lg">
+              <Image src={EXPERIENCE_IMAGES[0].src} alt={EXPERIENCE_IMAGES[0].alt} fill className="object-cover" sizes="(min-width: 768px) 55vw, 100vw" />
+            </div>
+          </Reveal>
+          <div className="md:col-span-5 space-y-6">
+            {EXPERIENCE_IMAGES.slice(1).map((image, idx) => (
+              <Reveal key={image.src} delay={(idx + 1) * 80}>
+                <div className="relative h-[150px] overflow-hidden rounded-[28px] border border-[var(--border)] bg-white shadow-lg">
+                  <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(min-width: 768px) 30vw, 100vw" />
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
         <Reveal>
           <p className="text-sm text-[var(--muted)]">Images shared with permission from LIFE hosts.</p>

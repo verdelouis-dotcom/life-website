@@ -13,7 +13,7 @@ const PILLARS = [
 export function SectionPillars() {
   return (
     <section className="bg-white text-[var(--text)]">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 py-24 text-center md:py-32">
+      <div className="mx-auto max-w-6xl space-y-8 px-6 py-24 text-center md:py-32">
         <Reveal className="space-y-3">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:text-base">Framework</p>
           <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">The Six Pillars of LIFE</h2>
@@ -24,9 +24,12 @@ export function SectionPillars() {
             <Reveal key={pillar.title} delay={index * 60}>
               <Link
                 href={pillar.href}
-                className="group block h-full rounded-[32px] border border-neutral-200 bg-white/95 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--life-forest)] focus-visible:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--olive)]"
+                className="group block h-full rounded-[32px] border border-[var(--border)] bg-[var(--surface)] p-6 text-left shadow-sm transition hover:-translate-y-1 hover:border-[var(--olive)]"
               >
-                <h3 className="text-2xl font-semibold tracking-tight text-[var(--life-forest)]">{pillar.title}</h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-2xl font-semibold tracking-tight text-[var(--life-forest)]">{pillar.title}</h3>
+                  <span className="text-2xl text-[var(--terracotta)] transition group-hover:translate-x-1">→</span>
+                </div>
               </Link>
             </Reveal>
           ))}
