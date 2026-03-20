@@ -11,7 +11,7 @@ export function LandingNav() {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b border-[rgba(62,46,30,0.12)] bg-[rgba(253,250,246,0.94)] px-6 py-4 text-[var(--earth-mid)] backdrop-blur">
       <Link href="/">
-        <Image src="/images/logo-nav.png" alt="Longevity Initiative for Food & Education" width={160} height={89} priority style={{ display: "block" }} />
+        <Image src="/images/life-logo-nav.svg" alt="Longevity Initiative for Food & Education" width={220} height={34} priority style={{ display: "block" }} />
       </Link>
       <div className="hidden items-center gap-8 md:flex">
         {NAV_LINKS.map((link) => (
