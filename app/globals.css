@@ -11,6 +11,18 @@
   --terracotta: #c96a4a;
   --sand: #d8c3a5;
   --border: rgba(31, 31, 31, 0.12);
+  --cream: #f8f3ec;
+  --offwhite: #fdfaf6;
+  --parchment: #efe8da;
+  --earth: #3e2e1e;
+  --earth-mid: #6b4f35;
+  --earth-light: #9a7a5a;
+  --terra: #b55a30;
+  --terra-pale: #f2e0d4;
+  --sage: #5a6e4a;
+  --sage-pale: #e4ebe0;
+  --ink: #1e140a;
+  --muted-earth: #8a7060;
 }
 
 html,
@@ -181,5 +193,107 @@ a:hover {
   .btn-solid {
     @apply inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5;
     box-shadow: 0 14px 30px rgba(94, 125, 79, 0.3);
+  }
+
+  .stag {
+    font-family: var(--font-landing-body), "Instrument Sans", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-earth);
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .sh {
+    font-family: var(--font-landing-heading), "Lora", serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .sb {
+    font-family: var(--font-landing-body), "Instrument Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--earth-mid);
+    max-width: 560px;
+  }
+
+  .btn-p,
+  .btn-o {
+    font-family: var(--font-landing-body), "Instrument Sans", sans-serif;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .btn-p {
+    background: var(--terra);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .btn-p:hover {
+    background: var(--earth);
+    transform: translateY(-1px);
+  }
+
+  .btn-o {
+    border: 1px solid rgba(62, 46, 30, 0.3);
+    color: var(--earth);
+  }
+
+  .btn-o:hover {
+    border-color: var(--terra);
+    color: var(--terra);
+  }
+
+  .ptag {
+    font-family: var(--font-landing-body), "Instrument Sans", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--terra);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatA {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
   }
 }

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site-header";
-import SiteFooter from "@/components/site-footer";
-import SectionWhoWeAre from "@/components/home/section-who-we-are";
-import SectionWhy from "@/components/home/section-why";
-import SectionHowWeDoIt from "@/components/home/section-how-we-do-it";
-import { SectionPillars } from "@/components/home/section-pillars";
-import SectionLifeInAction from "@/components/home/section-life-in-action";
-import SectionNextStep from "@/components/home/section-next-step";
+import { LandingNav } from "@/components/landing/landing-nav";
+import { LandingHero } from "@/components/landing/landing-hero";
+import { LandingEveningSection } from "@/components/landing/landing-evening-section";
+import { LandingRippleSection } from "@/components/landing/landing-ripple-section";
+import { LandingGuideSection } from "@/components/landing/landing-guide-section";
+import { LandingLifeInAction } from "@/components/landing/landing-life-in-action";
+import { LandingCTASection } from "@/components/landing/landing-cta-section";
+import { LandingFooter } from "@/components/landing/landing-footer";
 
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
@@ -32,17 +32,17 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
-      <SiteHeader />
-      <main className="bg-[var(--bg)] text-[var(--text)]">
-        <SectionWhoWeAre />
-        <SectionWhy />
-        <SectionHowWeDoIt />
-        <SectionPillars />
-        <SectionLifeInAction />
-        <SectionNextStep />
+    <div className="bg-[var(--offwhite)] text-[var(--ink)]">
+      <LandingNav />
+      <main className="pt-16">
+        <LandingHero />
+        <LandingEveningSection />
+        <LandingRippleSection />
+        <LandingGuideSection />
+        <LandingLifeInAction />
+        <LandingCTASection />
       </main>
-      <SiteFooter />
-    </>
+      <LandingFooter />
+    </div>
   );
 }
