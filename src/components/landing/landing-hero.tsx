@@ -33,8 +33,14 @@ export function LandingHero() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden bg-[var(--parchment)]">
-        <Image src="/images/workshops/pasta-lesson-1.jpg" alt="LIFE hosts rolling fresh pasta together" fill priority className="object-cover object-[center_30%]" />
+      <div className="relative h-[520px] overflow-hidden bg-[var(--parchment)] md:h-full">
+        <Image
+          src="/images/workshops/pasta-lesson-1.jpg"
+          alt="LIFE hosts rolling fresh pasta together"
+          fill
+          priority
+          style={{ objectFit: "cover", objectPosition: "center 30%" }}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(253,250,246,0.25)] to-transparent" />
         {HERO_BADGES.map((badge, index) => (
           <div

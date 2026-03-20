@@ -53,14 +53,24 @@ export function LandingEveningSection() {
         </div>
         <div className="flex flex-col gap-5">
           <div className="overflow-hidden rounded-[1.2rem] border border-[var(--rule,#e5dccc)]">
-            <div className="relative h-[340px]">
-              <Image src="/images/workshops/pasta-lesson-2.jpg" alt="Neighbors rolling fresh pasta together" fill className="object-cover object-[center_20%]" />
+            <div className="relative h-[340px] overflow-hidden">
+              <Image
+                src="/images/workshops/pasta-lesson-2.jpg"
+                alt="Neighbors rolling fresh pasta together"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center 20%" }}
+              />
             </div>
             <div className="border-t border-[var(--rule,#e5dccc)] bg-[var(--offwhite)] px-4 py-2 text-[0.8rem] italic text-[var(--muted-earth)]">No phones. Just people.</div>
           </div>
           <div className="overflow-hidden rounded-[1.2rem] border border-[var(--rule,#e5dccc)]">
-            <div className="relative h-[220px]">
-              <Image src="/images/workshops/pasta-lesson-6.jpeg" alt="Mother and daughter laughing together while making pasta" fill className="object-cover object-[center_25%]" />
+            <div className="relative h-[220px] overflow-hidden">
+              <Image
+                src="/images/workshops/pasta-lesson-6.jpeg"
+                alt="Mother and daughter laughing together while making pasta"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center 25%" }}
+              />
             </div>
           </div>
           <div className="rounded-[1.2rem] border border-[var(--rule,#e5dccc)] bg-[var(--offwhite)] p-6">

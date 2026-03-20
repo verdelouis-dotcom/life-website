@@ -5,8 +5,13 @@ export function LandingCTASection() {
   return (
     <section className="bg-[var(--terra-pale)] px-0 py-0">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="relative h-[300px] w-full md:h-[540px]">
-          <Image src="/images/workshops/pasta-lesson-7.jpeg" alt="Kids kneading pasta dough together" fill className="object-cover object-[center_15%]" />
+        <div className="relative h-[300px] w-full overflow-hidden md:h-[540px]">
+          <Image
+            src="/images/workshops/pasta-lesson-7.jpeg"
+            alt="Kids kneading pasta dough together"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center 15%" }}
+          />
         </div>
         <div className="flex flex-col justify-center px-6 py-14 md:px-16">
           <span className="stag">Get Started</span>
