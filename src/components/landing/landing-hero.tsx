@@ -24,10 +24,10 @@ export function LandingHero() {
           Every guest receives the LIFE Guide to try small habits at home. Within 30 days, they host their own LIFE workshop—keeping the measureable ripple growing.
         </p>
         <div className="fu5 flex flex-wrap gap-3" style={{ animation: "fadeUp 0.65s ease 0.68s both" }}>
-          <Link href="https://www.longevityinitiativeforfoodandeducation.com/host" className="btn-p">
+          <Link href="/host" className="btn-p">
             Host a Table
           </Link>
-          <Link href="https://www.longevityinitiativeforfoodandeducation.com/how-it-works" className="btn-o">
+          <Link href="/how-it-works" className="btn-o">
             See How It Works
           </Link>
         </div>

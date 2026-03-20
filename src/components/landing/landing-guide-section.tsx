@@ -28,19 +28,19 @@ const PILLARS = [
 export function LandingGuideSection() {
   return (
     <section id="guide" className="bg-[var(--earth)] px-6 py-20 text-white md:px-16">
-      <span className="stag text-[rgba(255,255,255,0.5)]">The LIFE Guide</span>
+      <span className="stag text-[rgba(255,255,255,0.45)]">The LIFE Guide</span>
       <h2 className="sh text-white">Six pillars. Habits you can actually live.</h2>
-      <p className="sb text-[rgba(255,255,255,0.7)]">Every guest leaves with a guide built around six foundations of long-term health. Not a diet plan. Not a program. Just simple habits worth sharing.</p>
+      <p className="sb text-[rgba(255,255,255,0.65)]">Every guest leaves with a guide built around six foundations of long-term health. Not a diet plan. Not a program. Just simple habits worth sharing.</p>
       <div className="mt-10 grid gap-px rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.08)] md:grid-cols-3">
         {PILLARS.map((pillar) => (
           <div key={pillar.title} className="bg-[var(--earth)] p-6">
             <div className="mb-3 h-8 w-8 rounded-full border border-[rgba(255,255,255,0.2)]" />
-            <h3 className="text-[0.95rem] font-semibold">{pillar.title}</h3>
-            <p className="mt-2 text-[0.85rem] text-[rgba(255,255,255,0.65)]">{pillar.body}</p>
+            <h3 className="text-[0.95rem] font-semibold text-white">{pillar.title}</h3>
+            <p className="mt-2 text-[0.85rem] text-[rgba(255,255,255,0.55)]">{pillar.body}</p>
           </div>
         ))}
       </div>
-      <p className="guide-note mt-6 text-center text-[0.9rem] text-[rgba(255,255,255,0.5)]">These aren&apos;t rules. They&apos;re habits — meant to be shared, practiced, and passed on.</p>
+      <p className="guide-note mt-6 text-center text-[0.9rem] text-[rgba(255,255,255,0.4)]">These aren&apos;t rules. They&apos;re habits — meant to be shared, practiced, and passed on.</p>
     </section>
   );
 }

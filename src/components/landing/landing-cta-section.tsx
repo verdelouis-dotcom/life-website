@@ -18,10 +18,10 @@ export function LandingCTASection() {
           <h2 className="sh max-w-md">Open your kitchen. Start the ripple.</h2>
           <p className="sb mb-6">It starts with one invitation. One recipe. One evening without phones. And a promise to do it again for someone else.</p>
           <div className="cta-actions flex flex-wrap gap-3">
-            <Link href="https://www.longevityinitiativeforfoodandeducation.com/host" className="btn-p">
+            <Link href="/host" className="btn-p">
               Host a Table
             </Link>
-            <Link href="https://www.longevityinitiativeforfoodandeducation.com/life-guide" className="btn-o">
+            <Link href="/life-guide" className="btn-o">
               Read the LIFE Guide
             </Link>
           </div>

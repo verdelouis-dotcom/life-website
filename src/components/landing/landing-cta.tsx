@@ -1,8 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./landing.module.css";
-
-const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
-const GUIDE_URL = "https://www.longevityinitiativeforfoodandeducation.com/life-guide";
 
 export default function LandingCTASection() {
   return (
@@ -27,12 +25,12 @@ export default function LandingCTASection() {
             It starts with one invitation. One recipe. One evening without phones. And a promise to do it again for someone else.
           </p>
           <div className={styles.ctaActions}>
-            <a href={HOST_URL} className={styles.primaryBtn}>
+            <Link href="/host" className={styles.primaryBtn}>
               Host a Table
-            </a>
-            <a href={GUIDE_URL} className={styles.outlineBtn}>
+            </Link>
+            <Link href="/life-guide" className={styles.outlineBtn}>
               Read the LIFE Guide
-            </a>
+            </Link>
           </div>
           <p className={styles.pilotNote}>
             <span className={styles.pilotDot} />Currently piloting in Metro Atlanta · 501(c)(3) pending
