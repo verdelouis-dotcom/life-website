@@ -1,26 +1,34 @@
+import Link from "next/link";
+
 const PILLARS = [
   {
     title: "Food",
+    slug: "food",
     body: "Cook from scratch. Use whole ingredients. Share what you make. The way we eat shapes everything else.",
   },
   {
     title: "Movement",
+    slug: "movement",
     body: "Daily motion woven into real life — not a gym routine you'll quit, but a disposition you'll keep.",
   },
   {
     title: "Sleep",
+    slug: "sleep",
     body: "Rest is the most underrated habit there is. Simple, evidence-backed practices to protect it.",
   },
   {
     title: "Connection",
+    slug: "connection",
     body: "Loneliness is a health crisis. A shared meal is one of the oldest cures. Show up for the people you love.",
   },
   {
     title: "Purpose",
+    slug: "purpose",
     body: "People who know why they get up in the morning live longer. LIFE gives you a reason to show up for others.",
   },
   {
     title: "Stress Regulation",
+    slug: "stress",
     body: "Chronic stress is invisible and cumulative. Daily tools that don't require a retreat or a subscription.",
   },
 ];
@@ -33,11 +41,14 @@ export function LandingGuideSection() {
       <p className="sb text-[rgba(255,255,255,0.65)]">Every guest leaves with a guide built around six foundations of long-term health. Not a diet plan. Not a program. Just simple habits worth sharing.</p>
       <div className="mt-10 grid gap-px rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.08)] md:grid-cols-3">
         {PILLARS.map((pillar) => (
-          <div key={pillar.title} className="bg-[var(--earth)] p-6">
-            <div className="mb-3 h-8 w-8 rounded-full border border-[rgba(255,255,255,0.2)]" />
-            <h3 className="text-[0.95rem] font-semibold text-white">{pillar.title}</h3>
+          <Link
+            key={pillar.title}
+            href={`/pillars/${pillar.slug}`}
+            className="block bg-[var(--earth)] p-6 transition hover:bg-[rgba(255,255,255,0.03)]"
+          >
+            <h3 className="text-[0.95rem] font-semibold text-[rgba(255,255,255,0.55)]">{pillar.title}</h3>
             <p className="mt-2 text-[0.85rem] text-[rgba(255,255,255,0.55)]">{pillar.body}</p>
-          </div>
+          </Link>
         ))}
       </div>
       <p className="guide-note mt-6 text-center text-[0.9rem] text-[rgba(255,255,255,0.4)]">These aren&apos;t rules. They&apos;re habits — meant to be shared, practiced, and passed on.</p>
