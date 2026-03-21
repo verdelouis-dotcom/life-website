@@ -50,9 +50,9 @@ const BOARD_MEMBERS = [
 ];
 
 const BOARD_PRACTICES = [
-  "Quarterly reviews covering LIFE workshop registrations, donations, and pilot risks.",
+  "Quarterly reviews covering LIFE gathering registrations, donations, and pilot risks.",
   "Dual-approval process for program expenses and grant disbursements.",
-  "Public reporting on registered LIFE workshops, host commitments, and assessment insights.",
+  "Public reporting on registered LIFE gatherings, host commitments, and assessment insights.",
 ];
 
 export default function AboutPage() {
@@ -65,9 +65,9 @@ export default function AboutPage() {
             <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">About LIFE</h1>
             <p className="mt-4 text-lg text-[var(--muted)]">
               The Longevity Initiative for Food &amp; Education (LIFE) is a nonprofit movement rebuilding the rituals that once made healthy
-              communities possible: fresh ingredients, shared LIFE workshops, and long-term accountability.
+              communities possible: fresh ingredients, shared LIFE gatherings, and long-term accountability.
             </p>
-            <p className="mt-4 body-md text-[var(--text)]">A LIFE workshop is a shared meal where people cook, learn, and connect.</p>
+            <p className="mt-4 body-md text-[var(--text)]">A LIFE gathering is a shared meal where people cook, learn, and connect.</p>
           </div>
         </section>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </p>
           </article>
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Why the LIFE Workshop Matters</h2>
+            <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Why the LIFE Gathering Matters</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text)]">
               Shared meals reduce isolation, improve food choices, and make healthier defaults easier to sustain. They also provide the best
               setting to teach the LIFE pillars: food, movement, sleep, connection, purpose, and stress regulation.
@@ -92,7 +92,7 @@ export default function AboutPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">Founder Story</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--text)]">
-              Lou Verde grew up in a home where the LIFE workshop was sacred—three generations cooking, eating, and taking care of each other with fresh ingredients.
+              Lou Verde grew up in a home where the LIFE gathering was sacred—three generations cooking, eating, and taking care of each other with fresh ingredients.
               Those lived patterns became the blueprint for LIFE long before any formal study. Later trips to Italy and longevity research simply confirmed
               what he already knew: shared meals, purpose, and responsibility extend healthy years. The first public gatherings piloted in Georgia so the
               structure could be tested transparently before traveling to other cities.
@@ -102,7 +102,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold text-[var(--life-forest)]">What Makes LIFE Different</h2>
             <ul className="mt-4 space-y-3 text-sm text-[var(--text)]">
               <li>• Mediterranean-inspired cooking techniques adapted to any cuisine.</li>
-              <li>• Hosts register every LIFE workshop so reach, attendance, and impact are measurable.</li>
+              <li>• Hosts register every LIFE gathering so reach, attendance, and impact are measurable.</li>
               <li>• The LIFE Longevity Assessment connects personal habits to the six pillars.</li>
               <li>• Donations underwrite ingredients, host toolkits, and reporting—not overhead.</li>
             </ul>
@@ -113,8 +113,8 @@ export default function AboutPage() {
           imageSrc="/images/founder.jpeg"
           alt="Founder Lou Verde leading a LIFE dinner"
           eyebrow="Founder-led pilot"
-          title="Why LIFE started at a single shared LIFE workshop"
-          body="Lou Verde traveled to Italy to study longevity traditions firsthand, learning the art of making pasta from scratch before translating those lessons into small shared LIFE workshops back home. Every LIFE workshop photo, registered LIFE workshop, and assessment reflection feeds the next host so the model stays grounded in real families."
+          title="Why LIFE started at a single shared LIFE gathering"
+          body="Lou Verde traveled to Italy to study longevity traditions firsthand, learning the art of making pasta from scratch before translating those lessons into small shared LIFE gatherings back home. Every LIFE gathering photo, registered LIFE gathering, and assessment reflection feeds the next host so the model stays grounded in real families."
           caption="Photo: Longevity research trip in Italy"
           imageClassName="object-[center_top]"
         />
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 Take the Assessment
               </Link>
               <Link href="/host" className="btn-outline px-8 text-base">
-                Host a LIFE Workshop
+                Host a LIFE Gathering
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Support Us

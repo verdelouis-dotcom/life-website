@@ -40,9 +40,9 @@ export default function NewsletterSignup({ title, description, compact = false, 
 
       setStatus("success");
       if (data?.alreadySubscribed) {
-        setMessage("You're already part of The Shared LIFE Workshop.");
+        setMessage("You're already part of The Shared LIFE Gathering.");
       } else {
-        setMessage("You're now part of The Shared LIFE Workshop.");
+        setMessage("You're now part of The Shared LIFE Gathering.");
         setEmail("");
       }
     } catch (error) {
@@ -55,7 +55,7 @@ export default function NewsletterSignup({ title, description, compact = false, 
   if (status === "success" && compact) {
     return (
       <div className="rounded-2xl border border-[var(--border)] bg-white/80 px-4 py-3 text-sm text-[var(--olive)] shadow-sm">
-        {"You're subscribed to The Shared LIFE Workshop. Welcome."}
+        {"You're subscribed to The Shared LIFE Gathering. Welcome."}
       </div>
     );
   }
@@ -90,7 +90,7 @@ export default function NewsletterSignup({ title, description, compact = false, 
       {message && (
         <p className={`type-detail ${status === "success" ? "text-[var(--olive)]" : "text-[var(--terracotta)]"}`}>{message}</p>
       )}
-      <p className={`${compact ? "text-left" : "text-center"} type-eyebrow`}>No spam. Just thoughtful updates from the LIFE workshop.</p>
+      <p className={`${compact ? "text-left" : "text-center"} type-eyebrow`}>No spam. Just thoughtful updates from the LIFE gathering.</p>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Reveal from "@/components/ui/reveal";
 const EXPERIENCE_IMAGES = [
   { src: "/images/workshops/pasta-lesson-1.jpg", alt: "Hands guiding pasta dough through a roller" },
   { src: "/images/workshops/pasta-lesson-3.jpeg", alt: "Hosts shaping fresh pasta" },
-  { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "LIFE workshop leader coaching guests" },
+  { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "LIFE gathering host coaching guests" },
 ];
 
 export default function SectionLifeInAction() {

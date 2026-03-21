@@ -29,7 +29,7 @@ export default function RegisterForm() {
       dateHosted: formData.get("dateHosted")?.toString().trim() ?? "",
       totalPeople: formData.get("totalPeople")?.toString().trim() ?? "",
       consentPhoto: formData.get("consentPhoto") === "on",
-      source: "LIFE Workshop Registration",
+      source: "LIFE Gathering Registration",
       photoAttached: Boolean(photoAttachment) || Boolean(photoAttachment2) || Boolean(photoAttachment3),
     };
 

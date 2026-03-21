@@ -30,7 +30,7 @@ export default function KeynotePage() {
             <p className="type-eyebrow">Community Education</p>
             <h1 className="section-heading">Keynote</h1>
             <p className="type-body-muted">
-              Founder Lou Verde offers a 30-minute keynote on longevity, culture, and the restoration of the shared LIFE workshop.
+              Founder Lou Verde offers a 30-minute keynote on longevity, culture, and the restoration of the shared LIFE gathering.
             </p>
           </div>
           <div className="mt-6 text-left text-sm text-[var(--text)]">

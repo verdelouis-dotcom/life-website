@@ -8,20 +8,20 @@ import { PILOT_QUOTES } from "@/data/proof";
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/workshops";
 
 export const metadata: Metadata = {
-  title: "LIFE Gatherings | What Happens at a LIFE Workshop",
+  title: "LIFE Gatherings | What Happens at a LIFE Gathering",
   description:
     "A LIFE gathering is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "LIFE Gatherings | What Happens at a LIFE Workshop",
+    title: "LIFE Gatherings | What Happens at a LIFE Gathering",
     description:
       "A LIFE gathering is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
     url: PAGE_URL,
   },
   twitter: {
-    title: "LIFE Gatherings | What Happens at a LIFE Workshop",
+    title: "LIFE Gatherings | What Happens at a LIFE Gathering",
     description:
       "A LIFE gathering is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
   },

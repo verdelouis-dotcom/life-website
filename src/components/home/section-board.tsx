@@ -33,7 +33,7 @@ const STATUS_LINES = [
 const ACCOUNTABILITY = [
   "Quarterly board reviews covering program data, financial reports, and risk assessment.",
   "Expense approvals require dual sign-off from the Treasurer and one additional officer.",
-  "Program metrics (LIFE workshops hosted, participants, replication rate) published via LIFE’s register portal.",
+  "Program metrics (LIFE gatherings hosted, participants, replication rate) published via LIFE’s register portal.",
 ];
 
 export default function SectionBoard() {

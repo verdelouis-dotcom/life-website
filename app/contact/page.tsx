@@ -9,18 +9,18 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/contact
 
 export const metadata: Metadata = {
   title: "Contact LIFE | Longevity Initiative for Food & Education",
-  description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE workshops, or community LIFE workshop programs.",
+  description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE gatherings, or community LIFE gathering programs.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "Contact LIFE | Longevity Initiative for Food & Education",
-    description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE workshops, or community LIFE workshop programs.",
+    description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE gatherings, or community LIFE gathering programs.",
     url: PAGE_URL,
   },
   twitter: {
     title: "Contact LIFE | Longevity Initiative for Food & Education",
-    description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE workshops, or community LIFE workshop programs.",
+    description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE gatherings, or community LIFE gathering programs.",
   },
 };
 
@@ -28,14 +28,14 @@ const CONTACT_FAQ = [
   {
     question: "What types of inquiries can I send?",
     answer:
-      "Program partnerships, keynote or LIFE workshop requests, donation questions, and general volunteering interest are all welcome through this form.",
+      "Program partnerships, keynote or LIFE gathering requests, donation questions, and general volunteering interest are all welcome through this form.",
   },
   {
     question: "How quickly will someone respond?",
     answer: "The LIFE volunteer team replies within two business days and routes urgent needs to the appropriate board lead.",
   },
   {
-    question: "Can I ask about partnerships, LIFE workshops, or speaking?",
+    question: "Can I ask about partnerships, LIFE gatherings, or speaking?",
     answer:
       "Yes. Include your organization name, desired dates, and location so we can determine whether current host cities or a virtual option fit.",
   },
@@ -50,11 +50,11 @@ export default function ContactPage() {
             <p className="label-text">Contact</p>
             <h1 className="mt-2 heading-xl">Contact LIFE</h1>
             <p className="mt-4 body-md text-[var(--muted)]">
-              Use this form for partnerships, hosted LIFE workshop requests, keynote inquiries, or general questions. We respond within two business days.
+              Use this form for partnerships, hosted LIFE gathering requests, keynote inquiries, or general questions. We respond within two business days.
             </p>
             <ul className="mt-4 space-y-2 body-sm text-[var(--text)] text-left">
-              <li>• Partnership or hosted LIFE workshop requests</li>
-              <li>• Host or LIFE workshop support questions</li>
+              <li>• Partnership or hosted LIFE gathering requests</li>
+              <li>• Host or LIFE gathering support questions</li>
               <li>• Keynote, speaking, or media inquiries</li>
             </ul>
             <p className="mt-3 text-sm text-[var(--muted)]">Choose the interest type that fits best—we’ll route it to the right board lead.</p>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               </li>
               <li>
                 <span className="font-semibold">Partnerships:</span> Community health systems, universities, and faith organizations interested
-                in piloting LIFE workshops.
+                in piloting LIFE gatherings.
               </li>
               <li>
                 <span className="font-semibold">Media:</span> Requests for interviews, stories, or research collaboration.
@@ -103,14 +103,14 @@ export default function ContactPage() {
             <div className="mt-4 space-y-4">
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What types of inquiries can I send?</h3>
-                <p className="mt-2 text-sm text-[var(--text)]">Program partnerships, keynote or LIFE workshop requests, donation questions, and general volunteering interest are all welcome through this form.</p>
+                <p className="mt-2 text-sm text-[var(--text)]">Program partnerships, keynote or LIFE gathering requests, donation questions, and general volunteering interest are all welcome through this form.</p>
               </div>
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">How quickly will someone respond?</h3>
                 <p className="mt-2 text-sm text-[var(--text)]">The LIFE volunteer team replies within two business days and routes urgent needs to the appropriate board lead.</p>
               </div>
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can I ask about partnerships, LIFE workshops, or speaking?</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Can I ask about partnerships, LIFE gatherings, or speaking?</h3>
                 <p className="mt-2 text-sm text-[var(--text)]">Yes. Include your organization name, desired dates, and location so we can determine whether current host cities or a virtual option fit.</p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function ContactPage() {
                 Take the Assessment
               </Link>
               <Link href="/host" className="btn-outline px-8 text-base">
-                Host a LIFE Workshop
+                Host a LIFE Gathering
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Support Us

@@ -29,7 +29,7 @@ export default function ResourcesPage() {
             <p className="label-text">LIFE Resources</p>
             <h1 className="mt-2 heading-xl">LIFE Resources</h1>
             <p className="mt-4 body-md text-[var(--muted)]">
-              LIFE shares practical education about longevity, Mediterranean-inspired cooking, and the power of community LIFE workshops. Explore the
+              LIFE shares practical education about longevity, Mediterranean-inspired cooking, and the power of community LIFE gatherings. Explore the
               guides below to understand the philosophy that began in Georgia and how early hosts are carrying it to Atlanta, GA and Austin, TX.
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function ResourcesPage() {
                 Take the Assessment
               </Link>
               <Link href="/workshops" className="btn-outline px-8 text-base">
-                Explore LIFE Workshops
+                Attend a Gathering
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Support Us

@@ -43,7 +43,7 @@ export default function SixPillarsPage() {
           <Link href={PILLAR_LINKS.food} className="text-[var(--terracotta)] underline">
             Food pillar
           </Link>{" "}
-          to see practical ways LIFE workshops keep ingredients simple and affordable.
+          to see practical ways LIFE gatherings keep ingredients simple and affordable.
         </p>
       </ResourceSection>
 
@@ -71,7 +71,7 @@ export default function SixPillarsPage() {
 
       <ResourceSection title="Connection">
         <p>
-          Belonging impacts longevity as much as some physical health markers. LIFE workshops create room for mutual support and storytelling. Visit
+          Belonging impacts longevity as much as some physical health markers. LIFE gatherings create room for mutual support and storytelling. Visit
           the {" "}
           <Link href={PILLAR_LINKS.connection} className="text-[var(--terracotta)] underline">
             Connection pillar
@@ -111,7 +111,7 @@ export default function SixPillarsPage() {
           <Link href="/assessment/methodology" className="text-[var(--terracotta)] underline">
             methodology guide
           </Link>
-          . Hosts and participants revisit the pillars after each LIFE workshop to see which ones improved and what needs attention next.
+          . Hosts and participants revisit the pillars after each LIFE gathering to see which ones improved and what needs attention next.
         </p>
       </ResourceSection>
     </ResourceArticleLayout>

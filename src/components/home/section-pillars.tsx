@@ -17,7 +17,7 @@ export function SectionPillars() {
         <Reveal className="space-y-3">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-neutral-700 md:text-base">Framework</p>
           <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--life-forest)] md:text-5xl">The Six Pillars of LIFE</h2>
-          <p className="text-base leading-relaxed text-[var(--muted)] md:text-lg">Each pillar represents a simple foundation of long-term health. Click to explore how it shows up at a LIFE workshop.</p>
+          <p className="text-base leading-relaxed text-[var(--muted)] md:text-lg">Each pillar represents a simple foundation of long-term health. Click to explore how it shows up at a LIFE gathering.</p>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((pillar, index) => (

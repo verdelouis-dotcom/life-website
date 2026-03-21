@@ -7,16 +7,16 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resourc
 
 export const metadata: Metadata = {
   title: "How LIFE Creates Community Health | LIFE Resources",
-  description: "See how the LIFE model turns shared meals, LIFE workshops, and local hosts into a growing community health movement.",
+  description: "See how the LIFE model turns shared meals, LIFE gatherings, and local hosts into a growing community health movement.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "How LIFE Creates Community Health | LIFE Resources",
-    description: "See how the LIFE model turns shared meals, LIFE workshops, and local hosts into a growing community health movement.",
+    description: "See how the LIFE model turns shared meals, LIFE gatherings, and local hosts into a growing community health movement.",
     url: PAGE_URL,
   },
   twitter: {
     title: "How LIFE Creates Community Health | LIFE Resources",
-    description: "See how the LIFE model turns shared meals, LIFE workshops, and local hosts into a growing community health movement.",
+    description: "See how the LIFE model turns shared meals, LIFE gatherings, and local hosts into a growing community health movement.",
   },
 };
 
@@ -24,14 +24,14 @@ export default function HowLifeCreatesCommunityHealthPage() {
   return (
     <ResourceArticleLayout
       title="How LIFE Creates Community Health"
-      intro="LIFE is designed as a simple, replicable framework: attend a LIFE workshop, host a LIFE workshop, register the gathering. Each step adds data and trust, making it easier to serve more neighborhoods without diluting the mission."
+      intro="LIFE is designed as a simple, replicable framework: attend a LIFE gathering, host a LIFE gathering, register the gathering. Each step adds data and trust, making it easier to serve more neighborhoods without diluting the mission."
       primaryCta={{ href: "/how-it-works", label: "Learn How LIFE Works" }}
       secondaryCta={{ href: "/donate", label: "Support Us", variant: "outline" }}
     >
-      <ResourceSection title="LIFE Workshops transfer practical skills">
+      <ResourceSection title="LIFE Gatherings transfer practical skills">
         <p>
           <Link href="/workshops" className="text-[var(--terracotta)] underline">
-            LIFE workshops
+            LIFE gatherings
           </Link>{" "}
           in Georgia and early host cities teach basic cooking, facilitation, and assessment skills. They are the beginning of the {" "}
           <Link href="/how-it-works" className="text-[var(--terracotta)] underline">
@@ -54,7 +54,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
 
       <ResourceSection title="Registration keeps the model measurable">
         <p>
-          Every LIFE workshop is logged through the {" "}
+          Every LIFE gathering is logged through the {" "}
           <Link href="/register" className="text-[var(--terracotta)] underline">
             registration form
           </Link>
@@ -72,7 +72,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
           <Link href="/assessment" className="text-[var(--terracotta)] underline">
             LIFE Longevity Assessment
           </Link>{" "}
-          show which pillars need additional support. If movement or sleep scores lag in a neighborhood, LIFE can tailor LIFE workshops and resources.
+          show which pillars need additional support. If movement or sleep scores lag in a neighborhood, LIFE can tailor LIFE gatherings and resources.
         </p>
       </ResourceSection>
 

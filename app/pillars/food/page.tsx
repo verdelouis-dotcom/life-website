@@ -24,8 +24,8 @@ const RESEARCH = [
 ];
 
 const LIFE_TIE_IN = [
-  "LIFE brings nutrition out of theory and into the kitchen. When a host teaches one meal at a shared LIFE workshop, healthy eating becomes visible, social, and easier to repeat.",
-  "The LIFE workshop helps bridge the gap between information and action. People do not just hear what to eat — they cook it, taste it, and leave with something they can recreate at home.",
+  "LIFE brings nutrition out of theory and into the kitchen. When a host teaches one meal at a shared LIFE gathering, healthy eating becomes visible, social, and easier to repeat.",
+  "The LIFE gathering helps bridge the gap between information and action. People do not just hear what to eat — they cook it, taste it, and leave with something they can recreate at home.",
 ];
 
 const TAKEAWAYS = [
@@ -46,7 +46,7 @@ export default function FoodPillarPage() {
     <PillarPage
       title="Food"
       subtitle="Real food, cooked simply, is one of the strongest foundations for long-term health."
-      intro="Food is not just fuel. It shapes energy, habits, family routines, and the quality of daily life. LIFE uses the shared LIFE workshop to help people return to meals built from real ingredients, practical cooking, and connection."
+      intro="Food is not just fuel. It shapes energy, habits, family routines, and the quality of daily life. LIFE uses the shared LIFE gathering to help people return to meals built from real ingredients, practical cooking, and connection."
       why={WHY}
       research={RESEARCH}
       lifeTieIn={LIFE_TIE_IN}

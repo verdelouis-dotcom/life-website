@@ -6,13 +6,13 @@ const GUIDE_ITEMS = [
   { title: "Recipes", body: "Simple meal ideas built around real, fresh ingredients." },
   { title: "Daily Habit Tracker", body: "A printable list of habits participants can check off throughout the week." },
   { title: "Practical Tips", body: "Easy ways to build healthier routines into busy family life." },
-  { title: "At-Home Momentum", body: "A simple structure that helps people keep going after the workshop ends." },
+  { title: "At-Home Momentum", body: "A simple structure that helps people keep going after the gathering ends." },
 ];
 
 const STEPS = [
   {
-    title: "Attend a LIFE workshop",
-    body: "Participants gather around the LIFE workshop, share a meal, and experience the LIFE model firsthand.",
+    title: "Attend a LIFE gathering",
+    body: "Participants gather around the LIFE gathering, share a meal, and experience the LIFE model firsthand.",
   },
   {
     title: "Take the guide home",
@@ -30,18 +30,18 @@ const GUIDE_PDF = "/life-7-day-challenge.pdf";
 export const metadata: Metadata = {
   title: "LIFE Guide | Longevity Initiative for Food & Education",
   description:
-    "Learn how the LIFE Guide helps workshop participants keep building healthier habits with recipes, tips, and daily practices.",
+    "Learn how the LIFE Guide helps gathering participants keep building healthier habits with recipes, tips, and daily practices.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "LIFE Guide",
     description:
-      "Workshop participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
+      "Gathering participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
     url: PAGE_URL,
   },
   twitter: {
     title: "LIFE Guide",
     description:
-      "Workshop participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
+      "Gathering participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
   },
 };
 
@@ -54,7 +54,7 @@ export default function LifeGuidePage() {
             <p className="type-eyebrow text-[var(--olive)]">TAKE IT HOME</p>
             <h1 className="text-4xl font-semibold text-[var(--life-forest)]">The LIFE Guide</h1>
             <p className="text-lg text-[var(--muted)]">
-              After attending a LIFE workshop, participants receive the complete LIFE Guide — a practical take-home resource filled with recipes, simple tips, and daily habits that help bring healthier, more connected living into the home.
+              After attending a LIFE gathering, participants receive the complete LIFE Guide — a practical take-home resource filled with recipes, simple tips, and daily habits that help bring healthier, more connected living into the home.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href={WORKSHOP_LINK} className="btn-solid px-8 text-base">
@@ -71,7 +71,7 @@ export default function LifeGuidePage() {
           <div className="space-y-4 rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
             <h2 className="text-3xl font-semibold text-[var(--life-forest)]">What’s inside the guide</h2>
             <p className="text-sm leading-6 text-[var(--text)]">
-              The LIFE Guide is designed to help people take what they experienced at the LIFE workshop and continue it at home. It turns the workshop into something practical, repeatable, and easy to share with others.
+              The LIFE Guide is designed to help people take what they experienced at the LIFE gathering and continue it at home. It turns the gathering into something practical, repeatable, and easy to share with others.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               {GUIDE_ITEMS.map((item) => (
@@ -88,7 +88,7 @@ export default function LifeGuidePage() {
           <div className="space-y-4 rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
             <h2 className="text-3xl font-semibold text-[var(--life-forest)]">Why it matters</h2>
             <p className="text-sm leading-6 text-[var(--text)]">
-              The goal of LIFE is not just to create a meaningful workshop experience. It is to help people bring healthier habits, stronger connection, and a more intentional way of living into their everyday routine.
+              The goal of LIFE is not just to create a meaningful gathering experience. It is to help people bring healthier habits, stronger connection, and a more intentional way of living into their everyday routine.
             </p>
             <p className="text-sm leading-6 text-[var(--text)]">The guide helps turn one experience into repeated action.</p>
           </div>
@@ -96,7 +96,7 @@ export default function LifeGuidePage() {
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
           <div className="space-y-6 rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
-            <h2 className="text-3xl font-semibold text-[var(--life-forest)]">What happens after the workshop</h2>
+            <h2 className="text-3xl font-semibold text-[var(--life-forest)]">What happens after the gathering</h2>
             <div className="grid gap-4 md:grid-cols-3">
               {STEPS.map((step, index) => (
                 <article key={step.title} className="rounded-3xl border border-[var(--border)] bg-[#fffdf9] p-6 shadow-sm">
@@ -121,9 +121,9 @@ export default function LifeGuidePage() {
         <section className="mx-auto max-w-5xl px-6 pb-16">
           <div className="space-y-4 rounded-[40px] border border-[var(--border)] bg-white/95 p-10 text-center shadow-sm">
             <p className="type-eyebrow text-[var(--olive)]">Keep Going</p>
-            <h2 className="text-3xl font-semibold text-[var(--life-forest)]">Start with the LIFE workshop. Keep it going at home.</h2>
+            <h2 className="text-3xl font-semibold text-[var(--life-forest)]">Start with the LIFE gathering. Keep it going at home.</h2>
             <p className="text-sm leading-6 text-[var(--text)]">
-              Attend a LIFE workshop and receive the complete guide designed to help you carry the experience into everyday life.
+              Attend a LIFE gathering and receive the complete guide designed to help you carry the experience into everyday life.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link href={WORKSHOP_LINK} className="btn-solid px-8 text-base">

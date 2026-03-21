@@ -4,22 +4,22 @@ import Link from "next/link";
 const GUIDE_URL = "https://www.longevityinitiativeforfoodandeducation.com/host/guide";
 
 export const metadata: Metadata = {
-  title: "LIFE Host Guide | How to Lead a LIFE Workshop",
+  title: "LIFE Host Guide | How to Lead a LIFE Gathering",
   description:
-    "Step-by-step guidance for hosting a LIFE workshop: invite, prepare, share the pillars, and register the gathering so it counts toward the movement.",
+    "Step-by-step guidance for hosting a LIFE gathering: invite, prepare, share the pillars, and register the gathering so it counts toward the movement.",
   alternates: {
     canonical: GUIDE_URL,
   },
   openGraph: {
-    title: "LIFE Host Guide | How to Lead a LIFE Workshop",
+    title: "LIFE Host Guide | How to Lead a LIFE Gathering",
     description:
-      "Learn how to plan, cook, facilitate, and register a LIFE workshop so your gathering supports the six pillars of healthy aging.",
+      "Learn how to plan, cook, facilitate, and register a LIFE gathering so your gathering supports the six pillars of healthy aging.",
     url: GUIDE_URL,
   },
   twitter: {
-    title: "LIFE Host Guide | How to Lead a LIFE Workshop",
+    title: "LIFE Host Guide | How to Lead a LIFE Gathering",
     description:
-      "Learn how to plan, cook, facilitate, and register a LIFE workshop so your gathering supports the six pillars of healthy aging.",
+      "Learn how to plan, cook, facilitate, and register a LIFE gathering so your gathering supports the six pillars of healthy aging.",
   },
 };
 
@@ -58,7 +58,7 @@ export default function HostGuidePage() {
         <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-16">
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
             <p className="type-eyebrow text-[var(--olive)]">Host Guide</p>
-            <h1 className="type-display">How to Lead a LIFE Workshop</h1>
+            <h1 className="type-display">How to Lead a LIFE Gathering</h1>
             <p className="type-lede text-[var(--muted)]">
               Use this guide to plan and run your gathering. Follow the flow, use the prompts, and register when you&apos;re done.
             </p>

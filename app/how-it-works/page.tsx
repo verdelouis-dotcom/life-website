@@ -5,29 +5,29 @@ import FaqSchema from "@/components/seo/FaqSchema";
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/how-it-works";
 
 export const metadata: Metadata = {
-  title: "How LIFE Workshops Work | Longevity Initiative",
-  description: "See how the LIFE shared LIFE workshop model spreads longevity habits through community meals, cooking education, and connection.",
+  title: "How LIFE Gatherings Work | Longevity Initiative",
+  description: "See how the LIFE shared LIFE gathering model spreads longevity habits through community meals, cooking education, and connection.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "How LIFE Workshops Work | Longevity Initiative",
-    description: "See how the LIFE shared LIFE workshop model spreads longevity habits through community meals, cooking education, and connection.",
+    title: "How LIFE Gatherings Work | Longevity Initiative",
+    description: "See how the LIFE shared LIFE gathering model spreads longevity habits through community meals, cooking education, and connection.",
     url: PAGE_URL,
   },
   twitter: {
-    title: "How LIFE Workshops Work | Longevity Initiative",
-    description: "See how the LIFE shared LIFE workshop model spreads longevity habits through community meals, cooking education, and connection.",
+    title: "How LIFE Gatherings Work | Longevity Initiative",
+    description: "See how the LIFE shared LIFE gathering model spreads longevity habits through community meals, cooking education, and connection.",
   },
 };
 
 const STEP_CONTENT = [
   {
-    title: "1. Attend a LIFE Workshop",
+    title: "1. Attend a LIFE Gathering",
     body: "Sit down, share a meal, and take part in real conversation so you can see how LIFE feels.",
   },
   {
-    title: "2. Host a LIFE Workshop",
+    title: "2. Host a LIFE Gathering",
     body: "Within 30 days, host a simple gathering of your own. Teach a favorite recipe or family tradition while sharing the LIFE pillars.",
   },
   {
@@ -38,16 +38,16 @@ const STEP_CONTENT = [
 
 const HOW_IT_WORKS_FAQ = [
   {
-    question: "Do I need experience to host a LIFE workshop?",
+    question: "Do I need experience to host a LIFE gathering?",
     answer:
       "No. Hosts receive the LIFE guide, ingredient templates, and facilitation prompts. Any cuisine works as long as it uses fresh ingredients and includes a seated conversation.",
   },
   {
     question: "What happens after I host?",
-    answer: "You register the LIFE workshop online, submit attendance, and note any stories. The LIFE team follows up with resources so you can host again or mentor another host.",
+    answer: "You register the LIFE gathering online, submit attendance, and note any stories. The LIFE team follows up with resources so you can host again or mentor another host.",
   },
   {
-    question: "Is registering a LIFE workshop required?",
+    question: "Is registering a LIFE gathering required?",
     answer: "Yes. Registration is how LIFE proves impact to grants and keeps ingredients flowing to the next host. Without it, we can’t responsibly expand.",
   },
   {
@@ -82,20 +82,20 @@ export default function HowItWorksPage() {
             ))}
           </div>
           <p className="mt-8 text-center body-md text-[var(--text)]">
-            LIFE grows one LIFE workshop at a time: people attend, host within 30 days, teach what they know, and register so every gathering adds proof.
+            LIFE grows one LIFE gathering at a time: people attend, host within 30 days, teach what they know, and register so every gathering adds proof.
           </p>
           <div className="mt-8 text-center">
             <Link href="/host" className="btn-solid px-8 text-base">
-              Host a LIFE Workshop
+              Host a LIFE Gathering
             </Link>
           </div>
         </section>
 
         <section className="mx-auto max-w-4xl px-6 pb-8">
           <div className="rounded-[32px] border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
-            <h3 className="heading-md">Some hosts continue beyond their first LIFE workshop.</h3>
+            <h3 className="heading-md">Some hosts continue beyond their first LIFE gathering.</h3>
             <p className="mt-3 body-sm text-[var(--text)]">
-              After hosting once, many neighbors choose to become <strong>LIFE Host Champions</strong>—volunteers who host multiple LIFE workshops each year,
+              After hosting once, many neighbors choose to become <strong>LIFE Host Champions</strong>—volunteers who host multiple LIFE gatherings each year,
               mentor new hosts, and keep their community’s momentum going. Their commitment is grounded in the same generational habits LIFE is built on,
               now reinforced by modern longevity research and measured through simple registration.
             </p>
@@ -140,7 +140,7 @@ export default function HowItWorksPage() {
             <p className="type-eyebrow text-[var(--olive)]">Open your kitchen. Start the ripple.</p>
             <div className="mt-6 flex justify-center">
               <Link href="/host" className="btn-solid px-8 text-base">
-                Host a LIFE Workshop
+                Host a LIFE Gathering
               </Link>
             </div>
           </div>

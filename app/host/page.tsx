@@ -4,18 +4,18 @@ import Link from "next/link";
 const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
 
 export const metadata: Metadata = {
-  title: "Host a LIFE Workshop | Lead a Longevity Dinner in Your Community",
+  title: "Host a LIFE Gathering | Lead a Longevity Dinner in Your Community",
   description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
   alternates: {
     canonical: HOST_URL,
   },
   openGraph: {
-    title: "Host a LIFE Workshop | Lead a Longevity Dinner in Your Community",
+    title: "Host a LIFE Gathering | Lead a Longevity Dinner in Your Community",
     description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
     url: HOST_URL,
   },
   twitter: {
-    title: "Host a LIFE Workshop | Lead a Longevity Dinner in Your Community",
+    title: "Host a LIFE Gathering | Lead a Longevity Dinner in Your Community",
     description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
   },
 };
@@ -29,7 +29,7 @@ export default function HostPage() {
         <section className="section-spacing bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6]">
           <div className="mx-auto max-w-4xl space-y-6 px-6 text-center">
             <p className="label-text">You were invited. Now it&apos;s your turn.</p>
-            <h1 className="heading-xl">Host a LIFE Workshop</h1>
+            <h1 className="heading-xl">Host a LIFE Gathering</h1>
             <p className="body-lg text-[var(--muted)]">
               Invite people you already know. Cook something you love. Share a meal and pass on what you learned.
               That&apos;s the whole thing.
@@ -45,7 +45,7 @@ export default function HostPage() {
               </Link>
             </div>
             <p className="text-sm text-[var(--muted)]">
-              Attend a LIFE workshop first, then host within 30 days so the movement keeps its momentum.
+              Attend a LIFE gathering first, then host within 30 days so the movement keeps its momentum.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ export default function HostPage() {
             </div>
             <ul className="space-y-4 text-left body-sm text-[var(--text)]">
               {[
-                "Attend a LIFE workshop and commit to hosting your own within 30 days.",
+                "Attend a LIFE gathering and commit to hosting your own within 30 days.",
                 "Invite friends, neighbors, or family once you have a date.",
                 "Cook together, share the LIFE pillars in your own words, and enjoy the meal.",
                 "Log your gathering so it counts toward the movement.",
@@ -99,7 +99,7 @@ export default function HostPage() {
             <p className="label-text">LIFE Host Champions</p>
             <h2 className="heading-lg">Host more than once</h2>
             <p className="body-md text-[var(--muted)]">
-              Champions commit to at least three LIFE workshops per year, mentor new hosts, and share data after every gathering.
+              Champions commit to at least three LIFE gatherings per year, mentor new hosts, and share data after every gathering.
               If you love bringing people together, this is how you multiply the movement.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">

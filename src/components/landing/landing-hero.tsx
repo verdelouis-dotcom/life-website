@@ -21,7 +21,7 @@ export function LandingHero() {
           LIFE evenings teach people how to cook Mediterranean-inspired meals, build grounding habits, and restore the expectation that friends, families, and neighbors gather around a shared table.
         </p>
         <p className="fu4 max-w-md border-l-2 border-[var(--parchment)] pl-4 text-[0.85rem] font-normal leading-[1.7] text-[var(--muted-earth)]" style={{ animation: "fadeUp 0.65s ease 0.55s both" }}>
-          Every guest receives the LIFE Guide to try small habits at home. Within 30 days, they host their own LIFE workshop—keeping the measureable ripple growing.
+          Every guest receives the LIFE Guide to try small habits at home. Within 30 days, they host their own LIFE gathering—keeping the measureable ripple growing.
         </p>
         <div className="fu5 flex flex-wrap gap-3" style={{ animation: "fadeUp 0.65s ease 0.68s both" }}>
           <Link href="/host" className="btn-p">

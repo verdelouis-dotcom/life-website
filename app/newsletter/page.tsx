@@ -4,10 +4,10 @@ import NewsletterSignup from "@/components/forms/newsletter-signup";
 const CARDS = [
   {
     title: "Founder Letters",
-    description: "Short reflections from Lou Verde on the mission, the LIFE workshop, and the movement.",
+    description: "Short reflections from Lou Verde on the mission, the LIFE gathering, and the movement.",
   },
   {
-    title: "LIFE Workshop Stories",
+    title: "LIFE Gathering Stories",
     description: "Real stories from gatherings, hosts, and shared meals in the community.",
   },
   {
@@ -19,19 +19,19 @@ const CARDS = [
 const NEWSLETTER_URL = "https://www.longevityinitiativeforfoodandeducation.com/newsletter";
 
 export const metadata: Metadata = {
-  title: "The Shared LIFE Workshop Newsletter | Longevity & Food Education",
-  description: "Join The Shared LIFE Workshop newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
+  title: "The Shared LIFE Gathering Newsletter | Longevity & Food Education",
+  description: "Join The Shared LIFE Gathering newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
   alternates: {
     canonical: NEWSLETTER_URL,
   },
   openGraph: {
-    title: "The Shared LIFE Workshop Newsletter | Longevity & Food Education",
-    description: "Join The Shared LIFE Workshop newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
+    title: "The Shared LIFE Gathering Newsletter | Longevity & Food Education",
+    description: "Join The Shared LIFE Gathering newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
     url: NEWSLETTER_URL,
   },
   twitter: {
-    title: "The Shared LIFE Workshop Newsletter | Longevity & Food Education",
-    description: "Join The Shared LIFE Workshop newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
+    title: "The Shared LIFE Gathering Newsletter | Longevity & Food Education",
+    description: "Join The Shared LIFE Gathering newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
   },
 };
 
@@ -40,14 +40,14 @@ export default function NewsletterPage() {
     <>
       <main className="mx-auto max-w-4xl px-6 py-16 text-[var(--text)]">
         <section className="space-y-4 text-center">
-          <p className="type-eyebrow">The Shared LIFE Workshop</p>
-          <h1 className="type-display">The Shared LIFE Workshop</h1>
-          <p className="type-body-muted">Restoring connection and longevity through shared meals and the power of the LIFE workshop.</p>
+          <p className="type-eyebrow">The Shared LIFE Gathering</p>
+          <h1 className="type-display">The Shared LIFE Gathering</h1>
+          <p className="type-body-muted">Restoring connection and longevity through shared meals and the power of the LIFE gathering.</p>
         </section>
 
         <section className="mt-10 space-y-4 type-body-muted">
           <p>
-            The Shared LIFE Workshop is the monthly publication of LIFE It shares founder letters, community stories, and reflections on food,
+            The Shared LIFE Gathering is the monthly publication of LIFE It shares founder letters, community stories, and reflections on food,
             connection, and practical longevity. It is designed for donors, hosts, supporters, and anyone who believes meaningful change can
             begin around a shared meal.
           </p>
@@ -66,13 +66,13 @@ export default function NewsletterPage() {
         </section>
 
         <section className="mt-12 rounded-[36px] border border-[var(--border)] bg-white/80 p-8 text-center shadow-sm">
-          <NewsletterSignup title="Subscribe to The Shared LIFE Workshop" description="" buttonLabel="Subscribe" />
+          <NewsletterSignup title="Subscribe to The Shared LIFE Gathering" description="" buttonLabel="Subscribe" />
         </section>
 
         <section className="mt-12 space-y-2 text-center type-lede text-[var(--muted)]">
-          <p className="font-semibold text-[var(--life-forest)]">It starts with one LIFE workshop.</p>
+          <p className="font-semibold text-[var(--life-forest)]">It starts with one LIFE gathering.</p>
           <p>A meal. A conversation. A community.</p>
-          <p>The Shared LIFE Workshop exists to help restore what matters most.</p>
+          <p>The Shared LIFE Gathering exists to help restore what matters most.</p>
         </section>
       </main>
 </>
