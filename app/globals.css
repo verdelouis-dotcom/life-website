@@ -303,19 +303,21 @@ a:hover {
   display: flex;
 }
 
-.site-nav-logo img {
-  width: 200px;
-  height: auto;
-}
-
 @media (max-width: 800px) {
   .nav-links-group {
     display: none;
   }
 
-  .site-nav-logo img {
-    width: 160px !important;
-    height: auto !important;
+  .site-nav {
+    padding: 0 1.25rem;
+    height: 52px;
+  }
+
+  .site-nav-logo {
+    width: 160px;
+    height: 26px;
+    position: relative;
+    display: block;
   }
 }
 
