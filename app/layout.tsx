@@ -36,7 +36,7 @@ const WEBSITE_SCHEMA = {
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600"],
   variable: "--font-instrument",
   display: "swap",
 });
