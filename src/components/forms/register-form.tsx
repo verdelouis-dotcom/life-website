@@ -11,6 +11,7 @@ export default function RegisterForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [photoAttachment, setPhotoAttachment] = useState<{ name: string; dataUrl: string } | null>(null);
+  const [photoAttachment2, setPhotoAttachment2] = useState<{ name: string; dataUrl: string } | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -28,7 +29,7 @@ export default function RegisterForm() {
       totalPeople: formData.get("totalPeople")?.toString().trim() ?? "",
       consentPhoto: formData.get("consentPhoto") === "on",
       source: "LIFE Workshop Registration",
-      photoAttached: Boolean(photoAttachment),
+      photoAttached: Boolean(photoAttachment) || Boolean(photoAttachment2),
     };
 
     if (!payload.name || !payload.email || !payload.dateHosted || !payload.totalPeople) {
@@ -46,6 +47,10 @@ export default function RegisterForm() {
     ].join(" | ");
 
     try {
+      const photos = [photoAttachment, photoAttachment2]
+        .filter((p): p is { name: string; dataUrl: string } => p !== null)
+        .map((p) => ({ name: p.name, dataUrl: p.dataUrl }));
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -54,7 +59,7 @@ export default function RegisterForm() {
           email: payload.email,
           message,
           source: payload.source,
-          attachment: photoAttachment ? { name: photoAttachment.name, dataUrl: photoAttachment.dataUrl } : undefined,
+          attachments: photos.length > 0 ? photos : undefined,
         }),
       });
 
@@ -68,6 +73,7 @@ export default function RegisterForm() {
       setErrorMessage(null);
       form.reset();
       setPhotoAttachment(null);
+      setPhotoAttachment2(null);
       router.push("/register/thanks");
     } catch (error) {
       console.error("REGISTER_FORM_ERROR", error);
@@ -76,24 +82,25 @@ export default function RegisterForm() {
     }
   }
 
-  async function handlePhotoChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0];
-
-    if (!file) {
-      setPhotoAttachment(null);
-      return;
-    }
-
+  function readPhoto(file: File, setter: (val: { name: string; dataUrl: string } | null) => void) {
     const reader = new FileReader();
     reader.onload = () => {
       const result = reader.result?.toString() ?? null;
-      if (result) {
-        setPhotoAttachment({ name: file.name || "photo.jpg", dataUrl: result });
-      } else {
-        setPhotoAttachment(null);
-      }
+      setter(result ? { name: file.name || "photo.jpg", dataUrl: result } : null);
     };
     reader.readAsDataURL(file);
+  }
+
+  function handlePhotoChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) { setPhotoAttachment(null); return; }
+    readPhoto(file, setPhotoAttachment);
+  }
+
+  function handlePhotoChange2(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) { setPhotoAttachment2(null); return; }
+    readPhoto(file, setPhotoAttachment2);
   }
 
   return (
@@ -177,22 +184,37 @@ export default function RegisterForm() {
           />
         </div>
       </div>
-      <div className="grid gap-2">
-        <label htmlFor="photo" className="type-eyebrow">
-          Optional Photo
-        </label>
-        <input
-          id="photo"
-          name="photo"
-          type="file"
-          accept="image/*"
-          className="rounded-2xl border border-dashed border-[var(--border)] bg-white/70 px-4 py-3 text-sm"
-          onChange={handlePhotoChange}
-        />
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-2">
+          <label htmlFor="photo" className="type-eyebrow">
+            Photo 1 <span className="normal-case font-normal text-[var(--muted)]">(optional)</span>
+          </label>
+          <input
+            id="photo"
+            name="photo"
+            type="file"
+            accept="image/*"
+            className="rounded-2xl border border-dashed border-[var(--border)] bg-white/70 px-4 py-3 text-sm"
+            onChange={handlePhotoChange}
+          />
+        </div>
+        <div className="grid gap-2">
+          <label htmlFor="photo2" className="type-eyebrow">
+            Photo 2 <span className="normal-case font-normal text-[var(--muted)]">(optional)</span>
+          </label>
+          <input
+            id="photo2"
+            name="photo2"
+            type="file"
+            accept="image/*"
+            className="rounded-2xl border border-dashed border-[var(--border)] bg-white/70 px-4 py-3 text-sm"
+            onChange={handlePhotoChange2}
+          />
+        </div>
       </div>
       <label className="flex items-start gap-3 type-detail text-[var(--text)]">
         <input type="checkbox" name="consentPhoto" className="mt-1" />
-        <span>Yes, LIFE may share this photo publicly.</span>
+        <span>I give LIFE permission to add these photos to the website.</span>
       </label>
       <button type="submit" disabled={status === "submitting"} className="btn-solid text-base disabled:opacity-60">
         {status === "submitting" ? "Submitting..." : "Submit Registration"}

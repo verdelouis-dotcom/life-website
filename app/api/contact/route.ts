@@ -17,6 +17,7 @@ type Payload = {
   interestType?: string;
   source?: string;
   attachment?: AttachmentPayload | string | null;
+  attachments?: (AttachmentPayload | string)[];
 };
 
 const FRIENDLY_ERROR =
@@ -42,8 +43,8 @@ export async function POST(req: Request) {
         ? body.message.trim()
         : "No additional message provided.";
     const source = typeof body.source === "string" ? body.source.trim() : undefined;
-    const attachment = normalizeAttachment(body.attachment);
-    const attachments = attachment ? [{ filename: attachment.filename, content: attachment.content }] : undefined;
+    const singles = [body.attachment, ...(body.attachments ?? [])].filter(Boolean);
+    const attachments = singles.map(normalizeAttachment).filter((a): a is { filename: string; content: string } => a !== null);
 
     const gmailUser = process.env.GMAIL_USER;
     const gmailPass = process.env.GMAIL_APP_PASSWORD;
@@ -82,11 +83,11 @@ export async function POST(req: Request) {
         replyTo: email,
         subject,
         text,
-        attachments: attachments?.map((attachment) => ({
-          filename: attachment.filename,
-          content: attachment.content,
+        attachments: attachments.length > 0 ? attachments.map((a) => ({
+          filename: a.filename,
+          content: a.content,
           encoding: "base64",
-        })),
+        })) : undefined,
       });
     } catch (error) {
       console.error("CONTACT_EMAIL_SEND_ERROR", error);
