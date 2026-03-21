@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteFooter from "@/components/site-footer";
 import AssessmentWizard from "@/components/assessment/AssessmentWizard";
 
 const ASSESSMENT_URL = "https://www.longevityinitiativeforfoodandeducation.com/assessment";
@@ -27,7 +26,6 @@ export default function AssessmentPage() {
       <main className="bg-[var(--bg)] pb-16 pt-10 text-[var(--text)]">
         <AssessmentWizard />
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

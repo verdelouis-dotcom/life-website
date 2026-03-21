@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import SiteFooter from "@/components/site-footer";
 import { GALLERY_PHOTOS } from "@/data/gallery";
 
 const GALLERY_URL = "https://www.longevityinitiativeforfoodandeducation.com/gallery";
@@ -41,7 +40,6 @@ export default function GalleryPage() {
           ))}
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

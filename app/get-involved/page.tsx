@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/get-involved";
 
@@ -87,7 +86,6 @@ export default function GetInvolvedPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

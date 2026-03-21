@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 import FaqSchema from "@/components/seo/FaqSchema";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/how-it-works";
@@ -152,7 +151,6 @@ export default function HowItWorksPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

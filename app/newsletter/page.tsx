@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteFooter from "@/components/site-footer";
 import NewsletterSignup from "@/components/forms/newsletter-signup";
 
 const CARDS = [
@@ -76,7 +75,6 @@ export default function NewsletterPage() {
           <p>The Shared LIFE Workshop exists to help restore what matters most.</p>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

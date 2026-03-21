@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 
 interface CTA {
   href: string;
@@ -46,7 +45,6 @@ export default function ResourceArticleLayout({ title, intro, children, primaryC
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

@@ -184,14 +184,49 @@ a:hover {
     color: var(--muted);
   }
 
-  .btn-outline {
-    @apply inline-flex items-center justify-center rounded-2xl border border-[var(--sand)] bg-[var(--surface)] px-6 py-3 text-sm font-semibold text-[var(--olive)] transition hover:-translate-y-0.5 hover:bg-white;
-    box-shadow: 0 8px 20px rgba(31, 31, 31, 0.04);
-  }
-
   .btn-solid {
     @apply inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5;
     box-shadow: 0 14px 30px rgba(94, 125, 79, 0.3);
+  }
+
+  .btn-primary {
+    background: var(--terra);
+    color: #fff;
+    border: none;
+    padding: 0.85rem 1.9rem;
+    border-radius: 2rem;
+    font-family: var(--font-instrument), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: var(--earth);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--earth);
+    border: 1px solid rgba(62, 46, 30, 0.3);
+    padding: 0.85rem 1.9rem;
+    border-radius: 2rem;
+    font-family: var(--font-instrument), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--terra);
+    color: var(--terra);
   }
 
   .stag {

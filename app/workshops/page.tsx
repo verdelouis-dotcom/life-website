@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 import FaqSchema from "@/components/seo/FaqSchema";
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
 import PhotoStrip from "@/components/proof/PhotoStrip";
@@ -151,7 +150,6 @@ export default function WorkshopsPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

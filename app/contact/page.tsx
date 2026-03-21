@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 import ContactForm from "@/components/forms/contact-form";
 import FaqSchema from "@/components/seo/FaqSchema";
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
@@ -137,7 +136,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

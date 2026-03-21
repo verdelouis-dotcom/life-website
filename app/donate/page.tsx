@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteFooter from "@/components/site-footer";
 import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
 
 const TIERS = [
@@ -108,7 +107,6 @@ export default function DonatePage() {
           </p>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

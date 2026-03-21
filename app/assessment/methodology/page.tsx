@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 
 const NAV_ITEMS = [
   { id: "purpose", label: "Purpose" },
@@ -255,7 +254,6 @@ export default function AssessmentMethodologyPage() {
           </div>
         </div>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

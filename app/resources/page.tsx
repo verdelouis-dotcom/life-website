@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 import ResourceCard from "@/components/resources/ResourceCard";
 import { RESOURCE_ENTRIES } from "@/data/resources";
 
@@ -61,7 +60,6 @@ export default function ResourcesPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

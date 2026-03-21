@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 
 const GUIDE_URL = "https://www.longevityinitiativeforfoodandeducation.com/host/guide";
 
@@ -108,7 +107,6 @@ export default function HostGuidePage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

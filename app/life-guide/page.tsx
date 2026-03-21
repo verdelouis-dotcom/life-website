@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/life-guide";
 const GUIDE_ITEMS = [
@@ -137,7 +136,6 @@ export default function LifeGuidePage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteFooter from "@/components/site-footer";
 import RegisterForm from "@/components/forms/register-form";
 
 const REGISTER_URL = "https://www.longevityinitiativeforfoodandeducation.com/register";
@@ -39,7 +38,6 @@ export default function RegisterPage() {
           <RegisterForm />
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

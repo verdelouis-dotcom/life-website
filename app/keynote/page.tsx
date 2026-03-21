@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import SiteFooter from "@/components/site-footer";
 import KeynoteForm from "@/components/forms/keynote-form";
 
 const KEYNOTE_URL = "https://www.longevityinitiativeforfoodandeducation.com/keynote";
@@ -68,7 +67,6 @@ export default function KeynotePage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

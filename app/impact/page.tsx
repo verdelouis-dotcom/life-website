@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
 import PhotoStrip from "@/components/proof/PhotoStrip";
 import { IMPACT_PROOF } from "@/data/proof";
@@ -167,7 +166,6 @@ export default function ImpactPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }

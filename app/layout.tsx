@@ -4,6 +4,7 @@ import { Instrument_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import CanonicalRedirect from "@/components/canonical-redirect";
 import SiteNav from "@/components/site-nav";
+import SiteFooter from "@/components/site-footer";
 
 const SITE_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
@@ -102,7 +103,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
         />
         <SiteNav />
-        <div className="pt-[52px]">{children}</div>
+        <div className="flex min-h-screen flex-col pt-[52px]">
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </div>
         <noscript>
           <style>{`[data-reveal]{opacity:1 !important;transform:none !important;}`}</style>
         </noscript>

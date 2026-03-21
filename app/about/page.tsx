@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteFooter from "@/components/site-footer";
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
 import PhotoHighlight from "@/components/proof/PhotoHighlight";
 import { ABOUT_PROOF } from "@/data/proof";
@@ -165,7 +164,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+</>
   );
 }
