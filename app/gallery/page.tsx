@@ -33,9 +33,15 @@ export default function GalleryPage() {
         <section className="grid gap-6 md:grid-cols-2">
           {GALLERY_PHOTOS.map((photo) => (
             <figure key={photo.src} className="overflow-hidden rounded-[24px] border border-[var(--border)] bg-white shadow-sm">
-              <div className="relative h-64 w-full">
-                <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
-              </div>
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                width={900}
+                height={900}
+                style={{ width: "100%", height: "auto" }}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="block"
+              />
               <figcaption className="px-4 py-3 flex items-center justify-between gap-2">
                 <span className="text-sm font-medium text-[var(--earth-mid)]">
                   {photo.city}, {photo.state}
