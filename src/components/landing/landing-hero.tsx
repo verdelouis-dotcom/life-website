@@ -31,6 +31,12 @@ export function LandingHero() {
             See How It Works
           </Link>
         </div>
+        <p className="fu6 text-[0.85rem] text-[var(--earth-mid)]" style={{ animation: "fadeUp 0.65s ease 0.8s both" }}>
+          Been invited to a gathering?{" "}
+          <Link href="/workshops" className="text-[var(--terra)] underline underline-offset-4">
+            Here&apos;s what to expect →
+          </Link>
+        </p>
       </div>
 
       <div className="relative h-[520px] overflow-hidden bg-[var(--parchment)] md:h-full">
