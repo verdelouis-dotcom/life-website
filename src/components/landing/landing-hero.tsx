@@ -8,7 +8,7 @@ const HERO_BADGES = [
 
 export function LandingHero() {
   return (
-    <section className="grid min-h-screen grid-cols-1 pt-24 md:grid-cols-[52%_48%]" id="hero">
+    <section className="grid min-h-screen grid-cols-1 md:grid-cols-[52%_48%]" id="hero">
       <div className="flex flex-col justify-center bg-[var(--offwhite)] px-6 py-12 md:px-16">
         <div className="eyebrow fu1 flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--terra)]" style={{ animation: "fadeUp 0.65s ease 0.1s both" }}>
           <span className="block h-[1px] w-7 bg-[var(--terra)]" />

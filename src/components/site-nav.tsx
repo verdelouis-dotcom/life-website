@@ -30,7 +30,7 @@ export default function SiteNav() {
         </Link>
 
         {/* Desktop nav links */}
-        <nav className="nav-links-group flex items-center gap-6 text-[0.82rem] font-medium text-[#6B4F35]">
+        <nav className="nav-links-group hidden items-center gap-6 text-[0.82rem] font-medium text-[#6B4F35] md:flex">
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="transition-colors hover:text-[#B55A30]">
               {link.label}
@@ -46,7 +46,7 @@ export default function SiteNav() {
 
         {/* Mobile hamburger button */}
         <button
-          className="nav-mobile-btn"
+          className="nav-mobile-btn flex md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}

@@ -308,7 +308,7 @@ a:hover {
 }
 
 .nav-links-group {
-  display: flex;
+  /* display controlled by Tailwind responsive classes */
 }
 
 .site-nav-inner {
@@ -320,7 +320,7 @@ a:hover {
 }
 
 .nav-mobile-btn {
-  display: none;
+  /* display controlled by Tailwind responsive classes */
   align-items: center;
   justify-content: center;
   width: 36px;
@@ -337,15 +337,7 @@ a:hover {
   background: rgba(62, 46, 30, 0.06);
 }
 
-@media (max-width: 800px) {
-  .nav-links-group {
-    display: none;
-  }
-
-  .nav-mobile-btn {
-    display: flex;
-  }
-
+@media (max-width: 768px) {
   .site-nav-inner {
     padding: 0.5rem 1.25rem;
   }
