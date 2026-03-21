@@ -103,7 +103,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
         />
         <SiteNav />
-        <div className="flex min-h-screen flex-col pt-[52px]">
+        <div className="flex min-h-screen flex-col" style={{ paddingTop: "var(--nav-height)" }}>
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>
