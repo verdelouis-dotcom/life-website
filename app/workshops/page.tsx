@@ -163,12 +163,21 @@ export default function WorkshopsPage() {
               compact
             />
           </div>
-          <div className="text-center text-sm text-[var(--muted)]">
-            Ready to host instead?{" "}
-            <Link href="/host" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
-              Open the host guide
-            </Link>
-            .
+          <div className="text-center space-y-1 text-sm text-[var(--muted)]">
+            <p>
+              Ready to host instead?{" "}
+              <Link href="/host" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                Open the host guide
+              </Link>
+              .
+            </p>
+            <p>
+              See more from the community in the{" "}
+              <Link href="/gallery" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+                gallery
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
