@@ -26,7 +26,7 @@
   --rule: rgba(62, 46, 30, 0.12);
   --font-body: var(--font-instrument);
   --font-heading: var(--font-lora);
-  --nav-height: 52px;
+  --nav-height: 60px;
 }
 
 body {
@@ -301,8 +301,8 @@ a:hover {
 }
 
 .site-nav-logo {
-  width: 180px;
-  height: 28px;
+  width: 220px;
+  height: 38px;
   position: relative;
   display: block;
 }
@@ -315,6 +315,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.65rem 3.5rem;
+  min-height: var(--nav-height);
 }
 
 .nav-mobile-btn {
@@ -344,13 +346,13 @@ a:hover {
     display: flex;
   }
 
-  .site-nav {
-    min-height: var(--nav-height);
+  .site-nav-inner {
+    padding: 0.5rem 1.25rem;
   }
 
   .site-nav-logo {
-    width: 160px;
-    height: 26px;
+    width: 190px;
+    height: 32px;
     position: relative;
     display: block;
   }

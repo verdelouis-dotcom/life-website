@@ -15,7 +15,7 @@ export default function SiteNav() {
 
   return (
     <header className="site-nav fixed inset-x-0 top-0 z-[100] border-b border-[rgba(62,46,30,0.12)] bg-[rgba(253,250,246,0.94)] backdrop-blur-[10px] supports-[backdrop-filter]:backdrop-blur">
-      <div className="flex items-center justify-between px-14 py-4 max-[800px]:px-5 max-[800px]:py-3" style={{ minHeight: "var(--nav-height)" }}>
+      <div className="site-nav-inner">
         <Link href="/" className="shrink-0" aria-label="Longevity Initiative for Food & Education">
           <div className="site-nav-logo">
             <Image
