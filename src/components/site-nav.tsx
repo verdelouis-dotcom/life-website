@@ -14,11 +14,18 @@ export default function SiteNav() {
       style={{ minHeight: "52px" }}
     >
       <div className="flex items-center justify-between">
-        <Link href="/" className="shrink-0" aria-label="Longevity Initiative for Food & Education">
-          <Image src="/images/life-logo-nav.svg" alt="Longevity Initiative for Food & Education" width={220} height={34} priority style={{ display: "block" }} />
+        <Link href="/" className="site-nav-logo shrink-0" aria-label="Longevity Initiative for Food & Education">
+          <Image
+            src="/images/life-logo-nav.svg"
+            alt="Longevity Initiative for Food & Education"
+            width={200}
+            height={32}
+            priority
+            style={{ display: "block", width: "200px", height: "auto" }}
+          />
         </Link>
 
-        <nav className="hidden min-[800px]:flex items-center gap-6 text-[0.82rem] font-medium text-[#6B4F35]">
+        <nav className="nav-links-group hidden min-[800px]:flex items-center gap-6 text-[0.82rem] font-medium text-[#6B4F35]">
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="transition-colors hover:text-[#B55A30]">
               {link.label}

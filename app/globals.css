@@ -299,6 +299,26 @@ a:hover {
   }
 }
 
+.nav-links-group {
+  display: flex;
+}
+
+.site-nav-logo img {
+  width: 200px;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .nav-links-group {
+    display: none;
+  }
+
+  .site-nav-logo img {
+    width: 160px !important;
+    height: auto !important;
+  }
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
