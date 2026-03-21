@@ -12,7 +12,7 @@ export function LandingHero() {
       <div className="flex flex-col justify-center bg-[var(--offwhite)] px-6 py-12 md:px-16">
         <div className="eyebrow fu1 flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--terra)]" style={{ animation: "fadeUp 0.65s ease 0.1s both" }}>
           <span className="block h-[1px] w-7 bg-[var(--terra)]" />
-          Metro Atlanta · Nonprofit · Pilot
+          Atlanta, GA · Austin, TX · Nonprofit · Pilot
         </div>
         <h1 className="fu2 font-[var(--font-landing-heading)] text-[clamp(2.4rem,3.5vw,3.2rem)] font-normal leading-[1.18] text-[var(--ink)]" style={{ animation: "fadeUp 0.65s ease 0.25s both" }}>
           A neighbor invites you in. You cook. You eat. You <em className="text-[var(--terra)] not-italic">pass it on.</em>

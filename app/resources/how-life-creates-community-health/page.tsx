@@ -79,7 +79,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
       <ResourceSection title="Partners join when results are transparent">
         <p>
           As LIFE publishes more pilot metrics, hospitals, schools, and grantmakers can see how shared meals translate into real community health
-          markers. That transparency builds confidence for every new city—including Rochester and Austin—to adopt the framework responsibly.
+          markers. That transparency builds confidence for every new city—including Austin, TX—to adopt the framework responsibly.
         </p>
       </ResourceSection>
     </ResourceArticleLayout>

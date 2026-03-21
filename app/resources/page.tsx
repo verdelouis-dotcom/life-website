@@ -30,7 +30,7 @@ export default function ResourcesPage() {
             <h1 className="mt-2 heading-xl">LIFE Resources</h1>
             <p className="mt-4 body-md text-[var(--muted)]">
               LIFE shares practical education about longevity, Mediterranean-inspired cooking, and the power of community LIFE workshops. Explore the
-              guides below to understand the philosophy that began in Georgia and how early hosts are carrying it to Atlanta, Rochester, and Austin.
+              guides below to understand the philosophy that began in Georgia and how early hosts are carrying it to Atlanta, GA and Austin, TX.
             </p>
           </div>
         </section>
