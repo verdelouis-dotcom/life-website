@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 interface CTA {
@@ -20,7 +19,6 @@ interface ResourceArticleLayoutProps {
 export default function ResourceArticleLayout({ title, intro, children, primaryCta, secondaryCta }: ResourceArticleLayoutProps) {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="section-spacing">
           <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import ContactForm from "@/components/forms/contact-form";
 import FaqSchema from "@/components/seo/FaqSchema";
@@ -46,7 +45,6 @@ const CONTACT_FAQ = [
 export default function ContactPage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="section-spacing">
           <div className="mx-auto max-w-4xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">

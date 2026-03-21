@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import NewsletterSignup from "@/components/forms/newsletter-signup";
 
@@ -40,7 +39,6 @@ export const metadata: Metadata = {
 export default function NewsletterPage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto max-w-4xl px-6 py-16 text-[var(--text)]">
         <section className="space-y-4 text-center">
           <p className="type-eyebrow">The Shared LIFE Workshop</p>

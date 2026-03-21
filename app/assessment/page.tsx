@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import AssessmentWizard from "@/components/assessment/AssessmentWizard";
 
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
 export default function AssessmentPage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] pb-16 pt-10 text-[var(--text)]">
         <AssessmentWizard />
       </main>

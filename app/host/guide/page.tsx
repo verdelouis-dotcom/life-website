@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const GUIDE_URL = "https://www.longevityinitiativeforfoodandeducation.com/host/guide";
@@ -47,7 +46,6 @@ const CONVERSATION_TOPICS = [
 export default function HostGuidePage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-16">
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">

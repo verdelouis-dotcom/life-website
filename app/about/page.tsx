@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
 import PhotoHighlight from "@/components/proof/PhotoHighlight";
@@ -60,7 +59,6 @@ const BOARD_PRACTICES = [
 export default function AboutPage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="mx-auto max-w-5xl px-6 py-16">
           <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">

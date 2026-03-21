@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import KeynoteForm from "@/components/forms/keynote-form";
 
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
 export default function KeynotePage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto max-w-4xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
           <div className="space-y-4 text-center">

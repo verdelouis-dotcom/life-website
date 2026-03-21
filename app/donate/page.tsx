@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
 
@@ -63,7 +62,6 @@ export const metadata: Metadata = {
 export default function DonatePage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto max-w-5xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
           <p className="type-eyebrow text-center">Nonprofit Support</p>

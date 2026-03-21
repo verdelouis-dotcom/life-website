@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import FaqSchema from "@/components/seo/FaqSchema";
 
@@ -62,7 +61,6 @@ const HOW_IT_WORKS_FAQ = [
 export default function HowItWorksPage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="section-spacing">
           <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">

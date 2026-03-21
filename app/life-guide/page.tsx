@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/life-guide";
@@ -50,7 +49,6 @@ export const metadata: Metadata = {
 export default function LifeGuidePage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="mx-auto max-w-5xl px-6 py-16">
           <div className="space-y-5 rounded-[40px] border border-[var(--border)] bg-white/95 p-10 shadow-sm">

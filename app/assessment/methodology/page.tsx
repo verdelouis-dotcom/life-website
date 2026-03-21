@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const NAV_ITEMS = [
@@ -91,7 +90,6 @@ export const metadata: Metadata = {
 export default function AssessmentMethodologyPage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <header className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">

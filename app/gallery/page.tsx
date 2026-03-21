@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import { GALLERY_PHOTOS } from "@/data/gallery";
 
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto max-w-6xl px-6 py-16 text-[var(--text)]">
         <section className="text-center">
           <p className="type-eyebrow">LIFE Workshops</p>

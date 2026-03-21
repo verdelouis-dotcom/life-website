@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const REGISTER_THANKS_URL = "https://www.longevityinitiativeforfoodandeducation.com/register/thanks";
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
 export default function RegisterThanksPage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto max-w-3xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
           <p className="type-eyebrow">Thank you</p>

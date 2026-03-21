@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import ResourceCard from "@/components/resources/ResourceCard";
 import { RESOURCE_ENTRIES } from "@/data/resources";
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
 export default function ResourcesPage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="section-spacing">
           <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">

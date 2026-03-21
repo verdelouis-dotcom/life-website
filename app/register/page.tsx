@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import RegisterForm from "@/components/forms/register-form";
 
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
 export default function RegisterPage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto max-w-3xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
           <p className="type-eyebrow">Measurement</p>

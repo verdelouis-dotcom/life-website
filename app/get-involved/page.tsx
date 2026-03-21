@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/get-involved";
@@ -50,7 +49,6 @@ const PATHS = [
 export default function GetInvolvedPage() {
   return (
     <>
-      <SiteHeader />
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-16">
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">

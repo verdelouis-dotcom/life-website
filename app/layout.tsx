@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import CanonicalRedirect from "@/components/canonical-redirect";
+import SiteNav from "@/components/site-nav";
 
 const SITE_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
@@ -100,7 +101,8 @@ export default function RootLayout({
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
         />
-        {children}
+        <SiteNav />
+        <div className="pt-[52px]">{children}</div>
         <noscript>
           <style>{`[data-reveal]{opacity:1 !important;transform:none !important;}`}</style>
         </noscript>
