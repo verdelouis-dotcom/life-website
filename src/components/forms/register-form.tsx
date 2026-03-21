@@ -12,6 +12,7 @@ export default function RegisterForm() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [photoAttachment, setPhotoAttachment] = useState<{ name: string; dataUrl: string } | null>(null);
   const [photoAttachment2, setPhotoAttachment2] = useState<{ name: string; dataUrl: string } | null>(null);
+  const [photoAttachment3, setPhotoAttachment3] = useState<{ name: string; dataUrl: string } | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -29,7 +30,7 @@ export default function RegisterForm() {
       totalPeople: formData.get("totalPeople")?.toString().trim() ?? "",
       consentPhoto: formData.get("consentPhoto") === "on",
       source: "LIFE Workshop Registration",
-      photoAttached: Boolean(photoAttachment) || Boolean(photoAttachment2),
+      photoAttached: Boolean(photoAttachment) || Boolean(photoAttachment2) || Boolean(photoAttachment3),
     };
 
     if (!payload.name || !payload.email || !payload.dateHosted || !payload.totalPeople) {
@@ -47,7 +48,7 @@ export default function RegisterForm() {
     ].join(" | ");
 
     try {
-      const photos = [photoAttachment, photoAttachment2]
+      const photos = [photoAttachment, photoAttachment2, photoAttachment3]
         .filter((p): p is { name: string; dataUrl: string } => p !== null)
         .map((p) => ({ name: p.name, dataUrl: p.dataUrl }));
 
@@ -74,6 +75,7 @@ export default function RegisterForm() {
       form.reset();
       setPhotoAttachment(null);
       setPhotoAttachment2(null);
+      setPhotoAttachment3(null);
       router.push("/register/thanks");
     } catch (error) {
       console.error("REGISTER_FORM_ERROR", error);
@@ -101,6 +103,12 @@ export default function RegisterForm() {
     const file = event.target.files?.[0];
     if (!file) { setPhotoAttachment2(null); return; }
     readPhoto(file, setPhotoAttachment2);
+  }
+
+  function handlePhotoChange3(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) { setPhotoAttachment3(null); return; }
+    readPhoto(file, setPhotoAttachment3);
   }
 
   return (
@@ -184,7 +192,7 @@ export default function RegisterForm() {
           />
         </div>
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-3">
         <div className="grid gap-2">
           <label htmlFor="photo" className="type-eyebrow">
             Photo 1 <span className="normal-case font-normal text-[var(--muted)]">(optional)</span>
@@ -209,6 +217,19 @@ export default function RegisterForm() {
             accept="image/*"
             className="rounded-2xl border border-dashed border-[var(--border)] bg-white/70 px-4 py-3 text-sm"
             onChange={handlePhotoChange2}
+          />
+        </div>
+        <div className="grid gap-2">
+          <label htmlFor="photo3" className="type-eyebrow">
+            Photo 3 <span className="normal-case font-normal text-[var(--muted)]">(optional)</span>
+          </label>
+          <input
+            id="photo3"
+            name="photo3"
+            type="file"
+            accept="image/*"
+            className="rounded-2xl border border-dashed border-[var(--border)] bg-white/70 px-4 py-3 text-sm"
+            onChange={handlePhotoChange3}
           />
         </div>
       </div>
