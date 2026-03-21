@@ -5,19 +5,19 @@ import { GALLERY_PHOTOS } from "@/data/gallery";
 const GALLERY_URL = "https://www.longevityinitiativeforfoodandeducation.com/gallery";
 
 export const metadata: Metadata = {
-  title: "LIFE Workshops Photo Gallery | Longevity Initiative",
-  description: "Browse the LIFE shared LIFE workshop gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia LIFE workshops.",
+  title: "LIFE Gatherings Gallery | Longevity Initiative",
+  description: "Real photos from LIFE gatherings in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
   alternates: {
     canonical: GALLERY_URL,
   },
   openGraph: {
-    title: "LIFE Workshops Photo Gallery | Longevity Initiative",
-    description: "Browse the LIFE shared LIFE workshop gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia LIFE workshops.",
+    title: "LIFE Gatherings Gallery | Longevity Initiative",
+    description: "Real photos from LIFE gatherings in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
     url: GALLERY_URL,
   },
   twitter: {
-    title: "LIFE Workshops Photo Gallery | Longevity Initiative",
-    description: "Browse the LIFE shared LIFE workshop gallery for real photos from LIFE dinners in Atlanta, Rochester, Austin, and our Georgia LIFE workshops.",
+    title: "LIFE Gatherings Gallery | Longevity Initiative",
+    description: "Real photos from LIFE gatherings in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
   },
 };
 
@@ -25,21 +25,28 @@ export default function GalleryPage() {
   return (
     <>
       <main className="mx-auto max-w-6xl px-6 py-16 text-[var(--text)]">
-        <section className="text-center">
-          <p className="type-eyebrow">LIFE Workshops</p>
-          <h1 className="section-heading">LIFE Workshops</h1>
-          <p className="mt-3 type-detail">Shared with permission.</p>
+        <section className="text-center mb-10">
+          <p className="type-eyebrow">From the community</p>
+          <h1 className="section-heading">Real tables. Real neighbors.</h1>
+          <p className="mt-3 type-detail">Shared with permission from LIFE hosts.</p>
         </section>
-        <section className="mt-10 grid gap-6 md:grid-cols-2">
+        <section className="grid gap-6 md:grid-cols-2">
           {GALLERY_PHOTOS.map((photo) => (
             <figure key={photo.src} className="overflow-hidden rounded-[24px] border border-[var(--border)] bg-white shadow-sm">
               <div className="relative h-64 w-full">
                 <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
               </div>
+              <figcaption className="px-4 py-3 flex items-center justify-between gap-2">
+                <span className="text-sm font-medium text-[var(--earth-mid)]">
+                  {photo.city}, {photo.state}
+                  {photo.host && <span className="text-[var(--muted)] font-normal"> · Hosted by {photo.host}</span>}
+                </span>
+                <span className="type-detail shrink-0">{photo.hostedDate}</span>
+              </figcaption>
             </figure>
           ))}
         </section>
       </main>
-</>
+    </>
   );
 }

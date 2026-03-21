@@ -4,6 +4,7 @@ export type GalleryPhoto = {
   city: string;
   state: string;
   hostedDate: string;
+  host?: string;
 };
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
@@ -48,5 +49,61 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     city: "Peachtree City",
     state: "GA",
     hostedDate: "June 2026",
+  },
+  {
+    src: "/images/workshops/31926/austin-1.jpeg",
+    alt: "Kim's neighbors making fresh pasta together in Austin",
+    city: "Austin",
+    state: "TX",
+    hostedDate: "March 2026",
+    host: "Kim",
+  },
+  {
+    src: "/images/workshops/31926/austin-2.jpeg",
+    alt: "Kids helping roll pasta dough at Kim's LIFE gathering in Austin",
+    city: "Austin",
+    state: "TX",
+    hostedDate: "March 2026",
+    host: "Kim",
+  },
+  {
+    src: "/images/workshops/31926/austin-3.jpeg",
+    alt: "Neighbors gathered in Kim's kitchen for a LIFE workshop in Austin",
+    city: "Austin",
+    state: "TX",
+    hostedDate: "March 2026",
+    host: "Kim",
+  },
+  {
+    src: "/images/workshops/31926/austin-4.jpeg",
+    alt: "Fresh pasta being made at Kim's Austin LIFE gathering",
+    city: "Austin",
+    state: "TX",
+    hostedDate: "March 2026",
+    host: "Kim",
+  },
+  {
+    src: "/images/workshops/31926/austin-5.jpeg",
+    alt: "Family and neighbors sharing a meal at Kim's Austin LIFE gathering",
+    city: "Austin",
+    state: "TX",
+    hostedDate: "March 2026",
+    host: "Kim",
+  },
+  {
+    src: "/images/workshops/31926/austin-6.jpeg",
+    alt: "Kids and adults cooking pasta together at Kim's table in Austin",
+    city: "Austin",
+    state: "TX",
+    hostedDate: "March 2026",
+    host: "Kim",
+  },
+  {
+    src: "/images/workshops/31926/austin-7.jpeg",
+    alt: "Austin neighbors around the table at Kim's LIFE gathering",
+    city: "Austin",
+    state: "TX",
+    hostedDate: "March 2026",
+    host: "Kim",
   },
 ];
