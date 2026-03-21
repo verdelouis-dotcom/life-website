@@ -115,7 +115,7 @@ export default function WorkshopsPage() {
           photos={[
             { src: "/images/workshops/IMG_6709.jpeg", alt: "Hosts guiding pasta at the stove", caption: "Fresh ingredient prep" },
             { src: "/images/workshops/pasta-lesson-2.jpg", alt: "Participants rolling pasta", caption: "Cooking together" },
-            { src: "/images/workshops/31525/IMG_9391.jpeg", alt: "Guests sharing the finished meal", caption: "Sitting down to eat" },
+            { src: "/images/workshops/31926/austin-6.jpeg", alt: "Kim's neighbors having fun making fresh pasta in Austin", caption: "Having fun making fresh pasta" },
           ]}
         />
 
