@@ -28,11 +28,11 @@ const STEP_CONTENT = [
   },
   {
     title: "2. Host a LIFE Workshop",
-    body: "Within 30 days, host a simple LIFE workshop of your own. Teach a favorite recipe or family tradition while sharing the LIFE pillars.",
+    body: "Within 30 days, host a simple gathering of your own. Teach a favorite recipe or family tradition while sharing the LIFE pillars.",
   },
   {
-    title: "3. Register a LIFE Workshop",
-    body: "Log the gathering, attendance, and stories. Each registration keeps the movement measurable and ready for the next host.",
+    title: "3. Add Your Table to the Map",
+    body: "Log your gathering so it counts. Each registered table extends the ripple and keeps the movement measurable for the next host.",
   },
 ];
 
@@ -65,9 +65,8 @@ export default function HowItWorksPage() {
           <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
             <p className="label-text">The Model</p>
             <h1 className="heading-xl mt-2">How LIFE Works</h1>
-            <p className="label-text mt-3 text-[var(--muted)]">Simple. Shared. Meant to be repeated.</p>
-            <p className="mt-4 body-lg text-[var(--muted)]">LIFE is built around one idea: bring people together around the LIFE workshop.</p>
-            <p className="mt-3 body-md text-[var(--text)]">A LIFE workshop is a simple, shared meal where people cook, learn, and connect.</p>
+            <p className="mt-4 body-lg text-[var(--muted)]">Simple. Shared. Meant to be repeated.</p>
+            <p className="mt-3 body-md text-[var(--text)]">A LIFE gathering is a shared meal where neighbors cook, eat, and commit to passing it on. Attend once, host within 30 days, and the table keeps growing.</p>
           </div>
         </section>
 
@@ -104,30 +103,20 @@ export default function HowItWorksPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
-          <div className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
-            <h2 className="heading-lg">How We Measure Impact</h2>
-            <p className="mt-3 body-md text-[var(--text)]">
-              Registration data, LIFE workshop attendance, and host follow-up allow LIFE to report on reach, repeat gatherings, and qualitative
-              stories. During the pilot we share quarterly summaries with donors and partners so replication decisions stay rooted in data.
-            </p>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-5xl px-6 pb-12">
           <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
             <h2 className="heading-lg">Frequently Asked Questions</h2>
             <div className="mt-4 space-y-4">
               <div>
-                <h3 className="label-text text-[var(--olive)]">Do I need experience to host a LIFE workshop?</h3>
+                <h3 className="label-text text-[var(--olive)]">Do I need experience to host?</h3>
                 <p className="mt-2 body-sm text-[var(--text)]">No. Hosts receive the LIFE guide, ingredient templates, and facilitation prompts. Any cuisine works as long as it uses fresh ingredients and includes a seated conversation.</p>
               </div>
               <div>
                 <h3 className="label-text text-[var(--olive)]">What happens after I host?</h3>
-                <p className="mt-2 body-sm text-[var(--text)]">You register the LIFE workshop online, submit attendance, and note any stories. The LIFE team follows up with resources so you can host again or mentor another host.</p>
+                <p className="mt-2 body-sm text-[var(--text)]">You log the gathering online, submit attendance, and note any stories. The LIFE team follows up with resources so you can host again or mentor the next host.</p>
               </div>
               <div>
-                <h3 className="label-text text-[var(--olive)]">Is registering a LIFE workshop required?</h3>
-                <p className="mt-2 body-sm text-[var(--text)]">Yes. Registration is how LIFE proves impact to grants and keeps ingredients flowing to the next host. Without it, we can’t responsibly expand.</p>
+                <h3 className="label-text text-[var(--olive)]">Is logging my gathering required?</h3>
+                <p className="mt-2 body-sm text-[var(--text)]">Yes. Registration is how LIFE proves impact to donors and keeps ingredients flowing to the next host. Without it, we can’t responsibly grow.</p>
               </div>
               <div>
                 <h3 className="label-text text-[var(--olive)]">Who can participate?</h3>
@@ -137,15 +126,21 @@ export default function HowItWorksPage() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-5xl px-6 pb-12">
+          <div className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
+            <h2 className="heading-lg">How We Measure Impact</h2>
+            <p className="mt-3 body-md text-[var(--text)]">
+              Registration data, attendance records, and host follow-up allow LIFE to report on reach, repeat gatherings, and qualitative stories. During the pilot we share quarterly summaries with donors and partners so replication decisions stay rooted in data.
+            </p>
+          </div>
+        </section>
+
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
-            <p className="type-eyebrow text-[var(--olive)]">Ready to participate?</p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <p className="type-eyebrow text-[var(--olive)]">Open your kitchen. Start the ripple.</p>
+            <div className="mt-6 flex justify-center">
               <Link href="/host" className="btn-solid px-8 text-base">
                 Host a LIFE Workshop
-              </Link>
-              <Link href="/register" className="btn-outline px-8 text-base">
-                Register a LIFE Workshop
               </Link>
             </div>
           </div>
