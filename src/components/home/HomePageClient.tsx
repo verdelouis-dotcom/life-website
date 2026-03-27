@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ZeffyEmbedFrame } from "@/components/zeffy/ZeffyEmbedFrame";
-import { getZeffyEmbedUrl } from "@/lib/zeffy";
+import { getZeffyPublicLink } from "@/lib/zeffy";
 
 const heroStats = [
   { value: "Pilot", label: "Now underway in Atlanta & Austin" },
@@ -181,7 +181,7 @@ export function HomePageClient() {
   }, []);
 
   const normalizedAmount = Math.max(10, Number(donationAmount) || 10);
-  const zeffyDirectLink = getZeffyEmbedUrl(normalizedAmount);
+  const zeffyDirectLink = getZeffyPublicLink(normalizedAmount);
 
   const handleWaitlistSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
