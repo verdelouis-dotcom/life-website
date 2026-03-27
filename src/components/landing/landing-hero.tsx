@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HERO_BADGES = [
-  { label: "Host completed", value: "87%", dot: "var(--terra)" },
-  { label: "Families invited", value: "300+", dot: "var(--sage)" },
+  { label: "Hosts preparing gatherings", value: "In progress", dot: "var(--terra)" },
+  { label: "Pilot footprint", value: "ATL · ATX", dot: "var(--sage)" },
 ];
 
 export function LandingHero() {
