@@ -13,9 +13,10 @@ interface AssessmentResultsProps {
   answers: AssessmentAnswers;
   results: AssessmentResultsPayload;
   onRestart: () => void;
+  showEmailCaptureCard?: boolean;
 }
 
-export default function AssessmentResults({ answers, results, onRestart }: AssessmentResultsProps) {
+export default function AssessmentResults({ answers, results, onRestart, showEmailCaptureCard = true }: AssessmentResultsProps) {
   const firstName = answers.firstName?.trim() || "Friend";
   const formatPercent = (value: number) => `${Math.round(value)}%`;
   const lifeScore = Math.round(results.metrics.lifeHabitsScore);
@@ -204,9 +205,18 @@ export default function AssessmentResults({ answers, results, onRestart }: Asses
         </div>
       </section>
 
-      <EmailCaptureCard defaultFirstName={firstName} report={results} />
+      {showEmailCaptureCard ? <EmailCaptureCard defaultFirstName={firstName} report={results} /> : null}
 
       <DonationSupportCard />
+
+      <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 text-center shadow-sm">
+        <a
+          href="/#join"
+          className="inline-flex items-center justify-center rounded-2xl border border-[var(--terracotta)] px-6 py-3 text-sm font-semibold text-[var(--terracotta)] transition hover:bg-[var(--terracotta)] hover:text-white"
+        >
+          Join LIFE for $10 — start improving your score tonight →
+        </a>
+      </section>
 
       <section className="rounded-[32px] border border-[var(--border)] bg-white/80 p-6 text-sm text-[var(--muted)]">
         <p>

@@ -6,6 +6,7 @@ import AssessmentIntro from "@/components/assessment/AssessmentIntro";
 import ProgressBar from "@/components/assessment/ProgressBar";
 import QuestionStep from "@/components/assessment/QuestionStep";
 import AssessmentResults from "@/components/assessment/AssessmentResults";
+import EmailCaptureCard from "@/components/assessment/EmailCaptureCard";
 import type { AssessmentAnswers, AssessmentQuestion, OptionalMarkerKey } from "@/components/assessment/AssessmentTypes";
 import {
   ASSESSMENT_QUESTIONS,
@@ -22,16 +23,19 @@ import {
 
 const CALCULATION_DELAY_MS = 1900;
 const AUTO_ADVANCE_DELAY_MS = 180;
+const EMAIL_STORAGE_KEY = "life_assessment_email";
 
-type Phase = "intro" | "questions" | "optional" | "calculating" | "results";
+type Phase = "intro" | "questions" | "optional" | "calculating" | "emailCapture" | "results";
 
 export default function AssessmentWizard() {
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<AssessmentAnswers>(() => loadAssessmentProgress() ?? {});
   const [results, setResults] = useState<ReturnType<typeof evaluateAssessment> | null>(null);
+  const [hasSubmittedEmail, setHasSubmittedEmail] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const emailSubmittedRef = useRef(false);
 
   useEffect(() => {
     if (!hasAnyResponses(answers)) {
@@ -50,6 +54,15 @@ export default function AssessmentWizard() {
         clearTimeout(autoAdvanceTimerRef.current);
       }
     };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem(EMAIL_STORAGE_KEY);
+    if (stored) {
+      setHasSubmittedEmail(true);
+      emailSubmittedRef.current = true;
+    }
   }, []);
 
   const sections = useMemo(() => {
@@ -166,8 +179,17 @@ export default function AssessmentWizard() {
     timerRef.current = setTimeout(() => {
       const computed = evaluateAssessment(answers);
       setResults(computed);
-      setPhase("results");
+      setPhase(emailSubmittedRef.current ? "results" : "emailCapture");
     }, CALCULATION_DELAY_MS);
+  }
+
+  function handleEmailSuccess(submittedEmail: string) {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(EMAIL_STORAGE_KEY, submittedEmail);
+    }
+    setHasSubmittedEmail(true);
+    emailSubmittedRef.current = true;
+    setPhase("results");
   }
 
   function handleRestart() {
@@ -228,8 +250,26 @@ export default function AssessmentWizard() {
       );
     }
 
+    if (phase === "emailCapture" && results) {
+      const firstName = typeof answers.firstName === "string" ? answers.firstName : "";
+      return (
+        <section className="space-y-6">
+          <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-8 text-center shadow-sm">
+            <p className="type-eyebrow text-[var(--olive)]">One last step</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[var(--life-forest)]">Enter your email to view your LIFE Age</h2>
+            <p className="mt-3 text-sm text-[var(--muted)]">
+              We’ll send your full LIFE report and habit recommendations. You’ll only do this once.
+            </p>
+            <div className="mt-8 text-left">
+              <EmailCaptureCard defaultFirstName={firstName} report={results} onSuccess={handleEmailSuccess} />
+            </div>
+          </div>
+        </section>
+      );
+    }
+
     if (phase === "results" && results) {
-      return <AssessmentResults answers={answers} results={results} onRestart={handleRestart} />;
+      return <AssessmentResults answers={answers} results={results} onRestart={handleRestart} showEmailCaptureCard={!hasSubmittedEmail} />;
     }
 
     return null;

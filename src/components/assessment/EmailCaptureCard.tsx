@@ -3,12 +3,16 @@
 import { useState } from "react";
 import type { AssessmentResultsPayload } from "@/components/assessment/AssessmentTypes";
 
+const EMAIL_STORAGE_KEY = "life_assessment_email";
+
 interface EmailCaptureCardProps {
   defaultFirstName?: string;
   report: AssessmentResultsPayload;
+  onSuccess?: (email: string) => void;
+  tag?: string;
 }
 
-export default function EmailCaptureCard({ defaultFirstName = "", report }: EmailCaptureCardProps) {
+export default function EmailCaptureCard({ defaultFirstName = "", report, onSuccess, tag = "assessment-completed" }: EmailCaptureCardProps) {
   const [firstName, setFirstName] = useState(defaultFirstName);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -20,41 +24,62 @@ export default function EmailCaptureCard({ defaultFirstName = "", report }: Emai
     setStatus("loading");
     setMessage(null);
 
-    const payload = {
-      email,
-      firstName: firstName || undefined,
-      context: {
-        source: "life-assessment",
-        metrics: report.metrics,
-      },
-      report: {
-        metrics: report.metrics,
-        pillarScores: report.pillarScores,
-        strengths: report.strengths,
-        opportunities: report.opportunities,
-        recommendations: report.recommendations,
-      },
-    };
-
     try {
-      const response = await fetch("/api/newsletter", {
+      const subscribeResponse = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ email, tag }),
       });
 
-      const data = await response.json().catch(() => null);
-      if (!response.ok) {
-        throw new Error(data?.error || "Unable to subscribe");
+      if (!subscribeResponse.ok) {
+        const errorText = await subscribeResponse.text().catch(() => "");
+        throw new Error(errorText || "Unable to subscribe");
+      }
+
+      const payload = {
+        email,
+        firstName: firstName || undefined,
+        context: {
+          source: "life-assessment",
+          metrics: report.metrics,
+        },
+        report: {
+          metrics: report.metrics,
+          pillarScores: report.pillarScores,
+          strengths: report.strengths,
+          opportunities: report.opportunities,
+          recommendations: report.recommendations,
+        },
+      };
+
+      let successMessage = "Report on the way—check your inbox soon.";
+      try {
+        const response = await fetch("/api/newsletter", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await response.json().catch(() => null);
+        if (!response.ok) {
+          throw new Error(data?.error || "Unable to send report");
+        }
+        successMessage =
+          data?.alreadySubscribed && typeof data?.message === "string"
+            ? data.message
+            : data?.message ?? "Report on the way—check your inbox soon.";
+      } catch (newsletterError) {
+        console.error("ASSESSMENT_NEWSLETTER_ERROR", newsletterError);
+        successMessage = "You're subscribed. If the report email doesn't arrive, contact info@longevityinitiativeforfoodandeducation.com.";
+      }
+
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(EMAIL_STORAGE_KEY, email);
       }
 
       setStatus("success");
-      const successMessage =
-        data?.alreadySubscribed && typeof data?.message === "string"
-          ? data.message
-          : data?.message ?? (data?.alreadySubscribed ? "You’re already on the LIFE newsletter." : "Report on the way—check your inbox soon.");
       setMessage(successMessage);
       setEmail("");
+      onSuccess?.(email);
     } catch (error) {
       console.error("ASSESSMENT_EMAIL_CAPTURE_ERROR", error);
       setStatus("error");

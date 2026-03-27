@@ -40,22 +40,21 @@ const USE_OF_FUNDS = [
 const DONATE_URL = "https://www.longevityinitiativeforfoodandeducation.com/donate";
 
 export const metadata: Metadata = {
-  title: "Support LIFE | Donate to Longevity Food Education",
-  description:
-    "Support the Longevity Initiative for Food & Education and help expand community LIFE gatherings that teach nutrition, connection, and longevity.",
+  title: "Support LIFE — Longevity Initiative for Food & Education",
+  description: "Your donation keeps ingredients on the table and the habit library in families' hands.",
   alternates: {
     canonical: DONATE_URL,
   },
   openGraph: {
-    title: "Support LIFE | Donate to Longevity Food Education",
-    description:
-      "Support the Longevity Initiative for Food & Education and help expand community LIFE gatherings that teach nutrition, connection, and longevity.",
+    title: "Support LIFE — Longevity Initiative for Food & Education",
+    description: "Your donation keeps ingredients on the table and the habit library in families' hands.",
     url: DONATE_URL,
+    siteName: "LIFE — Longevity Initiative for Food & Education",
+    images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
-    title: "Support LIFE | Donate to Longevity Food Education",
-    description:
-      "Support the Longevity Initiative for Food & Education and help expand community LIFE gatherings that teach nutrition, connection, and longevity.",
+    title: "Support LIFE — Longevity Initiative for Food & Education",
+    description: "Your donation keeps ingredients on the table and the habit library in families' hands.",
   },
 };
 

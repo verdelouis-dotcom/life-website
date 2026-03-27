@@ -4,19 +4,21 @@ import AssessmentWizard from "@/components/assessment/AssessmentWizard";
 const ASSESSMENT_URL = "https://www.longevityinitiativeforfoodandeducation.com/assessment";
 
 export const metadata: Metadata = {
-  title: "Longevity Assessment | Discover Your Health & Lifestyle Score",
-  description: "Take the LIFE Longevity Assessment to see how your daily habits impact your potential lifespan and learn how to improve your health.",
+  title: "Free Longevity Assessment — Discover Your LIFE Age",
+  description: "Take the free LIFE longevity assessment. Discover which habits are adding years to your life and which ones are taking them away.",
   alternates: {
     canonical: ASSESSMENT_URL,
   },
   openGraph: {
-    title: "Longevity Assessment | Discover Your Health & Lifestyle Score",
-    description: "Take the LIFE Longevity Assessment to see how your daily habits impact your potential lifespan and learn how to improve your health.",
+    title: "Free Longevity Assessment — Discover Your LIFE Age",
+    description: "Take the free LIFE longevity assessment. Discover which habits are adding years to your life and which ones are taking them away.",
     url: ASSESSMENT_URL,
+    siteName: "LIFE — Longevity Initiative for Food & Education",
+    images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
-    title: "Longevity Assessment | Discover Your Health & Lifestyle Score",
-    description: "Take the LIFE Longevity Assessment to see how your daily habits impact your potential lifespan and learn how to improve your health.",
+    title: "Free Longevity Assessment — Discover Your LIFE Age",
+    description: "Take the free LIFE longevity assessment. Discover which habits are adding years to your life and which ones are taking them away.",
   },
 };
 

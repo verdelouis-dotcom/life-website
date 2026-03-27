@@ -4,19 +4,21 @@ import Link from "next/link";
 const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
 
 export const metadata: Metadata = {
-  title: "Host a LIFE Gathering | Lead a Longevity Dinner in Your Community",
-  description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
+  title: "Host a LIFE Table — Open Your Kitchen",
+  description: "Host a LIFE gathering. Cook together, eat together, pass it on.",
   alternates: {
     canonical: HOST_URL,
   },
   openGraph: {
-    title: "Host a LIFE Gathering | Lead a Longevity Dinner in Your Community",
-    description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
+    title: "Host a LIFE Table — Open Your Kitchen",
+    description: "Host a LIFE gathering. Cook together, eat together, pass it on.",
     url: HOST_URL,
+    siteName: "LIFE — Longevity Initiative for Food & Education",
+    images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
-    title: "Host a LIFE Gathering | Lead a Longevity Dinner in Your Community",
-    description: "Become a LIFE host and lead a shared meal that teaches longevity habits through food, connection, and conversation.",
+    title: "Host a LIFE Table — Open Your Kitchen",
+    description: "Host a LIFE gathering. Cook together, eat together, pass it on.",
   },
 };
 

@@ -7,22 +7,21 @@ import { ABOUT_PROOF } from "@/data/proof";
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/about";
 
 export const metadata: Metadata = {
-  title: "About LIFE | Longevity Initiative for Food & Education",
-  description:
-    "Learn about the mission behind LIFE and how shared meals, nutrition education, and community connection help improve health and longevity.",
+  title: "About LIFE — Lou Verde & the Longevity Initiative",
+  description: "Lou Verde's grandparents lived into their mid-90s. LIFE exists to share their habits with every family in America.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "About LIFE | Longevity Initiative for Food & Education",
-    description:
-      "Learn about the mission behind LIFE and how shared meals, nutrition education, and community connection help improve health and longevity.",
+    title: "About LIFE — Lou Verde & the Longevity Initiative",
+    description: "Lou Verde's grandparents lived into their mid-90s. LIFE exists to share their habits with every family in America.",
     url: PAGE_URL,
+    siteName: "LIFE — Longevity Initiative for Food & Education",
+    images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
-    title: "About LIFE | Longevity Initiative for Food & Education",
-    description:
-      "Learn about the mission behind LIFE and how shared meals, nutrition education, and community connection help improve health and longevity.",
+    title: "About LIFE — Lou Verde & the Longevity Initiative",
+    description: "Lou Verde's grandparents lived into their mid-90s. LIFE exists to share their habits with every family in America.",
   },
 };
 

@@ -4,20 +4,21 @@ import { HomePageClient } from "@/components/home/HomePageClient";
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
 export const metadata: Metadata = {
-  title: "LIFE — Your daily habits are shortening your life. We can help.",
-  description:
-    "Rebuild the six daily habits behind the world’s longest-lived families. Take the free LIFE Age assessment, cook together, and start your movement for $10.",
+  title: "LIFE — Come Make Pasta With Us",
+  description: "LIFE is a cooking gathering where families make real food together, eat at the table, and leave with habits worth keeping. Join for $10.",
   alternates: {
     canonical: HOME_URL,
   },
   openGraph: {
-    title: "LIFE — Your daily habits are shortening your life. We can help.",
-    description: "Rebuild the six daily habits behind the world’s longest-lived families. Take the free LIFE Age assessment, cook together, and start your movement for $10.",
+    title: "LIFE — Come Make Pasta With Us",
+    description: "LIFE is a cooking gathering where families make real food together, eat at the table, and leave with habits worth keeping. Join for $10.",
     url: HOME_URL,
+    siteName: "LIFE — Longevity Initiative for Food & Education",
+    images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
-    title: "LIFE — Your daily habits are shortening your life. We can help.",
-    description: "Rebuild the six daily habits behind the world’s longest-lived families. Take the free LIFE Age assessment, cook together, and start your movement for $10.",
+    title: "LIFE — Come Make Pasta With Us",
+    description: "LIFE is a cooking gathering where families make real food together, eat at the table, and leave with habits worth keeping. Join for $10.",
   },
 };
 

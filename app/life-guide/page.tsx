@@ -28,20 +28,19 @@ const WORKSHOP_LINK = "/workshops";
 const GUIDE_PDF = "/life-7-day-challenge.pdf";
 
 export const metadata: Metadata = {
-  title: "LIFE Guide | Longevity Initiative for Food & Education",
-  description:
-    "Learn how the LIFE Guide helps gathering participants keep building healthier habits with recipes, tips, and daily practices.",
+  title: "The LIFE Guide — A Habit Library for Your Family",
+  description: "Browse the LIFE habit library — simple habits across six longevity pillars. Something for every member of your family, starting tonight.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "LIFE Guide",
-    description:
-      "Gathering participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
+    title: "The LIFE Guide — A Habit Library for Your Family",
+    description: "Browse the LIFE habit library — simple habits across six longevity pillars. Something for every member of your family, starting tonight.",
     url: PAGE_URL,
+    siteName: "LIFE — Longevity Initiative for Food & Education",
+    images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
-    title: "LIFE Guide",
-    description:
-      "Gathering participants receive the LIFE Guide—a practical resource with recipes, tips, and daily habits to continue the experience at home.",
+    title: "The LIFE Guide — A Habit Library for Your Family",
+    description: "Browse the LIFE habit library — simple habits across six longevity pillars. Something for every member of your family, starting tonight.",
   },
 };
 

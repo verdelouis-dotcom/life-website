@@ -70,6 +70,16 @@ export default function RegisterForm() {
         return;
       }
 
+      try {
+        await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: payload.email, tag: "host-registered" }),
+        });
+      } catch (subscribeError) {
+        console.error("REGISTER_SUBSCRIBE_ERROR", subscribeError);
+      }
+
       setStatus("idle");
       setErrorMessage(null);
       form.reset();
