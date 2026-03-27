@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
+import { DonationEmbedPanel } from "@/components/donate/DonationEmbedPanel";
 
 const TIERS = [
   {
@@ -105,6 +106,10 @@ export default function DonatePage() {
             LIFE is a Georgia nonprofit with 501(c)(3) determination pending. Registered LIFE gatherings, board reviews, and public reporting keep donors informed
             about how shared meals are spreading.
           </p>
+        </section>
+
+        <section className="mt-12">
+          <DonationEmbedPanel />
         </section>
       </main>
 </>

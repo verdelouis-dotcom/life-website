@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ZeffyEmbedFrame } from "@/components/zeffy/ZeffyEmbedFrame";
 
 const heroStats = [
   { value: "Pilot", label: "Now underway in Atlanta & Austin" },
@@ -571,9 +572,8 @@ export function HomePageClient() {
                 onChange={(event) => setDonationAmount(event.target.value)}
               />
             </div>
-            <button className="dc-btn" type="button">
-              Start My LIFE Journey — ${normalizedAmount}
-            </button>
+            <p className="dc-note">The secure form below will load with your selected amount (minimum $10).</p>
+            <ZeffyEmbedFrame amount={normalizedAmount} className="dc-embed" minHeight={840} />
             <div className="dc-legal">Tax-deductible donation · 501(c)(3) pending · Secure payment via Zeffy · No subscription. No recurring charges. No spam.</div>
           </div>
         </div>

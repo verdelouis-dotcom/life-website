@@ -1281,6 +1281,17 @@
   background: var(--white);
 }
 
+.conversion .dc-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.conversion .dc-embed {
+  margin-top: 1.5rem;
+}
+
 .conversion .dc-btn {
   width: 100%;
   padding: 1rem;
