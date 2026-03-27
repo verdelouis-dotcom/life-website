@@ -16,9 +16,7 @@ export default function SiteFooter() {
       <div className="flex flex-wrap items-center justify-between gap-8 max-md:flex-col max-md:text-center">
         <div className="font-serif text-[0.95rem] uppercase tracking-[0.04em] text-white">LIFE</div>
 
-        <p className="max-w-sm text-[0.75rem] text-white/50">
-          Restoring shared meals through education, tools, and measurable impact. 501(c)(3) pending.
-        </p>
+        <p className="max-w-sm text-[0.75rem] text-white/50">Learn it. Live it. Pass it on.</p>
 
         <div className="flex flex-wrap items-center justify-end gap-[1.6rem] text-[0.75rem] text-white/40 max-md:justify-center">
           {LINKS.map((link) => (

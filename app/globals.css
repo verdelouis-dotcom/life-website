@@ -300,6 +300,19 @@ a:hover {
   }
 }
 
+.site-nav {
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+  backdrop-filter: blur(0);
+}
+
+.site-nav.is-scrolled {
+  background: rgba(253, 250, 246, 0.96);
+  border-bottom-color: rgba(62, 46, 30, 0.12);
+  backdrop-filter: blur(12px);
+}
+
 .site-nav-logo {
   width: 220px;
   height: 38px;
@@ -317,6 +330,19 @@ a:hover {
   justify-content: space-between;
   padding: 0.65rem 3.5rem;
   min-height: var(--nav-height);
+}
+
+.nav-join-cta {
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.site-nav.is-scrolled .nav-join-cta {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .nav-mobile-btn {

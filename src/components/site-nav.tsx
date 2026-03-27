@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -14,9 +14,20 @@ const NAV_LINKS = [
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="site-nav fixed inset-x-0 top-0 z-[100] border-b border-[rgba(62,46,30,0.12)] bg-[rgba(253,250,246,0.94)] backdrop-blur-[10px] supports-[backdrop-filter]:backdrop-blur">
+    <header className={`site-nav fixed inset-x-0 top-0 z-[100] ${scrolled ? "is-scrolled" : ""}`}>
       <div className="site-nav-inner">
         <Link href="/" className="shrink-0" aria-label="Longevity Initiative for Food & Education">
           <div className="site-nav-logo">
@@ -43,6 +54,12 @@ export default function SiteNav() {
             className="rounded-full bg-[#3E2E1E] px-5 py-2 text-[0.82rem] font-semibold text-white transition-colors hover:bg-[#B55A30]"
           >
             Host a Table
+          </Link>
+          <Link
+            href="/#join"
+            className="nav-join-cta rounded-full bg-[#a0522d] px-5 py-2 text-[0.82rem] font-semibold text-white transition-colors hover:bg-[#c4622d]"
+          >
+            Join for $10
           </Link>
         </nav>
 
@@ -88,6 +105,13 @@ export default function SiteNav() {
               onClick={() => setOpen(false)}
             >
               Host a Table
+            </Link>
+            <Link
+              href="/#join"
+              className="mt-2 block rounded-full bg-[#a0522d] px-5 py-2.5 text-center text-[0.875rem] font-semibold text-white no-underline transition-colors hover:bg-[#c4622d]"
+              onClick={() => setOpen(false)}
+            >
+              Join for $10
             </Link>
           </div>
         </div>
