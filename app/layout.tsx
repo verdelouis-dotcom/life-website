@@ -1,7 +1,8 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Instrument_Sans, Lora } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
+import "@/styles/conversion.css";
 import CanonicalRedirect from "@/components/canonical-redirect";
 import SiteNav from "@/components/site-nav";
 import SiteFooter from "@/components/site-footer";
@@ -35,16 +36,16 @@ const WEBSITE_SCHEMA = {
   },
 };
 
-const instrumentSans = Instrument_Sans({
+const instrumentSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-instrument",
   display: "swap",
 });
 
-const lora = Lora({
+const lora = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-lora",
   display: "swap",

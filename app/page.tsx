@@ -1,30 +1,23 @@
 import type { Metadata } from "next";
-import { LandingHero } from "@/components/landing/landing-hero";
-import { LandingEveningSection } from "@/components/landing/landing-evening-section";
-import { LandingRippleSection } from "@/components/landing/landing-ripple-section";
-import { LandingGuideSection } from "@/components/landing/landing-guide-section";
-import { LandingLifeInAction } from "@/components/landing/landing-life-in-action";
-import { LandingCTASection } from "@/components/landing/landing-cta-section";
+import { HomePageClient } from "@/components/home/HomePageClient";
 
 const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
 export const metadata: Metadata = {
-  title: "Longevity Initiative for Food & Education | Shared LIFE Gathering Movement",
+  title: "LIFE — Your daily habits are shortening your life. We can help.",
   description:
-    "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE gathering or host your own.",
+    "Rebuild the six daily habits behind the world’s longest-lived families. Take the free LIFE Age assessment, cook together, and start your movement for $10.",
   alternates: {
     canonical: HOME_URL,
   },
   openGraph: {
-    title: "Longevity Initiative for Food & Education | Shared LIFE Gathering Movement",
-    description:
-      "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE gathering or host your own.",
+    title: "LIFE — Your daily habits are shortening your life. We can help.",
+    description: "Rebuild the six daily habits behind the world’s longest-lived families. Take the free LIFE Age assessment, cook together, and start your movement for $10.",
     url: HOME_URL,
   },
   twitter: {
-    title: "Longevity Initiative for Food & Education | Shared LIFE Gathering Movement",
-    description:
-      "Discover how shared meals, Mediterranean cooking, and community connection can improve health and longevity. Join a LIFE gathering or host your own.",
+    title: "LIFE — Your daily habits are shortening your life. We can help.",
+    description: "Rebuild the six daily habits behind the world’s longest-lived families. Take the free LIFE Age assessment, cook together, and start your movement for $10.",
   },
 };
 
@@ -32,12 +25,7 @@ export default function HomePage() {
   return (
     <div className="bg-[var(--offwhite)] text-[var(--ink)]">
       <main className="pt-[52px]">
-        <LandingHero />
-        <LandingEveningSection />
-        <LandingRippleSection />
-        <LandingGuideSection />
-        <LandingLifeInAction />
-        <LandingCTASection />
+        <HomePageClient />
       </main>
     </div>
   );
