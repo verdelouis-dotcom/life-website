@@ -37,9 +37,25 @@ export default function ResourcesPage() {
 
         <section className="mx-auto max-w-6xl px-6 pb-12">
           <div className="grid gap-6 md:grid-cols-2">
-            {RESOURCE_ENTRIES.map((resource) => (
-              <ResourceCard key={resource.slug} title={resource.title} description={resource.description} href={`/resources/${resource.slug}`} />
-            ))}
+            {RESOURCE_ENTRIES.map((resource) => {
+              const href = resource.downloadUrl ?? (resource.slug ? `/resources/${resource.slug}` : "#");
+              const key = resource.slug ?? resource.downloadUrl ?? resource.title;
+              const label = resource.category ?? "Resource";
+              const ctaLabel = resource.downloadUrl ? `Download ${resource.type ?? "resource"}` : "Read article";
+              const external = Boolean(resource.downloadUrl);
+
+              return (
+                <ResourceCard
+                  key={key}
+                  title={resource.title}
+                  description={resource.description}
+                  href={href}
+                  label={label}
+                  ctaLabel={ctaLabel}
+                  external={external}
+                />
+              );
+            })}
           </div>
         </section>
 
