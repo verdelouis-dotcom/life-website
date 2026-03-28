@@ -138,8 +138,8 @@ export function HomePageClient() {
           <Reveal>
             <p className="hero-kicker">A national movement · starting around the table</p>
             <h1 className="hero-h1">
-              What if you could live 20 years longer —
-              <em>starting tonight?</em>
+              What if you could live 20 years longer?
+              <em>Let me show you how.</em>
             </h1>
             <p className="hero-sub">
               LIFE is a cooking experience where family and friends make real food together from scratch, eat at the table together, and leave with the habits
