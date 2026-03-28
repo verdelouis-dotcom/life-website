@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import LifeLogo from "@/components/brand/life-logo";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -29,18 +29,7 @@ export default function SiteNav() {
   return (
     <header className={`site-nav fixed inset-x-0 top-0 z-[100] ${scrolled ? "is-scrolled" : ""}`}>
       <div className="site-nav-inner">
-        <Link href="/" className="shrink-0" aria-label="Longevity Initiative for Food & Education">
-          <div className="site-nav-logo">
-            <Image
-              src="/images/life-logo-nav.png"
-              alt="Longevity Initiative for Food & Education"
-              fill
-              sizes="200px"
-              style={{ objectFit: "contain", objectPosition: "left center" }}
-              priority
-            />
-          </div>
-        </Link>
+        <LifeLogo className="site-nav-logo shrink-0" variant="header" priority />
 
         {/* Desktop nav links */}
         <nav className="nav-links-group hidden items-center gap-6 text-[0.82rem] font-medium text-[#6B4F35] md:flex">

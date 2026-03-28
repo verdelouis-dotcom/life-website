@@ -314,10 +314,8 @@ a:hover {
 }
 
 .site-nav-logo {
-  width: 220px;
-  height: 38px;
-  position: relative;
-  display: block;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-links-group {
@@ -369,10 +367,7 @@ a:hover {
   }
 
   .site-nav-logo {
-    width: 190px;
-    height: 32px;
-    position: relative;
-    display: block;
+    justify-content: flex-start;
   }
 }
 

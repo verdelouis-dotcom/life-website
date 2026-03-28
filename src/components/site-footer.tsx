@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LifeLogo from "@/components/brand/life-logo";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -14,7 +15,7 @@ export default function SiteFooter() {
   return (
     <footer className="bg-[#1E140A] px-[4.5rem] py-[2.2rem] text-white max-md:px-6 max-md:py-8">
       <div className="flex flex-wrap items-center justify-between gap-8 max-md:flex-col max-md:text-center">
-        <div className="font-serif text-[0.95rem] uppercase tracking-[0.04em] text-white">LIFE</div>
+        <LifeLogo variant="footer" className="shrink-0" />
 
         <p className="max-w-sm text-[0.75rem] text-white/50">Learn it. Live it. Pass it on.</p>
 
