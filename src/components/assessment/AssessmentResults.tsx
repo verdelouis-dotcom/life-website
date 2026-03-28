@@ -214,7 +214,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
           href="/#join"
           className="inline-flex items-center justify-center rounded-2xl border border-[var(--terracotta)] px-6 py-3 text-sm font-semibold text-[var(--terracotta)] transition hover:bg-[var(--terracotta)] hover:text-white"
         >
-          Join LIFE for $10 — start improving your score tonight →
+          Enroll in LIFE Longevity University →
         </a>
       </section>
 

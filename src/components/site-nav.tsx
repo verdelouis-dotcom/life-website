@@ -48,7 +48,7 @@ export default function SiteNav() {
             href="/#join"
             className="nav-join-cta rounded-full bg-[#a0522d] px-5 py-2 text-[0.82rem] font-semibold text-white transition-colors hover:bg-[#c4622d]"
           >
-            Join for $10
+            Enroll for $10
           </Link>
         </nav>
 
@@ -100,7 +100,7 @@ export default function SiteNav() {
               className="mt-2 block rounded-full bg-[#a0522d] px-5 py-2.5 text-center text-[0.875rem] font-semibold text-white no-underline transition-colors hover:bg-[#c4622d]"
               onClick={() => setOpen(false)}
             >
-              Join for $10
+              Enroll for $10
             </Link>
           </div>
         </div>

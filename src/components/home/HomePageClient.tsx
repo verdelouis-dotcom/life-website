@@ -78,10 +78,10 @@ const TESTIMONIALS = [
 ];
 
 const JOIN_BENEFITS = [
-  { label: "The LIFE Guide — Habit Library", body: "A practical library of simple habits organized across six longevity pillars." },
-  { label: "Daily Tracker", body: "Check habits off together, build your streak, and level up from Beginner to Longevity Expert." },
-  { label: "Level 1 · Beginner", body: "Your journey starts tonight with the first set of habits for every family member." },
-  { label: "LIFE gathering access", body: "Attend a free LIFE meal where available, or get priority access when LIFE launches in your city." },
+  { label: "Six Pillars Framework — full curriculum PDF", body: "" },
+  { label: "Daily habit tracker — 10 levels, streak engine", body: "" },
+  { label: "Longevity assessment — discover your LIFE Age", body: "" },
+  { label: "Gathering access — Atlanta & Austin", body: "" },
 ];
 
 const DOORS = [
@@ -142,15 +142,14 @@ export function HomePageClient() {
               <em>Let me show you how.</em>
             </h1>
             <p className="hero-sub">
-              LIFE is a cooking experience where family and friends make real food together from scratch, eat at the table together, and leave with the habits
-              that will prolong your life. No experience needed.
+              LIFE is a longevity education movement. Attend a gathering in your city, or enroll online for just $10. Either way, you get full access to the LIFE Longevity University: the Six Pillars Framework, daily habit tracker, and longevity assessment built on decades of peer-reviewed research.
             </p>
             <div className="hero-actions">
               <Link href="/#join" className="btn-primary">
-                Join LIFE for $10 →
+                Enroll for $10 →
               </Link>
-              <Link href="/#what" className="btn-ghost">
-                See what happens at a gathering ↓
+              <Link href="/workshops" className="btn-ghost">
+                Find a Gathering →
               </Link>
             </div>
           </Reveal>
@@ -172,6 +171,57 @@ export function HomePageClient() {
             {index < PROMISE_ITEMS.length - 1 && <span className="promise-divider" aria-hidden="true" />}
           </Reveal>
         ))}
+      </section>
+
+      <section style={{ background: "#0F2318" }} className="px-6 py-20">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <p style={{ fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "2rem" }}>
+              The Research
+            </p>
+          </Reveal>
+          <div className="grid gap-12 mb-16 md:grid-cols-2">
+            <Reveal>
+              <h2 style={{ fontFamily: "var(--font-lora)", fontSize: "clamp(2rem,3.5vw,3rem)", fontWeight: 400, lineHeight: 1.2, color: "#F5F0E8" }}>
+                Your genes determine only 20% of how long you live. The rest is yours.
+              </h2>
+            </Reveal>
+            <Reveal>
+              <div>
+                <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(245,240,232,0.82)", marginBottom: "1.5rem" }}>
+                  The Danish Twin Study — the most comprehensive longevity study ever conducted — established that approximately 80% of lifespan is determined by lifestyle and environment, not genetics. The world&apos;s longest-lived communities prove it. They share six daily habits. Not supplements. Not marathons. Just six ways of living that compound over a lifetime.
+                </p>
+                <p style={{ fontSize: "0.72rem", lineHeight: 1.6, color: "rgba(245,240,232,0.45)" }}>
+                  Sources: Herskind AM et al. (1996). Human Genetics. · Buettner D. (2012). The Blue Zones. · U.S. Surgeon General Advisory on Loneliness (2023).
+                </p>
+              </div>
+            </Reveal>
+          </div>
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+            {[
+              { number: "80%", label: "of lifespan is lifestyle", desc: "Not genetics. Daily habits, environment, and social connection determine how long we live.", cite: "Danish Twin Study, NEJM 1996" },
+              { number: "20+", label: "additional years of life", desc: "Communities practicing the six longevity pillars consistently outlive the average American by two decades.", cite: "Buettner D. Blue Zones, National Geographic 2005" },
+              { number: "15", label: "cigarettes — the cost of loneliness", desc: "The U.S. Surgeon General declared loneliness a public health epidemic with mortality risk equal to smoking 15 cigarettes daily.", cite: "U.S. Surgeon General Advisory, 2023" },
+            ].map((stat) => (
+              <Reveal key={stat.number}>
+                <div style={{ border: "1px solid rgba(245,240,232,0.12)", borderRadius: "1.5rem", padding: "2rem", background: "rgba(255,255,255,0.04)" }}>
+                  <p style={{ fontFamily: "var(--font-lora)", fontSize: "clamp(3rem,5vw,4rem)", fontWeight: 400, lineHeight: 1, color: "#F5F0E8", marginBottom: "0.5rem" }}>
+                    {stat.number}
+                  </p>
+                  <p style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(245,240,232,0.9)", marginBottom: "0.75rem" }}>
+                    {stat.label}
+                  </p>
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(245,240,232,0.75)", marginBottom: "0.75rem" }}>
+                    {stat.desc}
+                  </p>
+                  <p style={{ fontSize: "0.7rem", color: "rgba(245,240,232,0.4)" }}>
+                    {stat.cite}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="story">
@@ -233,7 +283,7 @@ export function HomePageClient() {
             <h2>Six pillars. A habit for every member of your family.</h2>
             <p>
               Every guest leaves with the LIFE Guide — a library of simple habits organized around the six pillars of longevity found in the world's longest-lived
-              people. There's something for every member of your family, at every age, starting tonight. The daily tracker lets you check them off, build your
+              people. There&apos;s something for every member of your family, at every age. The daily tracker lets you check them off, build your
               streak, and level up together.
             </p>
           </Reveal>
@@ -272,11 +322,31 @@ export function HomePageClient() {
         <div className="join-left">
           <Reveal>
             <p className="label-eyebrow">Start your LIFE journey</p>
-            <h2>Join LIFE for $10. No subscription. Ever.</h2>
+            <h2>Two ways into LIFE Longevity University.</h2>
             <p className="join-sub">
-              Get the habit library and tracker that shows your whole family how to live longer, happier, and more connected.
+              LIFE Longevity University is the digital home of the Six Pillars Framework — a research-backed curriculum for living longer, built around the habits found in every long-lived culture on Earth. Access it by attending a gathering, or enroll directly for $10.
             </p>
           </Reveal>
+          <div className="grid gap-4 mb-6 grid-cols-1 sm:grid-cols-2">
+            <div style={{ border: "1px solid var(--border)", borderRadius: "1rem", padding: "1.25rem 1.5rem", background: "#fff" }}>
+              <p style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.5rem" }}>Door 1</p>
+              <h4 style={{ fontFamily: "var(--font-lora)", fontSize: "1.1rem", fontWeight: 500, color: "var(--ink)", marginBottom: "0.4rem" }}>Attend a Gathering</h4>
+              <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--muted)", marginBottom: "0.75rem" }}>
+                Your host gives you access to LIFE Longevity University at no cost. Available in Atlanta &amp; Austin.
+              </p>
+              <Link href="/workshops" style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--terra)", textDecoration: "none" }}>
+                Find a gathering →
+              </Link>
+            </div>
+            <div style={{ border: "1px solid var(--border)", borderLeft: "3px solid var(--sage)", borderRadius: "1rem", padding: "1.25rem 1.5rem", background: "#fff" }}>
+              <p style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.5rem" }}>Door 2</p>
+              <h4 style={{ fontFamily: "var(--font-lora)", fontSize: "1.1rem", fontWeight: 500, color: "var(--ink)", marginBottom: "0.4rem" }}>Enroll Online — $10</h4>
+              <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--muted)" }}>
+                Instant access from anywhere in the US. Supports LIFE&apos;s national expansion and future research.
+              </p>
+            </div>
+          </div>
+          <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", marginBottom: "0.75rem" }}>Your LIFE Longevity University enrollment includes</p>
           <ul className="join-benefits">
             {JOIN_BENEFITS.map((benefit) => (
               <Reveal key={benefit.label} className="join-benefit">
@@ -288,11 +358,14 @@ export function HomePageClient() {
               </Reveal>
             ))}
           </ul>
-          <p className="join-legal">Tax-deductible donation · 501(c)(3) pending · Secure payment via Zeffy · No subscription. No recurring charges. Ever.</p>
+          <p className="join-legal">Tax-deductible enrollment · 501(c)(3) pending · Secure payment via Zeffy. Supports national expansion &amp; future longevity research. No recurring charges.</p>
         </div>
         <div className="join-right">
           <Reveal className="join-card">
-            <p className="label-eyebrow text-[var(--olive)]">Minimum $10 · Instant access</p>
+            <p className="label-eyebrow text-[var(--olive)]">One-time enrollment · No subscription · Instant access</p>
+            <p style={{ fontSize: "0.95rem", fontWeight: 500, lineHeight: 1.5, color: "var(--ink)", marginBottom: "1rem" }}>
+              Enroll in LIFE Longevity University — the Six Pillars Framework, daily tracker, and longevity assessment in one place.
+            </p>
             <div className="amount-input-row">
               <label htmlFor="donation-amount" className="sr-only">
                 Donation amount

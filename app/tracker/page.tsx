@@ -634,7 +634,7 @@ const TrackerPage = () => {
           <div className="tracker-empty-s">
             <div className="tracker-ei">🔒</div>
             <div className="tracker-et">Members only</div>
-            <div className="tracker-es">Join LIFE for $10 to unlock the habit tracker.</div>
+            <div className="tracker-es">Enroll for $10 to unlock the habit tracker.</div>
           </div>
         </div>
       </section>
