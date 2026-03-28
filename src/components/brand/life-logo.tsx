@@ -9,9 +9,9 @@ type LifeLogoProps = {
   priority?: boolean;
 };
 
-const IMAGE_SRC = "/images/branding/life-logo.png";
-const IMAGE_WIDTH = 768; // preserves native 3:2 aspect ratio
-const IMAGE_HEIGHT = 512;
+const IMAGE_SRC = "/branding/life-logo-full-transparent.png";
+const IMAGE_WIDTH = 2000;
+const IMAGE_HEIGHT = 1333;
 
 export default function LifeLogo({ href = "/", variant = "header", className = "", imageClassName = "", priority = false }: LifeLogoProps) {
   const sizeClass = variant === "footer" ? "h-8 md:h-10" : "h-10 md:h-12";
