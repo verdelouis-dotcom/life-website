@@ -142,8 +142,8 @@ export function HomePageClient() {
               <em>Leave your phones at the door. Bring the kids.</em>
             </h1>
             <p className="hero-sub">
-              LIFE is a cooking gathering where families make real food together, eat at the table together, and leave with habits worth keeping. No experience
-              needed. No screens allowed.
+              LIFE is a cooking experience where family and friends make real food together from scratch, eat at the table together, and leave with the habits
+              that will prolong your life. No experience needed.
             </p>
             <div className="hero-actions">
               <Link href="/#join" className="btn-primary">
