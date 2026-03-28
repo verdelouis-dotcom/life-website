@@ -32,10 +32,10 @@ export default function SiteNav() {
         <Link href="/" className="shrink-0" aria-label="Longevity Initiative for Food & Education">
           <div className="site-nav-logo">
             <Image
-              src="/images/life-logo-nav.svg"
+              src="/images/life-logo-nav.png"
               alt="Longevity Initiative for Food & Education"
               fill
-              unoptimized
+              sizes="200px"
               style={{ objectFit: "contain", objectPosition: "left center" }}
               priority
             />
