@@ -224,7 +224,7 @@ export function HomePageClient() {
 
       <section className="story">
         <div className="story-img">
-          <Image src="/images/workshops/IMG_6843.jpeg" alt="Lou Verde smiling in a kitchen" fill sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image src="/images/grandfather.jpeg" alt="Lou Verde with his grandfather in the kitchen" fill sizes="(max-width: 768px) 100vw, 50vw" />
           <div className="story-img-overlay" aria-hidden="true" />
         </div>
         <div className="story-content">
