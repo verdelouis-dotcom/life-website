@@ -15,7 +15,7 @@ export default function SiteFooter() {
   return (
     <footer className="bg-[#1E140A] px-[4.5rem] py-[2.2rem] text-white max-md:px-6 max-md:py-8">
       <div className="flex flex-wrap items-center justify-between gap-8 max-md:flex-col max-md:text-center">
-        <LifeLogo variant="footer" className="footer-logo shrink-0" />
+        <LifeLogo variant="footer" className="shrink-0" />
 
         <p className="max-w-sm text-[0.75rem] text-white/60">Longevity Initiative for Food &amp; Education is organized as a Georgia nonprofit corporation and has applied for 501(c)(3) recognition from the IRS. Enrollment fees support the national expansion of the Six Pillars Framework and future longevity research.</p>
 

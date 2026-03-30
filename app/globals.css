@@ -316,15 +316,6 @@ a:hover {
 .site-nav-logo {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(253, 250, 246, 0.95);
-  box-shadow: 0 12px 30px rgba(30, 20, 10, 0.22);
-  transition: box-shadow 0.3s ease, background 0.3s ease;
-}
-
-.site-nav.is-scrolled .site-nav-logo {
-  box-shadow: 0 6px 18px rgba(30, 20, 10, 0.18);
 }
 
 .nav-links-group {
@@ -377,17 +368,7 @@ a:hover {
 
   .site-nav-logo {
     justify-content: flex-start;
-    padding: 0.3rem 0.7rem;
   }
-}
-
-.footer-logo {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 @keyframes fadeUp {
