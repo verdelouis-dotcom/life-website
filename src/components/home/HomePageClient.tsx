@@ -138,15 +138,17 @@ export function HomePageClient() {
           <Reveal>
             <p className="hero-kicker">A national movement · starting around the table</p>
             <h1 className="hero-h1">
-              What if you could live 20 years longer?
-              <em>Let me show you how.</em>
+              Our habits are taking 20 years off our lives.
+              <br />
+              Are you teaching your kids the same ones?
             </h1>
             <p className="hero-sub">
-              LIFE is a longevity education movement. Attend a gathering in your city, or enroll online for just $10. Either way, you get full access to the LIFE Longevity University: the Six Pillars Framework, daily habit tracker, and longevity assessment built on decades of peer-reviewed research.
+              LIFE is a longevity movement built around the table. Join a cooking experience near you, or enroll online for just $10.
             </p>
+            <p className="hero-sub">Food gets us to the table. What happens next changes everything.</p>
             <div className="hero-actions">
-              <Link href="/#join" className="btn-primary">
-                Enroll for $10 →
+              <Link href="/assessment" className="btn-primary">
+                Find out how many years you&apos;re projected to live — take the free assessment.
               </Link>
               <Link href="/workshops" className="btn-ghost">
                 Find a Gathering →
