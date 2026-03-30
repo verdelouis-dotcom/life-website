@@ -13,8 +13,8 @@ const IMAGE_SRC = "/branding/life-logo-full-transparent.png";
 const IMAGE_WIDTH = 2000;
 const IMAGE_HEIGHT = 1333;
 
-export default function LifeLogo({ href = "/", variant = "header", className = "", imageClassName = "", priority = false }: LifeLogoProps) {
-  const sizeClass = variant === "footer" ? "h-8 md:h-10" : "h-10 md:h-12";
+export default function LifeLogo({ href = null, variant = "header", className = "", imageClassName = "", priority = false }: LifeLogoProps) {
+  const sizeClass = variant === "footer" ? "h-16 md:h-20" : "h-20 md:h-24";
 
   const image = (
     <Image
