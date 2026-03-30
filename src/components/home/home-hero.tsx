@@ -17,7 +17,7 @@ export default function HomeHero() {
         <Reveal delay={180}>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/host" className="btn-solid px-8 text-base">
-              Host a LIFE Gathering
+              Host a LIFE Cooking Experience
             </Link>
             <Link href="/donate" className="btn-outline px-8 text-base">
               Support Us

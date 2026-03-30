@@ -4,19 +4,19 @@ import Link from "next/link";
 const REGISTER_THANKS_URL = "https://www.longevityinitiativeforfoodandeducation.com/register/thanks";
 
 export const metadata: Metadata = {
-  title: "Thank You for Registering | LIFE Gathering Recorded",
-  description: "Thanks for registering your LIFE gathering. Your gathering now counts toward the movement’s measurable community impact.",
+  title: "Thank You for Registering | LIFE Cooking Experience Recorded",
+  description: "Thanks for registering your LIFE cooking experience. Your cooking experience now counts toward the movement’s measurable community impact.",
   alternates: {
     canonical: REGISTER_THANKS_URL,
   },
   openGraph: {
-    title: "Thank You for Registering | LIFE Gathering Recorded",
-    description: "Thanks for registering your LIFE gathering. Your gathering now counts toward the movement’s measurable community impact.",
+    title: "Thank You for Registering | LIFE Cooking Experience Recorded",
+    description: "Thanks for registering your LIFE cooking experience. Your cooking experience now counts toward the movement’s measurable community impact.",
     url: REGISTER_THANKS_URL,
   },
   twitter: {
-    title: "Thank You for Registering | LIFE Gathering Recorded",
-    description: "Thanks for registering your LIFE gathering. Your gathering now counts toward the movement’s measurable community impact.",
+    title: "Thank You for Registering | LIFE Cooking Experience Recorded",
+    description: "Thanks for registering your LIFE cooking experience. Your cooking experience now counts toward the movement’s measurable community impact.",
   },
 };
 
@@ -27,7 +27,7 @@ export default function RegisterThanksPage() {
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
           <p className="type-eyebrow">Thank you</p>
           <h1 className="section-heading">Thank you</h1>
-          <p className="mt-4 type-lede text-[var(--muted)]">Your LIFE gathering has been recorded as community participation.</p>
+          <p className="mt-4 type-lede text-[var(--muted)]">Your LIFE cooking experience has been recorded as community participation.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/donate" className="btn-outline px-6 text-base">
               Support Us
@@ -36,7 +36,7 @@ export default function RegisterThanksPage() {
               href="/register"
               className="btn-solid px-6 text-base"
             >
-              Register Another LIFE Gathering
+              Register Another LIFE Cooking Experience
             </Link>
           </div>
         </section>

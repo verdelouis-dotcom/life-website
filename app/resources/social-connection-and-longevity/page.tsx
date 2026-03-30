@@ -24,8 +24,8 @@ export default function SocialConnectionLongevityPage() {
   return (
     <ResourceArticleLayout
       title="Social Connection and Longevity"
-      intro="People with strong social ties tend to live longer, recover faster, and make healthier choices. LIFE gatherings create the setting for those ties to form and for hosts to notice who might need extra support."
-      primaryCta={{ href: "/host", label: "Host a LIFE Gathering" }}
+      intro="People with strong social ties tend to live longer, recover faster, and make healthier choices. LIFE cooking experiences create the setting for those ties to form and for hosts to notice who might need extra support."
+      primaryCta={{ href: "/host", label: "Host a LIFE Cooking Experience" }}
       secondaryCta={{ href: "/how-it-works", label: "Learn How LIFE Works", variant: "outline" }}
     >
       <ResourceSection title="Belonging protects physical and emotional health">
@@ -34,14 +34,14 @@ export default function SocialConnectionLongevityPage() {
           <Link href="/pillars/connection" className="text-[var(--terracotta)] underline">
             Connection pillar
           </Link>{" "}
-          keeps this insight front and center so LIFE gatherings never feel transactional—they feel relational.
+          keeps this insight front and center so LIFE cooking experiences never feel transactional—they feel relational.
         </p>
       </ResourceSection>
 
-      <ResourceSection title="Shared LIFE gatherings reveal who needs help">
+      <ResourceSection title="Shared LIFE cooking experiences reveal who needs help">
         <p>
           When people cook together, it becomes clear who is exhausted, who skipped meals, or who is caring for a relative. Hosts log those
-          observations when they register gatherings, feeding LIFE&apos;s {" "}
+          observations when they register cooking experiences, feeding LIFE&apos;s {" "}
           <Link href="/impact" className="text-[var(--terracotta)] underline">
             impact tracking
           </Link>
@@ -62,14 +62,14 @@ export default function SocialConnectionLongevityPage() {
       <ResourceSection title="Connection supports the other pillars">
         <p>
           Sleep routines improve when people are less stressed. Movement increases when friends invite each other on walks. Purpose grows when someone
-          feels responsible for their LIFE gathering. Connection is the thread tying the other pillars together.
+          feels responsible for their LIFE cooking experience. Connection is the thread tying the other pillars together.
         </p>
       </ResourceSection>
 
       <ResourceSection title="Practical ways to strengthen connection">
         <p>
-          Start with consistent meal times, limit screens at the LIFE gathering, invite neighbors who might not otherwise be included, and rotate hosting
-          responsibilities. Each small practice makes the next gathering easier and keeps the LIFE mission community-owned.
+          Start with consistent meal times, limit screens at the LIFE cooking experience, invite neighbors who might not otherwise be included, and rotate hosting
+          responsibilities. Each small practice makes the next cooking experience easier and keeps the LIFE mission community-owned.
         </p>
       </ResourceSection>
     </ResourceArticleLayout>

@@ -60,7 +60,7 @@ const pillars: Pillar[] = [
   },
   {
     title: "Stress Regulation",
-    body: "Cooking, gathering, slowing down. Simple rhythms help people reset and feel grounded again.",
+    body: "Cooking, cooking experience, slowing down. Simple rhythms help people reset and feel grounded again.",
     icon: (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path d="M8 2v3M11 3.27l-2.1 2.1M13 7h-3M11 11l-2.1-2.1M8 13v-3M5 11l2.1-2.1M3 7h3M5 3.27l2.1 2.1" stroke="rgba(255,255,255,0.7)" strokeWidth="1.1" strokeLinecap="round" />

@@ -2,7 +2,7 @@ import PillarPage from "../_components/pillar-page";
 
 const WHY = [
   "When stress becomes constant, it affects sleep, mood, appetite, focus, and the ability to follow through on healthy choices.",
-  "Stress regulation does not always require something complicated. In many cases, the most helpful patterns are the ones people can return to regularly: cooking, gathering, breathing, slowing down, and being present.",
+  "Stress regulation does not always require something complicated. In many cases, the most helpful patterns are the ones people can return to regularly: cooking, cooking experience, breathing, slowing down, and being present.",
 ];
 
 const RESEARCH = [
@@ -25,7 +25,7 @@ const RESEARCH = [
 
 const LIFE_TIE_IN = [
   "LIFE creates conditions that can reduce overwhelm: shared meals, calmer rhythms, meaningful conversation, hands-on cooking, and time away from constant distraction.",
-  "The LIFE gathering is not a cure-all, but it is a practical setting for nervous-system-friendly habits. It gives people a repeatable way to slow down, connect, and reset.",
+  "The LIFE cooking experience is not a cure-all, but it is a practical setting for nervous-system-friendly habits. It gives people a repeatable way to slow down, connect, and reset.",
 ];
 
 const TAKEAWAYS = [

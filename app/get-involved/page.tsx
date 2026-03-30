@@ -5,40 +5,40 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/get-inv
 
 export const metadata: Metadata = {
   title: "Get Involved | Longevity Initiative for Food & Education",
-  description: "Share what you’ve learned through LIFE: host a LIFE gathering, support ingredients, or bring LIFE to your community.",
+  description: "Share what you’ve learned through LIFE: host a LIFE cooking experience, support ingredients, or bring LIFE to your community.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Get Involved | Longevity Initiative for Food & Education",
-    description: "Share what you’ve learned through LIFE: host a LIFE gathering, support ingredients, or bring LIFE to your community.",
+    description: "Share what you’ve learned through LIFE: host a LIFE cooking experience, support ingredients, or bring LIFE to your community.",
     url: PAGE_URL,
   },
   twitter: {
     title: "Get Involved | Longevity Initiative for Food & Education",
-    description: "Share what you’ve learned through LIFE: host a LIFE gathering, support ingredients, or bring LIFE to your community.",
+    description: "Share what you’ve learned through LIFE: host a LIFE cooking experience, support ingredients, or bring LIFE to your community.",
   },
 };
 
 const PATHS = [
   {
-    title: "Host a LIFE Gathering",
-    description: "Invite people you care about, cook something simple, and register the gathering so it counts toward the movement.",
-    ctaLabel: "Host a LIFE Gathering",
+    title: "Host a LIFE Cooking Experience",
+    description: "Invite people you care about, cook something simple, and register the cooking experience so it counts toward the movement.",
+    ctaLabel: "Host a LIFE Cooking Experience",
     href: "/host",
     highlight: true,
     guideText: "Hosting is simple and guided.",
-    guideLabel: "Download the LIFE Gathering Guide",
+    guideLabel: "Download the LIFE Cooking Experience Guide",
     guideHref: "/life-workshop-guide.pdf",
   },
   {
     title: "Support the Movement",
-    description: "Underwrite ingredients, LIFE gatherings, and educational tools so more LIFE gatherings can launch across communities.",
+    description: "Underwrite ingredients, LIFE cooking experiences, and educational tools so more LIFE cooking experiences can launch across communities.",
     ctaLabel: "Support Us",
     href: "/donate",
     highlight: false,
   },
   {
     title: "Bring LIFE to Your Community",
-    description: "Request a LIFE gathering or keynote for your organization, congregation, or company to spark local LIFE gatherings.",
+    description: "Request a LIFE cooking experience or keynote for your organization, congregation, or company to spark local LIFE cooking experiences.",
     ctaLabel: "Request a Keynote",
     href: "/keynote",
     highlight: false,
@@ -53,7 +53,7 @@ export default function GetInvolvedPage() {
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
             <p className="type-eyebrow text-[var(--olive)]">Get Involved</p>
             <h1 className="type-display">Share What You’ve Learned</h1>
-            <p className="type-lede text-[var(--muted)]">LIFE grows when people bring others to the LIFE gathering.</p>
+            <p className="type-lede text-[var(--muted)]">LIFE grows when people bring others to the LIFE cooking experience.</p>
           </div>
         </section>
 

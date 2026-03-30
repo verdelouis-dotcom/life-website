@@ -1,7 +1,7 @@
 const CARDS = [
   { title: "Attend", body: "Join a shared meal where people cook, learn, and connect." },
   { title: "Practice", body: "Use the LIFE Guide to bring simple habits into daily life." },
-  { title: "Host", body: "Use the Host Guide to lead your own LIFE gathering and bring others together." },
+  { title: "Host", body: "Use the Host Guide to lead your own LIFE cooking experience and bring others together." },
 ];
 
 export default function SectionHowWeDoIt() {

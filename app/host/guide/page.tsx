@@ -4,22 +4,22 @@ import Link from "next/link";
 const GUIDE_URL = "https://www.longevityinitiativeforfoodandeducation.com/host/guide";
 
 export const metadata: Metadata = {
-  title: "LIFE Host Guide | How to Lead a LIFE Gathering",
+  title: "LIFE Host Guide | How to Lead a LIFE Cooking Experience",
   description:
-    "Step-by-step guidance for hosting a LIFE gathering: invite, prepare, share the pillars, and register the gathering so it counts toward the movement.",
+    "Step-by-step guidance for hosting a LIFE cooking experience: invite, prepare, share the pillars, and register the cooking experience so it counts toward the movement.",
   alternates: {
     canonical: GUIDE_URL,
   },
   openGraph: {
-    title: "LIFE Host Guide | How to Lead a LIFE Gathering",
+    title: "LIFE Host Guide | How to Lead a LIFE Cooking Experience",
     description:
-      "Learn how to plan, cook, facilitate, and register a LIFE gathering so your gathering supports the six pillars of healthy aging.",
+      "Learn how to plan, cook, facilitate, and register a LIFE cooking experience so your cooking experience supports the six pillars of healthy aging.",
     url: GUIDE_URL,
   },
   twitter: {
-    title: "LIFE Host Guide | How to Lead a LIFE Gathering",
+    title: "LIFE Host Guide | How to Lead a LIFE Cooking Experience",
     description:
-      "Learn how to plan, cook, facilitate, and register a LIFE gathering so your gathering supports the six pillars of healthy aging.",
+      "Learn how to plan, cook, facilitate, and register a LIFE cooking experience so your cooking experience supports the six pillars of healthy aging.",
   },
 };
 
@@ -58,9 +58,9 @@ export default function HostGuidePage() {
         <section className="bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6] py-16">
           <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
             <p className="type-eyebrow text-[var(--olive)]">Host Guide</p>
-            <h1 className="type-display">How to Lead a LIFE Gathering</h1>
+            <h1 className="type-display">How to Lead a LIFE Cooking Experience</h1>
             <p className="type-lede text-[var(--muted)]">
-              Use this guide to plan and run your gathering. Follow the flow, use the prompts, and register when you&apos;re done.
+              Use this guide to plan and run your cooking experience. Follow the flow, use the prompts, and register when you&apos;re done.
             </p>
           </div>
         </section>
@@ -126,12 +126,12 @@ export default function HostGuidePage() {
           </div>
         </section>
 
-        {/* Post-gathering CTAs */}
+        {/* Post-cooking experience CTAs */}
         <section className="pb-16">
           <div className="mx-auto max-w-4xl space-y-6 px-6">
             <div className="rounded-[36px] border border-[var(--border)] bg-[var(--terra-pale)] p-8 text-center shadow-sm">
               <p className="type-eyebrow text-[var(--terra)]">You did it</p>
-              <h2 className="heading-md mt-2">Now register your gathering</h2>
+              <h2 className="heading-md mt-2">Now register your cooking experience</h2>
               <p className="body-sm text-[var(--text)] mt-3 max-w-md mx-auto">
                 Log who came, when you hosted, and share a photo if you&apos;d like it on the website.
                 It takes 2 minutes and makes your table count.

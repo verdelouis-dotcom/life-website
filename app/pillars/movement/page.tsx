@@ -24,7 +24,7 @@ const RESEARCH = [
 ];
 
 const LIFE_TIE_IN = [
-  "LIFE treats movement as something woven into the rhythm of the LIFE gathering. Shopping, prepping, cooking, serving, cleaning up, and gathering all reduce sedentary habits.",
+  "LIFE treats movement as something woven into the rhythm of the LIFE cooking experience. Shopping, prepping, cooking, serving, cleaning up, and cooking experience all reduce sedentary habits.",
   "This matters because the model is practical. Instead of asking families to overhaul their lives overnight, LIFE helps them practice healthier patterns through ordinary activities they can actually maintain.",
 ];
 

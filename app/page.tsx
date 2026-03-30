@@ -5,20 +5,20 @@ const HOME_URL = "https://www.longevityinitiativeforfoodandeducation.com";
 
 export const metadata: Metadata = {
   title: "LIFE — What if you could live 20 years longer?",
-  description: "LIFE is a longevity education movement. Attend a gathering in your city or enroll online for just $10. Access the LIFE Longevity University — Six Pillars Framework, daily habit tracker, and longevity assessment.",
+  description: "LIFE is a longevity education movement. Attend a cooking experience in your city or enroll online for just $10. Access the LIFE Longevity University — Six Pillars Framework, daily habit tracker, and longevity assessment.",
   alternates: {
     canonical: HOME_URL,
   },
   openGraph: {
     title: "LIFE — What if you could live 20 years longer?",
-    description: "LIFE is a longevity education movement. Attend a gathering in your city or enroll online for just $10. Access the LIFE Longevity University — Six Pillars Framework, daily habit tracker, and longevity assessment.",
+    description: "LIFE is a longevity education movement. Attend a cooking experience in your city or enroll online for just $10. Access the LIFE Longevity University — Six Pillars Framework, daily habit tracker, and longevity assessment.",
     url: HOME_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
     images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
     title: "LIFE — What if you could live 20 years longer?",
-    description: "LIFE is a longevity education movement. Attend a gathering in your city or enroll online for just $10. Access the LIFE Longevity University — Six Pillars Framework, daily habit tracker, and longevity assessment.",
+    description: "LIFE is a longevity education movement. Attend a cooking experience in your city or enroll online for just $10. Access the LIFE Longevity University — Six Pillars Framework, daily habit tracker, and longevity assessment.",
   },
 };
 

@@ -94,7 +94,7 @@ export const LIFE_HABIT_LIBRARY: Record<PillarKey, LifeHabitGuide> = {
       },
       {
         title: "Community loop",
-        description: "Join or create a simple gathering: walking club, volunteer shift, neighborhood LIFE workshop.",
+        description: "Join or create a simple cooking experience: walking club, volunteer shift, neighborhood LIFE workshop.",
       },
     ],
     reinforcementIdeas: ["Use the LIFE host guide", "Rotate potluck roles", "Keep a gratitude list for friends and neighbors"],
@@ -230,7 +230,7 @@ const HABIT_DATA: TrackerHabit[] = [
   { id: "h6_sleep", task: "Full sleep routine every night — no exceptions", micro: "The exceptions are where habits die. Hold the line.", stack: "Non-negotiable from this level forward", pillars: ["sleep"], points: 3, difficulty: "Medium", weekly: false, minLevel: 6 },
   { id: "h6_purpose", task: "Do one thing each week purely for someone else", micro: "A favor, a meal, a visit. No transaction. Just showing up.", stack: "Stack onto: the weekly anchor meal — invite someone", pillars: ["purpose", "connection"], points: 4, difficulty: "Medium", weekly: true, minLevel: 6 },
   { id: "h6_silence", task: "5 minutes of silence daily — no phone, no input", micro: "5 minutes. Alone. Quiet. Every day.", stack: "Stack onto: morning coffee before anything else", pillars: ["stress"], points: 3, difficulty: "Medium", weekly: false, minLevel: 6 },
-  { id: "h7_table", task: "Host one LIFE gathering — cook together, share the guide", micro: "4–6 people. Cooked from scratch. Guide shared. Verified by LIFE HQ.", pillars: ["connection", "purpose", "food"], points: 8, difficulty: "Bold", weekly: true, minLevel: 7 },
+  { id: "h7_table", task: "Host one LIFE cooking experience — cook together, share the guide", micro: "4–6 people. Cooked from scratch. Guide shared. Verified by LIFE HQ.", pillars: ["connection", "purpose", "food"], points: 8, difficulty: "Bold", weekly: true, minLevel: 7 },
   { id: "h7_share", task: "Share the LIFE Guide with one family who needs it", micro: "One family. Personal recommendation. Not a link — a conversation.", pillars: ["purpose", "connection"], points: 5, difficulty: "Medium", weekly: true, minLevel: 7 },
   { id: "h7_mentor", task: "Mentor one family through Levels 1–3", micro: "Check in weekly. Cook together once. Answer their questions.", pillars: ["purpose", "connection"], points: 5, difficulty: "Bold", weekly: true, minLevel: 7 },
   { id: "w_church", task: "Attend church or faith community", micro: "Belonging to something larger is one of the oldest longevity habits.", pillars: ["connection", "purpose", "stress"], points: 7, difficulty: "Medium", weekly: true, minLevel: 2 },

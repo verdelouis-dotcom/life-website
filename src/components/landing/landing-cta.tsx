@@ -9,7 +9,7 @@ export default function LandingCTASection() {
         <div className={styles.ctaPhoto}>
           <Image
             src="/images/workshops/pasta-lesson-7.jpeg"
-            alt="Kids kneading pasta dough at a LIFE gathering"
+            alt="Kids kneading pasta dough at a LIFE cooking experience"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             style={{ objectFit: "cover", objectPosition: "center 15%" }}

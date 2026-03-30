@@ -5,19 +5,19 @@ import { GALLERY_PHOTOS } from "@/data/gallery";
 const GALLERY_URL = "https://www.longevityinitiativeforfoodandeducation.com/gallery";
 
 export const metadata: Metadata = {
-  title: "LIFE Gatherings Gallery | Longevity Initiative",
-  description: "Real photos from LIFE gatherings in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
+  title: "LIFE Cooking Experiences Gallery | Longevity Initiative",
+  description: "Real photos from LIFE cooking experiences in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
   alternates: {
     canonical: GALLERY_URL,
   },
   openGraph: {
-    title: "LIFE Gatherings Gallery | Longevity Initiative",
-    description: "Real photos from LIFE gatherings in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
+    title: "LIFE Cooking Experiences Gallery | Longevity Initiative",
+    description: "Real photos from LIFE cooking experiences in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
     url: GALLERY_URL,
   },
   twitter: {
-    title: "LIFE Gatherings Gallery | Longevity Initiative",
-    description: "Real photos from LIFE gatherings in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
+    title: "LIFE Cooking Experiences Gallery | Longevity Initiative",
+    description: "Real photos from LIFE cooking experiences in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
   },
 };
 

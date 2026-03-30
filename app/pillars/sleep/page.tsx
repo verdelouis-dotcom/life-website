@@ -25,7 +25,7 @@ const RESEARCH = [
 
 const LIFE_TIE_IN = [
   "LIFE encourages healthier evenings through shared meals, less chaos, more routine, and stronger social rhythms. Consistent routines can support better rest.",
-  "The hosted LIFE gathering model also reframes health as a full-life practice. Better meals and better connection can make it easier for people to settle into more restorative patterns overall.",
+  "The hosted LIFE cooking experience model also reframes health as a full-life practice. Better meals and better connection can make it easier for people to settle into more restorative patterns overall.",
 ];
 
 const TAKEAWAYS = [
@@ -46,7 +46,7 @@ export default function SleepPillarPage() {
     <PillarPage
       title="Sleep"
       subtitle="Sleep is one of the body’s most essential repair and recovery systems."
-      intro="Sleep affects energy, mood, judgment, recovery, and long-term health. LIFE includes sleep because healthier living is not just about what happens at the LIFE gathering — it is also about the rhythms that restore the body."
+      intro="Sleep affects energy, mood, judgment, recovery, and long-term health. LIFE includes sleep because healthier living is not just about what happens at the LIFE cooking experience — it is also about the rhythms that restore the body."
       why={WHY}
       research={RESEARCH}
       lifeTieIn={LIFE_TIE_IN}

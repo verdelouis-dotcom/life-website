@@ -16,7 +16,7 @@ export const HABIT_RECOMMENDATIONS: Partial<Record<AssessmentQuestionId, string>
   meaningfulTime: "Spend regular, meaningful time with friends or family.",
   sharedMeals: "Share more meals at a LIFE workshop with others.",
   screenFreeMeals: "Enjoy meals without screens so you can connect and slow down.",
-  communityBelonging: "Engage with a group, class, or gathering that feels supportive.",
+  communityBelonging: "Engage with a group, class, or cooking experience that feels supportive.",
   senseOfPurpose: "Clarify what gives you meaning and align habits with that purpose.",
   meaningfulActivities: "Make time each week for activities that feel meaningful.",
   contributionFrequency: "Offer your time or skills to help someone each week.",

@@ -8,22 +8,22 @@ import { PILOT_QUOTES } from "@/data/proof";
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/workshops";
 
 export const metadata: Metadata = {
-  title: "LIFE Gatherings | What Happens at a LIFE Gathering",
+  title: "LIFE Cooking Experiences | What Happens at a LIFE Cooking Experience",
   description:
-    "A LIFE gathering is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
+    "A LIFE cooking experience is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "LIFE Gatherings | What Happens at a LIFE Gathering",
+    title: "LIFE Cooking Experiences | What Happens at a LIFE Cooking Experience",
     description:
-      "A LIFE gathering is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
+      "A LIFE cooking experience is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
     url: PAGE_URL,
   },
   twitter: {
-    title: "LIFE Gatherings | What Happens at a LIFE Gathering",
+    title: "LIFE Cooking Experiences | What Happens at a LIFE Cooking Experience",
     description:
-      "A LIFE gathering is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
+      "A LIFE cooking experience is a shared meal at someone's home. Neighbors cook together, eat together, and talk about the habits that help people live longer.",
   },
 };
 
@@ -48,7 +48,7 @@ const WHAT_TO_EXPECT = [
 
 const ATTEND_FAQ = [
   {
-    question: "Where does a LIFE gathering happen?",
+    question: "Where does a LIFE cooking experience happen?",
     answer:
       "At someone's home — a kitchen, a backyard, an apartment. Not a classroom, church hall, or conference room. The point is that it feels like a neighbor's house, because it is.",
   },
@@ -64,7 +64,7 @@ const ATTEND_FAQ = [
   },
   {
     question: "How many people are usually there?",
-    answer: "Most LIFE gatherings are 4–8 people. Small enough that everyone gets to talk.",
+    answer: "Most LIFE cooking experiences are 4–8 people. Small enough that everyone gets to talk.",
   },
   {
     question: "Do I have to host one after?",
@@ -81,10 +81,10 @@ export default function WorkshopsPage() {
         {/* Hero */}
         <section className="section-spacing">
           <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm px-6 md:px-10">
-            <p className="label-text">LIFE Gatherings</p>
+            <p className="label-text">LIFE Cooking Experiences</p>
             <h1 className="heading-xl mt-2">A meal at someone&apos;s home.</h1>
             <p className="body-lg text-[var(--muted)] mt-4">
-              That&apos;s what a LIFE gathering is. A neighbor opens their kitchen, everyone cooks together, and the conversation turns to the habits
+              That&apos;s what a LIFE cooking experience is. A neighbor opens their kitchen, everyone cooks together, and the conversation turns to the habits
               that actually help people live longer and feel better.
             </p>
             <p className="body-md text-[var(--text)] mt-3">
@@ -110,7 +110,7 @@ export default function WorkshopsPage() {
         <PhotoStrip
           eyebrow="From the pilot"
           title="Real kitchens. Real neighbors."
-          description="Every gathering looks a little different. Same idea every time."
+          description="Every cooking experience looks a little different. Same idea every time."
           imageAspect="portrait"
           photos={[
             { src: "/images/workshops/IMG_6709.jpeg", alt: "Hosts guiding pasta at the stove", caption: "Fresh ingredient prep" },
@@ -156,7 +156,7 @@ export default function WorkshopsPage() {
             <p className="type-eyebrow text-[var(--olive)]">Haven&apos;t been invited yet?</p>
             <h2 className="heading-md mt-2">Get notified when a table opens near you.</h2>
             <p className="body-sm text-[var(--muted)] mt-2 mb-6">
-              We&apos;ll let you know when a host near you is gathering, or connect you directly.
+              We&apos;ll let you know when a host near you is cooking experience, or connect you directly.
             </p>
             <NewsletterSignup
               buttonLabel="Notify me"

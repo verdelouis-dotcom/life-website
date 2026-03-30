@@ -2,7 +2,7 @@ import PillarPage from "../_components/pillar-page";
 
 const WHY = [
   "Health behaviors become stronger when they are tied to meaning. People are more likely to keep going when their actions feel connected to family, community, tradition, or contribution.",
-  "LIFE gives people a practical form of purpose: host a LIFE gathering, teach something useful, pass something on, and help someone else do the same.",
+  "LIFE gives people a practical form of purpose: host a LIFE cooking experience, teach something useful, pass something on, and help someone else do the same.",
 ];
 
 const RESEARCH = [

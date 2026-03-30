@@ -4,19 +4,19 @@ import RegisterForm from "@/components/forms/register-form";
 const REGISTER_URL = "https://www.longevityinitiativeforfoodandeducation.com/register";
 
 export const metadata: Metadata = {
-  title: "Register a LIFE Gathering | Track Community Impact",
-  description: "Hosted a LIFE gathering? Register your event to help track community impact and expand the shared LIFE gathering movement.",
+  title: "Register a LIFE Cooking Experience | Track Community Impact",
+  description: "Hosted a LIFE cooking experience? Register your event to help track community impact and expand the shared LIFE cooking experience movement.",
   alternates: {
     canonical: REGISTER_URL,
   },
   openGraph: {
-    title: "Register a LIFE Gathering | Track Community Impact",
-    description: "Hosted a LIFE gathering? Register your event to help track community impact and expand the shared LIFE gathering movement.",
+    title: "Register a LIFE Cooking Experience | Track Community Impact",
+    description: "Hosted a LIFE cooking experience? Register your event to help track community impact and expand the shared LIFE cooking experience movement.",
     url: REGISTER_URL,
   },
   twitter: {
-    title: "Register a LIFE Gathering | Track Community Impact",
-    description: "Hosted a LIFE gathering? Register your event to help track community impact and expand the shared LIFE gathering movement.",
+    title: "Register a LIFE Cooking Experience | Track Community Impact",
+    description: "Hosted a LIFE cooking experience? Register your event to help track community impact and expand the shared LIFE cooking experience movement.",
   },
 };
 
@@ -26,10 +26,10 @@ export default function RegisterPage() {
       <main className="mx-auto max-w-3xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 text-center shadow-sm">
           <p className="type-eyebrow">Measurement</p>
-          <h1 className="section-heading">Register a LIFE Gathering</h1>
-          <p className="mt-2 type-detail uppercase tracking-[0.3em] text-[var(--olive)]">For hosted LIFE gatherings only</p>
+          <h1 className="section-heading">Register a LIFE Cooking Experience</h1>
+          <p className="mt-2 type-detail uppercase tracking-[0.3em] text-[var(--olive)]">For hosted LIFE cooking experiences only</p>
           <p className="mt-4 type-body-muted">
-            Use this form after you have hosted a LIFE gathering. Registration is how LIFE measures participation and reach for grants,
+            Use this form after you have hosted a LIFE cooking experience. Registration is how LIFE measures participation and reach for grants,
             accountability, and replication. Optional: upload a photo and provide consent so we can share the rhythm publicly.
           </p>
         </section>

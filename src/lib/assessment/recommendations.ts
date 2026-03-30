@@ -71,7 +71,7 @@ const PILLAR_LIBRARY: Record<PillarKey, PillarMessaging> = {
     opportunity: "Protect shared meals, screen-free time, and mutual support to reinforce belonging.",
     recommendations: [
       {
-        title: "Schedule standing gatherings",
+        title: "Schedule standing cooking experiences",
         detail: "Plan a weekly shared meal or walk with people who leave you feeling supported and energized.",
       },
       {

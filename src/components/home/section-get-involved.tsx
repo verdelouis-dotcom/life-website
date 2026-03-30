@@ -3,19 +3,19 @@ import Reveal from "@/components/ui/reveal";
 
 const OPTIONS = [
   {
-    title: "Host a LIFE Gathering",
-    description: "Invite friends or neighbors, cook something simple, and register the gathering so it counts.",
-    cta: { label: "Host a LIFE Gathering", href: "/host" },
-    guide: { text: "Hosting is simple and guided.", label: "Download the LIFE Gathering Guide", href: "/life-workshop-guide.pdf" },
+    title: "Host a LIFE Cooking Experience",
+    description: "Invite friends or neighbors, cook something simple, and register the cooking experience so it counts.",
+    cta: { label: "Host a LIFE Cooking Experience", href: "/host" },
+    guide: { text: "Hosting is simple and guided.", label: "Download the LIFE Cooking Experience Guide", href: "/life-workshop-guide.pdf" },
   },
   {
     title: "Support the Movement",
-    description: "Underwrite LIFE gatherings, ingredients, and educational tools so more LIFE gatherings can launch.",
+    description: "Underwrite LIFE cooking experiences, ingredients, and educational tools so more LIFE cooking experiences can launch.",
     cta: { label: "Support Us", href: "/donate" },
   },
   {
     title: "Bring LIFE to Your Group",
-    description: "Bring a LIFE gathering or keynote to your organization, faith community, or company.",
+    description: "Bring a LIFE cooking experience or keynote to your organization, faith community, or company.",
     cta: { label: "Request a Keynote", href: "/contact" },
   },
 ];

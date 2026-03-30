@@ -52,7 +52,7 @@ const PHOTO_MOMENT = [
   },
   {
     src: "/images/workshops/pasta-lesson-4.jpeg",
-    alt: "Kids shaping homemade pasta at a LIFE gathering",
+    alt: "Kids shaping homemade pasta at a LIFE cooking experience",
     caption: "Kids take over the dough station — and don’t want to leave.",
   },
 ];
@@ -81,14 +81,14 @@ const JOIN_BENEFITS = [
   { label: "Six Pillars Framework — full curriculum PDF", body: "" },
   { label: "Daily habit tracker — 10 levels, streak engine", body: "" },
   { label: "Longevity assessment — discover your LIFE Age", body: "" },
-  { label: "Gathering access — Atlanta & Austin", body: "" },
+  { label: "Cooking Experience access — Atlanta & Austin", body: "" },
 ];
 
 const DOORS = [
   {
-    title: "Attend a LIFE gathering",
+    title: "Attend a LIFE cooking experience",
     body: "Atlanta and Austin families gather every month to cook, eat, and pass on the habits that hold communities together.",
-    ctaLabel: "Find a gathering →",
+    ctaLabel: "Find a cooking experience →",
     href: "/workshops",
   },
 ];
@@ -149,7 +149,7 @@ export function HomePageClient() {
                 Find out how many years you&apos;re projected to live — take the free assessment.
               </Link>
               <Link href="/workshops" className="btn-ghost">
-                Find a Gathering →
+                Find a Cooking Experience →
               </Link>
             </div>
           </Reveal>
@@ -157,7 +157,7 @@ export function HomePageClient() {
         <div className="hero-right">
           <Image src="/images/workshops/pasta-lesson-1.jpg" alt="Family laughing while rolling pasta dough together" fill priority sizes="(max-width: 768px) 100vw, 50vw" className="hero-img" />
           <div className="hero-caption">
-            <strong>A LIFE gathering</strong>
+            <strong>A LIFE cooking experience</strong>
             <p>“Two hours of actual presence. That's what we got back.”</p>
           </div>
         </div>
@@ -250,7 +250,7 @@ export function HomePageClient() {
         <div className="how-heading">
           <Reveal>
             <p className="label-eyebrow">How it works</p>
-            <h2>What happens at a LIFE gathering</h2>
+            <h2>What happens at a LIFE cooking experience</h2>
           </Reveal>
         </div>
         <div className="how-steps">
@@ -324,18 +324,18 @@ export function HomePageClient() {
             <p className="label-eyebrow">Start your LIFE journey</p>
             <h2>Two ways into LIFE Longevity University.</h2>
             <p className="join-sub">
-              LIFE Longevity University is the digital home of the Six Pillars Framework — a research-backed curriculum for living longer, built around the habits found in every long-lived culture on Earth. Access it by attending a gathering, or enroll directly for $10.
+              LIFE Longevity University is the digital home of the Six Pillars Framework — a research-backed curriculum for living longer, built around the habits found in every long-lived culture on Earth. Access it by attending a cooking experience, or enroll directly for $10.
             </p>
           </Reveal>
           <div className="grid gap-4 mb-6 grid-cols-1 sm:grid-cols-2">
             <div style={{ border: "1px solid var(--border)", borderRadius: "1rem", padding: "1.25rem 1.5rem", background: "#fff" }}>
               <p style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.5rem" }}>Door 1</p>
-              <h4 style={{ fontFamily: "var(--font-lora)", fontSize: "1.1rem", fontWeight: 500, color: "var(--ink)", marginBottom: "0.4rem" }}>Attend a Gathering</h4>
+              <h4 style={{ fontFamily: "var(--font-lora)", fontSize: "1.1rem", fontWeight: 500, color: "var(--ink)", marginBottom: "0.4rem" }}>Attend a Cooking Experience</h4>
               <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--muted)", marginBottom: "0.75rem" }}>
                 Your host gives you access to LIFE Longevity University at no cost. Available in Atlanta &amp; Austin.
               </p>
               <Link href="/workshops" style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--terra)", textDecoration: "none" }}>
-                Find a gathering →
+                Find a cooking experience →
               </Link>
             </div>
             <div style={{ border: "1px solid var(--border)", borderLeft: "3px solid var(--sage)", borderRadius: "1rem", padding: "1.25rem 1.5rem", background: "#fff" }}>

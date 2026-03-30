@@ -9,25 +9,25 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/impact"
 export const metadata: Metadata = {
   title: "LIFE Impact | Longevity Initiative for Food & Education",
   description:
-    "See how LIFE tracks community impact through shared meals, LIFE gatherings, and longevity education designed to improve health and connection.",
+    "See how LIFE tracks community impact through shared meals, LIFE cooking experiences, and longevity education designed to improve health and connection.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "LIFE Impact | Longevity Initiative for Food & Education",
     description:
-      "See how LIFE tracks community impact through shared meals, LIFE gatherings, and longevity education designed to improve health and connection.",
+      "See how LIFE tracks community impact through shared meals, LIFE cooking experiences, and longevity education designed to improve health and connection.",
     url: PAGE_URL,
   },
   twitter: {
     title: "LIFE Impact | Longevity Initiative for Food & Education",
     description:
-      "See how LIFE tracks community impact through shared meals, LIFE gatherings, and longevity education designed to improve health and connection.",
+      "See how LIFE tracks community impact through shared meals, LIFE cooking experiences, and longevity education designed to improve health and connection.",
   },
 };
 
 const TRACKING_POINTS = [
-  "LIFE Gatherings hosted and attendance by neighborhood",
-  "LIFE Gathering participation and host readiness",
-  "Host Champions who lead multiple LIFE gatherings each year and mentor new hosts",
+  "LIFE Cooking Experiences hosted and attendance by neighborhood",
+  "LIFE Cooking Experience participation and host readiness",
+  "Host Champions who lead multiple LIFE cooking experiences each year and mentor new hosts",
   "Longevity Assessment completions tied to the six pillars",
   "Stories and qualitative feedback from families",
   "Donor-supported toolkits and ingredients distributed",
@@ -35,8 +35,8 @@ const TRACKING_POINTS = [
 
 const PILOT_METRICS = [
   {
-    title: "LIFE Gatherings Registered",
-    detail: "Every LIFE gathering hosted in Atlanta, GA and Austin, TX is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
+    title: "LIFE Cooking Experiences Registered",
+    detail: "Every LIFE cooking experience hosted in Atlanta, GA and Austin, TX is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
   },
   {
     title: "People Reached",
@@ -48,14 +48,14 @@ const PILOT_METRICS = [
   },
   {
     title: "Host Progression",
-    detail: "Hosts who advance from attendee → host → multi-LIFE gathering champion signal that the replication model is working. We currently count each Champion who commits to three or more LIFE gatherings per year.",
+    detail: "Hosts who advance from attendee → host → multi-LIFE cooking experience champion signal that the replication model is working. We currently count each Champion who commits to three or more LIFE cooking experiences per year.",
   },
 ];
 
 const RIPPLE_POINTS = [
   "Fresh ingredient shopping becomes a shared responsibility instead of an individual burden.",
   "Children and teens learn to cook alongside adults, normalizing healthier defaults.",
-  "Neighbors start informal walking groups or shared garden plots after a LIFE gathering.",
+  "Neighbors start informal walking groups or shared garden plots after a LIFE cooking experience.",
   "Assessment reflections motivate doctor visits, preventive screenings, or sleep upgrades.",
 ];
 
@@ -69,7 +69,7 @@ export default function ImpactPage() {
             <h1 className="mt-2 heading-xl">LIFE Impact</h1>
             <p className="mt-4 body-lg text-[var(--muted)]">
               LIFE began in Georgia so the model could be tracked, reported, and responsibly scaled. Early hosts in Atlanta, GA and Austin, TX
-              now help prove that the same shared-LIFE gathering approach can travel while remaining accountable.
+              now help prove that the same shared-LIFE cooking experience approach can travel while remaining accountable.
             </p>
           </div>
         </section>
@@ -78,7 +78,7 @@ export default function ImpactPage() {
           <article className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
             <h2 className="heading-lg">Why We Measure Impact</h2>
             <p className="mt-3 body-md text-[var(--text)]">
-              Grants, donors, and public schools need proof that a shared LIFE gathering movement moves real numbers. Measurement keeps the nonprofit mission
+              Grants, donors, and public schools need proof that a shared LIFE cooking experience movement moves real numbers. Measurement keeps the nonprofit mission
               accountable, protects families who volunteer their time, and ensures the LIFE framework remains replicable as it reaches new communities.
             </p>
           </article>
@@ -112,8 +112,8 @@ export default function ImpactPage() {
           <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] card-padding shadow-sm">
             <h2 className="heading-lg">Host Champions multiply the work</h2>
             <p className="mt-3 body-sm text-[var(--text)]">
-              LIFE Host Champions are volunteer leaders who commit to at least three LIFE gatherings per year. They mentor new hosts, keep ingredients simple, and
-              share data after every gathering. Their commitment is what turns a single LIFE gathering into a measurable neighborhood movement.
+              LIFE Host Champions are volunteer leaders who commit to at least three LIFE cooking experiences per year. They mentor new hosts, keep ingredients simple, and
+              share data after every cooking experience. Their commitment is what turns a single LIFE cooking experience into a measurable neighborhood movement.
             </p>
             <p className="mt-3 label-text text-[var(--muted)]">Current pilot goal: 12 Champions per city</p>
           </div>
@@ -121,7 +121,7 @@ export default function ImpactPage() {
 
         <section className="mx-auto max-w-5xl px-6 pb-12">
           <div className="rounded-3xl border border-[var(--border)] bg-white/90 card-padding shadow-sm">
-            <h2 className="heading-lg">How a LIFE Gathering Creates Ripple Effects</h2>
+            <h2 className="heading-lg">How a LIFE Cooking Experience Creates Ripple Effects</h2>
             <ul className="mt-4 space-y-2 body-sm text-[var(--text)]">
               {RIPPLE_POINTS.map((point) => (
                 <li key={point}>• {point}</li>
@@ -133,18 +133,18 @@ export default function ImpactPage() {
 
         <PhotoStrip
           eyebrow="Pilot photos"
-          title="How a LIFE gathering looks in practice"
-          description="Images from Georgia and early partner cities show small, measurable gatherings where meals become a framework for accountability."
+          title="How a LIFE cooking experience looks in practice"
+          description="Images from Georgia and early partner cities show small, measurable cooking experiences where meals become a framework for accountability."
           photos={[
             { src: "/images/table/IMG_9449.JPG", alt: "Families preparing a LIFE meal", caption: "Cooking together" },
-            { src: "/images/table/table4.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE gathering" },
-            { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "LIFE gathering host guiding participants", caption: "Pilot LIFE gathering coaching" },
+            { src: "/images/table/table4.jpeg", alt: "Neighbors sharing dinner", caption: "Registered LIFE cooking experience" },
+            { src: "/images/workshops/pasta-lesson-4.jpeg", alt: "LIFE cooking experience host guiding participants", caption: "Pilot LIFE cooking experience coaching" },
           ]}
         />
 
         <ProofHighlightList
           eyebrow="What early proof looks like"
-          title="How LIFE is validating the shared LIFE gathering model"
+          title="How LIFE is validating the shared LIFE cooking experience model"
           items={IMPACT_PROOF}
           background="surface"
         />
@@ -154,7 +154,7 @@ export default function ImpactPage() {
             <p className="type-eyebrow text-[var(--olive)]">Help grow the impact</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link href="/host" className="btn-solid px-8 text-base">
-                Host a LIFE Gathering
+                Host a LIFE Cooking Experience
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Support Us

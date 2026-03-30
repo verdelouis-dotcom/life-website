@@ -12,7 +12,7 @@ export const RESOURCE_ENTRIES: ResourceEntry[] = [
   {
     slug: "why-shared-meals-matter",
     title: "Why Shared Meals Matter",
-    description: "Understand why gathering at the LIFE workshop supports healthier habits, relationships, and the LIFE model.",
+    description: "Understand why cooking experience at the LIFE workshop supports healthier habits, relationships, and the LIFE model.",
   },
   {
     slug: "mediterranean-cooking-for-longevity",
@@ -37,7 +37,7 @@ export const RESOURCE_ENTRIES: ResourceEntry[] = [
   {
     title: "The Six Pillars Framework — LIFE Pilot Overview",
     description:
-      "The research foundation behind LIFE's approach to longevity education. Covers the Six Pillars Framework, peer-reviewed citations for each pillar, the LIFE gathering model, and pilot results from Atlanta and Austin.",
+      "The research foundation behind LIFE's approach to longevity education. Covers the Six Pillars Framework, peer-reviewed citations for each pillar, the LIFE cooking experience model, and pilot results from Atlanta and Austin.",
     category: "Research",
     type: "PDF",
     downloadUrl: "/downloads/LIFE_Six_Pillars_Framework.pdf",

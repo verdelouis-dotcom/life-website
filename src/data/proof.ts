@@ -14,7 +14,7 @@ export const PILOT_QUOTES: ProofQuote[] = [
   {
     quote: "Hosting a LIFE workshop in our apartment building reminded neighbors that cooking together is still possible, even on busy weeks.",
     attribution: "Atlanta host",
-    context: "Pilot year gathering",
+    context: "Pilot year cooking experience",
   },
   {
     quote: "Registering each LIFE workshop keeps us accountable. It turns a nice dinner into a measurable commitment we can report back to donors.",

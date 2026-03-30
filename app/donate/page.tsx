@@ -5,34 +5,34 @@ import { DonationEmbedPanel } from "@/components/donate/DonationEmbedPanel";
 const TIERS = [
   {
     amount: "$50",
-    title: "One Shared LIFE Gathering",
+    title: "One Shared LIFE Cooking Experience",
     description:
-      "Provides ingredients and basic tools for one LIFE gathering where people gather to cook, learn, and share a meal prepared with fresh ingredients.",
+      "Provides ingredients and basic tools for one LIFE cooking experience where people gather to cook, learn, and share a meal prepared with fresh ingredients.",
     key: 50,
   },
   {
     amount: "$100",
-    title: "Two Shared LIFE Gatherings",
-    description: "Provides ingredients and tools for two LIFE gatherings, helping more families experience the power of cooking and eating together.",
+    title: "Two Shared LIFE Cooking Experiences",
+    description: "Provides ingredients and tools for two LIFE cooking experiences, helping more families experience the power of cooking and eating together.",
     key: 100,
   },
   {
     amount: "$500",
-    title: "Host a Year of LIFE Gatherings",
+    title: "Host a Year of LIFE Cooking Experiences",
     description: "Funds a LIFE host with the equipment, tools, and educational resources needed to lead shared meals throughout the year.",
     key: 500,
   },
   {
     amount: "$1,000",
     title: "Community Impact",
-    description: "Helps fund multiple months of LIFE gatherings and supports the launch of new hosts in the community.",
+    description: "Helps fund multiple months of LIFE cooking experiences and supports the launch of new hosts in the community.",
     key: 1000,
   },
 ];
 
 const USE_OF_FUNDS = [
   "Educational materials and toolkits",
-  "Ingredients and LIFE gathering supplies",
+  "Ingredients and LIFE cooking experience supplies",
   "Program measurement and reporting",
   "Local outreach and awareness",
 ];
@@ -64,7 +64,7 @@ export default function DonatePage() {
       <main className="mx-auto max-w-5xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
           <p className="type-eyebrow text-center">Nonprofit Support</p>
-          <h1 className="section-heading text-center">Fund more LIFE gatherings</h1>
+          <h1 className="section-heading text-center">Fund more LIFE cooking experiences</h1>
           <p className="mt-4 type-body-muted text-center">
             Every contribution underwrites ingredients, host toolkits, and the reporting that keeps this pilot accountable.
           </p>
@@ -102,7 +102,7 @@ export default function DonatePage() {
         <section className="mt-12 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
           <p className="type-eyebrow">Accountability</p>
           <p className="type-detail">
-            LIFE is a Georgia nonprofit with 501(c)(3) determination pending. Registered LIFE gatherings, board reviews, and public reporting keep donors informed
+            LIFE is a Georgia nonprofit with 501(c)(3) determination pending. Registered LIFE cooking experiences, board reviews, and public reporting keep donors informed
             about how shared meals are spreading.
           </p>
         </section>
