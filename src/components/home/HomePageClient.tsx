@@ -138,13 +138,11 @@ export function HomePageClient() {
           <Reveal>
             <p className="hero-kicker">A national movement · starting around the table</p>
             <h1 className="hero-h1">
-              Our habits are taking 20 years off our lives.
+              Your habits are stealing 20 years.
               <br />
               Are you teaching your kids the same ones?
             </h1>
-            <p className="hero-sub">
-              LIFE is a longevity movement built around the table. Join a cooking experience near you, or enroll online for just $10.
-            </p>
+            <p className="hero-sub">LIFE is a longevity movement built around the table. Join a cooking experience near you.</p>
             <p className="hero-sub">Food gets us to the table. What happens next changes everything.</p>
             <div className="hero-actions">
               <Link href="/assessment" className="btn-primary">
