@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import LifeLogo from "@/components/brand/life-logo";
+import Logo from "@/components/ui/logo";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -29,7 +29,7 @@ export default function SiteNav() {
   return (
     <header className={`site-nav fixed inset-x-0 top-0 z-[100] ${scrolled ? "is-scrolled" : ""}`}>
       <div className="site-nav-inner">
-        <LifeLogo className="site-nav-logo shrink-0" variant="header" priority />
+        <Logo size="md" className="site-nav-logo shrink-0" />
 
         {/* Desktop nav links */}
         <nav className="nav-links-group hidden items-center gap-6 text-[0.82rem] font-medium text-[#6B4F35] md:flex">
