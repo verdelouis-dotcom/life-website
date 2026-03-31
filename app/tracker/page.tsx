@@ -47,7 +47,6 @@ interface TrackerState {
   days: Record<string, Record<string, boolean>>;
   selected: string[];
   hStreaks: Record<string, number>;
-  tablesHosted: number;
 }
 
 const DEFAULT_STATE: TrackerState = {
@@ -58,7 +57,6 @@ const DEFAULT_STATE: TrackerState = {
   days: {},
   selected: [],
   hStreaks: {},
-  tablesHosted: 0,
 };
 
 type ToastState = { message: string; gold?: boolean } | null;
@@ -68,10 +66,6 @@ const cx = (...classes: (string | false | null | undefined)[]) => classes.filter
 function calculateLevel(state: TrackerState) {
   const totalPoints = state.ptsTotal ?? 0;
   const streakDays = state.streak ?? 0;
-  const tables = state.tablesHosted ?? 0;
-  if (tables >= 6) return Math.max(state.level, 9);
-  if (tables >= 3) return Math.max(state.level, 8);
-  if (tables >= 1) return Math.max(state.level, 7);
   let level = 1;
   for (const lv of TRACKER_LEVELS) {
     if (totalPoints >= lv.pointsRequired && streakDays >= lv.streakRequired) {
@@ -244,9 +238,7 @@ const TrackerPage = () => {
 
   const levelData = TRACKER_LEVELS.find((lvl) => lvl.level === state.level) ?? TRACKER_LEVELS[0];
   const progressLabel = nextLevel
-    ? nextLevel.hostPath
-      ? `To ${nextLevel.name}: ${Math.max(0, nextLevel.pointsRequired - state.ptsTotal)} pts + ${Math.max(0, nextLevel.streakRequired - state.streak)} streak days or host a table`
-      : `To ${nextLevel.name}: ${Math.max(0, nextLevel.pointsRequired - state.ptsTotal)} pts + ${Math.max(0, nextLevel.streakRequired - state.streak)} streak days`
+    ? `To ${nextLevel.name}: ${Math.max(0, nextLevel.pointsRequired - state.ptsTotal)} pts + ${Math.max(0, nextLevel.streakRequired - state.streak)} streak days`
     : "Maximum level reached";
 
   const dailyPointsPossible = dailyHabits.reduce((sum, habit) => sum + habit.points, 0);
@@ -315,21 +307,6 @@ const TrackerPage = () => {
     if (!libDraft.length) return;
     setState((prev) => ({ ...prev, selected: [...libDraft] }));
     setToast({ message: `${libDraft.length} habits saved` });
-  };
-
-  const verifyHostPath = () => {
-    setState((prev) => {
-      const tablesHosted = (prev.tablesHosted ?? 0) + 1;
-      const updated: TrackerState = { ...prev, tablesHosted };
-      const newLevel = calculateLevel(updated);
-      if (newLevel > updated.level) {
-        updated.level = newLevel;
-        setToast({ message: `Table verified! Level ${newLevel}`, gold: true });
-      } else {
-        setToast({ message: `Table ${tablesHosted} verified!`, gold: true });
-      }
-      return updated;
-    });
   };
 
   const filteredHabits = TRACKER_HABITS.filter(
@@ -484,11 +461,8 @@ const TrackerPage = () => {
             <div className={styles.levelPanel}>
               <div className={styles.sectionHeader}>
                 <h3>Level path</h3>
-                <span>Tables verified: {state.tablesHosted ?? 0}</span>
+                <span>Best streak: {state.best ?? 0} days</span>
               </div>
-              <button type="button" className={styles.hostButton} onClick={verifyHostPath}>
-                Simulate LIFE verifying a table
-              </button>
               <div className={styles.levelList}>
                 {TRACKER_LEVELS.map((lvl) => {
                   const isCurrent = state.level === lvl.level;
@@ -506,12 +480,10 @@ const TrackerPage = () => {
                           <strong>{lvl.name}</strong>
                           {isCurrent && <span className={styles.levelBadge}>Current</span>}
                           {achieved && <span className={styles.levelBadge}>Complete</span>}
-                          {lvl.hostPath && <span className={styles.levelBadge}>🍝 Host path</span>}
                         </div>
                         <div className={styles.levelChips}>
                           {lvl.pointsRequired > 0 ? <span>{lvl.pointsRequired.toLocaleString()} pts</span> : null}
                           {lvl.streakRequired > 0 ? <span>{lvl.streakRequired}-day streak</span> : null}
-                          {lvl.tablesRequired > 0 ? <span>{lvl.tablesRequired} tables</span> : null}
                         </div>
                         <p>{lvl.unlocks}</p>
                       </div>

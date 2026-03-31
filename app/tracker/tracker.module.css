@@ -196,18 +196,6 @@
   border: 2px solid var(--terra, #a0522d);
 }
 
-.levelPanel button.hostButton {
-  width: 100%;
-  margin-top: 1rem;
-  border-radius: 14px;
-  padding: 0.65rem 1rem;
-  border: none;
-  background: var(--terra, #a0522d);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 .levelList {
   margin-top: 1rem;
   display: flex;

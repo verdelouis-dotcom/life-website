@@ -171,9 +171,7 @@ export type TrackerLevel = {
   description: string;
   pointsRequired: number;
   streakRequired: number;
-  tablesRequired: number;
   unlocks: string;
-  hostPath?: boolean;
 };
 
 export const TRACKER_PILLARS: { id: TrackerPillarKey; name: string; color: string; bg: string }[] = [
@@ -186,16 +184,16 @@ export const TRACKER_PILLARS: { id: TrackerPillarKey; name: string; color: strin
 ];
 
 export const TRACKER_LEVELS: TrackerLevel[] = [
-  { level: 1, name: "Beginner", color: "#6B7A50", description: "Starting your LIFE journey", pointsRequired: 0, streakRequired: 0, tablesRequired: 0, unlocks: "Full habit library · Welcome badge" },
-  { level: 2, name: "Apprentice", color: "#5A7A50", description: "First week complete", pointsRequired: 100, streakRequired: 7, tablesRequired: 0, unlocks: "Weekly habits · 7-day badge" },
-  { level: 3, name: "Practitioner", color: "#2C7A40", description: "One month of daily practice", pointsRequired: 400, streakRequired: 21, tablesRequired: 0, unlocks: "Bold habits · 21-day badge · LIFE Guide PDF" },
-  { level: 4, name: "Gatherer", color: "#A0522D", description: "Habits becoming routine", pointsRequired: 900, streakRequired: 30, tablesRequired: 0, unlocks: "Community challenges · 30-day badge" },
-  { level: 5, name: "Table Keeper", color: "#B8560A", description: "Halfway to mastery", pointsRequired: 1800, streakRequired: 60, tablesRequired: 0, unlocks: "Host toolkit · 60-day badge · Stats dashboard" },
-  { level: 6, name: "Steward", color: "#8A6A00", description: "Lifestyle shift achieved", pointsRequired: 3000, streakRequired: 90, tablesRequired: 0, unlocks: "Mentor a beginner · 90-day badge" },
-  { level: 7, name: "Guide", color: "#5A4B8A", description: "Host 1 table OR earn via practice", pointsRequired: 5000, streakRequired: 120, tablesRequired: 1, unlocks: "LIFE Partner status · Guide badge · Advanced library", hostPath: true },
-  { level: 8, name: "Elder", color: "#3D4A6B", description: "Host 3 tables OR earn via practice", pointsRequired: 8000, streakRequired: 180, tablesRequired: 3, unlocks: "Franchise eligibility · Elder badge · LIFE wall", hostPath: true },
-  { level: 9, name: "Sage", color: "#1E3A28", description: "Host 6 tables OR earn via practice", pointsRequired: 12000, streakRequired: 270, tablesRequired: 6, unlocks: "LIFE Ambassador · Annual recognition · Sage badge", hostPath: true },
-  { level: 10, name: "Longevity Expert", color: "#B8933A", description: "365 days. The summit.", pointsRequired: 20000, streakRequired: 365, tablesRequired: 0, unlocks: "Co-creator status · Gold badge · Shape next city launch" },
+  { level: 1, name: "Beginner", color: "#6B7A50", description: "Starting your LIFE journey", pointsRequired: 0, streakRequired: 0, unlocks: "Full habit library · Welcome badge" },
+  { level: 2, name: "Apprentice", color: "#5A7A50", description: "First week complete", pointsRequired: 100, streakRequired: 7, unlocks: "Weekly habits · 7-day badge" },
+  { level: 3, name: "Practitioner", color: "#2C7A40", description: "One month of daily practice", pointsRequired: 400, streakRequired: 21, unlocks: "Bold habits · 21-day badge · LIFE Guide PDF" },
+  { level: 4, name: "Gatherer", color: "#A0522D", description: "Habits becoming routine", pointsRequired: 900, streakRequired: 30, unlocks: "Community challenges · 30-day badge" },
+  { level: 5, name: "Table Keeper", color: "#B8560A", description: "Halfway to mastery", pointsRequired: 1800, streakRequired: 60, unlocks: "Host toolkit · 60-day badge · Stats dashboard" },
+  { level: 6, name: "Steward", color: "#8A6A00", description: "Lifestyle shift achieved", pointsRequired: 3000, streakRequired: 90, unlocks: "Mentor a beginner · 90-day badge" },
+  { level: 7, name: "Guide", color: "#5A4B8A", description: "Guiding others through consistent practice", pointsRequired: 5000, streakRequired: 120, unlocks: "LIFE Partner status · Guide badge · Advanced library" },
+  { level: 8, name: "Elder", color: "#3D4A6B", description: "Your habits shape your neighborhood", pointsRequired: 8000, streakRequired: 180, unlocks: "Franchise eligibility · Elder badge · LIFE wall" },
+  { level: 9, name: "Sage", color: "#1E3A28", description: "The culture keeper stage", pointsRequired: 12000, streakRequired: 270, unlocks: "LIFE Ambassador · Annual recognition · Sage badge" },
+  { level: 10, name: "Longevity Expert", color: "#B8933A", description: "365 days. The summit.", pointsRequired: 20000, streakRequired: 365, unlocks: "Co-creator status · Gold badge · Shape next city launch" },
 ];
 
 const HABIT_DATA: TrackerHabit[] = [
