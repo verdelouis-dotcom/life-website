@@ -21,6 +21,8 @@ const HABIT_MAP: Record<string, TrackerHabit> = TRACKER_HABITS.reduce<Record<str
   return acc;
 }, {});
 
+const getHabitsForLevel = (level: number) => TRACKER_HABITS.filter((habit) => habit.minLevel <= level);
+
 const INSTALL_PROMPT_KEY = "life_tracker_install_prompted";
 
 const DIFF_STYLES: Record<TrackerHabitDifficulty, { bg: string; color: string }> = {
@@ -86,15 +88,14 @@ function levelProgressPercent(state: TrackerState) {
   return Math.round(Math.min(ptsProgress, streakProgress) * 100);
 }
 
-function computeCoverage(state: TrackerState, dateKey: string) {
+function computeCoverage(state: TrackerState, dateKey: string, habits: TrackerHabit[]) {
   const record = state.days[dateKey] ?? {};
   const coverage: Record<string, boolean> = {};
   TRACKER_PILLARS.forEach((pillar) => {
     coverage[pillar.id] = false;
   });
-  state.selected.forEach((habitId) => {
-    const habit = HABIT_MAP[habitId];
-    if (!habit || !record[habitId]) return;
+  habits.forEach((habit) => {
+    if (!record[habit.id]) return;
     habit.pillars.forEach((pillar) => {
       coverage[pillar] = true;
     });
@@ -102,15 +103,11 @@ function computeCoverage(state: TrackerState, dateKey: string) {
   return coverage;
 }
 
-function checkStreakDay(state: TrackerState, dateKey: string) {
-  if (!state.selected.length) return false;
-  const coverage = computeCoverage(state, dateKey);
+function checkStreakDay(state: TrackerState, dateKey: string, habits: TrackerHabit[]) {
+  if (!habits.length) return false;
+  const coverage = computeCoverage(state, dateKey, habits);
   const record = state.days[dateKey] ?? {};
-  const points = state.selected.reduce((sum, habitId) => {
-    const habit = HABIT_MAP[habitId];
-    if (!habit) return sum;
-    return sum + (record[habitId] ? habit.points : 0);
-  }, 0);
+  const points = habits.reduce((sum, habit) => (record[habit.id] ? sum + habit.points : sum), 0);
   const allPillars = TRACKER_PILLARS.every((pillar) => coverage[pillar.id]);
   return points >= TRACKER_MIN_DAILY_POINTS && allPillars;
 }
@@ -118,7 +115,6 @@ function checkStreakDay(state: TrackerState, dateKey: string) {
 const TrackerPage = () => {
   const router = useRouter();
   const [state, setState] = useState<TrackerState>(DEFAULT_STATE);
-  const [libDraft, setLibDraft] = useState<string[]>([]);
   const [activePillar, setActivePillar] = useState<TrackerPillarKey>(TRACKER_PILLARS[0]?.id ?? "food");
   const [authorized, setAuthorized] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -138,7 +134,6 @@ const TrackerPage = () => {
       try {
         const parsed = JSON.parse(stored) as Partial<TrackerState>;
         setState({ ...DEFAULT_STATE, ...parsed, days: parsed.days ?? {}, hStreaks: parsed.hStreaks ?? {}, selected: parsed.selected ?? [] });
-        setLibDraft(parsed.selected ?? []);
       } catch {
         setState(DEFAULT_STATE);
       }
@@ -167,44 +162,39 @@ const TrackerPage = () => {
     return () => window.clearTimeout(id);
   }, [toast]);
 
-  useEffect(() => {
-    setLibDraft(state.selected);
-  }, [state.selected]);
-
   const currentDayKey = todayKey();
   const todayRecord = state.days[currentDayKey] ?? {};
-  const selectedHabits = useMemo(() => state.selected.map((id) => HABIT_MAP[id]).filter(Boolean), [state.selected]);
-  const dailyHabits = selectedHabits.filter((habit) => !habit.weekly);
-  const weeklyHabits = selectedHabits.filter((habit) => habit.weekly);
-  const todaysPoints = selectedHabits.reduce((sum, habit) => sum + (todayRecord[habit.id] ? habit.points : 0), 0);
-  const maxPoints = selectedHabits.reduce((sum, habit) => sum + habit.points, 0);
-  const coverage = computeCoverage(state, currentDayKey);
+  const unlockedHabits = useMemo(() => getHabitsForLevel(state.level ?? 1), [state.level]);
+  const totalHabits = unlockedHabits.length;
+  const completedHabits = unlockedHabits.reduce((sum, habit) => (todayRecord[habit.id] ? sum + 1 : sum), 0);
+  const todaysPoints = unlockedHabits.reduce((sum, habit) => sum + (todayRecord[habit.id] ? habit.points : 0), 0);
+  const coverage = computeCoverage(state, currentDayKey, unlockedHabits);
   const litPillars = TRACKER_PILLARS.filter((pillar) => coverage[pillar.id]);
   const pillarHasSelection = useMemo(() => {
     const map: Record<string, boolean> = {};
     TRACKER_PILLARS.forEach((pillar) => {
-      map[pillar.id] = state.selected.some((id) => HABIT_MAP[id]?.pillars.includes(pillar.id as TrackerPillarKey));
+      map[pillar.id] = unlockedHabits.some((habit) => habit.pillars.includes(pillar.id as TrackerPillarKey));
     });
     return map;
-  }, [state.selected]);
+  }, [unlockedHabits]);
   const uncoveredPillars = TRACKER_PILLARS.filter((pillar) => pillarHasSelection[pillar.id] && !coverage[pillar.id]);
   const ptsNeeded = Math.max(0, TRACKER_MIN_DAILY_POINTS - todaysPoints);
-  const streakReady = selectedHabits.length > 0 && ptsNeeded <= 0 && uncoveredPillars.length === 0;
+  const streakReady = unlockedHabits.length > 0 && ptsNeeded <= 0 && uncoveredPillars.length === 0;
   const nextLevel = TRACKER_LEVELS.find((lvl) => lvl.level === state.level + 1);
   const progressPercent = levelProgressPercent(state);
 
   const weekHistory = useMemo(() => {
     const history: { key: string; label: string; date: number; earned: boolean; partial: boolean; isToday: boolean }[] = [];
+    const habits = getHabitsForLevel(state.level ?? 1);
     for (let offset = -6; offset <= 0; offset += 1) {
       const key = offsetDateKey(offset);
       const date = new Date();
       date.setDate(date.getDate() + offset);
-      const earned = checkStreakDay(state, key);
+      const earned = checkStreakDay(state, key, habits);
       const record = state.days[key] ?? {};
-      const points = state.selected.reduce((sum, habitId) => {
-        const habit = HABIT_MAP[habitId];
+      const points = habits.reduce((sum, habit) => {
         if (!habit) return sum;
-        return sum + (record[habitId] ? habit.points : 0);
+        return sum + (record[habit.id] ? habit.points : 0);
       }, 0);
       history.push({
         key,
@@ -219,13 +209,13 @@ const TrackerPage = () => {
   }, [state]);
 
   const statusParts: string[] = [];
-  if (!streakReady && selectedHabits.length) {
+  if (!streakReady && unlockedHabits.length) {
     if (ptsNeeded > 0) statusParts.push(`${ptsNeeded} more pts`);
     if (uncoveredPillars.length > 0) statusParts.push(`cover ${uncoveredPillars.map((p) => p.name).join(", ")}`);
   }
 
   const nudgeCopy = (() => {
-    if (!selectedHabits.length) return "";
+    if (!unlockedHabits.length) return "";
     if (uncoveredPillars.length > 0) {
       const piece = uncoveredPillars[0];
       return `${piece.name} not covered${ptsNeeded > 0 ? ` · ${ptsNeeded} pts needed` : ""}`;
@@ -241,15 +231,6 @@ const TrackerPage = () => {
     ? `To ${nextLevel.name}: ${Math.max(0, nextLevel.pointsRequired - state.ptsTotal)} pts + ${Math.max(0, nextLevel.streakRequired - state.streak)} streak days`
     : "Maximum level reached";
 
-  const dailyPointsPossible = dailyHabits.reduce((sum, habit) => sum + habit.points, 0);
-  const libDailyPts = libDraft.reduce((sum, habitId) => {
-    const habit = HABIT_MAP[habitId];
-    if (!habit || habit.weekly) return sum;
-    return sum + habit.points;
-  }, 0);
-
-  const draftChanged =
-    libDraft.length !== state.selected.length || libDraft.some((id) => !state.selected.includes(id)) || state.selected.some((id) => !libDraft.includes(id));
 
   const toggleHabit = (habitId: string) => {
     const habit = HABIT_MAP[habitId];
@@ -269,21 +250,22 @@ const TrackerPage = () => {
         ptsTotal += habit.points;
         streaks[habitId] = (streaks[habitId] ?? 0) + 1;
       }
+      const habitsForLevel = getHabitsForLevel(prev.level ?? 1);
       const updated: TrackerState = {
         ...prev,
         days: { ...prev.days, [key]: dayRecord },
         hStreaks: streaks,
         ptsTotal,
       };
-      const prevEarned = checkStreakDay(prev, key);
-      const nowEarned = checkStreakDay(updated, key);
+      const prevEarned = checkStreakDay(prev, key, habitsForLevel);
+      const nowEarned = checkStreakDay(updated, key, habitsForLevel);
       if (!prevEarned && nowEarned) {
-        const yesterdayEarned = checkStreakDay(updated, offsetDateKey(-1));
+        const yesterdayEarned = checkStreakDay(updated, offsetDateKey(-1), habitsForLevel);
         const newStreak = yesterdayEarned ? (prev.streak ?? 0) + 1 : 1;
         updated.streak = newStreak;
         updated.best = Math.max(updated.best ?? 0, newStreak);
       } else if (prevEarned && !nowEarned) {
-        const yesterdayEarned = checkStreakDay(prev, offsetDateKey(-1));
+        const yesterdayEarned = checkStreakDay(prev, offsetDateKey(-1), habitsForLevel);
         updated.streak = yesterdayEarned ? Math.max(1, (prev.streak ?? 1) - 1) : 0;
       }
       updated.level = calculateLevel(updated);
@@ -299,67 +281,7 @@ const TrackerPage = () => {
     }
   };
 
-  const toggleLibraryHabit = (habitId: string) => {
-    setLibDraft((prev) => (prev.includes(habitId) ? prev.filter((id) => id !== habitId) : [...prev, habitId]));
-  };
-
-  const saveLibrary = () => {
-    if (!libDraft.length) return;
-    setState((prev) => ({ ...prev, selected: [...libDraft] }));
-    setToast({ message: `${libDraft.length} habits saved` });
-  };
-
-  const filteredHabits = TRACKER_HABITS.filter(
-    (habit) => habit.pillars.includes(activePillar) && habit.minLevel <= (state.level ?? 1)
-  );
-  const activePillarMeta = TRACKER_PILLARS.find((pillar) => pillar.id === activePillar);
-
-  const renderChecklist = (list: TrackerHabit[], label: string, weekly = false) => {
-    if (!list.length) return null;
-    return (
-      <div className={styles.checklistSection}>
-        <div className={styles.sectionHeader}>
-          <h3>{label}</h3>
-          <span>{weekly ? "Counts the day you complete it" : `${list.length} habits · ${list.reduce((sum, habit) => sum + habit.points, 0)} pts`}</span>
-        </div>
-        <div className={styles.checklist}>
-          {[...list]
-            .sort((a, b) => {
-              const doneA = !!todayRecord[a.id];
-              const doneB = !!todayRecord[b.id];
-              if (doneA === doneB) return 0;
-              return doneA ? 1 : -1;
-            })
-            .map((habit) => {
-              const done = !!todayRecord[habit.id];
-              const primary = TRACKER_PILLARS.find((pillar) => pillar.id === habit.pillars[0]);
-              return (
-                <button
-                  key={habit.id}
-                  type="button"
-                  className={cx(styles.checkRow, done && styles.checkRowDone)}
-                  onClick={() => toggleHabit(habit.id)}
-                >
-                  <div className={styles.checkInfo}>
-                    <span className={styles.pillarIndicator} style={{ backgroundColor: primary?.color || "#1e140a" }} />
-                    <div className={styles.checkBody}>
-                      <div className={styles.checkTitle}>{habit.task}</div>
-                      <div className={styles.checkMeta}>
-                        {primary ? <span className={styles.checkPillarLabel}>{primary.name}</span> : null}
-                        {weekly && <span className={styles.weekTag}>Weekly</span>}
-                        {habit.stack ? <span className={styles.stackTag}>{habit.stack}</span> : null}
-                      </div>
-                    </div>
-                  </div>
-                  <span className={styles.checkPoints}>+{habit.points}</span>
-                </button>
-              );
-            })}
-        </div>
-      </div>
-    );
-  };
-
+  const filteredHabits = unlockedHabits.filter((habit) => habit.pillars.includes(activePillar));
   if (!authorized) {
     return (
       <div className={styles.page}>
@@ -397,14 +319,15 @@ const TrackerPage = () => {
               </div>
               <div className={styles.levelMetrics}>
                 <div className={styles.metricBlock}>
-                  <div className={styles.metricValue}>{state.ptsTotal.toLocaleString()}</div>
-                  <div className={styles.metricLabel}>Lifetime pts</div>
+                  <div className={styles.metricValue}>{todaysPoints}</div>
+                  <div className={styles.metricLabel}>Points today</div>
                 </div>
                 <div className={styles.metricBlock}>
                   <div className={styles.metricValue}>{state.streak}</div>
-                  <div className={styles.metricLabel}>Day streak</div>
+                  <div className={styles.metricLabel}>Current streak</div>
                 </div>
               </div>
+              <p className={styles.streakHint}>Check off habits daily to keep your streak alive.</p>
               <div className={styles.progressWrap}>
                 <div className={styles.progressTrack}>
                   <div className={styles.progressFill} style={{ width: `${progressPercent}%` }} />
@@ -413,22 +336,14 @@ const TrackerPage = () => {
               </div>
               <div className={styles.summaryList}>
                 <div>
-                  <span>Habits complete</span>
+                  <span>Completed today</span>
                   <strong>
-                    {selectedHabits.filter((habit) => todayRecord[habit.id]).length}/{selectedHabits.length}
-                  </strong>
-                </div>
-                <div>
-                  <span>Points today</span>
-                  <strong>
-                    {todaysPoints}/{maxPoints || 0}
+                    {completedHabits}/{totalHabits || 0}
                   </strong>
                 </div>
                 <div>
                   <span>Pillars lit</span>
-                  <strong>
-                    {litPillars.length}/6
-                  </strong>
+                  <strong>{litPillars.length}/6</strong>
                 </div>
               </div>
             </div>
@@ -496,34 +411,24 @@ const TrackerPage = () => {
 
           <section className={styles.rightColumn}>
             <div className={styles.statusCard}>
-              {selectedHabits.length ? (
-                streakReady ? (
-                  <>
-                    <p className={styles.statusHeading}>✨ Streak day earned!</p>
-                    <p className={styles.statusSub}>All pillars covered and 15+ pts secured. Come back tomorrow.</p>
-                  </>
-                ) : (
-                  <>
-                    <p className={styles.statusHeading}>{statusParts.join(" · ") || "Keep going"}</p>
-                    <p className={styles.statusSub}>Earn 15 pts and cover all 6 pillars to extend your streak.</p>
-                  </>
-                )
+              {streakReady ? (
+                <>
+                  <p className={styles.statusHeading}>✨ Streak day earned!</p>
+                  <p className={styles.statusSub}>All pillars covered and 15+ pts secured. Come back tomorrow.</p>
+                </>
               ) : (
                 <>
-                  <p className={styles.statusHeading}>No habits selected yet</p>
-                  <p className={styles.statusSub}>Choose habits from the library below to build your daily rhythm.</p>
+                  <p className={styles.statusHeading}>{statusParts.join(" · ") || "Keep going"}</p>
+                  <p className={styles.statusSub}>Earn 15 pts and cover all 6 pillars to extend your streak.</p>
                 </>
               )}
               {nudgeCopy ? <div className={styles.nudge}>{nudgeCopy}</div> : null}
             </div>
 
-            {renderChecklist(dailyHabits, "Today's habits")}
-            {renderChecklist(weeklyHabits, "Weekly habits", true)}
-
             <div className={styles.libraryPanel}>
               <div className={styles.sectionHeader}>
                 <h3>Habit library</h3>
-                <span>Pick habits to cover every pillar</span>
+                <span>Tap any habit to mark it complete</span>
               </div>
               <div className={styles.pillarTabs}>
                 {TRACKER_PILLARS.map((pillar) => (
@@ -540,17 +445,19 @@ const TrackerPage = () => {
               </div>
               <div className={styles.libraryList}>
                 {filteredHabits.map((habit) => {
-                  const selected = libDraft.includes(habit.id);
+                  const done = !!todayRecord[habit.id];
                   return (
-                    <div key={habit.id} className={cx(styles.habitCard, selected && styles.habitCardSelected)}>
-                      <div className={styles.habitCardHead}>
-                        <div>
-                          <h4>{habit.task}</h4>
-                          <p>{habit.micro}</p>
+                    <div key={habit.id} className={cx(styles.habitCard, done && styles.habitCardDone)}>
+                      <button type="button" className={cx(styles.habitCheck, done && styles.habitCheckDone)} onClick={() => toggleHabit(habit.id)} aria-label={`Mark ${habit.task} as ${done ? "incomplete" : "complete"}`}>
+                        {done ? <span className={styles.habitCheckIcon}>✓</span> : null}
+                      </button>
+                      <div className={styles.habitContent}>
+                        <div className={styles.habitCardHead}>
+                          <div>
+                            <h4>{habit.task}</h4>
+                            <p>{habit.micro}</p>
+                          </div>
                         </div>
-                        <div className={styles.habitPoints}>+{habit.points} pts</div>
-                      </div>
-                      <div className={styles.habitCardBody}>
                         <div className={styles.habitTags}>
                           {habit.pillars.map((pillarKey) => {
                             const meta = TRACKER_PILLARS.find((pillar) => pillar.id === pillarKey);
@@ -566,27 +473,14 @@ const TrackerPage = () => {
                           {habit.weekly && <span className={styles.weekTag}>Weekly</span>}
                           {habit.stack ? <span className={styles.stackTag}>{habit.stack}</span> : null}
                         </div>
-                        <button
-                          type="button"
-                          className={cx(styles.toggleBtn, selected && styles.toggleBtnActive)}
-                          onClick={() => toggleLibraryHabit(habit.id)}
-                        >
-                          {selected ? "Remove" : "Add"}
-                        </button>
+                        {habit.stack ? <div className={styles.stackHint}>Stack onto: {habit.stack}</div> : null}
                       </div>
-                      {habit.stack ? <div className={styles.stackHint}>Stack onto: {habit.stack}</div> : null}
                     </div>
                   );
                 })}
                 {!filteredHabits.length ? (
                   <div className={styles.emptyLibrary}>No habits unlocked yet for this pillar. Keep leveling up.</div>
                 ) : null}
-              </div>
-              <div className={styles.saveBar}>
-                <button type="button" onClick={saveLibrary} disabled={!draftChanged || !libDraft.length}>
-                  {libDraft.length ? `Save ${libDraft.length} habits · ${libDailyPts} daily pts` : "Select habits to save"}
-                </button>
-                <p>Streak needs all 6 pillars + 15 pts daily</p>
               </div>
             </div>
           </section>

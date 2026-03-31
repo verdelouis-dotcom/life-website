@@ -77,6 +77,12 @@
   color: rgba(253, 250, 246, 0.6);
 }
 
+.streakHint {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(253, 250, 246, 0.75);
+}
+
 .progressWrap {
   margin-top: 1.5rem;
 }
@@ -282,78 +288,6 @@
   color: var(--terra, #a0522d);
 }
 
-.checklistSection {
-  padding: 1.75rem;
-}
-
-.checklist {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.checkRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  border: 1px solid rgba(30, 20, 10, 0.08);
-  border-radius: 16px;
-  padding: 0.85rem 1rem;
-  cursor: pointer;
-  text-align: left;
-  background: #fff;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.checkRowDone {
-  border-color: rgba(49, 90, 42, 0.4);
-  background: #eff6ea;
-}
-
-.checkInfo {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex: 1;
-}
-
-.pillarIndicator {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
-}
-
-.checkBody {
-  flex: 1;
-}
-
-.checkTitle {
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.checkMeta {
-  margin-top: 0.2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  font-size: 0.7rem;
-}
-
-.checkPillarLabel {
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.6rem;
-}
-
-.checkPoints {
-  font-weight: 600;
-  color: var(--terra, #a0522d);
-}
-
 .pillarTag {
   padding: 0.15rem 0.45rem;
   border-radius: 999px;
@@ -428,22 +362,46 @@
 .habitCard {
   border: 1px solid rgba(30, 20, 10, 0.1);
   border-radius: 18px;
-  padding: 1.25rem;
+  padding: 1.1rem 1.25rem;
   background: #fff;
   display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.habitCardSelected {
-  border-color: var(--forest, #315a2a);
-  background: #f0f6e8;
-}
-
-.habitCardHead {
-  display: flex;
-  justify-content: space-between;
   gap: 1rem;
+  align-items: flex-start;
+}
+
+.habitCardDone {
+  opacity: 0.65;
+}
+
+.habitCheck {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid rgba(30, 20, 10, 0.25);
+  background: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.habitCheckDone {
+  background: var(--forest, #315a2a);
+  border-color: var(--forest, #315a2a);
+  color: #fff;
+}
+
+.habitCheckIcon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.habitContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .habitCardHead h4 {
@@ -456,34 +414,6 @@
   color: var(--ink-muted, rgba(30, 20, 10, 0.6));
   font-size: 0.85rem;
   line-height: 1.4;
-}
-
-.habitPoints {
-  font-weight: 600;
-  color: var(--terra, #a0522d);
-}
-
-.habitCardBody {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.toggleBtn {
-  border-radius: 999px;
-  border: 1px solid rgba(30, 20, 10, 0.12);
-  padding: 0.35rem 0.9rem;
-  font-size: 0.85rem;
-  cursor: pointer;
-  background: #fff;
-}
-
-.toggleBtnActive {
-  background: var(--forest, #315a2a);
-  border-color: var(--forest, #315a2a);
-  color: #fff;
 }
 
 .habitTags {
@@ -505,35 +435,6 @@
   background: #f3eee6;
   border-radius: 16px;
   font-size: 0.9rem;
-  color: var(--ink-muted, rgba(30, 20, 10, 0.6));
-}
-
-.saveBar {
-  margin-top: 1.5rem;
-  border-top: 1px solid rgba(30, 20, 10, 0.08);
-  padding-top: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.saveBar button {
-  border-radius: 14px;
-  padding: 0.75rem;
-  background: var(--forest, #315a2a);
-  color: #fff;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.saveBar button:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.saveBar p {
-  font-size: 0.75rem;
   color: var(--ink-muted, rgba(30, 20, 10, 0.6));
 }
 
