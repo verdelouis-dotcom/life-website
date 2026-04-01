@@ -29,7 +29,10 @@ export default function SiteNav() {
   return (
     <header className={`site-nav fixed inset-x-0 top-0 z-[100] ${scrolled ? "is-scrolled" : ""}`}>
       <div className="site-nav-inner">
-        <Logo size="md" className="site-nav-logo shrink-0" />
+        <Link href="/" className="flex items-center gap-2 text-[0.78rem] font-medium text-[#6B4F35] site-nav-logo shrink-0 transition hover:text-[#B55A30]">
+          <Logo size="md" />
+          <span className="max-w-[10rem] leading-tight">Longevity Initiative for Food &amp; Education</span>
+        </Link>
 
         {/* Desktop nav links */}
         <nav className="nav-links-group hidden items-center gap-6 text-[0.82rem] font-medium text-[#6B4F35] md:flex">
