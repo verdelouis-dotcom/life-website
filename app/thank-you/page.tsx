@@ -25,7 +25,7 @@ export default function ThankYouPage() {
             <Link href="/tracker" className="btn-primary">
               Open the LIFE Tracker →
             </Link>
-            <a href="/downloads/life-guide.pdf" className="btn-outline" download>
+            <a href="/downloads/life-guide.html" className="btn-outline" target="_blank" rel="noreferrer">
               Download the LIFE Guide →
             </a>
           </div>

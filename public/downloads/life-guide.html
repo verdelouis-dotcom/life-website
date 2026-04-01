@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The LIFE Guide — What the World's Longest-Lived Families Know</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAF8F4;
+    --dark: #1C1C1A;
+    --terracotta: #B85C38;
+    --terracotta-light: #D4795A;
+    --olive: #5C6B3A;
+    --olive-light: #7A8C52;
+    --gold: #C9A84C;
+    --muted: #6B6560;
+    --border: #DDD8CF;
+    --page-width: 800px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--dark);
+    font-size: 11pt;
+    line-height: 1.7;
+  }
+
+  /* ============ PAGE STRUCTURE ============ */
+  .page {
+    width: var(--page-width);
+    margin: 0 auto;
+    background: var(--warm-white);
+    min-height: 100vh;
+    position: relative;
+  }
+
+  @media print {
+    body { background: white; font-size: 10.5pt; }
+    .page {
+      width: 100%;
+      margin: 0;
+      background: white;
+      page-break-after: always;
+      page-break-inside: avoid;
+      min-height: 0;
+      padding: 0 !important;
+    }
+    .page:last-child { page-break-after: auto; }
+    .no-break { page-break-inside: avoid; break-inside: avoid; }
+    .page-break { page-break-before: always; }
+    @page { margin: 0.75in; size: letter; }
+  }
+
+  /* ============ COVER PAGE ============ */
+  .cover {
+    background: var(--dark);
+    color: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(184, 92, 56, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(92, 107, 58, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cover-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.5);
+  }
+
+  .cover-edition {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+  }
+
+  .cover-center {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 56pt;
+    font-weight: 700;
+    line-height: 0.9;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cover-title-life {
+    display: block;
+  }
+
+  .cover-title-guide {
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 40pt;
+    color: rgba(245, 240, 232, 0.6);
+  }
+
+  .cover-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--terracotta);
+    margin: 2rem auto;
+  }
+
+  .cover-subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14pt;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245, 240, 232, 0.75);
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .cover-pillars {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cover-pillar-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(245, 240, 232, 0.15);
+  }
+
+  .cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cover-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 300;
+    color: rgba(245, 240, 232, 0.5);
+    line-height: 1.6;
+  }
+
+  .cover-author strong {
+    display: block;
+    font-weight: 500;
+    color: rgba(245, 240, 232, 0.8);
+    font-size: 10pt;
+  }
+
+  .cover-501 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.3);
+    text-align: right;
+  }
+
+  /* ============ INTERIOR PAGES ============ */
+  .interior {
+    padding: 3rem 3.5rem;
+    background: var(--warm-white);
+  }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30pt;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-title-italic {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--terracotta);
+    margin: 1.5rem 0;
+  }
+
+  .body-text {
+    font-size: 11pt;
+    line-height: 1.75;
+    color: var(--dark);
+    margin-bottom: 1.2rem;
+  }
+
+  .body-text:last-child { margin-bottom: 0; }
+
+  .pull-quote {
+    border-left: 3px solid var(--terracotta);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(184, 92, 56, 0.04);
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 13pt;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .pull-quote cite {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-style: normal;
+  }
+
+  /* ============ PILLAR PAGES ============ */
+  .pillar-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pillar-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 60pt;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--border);
+    flex-shrink: 0;
+    margin-top: -0.5rem;
+  }
+
+  .pillar-title-block {}
+
+  .pillar-emoji {
+    font-size: 20pt;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  .pillar-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28pt;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .pillar-tagline {
+    font-family: 'Source Serif 4', serif;
+    font-size: 11pt;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ============ STATS SECTION ============ */
+  .stats-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--cream);
+    border-top: 2px solid var(--dark);
+  }
+
+  .stats-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 0.75rem;
+    border-left: 2px solid var(--terracotta);
+    padding-left: 1rem;
+  }
+
+  .stat-quote {
+    font-family: 'Source Serif 4', serif;
+    font-size: 9.5pt;
+    line-height: 1.6;
+    color: var(--dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7pt;
+    font-weight: 400;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============ HABIT LIBRARY ============ */
+  .library-header {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 2.5rem 3.5rem;
+    margin-bottom: 0;
+  }
+
+  .library-header .section-label {
+    color: var(--terracotta-light);
+  }
+
+  .library-header .page-title {
+    color: var(--cream);
+  }
+
+  .library-header .body-text {
+    color: rgba(245, 240, 232, 0.7);
+    margin-top: 1rem;
+  }
+
+  .pillar-habit-section {
+    padding: 2rem 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pillar-habit-section:last-child {
+    border-bottom: none;
+  }
+
+  .habit-pillar-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .habit-pillar-emoji {
+    font-size: 16pt;
+  }
+
+  .habit-pillar-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16pt;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .habit-pillar-count {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: auto;
+    letter-spacing: 0.1em;
+  }
+
+  .habit-list {
+    list-style: none;
+  }
+
+  .habit-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(221, 216, 207, 0.5);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .habit-item:last-child {
+    border-bottom: none;
+  }
+
+  .habit-number {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 500;
+    color: var(--terracotta);
+    flex-shrink: 0;
+    width: 1.5rem;
+    padding-top: 0.15rem;
+  }
+
+  .habit-text {
+    font-size: 10.5pt;
+    line-height: 1.65;
+    color: var(--dark);
+  }
+
+  .habit-text strong {
+    font-weight: 600;
+  }
+
+  /* ============ BACK COVER ============ */
+  .back-cover {
+    background: var(--terracotta);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .back-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 90% 10%, rgba(255,255,255,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 90%, rgba(0,0,0,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .back-cover-top {
+    position: relative;
+    z-index: 1;
+  }
+
+  .back-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .back-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 36pt;
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1rem;
+    max-width: 500px;
+  }
+
+  .back-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 12pt;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 420px;
+  }
+
+  .back-cta {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    background: white;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+  }
+
+  .back-tagline {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .back-tagline-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1rem;
+  }
+
+  .back-footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .back-url {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .back-copyright {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* ============ UTILITIES ============ */
+  .mt-1 { margin-top: 0.5rem; }
+  .mt-2 { margin-top: 1rem; }
+  .mt-3 { margin-top: 1.5rem; }
+  .mt-4 { margin-top: 2rem; }
+  .mb-2 { margin-bottom: 1rem; }
+
+  .text-muted {
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  .pillar-intro-text {
+    font-size: 11.5pt;
+    line-height: 1.8;
+    color: var(--dark);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Screen only */
+  @media screen {
+    body { padding: 2rem 0; }
+    .page { box-shadow: 0 4px 40px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-top">
+      <div class="cover-logo">LIFE · Longevity Initiative for Food &amp; Education</div>
+      <div class="cover-edition">First Edition</div>
+    </div>
+
+    <div class="cover-center">
+      <div class="cover-eyebrow">The LIFE Guide</div>
+      <h1 class="cover-title">
+        <span class="cover-title-life">Six Habits.</span>
+        <span class="cover-title-guide">One Lifetime.</span>
+      </h1>
+      <div class="cover-rule"></div>
+      <p class="cover-subtitle">What the world's longest-lived families know — and never stopped doing.</p>
+      <div class="cover-pillars">
+        <span class="cover-pillar-tag">Food</span>
+        <span class="cover-pillar-tag">Movement</span>
+        <span class="cover-pillar-tag">Sleep</span>
+        <span class="cover-pillar-tag">Connection</span>
+        <span class="cover-pillar-tag">Purpose</span>
+        <span class="cover-pillar-tag">Stress</span>
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <div class="cover-author">
+        <strong>Lou Verde</strong>
+        Founder · First-Generation Italian-American<br>
+        Longevity Educator · Atlanta, GA
+      </div>
+      <div class="cover-501">
+        501(c)(3) Pending<br>
+        longevityinitiativeforfoodandeducation.com
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LETTER FROM LOU ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="section-label">A Letter From Lou</div>
+    <h2 class="page-title"><span class="page-title-italic">You are not failing your family.</span></h2>
+    <div class="divider"></div>
+
+    <p class="body-text">You are exhausted. You are doing your best in a world that was not designed to help you succeed at the things that matter most — cooking real food, eating together, sleeping enough, being present, knowing your neighbors, finding time for yourself.</p>
+
+    <p class="body-text">I know this family. I grew up watching a different one.</p>
+
+    <p class="body-text">My grandparents came from Italy with almost nothing. No money, no property, no credentials. What they brought was something most Americans have quietly lost — a way of living. They cooked every meal from scratch. They ate together every night, no exceptions. They walked everywhere. They slept deeply. They knew their neighbors by name and showed up for them without being asked. They never counted a calorie or ran a mile. They just lived — fully, deliberately, together.</p>
+
+    <p class="body-text">They lived into their mid-90s.</p>
+
+    <p class="body-text">I spent years studying why. In the world's longest-lived communities — Sardinia, Okinawa, Nicoya, Ikaria — I kept finding the same answer. It was never a supplement or a program or a biohack. It was always the same six things. The same six things my family had practiced for generations without ever calling them anything.</p>
+
+    <div class="pull-quote">
+      <p>"The longest-lived people on earth don't optimize their lives. They share them — at the table, in the kitchen, with the people they love."</p>
+      <cite>— Lou Verde, Founder of LIFE</cite>
+    </div>
+
+    <p class="body-text">This guide exists because your family deserves to know what they knew.</p>
+
+    <p class="body-text">You do not need to overhaul your life tonight. You do not need a gym membership, a meal plan, or a wellness app. You need six simple things — practiced imperfectly, consistently, together. Start with one. The rest follows naturally, the way it always has.</p>
+
+    <div class="mt-4">
+      <p style="font-family: 'Playfair Display', serif; font-size: 13pt; font-style: italic; color: var(--dark);">Lou Verde</p>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 8.5pt; color: var(--muted); margin-top: 0.25rem; letter-spacing: 0.05em;">Founder, LIFE &nbsp;·&nbsp; Atlanta, GA</p>
+    </div>
+
+    <hr class="section-rule" style="margin-top: 2.5rem;">
+
+    <div class="section-label mt-2">How to Use This Guide</div>
+    <p class="body-text">This guide has two parts. The first part introduces each of the six pillars — what they are, why they matter, and what the research shows. The second part is the habit library — 60 habits across six pillars that your family can adopt at your own pace, in any order, starting whenever you are ready.</p>
+    <p class="body-text" style="font-style: italic; color: var(--muted);">You do not have to do all 60. You have to start with one.</p>
+  </div>
+</div>
+
+<!-- ============ PILLARS OVERVIEW ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="section-label">The Six Pillars</div>
+    <h2 class="page-title">Everything that matters <span class="page-title-italic">fits in six things.</span></h2>
+    <div class="divider"></div>
+    <p class="body-text">Every long-lived community on earth — the villages of Sardinia, the islands of Okinawa, the hillsides of Nicoya, the slopes of Ikaria — shares the same six habits. Not supplements. Not marathons. Not biohacking. Just six ways of living that compound over a lifetime.</p>
+    <p class="body-text" style="margin-bottom: 2.5rem;">The Danish Twin Study established that only about 20% of how long we live is determined by our genes. The rest is lifestyle. These six pillars are that rest.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+
+      <div style="padding: 1.5rem; background: var(--cream); border-top: 3px solid var(--terracotta);">
+        <div style="font-size: 18pt; margin-bottom: 0.5rem;">🥗</div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 16pt; font-weight: 700; margin-bottom: 0.4rem;">01 &nbsp;Food</div>
+        <div style="font-size: 9.5pt; color: var(--muted); line-height: 1.6;">Real food, cooked together, eaten at the table. The foundation every other pillar rests on.</div>
+      </div>
+
+      <div style="padding: 1.5rem; background: var(--cream); border-top: 3px solid var(--olive);">
+        <div style="font-size: 18pt; margin-bottom: 0.5rem;">🚶</div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 16pt; font-weight: 700; margin-bottom: 0.4rem;">02 &nbsp;Movement</div>
+        <div style="font-size: 9.5pt; color: var(--muted); line-height: 1.6;">Not a gym routine. A way of living. Movement woven into every hour of every day.</div>
+      </div>
+
+      <div style="padding: 1.5rem; background: var(--cream); border-top: 3px solid #4A6FA5;">
+        <div style="font-size: 18pt; margin-bottom: 0.5rem;">🌙</div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 16pt; font-weight: 700; margin-bottom: 0.4rem;">03 &nbsp;Sleep</div>
+        <div style="font-size: 9.5pt; color: var(--muted); line-height: 1.6;">The most underrated habit in your family's life. The foundation everything else is built on.</div>
+      </div>
+
+      <div style="padding: 1.5rem; background: var(--cream); border-top: 3px solid #8B6914;">
+        <div style="font-size: 18pt; margin-bottom: 0.5rem;">🤝</div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 16pt; font-weight: 700; margin-bottom: 0.4rem;">04 &nbsp;Connection</div>
+        <div style="font-size: 9.5pt; color: var(--muted); line-height: 1.6;">Loneliness is killing us. The shared table, the neighbor you know, the call you make — this is the cure.</div>
+      </div>
+
+      <div style="padding: 1.5rem; background: var(--cream); border-top: 3px solid var(--olive-light);">
+        <div style="font-size: 18pt; margin-bottom: 0.5rem;">🌱</div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 16pt; font-weight: 700; margin-bottom: 0.4rem;">05 &nbsp;Purpose</div>
+        <div style="font-size: 9.5pt; color: var(--muted); line-height: 1.6;">People who know why they get up in the morning live longer. Not a destination — a daily practice.</div>
+      </div>
+
+      <div style="padding: 1.5rem; background: var(--cream); border-top: 3px solid #7B5EA7;">
+        <div style="font-size: 18pt; margin-bottom: 0.5rem;">🧘</div>
+        <div style="font-family: 'Playfair Display', serif; font-size: 16pt; font-weight: 700; margin-bottom: 0.4rem;">06 &nbsp;Stress</div>
+        <div style="font-size: 9.5pt; color: var(--muted); line-height: 1.6;">Chronic stress is invisible and cumulative. Daily rituals that release it without a retreat or a subscription.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ PILLAR 1: FOOD ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="pillar-header no-break">
+      <div class="pillar-number">01</div>
+      <div class="pillar-title-block">
+        <span class="pillar-emoji">🥗</span>
+        <div class="pillar-name">Food</div>
+        <div class="pillar-tagline">Real food. Cooked together. Eaten at the table.</div>
+      </div>
+    </div>
+
+    <p class="pillar-intro-text">The families that live longest share one thing in common before anything else — they cook their own food. Not because they are passionate chefs or have extra time. Because cooking together is how families stay connected, how traditions get passed down, and how bodies get the nutrition they actually need.</p>
+
+    <p class="pillar-intro-text">Processed food is not just a health problem. It is a connection problem. When we stopped cooking, we stopped gathering. And both our health and our relationships suffered for it.</p>
+
+    <p class="pillar-intro-text">The good news is that getting back to real food does not require perfection. It requires a decision — to start treating food as something you make together, not something you pick up on the way home.</p>
+
+    <div class="stats-section no-break">
+      <div class="stats-label">What the Research Shows</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="stat-quote">The highest consumers of ultra-processed food have a 15% increased risk of all-cause mortality — across a meta-analysis of over 1.1 million participants.</p>
+          <p class="stat-source">PMC Systematic Review, 2025</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Ultra-processed food exposure was associated with higher risks across 32 health parameters — including mortality, cancer, cardiovascular, and metabolic outcomes.</p>
+          <p class="stat-source">BMJ Umbrella Review, 2024</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Processed meat, sugar-sweetened beverages, and ultra-processed breakfast foods showed the strongest associations with early death.</p>
+          <p class="stat-source">Harvard T.H. Chan School of Public Health, 2024</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PILLAR 2: MOVEMENT ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="pillar-header no-break">
+      <div class="pillar-number">02</div>
+      <div class="pillar-title-block">
+        <span class="pillar-emoji">🚶</span>
+        <div class="pillar-name">Movement</div>
+        <div class="pillar-tagline">Not a gym routine. A way of living.</div>
+      </div>
+    </div>
+
+    <p class="pillar-intro-text">The world's longest-lived people do not exercise. They move — constantly, naturally, as part of daily life. They walk to the market. They tend their gardens. They climb stairs. They cook on their feet. They carry their groceries.</p>
+
+    <p class="pillar-intro-text">Movement is not something they add to their day. It is woven into everything they do. For a busy family, this is actually good news. You do not need a gym membership or an hour you do not have. You need to stop thinking of movement as a workout and start thinking of it as a disposition — a default way of moving through the world that adds years to your life without ever requiring willpower.</p>
+
+    <div class="stats-section no-break">
+      <div class="stats-label">What the Research Shows</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="stat-quote">Walking as little as two to five minutes after a meal can lower blood sugar — light-intensity walking throughout the day reduced glucose by an average of 17% compared to prolonged sitting.</p>
+          <p class="stat-source">Sports Medicine, 2022</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">A 10-minute walk immediately after eating was as effective as a 30-minute walk in controlling post-meal blood glucose levels — and uniquely effective at reducing peak glucose spikes.</p>
+          <p class="stat-source">Scientific Reports, 2025</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Making the active option the easy and safe option raises the activity level of an entire population by 30% — people move more without gym memberships by simply walking to school, work, or shopping.</p>
+          <p class="stat-source">NCBI / Blue Zones Research, 2015</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PILLAR 3: SLEEP ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="pillar-header no-break">
+      <div class="pillar-number">03</div>
+      <div class="pillar-title-block">
+        <span class="pillar-emoji">🌙</span>
+        <div class="pillar-name">Sleep</div>
+        <div class="pillar-tagline">The most underrated habit in your family's life.</div>
+      </div>
+    </div>
+
+    <p class="pillar-intro-text">Sleep is not a luxury. It is the foundation everything else is built on. While you sleep your brain clears toxins, your cells repair, your memories consolidate, and your immune system recharges. Consistently sleeping less than seven hours is linked to higher rates of obesity, diabetes, heart disease, dementia, and depression.</p>
+
+    <p class="pillar-intro-text">Yet we treat sleep as the first thing we sacrifice when life gets busy. The longest-lived families protect sleep the way most Americans protect their work schedule. They go to bed at the same time every night. They wind down deliberately. They keep their bedrooms dark and cool. They teach their children to do the same.</p>
+
+    <p class="pillar-intro-text">Your children's brains are developing right now. Every hour of sleep they lose is an hour of growth, healing, and learning they will never get back.</p>
+
+    <div class="stats-section no-break">
+      <div class="stats-label">What the Research Shows</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="stat-quote">Individuals who slept fewer than five hours per night were twice as likely to develop dementia, and twice as likely to die, compared to those who slept six to eight hours per night.</p>
+          <p class="stat-source">Harvard Health / National Health and Aging Trends Study, 2021</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Consistently sleeping six hours or less at age 50, 60, and 70 was associated with a 30% increased dementia risk compared to a normal sleep duration of seven hours.</p>
+          <p class="stat-source">Nature Communications, 2021</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Sleeping just five to six hours a day doubles the risk of being diagnosed with prediabetes and type 2 diabetes compared to sleeping seven to eight hours a day.</p>
+          <p class="stat-source">Harvard Health / Journal of Endocrinology, 2021</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PILLAR 4: CONNECTION ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="pillar-header no-break">
+      <div class="pillar-number">04</div>
+      <div class="pillar-title-block">
+        <span class="pillar-emoji">🤝</span>
+        <div class="pillar-name">Connection</div>
+        <div class="pillar-tagline">Loneliness is killing us. The table is the cure.</div>
+      </div>
+    </div>
+
+    <p class="pillar-intro-text">The Harvard Study of Adult Development — the longest running study on human happiness ever conducted — followed 700 men for over 80 years and reached one conclusion above all others: the quality of our relationships determines the quality and length of our lives. Not wealth. Not fitness. Not fame. Relationships.</p>
+
+    <p class="pillar-intro-text">The U.S. Surgeon General has declared loneliness a public health epidemic — as harmful to your health as smoking 15 cigarettes a day. The antidote is not complicated. It is showing up. It is knowing your neighbors. It is calling instead of texting. It is being the person your community can count on. It is the table — set every night, for the people you love most.</p>
+
+    <div class="stats-section no-break">
+      <div class="stats-label">What the Research Shows</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="stat-quote">Loneliness was associated with a 26% increase in the risk of premature death, social isolation with a 29% increase, and living alone with a 32% escalation in mortality risk — across a meta-analysis of over 3.4 million participants.</p>
+          <p class="stat-source">Harvard T.H. Chan School of Public Health, 2015</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Individuals with strong social relationships had a 50% increased likelihood of survival compared to those with weaker social ties — a survival advantage comparable to quitting smoking.</p>
+          <p class="stat-source">PLOS Medicine Meta-Analysis, 300,000+ participants</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Loneliness is linked to an estimated 100 deaths every hour — more than 871,000 deaths annually worldwide.</p>
+          <p class="stat-source">WHO Commission on Social Connection, 2025</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PILLAR 5: PURPOSE ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="pillar-header no-break">
+      <div class="pillar-number">05</div>
+      <div class="pillar-title-block">
+        <span class="pillar-emoji">🌱</span>
+        <div class="pillar-name">Purpose</div>
+        <div class="pillar-tagline">People who know why they get up in the morning live longer.</div>
+      </div>
+    </div>
+
+    <p class="pillar-intro-text">In Japan they call it <em>ikigai</em> — the reason you get up in the morning. In every long-lived community on earth researchers find people who feel they are needed, that their presence matters, that there is something meaningful left to do. Purpose is not a luxury or a philosophical exercise. It is a measurable biological force.</p>
+
+    <p class="pillar-intro-text">For a busy parent, purpose can feel like something you will get to later — after the kids are older, after work settles down, after life gets easier. It never gets easier. Purpose is not something you find later. It is something you practice now — in the way you show up for your family, the skills you pass down, the person you choose to be every morning before you check your phone.</p>
+
+    <div class="stats-section no-break">
+      <div class="stats-label">What the Research Shows</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="stat-quote">In a prospective cohort study of 43,391 Japanese adults followed over 7 years, those who did not find a sense of ikigai had a significantly increased risk of all-cause mortality — with a hazard ratio of 1.5.</p>
+          <p class="stat-source">Ohsaki Study, PubMed, 2008</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Purposeful individuals lived longer than their counterparts during a 14-year study period, even when controlling for other markers of psychological and affective wellbeing — and regardless of age or retirement status.</p>
+          <p class="stat-source">MIDUS Longitudinal Study, PMC, 2014</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">People who could articulate their sense of purpose had a 15% lower risk of dying, according to a study from Canada that followed 6,000 people for 14 years.</p>
+          <p class="stat-source">NCBI / Blue Zones Research</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PILLAR 6: STRESS ============ -->
+<div class="page">
+  <div class="interior">
+    <div class="pillar-header no-break">
+      <div class="pillar-number">06</div>
+      <div class="pillar-title-block">
+        <span class="pillar-emoji">🧘</span>
+        <div class="pillar-name">Stress</div>
+        <div class="pillar-tagline">Chronic stress is invisible, cumulative, and killing you slowly.</div>
+      </div>
+    </div>
+
+    <p class="pillar-intro-text">Acute stress is normal. Chronic stress — the kind that never fully switches off — silently damages your cardiovascular system, suppresses your immune function, accelerates cellular aging, and erodes your brain over time. Most American families are living in a state of chronic stress so constant they have forgotten what it feels like to not be stressed.</p>
+
+    <p class="pillar-intro-text">The families that live longest experience stress like everyone else. What is different is that they have daily built-in rituals for releasing it. They cook slowly. They rest deliberately. They spend time outside. They talk to people they trust. They let go of things they cannot control. You do not need a retreat or a subscription or an hour you do not have. You need five minutes of silence and a decision to stop carrying what was never yours to carry.</p>
+
+    <div class="pull-quote no-break">
+      <p>"My grandfather never rushed a meal. Not once. Setting the table, cooking, eating, cleaning — all of it was done with the same quiet attention. I understand now that this was his stress regulation. It was just called dinner."</p>
+      <cite>— Lou Verde</cite>
+    </div>
+
+    <div class="stats-section no-break">
+      <div class="stats-label">What the Research Shows</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="stat-quote">Higher levels of cortisol — the primary stress hormone — were associated with a 60% increased risk of cardiovascular disease, across a meta-analysis of 43,641 participants.</p>
+          <p class="stat-source">ScienceDirect Meta-Analysis, 2024</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Older persons with high levels of cortisol had a five-fold increased risk of dying from cardiovascular disease.</p>
+          <p class="stat-source">Journal of Clinical Endocrinology & Metabolism</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-quote">Long-term activation of the stress response puts you at higher risk of heart disease, heart attack, high blood pressure, stroke, depression, weight gain, and problems with memory and focus.</p>
+          <p class="stat-source">Mayo Clinic</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HABIT LIBRARY HEADER ============ -->
+<div class="page">
+  <div class="library-header">
+    <div class="section-label">The Habit Library</div>
+    <h2 class="page-title" style="color: var(--cream);">60 habits. <span class="page-title-italic">Six pillars.</span><br>Start anywhere.</h2>
+    <p class="body-text" style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 520px;">These habits are not a program. They are a library. Browse them by pillar. Start with one. Add another when the first one feels easy. Come back to this guide when you are ready for more. Share it with someone who needs it.</p>
+    <p class="body-text" style="color: rgba(245,240,232,0.5); font-style: italic; font-size: 10pt;">The habit library is also available as an interactive daily tracker at longevityinitiativeforfoodandeducation.com</p>
+  </div>
+
+  <!-- FOOD HABITS -->
+  <div class="pillar-habit-section">
+    <div class="habit-pillar-label">
+      <span class="habit-pillar-emoji">🥗</span>
+      <span class="habit-pillar-name">Food</span>
+      <span class="habit-pillar-count">11 habits</span>
+    </div>
+    <ul class="habit-list">
+      <li class="habit-item"><span class="habit-number">01</span><span class="habit-text">Remove highly processed food from your home — if it comes in a bag or a box with more than 5 ingredients, it doesn't belong in your kitchen</span></li>
+      <li class="habit-item"><span class="habit-number">02</span><span class="habit-text">Treat fast food as poison — your body does not know what to do with it and neither does your brain</span></li>
+      <li class="habit-item"><span class="habit-number">03</span><span class="habit-text">Build every meal around vegetables — they are superchargers for your body and mind</span></li>
+      <li class="habit-item"><span class="habit-number">04</span><span class="habit-text">Add legumes to your diet — beans, lentils, chickpeas — throw them in soups, salads, and pasta — they are cheap, filling, and among the most powerful longevity foods on earth</span></li>
+      <li class="habit-item"><span class="habit-number">05</span><span class="habit-text">Eat whole food snacks — nuts, fruit, vegetables — and eliminate packaged snacks from the house entirely</span></li>
+      <li class="habit-item"><span class="habit-number">06</span><span class="habit-text">Cook as many meals from scratch as you can and prepare them with your family — get the kids off screens and make this a family tradition</span></li>
+      <li class="habit-item"><span class="habit-number">07</span><span class="habit-text">Drink water as your primary drink — eliminate soda and sugary drinks completely</span></li>
+      <li class="habit-item"><span class="habit-number">08</span><span class="habit-text">Treat refined sugar the way you treat fast food — as poison — it drives cancer, heart disease, diabetes, and cognitive decline — and it is addictive by design, the food industry engineered it that way — breaking the habit is one of the single most important things you can do for your long term health and your children's health</span></li>
+      <li class="habit-item"><span class="habit-number">09</span><span class="habit-text">Cook with healthy oils — olive oil, avocado oil, and coconut oil are all excellent choices — replace vegetable oil, canola oil, and seed oils completely</span></li>
+      <li class="habit-item"><span class="habit-number">10</span><span class="habit-text">Sit down together for dinner every night — no screens, no exceptions, no excuses — this is where your family heals, where everyone feels safe and heard, where the habits of a lifetime get passed down</span></li>
+      <li class="habit-item"><span class="habit-number">11</span><span class="habit-text">Create a family recipe book — start a 3-ring binder with your favorite recipes, print them, add to it over time — this becomes your family's most valuable heirloom</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ HABIT LIBRARY PAGE 2 ============ -->
+<div class="page">
+  <div class="interior" style="padding-top: 2rem;">
+
+    <!-- MOVEMENT HABITS -->
+    <div class="pillar-habit-section" style="padding: 0 0 2rem 0;">
+      <div class="habit-pillar-label">
+        <span class="habit-pillar-emoji">🚶</span>
+        <span class="habit-pillar-name">Movement</span>
+        <span class="habit-pillar-count">9 habits</span>
+      </div>
+      <ul class="habit-list">
+        <li class="habit-item"><span class="habit-number">01</span><span class="habit-text">Walk after dinner — even a quick loop around the block — this single habit reduces blood sugar, aids digestion, improves sleep, and gives your family uninterrupted time together</span></li>
+        <li class="habit-item"><span class="habit-number">02</span><span class="habit-text">Park further away — from the office, the grocery store, everywhere — the extra steps add up to years</span></li>
+        <li class="habit-item"><span class="habit-number">03</span><span class="habit-text">Household tasks count as movement — cooking, cleaning, gardening, carrying groceries, stairs, laundry — this is how communities stay active into their 90s</span></li>
+        <li class="habit-item"><span class="habit-number">04</span><span class="habit-text">Break up sitting every 45 minutes — stand up, stretch, walk to another room — prolonged sitting is harmful even if you exercise regularly</span></li>
+        <li class="habit-item"><span class="habit-number">05</span><span class="habit-text">Find something you enjoy that involves moving your body and do it often — Pilates, yoga, pickleball, rock climbing, hiking, gardening, swimming, dancing — it doesn't matter what it is, it matters that you love it</span></li>
+        <li class="habit-item"><span class="habit-number">06</span><span class="habit-text">Get outside and move as a family at least once a week — a walk, a hike, a bike ride — it doesn't matter what it is</span></li>
+        <li class="habit-item"><span class="habit-number">07</span><span class="habit-text">Sign your kids up for a physical activity they choose — when kids find movement they love early, they carry it for life</span></li>
+        <li class="habit-item"><span class="habit-number">08</span><span class="habit-text">Take phone calls standing up or walking — you're already on the phone, use the time</span></li>
+        <li class="habit-item"><span class="habit-number">09</span><span class="habit-text">Garden — it's movement, it's mindfulness, it's food, and it's one of the most common habits in every long-lived community on earth</span></li>
+      </ul>
+    </div>
+
+    <hr class="section-rule">
+
+    <!-- SLEEP HABITS -->
+    <div class="pillar-habit-section" style="padding: 1.5rem 0 0 0;">
+      <div class="habit-pillar-label">
+        <span class="habit-pillar-emoji">🌙</span>
+        <span class="habit-pillar-name">Sleep</span>
+        <span class="habit-pillar-count">9 habits</span>
+      </div>
+      <ul class="habit-list">
+        <li class="habit-item"><span class="habit-number">01</span><span class="habit-text">Set a consistent bedtime and keep it — your body's clock runs on consistency, not just hours — going to bed at the same time every night is the single most impactful sleep change you can make</span></li>
+        <li class="habit-item"><span class="habit-number">02</span><span class="habit-text">No screens for 45 minutes before bed — blue light from phones and televisions delays sleep by 1–3 hours — replace the scroll with conversation, reading, or simply sitting together</span></li>
+        <li class="habit-item"><span class="habit-number">03</span><span class="habit-text">Keep your bedroom cool and dark — the ideal sleep temperature is 65–68°F — darkness triggers melatonin — both together signal your body it's time to rest</span></li>
+        <li class="habit-item"><span class="habit-number">04</span><span class="habit-text">Keep your phone outside your bedroom or out of reach — the last thing you see before sleep and the first thing you reach for in the morning should not be a screen</span></li>
+        <li class="habit-item"><span class="habit-number">05</span><span class="habit-text">Set a consistent bedtime for your kids and enforce it — no exceptions on school nights — their developing brains need 9–11 hours to function, grow, and heal</span></li>
+        <li class="habit-item"><span class="habit-number">06</span><span class="habit-text">Create a 10-minute wind-down ritual — the same sequence every night signals your nervous system that it's safe to rest</span></li>
+        <li class="habit-item"><span class="habit-number">07</span><span class="habit-text">Wake up at the same time every day including weekends — consistency is more powerful than duration</span></li>
+        <li class="habit-item"><span class="habit-number">08</span><span class="habit-text">Take a nap when your body asks for one — a 20-minute nap can make up for an hour of lost sleep and keeps you sharp for the rest of the day</span></li>
+        <li class="habit-item"><span class="habit-number">09</span><span class="habit-text">If you are waking in the middle of the night, look at these four things first — screens before bed, alcohol in the evening, overeating at dinner, and unmanaged stress during the day — fix one of them before you reach for a sleep aid</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ HABIT LIBRARY PAGE 3 ============ -->
+<div class="page">
+  <div class="interior" style="padding-top: 2rem;">
+
+    <!-- CONNECTION HABITS -->
+    <div class="pillar-habit-section" style="padding: 0 0 2rem 0;">
+      <div class="habit-pillar-label">
+        <span class="habit-pillar-emoji">🤝</span>
+        <span class="habit-pillar-name">Connection</span>
+        <span class="habit-pillar-count">10 habits</span>
+      </div>
+      <ul class="habit-list">
+        <li class="habit-item"><span class="habit-number">01</span><span class="habit-text">Know your neighbors by name — introduce yourself, show up when they need something, accept help when you need it — this is how communities survive</span></li>
+        <li class="habit-item"><span class="habit-number">02</span><span class="habit-text">Call someone you love instead of texting them — voice activates the parts of the brain associated with bonding in a way that a text message never will</span></li>
+        <li class="habit-item"><span class="habit-number">03</span><span class="habit-text">Ask your kids and your partner one real question at dinner every night — not "how was your day" — try "what made you laugh today?" or "what's something hard you're dealing with right now?" — the quality of your family conversations determines the quality of your family connection</span></li>
+        <li class="habit-item"><span class="habit-number">04</span><span class="habit-text">Show up for people without being asked — drop off a meal, check in on a neighbor, be the person your community can count on</span></li>
+        <li class="habit-item"><span class="habit-number">05</span><span class="habit-text">Join a local club, team, or group that meets regularly — pickleball league, book club, running group, Rotary — it doesn't matter what it is, it matters that you show up consistently</span></li>
+        <li class="habit-item"><span class="habit-number">06</span><span class="habit-text">Know which neighbors live alone — check on them, include them, be the reason they don't feel invisible</span></li>
+        <li class="habit-item"><span class="habit-number">07</span><span class="habit-text">Join a faith community if it aligns with your values — the data is clear that people who belong to one live longer, healthier, more connected lives</span></li>
+        <li class="habit-item"><span class="habit-number">08</span><span class="habit-text">Find your moai — a small group of 4–6 people who share your values and meet regularly — this is the Okinawan secret to lifelong connection</span></li>
+        <li class="habit-item"><span class="habit-number">09</span><span class="habit-text">Volunteer regularly — people who give their time live longer, report higher purpose, and are measurably less lonely</span></li>
+        <li class="habit-item"><span class="habit-number">10</span><span class="habit-text">Teach something you know to someone who doesn't — a skill, a recipe, a trade — contribution is connection</span></li>
+      </ul>
+    </div>
+
+    <hr class="section-rule">
+
+    <!-- PURPOSE HABITS -->
+    <div class="pillar-habit-section" style="padding: 1.5rem 0 0 0;">
+      <div class="habit-pillar-label">
+        <span class="habit-pillar-emoji">🌱</span>
+        <span class="habit-pillar-name">Purpose</span>
+        <span class="habit-pillar-count">11 habits</span>
+      </div>
+      <ul class="habit-list">
+        <li class="habit-item"><span class="habit-number">01</span><span class="habit-text">Let your kids see you doing something you love — children who watch their parents pursue purpose grow up believing they are allowed to have one too</span></li>
+        <li class="habit-item"><span class="habit-number">02</span><span class="habit-text">Start each morning with one intention — before you check your phone, ask yourself who you want to show up for today</span></li>
+        <li class="habit-item"><span class="habit-number">03</span><span class="habit-text">Know your family history — where your grandparents came from, what they survived, what they built — roots give you something to stand on</span></li>
+        <li class="habit-item"><span class="habit-number">04</span><span class="habit-text">Mentor someone younger than you — at work, in your neighborhood, in your community — being needed is one of the most powerful forces in human health</span></li>
+        <li class="habit-item"><span class="habit-number">05</span><span class="habit-text">Use your skills to serve others — if you're a doctor, a lawyer, a teacher, a cook — find a way to give that away to someone who needs it</span></li>
+        <li class="habit-item"><span class="habit-number">06</span><span class="habit-text">Be the person in your family who keeps everyone connected — the one who organizes the dinners, makes the calls, remembers the birthdays</span></li>
+        <li class="habit-item"><span class="habit-number">07</span><span class="habit-text">Pursue something you are genuinely curious about — a language, an instrument, a craft, a sport — curiosity is a form of purpose</span></li>
+        <li class="habit-item"><span class="habit-number">08</span><span class="habit-text">Know what makes you come alive — not what you're good at, not what pays well — what lights you up — and protect time for it every week</span></li>
+        <li class="habit-item"><span class="habit-number">09</span><span class="habit-text">Read books that challenge how you think — the people who stay curious stay alive longer</span></li>
+        <li class="habit-item"><span class="habit-number">10</span><span class="habit-text">Say no to things that drain you — protecting your energy is not selfish, it is necessary</span></li>
+        <li class="habit-item"><span class="habit-number">11</span><span class="habit-text">Know your values — not your family's values, not your company's values — yours — and make decisions from them</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ HABIT LIBRARY PAGE 4 — STRESS ============ -->
+<div class="page">
+  <div class="interior" style="padding-top: 2rem;">
+
+    <!-- STRESS HABITS -->
+    <div class="pillar-habit-section" style="padding: 0 0 2rem 0;">
+      <div class="habit-pillar-label">
+        <span class="habit-pillar-emoji">🧘</span>
+        <span class="habit-pillar-name">Stress</span>
+        <span class="habit-pillar-count">11 habits</span>
+      </div>
+      <ul class="habit-list">
+        <li class="habit-item"><span class="habit-number">01</span><span class="habit-text">Spend time in silence every day — even 5 minutes — no phone, no music, no podcast — just you and your thoughts — most people are terrified of this and it's exactly why they need it</span></li>
+        <li class="habit-item"><span class="habit-number">02</span><span class="habit-text">Spend 20 minutes outside every day — exposure to natural light and outdoor environments lowers cortisol, reduces rumination, and improves mood independently of exercise</span></li>
+        <li class="habit-item"><span class="habit-number">03</span><span class="habit-text">Set a hard stop to your workday — when work bleeds into everything the body never fully recovers — have dinner at the table, not the desk — make evenings belong to your family</span></li>
+        <li class="habit-item"><span class="habit-number">04</span><span class="habit-text">Protect one day a week for rest — build a weekly ritual of deliberate rest and protect it fiercely — your body and your family need it</span></li>
+        <li class="habit-item"><span class="habit-number">05</span><span class="habit-text">Cook dinner slowly and deliberately — the act of preparing a meal with your hands is one of the oldest and most effective stress regulation tools available</span></li>
+        <li class="habit-item"><span class="habit-number">06</span><span class="habit-text">Talk to someone you trust when you are struggling — chronic stress carried alone becomes chronic illness — connection is medicine</span></li>
+        <li class="habit-item"><span class="habit-number">07</span><span class="habit-text">Stop consuming news first thing in the morning — what you feed your mind in the first 30 minutes of the day sets the tone for everything that follows</span></li>
+        <li class="habit-item"><span class="habit-number">08</span><span class="habit-text">Stop trying to be perfect — perfectionism is chronic stress with a good reputation</span></li>
+        <li class="habit-item"><span class="habit-number">09</span><span class="habit-text">Spend time with people who make you feel calm — energy is contagious — choose accordingly</span></li>
+        <li class="habit-item"><span class="habit-number">10</span><span class="habit-text">Stop spending energy on things outside your control — you cannot control the news, the economy, other people's behavior, or what hasn't happened yet — you can control what you eat, how you move, how you show up for your family tonight</span></li>
+        <li class="habit-item"><span class="habit-number">11</span><span class="habit-text">Ask yourself one question when you feel anxious — is this something I can actually do something about right now? If yes, act. If no, let it go</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ BACK COVER ============ -->
+<div class="page">
+  <div class="back-cover">
+    <div class="back-cover-top">
+      <div class="back-eyebrow">You've read it. Now do this.</div>
+      <h2 class="back-headline">Now pass it on.</h2>
+      <p class="back-sub">Host a cooking experience within 30 days. Invite the people you already know. Cook together. Eat together. Pass this guide to everyone at your table.</p>
+      <p class="back-sub" style="font-size: 10pt; color: rgba(255,255,255,0.55);">This is how it spreads. One table at a time.</p>
+    </div>
+
+    <div class="back-tagline">
+      <p class="back-tagline-text">Learn it. Live it. Pass it on.</p>
+    </div>
+
+    <div class="back-footer">
+      <div class="back-url">longevityinitiativeforfoodandeducation.com</div>
+      <div class="back-copyright">
+        © 2026 Longevity Initiative for Food & Education<br>
+        Organized as a Georgia nonprofit corporation<br>
+        501(c)(3) pending · info@longevityinitiativeforfoodandeducation.com
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
