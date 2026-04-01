@@ -67,70 +67,23 @@ export function getPillarBySlug(slug: string) {
   return PILLARS.find((pillar) => pillar.slug === slug);
 }
 
-export type TrackerPillarKey = "food" | "movement" | "sleep" | "connection" | "purpose" | "stress";
+type HabitPillarKey = "food" | "movement" | "sleep" | "connection" | "purpose" | "stress";
 
-export type TrackerHabitDifficulty = "Easy" | "Medium" | "Bold";
-
-export type TrackerHabit = {
-  id: string;
-  task: string;
-  micro: string;
-  stack?: string;
-  pillars: TrackerPillarKey[];
-  points: number;
-  difficulty: TrackerHabitDifficulty;
-  weekly: boolean;
-  minLevel: number;
-};
-
-export type TrackerLevel = {
-  level: number;
-  name: string;
-  color: string;
-  description: string;
-  pointsRequired: number;
-  streakRequired: number;
-  unlocks: string;
-};
-
-export const TRACKER_PILLARS: { id: TrackerPillarKey; name: string; color: string; bg: string }[] = [
-  { id: "food", name: "Food", color: "#2C5239", bg: "#EAF3DE" },
-  { id: "movement", name: "Movement", color: "#A0522D", bg: "#FAECE7" },
-  { id: "sleep", name: "Sleep", color: "#3D4A6B", bg: "#E8EAFA" },
-  { id: "connection", name: "Connection", color: "#8A6A00", bg: "#FFF3CC" },
-  { id: "purpose", name: "Purpose", color: "#6B7A50", bg: "#EEF3E4" },
-  { id: "stress", name: "Stress", color: "#5A4B8A", bg: "#EEEDFE" },
-];
-
-export const TRACKER_LEVELS: TrackerLevel[] = [
-  { level: 1, name: "Beginner", color: "#6B7A50", description: "Starting your LIFE journey", pointsRequired: 0, streakRequired: 0, unlocks: "Full habit library · Welcome badge" },
-  { level: 2, name: "Apprentice", color: "#5A7A50", description: "First week complete", pointsRequired: 100, streakRequired: 7, unlocks: "Weekly habits · 7-day badge" },
-  { level: 3, name: "Practitioner", color: "#2C7A40", description: "One month of daily practice", pointsRequired: 400, streakRequired: 21, unlocks: "Bold habits · 21-day badge · LIFE Guide PDF" },
-  { level: 4, name: "Gatherer", color: "#A0522D", description: "Habits becoming routine", pointsRequired: 900, streakRequired: 30, unlocks: "Community challenges · 30-day badge" },
-  { level: 5, name: "Table Keeper", color: "#B8560A", description: "Halfway to mastery", pointsRequired: 1800, streakRequired: 60, unlocks: "Host toolkit · 60-day badge · Stats dashboard" },
-  { level: 6, name: "Steward", color: "#8A6A00", description: "Lifestyle shift achieved", pointsRequired: 3000, streakRequired: 90, unlocks: "Mentor a beginner · 90-day badge" },
-  { level: 7, name: "Guide", color: "#5A4B8A", description: "Guiding others through consistent practice", pointsRequired: 5000, streakRequired: 120, unlocks: "LIFE Partner status · Guide badge · Advanced library" },
-  { level: 8, name: "Elder", color: "#3D4A6B", description: "Your habits shape your neighborhood", pointsRequired: 8000, streakRequired: 180, unlocks: "Franchise eligibility · Elder badge · LIFE wall" },
-  { level: 9, name: "Sage", color: "#1E3A28", description: "The culture keeper stage", pointsRequired: 12000, streakRequired: 270, unlocks: "LIFE Ambassador · Annual recognition · Sage badge" },
-  { level: 10, name: "Longevity Expert", color: "#B8933A", description: "365 days. The summit.", pointsRequired: 20000, streakRequired: 365, unlocks: "Co-creator status · Gold badge · Shape next city launch" },
-];
-
-export const TRACKER_MIN_DAILY_POINTS = 15;
-export const TRACKER_STATE_KEY = "life_v4";
+type HabitDifficulty = "Easy" | "Medium" | "Bold";
 
 type RawHabitSpec = {
   id: string;
-  pillar: TrackerPillarKey;
+  pillar: HabitPillarKey;
   text: string;
   points: number;
-  difficulty: TrackerHabitDifficulty;
+  difficulty: HabitDifficulty;
   weekly: boolean;
   minLevel: number;
   stack?: string;
 };
 
 const createHabit = (
-  pillar: TrackerPillarKey,
+  pillar: HabitPillarKey,
   id: string,
   text: string,
   options: Partial<Omit<RawHabitSpec, "pillar" | "id" | "text">> = {}
@@ -414,7 +367,7 @@ const HABIT_SPECS: RawHabitSpec[] = [
   }),
 ];
 
-const HABITS_BY_TRACKER_PILLAR = HABIT_SPECS.reduce<Record<TrackerPillarKey, RawHabitSpec[]>>(
+const HABITS_BY_PILLAR = HABIT_SPECS.reduce<Record<HabitPillarKey, RawHabitSpec[]>>(
   (acc, spec) => {
     acc[spec.pillar].push(spec);
     return acc;
@@ -423,12 +376,12 @@ const HABITS_BY_TRACKER_PILLAR = HABIT_SPECS.reduce<Record<TrackerPillarKey, Raw
 );
 
 const HABITS_FOR_GUIDE: Record<PillarKey, RawHabitSpec[]> = {
-  food: HABITS_BY_TRACKER_PILLAR.food,
-  movement: HABITS_BY_TRACKER_PILLAR.movement,
-  sleep: HABITS_BY_TRACKER_PILLAR.sleep,
-  connection: HABITS_BY_TRACKER_PILLAR.connection,
-  purpose: HABITS_BY_TRACKER_PILLAR.purpose,
-  stressRegulation: HABITS_BY_TRACKER_PILLAR.stress,
+  food: HABITS_BY_PILLAR.food,
+  movement: HABITS_BY_PILLAR.movement,
+  sleep: HABITS_BY_PILLAR.sleep,
+  connection: HABITS_BY_PILLAR.connection,
+  purpose: HABITS_BY_PILLAR.purpose,
+  stressRegulation: HABITS_BY_PILLAR.stress,
 };
 
 const toCue = (spec: RawHabitSpec): HabitCue => {
@@ -447,18 +400,3 @@ export const LIFE_HABIT_LIBRARY: Record<PillarKey, LifeHabitGuide> = {
   purpose: { ...GUIDE_BASE.purpose, habits: HABITS_FOR_GUIDE.purpose.map(toCue) },
   stressRegulation: { ...GUIDE_BASE.stressRegulation, habits: HABITS_FOR_GUIDE.stressRegulation.map(toCue) },
 };
-
-export const TRACKER_HABITS: TrackerHabit[] = HABIT_SPECS.map((spec) => {
-  const [short] = spec.text.split(" — ");
-  return {
-    id: spec.id,
-    task: short.trim(),
-    micro: spec.text.trim(),
-    stack: spec.stack,
-    pillars: [spec.pillar],
-    points: spec.points,
-    difficulty: spec.difficulty,
-    weekly: spec.weekly,
-    minLevel: spec.minLevel,
-  };
-});

@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/workshops", label: "Attend a Cooking Experience" },
+  { href: "/workshops", label: "Join a Cooking Experience" },
   { href: "/register", label: "Register Your Table" },
 ];
 

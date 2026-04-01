@@ -24,7 +24,6 @@ const ROUTES = [
   "/resources/how-life-creates-community-health",
   "/newsletter",
   "/gallery",
-  "/tracker",
   "/pillars/food",
   "/pillars/movement",
   "/pillars/sleep",

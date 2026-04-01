@@ -18,7 +18,7 @@ export default function AssessmentIntro({ onStart, hasProgress }: AssessmentIntr
     <section className="mx-auto max-w-4xl rounded-[40px] border border-[var(--border)] bg-white/80 p-10 text-center shadow-sm">
       <p className="type-eyebrow text-[var(--olive)]">LIFE Longevity Assessment</p>
       <h1 className="mt-3 type-display">LIFE Longevity Assessment</h1>
-      <p className="mt-4 text-lg leading-7 text-[var(--muted)]">Your LIFE Age is a research-based score that estimates your biological age based on the Six Pillars Framework. It&apos;s free and tells you exactly which habits are adding years to your life — and which ones are taking them away. It&apos;s also your personalized entry point into LIFE Longevity University.</p>
+      <p className="mt-4 text-lg leading-7 text-[var(--muted)]">Your LIFE Age is a research-based score that estimates your biological age based on the Six Pillars Framework. It&apos;s free and tells you exactly which habits are adding years to your life — and which ones are taking them away. It&apos;s also your personalized entry point into LIFE.</p>
       <p className="mt-2 text-base text-[var(--text)]">Used by families across the United States to identify their starting point and track their progress month by month.</p>
 
       <ul className="mt-6 flex flex-col gap-3 text-sm text-[var(--text)] sm:flex-row sm:justify-center">

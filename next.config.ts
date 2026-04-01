@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         destination: "https://www.longevityinitiativeforfoodandeducation.com/:path*",
         permanent: true,
       },
+      {
+        source: "/tracker",
+        destination: "/thank-you",
+        permanent: false,
+      },
     ];
   },
 };
