@@ -100,40 +100,75 @@ const createHabit = (
 
 const HABIT_SPECS: RawHabitSpec[] = [
   // Food (11)
-  createHabit("food", "food_remove_processed", "Remove highly processed food from your home — if it comes in a bag or a box with more than 5 ingredients, it doesn't belong in your kitchen", {
-    difficulty: "Bold",
-    points: 4,
-    minLevel: 2,
-  }),
-  createHabit("food", "food_fast_food_poison", "Treat fast food as poison — your body does not know what to do with it and neither does your brain", {
-    difficulty: "Bold",
-    points: 4,
-    minLevel: 3,
-  }),
+  createHabit(
+    "food",
+    "food_remove_processed",
+    "Remove highly processed food from your home — if it comes in a bag or a box with more than 5 ingredients, limit how often you keep it in your kitchen and prioritize whole foods instead",
+    {
+      difficulty: "Bold",
+      points: 4,
+      minLevel: 2,
+    }
+  ),
+  createHabit(
+    "food",
+    "food_fast_food_poison",
+    "Make fast food an occasional choice, not a routine — your body and brain function best with real, minimally processed ingredients",
+    {
+      difficulty: "Bold",
+      points: 4,
+      minLevel: 3,
+    }
+  ),
   createHabit("food", "food_meal_vegetables", "Build every meal around vegetables — they are superchargers for your body and mind", { difficulty: "Medium", points: 3 }),
   createHabit("food", "food_add_legumes", "Add legumes to your diet — beans, lentils, chickpeas — throw them in soups, salads, and pasta — they are cheap, filling, and among the most powerful longevity foods on earth", {
     difficulty: "Medium",
     points: 3,
   }),
-  createHabit("food", "food_whole_snacks", "Eat whole food snacks — nuts, fruit, vegetables — and eliminate packaged snacks from the house entirely", { difficulty: "Easy", points: 2 }),
+  createHabit(
+    "food",
+    "food_whole_snacks",
+    "Eat whole food snacks — nuts, fruit, vegetables — and reduce reliance on packaged snacks as much as possible",
+    { difficulty: "Easy", points: 2 }
+  ),
   createHabit("food", "food_family_cooking", "Cook as many meals from scratch as you can and prepare them with your family — get the kids off screens and make this a family tradition", {
     difficulty: "Medium",
     points: 3,
   }),
-  createHabit("food", "food_water_primary", "Drink water as your primary drink — eliminate soda and sugary drinks completely", { difficulty: "Easy", points: 2 }),
-  createHabit("food", "food_refined_sugar", "Treat refined sugar the way you treat fast food — as poison — it drives cancer, heart disease, diabetes, and cognitive decline — and it is addictive by design, the food industry engineered it that way — breaking the habit is one of the single most important things you can do for your long term health and your children's health", {
-    difficulty: "Bold",
-    points: 4,
-    minLevel: 3,
-  }),
-  createHabit("food", "food_healthy_oils", "Cook with healthy oils — olive oil, avocado oil, and coconut oil are all excellent choices — replace vegetable oil, canola oil, and seed oils completely", {
-    difficulty: "Medium",
-    points: 3,
-  }),
-  createHabit("food", "food_dinner_together", "Sit down together for dinner every night — no screens, no exceptions, no excuses — this is where your family heals, where everyone feels safe and heard, where the habits of a lifetime get passed down", {
-    difficulty: "Medium",
-    points: 3,
-  }),
+  createHabit(
+    "food",
+    "food_water_primary",
+    "Drink water as your primary drink — reduce or eliminate soda and sugary drinks whenever possible",
+    { difficulty: "Easy", points: 2 }
+  ),
+  createHabit(
+    "food",
+    "food_refined_sugar",
+    "Cut back on foods high in refined sugar — excess sugar intake is linked to cancer, heart disease, diabetes, and cognitive decline — reducing it is one of the most impactful steps you can take for your long-term health and your children's health",
+    {
+      difficulty: "Bold",
+      points: 4,
+      minLevel: 3,
+    }
+  ),
+  createHabit(
+    "food",
+    "food_healthy_oils",
+    "Cook with healthy oils — olive oil, avocado oil, and coconut oil are all excellent choices — aim to replace heavily refined vegetable and seed oils when possible",
+    {
+      difficulty: "Medium",
+      points: 3,
+    }
+  ),
+  createHabit(
+    "food",
+    "food_dinner_together",
+    "Sit down together for dinner every night — no screens, protect this time as often as you can — this is where your family heals, where everyone feels safe and heard, where the habits of a lifetime get passed down",
+    {
+      difficulty: "Medium",
+      points: 3,
+    }
+  ),
   createHabit("food", "food_recipe_book", "Create a family recipe book — start a 3-ring binder with your favorite recipes, print them, add to it over time — this becomes your family's most valuable heirloom", {
     difficulty: "Medium",
     points: 3,
@@ -194,7 +229,7 @@ const HABIT_SPECS: RawHabitSpec[] = [
     difficulty: "Medium",
     points: 3,
   }),
-  createHabit("sleep", "sleep_kid_bedtime", "Set a consistent bedtime for your kids and enforce it — no exceptions on school nights — their developing brains need 9–11 hours to function, grow, and heal", {
+  createHabit("sleep", "sleep_kid_bedtime", "Set a consistent bedtime for your kids and stick to it — stay firm on school nights — their developing brains need 9–11 hours to function, grow, and heal", {
     difficulty: "Medium",
     points: 3,
   }),
