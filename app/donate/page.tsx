@@ -1,40 +1,33 @@
 import type { Metadata } from "next";
-import { DONATION_LINKS, PRIMARY_DONATION_LINK } from "@/lib/donate-links";
+import { PRIMARY_DONATION_LINK } from "@/lib/donate-links";
 import { DonationEmbedPanel } from "@/components/donate/DonationEmbedPanel";
 
 const TIERS = [
   {
-    amount: "$50",
-    title: "One Shared LIFE Cooking Experience",
-    description:
-      "Provides ingredients and basic tools for one LIFE cooking experience where people gather to cook, learn, and share a meal prepared with fresh ingredients.",
-    key: 50,
+    amount: "$150",
+    title: "Two Seats",
+    description: "Sponsors two guests at a Fresh Pasta Cooking Class.",
   },
   {
-    amount: "$100",
-    title: "Two Shared LIFE Cooking Experiences",
-    description: "Provides ingredients and tools for two LIFE cooking experiences, helping more families experience the power of cooking and eating together.",
-    key: 100,
+    amount: "$225",
+    title: "Three Seats",
+    description: "Sponsors three guests at a Fresh Pasta Cooking Class.",
   },
   {
-    amount: "$500",
-    title: "Host a Year of LIFE Cooking Experiences",
-    description: "Funds a LIFE host with the equipment, tools, and educational resources needed to lead shared meals throughout the year.",
-    key: 500,
+    amount: "$300",
+    title: "Four Seats",
+    description: "Sponsors four guests at a Fresh Pasta Cooking Class.",
   },
   {
-    amount: "$1,000",
-    title: "Community Impact",
-    description: "Helps fund multiple months of LIFE cooking experiences and supports the launch of new hosts in the community.",
-    key: 1000,
+    amount: "$375",
+    title: "Five Seats",
+    description: "Sponsors five guests at a Fresh Pasta Cooking Class.",
   },
-];
-
-const USE_OF_FUNDS = [
-  "Educational materials and toolkits",
-  "Ingredients and LIFE cooking experience supplies",
-  "Program measurement and reporting",
-  "Local outreach and awareness",
+  {
+    amount: "$450",
+    title: "Six Seats",
+    description: "Sponsors six guests at a Fresh Pasta Cooking Class.",
+  },
 ];
 
 const DONATE_URL = "https://www.longevityinitiativeforfoodandeducation.com/donate";
@@ -63,16 +56,16 @@ export default function DonatePage() {
     <>
       <main className="mx-auto max-w-5xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
-          <p className="type-eyebrow text-center">Nonprofit Support</p>
-          <h1 className="section-heading text-center">Fund more LIFE cooking experiences</h1>
+          <p className="type-eyebrow text-center">Sponsor a Seat</p>
+          <h1 className="section-heading text-center">Sponsor a Seat at the Table</h1>
           <p className="mt-4 type-body-muted text-center">
-            Every contribution underwrites ingredients, host toolkits, and the reporting that keeps this pilot accountable.
+            Every dollar goes directly to LIFE. Your gift sponsors a seat at Lou and Kara&apos;s Fresh Pasta Cooking Class — bringing real food, real connection,
+            and real health to one more family.
           </p>
-          <ul className="mt-5 space-y-2 body-sm text-[var(--text)]">
-            {USE_OF_FUNDS.map((item) => (
-              <li key={item}>• {item}</li>
-            ))}
-          </ul>
+          <p className="mt-5 body-sm text-[var(--text)] text-center">
+            Your gift sponsors seats at Lou and Kara&apos;s Fresh Pasta Cooking Class — covering ingredients, wine, and the LIFE Guide for every guest. 100% of
+            proceeds support LIFE&apos;s mission to bring real food, real connection, and real health back to American families.
+          </p>
           <div className="mt-6 flex justify-center">
             <a href={PRIMARY_DONATION_LINK} target="_blank" rel="noreferrer" className="btn-solid px-6 text-base">
               Give Online
@@ -81,18 +74,13 @@ export default function DonatePage() {
           <p className="mt-3 text-center text-sm text-[var(--muted)]">Prefer to discuss a grant or in-kind gift? Email info@longevityinitiativeforfoodandeducation.com.</p>
         </section>
 
-        <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {TIERS.map((tier) => (
             <div key={tier.amount} className="flex flex-col rounded-3xl border border-[var(--border)] bg-white p-6 shadow-sm">
               <p className="text-3xl font-serif text-[var(--life-forest)]">{tier.amount}</p>
               <p className="mt-2 type-detail uppercase tracking-[0.3em] text-[var(--olive)]">{tier.title}</p>
               <p className="mt-3 type-detail">{tier.description}</p>
-              <a
-                href={DONATION_LINKS[tier.key as 50 | 100 | 500 | 1000]}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-outline mt-6 w-full justify-center"
-              >
+              <a href={PRIMARY_DONATION_LINK} target="_blank" rel="noreferrer" className="btn-outline mt-6 w-full justify-center">
                 Give {tier.amount}
               </a>
             </div>
@@ -102,8 +90,8 @@ export default function DonatePage() {
         <section className="mt-12 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
           <p className="type-eyebrow">Accountability</p>
           <p className="type-detail">
-            LIFE is a Georgia nonprofit with 501(c)(3) determination pending. Registered LIFE cooking experiences, board reviews, and public reporting keep donors informed
-            about how shared meals are spreading.
+            LIFE is a Georgia nonprofit. Registered cooking experiences, board reviews, and public reporting keep donors informed about how these seats at the Fresh
+            Pasta Cooking Class are translating into more shared meals and stronger families.
           </p>
         </section>
 
