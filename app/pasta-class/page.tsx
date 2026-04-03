@@ -102,7 +102,7 @@ export default function FreshPastaClassPage() {
         </section>
 
         <section className="rounded-[32px] border border-[var(--border)] bg-white/95 p-10 shadow-sm">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {PHOTOS.map((photo) => (
               <div key={photo.src} className="relative h-64 w-full overflow-hidden rounded-[28px]">
                 <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
