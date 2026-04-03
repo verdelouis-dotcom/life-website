@@ -12,31 +12,6 @@ const PROMISE_ITEMS = [
   "Come as a guest. Leave as a host.",
 ];
 
-const HOW_STEPS = [
-  {
-    title: "You get an invitation",
-    body: "Someone you know opens their home. You're invited to cook and eat together — no experience needed.",
-  },
-  {
-    title: "Everyone has a role",
-    body: "Kids chop. Adults stir. Someone rolls the dough. A real meal from scratch, the way it used to be.",
-  },
-  {
-    title: "Screens away",
-    body: "No phones at the table. Not for parents. Not for kids. Just cooking, laughing, and being together.",
-    pill: "The one rule",
-  },
-  {
-    title: "You leave with the habit library",
-    body: "Simple habits your whole family can start tonight. Organized by pillar. Worth keeping. Worth sharing.",
-  },
-  {
-    title: "You open your kitchen",
-    body: "Within 30 days, you host. Invite your family. Invite a neighbor. The table grows.",
-    pill: "Learn it. Live it. Pass it on.",
-  },
-];
-
 const PHOTO_MOMENT = [
   {
     src: "/images/workshops/pasta-lesson-2.jpg",
@@ -46,32 +21,12 @@ const PHOTO_MOMENT = [
   {
     src: "/images/workshops/pasta-lesson-3.jpeg",
     alt: "Family gathered around the table laughing and eating",
-    caption: "No phones. Just people cooking, laughing, and eating.",
+    caption: "People cooking, laughing, and eating together.",
   },
   {
     src: "/images/workshops/pasta-lesson-4.jpeg",
     alt: "Kids shaping homemade pasta at a LIFE cooking experience",
     caption: "Kids take over the dough station — and don’t want to leave.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "My 13-year-old put his phone down voluntarily for the first time in months. He rolled pasta, he laughed, he talked to us. I didn't know how much I'd missed him until I had him back for two hours.",
-    name: "Jennifer M.",
-    role: "Parent & Host · Decatur, GA",
-  },
-  {
-    quote: "We used to eat in front of the TV every night. Now Sunday dinner is the one thing my kids actually ask for. That shift started at a LIFE table.",
-    name: "Sarah K.",
-    role: "Guest → Host · Austin, TX",
-  },
-  {
-    quote:
-      "I came not knowing anyone. Left having made dinner with five strangers who felt like neighbors. That's the only way I can describe it.",
-    name: "Marcus T.",
-    role: "Guest · Atlanta, GA",
   },
 ];
 
@@ -114,7 +69,6 @@ export function HomePageClient() {
         <div className="hero-right">
           <Image src="/images/workshops/pasta-lesson-1.jpg" alt="Family laughing while rolling pasta dough together" fill priority sizes="(max-width: 768px) 100vw, 50vw" className="hero-img" />
           <div className="hero-caption">
-            <strong>A LIFE cooking experience</strong>
             <p>“Two hours of actual presence. That's what we got back.”</p>
           </div>
         </div>
@@ -219,25 +173,6 @@ export function HomePageClient() {
         </div>
       </section>
 
-      <section className="how-it-works" id="what">
-        <div className="how-heading">
-          <Reveal>
-            <p className="label-eyebrow">How it works</p>
-            <h2>What happens at a LIFE cooking experience</h2>
-          </Reveal>
-        </div>
-        <div className="how-steps">
-          {HOW_STEPS.map((step, index) => (
-            <Reveal key={step.title} className="how-card">
-              <div className="how-number">{index + 1}</div>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-              {step.pill && <span className="pill">{step.pill}</span>}
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       <section className="photo-moment">
         {PHOTO_MOMENT.map((photo) => (
           <Reveal key={photo.alt} className="photo-card">
@@ -255,8 +190,8 @@ export function HomePageClient() {
             <p className="label-eyebrow">The LIFE Guide — Habit Library</p>
             <h2>Six pillars. A habit for every member of your family.</h2>
             <p>
-              Every guest leaves with the LIFE Guide — a library of simple habits organized around the six pillars of longevity found in the world's longest-lived
-              people. There&apos;s something for every member of your family, at every age. The LIFE Family Fridge Tracker makes it easy to check them off together.
+              The LIFE Guide is a free resource for every family — a library of simple habits organized around the six pillars of longevity found in the world's
+              longest-lived people. There&apos;s something for every member of your family, at every age.
             </p>
           </Reveal>
         </div>
@@ -269,22 +204,6 @@ export function HomePageClient() {
                 <p>{pillar.summary}</p>
                 <Link href={`/pillars/${pillar.slug}`}>Explore {pillar.title} →</Link>
               </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="testimonials">
-        <Reveal>
-          <p className="label-eyebrow">What guests are saying</p>
-          <h2>It feels like bringing back something we lost.</h2>
-        </Reveal>
-        <div className="testimonial-grid">
-          {TESTIMONIALS.map((quote) => (
-            <Reveal key={quote.name} className="testimonial-card">
-              <p className="quote">“{quote.quote}”</p>
-              <p className="author">{quote.name}</p>
-              <p className="role">{quote.role}</p>
             </Reveal>
           ))}
         </div>
