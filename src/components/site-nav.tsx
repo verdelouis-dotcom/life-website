@@ -6,10 +6,14 @@ import Logo from "@/components/ui/logo";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
+  { href: "/pasta-class", label: "Fresh Pasta Cooking Class" },
+  { href: "/assessment", label: "Take the Assessment" },
+  { href: "/life-guide", label: "The LIFE Guide" },
+  { href: "/host", label: "Host a Table" },
   { href: "/about", label: "About" },
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/workshops", label: "Join a Cooking Experience" },
-  { href: "/register", label: "Register Your Table" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/donate", label: "Support Us" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function SiteNav() {
@@ -41,18 +45,6 @@ export default function SiteNav() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/host"
-            className="rounded-full bg-[#3E2E1E] px-5 py-2 text-[0.82rem] font-semibold text-white transition-colors hover:bg-[#B55A30]"
-          >
-            Host a Table
-          </Link>
-          <Link
-            href="/#join"
-            className="nav-join-cta rounded-full bg-[#a0522d] px-5 py-2 text-[0.82rem] font-semibold text-white transition-colors hover:bg-[#c4622d]"
-          >
-            Enroll for $10
-          </Link>
         </nav>
 
         {/* Mobile hamburger button */}
@@ -91,20 +83,6 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/host"
-              className="mt-4 block rounded-full bg-[#3E2E1E] px-5 py-2.5 text-center text-[0.875rem] font-semibold text-white no-underline transition-colors hover:bg-[#B55A30]"
-              onClick={() => setOpen(false)}
-            >
-              Host a Table
-            </Link>
-            <Link
-              href="/#join"
-              className="mt-2 block rounded-full bg-[#a0522d] px-5 py-2.5 text-center text-[0.875rem] font-semibold text-white no-underline transition-colors hover:bg-[#c4622d]"
-              onClick={() => setOpen(false)}
-            >
-              Enroll for $10
-            </Link>
           </div>
         </div>
       )}

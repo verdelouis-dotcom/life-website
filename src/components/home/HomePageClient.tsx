@@ -1,17 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/reveal";
-import { ZeffyEmbedFrame } from "@/components/zeffy/ZeffyEmbedFrame";
 import { PILLARS } from "@/data/pillars";
 
 const PROMISE_ITEMS = [
-  { icon: "🍝", text: "Make a real meal from scratch — together" },
-  { icon: "📵", text: "No phones at the table — not for anyone" },
-  { icon: "📖", text: "Leave with a habit library worth sharing" },
-  { icon: "🤝", text: "Come as a guest. Leave as a host." },
+  "Make a real meal from scratch — together",
+  "No phones at the table — not for anyone",
+  "Leave with a habit library worth sharing",
+  "Come as a guest. Leave as a host.",
 ];
 
 const HOW_STEPS = [
@@ -77,59 +75,23 @@ const TESTIMONIALS = [
   },
 ];
 
-const JOIN_BENEFITS = [
-  { label: "Six Pillars Framework — full curriculum PDF", body: "" },
-  { label: "LIFE Family Fridge Tracker — printable weekly habit checklist", body: "" },
-  { label: "Longevity assessment — discover your LIFE Age", body: "" },
-  { label: "Cooking experience access — Atlanta & Austin", body: "" },
-];
-
 const DOORS = [
   {
-    title: "Join a LIFE cooking experience",
-    body: "Atlanta and Austin families gather every month to cook, eat, and pass on the habits that hold communities together.",
-    ctaLabel: "Find a cooking experience →",
-    href: "/workshops",
+    title: "Book Fresh Pasta Cooking Class",
+    body: "Hands-on pasta making with Lou and Kara Verde in Atlanta. Learn to roll, shape, and share pasta the traditional way.",
+    ctaLabel: "Book the class →",
+    href: "/pasta-class",
+  },
+  {
+    title: "Download the LIFE Guide",
+    body: "Get the Six Pillars habit library as a printable PDF for your family.",
+    ctaLabel: "Download the LIFE Guide →",
+    href: "/downloads/life-guide.html",
+    external: true,
   },
 ];
 
 export function HomePageClient() {
-  const [donationAmount, setDonationAmount] = useState("10");
-  const [waitlistEmail, setWaitlistEmail] = useState("");
-  const [waitlistStatus, setWaitlistStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [waitlistMessage, setWaitlistMessage] = useState<string | null>(null);
-
-  const normalizedAmount = Math.max(10, Number(donationAmount) || 10);
-
-  const handleWaitlistSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!waitlistEmail.trim()) {
-      return;
-    }
-
-    setWaitlistStatus("loading");
-    setWaitlistMessage(null);
-
-    try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: waitlistEmail.trim(), tag: "city-waitlist" }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Unable to join waitlist");
-      }
-
-      setWaitlistStatus("success");
-      setWaitlistEmail("");
-      setWaitlistMessage("You're on the list. We'll reach out when LIFE launches near you.");
-    } catch (error) {
-      console.error("CITY_WAITLIST_ERROR", error);
-      setWaitlistStatus("error");
-      setWaitlistMessage("Something went wrong. Please try again.");
-    }
-  };
 
   return (
     <div className="home-v3">
@@ -137,17 +99,14 @@ export function HomePageClient() {
         <div className="hero-left">
           <Reveal>
             <p className="hero-kicker">A national movement · starting around the table</p>
-            <h1 className="hero-h1">
-              We&apos;re living 20 years shorter than we should be — and it&apos;s only getting worse.
-            </h1>
-            <p className="hero-sub">LIFE is the movement that&apos;s changing that — one table at a time.</p>
-            <p className="hero-sub">Food gets us to the table. What happens next changes everything.</p>
+            <h1 className="hero-h1">Real food. Real connection. Real life.</h1>
+            <p className="hero-sub">Learn the habits behind the world&apos;s longest-lived cultures — starting in your kitchen.</p>
             <div className="hero-actions">
-              <Link href="/assessment" className="btn-primary">
-                Find out how many years you&apos;re projected to live — take the free assessment.
+              <Link href="/pasta-class" className="btn-primary">
+                Book Fresh Pasta Cooking Class →
               </Link>
-              <Link href="/workshops" className="btn-ghost">
-                Find a Cooking Experience →
+              <Link href="/assessment" className="btn-ghost">
+                Take the Free Longevity Assessment →
               </Link>
             </div>
           </Reveal>
@@ -161,11 +120,22 @@ export function HomePageClient() {
         </div>
       </section>
 
+      <section className="mission-section px-6 py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <Reveal>
+            <p className="text-lg leading-relaxed text-[var(--muted)]">
+              LIFE is a nonprofit longevity movement teaching families the habits behind the world&apos;s longest-lived cultures. We do it through cooking
+              experiences, a free guide, and a community of people committed to living better. Our mission is simple — bring back the table, the connection,
+              and the food that kept families healthy for generations.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="promise-band">
         {PROMISE_ITEMS.map((item, index) => (
-          <Reveal key={item.text} className="promise-item">
-            <span className="promise-icon">{item.icon}</span>
-            <p className="promise-text">{item.text}</p>
+          <Reveal key={item} className="promise-item">
+            <p className="promise-text">{item}</p>
             {index < PROMISE_ITEMS.length - 1 && <span className="promise-divider" aria-hidden="true" />}
           </Reveal>
         ))}
@@ -198,8 +168,8 @@ export function HomePageClient() {
           <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
             {[
               { number: "80%", label: "of lifespan is lifestyle", desc: "Not genetics. Daily habits, environment, and social connection determine how long we live.", cite: "Danish Twin Study, NEJM 1996" },
-              { number: "20+", label: "additional years of life", desc: "Communities practicing the six longevity pillars consistently outlive the average American by two decades.", cite: "Buettner D. Blue Zones, National Geographic 2005" },
-              { number: "15", label: "cigarettes — the cost of loneliness", desc: "The U.S. Surgeon General declared loneliness a public health epidemic with mortality risk equal to smoking 15 cigarettes daily.", cite: "U.S. Surgeon General Advisory, 2023" },
+              { number: "20+", label: "additional years of life", desc: "Communities practicing the six longevity pillars consistently outlive the average American by more than two decades.", cite: "Buettner D. Blue Zones, National Geographic 2005" },
+              { number: "15%", label: "higher risk of early death", desc: "High ultra-processed food consumption is tied to a 15% increase in all-cause mortality risk.", cite: "PMC Systematic Review, 2025" },
             ].map((stat) => (
               <Reveal key={stat.number}>
                 <div style={{ border: "1px solid rgba(245,240,232,0.12)", borderRadius: "1.5rem", padding: "2rem", background: "rgba(255,255,255,0.04)" }}>
@@ -230,14 +200,19 @@ export function HomePageClient() {
         <div className="story-content">
           <Reveal>
             <p className="label-eyebrow">LOU'S STORY</p>
-            <h2 className="story-heading">
-              “My grandparents lived into their mid-90s. They never counted a calorie or ran a mile. They just cooked, gathered their family, and showed up for
-              their neighbors. Every single day.”
-            </h2>
+            <h2 className="story-heading">I grew up in upstate New York in a home that never felt small — even when it was.</h2>
             <p className="story-body">
-              Lou Verde grew up in an Italian-American household where these habits weren't a program — they were simply how life was lived. After years
-              studying the world's longest-lived communities, he kept finding the same six things at the center of every one of them. They were the same six
-              his family had practiced for generations. LIFE exists to share them with every family in America — one pasta dinner at a time.
+              Three generations under one roof. My grandparents and parents came from Italy. The house was always full. Family. Neighbors. Friends who felt
+              like relatives. My grandfather had a massive garden. Everyone was always in the kitchen. The food was real — fresh ingredients, old recipes,
+              vegetables from the garden — and the table was sacred.
+            </p>
+            <p className="story-body">
+              My grandparents lived into their 90s. At the time I didn&apos;t realize how rare that was. We replaced gardens with drive-thrus. We replaced dinner
+              tables with screens. We replaced community with convenience.
+            </p>
+            <p className="story-body">
+              LIFE exists to bring back the table. The connection. The food made from scratch. The way of living that kept families healthy for generations.
+              One table at a time.
             </p>
             <p className="story-sig">Lou Verde · Founder · Atlanta, GA</p>
           </Reveal>
@@ -315,111 +290,23 @@ export function HomePageClient() {
         </div>
       </section>
 
-      <section className="join-section" id="join">
-        <div className="join-left">
-          <Reveal>
-            <p className="label-eyebrow">Start your LIFE journey</p>
-            <h2>Two ways into LIFE.</h2>
-            <p className="join-sub">
-              LIFE is the national home of the Six Pillars Framework — a research-backed curriculum for living longer, built around the habits found in every long-lived culture on Earth. Join through a cooking experience or enroll directly for $10.
-            </p>
-          </Reveal>
-          <div className="grid gap-4 mb-6 grid-cols-1 sm:grid-cols-2">
-            <div style={{ border: "1px solid var(--border)", borderRadius: "1rem", padding: "1.25rem 1.5rem", background: "#fff" }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.5rem" }}>Door 1</p>
-              <h4 style={{ fontFamily: "var(--font-lora)", fontSize: "1.1rem", fontWeight: 500, color: "var(--ink)", marginBottom: "0.4rem" }}>Join a cooking experience</h4>
-              <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--muted)", marginBottom: "0.75rem" }}>
-                Your host gives you access to LIFE at no cost. Available in Atlanta &amp; Austin.
-              </p>
-              <Link href="/workshops" style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--terra)", textDecoration: "none" }}>
-                Find a cooking experience →
-              </Link>
-            </div>
-            <div style={{ border: "1px solid var(--border)", borderLeft: "3px solid var(--sage)", borderRadius: "1rem", padding: "1.25rem 1.5rem", background: "#fff" }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--sage)", marginBottom: "0.5rem" }}>Door 2</p>
-              <h4 style={{ fontFamily: "var(--font-lora)", fontSize: "1.1rem", fontWeight: 500, color: "var(--ink)", marginBottom: "0.4rem" }}>Enroll Online — $10</h4>
-              <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--muted)" }}>
-                Instant access from anywhere in the US. Your enrollment funds LIFE&apos;s national expansion and future research.
-              </p>
-            </div>
-          </div>
-          <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--ink)", marginBottom: "0.75rem" }}>Your LIFE enrollment includes</p>
-          <ul className="join-benefits">
-            {JOIN_BENEFITS.map((benefit) => (
-              <Reveal key={benefit.label} className="join-benefit">
-                <span>✓</span>
-                <div>
-                  <strong>{benefit.label}</strong>
-                  <p>{benefit.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
-          <p className="join-legal">Tax-deductible enrollment · 501(c)(3) pending · Secure payment via Zeffy. Supports national expansion &amp; future longevity research. No recurring charges.</p>
-        </div>
-        <div className="join-right">
-          <Reveal className="join-card">
-            <p className="label-eyebrow text-[var(--olive)]">One-time enrollment · No subscription · Instant access</p>
-            <p style={{ fontSize: "0.95rem", fontWeight: 500, lineHeight: 1.5, color: "var(--ink)", marginBottom: "1rem" }}>
-              Enroll in LIFE — the Six Pillars Framework, LIFE Guide, and longevity assessment in one place.
-            </p>
-            <div className="amount-input-row">
-              <label htmlFor="donation-amount" className="sr-only">
-                Donation amount
-              </label>
-              <span>$</span>
-              <input
-                id="donation-amount"
-                type="number"
-                min={10}
-                value={donationAmount}
-                onChange={(event) => setDonationAmount(event.target.value)}
-              />
-              <span className="amount-note">USD</span>
-            </div>
-            <ZeffyEmbedFrame amount={normalizedAmount} className="join-embed" minHeight={720} />
-          </Reveal>
-        </div>
-      </section>
-
       <section className="doors">
         {DOORS.map((door) => (
           <Reveal key={door.title} className="door-card">
             <p className="label-eyebrow">{door.title}</p>
             <h3>{door.title}</h3>
             <p>{door.body}</p>
-            <Link href={door.href} className="btn-primary">
-              {door.ctaLabel}
-            </Link>
+            {door.external ? (
+              <a href={door.href} className="btn-primary" target="_blank" rel="noreferrer">
+                {door.ctaLabel}
+              </a>
+            ) : (
+              <Link href={door.href} className="btn-primary">
+                {door.ctaLabel}
+              </Link>
+            )}
           </Reveal>
         ))}
-        <Reveal className="door-card">
-          <p className="label-eyebrow">Bring LIFE to your city</p>
-          <h3>Not near Atlanta or Austin yet?</h3>
-          <p>
-            Join the waitlist. When enough families in your city raise their hands, we bring LIFE to you — or you bring it yourself with our team behind you.
-          </p>
-          <form className="waitlist-form" onSubmit={handleWaitlistSubmit}>
-            <label className="sr-only" htmlFor="waitlist-email">
-              Email address
-            </label>
-            <input
-              id="waitlist-email"
-              type="email"
-              value={waitlistEmail}
-              onChange={(event) => setWaitlistEmail(event.target.value)}
-              placeholder="Email address"
-              required
-              disabled={waitlistStatus === "loading"}
-            />
-            <button type="submit" disabled={waitlistStatus === "loading"}>
-              {waitlistStatus === "loading" ? "Sending..." : "Notify Me"}
-            </button>
-          </form>
-          {waitlistMessage && (
-            <p className={`waitlist-message ${waitlistStatus === "error" ? "error" : ""}`}>{waitlistMessage}</p>
-          )}
-        </Reveal>
       </section>
     </div>
   );

@@ -22,7 +22,10 @@ export default function SiteFooter() {
           <span className="leading-tight">Longevity Initiative for Food &amp; Education</span>
         </Link>
 
-        <p className="max-w-sm text-[0.75rem] text-white/60">Longevity Initiative for Food &amp; Education is organized as a Georgia nonprofit corporation and has applied for 501(c)(3) recognition from the IRS. Enrollment fees support the national expansion of the Six Pillars Framework and future longevity research.</p>
+        <div className="max-w-sm space-y-2 text-[0.75rem] text-white/70">
+          <p>Longevity Initiative for Food &amp; Education is organized as a Georgia nonprofit corporation with a board-governed mission to restore shared meals, practical education, and community accountability.</p>
+          <p>Want to support LIFE? Every dollar goes directly to the mission. <Link href="/donate" className="underline-offset-4 hover:underline">Support LIFE →</Link></p>
+        </div>
 
         <div className="flex flex-wrap items-center justify-end gap-[1.6rem] text-[0.75rem] text-white/40 max-md:justify-center">
           {LINKS.map((link) => (
