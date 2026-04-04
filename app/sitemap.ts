@@ -10,7 +10,6 @@ const ROUTES = [
   "/life-guide",
   "/host",
   "/pasta-class",
-  "/workshops",
   "/register",
   "/register/thanks",
   "/donate",

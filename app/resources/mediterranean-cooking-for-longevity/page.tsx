@@ -25,7 +25,7 @@ export default function MediterraneanCookingForLongevityPage() {
     <ResourceArticleLayout
       title="Mediterranean Cooking for Longevity"
       intro="LIFE takes cues from Mediterranean food cultures because they emphasize plants, healthy fats, and community. You do not need elaborate recipes—just consistent, fresh ingredients that make healthy defaults easier."
-      primaryCta={{ href: "/workshops", label: "Attend a Cooking Experience" }}
+      primaryCta={{ href: "/pasta-class", label: "Book the Fresh Pasta Cooking Class" }}
       secondaryCta={{ href: "/assessment", label: "Take the Assessment", variant: "outline" }}
     >
       <ResourceSection title="Fresh ingredients become the default">
@@ -43,7 +43,7 @@ export default function MediterraneanCookingForLongevityPage() {
         <p>
           Mediterranean cooking celebrates one-pan roasting, salads, soups, and braises. LIFE cooking experiences teach techniques that work in small
           kitchens with busy schedules. {" "}
-          <Link href="/workshops" className="text-[var(--terracotta)] underline">
+          <Link href="/pasta-class" className="text-[var(--terracotta)] underline">
             LIFE Cooking Experiences
           </Link>{" "}
           demonstrate that a shared meal can be assembled in under an hour when everyone helps.

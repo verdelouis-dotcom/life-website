@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         destination: "/thank-you",
         permanent: false,
       },
+      {
+        source: "/workshops",
+        destination: "/pasta-class",
+        permanent: true,
+      },
     ];
   },
 };

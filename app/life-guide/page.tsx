@@ -24,7 +24,7 @@ const STEPS = [
   },
 ];
 
-const WORKSHOP_LINK = "/workshops";
+const WORKSHOP_LINK = "/pasta-class";
 const GUIDE_PDF = "/life-7-day-challenge.pdf";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function LifeGuidePage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href={WORKSHOP_LINK} className="btn-solid px-8 text-base">
-                Attend a Workshop
+                Book the Fresh Pasta Cooking Class
               </Link>
               <a href={GUIDE_PDF} className="btn-outline px-8 text-base" target="_blank" rel="noreferrer">
                 Download the 7-Day Challenge
@@ -126,7 +126,7 @@ export default function LifeGuidePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link href={WORKSHOP_LINK} className="btn-solid px-8 text-base">
-                Attend a Workshop
+                Book the Fresh Pasta Cooking Class
               </Link>
               <a href={GUIDE_PDF} className="btn-outline px-8 text-base" target="_blank" rel="noreferrer">
                 Download the 7-Day Challenge

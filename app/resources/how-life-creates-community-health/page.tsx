@@ -30,7 +30,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
     >
       <ResourceSection title="LIFE Cooking Experiences transfer practical skills">
         <p>
-          <Link href="/workshops" className="text-[var(--terracotta)] underline">
+          <Link href="/pasta-class" className="text-[var(--terracotta)] underline">
             LIFE cooking experiences
           </Link>{" "}
           in Georgia and early host cities teach basic cooking, facilitation, and assessment skills. They are the beginning of the {" "}

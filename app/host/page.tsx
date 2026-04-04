@@ -3,6 +3,31 @@ import Link from "next/link";
 
 const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
 
+const HOST_FAQ = [
+  {
+    question: "Where does a LIFE cooking experience happen?",
+    answer:
+      "At someone's home — a kitchen, a backyard, an apartment. Not a classroom, church hall, or conference room. The point is that it feels like a neighbor's house, because it is.",
+  },
+  {
+    question: "How do I get invited?",
+    answer:
+      "Attend Lou and Kara's Fresh Pasta Cooking Class — that's where it starts. From there, hosts invite people they already know. Reach out and we'll connect you with what's next.",
+  },
+  {
+    question: "What should I bring?",
+    answer: "Just yourself. The host provides ingredients and the recipe. Offer to help cook — that's the whole point.",
+  },
+  {
+    question: "How many people are usually there?",
+    answer: "Most LIFE cooking experiences are 4–8 people. Small enough that everyone gets to talk.",
+  },
+  {
+    question: "Do I have to host one after?",
+    answer: "No one will force you. But once you've experienced it, most people want to. That's how the table keeps growing.",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Host a LIFE Table — Open Your Kitchen",
   description: "Host a LIFE cooking experience. Cook together, eat together, pass it on.",
@@ -108,6 +133,21 @@ export default function HostPage() {
               <a href="mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Champion" className="btn-outline px-8 text-base">
                 Tell us you&apos;re interested
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-spacing">
+          <div className="mx-auto max-w-5xl rounded-[36px] border border-[var(--border)] bg-white/90 p-8 shadow-sm">
+            <p className="type-eyebrow text-[var(--olive)]">Common Questions</p>
+            <h2 className="heading-lg mt-1">Common Questions</h2>
+            <div className="mt-6 space-y-5">
+              {HOST_FAQ.map((item) => (
+                <article key={item.question} className="border-b border-[var(--border)] pb-4 last:border-b-0">
+                  <h3 className="label-text text-[var(--olive)]">{item.question}</h3>
+                  <p className="mt-2 body-sm text-[var(--text)]">{item.answer}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>

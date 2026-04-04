@@ -66,8 +66,8 @@ export default function ResourcesPage() {
               <Link href="/assessment" className="btn-solid px-8 text-base">
                 Take the Assessment
               </Link>
-              <Link href="/workshops" className="btn-outline px-8 text-base">
-                Attend a Cooking Experience
+              <Link href="/pasta-class" className="btn-outline px-8 text-base">
+                Book the Fresh Pasta Cooking Class
               </Link>
               <Link href="/donate" className="btn-outline px-8 text-base">
                 Support Us
