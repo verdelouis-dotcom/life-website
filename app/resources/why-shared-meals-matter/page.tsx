@@ -32,7 +32,7 @@ export default function WhySharedMealsMatterPage() {
         <p>
           Preparing a meal together creates a natural checkpoint that resets the day. It is easier to prioritize whole foods, sleep, and movement
           when a specific meal anchors the schedule. The LIFE cycle highlighted in {" "}
-          <Link href="/how-it-works" className="text-[var(--terracotta)] underline">
+          <Link href="/about" className="text-[var(--terracotta)] underline">
             How LIFE Works
           </Link>{" "}
           shows how one LIFE cooking experience can influence the rest of the week.

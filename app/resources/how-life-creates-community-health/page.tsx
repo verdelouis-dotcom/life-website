@@ -25,7 +25,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
     <ResourceArticleLayout
       title="How LIFE Creates Community Health"
       intro="LIFE is designed as a simple, replicable framework: attend a LIFE cooking experience, host a LIFE cooking experience, register the cooking experience. Each step adds data and trust, making it easier to serve more neighborhoods without diluting the mission."
-      primaryCta={{ href: "/how-it-works", label: "Learn How LIFE Works" }}
+      primaryCta={{ href: "/about", label: "Learn How LIFE Works" }}
       secondaryCta={{ href: "/donate", label: "Support Us", variant: "outline" }}
     >
       <ResourceSection title="LIFE Cooking Experiences transfer practical skills">
@@ -34,7 +34,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
             LIFE cooking experiences
           </Link>{" "}
           in Georgia and early host cities teach basic cooking, facilitation, and assessment skills. They are the beginning of the {" "}
-          <Link href="/how-it-works" className="text-[var(--terracotta)] underline">
+          <Link href="/about" className="text-[var(--terracotta)] underline">
             Attend → Host → Register
           </Link>{" "}
           cycle and ensure every host understands the six pillars before inviting neighbors.

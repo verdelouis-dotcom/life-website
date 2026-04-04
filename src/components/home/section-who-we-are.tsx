@@ -17,7 +17,7 @@ export default function SectionWhoWeAre() {
             <Link href="/host" className="btn-solid px-6 text-sm md:px-8">
               Host a Table
             </Link>
-            <Link href="/how-it-works" className="btn-outline px-6 text-sm md:px-8">
+            <Link href="/about" className="btn-outline px-6 text-sm md:px-8">
               See How It Works
             </Link>
           </div>

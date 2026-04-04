@@ -188,7 +188,7 @@ export function HomePageClient() {
         <div className="pillars-heading">
           <Reveal>
             <p className="label-eyebrow">The LIFE Guide — Habit Library</p>
-            <h2>Six pillars. A habit for every member of your family.</h2>
+            <h2>Six pillars. The habits behind the world's longest-lived cultures.</h2>
             <p>
               The LIFE Guide is a free resource for every family — a library of simple habits organized around the six pillars of longevity found in the world's
               longest-lived people. There&apos;s something for every member of your family, at every age.

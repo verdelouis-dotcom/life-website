@@ -4,7 +4,6 @@ import Logo from "@/components/ui/logo";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/how-it-works", label: "How It Works" },
   { href: "/host", label: "Host a Table" },
   { href: "/gallery", label: "Gallery" },
   { href: "/donate", label: "Support Us" },

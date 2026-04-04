@@ -28,6 +28,11 @@ const nextConfig: NextConfig = {
         destination: "/downloads/life-guide.html",
         permanent: true,
       },
+      {
+        source: "/how-it-works",
+        destination: "/about",
+        permanent: true,
+      },
     ];
   },
 };

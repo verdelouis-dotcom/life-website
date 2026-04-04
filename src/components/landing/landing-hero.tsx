@@ -27,7 +27,7 @@ export function LandingHero() {
           <Link href="/host" className="btn-p">
             Host a Table
           </Link>
-          <Link href="/how-it-works" className="btn-o">
+          <Link href="/about" className="btn-o">
             See How It Works
           </Link>
         </div>

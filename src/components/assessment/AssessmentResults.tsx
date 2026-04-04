@@ -196,7 +196,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
       <section className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
         <p className="type-eyebrow text-[var(--olive)]">What to do next</p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <Link href="/how-it-works" className="btn-solid px-8 text-base">
+          <Link href="/about" className="btn-solid px-8 text-base">
             Learn How LIFE Works
           </Link>
           <Link href="/assessment/methodology" className="btn-outline px-8 text-base">
