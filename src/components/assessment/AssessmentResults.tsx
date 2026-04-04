@@ -6,6 +6,7 @@ import type { AssessmentAnswers, AssessmentQuestionId, AssessmentResultsPayload 
 import ResultsSummaryCard from "@/components/assessment/ResultsSummaryCard";
 import EmailCaptureCard from "@/components/assessment/EmailCaptureCard";
 import DonationSupportCard from "@/components/assessment/DonationSupportCard";
+import LifeTimeline from "@/components/assessment/LifeTimeline";
 import { LIFE_HABIT_LIBRARY } from "@/lib/assessment/lifeHabitLibrary";
 import { HABIT_RECOMMENDATIONS } from "@/lib/assessment/habitRecommendations";
 
@@ -123,6 +124,8 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
           ))}
         </div>
       </section>
+
+      <LifeTimeline metrics={results.metrics} />
 
       <section className="rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/70 p-6 shadow-sm">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What your score means</p>
