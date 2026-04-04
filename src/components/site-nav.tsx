@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/pasta-class", label: "Fresh Pasta Cooking Class" },
   { href: "/assessment", label: "Take the Assessment" },
-  { href: "/life-guide", label: "The LIFE Guide" },
+  { href: "/downloads/life-guide.html", label: "The LIFE Guide" },
   { href: "/host", label: "Host a Table" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },

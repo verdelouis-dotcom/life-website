@@ -7,7 +7,6 @@ const ROUTES = [
   "/how-it-works",
   "/assessment",
   "/assessment/methodology",
-  "/life-guide",
   "/host",
   "/pasta-class",
   "/register",

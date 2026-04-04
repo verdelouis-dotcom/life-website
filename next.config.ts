@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         destination: "/pasta-class",
         permanent: true,
       },
+      {
+        source: "/life-guide",
+        destination: "/downloads/life-guide.html",
+        permanent: true,
+      },
     ];
   },
 };

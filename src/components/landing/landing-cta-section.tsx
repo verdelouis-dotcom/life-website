@@ -21,7 +21,7 @@ export function LandingCTASection() {
             <Link href="/host" className="btn-p">
               Host a Table
             </Link>
-            <Link href="/life-guide" className="btn-o">
+            <Link href="/downloads/life-guide.html" className="btn-o">
               Read the LIFE Guide
             </Link>
           </div>

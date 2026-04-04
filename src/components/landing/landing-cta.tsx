@@ -28,7 +28,7 @@ export default function LandingCTASection() {
             <Link href="/host" className={styles.primaryBtn}>
               Host a Table
             </Link>
-            <Link href="/life-guide" className={styles.outlineBtn}>
+            <Link href="/downloads/life-guide.html" className={styles.outlineBtn}>
               Read the LIFE Guide
             </Link>
           </div>
