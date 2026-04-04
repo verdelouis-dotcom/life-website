@@ -117,7 +117,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="flex-1 overflow-hidden rounded-[36px] border border-[var(--border)] bg-white/60 shadow-sm">
-          <Image src="/images/founder.jpeg" alt="Lou Verde in Italy" width={900} height={1100} className="h-full w-full object-cover" />
+          <Image src="/images/founder.jpeg" alt="Lou Verde in Italy" width={900} height={1100} className="h-full w-full object-cover object-top" />
         </div>
       </section>
 
