@@ -69,7 +69,7 @@ export default function FreshPastaClassPage() {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <a href="#book" className="btn-primary">
+              <a href="#book" className="btn-primary text-white">
                 Book Your Spot →
               </a>
             </div>
