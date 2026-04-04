@@ -104,7 +104,7 @@ export function HomePageClient() {
           </Reveal>
           <div className="grid gap-12 mb-16 md:grid-cols-2">
             <Reveal>
-              <h2 style={{ fontFamily: "var(--font-lora)", fontSize: "clamp(2rem,3.5vw,3rem)", fontWeight: 400, lineHeight: 1.2, color: "#F5F0E8" }}>
+              <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2.25rem,3.5vw,3rem)", fontWeight: 600, lineHeight: 1.2, color: "#F5F0E8" }}>
                 Your genes determine only 20% of how long you live. The rest is yours.
               </h2>
             </Reveal>
@@ -127,7 +127,7 @@ export function HomePageClient() {
             ].map((stat) => (
               <Reveal key={stat.number}>
                 <div style={{ border: "1px solid rgba(245,240,232,0.12)", borderRadius: "1.5rem", padding: "2rem", background: "rgba(255,255,255,0.04)" }}>
-                  <p style={{ fontFamily: "var(--font-lora)", fontSize: "clamp(3rem,5vw,4rem)", fontWeight: 400, lineHeight: 1, color: "#F5F0E8", marginBottom: "0.5rem" }}>
+                  <p style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3rem,5vw,4rem)", fontWeight: 600, lineHeight: 1.1, color: "#F5F0E8", marginBottom: "0.5rem" }}>
                     {stat.number}
                   </p>
                   <p style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(245,240,232,0.9)", marginBottom: "0.75rem" }}>
