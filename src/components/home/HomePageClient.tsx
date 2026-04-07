@@ -54,7 +54,13 @@ export function HomePageClient() {
         <div className="hero-left">
           <Reveal>
             <p className="hero-kicker">A national movement · starting around the table</p>
-            <h1 className="hero-h1">Real food. Real connection. Real life.</h1>
+            <h1 className="hero-h1">
+              Real food.
+              <br />
+              Real connection.
+              <br />
+              Real life.
+            </h1>
             <p className="hero-sub">Learn the habits behind the world&apos;s longest-lived cultures — starting in your kitchen.</p>
             <div className="hero-actions">
               <Link href="/pasta-class" className="btn-primary">
