@@ -154,7 +154,13 @@ export function HomePageClient() {
 
       <section className="story">
         <div className="story-img">
-          <Image src="/images/grandfather.jpeg" alt="Lou's grandfather gardening" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
+          <Image
+            src="/images/grandfather.jpeg"
+            alt="Lou's grandfather gardening"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: "cover", objectPosition: "center 35%" }}
+          />
           <div className="story-img-overlay" aria-hidden="true" />
         </div>
         <div className="story-content">
