@@ -31,7 +31,7 @@
 }
 
 .home-v3 .hero {
-  min-height: min(100vh, 820px);
+  min-height: min(90vh, 760px);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   overflow: hidden;
@@ -39,7 +39,7 @@
 
 .home-v3 .hero-left {
   background: var(--linen);
-  padding: clamp(4rem, 8vw, 8rem) clamp(1.75rem, 4.5vw, 5rem) clamp(3rem, 6vw, 5rem);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.75rem, 4.5vw, 4.5rem) clamp(2rem, 4vw, 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -654,7 +654,7 @@
 
 @media (max-width: 1024px) {
   .home-v3 .hero-left {
-    padding: 7rem 2.5rem 4rem;
+    padding: 5rem 2.5rem 3rem;
   }
 
   .home-v3 .promise-band {
@@ -677,7 +677,7 @@
 
 @media (max-width: 640px) {
   .home-v3 .hero-left {
-    padding: 6rem 1.5rem 3rem;
+    padding: 4.5rem 1.5rem 2.5rem;
   }
 
   .home-v3 .hero-actions {
