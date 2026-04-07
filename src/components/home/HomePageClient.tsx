@@ -75,7 +75,7 @@ export function HomePageClient() {
         <div className="hero-right">
           <Image src="/images/workshops/pasta-lesson-1.jpg" alt="Family laughing while rolling pasta dough together" fill priority sizes="(max-width: 768px) 100vw, 50vw" className="hero-img" />
           <div className="hero-caption">
-            <p>“Two hours of actual presence. That's what we got back.”</p>
+            <p>“Every class starts the same way — flour, eggs, and good company.”</p>
           </div>
         </div>
       </section>
