@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const NAV_ITEMS = [
   { id: "purpose", label: "Purpose" },
@@ -78,11 +79,13 @@ export const metadata: Metadata = {
     description:
       "Learn how the LIFE Longevity Assessment works, what it measures, and the research areas that inform its survey-based longevity estimates.",
     url: METHODOLOGY_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "LIFE Longevity Assessment Methodology",
     description:
       "Learn how the LIFE Longevity Assessment works, what it measures, and the research areas that inform its survey-based longevity estimates.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

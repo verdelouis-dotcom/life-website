@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const GUIDE_URL = "https://www.longevityinitiativeforfoodandeducation.com/host/guide";
 
@@ -15,11 +16,13 @@ export const metadata: Metadata = {
     description:
       "Learn how to plan, cook, facilitate, and register a LIFE cooking experience so your cooking experience supports the six pillars of healthy aging.",
     url: GUIDE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "LIFE Host Guide | How to Lead a LIFE Cooking Experience",
     description:
       "Learn how to plan, cook, facilitate, and register a LIFE cooking experience so your cooking experience supports the six pillars of healthy aging.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ResourceArticleLayout from "@/components/resources/ResourceArticleLayout";
 import ResourceSection from "@/components/resources/ResourceSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resources/how-life-creates-community-health";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "How LIFE Creates Community Health | LIFE Resources",
     description: "See how the LIFE model turns shared meals, LIFE cooking experiences, and local hosts into a growing community health movement.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "How LIFE Creates Community Health | LIFE Resources",
     description: "See how the LIFE model turns shared meals, LIFE cooking experiences, and local hosts into a growing community health movement.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

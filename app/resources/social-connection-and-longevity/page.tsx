@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ResourceArticleLayout from "@/components/resources/ResourceArticleLayout";
 import ResourceSection from "@/components/resources/ResourceSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resources/social-connection-and-longevity";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "Social Connection and Longevity | LIFE Resources",
     description: "Discover why social connection is one of the most important factors in long-term health and longevity.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Social Connection and Longevity | LIFE Resources",
     description: "Discover why social connection is one of the most important factors in long-term health and longevity.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

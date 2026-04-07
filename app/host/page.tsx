@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
 
@@ -14,11 +15,12 @@ export const metadata: Metadata = {
     description: "Open your kitchen and pass on the LIFE cooking experience movement.",
     url: HOST_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
-    images: [{ url: "/opengraph-image.png" }],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Host a LIFE Cooking Experience",
     description: "Open your kitchen and pass on the LIFE cooking experience movement.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

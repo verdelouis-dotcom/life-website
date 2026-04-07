@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ResourceCard from "@/components/resources/ResourceCard";
 import { RESOURCE_ENTRIES } from "@/data/resources";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resources";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "LIFE Resources | Longevity, Food & Community Education",
     description: "Explore LIFE resources on longevity, shared meals, Mediterranean cooking, and community health.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "LIFE Resources | Longevity, Food & Community Education",
     description: "Explore LIFE resources on longevity, shared meals, Mediterranean cooking, and community health.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

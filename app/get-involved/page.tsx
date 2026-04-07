@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/get-involved";
 
@@ -11,10 +12,12 @@ export const metadata: Metadata = {
     title: "Get Involved | Longevity Initiative for Food & Education",
     description: "Share what you’ve learned through LIFE: host a LIFE cooking experience, support ingredients, or bring LIFE to your community.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Get Involved | Longevity Initiative for Food & Education",
     description: "Share what you’ve learned through LIFE: host a LIFE cooking experience, support ingredients, or bring LIFE to your community.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/about";
 
@@ -14,11 +15,12 @@ export const metadata: Metadata = {
     description: "Learn how LIFE is restoring longevity habits through shared cooking experiences, practical education, and accountable leadership.",
     url: PAGE_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
-    images: [{ url: "/opengraph-image.png" }],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "About LIFE — Longevity Initiative for Food & Education",
     description: "Learn how LIFE is restoring longevity habits through shared cooking experiences, practical education, and accountable leadership.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

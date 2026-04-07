@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import RegisterForm from "@/components/forms/register-form";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const REGISTER_URL = "https://www.longevityinitiativeforfoodandeducation.com/register";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "Register a LIFE Cooking Experience | Track Community Impact",
     description: "Hosted a LIFE cooking experience? Register your event to help track community impact and expand the shared LIFE cooking experience movement.",
     url: REGISTER_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Register a LIFE Cooking Experience | Track Community Impact",
     description: "Hosted a LIFE cooking experience? Register your event to help track community impact and expand the shared LIFE cooking experience movement.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

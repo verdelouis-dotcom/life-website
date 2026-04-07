@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ResourceArticleLayout from "@/components/resources/ResourceArticleLayout";
 import ResourceSection from "@/components/resources/ResourceSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resources/the-six-pillars-of-life";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "The Six Pillars of LIFE | LIFE Resources",
     description: "Learn how the six pillars of LIFE work together to support healthier habits, stronger communities, and longevity.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "The Six Pillars of LIFE | LIFE Resources",
     description: "Learn how the six pillars of LIFE work together to support healthier habits, stronger communities, and longevity.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

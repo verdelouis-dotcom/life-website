@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NewsletterSignup from "@/components/forms/newsletter-signup";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const CARDS = [
   {
@@ -28,10 +29,12 @@ export const metadata: Metadata = {
     title: "The Shared LIFE Cooking Experience Newsletter | Longevity & Food Education",
     description: "Join The Shared LIFE Cooking Experience newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
     url: NEWSLETTER_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "The Shared LIFE Cooking Experience Newsletter | Longevity & Food Education",
     description: "Join The Shared LIFE Cooking Experience newsletter for insights on longevity, Mediterranean food, community health, and the LIFE movement.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

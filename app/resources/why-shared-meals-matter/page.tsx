@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ResourceArticleLayout from "@/components/resources/ResourceArticleLayout";
 import ResourceSection from "@/components/resources/ResourceSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resources/why-shared-meals-matter";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "Why Shared Meals Matter | LIFE Resources",
     description: "Learn why shared meals can support healthier habits, stronger relationships, and a more connected approach to longevity.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Why Shared Meals Matter | LIFE Resources",
     description: "Learn why shared meals can support healthier habits, stronger relationships, and a more connected approach to longevity.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

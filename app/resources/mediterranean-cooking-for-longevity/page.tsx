@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ResourceArticleLayout from "@/components/resources/ResourceArticleLayout";
 import ResourceSection from "@/components/resources/ResourceSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resources/mediterranean-cooking-for-longevity";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "Mediterranean Cooking for Longevity | LIFE Resources",
     description: "Explore how Mediterranean-inspired cooking habits can support health, longevity, and everyday wellbeing.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Mediterranean Cooking for Longevity | LIFE Resources",
     description: "Explore how Mediterranean-inspired cooking habits can support health, longevity, and everyday wellbeing.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

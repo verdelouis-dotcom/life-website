@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import KeynoteForm from "@/components/forms/keynote-form";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const KEYNOTE_URL = "https://www.longevityinitiativeforfoodandeducation.com/keynote";
 
@@ -14,10 +15,12 @@ export const metadata: Metadata = {
     title: "Longevity Keynote Speaker | Food, Health & Community",
     description: "Book a keynote on longevity, nutrition, and community health exploring how shared meals can transform wellness and connection.",
     url: KEYNOTE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Longevity Keynote Speaker | Food, Health & Community",
     description: "Book a keynote on longevity, nutrition, and community health exploring how shared meals can transform wellness and connection.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

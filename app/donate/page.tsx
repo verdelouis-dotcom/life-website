@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PRIMARY_DONATION_LINK } from "@/lib/donate-links";
 import { DonationEmbedPanel } from "@/components/donate/DonationEmbedPanel";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const TIERS = [
   {
@@ -43,11 +44,12 @@ export const metadata: Metadata = {
     description: "Every dollar helps LIFE host community cooking experiences and share the habit library with families who need it most.",
     url: DONATE_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
-    images: [{ url: "/opengraph-image.png" }],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Support LIFE — Bring Back the Table",
     description: "Every dollar helps LIFE host community cooking experiences and share the habit library with families who need it most.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

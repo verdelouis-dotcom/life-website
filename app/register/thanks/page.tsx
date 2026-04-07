@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const REGISTER_THANKS_URL = "https://www.longevityinitiativeforfoodandeducation.com/register/thanks";
 
@@ -13,10 +14,12 @@ export const metadata: Metadata = {
     title: "Thank You for Registering | LIFE Cooking Experience Recorded",
     description: "Thanks for registering your LIFE cooking experience. Your cooking experience now counts toward the movement’s measurable community impact.",
     url: REGISTER_THANKS_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Thank You for Registering | LIFE Cooking Experience Recorded",
     description: "Thanks for registering your LIFE cooking experience. Your cooking experience now counts toward the movement’s measurable community impact.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

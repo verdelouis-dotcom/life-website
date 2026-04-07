@@ -3,6 +3,7 @@ import Link from "next/link";
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
 import PhotoStrip from "@/components/proof/PhotoStrip";
 import { IMPACT_PROOF } from "@/data/proof";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/impact";
 
@@ -16,11 +17,13 @@ export const metadata: Metadata = {
     description:
       "See how LIFE tracks community impact through shared meals, LIFE cooking experiences, and longevity education designed to improve health and connection.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "LIFE Impact | Longevity Initiative for Food & Education",
     description:
       "See how LIFE tracks community impact through shared meals, LIFE cooking experiences, and longevity education designed to improve health and connection.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

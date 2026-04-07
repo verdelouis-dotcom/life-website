@@ -4,6 +4,7 @@ import ContactForm from "@/components/forms/contact-form";
 import FaqSchema from "@/components/seo/FaqSchema";
 import ProofHighlightList from "@/components/proof/ProofHighlightList";
 import { CONTACT_PROOF } from "@/data/proof";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/contact";
 
@@ -17,10 +18,12 @@ export const metadata: Metadata = {
     title: "Contact LIFE | Longevity Initiative for Food & Education",
     description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE cooking experiences, or community LIFE cooking experience programs.",
     url: PAGE_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Contact LIFE | Longevity Initiative for Food & Education",
     description: "Get in touch with the Longevity Initiative for Food & Education for partnerships, LIFE cooking experiences, or community LIFE cooking experience programs.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 

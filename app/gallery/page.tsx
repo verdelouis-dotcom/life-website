@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { GALLERY_PHOTOS } from "@/data/gallery";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 const GALLERY_URL = "https://www.longevityinitiativeforfoodandeducation.com/gallery";
 
@@ -14,10 +15,12 @@ export const metadata: Metadata = {
     title: "LIFE Cooking Experiences Gallery | Longevity Initiative",
     description: "Real photos from LIFE cooking experiences in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
     url: GALLERY_URL,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "LIFE Cooking Experiences Gallery | Longevity Initiative",
     description: "Real photos from LIFE cooking experiences in Atlanta, Austin, and beyond. Neighbors cooking together, shared with permission.",
+    images: DEFAULT_TWITTER_IMAGES,
   },
 };
 
