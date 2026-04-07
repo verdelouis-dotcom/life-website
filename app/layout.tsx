@@ -54,24 +54,24 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "LIFE | Longevity Initiative for Food & Education",
-  description: "We use shared cooking experiences to improve health, strengthen relationships, and build better daily habits.",
+  title: "LIFE — Longevity Initiative for Food & Education",
+  description: "Real food. Real connection. Real life. Learn the habits behind the world's longest-lived cultures — starting in your kitchen.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "LIFE | Longevity Initiative for Food & Education",
-    description: "We use shared cooking experiences to improve health, strengthen relationships, and build better daily habits.",
+    title: "LIFE — Longevity Initiative for Food & Education",
+    description: "Real food. Real connection. Real life. Learn the habits behind the world's longest-lived cultures — starting in your kitchen.",
     url: SITE_URL,
-    siteName: "LIFE",
+    siteName: "LIFE — Longevity Initiative for Food & Education",
     locale: "en_US",
     type: "website",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LIFE | Longevity Initiative for Food & Education",
-    description: "We use shared cooking experiences to improve health, strengthen relationships, and build better daily habits.",
+    title: "LIFE — Longevity Initiative for Food & Education",
+    description: "Real food. Real connection. Real life. Learn the habits behind the world's longest-lived cultures — starting in your kitchen.",
     images: DEFAULT_TWITTER_IMAGES,
   },
   icons: {

@@ -2,11 +2,24 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PastaClassForm from "@/components/forms/pasta-class-form";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Fresh Pasta Cooking Class — LIFE",
   description:
     "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in Atlanta. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
+  openGraph: {
+    title: "Fresh Pasta Cooking Class — LIFE",
+    description:
+      "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in Atlanta. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
+    images: [DEFAULT_OG_IMAGE],
+  },
+  twitter: {
+    title: "Fresh Pasta Cooking Class — LIFE",
+    description:
+      "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in Atlanta. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
+    images: DEFAULT_TWITTER_IMAGES,
+  },
 };
 
 const WHAT_YOU_DO = [
