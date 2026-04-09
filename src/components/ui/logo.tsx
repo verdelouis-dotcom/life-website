@@ -15,10 +15,10 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
   return (
     <div className={`relative ${sizes[size]} h-auto ${className}`.trim()}>
       <Image
-        src="/images/life-logo.png"
+        src="/branding/life-wordmark-upload.png"
         alt="LIFE Logo"
-        width={400}
-        height={200}
+        width={1944}
+        height={912}
         priority
         className="h-auto w-full object-contain"
       />

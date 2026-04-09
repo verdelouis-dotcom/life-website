@@ -14,11 +14,8 @@ export default function SiteFooter() {
   return (
     <footer className="bg-[#1E140A] px-[4.5rem] py-[2.2rem] text-white max-md:px-6 max-md:py-8">
       <div className="flex flex-wrap items-center justify-between gap-8 max-md:flex-col max-md:text-center">
-        <Link href="/" className="flex items-center gap-3 shrink-0 text-sm text-white/80 hover:text-white transition">
-          <div style={{ filter: "brightness(0) invert(1)" }}>
-            <Logo size="sm" />
-          </div>
-          <span className="leading-tight">Longevity Initiative for Food &amp; Education</span>
+        <Link href="/" className="shrink-0 transition-opacity hover:opacity-80" aria-label="LIFE — Longevity Initiative for Food & Education">
+          <Logo size="sm" />
         </Link>
 
         <div className="max-w-sm space-y-2 text-[0.75rem] text-white/70">
