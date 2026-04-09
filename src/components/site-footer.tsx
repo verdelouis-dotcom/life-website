@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import Logo from "@/components/ui/logo";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -16,7 +16,7 @@ export default function SiteFooter() {
       <div className="flex flex-wrap items-center justify-between gap-8 max-md:flex-col max-md:text-center">
         <Link href="/" className="flex items-center gap-3 shrink-0 text-sm text-white/80 hover:text-white transition">
           <div style={{ filter: "brightness(0) invert(1)" }}>
-            <Logo size="sm" />
+            <Image src="/branding/og-image.png" alt="LIFE" width={120} height={38} className="h-auto w-auto object-contain" priority={false} />
           </div>
           <span className="leading-tight">Longevity Initiative for Food &amp; Education</span>
         </Link>

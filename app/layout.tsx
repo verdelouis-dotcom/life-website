@@ -16,7 +16,7 @@ const ORGANIZATION_SCHEMA = {
   name: "Longevity Initiative for Food & Education",
   alternateName: "LIFE",
   url: SITE_URL,
-  logo: `${SITE_URL}/images/logo.png`,
+  logo: `${SITE_URL}/branding/og-image.png`,
   description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
   contactPoint: {
     "@type": "ContactPoint",
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
     images: DEFAULT_TWITTER_IMAGES,
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/branding/og-image.png",
+    apple: "/branding/og-image.png",
   },
 };
 
