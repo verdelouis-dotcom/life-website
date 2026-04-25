@@ -23,7 +23,7 @@ export default function SiteFooter() {
         </Link>
 
         <div className="max-w-sm space-y-2 text-[0.75rem] text-white/70">
-          <p>Longevity Initiative for Food &amp; Education is organized as a Georgia nonprofit corporation with a board-governed mission to restore shared meals, practical education, and community accountability.</p>
+          <p>Longevity Initiative for Food &amp; Education is a federally recognized 501(c)(3) nonprofit organization. EIN: 41-4525299. Contributions are tax-deductible to the full extent permitted by law.</p>
           <p>Want to support LIFE? Every dollar goes directly to the mission. <Link href="/donate" className="underline-offset-4 hover:underline">Support LIFE →</Link></p>
         </div>
 

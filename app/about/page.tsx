@@ -169,7 +169,10 @@ export default function AboutPage() {
       <section className="mx-auto max-w-4xl px-6 pb-16">
         <div className="rounded-[32px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
           <p className="text-base leading-7 text-[var(--text)]">
-            LIFE is organized as a Georgia nonprofit corporation and has applied for 501(c)(3) recognition from the IRS. EIN: 41-4525299. Money raised helps LIFE bring the Six Pillars Framework to more families and support future program evaluation and research.
+            LIFE is a federally recognized 501(c)(3) nonprofit organization. EIN: 41-4525299.
+          </p>
+          <p className="mt-4 text-base leading-7 text-[var(--text)]">
+            Money raised helps LIFE bring the Six Pillars Framework to more families and support future program evaluation and research.
           </p>
         </div>
       </section>

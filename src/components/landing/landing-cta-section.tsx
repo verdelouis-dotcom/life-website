@@ -27,7 +27,7 @@ export function LandingCTASection() {
           </div>
           <p className="pilot-note mt-6 text-[0.8rem] text-[var(--muted-earth)]">
             <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[var(--sage)]" />
-            Currently piloting in Atlanta, GA & Austin, TX · 501(c)(3) pending
+            Currently piloting in Atlanta, GA & Austin, TX · 501(c)(3) nonprofit
           </p>
         </div>
       </div>

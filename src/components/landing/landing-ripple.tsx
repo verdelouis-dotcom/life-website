@@ -4,7 +4,7 @@ const rippleDetails = [
   "Each table of 4–6 guests creates 4–6 potential new tables",
   "The 30-day promise keeps the momentum alive",
   "Currently piloting in Atlanta, GA & Austin, TX",
-  "LIFE is a 501(c)(3) nonprofit — pending",
+  "LIFE is a 501(c)(3) nonprofit",
 ];
 
 export default function LandingRippleSection() {

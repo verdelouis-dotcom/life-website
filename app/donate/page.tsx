@@ -114,6 +114,9 @@ export default function DonatePage() {
         </section>
 
         <section className="mt-12">
+          <p className="mb-4 text-center text-sm font-medium text-[var(--muted)]">
+            Federally recognized 501(c)(3) nonprofit · EIN: 41-4525299 · Contributions are tax-deductible
+          </p>
           <DonationEmbedPanel />
         </section>
 

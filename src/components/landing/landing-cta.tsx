@@ -33,7 +33,7 @@ export default function LandingCTASection() {
             </Link>
           </div>
           <p className={styles.pilotNote}>
-            <span className={styles.pilotDot} />Currently piloting in Atlanta, GA & Austin, TX · 501(c)(3) pending
+            <span className={styles.pilotDot} />Currently piloting in Atlanta, GA & Austin, TX · 501(c)(3) nonprofit
           </p>
         </div>
       </div>
