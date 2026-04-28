@@ -26,7 +26,7 @@ const BOARD_MEMBERS = [
 const STATUS_LINES = [
   "LIFE is incorporated in the State of Georgia as a nonprofit organization.",
   "EIN (Employer Identification Number): 41-4525299",
-  "501(c)(3) status: Pending final IRS determination.",
+  "501(c)(3) status: Federally recognized nonprofit organization.",
   "The initiative is community-funded and operates through volunteer leadership and pro-bono advisors.",
 ];
 
