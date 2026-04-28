@@ -21,7 +21,7 @@ const PHOTO_MOMENT = [
   {
     src: "/images/workshops/pasta-lesson-3.jpeg",
     alt: "Family gathered around the table laughing and eating",
-    caption: "People cooking, laughing, and eating together.",
+    caption: "Cooking class is fun for the entire family",
   },
   {
     src: "/images/workshops/pasta-lesson-4.jpeg",
