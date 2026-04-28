@@ -151,41 +151,7 @@ export function HomePageClient() {
           </div>
         </div>
       </section>
-
-      <section className="story">
-        <div className="story-img">
-          <Image
-            src="/images/grandfather.jpeg"
-            alt="Lou's grandfather gardening"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: "cover", objectPosition: "center 35%" }}
-          />
-          <div className="story-img-overlay" aria-hidden="true" />
-        </div>
-        <div className="story-content">
-          <Reveal>
-            <p className="label-eyebrow">LOU'S STORY</p>
-            <h2 className="story-heading">I grew up in upstate New York in a home that never felt small — even when it was.</h2>
-            <p className="story-body">
-              Three generations under one roof. My grandparents and parents came from Italy. The house was always full. Family. Neighbors. Friends who felt
-              like relatives. My grandfather had a massive garden. Everyone was always in the kitchen. The food was real — fresh ingredients, old recipes,
-              vegetables from the garden — and the table was sacred.
-            </p>
-            <p className="story-body">
-              My grandparents lived into their 90s. At the time I didn&apos;t realize how rare that was. We replaced gardens with drive-thrus. We replaced dinner
-              tables with screens. We replaced community with convenience.
-            </p>
-            <p className="story-body">
-              LIFE exists to bring back the table. The connection. The food made from scratch. The way of living that kept families healthy for generations.
-              One table at a time.
-            </p>
-            <p className="story-sig">Lou Verde · Founder · Atlanta, GA</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="photo-moment">
+      <section className="photo-moment pt-8 md:pt-12">
         {PHOTO_MOMENT.map((photo) => (
           <Reveal key={photo.alt} className="photo-card">
             <div className="photo-wrapper">
