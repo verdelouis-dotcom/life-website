@@ -33,7 +33,7 @@ export default function GalleryPage() {
           <h1 className="section-heading">Real tables. Real neighbors.</h1>
           <p className="mt-3 type-detail">Shared with permission from LIFE hosts.</p>
         </section>
-        <section className="grid gap-6 md:grid-cols-2">
+        <section className="grid items-start gap-6 md:grid-cols-2">
           {GALLERY_PHOTOS.map((photo) => (
             <figure key={photo.src} className="overflow-hidden rounded-[24px] border border-[var(--border)] bg-white shadow-sm">
               <Image
@@ -47,7 +47,7 @@ export default function GalleryPage() {
               />
               <figcaption className="space-y-2 px-4 py-3">
                 {photo.caption && <p className="text-sm text-[var(--text)]">{photo.caption}</p>}
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
                   <span className="text-sm font-medium text-[var(--earth-mid)]">
                     {photo.city}, {photo.state}
                     {photo.host && <span className="text-[var(--muted)] font-normal"> · Hosted by {photo.host}</span>}
