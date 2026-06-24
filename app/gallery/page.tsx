@@ -45,12 +45,15 @@ export default function GalleryPage() {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="block"
               />
-              <figcaption className="px-4 py-3 flex items-center justify-between gap-2">
-                <span className="text-sm font-medium text-[var(--earth-mid)]">
-                  {photo.city}, {photo.state}
-                  {photo.host && <span className="text-[var(--muted)] font-normal"> · Hosted by {photo.host}</span>}
-                </span>
-                <span className="type-detail shrink-0">{photo.hostedDate}</span>
+              <figcaption className="space-y-2 px-4 py-3">
+                {photo.caption && <p className="text-sm text-[var(--text)]">{photo.caption}</p>}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-medium text-[var(--earth-mid)]">
+                    {photo.city}, {photo.state}
+                    {photo.host && <span className="text-[var(--muted)] font-normal"> · Hosted by {photo.host}</span>}
+                  </span>
+                  <span className="type-detail shrink-0">{photo.hostedDate}</span>
+                </div>
               </figcaption>
             </figure>
           ))}

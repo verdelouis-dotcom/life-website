@@ -1,6 +1,7 @@
 export type GalleryPhoto = {
   src: string;
   alt: string;
+  caption?: string;
   city: string;
   state: string;
   hostedDate: string;
@@ -8,6 +9,70 @@ export type GalleryPhoto = {
 };
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
+  // Buoni Amici Lodge 3021 pasta class — Sharpsburg, GA
+  {
+    src: "/images/workshops/061426-osdia-lodge/osdia-lodge-pasta-1.jpeg",
+    alt: "Buoni Amici Lodge 3021 members gathered for a LIFE pasta class at Cokes Chapel in Sharpsburg, Georgia",
+    city: "Sharpsburg",
+    state: "GA",
+    hostedDate: "June 14, 2026",
+    host: "Buoni Amici Lodge 3021",
+    caption: "A community pasta class with Buoni Amici Lodge 3021 at Cokes Chapel.",
+  },
+  {
+    src: "/images/workshops/061426-osdia-lodge/osdia-lodge-pasta-2.jpeg",
+    alt: "Fresh pasta class for Buoni Amici Lodge 3021 at Cokes Chapel in Sharpsburg, Georgia",
+    city: "Sharpsburg",
+    state: "GA",
+    hostedDate: "June 14, 2026",
+    host: "Buoni Amici Lodge 3021",
+    caption: "Members gathered in the Cokes Chapel kitchen for hands-on pasta making.",
+  },
+  {
+    src: "/images/workshops/061426-osdia-lodge/osdia-lodge-pasta-3.jpeg",
+    alt: "Participants preparing pasta together during the Buoni Amici Lodge 3021 class at Cokes Chapel",
+    city: "Sharpsburg",
+    state: "GA",
+    hostedDate: "June 14, 2026",
+    host: "Buoni Amici Lodge 3021",
+    caption: "Fresh pasta, shared learning, and community around the table.",
+  },
+  {
+    src: "/images/workshops/061426-osdia-lodge/osdia-lodge-pasta-4.jpeg",
+    alt: "OSDIA Lodge members learning fresh pasta techniques during a community LIFE class",
+    city: "Sharpsburg",
+    state: "GA",
+    hostedDate: "June 14, 2026",
+    host: "Buoni Amici Lodge 3021",
+    caption: "Buoni Amici Lodge 3021 members learning fresh pasta techniques together.",
+  },
+  {
+    src: "/images/workshops/061426-osdia-lodge/osdia-lodge-pasta-5.jpeg",
+    alt: "Buoni Amici Lodge 3021 pasta class participants cooking together in the Cokes Chapel kitchen",
+    city: "Sharpsburg",
+    state: "GA",
+    hostedDate: "June 14, 2026",
+    host: "Buoni Amici Lodge 3021",
+    caption: "A local LIFE pasta class hosted with support from Cokes Chapel.",
+  },
+  {
+    src: "/images/workshops/061426-osdia-lodge/osdia-lodge-pasta-6.jpeg",
+    alt: "Community members making pasta by hand at the Buoni Amici Lodge 3021 LIFE class",
+    city: "Sharpsburg",
+    state: "GA",
+    hostedDate: "June 14, 2026",
+    host: "Buoni Amici Lodge 3021",
+    caption: "Participants making pasta by hand during the June 14 class.",
+  },
+  {
+    src: "/images/workshops/061426-osdia-lodge/osdia-lodge-pasta-7.jpeg",
+    alt: "Buoni Amici Lodge 3021 gathered for a fresh pasta class hosted in the Cokes Chapel kitchen",
+    city: "Sharpsburg",
+    state: "GA",
+    hostedDate: "June 14, 2026",
+    host: "Buoni Amici Lodge 3021",
+    caption: "Twenty-five participants came together for pasta, learning, and connection.",
+  },
   // Lou's cooking experience — Peachtree City, GA
   {
     src: "/images/workshops/31526/IMG_9387.jpeg",
