@@ -37,24 +37,6 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
     ]
   );
 
-  const heroCards = [
-    {
-      title: "Current Path",
-      value: `${results.metrics.currentExpectedAge} yrs`,
-      detail: `≈ Year ${results.metrics.currentExpectedYear}`,
-    },
-    {
-      title: "With Consistent LIFE Habits",
-      value: `${results.metrics.potentialExpectedAge} yrs`,
-      detail: `≈ Year ${results.metrics.potentialExpectedYear}`,
-    },
-    {
-      title: "Years You Could Gain",
-      value: `+${results.metrics.yearsGained} yrs`,
-      detail: "Educational estimate",
-    },
-  ];
-
   const supportingCards = [
     {
       label: "LIFE Habits Score",
@@ -116,14 +98,6 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
           </div>
         </div>
       </div>
-
-      <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-        <div className="grid gap-4 md:grid-cols-3">
-          {heroCards.map((card) => (
-            <SummaryCard key={card.title} title={card.title} value={card.value} detail={card.detail} />
-          ))}
-        </div>
-      </section>
 
       <LifeTimeline metrics={results.metrics} />
 
@@ -213,12 +187,12 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
       <DonationSupportCard />
 
       <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 text-center shadow-sm">
-        <a
+        <Link
           href="/#join"
           className="inline-flex items-center justify-center rounded-2xl border border-[var(--terracotta)] px-6 py-3 text-sm font-semibold text-[var(--terracotta)] transition hover:bg-[var(--terracotta)] hover:text-white"
         >
           Enroll in LIFE →
-        </a>
+        </Link>
       </section>
 
       <section className="rounded-[32px] border border-[var(--border)] bg-white/80 p-6 text-sm text-[var(--muted)]">
@@ -364,16 +338,6 @@ function handleDownloadShareImage(
   setShareStatus("Share image downloaded.");
   setTimeout(() => setShareStatus(""), 3000);
 }
-function SummaryCard({ title, value, detail }: { title: string; value: string; detail: string }) {
-  return (
-    <article className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-4 text-left">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">{title}</p>
-      <p className="mt-3 text-3xl font-semibold text-[var(--life-forest)]">{value}</p>
-      <p className="mt-1 text-sm text-[var(--muted)]">{detail}</p>
-    </article>
-  );
-}
-
 function PillarCard({
   label,
   score,

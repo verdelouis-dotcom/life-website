@@ -32,7 +32,7 @@ export function calculateLongevityProjection(input: LongevityProjectionInput): L
   const rawPotential = baseExpectancy + habitAdjustmentPotential + familyModifier + contextPenalty;
 
   const currentExpectedAge = Math.round(clamp(rawCurrent, age + 5, 105));
-  const potentialExpectedAge = Math.round(clamp(rawPotential, age + 5, 105));
+  const potentialExpectedAge = Math.max(currentExpectedAge, Math.round(clamp(rawPotential, age + 5, 105)));
 
   const yearsGained = Math.max(0, Math.round(potentialExpectedAge - currentExpectedAge));
   const currentExpectedYear = CURRENT_YEAR + Math.max(0, currentExpectedAge - Math.round(age));
@@ -69,16 +69,29 @@ function calculateContextPenalty(answers: AssessmentAnswers) {
   let penalty = 0;
 
   if (answers.nicotine === "dailyUser") {
+    penalty -= 10;
+  } else if (answers.nicotine === "occasionalUser") {
     penalty -= 4;
   }
+
   if (answers.chronicCondition === "yes") {
+    penalty -= 7;
+  } else if (answers.chronicCondition === "riskFactors") {
+    penalty -= 3;
+  }
+
+  if (answers.nicotine === "dailyUser" && answers.chronicCondition === "yes") {
     penalty -= 3;
   }
 
   const bpHigh = answers.bloodPressure === "high";
-  const glucoseHigh = answers.fastingGlucose === "diabetes" || answers.fastingGlucose === "prediabetes";
-  if (bpHigh) penalty -= 1.5;
-  if (glucoseHigh) penalty -= 1;
+  if (bpHigh) penalty -= 2.5;
+
+  if (answers.fastingGlucose === "diabetes") {
+    penalty -= 3;
+  } else if (answers.fastingGlucose === "prediabetes") {
+    penalty -= 1.5;
+  }
 
   return penalty;
 }
