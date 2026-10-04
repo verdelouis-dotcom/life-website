@@ -20,7 +20,6 @@ const ROUTES = [
   "/resources/the-six-pillars-of-life",
   "/resources/social-connection-and-longevity",
   "/resources/how-life-creates-community-health",
-  "/newsletter",
   "/gallery",
   "/pillars/food",
   "/pillars/movement",

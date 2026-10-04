@@ -176,9 +176,6 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
           <Link href="/assessment/methodology" className="btn-outline px-8 text-base">
             Review Methodology
           </Link>
-          <Link href="/newsletter" className="btn-outline px-8 text-base">
-            Join the Newsletter
-          </Link>
         </div>
       </section>
 

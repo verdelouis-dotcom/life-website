@@ -4,11 +4,6 @@ import type { AssessmentResultsPayload } from "@/components/assessment/Assessmen
 
 export const runtime = "nodejs";
 
-const FRIENDLY_FAILURE_MESSAGE =
-  "We couldn’t connect to The Shared LIFE Workshop newsletter. Please try again soon or email info@longevityinitiativeforfoodandeducation.com.";
-
-const INVALID_CREDENTIAL_HINTS = ["invalid api key", "unauthorized", "missing api key", "forbidden", "not allowed"];
-const DUPLICATE_HINTS = ["already", "exists", "duplicate"];
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.longevityinitiativeforfoodandeducation.com";
 
 type AssessmentReportPayload = {
@@ -19,173 +14,34 @@ type AssessmentReportPayload = {
   recommendations: AssessmentResultsPayload["recommendations"];
 };
 
-function resolveEnv(...keys: string[]) {
-  for (const key of keys) {
-    const value = process.env[key];
-    if (typeof value === "string" && value.trim()) {
-      return value.trim();
-    }
-  }
-  return undefined;
-}
-
-function collectMessages(payload: unknown): string[] {
-  if (typeof payload === "string") {
-    return [payload];
-  }
-
-  if (Array.isArray(payload)) {
-    return payload.flatMap((item) => collectMessages(item));
-  }
-
-  if (typeof payload === "object" && payload !== null) {
-    return Object.values(payload).flatMap((value) => collectMessages(value));
-  }
-
-  return [];
-}
-
 export async function POST(request: Request) {
-  console.info("NEWSLETTER_ROUTE_HIT", { method: request.method, url: request.url });
-
   try {
-    let rawBody: unknown;
-    try {
-      rawBody = await request.json();
-    } catch (error) {
-      console.error("NEWSLETTER_ROUTE_ERROR", { stage: "parse", error });
-      return NextResponse.json({ ok: false, error: "Invalid JSON payload." }, { status: 400 });
-    }
-
+    const rawBody: unknown = await request.json();
     if (!rawBody || typeof rawBody !== "object") {
-      console.error("NEWSLETTER_ROUTE_ERROR", { stage: "shape", detail: "Payload must be an object." });
       return NextResponse.json({ ok: false, error: "Invalid payload." }, { status: 400 });
     }
 
     const body = rawBody as Record<string, unknown>;
-    const payloadKeys = Object.keys(body);
-    const contextKeys =
-      typeof body.context === "object" && body.context !== null ? Object.keys(body.context as Record<string, unknown>) : undefined;
-    console.info("NEWSLETTER_ROUTE_PAYLOAD", {
-      keys: payloadKeys,
-      hasReport: Boolean(body.report),
-      contextKeys,
-    });
-
     const email = typeof body.email === "string" ? body.email.trim() : "";
     if (!email) {
-      console.error("NEWSLETTER_ROUTE_ERROR", { stage: "validation", detail: "Missing email" });
       return NextResponse.json({ ok: false, error: "A valid email is required." }, { status: 400 });
     }
 
     const firstName =
       typeof body.firstName === "string" && body.firstName.trim() ? body.firstName.trim() : undefined;
     const report = normalizeReport((body as { report?: unknown }).report);
-
-    const apiKey = resolveEnv("BEEHIIV_API_KEY", "NEXT_PUBLIC_BEEHIIV_API_KEY");
-    const publicationId = resolveEnv("BEEHIIV_PUBLICATION_ID", "NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID");
-    console.info("NEWSLETTER_ROUTE_CONFIG", {
-      hasBeehiivKey: Boolean(apiKey),
-      hasPublicationId: Boolean(publicationId),
-      hasGmailUser: Boolean(process.env.GMAIL_USER),
-      hasGmailAppPassword: Boolean(process.env.GMAIL_APP_PASSWORD),
-      hasToEmail: Boolean(process.env.LIFE_TO_EMAIL),
-    });
-
-    if (!apiKey || !publicationId) {
-      console.error("NEWSLETTER_ROUTE_ERROR", {
-        stage: "config",
-        detail: "Missing Beehiiv credentials",
-        hasApiKey: Boolean(apiKey),
-        hasPublicationId: Boolean(publicationId),
-      });
-      return NextResponse.json(
-        {
-          ok: false,
-          error: "Newsletter configuration is missing. Please alert info@longevityinitiativeforfoodandeducation.com.",
-        },
-        { status: 503 },
-      );
+    if (!report) {
+      return NextResponse.json({ ok: false, error: "Assessment report data is required." }, { status: 400 });
     }
 
-    let response: Response;
-    try {
-      response = await fetch(`https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          reactivate_existing: true,
-          send_welcome_email: true,
-        }),
-      });
-    } catch (error) {
-      console.error("NEWSLETTER_ROUTE_BEEHIIV_ERROR", { stage: "network", error });
-      return NextResponse.json({ ok: false, error: FRIENDLY_FAILURE_MESSAGE }, { status: 502 });
-    }
-
-    if (!response.ok) {
-      const raw = await response.text();
-      console.error("NEWSLETTER_ROUTE_BEEHIIV_ERROR", { stage: "response", status: response.status, body: raw });
-      let normalized = raw.toLowerCase();
-
-      try {
-        const parsed = JSON.parse(raw);
-        const flattened = collectMessages(parsed).join(" ");
-        normalized += ` ${flattened.toLowerCase()}`;
-      } catch {
-        // ignore parse errors
-      }
-
-      const duplicateSubscription = DUPLICATE_HINTS.some((hint) => normalized.includes(hint));
-      const credentialIssue =
-        response.status === 401 || INVALID_CREDENTIAL_HINTS.some((hint) => normalized.includes(hint));
-
-      const status = duplicateSubscription ? 409 : credentialIssue ? 502 : 500;
-      const errorMessage = duplicateSubscription
-        ? "You’re already on the LIFE newsletter."
-        : credentialIssue
-          ? FRIENDLY_FAILURE_MESSAGE
-          : "Subscription failed. Please try again soon.";
-
-      if (duplicateSubscription && report) {
-        try {
-          await sendAssessmentReportEmail({ email, firstName, report });
-        } catch (reportError) {
-          console.error("NEWSLETTER_ROUTE_REPORT_ERROR", { stage: "duplicate-email", reportError });
-        }
-      }
-
-      return NextResponse.json({ ok: false, error: errorMessage, alreadySubscribed: duplicateSubscription }, { status });
-    }
-
-    if (report) {
-      try {
-        await sendAssessmentReportEmail({
-          email,
-          firstName,
-          report,
-        });
-      } catch (error) {
-        console.error("NEWSLETTER_ROUTE_REPORT_ERROR", { stage: "send", error });
-        return NextResponse.json(
-          { ok: false, error: "We subscribed you, but couldn’t send the report. Please try again soon." },
-          { status: 502 },
-        );
-      }
-    }
-
-    console.info("NEWSLETTER_ROUTE_SUCCESS", { email, sentReport: Boolean(report) });
-    return NextResponse.json({
-      ok: true,
-      message: report ? "Report on the way—check your inbox soon." : "You’re now part of The Shared LIFE Workshop.",
-    });
+    await sendAssessmentReportEmail({ email, firstName, report });
+    return NextResponse.json({ ok: true, message: "Report on the way—check your inbox soon." });
   } catch (error) {
-    console.error("NEWSLETTER_ROUTE_ERROR", { stage: "unhandled", error });
-    return NextResponse.json({ ok: false, error: FRIENDLY_FAILURE_MESSAGE }, { status: 500 });
+    console.error("ASSESSMENT_REPORT_EMAIL_ERROR", error);
+    return NextResponse.json(
+      { ok: false, error: "We couldn’t send the report right now. Please try again soon." },
+      { status: 500 },
+    );
   }
 }
 

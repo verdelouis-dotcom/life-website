@@ -9,10 +9,9 @@ interface EmailCaptureCardProps {
   defaultFirstName?: string;
   report: AssessmentResultsPayload;
   onSuccess?: (email: string) => void;
-  tag?: string;
 }
 
-export default function EmailCaptureCard({ defaultFirstName = "", report, onSuccess, tag = "assessment-completed" }: EmailCaptureCardProps) {
+export default function EmailCaptureCard({ defaultFirstName = "", report, onSuccess }: EmailCaptureCardProps) {
   const [firstName, setFirstName] = useState(defaultFirstName);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -25,17 +24,6 @@ export default function EmailCaptureCard({ defaultFirstName = "", report, onSucc
     setMessage(null);
 
     try {
-      const subscribeResponse = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, tag }),
-      });
-
-      if (!subscribeResponse.ok) {
-        const errorText = await subscribeResponse.text().catch(() => "");
-        throw new Error(errorText || "Unable to subscribe");
-      }
-
       const payload = {
         email,
         firstName: firstName || undefined,
@@ -52,25 +40,16 @@ export default function EmailCaptureCard({ defaultFirstName = "", report, onSucc
         },
       };
 
-      let successMessage = "Report on the way—check your inbox soon.";
-      try {
-        const response = await fetch("/api/newsletter", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        const data = await response.json().catch(() => null);
-        if (!response.ok) {
-          throw new Error(data?.error || "Unable to send report");
-        }
-        successMessage =
-          data?.alreadySubscribed && typeof data?.message === "string"
-            ? data.message
-            : data?.message ?? "Report on the way—check your inbox soon.";
-      } catch (newsletterError) {
-        console.error("ASSESSMENT_NEWSLETTER_ERROR", newsletterError);
-        successMessage = "You're subscribed. If the report email doesn't arrive, contact info@longevityinitiativeforfoodandeducation.com.";
+      const response = await fetch("/api/assessment-report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.error || "Unable to send report");
       }
+      const successMessage = data?.message ?? "Report on the way—check your inbox soon.";
 
       if (typeof window !== "undefined") {
         window.localStorage.setItem(EMAIL_STORAGE_KEY, email);
@@ -94,7 +73,7 @@ export default function EmailCaptureCard({ defaultFirstName = "", report, onSucc
       <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Get Your Full Report</p>
       <h3 className="mt-2 text-2xl font-semibold text-[var(--life-forest)]">Get Your Full Report</h3>
       <p className="mt-2 text-sm text-[var(--muted)]">
-        Enter your email to receive your results, practical longevity tips, and updates from LIFE.
+        Enter your email to receive your assessment results and practical longevity tips.
       </p>
 
       {status === "success" ? (
@@ -139,7 +118,7 @@ export default function EmailCaptureCard({ defaultFirstName = "", report, onSucc
         </form>
       )}
 
-      <p className="mt-4 text-xs text-[var(--muted)]">No spam. Unsubscribe anytime.</p>
+      <p className="mt-4 text-xs text-[var(--muted)]">Your email is used only to send this report.</p>
     </section>
   );
 }

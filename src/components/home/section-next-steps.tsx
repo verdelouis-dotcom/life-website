@@ -6,7 +6,6 @@ const LINKS = [
   { label: "Impact & Accountability", href: "/impact" },
   { label: "Resources & Pillars", href: "/resources" },
   { label: "Support Us", href: "/donate" },
-  { label: "Newsletter", href: "/newsletter" },
 ];
 
 export default function SectionNextSteps() {
