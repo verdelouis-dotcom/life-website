@@ -74,9 +74,21 @@ export default function PastaClassForm() {
       </div>
       <div className="grid gap-1">
         <label htmlFor="date" className="type-eyebrow">
-          Preferred date
+          Preferred Sunday
         </label>
-        <input id="date" name="date" type="date" required className="rounded-2xl border border-[var(--border)] bg-white px-4 py-3" />
+        <input
+          id="date"
+          name="date"
+          type="date"
+          required
+          onChange={(event) => {
+            const selectedDate = event.currentTarget.value;
+            const isSunday = selectedDate ? new Date(`${selectedDate}T00:00:00Z`).getUTCDay() === 0 : true;
+            event.currentTarget.setCustomValidity(isSunday ? "" : "Fresh pasta classes are currently available on Sundays only.");
+          }}
+          className="rounded-2xl border border-[var(--border)] bg-white px-4 py-3"
+        />
+        <p className="text-xs text-[var(--muted)]">Classes are currently available on Sundays only.</p>
       </div>
       <div className="grid gap-1">
         <label htmlFor="message" className="type-eyebrow">

@@ -33,6 +33,7 @@ const WHAT_YOU_DO = [
 
 const DETAILS = [
   { label: "Duration", value: "3 hours" },
+  { label: "Availability", value: "Sundays only" },
   { label: "Location", value: "Host house — Washington, DC metro area" },
   { label: "Group size", value: "2–6 guests" },
   { label: "Price", value: "$75 per person" },
@@ -156,7 +157,7 @@ export default function FreshPastaClassPage() {
           <div className="space-y-3">
             <p className="type-eyebrow text-[var(--olive)]">Book Your Spot</p>
             <h2 className="text-3xl font-serif text-[var(--ink)]">Reserve your class</h2>
-            <p className="text-[var(--text)]">2–6 guests · $75 per person · Washington, DC metro area. Lou &amp; Kara will reply with available dates.</p>
+            <p className="text-[var(--text)]">2–6 guests · $75 per person · Sundays only · Washington, DC metro area. Lou &amp; Kara will reply to confirm availability.</p>
           </div>
           <PastaClassForm />
         </section>
