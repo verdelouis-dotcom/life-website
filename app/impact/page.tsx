@@ -39,7 +39,7 @@ const TRACKING_POINTS = [
 const PILOT_METRICS = [
   {
     title: "LIFE Cooking Experiences Registered",
-    detail: "Every LIFE cooking experience hosted in Atlanta, GA and Austin, TX is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
+    detail: "Every LIFE cooking experience hosted in the Washington, DC metro area and Austin, TX is logged with date, host, and attendance so trend lines can be published during quarterly reviews.",
   },
   {
     title: "People Reached",
@@ -71,7 +71,7 @@ export default function ImpactPage() {
             <p className="label-text">Impact</p>
             <h1 className="mt-2 heading-xl">LIFE Impact</h1>
             <p className="mt-4 body-lg text-[var(--muted)]">
-              LIFE began in Georgia so the model could be tracked, reported, and responsibly scaled. Early hosts in Atlanta, GA and Austin, TX
+              LIFE began in Georgia so the model could be tracked, reported, and responsibly scaled. Hosts in the Washington, DC metro area and Austin, TX
               now help prove that the same shared-LIFE cooking experience approach can travel while remaining accountable.
             </p>
           </div>

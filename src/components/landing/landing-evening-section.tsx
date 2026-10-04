@@ -24,7 +24,7 @@ const STEPS = [
 ];
 
 const DETAILS = [
-  "Hosted in private homes in Atlanta, GA & Austin, TX",
+  "Hosted in private homes in the Washington, DC metro area & Austin, TX",
   "Any recipe — the host shares what they love to make",
   "Fresh, whole ingredients only",
   "Everyone helps, including cleanup",

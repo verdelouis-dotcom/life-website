@@ -33,7 +33,7 @@ const BOARD_MEMBERS = [
   {
     name: "Bob Fabbio",
     role: "Vice President",
-    bio: "Entrepreneur and founder of Norrio Capital Partners. Bob guides replication strategy and philanthropic partnerships as LIFE expands beyond Atlanta.",
+    bio: "Entrepreneur and founder of Norrio Capital Partners. Bob guides replication strategy and philanthropic partnerships as LIFE expands to new communities.",
   },
   {
     name: "Kara Verde",
@@ -105,7 +105,7 @@ export default function AboutPage() {
             <p>Because if we change kitchens, we change habits.</p>
             <p>If we change habits, we change health.</p>
             <p>And if we change health, we change the future.</p>
-            <p className="font-semibold text-[var(--olive)]">Lou Verde · Founder · Atlanta, GA</p>
+            <p className="font-semibold text-[var(--olive)]">Lou Verde · Founder · Washington, DC metro area</p>
           </div>
         </article>
       </section>

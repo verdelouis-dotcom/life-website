@@ -33,7 +33,7 @@ const PHOTO_MOMENT = [
 const DOORS = [
   {
     title: "Book Fresh Pasta Cooking Class",
-    body: "Hands-on pasta making with Lou and Kara Verde in Atlanta. Learn to roll, shape, and share pasta the traditional way.",
+    body: "Hands-on pasta making with Lou and Kara Verde in the Washington, DC metro area. Learn to roll, shape, and share pasta the traditional way.",
     ctaLabel: "Book the class →",
     href: "/pasta-class",
   },

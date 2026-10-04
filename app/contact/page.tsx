@@ -90,10 +90,9 @@ export default function ContactPage() {
               </li>
             </ul>
             <div className="mt-6 space-y-2 text-sm">
-              <p className="font-semibold text-[var(--life-forest)]">Mailing address</p>
+              <p className="font-semibold text-[var(--life-forest)]">Service area</p>
               <p>Longevity Initiative for Food &amp; Education</p>
-              <p>PO Box 54744</p>
-              <p>Atlanta, GA 30308</p>
+              <p>Washington, DC, Maryland &amp; Northern Virginia</p>
             </div>
           </aside>
         </section>

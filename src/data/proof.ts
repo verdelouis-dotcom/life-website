@@ -30,7 +30,7 @@ export const PILOT_QUOTES: ProofQuote[] = [
 
 export const PARTNER_READY_HIGHLIGHTS: ProofHighlight[] = [
   {
-    title: "Rooted in Georgia",
+    title: "Rooted in Community",
     detail: "Built with neighborhoods, congregations, and clinics that want to restore shared meals close to home.",
     tag: "Pilot Stage",
   },
@@ -72,7 +72,7 @@ export const WORKSHOP_PROOF: ProofHighlight[] = [
   },
   {
     title: "Easy to Request",
-    detail: "Partners in Atlanta, Rochester, and Austin can book directly through the contact form; other cities may request virtual cohorts.",
+    detail: "Partners in the Washington, DC metro area, Rochester, and Austin can book directly through the contact form; other cities may request virtual cohorts.",
   },
 ];
 

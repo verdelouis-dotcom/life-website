@@ -159,7 +159,7 @@ export default function RegisterForm() {
             id="city"
             name="city"
             className="rounded-2xl border border-[var(--border)] bg-white/90 px-4 py-3"
-            placeholder="Atlanta"
+            placeholder="Washington, DC"
           />
         </div>
         <div className="grid gap-2">

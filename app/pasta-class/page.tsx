@@ -7,17 +7,17 @@ import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Fresh Pasta Cooking Class — LIFE",
   description:
-    "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in Atlanta. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
+    "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in the Washington, DC metro area. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
   openGraph: {
     title: "Fresh Pasta Cooking Class — LIFE",
     description:
-      "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in Atlanta. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
+      "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in the Washington, DC metro area. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "Fresh Pasta Cooking Class — LIFE",
     description:
-      "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in Atlanta. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
+      "Book the LIFE Fresh Pasta Cooking Class with Lou and Kara Verde in the Washington, DC metro area. Cook pasta from scratch, make tiramisu, and support the LIFE nonprofit.",
     images: DEFAULT_TWITTER_IMAGES,
   },
 };
@@ -33,7 +33,7 @@ const WHAT_YOU_DO = [
 
 const DETAILS = [
   { label: "Duration", value: "3 hours" },
-  { label: "Location", value: "Host house — Atlanta, GA area" },
+  { label: "Location", value: "Host house — Washington, DC metro area" },
   { label: "Group size", value: "2–6 guests" },
   { label: "Price", value: "$75 per person" },
   { label: "Included", value: "One glass of wine" },
@@ -77,7 +77,7 @@ export default function FreshPastaClassPage() {
                 made. No experience needed. Just show up ready to cook.
               </p>
               <p className="text-base leading-relaxed text-[var(--text)]">
-                Lou and Kara Verde open their Atlanta home to small groups — 2 to 6 guests — for an evening rooted in Italian tradition. Every penny supports LIFE —
+                Lou and Kara Verde open their home in the Washington, DC metro area to small groups — 2 to 6 guests — for an evening rooted in Italian tradition. Every penny supports LIFE —
                 the Longevity Initiative for Food &amp; Education.
               </p>
             </div>
@@ -132,7 +132,7 @@ export default function FreshPastaClassPage() {
             <p className="type-eyebrow text-[var(--olive)]">Your Hosts</p>
             <h2 className="text-3xl font-serif text-[var(--ink)]">Lou &amp; Kara Verde</h2>
             <p className="text-[var(--text)] leading-relaxed">
-              Lou and Kara open their Atlanta home to small groups for an evening rooted in Italian tradition. Lou grew up in a three-generation Italian-American
+              Lou and Kara open their home in the Washington, DC metro area to small groups for an evening rooted in Italian tradition. Lou grew up in a three-generation Italian-American
               household where everyone was always in the kitchen, the food was real, and the table was sacred. He founded LIFE to bring that way of living back —
               one table at a time. Every penny from every class goes directly to LIFE.
             </p>
@@ -156,7 +156,7 @@ export default function FreshPastaClassPage() {
           <div className="space-y-3">
             <p className="type-eyebrow text-[var(--olive)]">Book Your Spot</p>
             <h2 className="text-3xl font-serif text-[var(--ink)]">Reserve your class</h2>
-            <p className="text-[var(--text)]">2–6 guests · $75 per person · Atlanta, GA. Lou &amp; Kara will reply with available dates.</p>
+            <p className="text-[var(--text)]">2–6 guests · $75 per person · Washington, DC metro area. Lou &amp; Kara will reply with available dates.</p>
           </div>
           <PastaClassForm />
         </section>

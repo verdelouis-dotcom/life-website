@@ -3,7 +3,7 @@ import styles from "./landing.module.css";
 const rippleDetails = [
   "Each table of 4–6 guests creates 4–6 potential new tables",
   "The 30-day promise keeps the momentum alive",
-  "Currently piloting in Atlanta, GA & Austin, TX",
+  "Currently piloting in the Washington, DC metro area & Austin, TX",
   "LIFE is a 501(c)(3) nonprofit",
 ];
 

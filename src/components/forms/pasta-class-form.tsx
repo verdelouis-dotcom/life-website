@@ -34,7 +34,7 @@ export default function PastaClassForm() {
           name: payload.name,
           email: payload.email,
           interestType: "Fresh Pasta Cooking Class",
-          city: "Atlanta",
+          city: "Washington, DC",
           message: `Fresh Pasta Class Inquiry\nGroup size: ${payload.groupSize}\nPreferred date: ${payload.date}\n${payload.message ? `Notes: ${payload.message}` : ""}`.trim(),
           source: "Pasta Class Page",
         }),
