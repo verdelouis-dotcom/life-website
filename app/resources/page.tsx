@@ -7,18 +7,18 @@ import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/resources";
 
 export const metadata: Metadata = {
-  title: "LIFE Resources | Longevity, Food & Community Education",
-  description: "Explore LIFE resources on longevity, shared meals, Mediterranean cooking, and community health.",
+  title: "Learn with LIFE | Free Longevity Education & Resources",
+  description: "Explore free LIFE education across six pillars: Food, Movement, Sleep, Connection, Purpose, and Stress Regulation.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "LIFE Resources | Longevity, Food & Community Education",
-    description: "Explore LIFE resources on longevity, shared meals, Mediterranean cooking, and community health.",
+    title: "Learn with LIFE | Free Longevity Education & Resources",
+    description: "Explore free LIFE education across six pillars: Food, Movement, Sleep, Connection, Purpose, and Stress Regulation.",
     url: PAGE_URL,
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
-    title: "LIFE Resources | Longevity, Food & Community Education",
-    description: "Explore LIFE resources on longevity, shared meals, Mediterranean cooking, and community health.",
+    title: "Learn with LIFE | Free Longevity Education & Resources",
+    description: "Explore free LIFE education across six pillars: Food, Movement, Sleep, Connection, Purpose, and Stress Regulation.",
     images: DEFAULT_TWITTER_IMAGES,
   },
 };
@@ -29,11 +29,11 @@ export default function ResourcesPage() {
       <main className="bg-[var(--bg)] text-[var(--text)]">
         <section className="section-spacing">
           <div className="mx-auto max-w-5xl rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
-            <p className="label-text">LIFE Resources</p>
-            <h1 className="mt-2 heading-xl">LIFE Resources</h1>
+            <p className="label-text">Learn with LIFE</p>
+            <h1 className="mt-2 heading-xl">Free longevity education for everyday life.</h1>
             <p className="mt-4 body-md text-[var(--muted)]">
-              LIFE shares practical education about longevity, Mediterranean-inspired cooking, and the power of community LIFE cooking experiences. Explore the
-              guides below to understand the philosophy that began in Georgia and how hosts are carrying it to the Washington, DC metro area and Austin, TX.
+              LIFE teaches practical, evidence-informed habits across Food, Movement, Sleep, Connection, Purpose, and Stress Regulation. Explore free articles,
+              pillar guides, and the LIFE Guide—then choose the next step that fits your life. The philosophy began in Georgia and now serves people from the Washington, DC metro area and beyond.
             </p>
           </div>
         </section>

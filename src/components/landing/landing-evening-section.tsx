@@ -19,7 +19,7 @@ const STEPS = [
   },
   {
     title: "You make a promise",
-    body: "Within 30 days, you host your own table. The only rule is you pass it on.",
+    body: "Take the ideas home. Use the free LIFE resources, share another meal, or host a table if and when it feels right.",
   },
 ];
 

@@ -5,21 +5,21 @@ import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 const HOST_URL = "https://www.longevityinitiativeforfoodandeducation.com/host";
 
 export const metadata: Metadata = {
-  title: "Host a LIFE Cooking Experience",
-  description: "Open your kitchen and pass on the LIFE cooking experience movement.",
+  title: "Host a LIFE Table — An Optional Way to Participate",
+  description: "Gather people around your table and optionally use LIFE's free resources to make food, connection, and conversation part of everyday life.",
   alternates: {
     canonical: HOST_URL,
   },
   openGraph: {
-    title: "Host a LIFE Cooking Experience",
-    description: "Open your kitchen and pass on the LIFE cooking experience movement.",
+    title: "Host a LIFE Table — An Optional Way to Participate",
+    description: "Gather people around your table and optionally use LIFE's free resources to make food, connection, and conversation part of everyday life.",
     url: HOST_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
-    title: "Host a LIFE Cooking Experience",
-    description: "Open your kitchen and pass on the LIFE cooking experience movement.",
+    title: "Host a LIFE Table — An Optional Way to Participate",
+    description: "Gather people around your table and optionally use LIFE's free resources to make food, connection, and conversation part of everyday life.",
     images: DEFAULT_TWITTER_IMAGES,
   },
 };
@@ -33,7 +33,7 @@ const FAQ_ITEMS = [
   {
     question: "How do I get started?",
     answer:
-      "Attend a LIFE cooking experience first — Lou and Kara's Fresh Pasta Cooking Class is a great place to start. From there, open your own kitchen and invite the people you already know.",
+      "Invite people you care about, choose something simple to cook, and make time to eat together. You do not need to attend a LIFE class first.",
   },
   {
     question: "What should I cook?",
@@ -45,8 +45,8 @@ const FAQ_ITEMS = [
     answer: "2 to 6 people is the sweet spot. Small enough that everyone gets to talk.",
   },
   {
-    question: "Do my guests have to host one after?",
-    answer: "No one will force them. But once they've experienced it, most people want to. That's how the table keeps growing.",
+    question: "Do my guests have to host another table afterward?",
+    answer: "No. A LIFE Table is a meaningful experience on its own. Guests are welcome to host someday, but there is no required sequence or commitment.",
   },
 ];
 
@@ -55,31 +55,32 @@ export default function HostPage() {
     <main className="bg-[var(--bg)] text-[var(--text)]">
       <section className="section-spacing bg-gradient-to-br from-[#fff7ee] via-[#fefcf8] to-[#f5efe6]">
         <div className="mx-auto max-w-4xl space-y-6 px-6 text-center">
-          <p className="label-text">Host a LIFE Cooking Experience</p>
-          <h1 className="heading-xl">You experienced it. Now pass it on.</h1>
+          <p className="label-text">An Optional Way to Participate</p>
+          <h1 className="heading-xl">Bring LIFE to your table.</h1>
           <p className="body-lg text-[var(--muted)]">
-            Hosting a LIFE cooking experience is how the movement grows. You don&apos;t need to be a chef. You don&apos;t need a big house. You just need a kitchen, fresh ingredients, and people you want to feed.
+            Gather family, friends, neighbors, or people you want to know better. Cook together, put the phones away, and make room for real conversation.
           </p>
+          <p className="body-md font-semibold text-[var(--life-forest)]">You don&apos;t need to attend a LIFE class first. You don&apos;t need to be a chef. You just need a table and people to share it with.</p>
         </div>
       </section>
 
       <section className="section-spacing">
         <div className="mx-auto max-w-5xl space-y-8 rounded-[36px] border border-[var(--border)] bg-white p-10 shadow-sm">
           <div className="text-center">
-            <p className="type-eyebrow text-[var(--olive)]">How it works</p>
-            <h2 className="heading-lg">How it works</h2>
+            <p className="type-eyebrow text-[var(--olive)]">How a LIFE Table Works</p>
+            <h2 className="heading-lg">Four simple, flexible steps</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {[
               {
                 label: "01",
-                title: "You attended a LIFE cooking experience",
-                body: "Something clicked. The food was real. The conversation was real. You want to bring that to the people in your life.",
+                title: "Gather your people",
+                body: "Invite family, friends, neighbors, or people you want to know better. A small group makes it easier for everyone to connect.",
               },
               {
                 label: "02",
-                title: "Open your kitchen",
-                body: "Pick a date. Invite friends, neighbors, or family — 2 to 6 people is the sweet spot. Pick a recipe. Cook together. Share the LIFE Guide with everyone at your table.",
+                title: "Share the table",
+                body: "Cook together, eat together, put the phones away, and make time for conversation and connection.",
               },
             ].map((step) => (
               <article key={step.title} className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-6">
@@ -90,16 +91,15 @@ export default function HostPage() {
             ))}
             <article className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-6">
               <p className="text-sm font-semibold text-[var(--olive)]">03</p>
-              <h3 className="mt-2 text-2xl font-serif text-[var(--life-forest)]">Register your table</h3>
-              <p className="mt-3 text-sm leading-6 text-[var(--text)]">Log your cooking experience so it counts toward the movement. Every registered table helps LIFE measure impact and report to donors.</p>
-              <Link href="/register" className="btn-outline mt-4 inline-flex">
-                Register Your Table →
-              </Link>
+              <h3 className="mt-2 text-2xl font-serif text-[var(--life-forest)]">Bring LIFE to the table</h3>
+              <p className="mt-3 text-sm leading-6 text-[var(--text)]">Use LIFE&apos;s free educational resources, recipes, LIFE Guide, or conversation material if it adds value to your gathering.</p>
+              <Link href="/resources" className="btn-outline mt-4 inline-flex">Explore Free Resources →</Link>
             </article>
             <article className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/80 p-6">
               <p className="text-sm font-semibold text-[var(--olive)]">04</p>
-              <h3 className="mt-2 text-2xl font-serif text-[var(--life-forest)]">Pass it on</h3>
-              <p className="mt-3 text-sm leading-6 text-[var(--text)]">Encourage your guests to host their own table. That&apos;s how one kitchen becomes many.</p>
+              <h3 className="mt-2 text-2xl font-serif text-[var(--life-forest)]">Register your table</h3>
+              <p className="mt-3 text-sm leading-6 text-[var(--text)]">Optionally register the experience so LIFE can understand its community reach and impact. Registration is appreciated, not required.</p>
+              <Link href="/register" className="btn-outline mt-4 inline-flex">Register Your Table →</Link>
             </article>
           </div>
         </div>
@@ -107,10 +107,10 @@ export default function HostPage() {
 
       <section className="section-spacing bg-white">
         <div className="mx-auto max-w-4xl space-y-4 px-6 text-center">
-          <p className="label-text">LIFE Host Champions</p>
-          <h2 className="heading-lg">Become a LIFE Host Champion</h2>
+          <p className="label-text">For Those Who Want to Do More</p>
+          <h2 className="heading-lg">Host again—or simply enjoy the table you shared.</h2>
           <p className="body-md text-[var(--muted)]">
-            Host three or more cooking experiences a year. Mentor new hosts. Help the movement grow beyond your neighborhood.
+            There is no obligation to create a chain of hosts. If hosting becomes meaningful to you, LIFE can help you use the free resources and welcome others in your community.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <a href="mailto:info@longevityinitiativeforfoodandeducation.com?subject=LIFE%20Host%20Champion" className="btn-outline px-8 text-base">
@@ -138,7 +138,7 @@ export default function HostPage() {
       <section className="section-spacing">
         <div className="mx-auto flex max-w-4xl flex-col gap-4 rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
-            <p className="label-text text-[var(--olive)]">Keep the ripple going</p>
+            <p className="label-text text-[var(--olive)]">Optional next steps</p>
             <h3 className="heading-md">Next steps</h3>
           </div>
           <div className="flex flex-wrap justify-center gap-3">

@@ -72,7 +72,7 @@ export default function FreshPastaClassPage() {
           <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="space-y-4 md:max-w-2xl">
               <h1 className="text-4xl font-serif leading-tight md:text-5xl">Fresh Pasta Cooking Class</h1>
-              <p className="text-lg text-[var(--muted)]">An authentic taste of Italy — in someone&apos;s home, the way it was meant to be.</p>
+              <p className="text-lg text-[var(--muted)]">Cook together. Share the table. Support the mission.</p>
               <p className="text-base leading-relaxed text-[var(--text)]">
                 Fresh pasta made by hand. A classic tiramisu. A glass of wine. Three hours in Lou and Kara&apos;s kitchen — cook from scratch, sit down, and eat what you
                 made. No experience needed. Just show up ready to cook.
@@ -164,14 +164,13 @@ export default function FreshPastaClassPage() {
 
         <section className="rounded-[32px] border border-[var(--border)] bg-white/95 p-10 shadow-sm flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 className="text-2xl font-serif text-[var(--ink)]">Become a LIFE Host</h3>
+            <h3 className="text-2xl font-serif text-[var(--ink)]">Your class supports free LIFE education</h3>
             <p className="mt-2 text-[var(--text)]">
-              Inspired by your evening with Lou and Kara? Open your own kitchen. Pick a recipe, invite your neighbors, cook together, and share the LIFE Guide
-              with everyone at your table. That&apos;s how this grows.
+              This is an authentic cooking and connection experience—and a fundraiser for LIFE. Proceeds help keep the LIFE Assessment and practical longevity resources free and accessible.
             </p>
           </div>
-          <Link href="/host" className="btn-outline whitespace-nowrap">
-            Learn More →
+          <Link href="/resources" className="btn-outline whitespace-nowrap">
+            Explore Free Resources →
           </Link>
         </section>
 

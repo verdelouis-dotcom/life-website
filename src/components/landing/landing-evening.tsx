@@ -15,8 +15,8 @@ const steps = [
     body: "Conversation stays focused on real life — food, movement, purpose, rest, connection, stress.",
   },
   {
-    title: "Pass it on",
-    body: "Every guest leaves with the LIFE Guide and a promise to host within 30 days.",
+    title: "Take LIFE home",
+    body: "Every guest leaves with practical ideas and the free LIFE Guide—without any requirement to host another event.",
   },
 ];
 

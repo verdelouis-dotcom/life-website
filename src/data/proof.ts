@@ -56,8 +56,8 @@ export const ABOUT_PROOF: ProofHighlight[] = [
     detail: "Volunteer board members oversee finances, ingredients, and research partnerships.",
   },
   {
-    title: "Designed for Replication",
-    detail: "Host guides, registration, and assessments make the model ready for neighborhoods, faith communities, and clinics.",
+    title: "Designed to Reach More People",
+    detail: "Free education, the LIFE Assessment, practical resources, and optional community tools make the model accessible across settings.",
   },
 ];
 
@@ -87,7 +87,7 @@ export const IMPACT_PROOF: ProofHighlight[] = [
   },
   {
     title: "Expansion Criteria",
-    detail: "Early expansion (Atlanta, Rochester, Austin) depends on consistent host retention, assessment completion, and documented outcomes.",
+    detail: "Early expansion (Atlanta, Rochester, Austin) is evaluated through education reach, assessment completion, participation, and documented outcomes.",
   },
 ];
 

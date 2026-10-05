@@ -27,7 +27,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
   return (
     <ResourceArticleLayout
       title="How LIFE Creates Community Health"
-      intro="LIFE is designed as a simple, replicable framework: attend a LIFE cooking experience, host a LIFE cooking experience, register the cooking experience. Each step adds data and trust, making it easier to serve more neighborhoods without diluting the mission."
+      intro="LIFE combines free education, the LIFE Assessment, practical resources, and optional community experiences. People can learn and take action without attending or hosting a cooking experience."
       primaryCta={{ href: "/about", label: "Learn How LIFE Works" }}
       secondaryCta={{ href: "/donate", label: "Support Us", variant: "outline" }}
     >
@@ -40,7 +40,7 @@ export default function HowLifeCreatesCommunityHealthPage() {
           <Link href="/about" className="text-[var(--terracotta)] underline">
             Attend → Host → Register
           </Link>{" "}
-          cycle and ensure every host understands the six pillars before inviting neighbors.
+          mission and help community participants understand the six pillars when they choose to gather neighbors.
         </p>
       </ResourceSection>
 

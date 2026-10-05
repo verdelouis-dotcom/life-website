@@ -6,20 +6,20 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/about";
 
 export const metadata: Metadata = {
   title: "About LIFE — Longevity Initiative for Food & Education",
-  description: "Learn how LIFE is restoring longevity habits through shared cooking experiences, practical education, and accountable leadership.",
+  description: "Learn about LIFE, a nonprofit longevity education initiative offering a free Assessment, practical resources, and mission-driven experiences.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "About LIFE — Longevity Initiative for Food & Education",
-    description: "Learn how LIFE is restoring longevity habits through shared cooking experiences, practical education, and accountable leadership.",
+    description: "Learn about LIFE, a nonprofit longevity education initiative offering a free Assessment, practical resources, and mission-driven experiences.",
     url: PAGE_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     title: "About LIFE — Longevity Initiative for Food & Education",
-    description: "Learn how LIFE is restoring longevity habits through shared cooking experiences, practical education, and accountable leadership.",
+    description: "Learn about LIFE, a nonprofit longevity education initiative offering a free Assessment, practical resources, and mission-driven experiences.",
     images: DEFAULT_TWITTER_IMAGES,
   },
 };
@@ -33,7 +33,7 @@ const BOARD_MEMBERS = [
   {
     name: "Bob Fabbio",
     role: "Vice President",
-    bio: "Entrepreneur and founder of Norrio Capital Partners. Bob guides replication strategy and philanthropic partnerships as LIFE expands to new communities.",
+    bio: "Entrepreneur and founder of Norrio Capital Partners. Bob guides growth strategy and philanthropic partnerships as LIFE's free education reaches new communities.",
   },
   {
     name: "Kara Verde",
@@ -94,6 +94,7 @@ export default function AboutPage() {
             <p>My grandfather had a massive garden. Every season he worked the soil with pride — lettuce, tomatoes, peas, peppers, squash, zucchini, garlic, eggplant, green beans, peach trees, mulberry trees, fig trees, raspberries, barrels of fresh basil and parsley, and wine made the old-fashioned way.</p>
             <p>Everyone was always in the kitchen. The food was real — fresh ingredients, old recipes, vegetables from the garden. The table was sacred.</p>
             <p>My grandparents lived into their 90s. They were celebrated, respected, and surrounded by family until the very end.</p>
+            <p>They didn&apos;t study longevity. They lived it—in the food they cooked, the way they moved, the people they served, and the purpose they carried into each day.</p>
             <p>At the time I didn't realize how rare that was.</p>
             <p>Years later, I traveled to Italy — not as a tourist, but as a student. I wanted to understand why the communities where people lived the longest all shared the same patterns. What I found wasn't surprising. It was exactly what I had grown up with.</p>
             <p>The gardens. The kitchens. The tables. The unhurried meals. The neighbors who knew each other by name. The sense that life was something you lived together — not something you consumed alone.</p>
@@ -128,10 +129,10 @@ export default function AboutPage() {
           <p className="type-eyebrow text-[var(--olive)]">What Makes LIFE Different</p>
           <h2 className="heading-lg">What Makes LIFE Different</h2>
           <p className="mt-4 text-base leading-7">
-            LIFE is not just a longevity movement. It is a multidimensional organization — part cooking experience, part community movement, part education platform — and it lives not in a clinic or a classroom, but in someone's home. Anyone can be a host. Just like Lou and Kara open their kitchen, so can you. A neighbor. A friend. A family with a dining room table and a belief that real food and real connection matter.
+            LIFE is a nonprofit longevity education initiative—not a medical provider, diet program, supplement company, or biohacking platform. Its free education and Assessment help people understand everyday habits, while cooking experiences and donations fund the mission. Optional LIFE Tables offer another way to bring the ideas into homes and communities.
           </p>
           <p className="mt-4 text-base leading-7">
-            The experience doesn't require a professional chef or a formal curriculum. It requires a kitchen, fresh ingredients, and the willingness to share what you know with the people around you. There are millions of Americans who would benefit from this way of living and would like to learn. They deserve to live longer and happier lives. LIFE exists because those of us who were lucky enough to grow up around the table have a responsibility to share it. To open our kitchens. To pass it on. This is how it spreads. Not through advertising. Not through algorithms. Through open doors and full tables.
+            The experience doesn&apos;t require a professional chef or a formal curriculum. It requires a kitchen, fresh ingredients, and the willingness to share what you know with the people around you. There are millions of Americans who would benefit from this way of living and would like to learn. LIFE makes that education freely available online, while classes and optional LIFE Tables create meaningful ways to experience it together. Open doors and full tables matter—but no one has to host in order to participate.
           </p>
         </article>
       </section>

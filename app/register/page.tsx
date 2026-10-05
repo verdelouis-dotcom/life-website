@@ -33,7 +33,7 @@ export default function RegisterPage() {
           <p className="mt-2 type-detail uppercase tracking-[0.3em] text-[var(--olive)]">For hosted LIFE cooking experiences only</p>
           <p className="mt-4 type-body-muted">
             Use this form after you have hosted a LIFE cooking experience. Registration is how LIFE measures participation and reach for grants,
-            accountability, and replication. Optional: upload a photo and provide consent so we can share the rhythm publicly.
+            accountability, and community reach. Optional: upload a photo and provide consent so we can share the experience publicly.
           </p>
         </section>
 

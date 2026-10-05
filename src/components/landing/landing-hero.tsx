@@ -15,13 +15,13 @@ export function LandingHero() {
           Washington, DC metro area · Austin, TX · Nonprofit · Pilot
         </div>
         <h1 className="fu2 font-[var(--font-landing-heading)] text-[clamp(2.4rem,3.5vw,3.2rem)] font-normal leading-[1.18] text-[var(--ink)]" style={{ animation: "fadeUp 0.65s ease 0.25s both" }}>
-          A neighbor invites you in. You cook. You eat. You <em className="text-[var(--terra)] not-italic">pass it on.</em>
+          Learn what supports a longer, healthier life. See your habits clearly. Take one practical step at a time.
         </h1>
         <p className="fu3 max-w-xl text-[1rem] font-light leading-[1.9] text-[var(--earth-mid)]" style={{ animation: "fadeUp 0.65s ease 0.4s both" }}>
           LIFE evenings teach people how to cook Mediterranean-inspired meals, build grounding habits, and restore the expectation that friends, families, and neighbors gather around a shared table.
         </p>
         <p className="fu4 max-w-md border-l-2 border-[var(--parchment)] pl-4 text-[0.85rem] font-normal leading-[1.7] text-[var(--muted-earth)]" style={{ animation: "fadeUp 0.65s ease 0.55s both" }}>
-          Every guest receives the LIFE Guide to try small habits at home. Within 30 days, they host their own LIFE cooking experience—keeping the measureable ripple growing.
+          LIFE provides free education and the LIFE Assessment online. Cooking experiences offer a powerful way to connect, learn, and support the nonprofit mission.
         </p>
         <div className="fu5 flex flex-wrap gap-3" style={{ animation: "fadeUp 0.65s ease 0.68s both" }}>
           <Link href="/host" className="btn-p">

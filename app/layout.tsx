@@ -17,7 +17,7 @@ const ORGANIZATION_SCHEMA = {
   alternateName: "LIFE",
   url: SITE_URL,
   logo: `${SITE_URL}/branding/life-wordmark-upload.png`,
-  description: "LIFE is a nonprofit teaching longevity habits through Mediterranean cooking, shared meals, and community education.",
+  description: "LIFE is a nonprofit longevity education initiative providing free, practical tools for healthier everyday living.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "general",
@@ -55,13 +55,13 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "LIFE — Longevity Initiative for Food & Education",
-  description: "Real food. Real connection. Real life. Learn the habits behind the world's longest-lived cultures — starting in your kitchen.",
+  description: "People are living longer. LIFE helps them live those years better through free, practical longevity education and the LIFE Assessment.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: "LIFE — Longevity Initiative for Food & Education",
-    description: "Real food. Real connection. Real life. Learn the habits behind the world's longest-lived cultures — starting in your kitchen.",
+    description: "People are living longer. LIFE helps them live those years better through free, practical longevity education and the LIFE Assessment.",
     url: SITE_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
     locale: "en_US",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "LIFE — Longevity Initiative for Food & Education",
-    description: "Real food. Real connection. Real life. Learn the habits behind the world's longest-lived cultures — starting in your kitchen.",
+    description: "People are living longer. LIFE helps them live those years better through free, practical longevity education and the LIFE Assessment.",
     images: DEFAULT_TWITTER_IMAGES,
   },
   icons: {

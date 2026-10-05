@@ -6,13 +6,11 @@ import Logo from "@/components/ui/logo";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/pasta-class", label: "Fresh Pasta Cooking Class" },
   { href: "/assessment", label: "Take the Assessment" },
-  { href: "/host", label: "Host a Table" },
+  { href: "/resources", label: "Learn" },
+  { href: "/pasta-class", label: "Fresh Pasta Cooking Class" },
   { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/donate", label: "Support Us" },
-  { href: "/contact", label: "Contact" },
+  { href: "/donate", label: "Support LIFE" },
 ];
 
 export default function SiteNav() {

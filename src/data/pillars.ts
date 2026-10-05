@@ -15,7 +15,7 @@ export const PILLARS: PillarDetail[] = [
     color: "#5e7d5a",
     summary: "Meals prepared with fresh ingredients, rich in plants and whole foods, support long-term health and reduce chronic disease risk.",
     intro:
-      "LIFE teaches hosts how to center every LIFE workshop on cooking with fresh ingredients—vegetables, legumes, olive oil, and seafood—while limiting added sugars and refined oils.",
+      "LIFE teaches practical ways to center everyday meals on fresh ingredients—vegetables, legumes, olive oil, and seafood—while limiting added sugars and refined oils.",
     reasons: [
       {
         heading: "Cardiometabolic protection",
@@ -27,7 +27,7 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Practicality at home",
-        text: "Simple pantry staples—beans, tomatoes, greens, citrus, and whole grains—allow hosts to repeat the model monthly without industrial ingredients.",
+        text: "Simple pantry staples—beans, tomatoes, greens, citrus, and whole grains—make nourishing meals realistic without complicated routines or industrial ingredients.",
       },
     ],
     references: [
@@ -42,19 +42,19 @@ export const PILLARS: PillarDetail[] = [
     summary:
       "Regular movement, strength, and everyday physical activity support metabolic health, mobility, and healthy aging.",
     intro:
-      "The host flow bakes in walking, chopping, lifting cookware, and standing conversations—meeting the World Health Organization’s recommendation for regular moderate movement.",
+      "Walking, chopping, lifting cookware, gardening, and standing conversations show how regular movement can fit naturally into daily life.",
     reasons: [
       {
         heading: "Metabolic boosts",
-        text: "WHO guidelines show that 150 minutes of moderate activity weekly lowers all-cause mortality by 20–30%. LIFE workshops encourage cumulative movement bursts every month.",
+        text: "WHO guidelines show that 150 minutes of moderate activity weekly lowers all-cause mortality by 20–30%. LIFE education encourages movement in realistic, cumulative bursts.",
       },
       {
         heading: "Functional strength",
-        text: "Handling ingredients, stirring, kneading dough, and setting LIFE workshops train grip strength and balance—predictors of independence in longevity research.",
+        text: "Handling ingredients, stirring, kneading dough, gardening, and carrying groceries can support grip strength and balance—predictors of independence in longevity research.",
       },
       {
         heading: "Social accountability",
-        text: "Guests move together—shopping at farmers markets, prepping ingredients, or taking post-meal walks—which increases adherence compared with exercising alone.",
+        text: "People can move together—shopping at farmers markets, prepping ingredients, or taking post-meal walks—which can make activity feel more social and sustainable.",
       },
     ],
     references: [
@@ -68,7 +68,7 @@ export const PILLARS: PillarDetail[] = [
     color: "#b4c4d9",
     summary: "Consistent, restorative sleep supports metabolic function, mental wellbeing, recovery, and long-term health.",
     intro:
-      "Hosts treat sleep routines as part of the longevity curriculum: finishing evening meals earlier, dimming lights, and encouraging guests to use rest as the recovery window that makes every healthy change stick.",
+      "LIFE treats sleep and recovery as essential everyday practices: finishing evening meals earlier, dimming lights, and protecting a consistent rest window.",
     reasons: [
       {
         heading: "Hormone and glucose balance",
@@ -80,7 +80,7 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Recovery ritual",
-        text: "LIFE workshops end with calming tea, breathwork, and screen-free commitments so the nervous system can downshift before bed and make the next day’s routines easier to sustain.",
+        text: "Calming tea, breathwork, and screen-free wind-down routines can help the nervous system downshift before bed and make the next day’s habits easier to sustain.",
       },
     ],
     references: [
@@ -95,7 +95,7 @@ export const PILLARS: PillarDetail[] = [
     summary:
       "Strong relationships, shared meals, and social support help reduce isolation and reinforce healthier, longer lives.",
     intro:
-      "Every LIFE workshop is facilitated eye contact, gratitude rituals, and intentional prompts so each guest is seen, heard, and encouraged to invite the next LIFE workshop—creating a replicating, community-powered network of care.",
+      "LIFE experiences use eye contact, gratitude rituals, and intentional prompts so each guest is seen and heard. The same practices can be used at home without any obligation to host a formal event.",
     reasons: [
       {
         heading: "Reduced loneliness",
@@ -107,7 +107,7 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Shared-resource safety net",
-        text: "Hosts log each LIFE workshop, trade produce and caregiving time, and keep invitations circulating so neighbors have a reliable micro-community for future support or emergencies.",
+        text: "Neighbors who trade produce, share caregiving time, and gather regularly can build a reliable micro-community for future support or emergencies.",
       },
     ],
     references: [
@@ -123,7 +123,7 @@ export const PILLARS: PillarDetail[] = [
     summary:
       "A clear sense of meaning, contribution, and direction is associated with resilience, wellbeing, and healthy aging.",
     intro:
-      "Purpose is one of the strongest predictors of longevity in Blue Zones research. Hosting provides a clear mission and the accountability of guests expecting the next meal.",
+      "Purpose is one of the strongest predictors of longevity in Blue Zones research. Serving others, contributing to community, and practicing meaningful daily rituals can reinforce direction and belonging.",
     reasons: [
       {
         heading: "Psychological buffering",
@@ -131,11 +131,11 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Identity and pride",
-        text: "Hosts collect stories, metrics, and photos, reinforcing that their kitchen is a neighborhood health asset.",
+        text: "Serving others and contributing skills can reinforce the belief that everyday actions matter to the wider community.",
       },
       {
         heading: "Intergenerational impact",
-        text: "Purposeful hosts involve children and elders in prep, passing down cultural rituals while learning new ones.",
+        text: "Purposeful families involve children and elders in meals and daily rituals, passing down cultural knowledge while learning together.",
       },
     ],
     references: [
@@ -144,13 +144,13 @@ export const PILLARS: PillarDetail[] = [
     ],
   },
   {
-    slug: "stress-regulation",
+    slug: "stress",
     title: "Stress Regulation",
     color: "#f0ad63",
     summary:
       "Daily practices that calm the nervous system support emotional wellbeing, digestion, recovery, and long-term health.",
     intro:
-      "Hosts facilitate breathing prompts, gratitude questions, and screen-free dining so guests downshift from chronic stress.",
+      "Breathing practices, gratitude, time outdoors, and screen-free meals can help people downshift from chronic stress.",
     reasons: [
       {
         heading: "Parasympathetic activation",
@@ -162,7 +162,7 @@ export const PILLARS: PillarDetail[] = [
       },
       {
         heading: "Sleep readiness",
-        text: "Evening LIFE workshops end with reflective prompts and herbal teas, improving sleep onset per American Academy of Sleep Medicine guidance.",
+        text: "Reflective prompts, calming routines, and herbal teas can support a gentler transition toward sleep, consistent with sleep-hygiene guidance.",
       },
     ],
     references: [

@@ -40,7 +40,7 @@ const DAY_OF_FLOW = [
   "Share the recipe so guests can cook it at home.",
   "Play a simple game or just keep talking — cards, bocce, whatever fits.",
   "Capture a photo or two if guests are comfortable.",
-  "Before everyone leaves, ask: who's ready to host their own table within 30 days?",
+  "Before everyone leaves, share LIFE's free resources and invite guests to use whatever feels helpful in daily life.",
 ];
 
 const CONVERSATION_TOPICS = [

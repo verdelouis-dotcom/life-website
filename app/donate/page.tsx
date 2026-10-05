@@ -34,21 +34,21 @@ const TIERS = [
 const DONATE_URL = "https://www.longevityinitiativeforfoodandeducation.com/donate";
 
 export const metadata: Metadata = {
-  title: "Support LIFE — Bring Back the Table",
-  description: "Every dollar helps LIFE host community cooking experiences and share the habit library with families who need it most.",
+  title: "Support LIFE — Keep Longevity Education Free",
+  description: "Support LIFE's free longevity education, LIFE Assessment, practical resources, and mission-driven cooking experiences.",
   alternates: {
     canonical: DONATE_URL,
   },
   openGraph: {
-    title: "Support LIFE — Bring Back the Table",
-    description: "Every dollar helps LIFE host community cooking experiences and share the habit library with families who need it most.",
+    title: "Support LIFE — Keep Longevity Education Free",
+    description: "Support LIFE's free longevity education, LIFE Assessment, practical resources, and mission-driven cooking experiences.",
     url: DONATE_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
-    title: "Support LIFE — Bring Back the Table",
-    description: "Every dollar helps LIFE host community cooking experiences and share the habit library with families who need it most.",
+    title: "Support LIFE — Keep Longevity Education Free",
+    description: "Support LIFE's free longevity education, LIFE Assessment, practical resources, and mission-driven cooking experiences.",
     images: DEFAULT_TWITTER_IMAGES,
   },
 };
@@ -59,20 +59,19 @@ export default function DonatePage() {
       <main className="mx-auto max-w-5xl px-6 py-16 text-[var(--text)]">
         <section className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-10 shadow-sm">
           <p className="type-eyebrow text-center">Support LIFE</p>
-          <h1 className="section-heading text-center">Bring Back the Table</h1>
+          <h1 className="section-heading text-center">Longevity education shouldn&apos;t be a luxury.</h1>
           <div className="mt-4 space-y-3 text-center text-base text-[var(--text)]">
-            <p>We&apos;ve lost the table.</p>
-            <p>Families don&apos;t eat together anymore. Connection has been replaced with convenience. Cooking skills are fading. And chronic disease, loneliness, and disconnection continue to rise.</p>
-            <p>LIFE exists to bring it back — one table, one family, one habit at a time.</p>
-            <p>You&apos;re not funding a cooking class. You&apos;re helping rebuild the way families live.</p>
+            <p>People are living longer. LIFE exists to help them live those years better.</p>
+            <p>Your support keeps practical longevity education, the LIFE Assessment, and evidence-informed resources free and accessible.</p>
+            <p>You&apos;re funding clear, realistic tools that help people understand their habits and take sustainable action in everyday life.</p>
           </div>
         </section>
 
         <section className="mt-10 rounded-3xl border border-[var(--border)] bg-white p-8 text-center shadow-sm">
           <p className="type-eyebrow text-[var(--olive)]">Our Goal This Year</p>
-          <p className="mt-3 text-3xl font-serif text-[var(--life-forest)]">We&apos;re raising $10,000 to bring 35 families to the table.</p>
+          <p className="mt-3 text-3xl font-serif text-[var(--life-forest)]">Help keep LIFE&apos;s longevity education, Assessment, and resources free and accessible.</p>
           <p className="mt-4 text-base text-[var(--text)]">
-            Every dollar goes directly toward building community-based cooking experiences, longevity education, and access for families who wouldn&apos;t otherwise have it.
+            Every dollar supports free education, the LIFE Assessment, practical resources, mission-driven experiences, and responsible program evaluation.
           </p>
         </section>
 
@@ -90,7 +89,7 @@ export default function DonatePage() {
         </section>
 
         <p className="mt-10 text-center text-sm text-[var(--muted)]">
-          Donations directly fund free and subsidized experiences for families who wouldn&apos;t otherwise have access. Your gift is not the cost of a class — it is the reason one more family gets to be there.
+          Fresh Pasta Cooking Classes and donations fund LIFE. That support keeps education, the LIFE Assessment, and practical resources free for more people.
         </p>
 
         <section className="mt-12 rounded-3xl border border-[var(--border)] bg-white p-10 shadow-sm">
@@ -99,7 +98,7 @@ export default function DonatePage() {
         </section>
 
         <section className="mt-10 space-y-6 rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-8 text-center shadow-sm">
-          <p className="text-base text-[var(--text)]">Every dollar goes directly toward ingredients, education, and access. Lou and Kara donate their time and their kitchen. Your gift does the rest.</p>
+          <p className="text-base text-[var(--text)]">Classes + donations fund LIFE&apos;s free education, Assessment, and resources. Lou and Kara donate their time and kitchen; your gift helps the mission reach further.</p>
           <div className="flex flex-col items-center gap-4">
             <a href={PRIMARY_DONATION_LINK} target="_blank" rel="noreferrer" className="btn-solid px-8 text-base">
               Bring Back the Table →

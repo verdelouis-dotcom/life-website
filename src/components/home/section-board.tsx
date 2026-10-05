@@ -14,7 +14,7 @@ const BOARD_MEMBERS = [
   {
     name: "Bob Fabbio",
     role: "Vice President",
-    bio: "Entrepreneur and founder of Norrio Capital Partners, Bob brings decades of venture-building experience to accelerate LIFE's replication and funding strategy.",
+    bio: "Entrepreneur and founder of Norrio Capital Partners, Bob brings decades of venture-building experience to advance LIFE's educational reach and funding strategy.",
   },
   {
     name: "Kara Verde",
@@ -33,7 +33,7 @@ const STATUS_LINES = [
 const ACCOUNTABILITY = [
   "Quarterly board reviews covering program data, financial reports, and risk assessment.",
   "Expense approvals require dual sign-off from the Treasurer and one additional officer.",
-  "Program metrics (LIFE cooking experiences hosted, participants, replication rate) published via LIFE’s register portal.",
+  "Program metrics covering education reach, assessments, experiences, optional LIFE Tables, and participation.",
 ];
 
 export default function SectionBoard() {

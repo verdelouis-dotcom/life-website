@@ -29,7 +29,7 @@ export default function SectionHowWeDoIt() {
           ))}
         </div>
         <p className="mt-10 max-w-3xl text-base leading-relaxed text-neutral-700 md:text-lg">
-          People come together for a shared meal, practice what they’ve learned in daily life, and pass it on by hosting others—growing the movement one table at a time.
+          People can learn through the website, understand their habits through the LIFE Assessment, and practice realistic changes in daily life. Shared meals and optional LIFE Tables offer another way to participate.
         </p>
       </div>
     </section>

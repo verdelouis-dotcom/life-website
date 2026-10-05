@@ -168,10 +168,11 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
       </section>
 
       <section className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
-        <p className="type-eyebrow text-[var(--olive)]">What to do next</p>
+        <p className="type-eyebrow text-[var(--olive)]">Your free next steps</p>
+        <p className="mx-auto mt-3 max-w-2xl text-sm text-[var(--muted)]">Use your pillar results to explore practical education for the habits that matter most to you.</p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <Link href="/about" className="btn-solid px-8 text-base">
-            Learn How LIFE Works
+          <Link href="/resources" className="btn-solid px-8 text-base">
+            Explore Free Resources
           </Link>
           <Link href="/assessment/methodology" className="btn-outline px-8 text-base">
             Review Methodology

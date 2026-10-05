@@ -44,7 +44,7 @@ export default function LandingRippleSection() {
         <div>
           <span className={styles.tagline}>How It Spreads</span>
           <h2 className={styles.sectionHeading}>One meal becomes many.</h2>
-          <p className={styles.sectionBody}>Every guest becomes a potential host. Every host reaches new people. The movement grows person to person — through kitchens, not campaigns.</p>
+          <p className={styles.sectionBody}>Education can reach anyone online. Shared meals and optional LIFE Tables bring those ideas into kitchens and communities—one meaningful gathering at a time.</p>
           <div className={styles.detailList} style={{ marginTop: "2rem" }}>
             {rippleDetails.map((detail) => (
               <div className={styles.detailItem} key={detail}>

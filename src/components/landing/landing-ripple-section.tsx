@@ -45,7 +45,7 @@ export function LandingRippleSection() {
         <div>
           <span className="stag">How It Spreads</span>
           <h2 className="sh">One meal becomes many.</h2>
-          <p className="sb">Every guest becomes a potential host. Every host reaches new people. The movement grows person to person — through kitchens, not campaigns.</p>
+          <p className="sb">Education can reach anyone online. Shared meals and optional LIFE Tables bring those ideas into kitchens and communities—one meaningful gathering at a time.</p>
           <div className="mt-6 flex flex-col gap-3">
             {RIPPLE_DETAILS.map((detail) => (
               <div key={detail} className="flex gap-3 text-[0.9rem] text-[var(--earth-mid)]">
