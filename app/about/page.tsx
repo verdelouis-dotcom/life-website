@@ -33,7 +33,7 @@ const BOARD_MEMBERS = [
   {
     name: "Bob Fabbio",
     role: "Vice President",
-    bio: "Entrepreneur and founder of Norrio Capital Partners. Bob guides growth strategy and philanthropic partnerships as LIFE's free education reaches new communities.",
+    bio: "American entrepreneur, technologist, and venture capitalist. Bob guides growth strategy and philanthropic partnerships as LIFE's free education reaches new communities.",
   },
   {
     name: "Kara Verde",
