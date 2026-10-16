@@ -12,6 +12,11 @@ const LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
+const SOCIAL_LINKS = [
+  { href: "https://www.instagram.com/longevity_initiative", label: "Instagram" },
+  { href: "https://www.facebook.com/longevityinitiativeforfoodandeducation", label: "Facebook" },
+];
+
 export default function SiteFooter() {
   return (
     <footer className="bg-[#1E140A] px-[4.5rem] py-[2.2rem] text-white max-md:px-6 max-md:py-8">
@@ -34,6 +39,18 @@ export default function SiteFooter() {
             <Link key={link.href} href={link.href} className="transition hover:text-white">
               {link.label}
             </Link>
+          ))}
+          {SOCIAL_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-white"
+              aria-label={`Follow LIFE on ${link.label}`}
+            >
+              {link.label}
+            </a>
           ))}
         </div>
       </div>
