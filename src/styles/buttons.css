@@ -29,6 +29,12 @@
   transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
+/* Match the homepage wrapper specificity so legacy conversion styles cannot
+   override the shared button shape. */
+.home-v3 .btn-primary {
+  border-radius: 1rem;
+}
+
 :is(.btn-solid, .btn-primary, .btn-p):hover {
   background: var(--button-primary-hover);
   color: var(--button-cream) !important;
