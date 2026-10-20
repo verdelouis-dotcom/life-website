@@ -110,7 +110,7 @@ export default function EmailCaptureCard({ defaultFirstName = "", report, onSucc
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full rounded-2xl bg-[var(--olive)] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#394930] disabled:opacity-60"
+            className="btn-primary w-full px-4 text-sm"
           >
             {status === "loading" ? "Sending..." : "Send My Report"}
           </button>

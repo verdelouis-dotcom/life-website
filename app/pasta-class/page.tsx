@@ -83,7 +83,7 @@ export default function FreshPastaClassPage() {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <a href="#book" className="btn-primary text-white">
+              <a href="#book" className="btn-primary" style={{ color: "#FFF8EF" }}>
                 Book Your Spot →
               </a>
             </div>

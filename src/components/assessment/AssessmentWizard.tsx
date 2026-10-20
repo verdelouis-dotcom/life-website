@@ -365,14 +365,14 @@ function OptionalMarkersStep({ answers, onChange, onBack, onContinue }: Optional
           <button
             type="button"
             onClick={onBack}
-            className="inline-flex items-center justify-center rounded-2xl border border-[var(--border)] px-6 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--olive)]"
+            className="btn-outline px-6 text-sm"
           >
             Back
           </button>
           <button
             type="button"
             onClick={onContinue}
-            className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#394930]"
+            className="btn-primary px-6 text-sm"
           >
             See Results
           </button>

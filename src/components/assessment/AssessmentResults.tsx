@@ -58,7 +58,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
         <p className="mt-3 text-xl font-semibold text-[var(--olive)]">around {results.metrics.currentExpectedYear}</p>
         <p className="mt-3 text-base text-[var(--text)]">Most likely between age {results.metrics.expectedAgeLow} and {results.metrics.expectedAgeHigh}</p>
         <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--muted)]">{getBaselineMessage(results.metrics.yearsComparedWithBaseline)}</p>
-        <a href="#add-years" style={{ color: "#fff8ef" }} className="mt-7 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#9f5335] px-8 py-3 font-bold transition hover:bg-[#87442d] active:scale-[0.98]">Add years</a>
+        <a href="#add-years" className="btn-primary mt-7 px-8">Add years</a>
         <p className="mx-auto mt-6 max-w-2xl text-xs leading-5 text-[var(--muted)]">Statistical estimate for education only. Not a medical prediction or diagnosis.</p>
       </section>
 
@@ -159,7 +159,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
         <button type="button" onClick={onRestart} className="btn-outline mb-4 px-6 text-sm">Retake Assessment</button>
         <Link
           href="/#join"
-          className="inline-flex items-center justify-center rounded-2xl border border-[var(--terracotta)] px-6 py-3 text-sm font-semibold text-[var(--terracotta)] transition hover:bg-[var(--terracotta)] hover:text-white"
+          className="btn-outline px-6 text-sm"
         >
           Enroll in LIFE →
         </Link>

@@ -22,7 +22,7 @@ export default function TopicGrid({ items }: TopicGridProps) {
           <div className="mt-6">
             <Link
               href={item.href}
-              className="inline-flex items-center justify-center rounded-2xl border border-[#6b7a46] px-4 py-2 text-sm font-semibold text-[#6b7a46] transition hover:bg-[#6b7a46] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#6b7a46]/40 focus:ring-offset-2"
+              className="btn-outline px-4 text-sm"
             >
               {item.title}
             </Link>

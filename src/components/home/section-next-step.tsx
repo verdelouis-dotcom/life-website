@@ -14,7 +14,7 @@ export default function SectionNextStep() {
           <Link href={WORKSHOP_LINK} className="btn-solid px-8 text-base">
             Host a Table
           </Link>
-          <Link href={DONATE_LINK} className="btn-outline px-8 text-base bg-transparent text-white border-white/60 hover:bg-white/10">
+          <Link href={DONATE_LINK} className="btn-outline btn-outline-inverse px-8 text-base">
             Support LIFE
           </Link>
         </div>

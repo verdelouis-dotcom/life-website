@@ -133,7 +133,7 @@ export default function QuestionStep({
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center justify-center rounded-2xl border border-[var(--border)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--olive)]"
+          className="btn-outline px-5 text-sm"
         >
           Back
         </button>
@@ -141,7 +141,7 @@ export default function QuestionStep({
           type="button"
           onClick={onNext}
           disabled={isNextDisabled}
-          className="inline-flex items-center justify-center rounded-2xl bg-[var(--olive)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#394930] disabled:cursor-not-allowed disabled:opacity-60"
+          className="btn-primary px-6 text-sm"
         >
           Next
         </button>

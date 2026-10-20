@@ -32,7 +32,7 @@ export default function AssessmentIntro({ onStart, hasProgress }: AssessmentIntr
       <button
         type="button"
         onClick={onStart}
-        className="mt-9 inline-flex min-h-14 items-center justify-center rounded-2xl bg-[#9f5335] px-10 py-4 text-lg font-bold text-[#fff8ef] shadow-md transition hover:-translate-y-0.5 hover:bg-[#87442d] active:translate-y-0 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--life-forest)]"
+        className="btn-primary mt-9 min-h-14 px-10 py-4 text-lg"
       >
         {hasProgress ? "Resume My Assessment" : "Find My Number"}
       </button>
