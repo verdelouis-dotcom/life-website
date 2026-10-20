@@ -61,7 +61,7 @@ function smokingFactor(answers: AssessmentAnswers): Factor {
 function bmiFactor(answers: AssessmentAnswers): Factor {
   const totalInches = (answers.height?.feet ?? 0) * 12 + (answers.height?.inches ?? 0);
   const bmi = totalInches && answers.weight ? answers.weight * 703 / (totalInches * totalInches) : 27;
-  const publishedHr = bmi < 18.5 ? 1.25 : bmi < 23 ? 1.06 : bmi < 25 ? 1 : bmi < 30 ? 1.05 : bmi < 35 ? 1.25 : 1.67;
+  const publishedHr = bmi < 18.5 ? 1.51 : bmi < 23 ? 1.06 : bmi < 25 ? 1 : bmi < 30 ? 1.05 : bmi < 35 ? 1.25 : 1.67;
   return { key: "bmi", title: "Move toward your healthy weight range", detail: "Aim for a sustainable BMI in the research reference range with professional guidance.", hr: publishedHr / 1.05, bestHr: 1 / 1.05 };
 }
 

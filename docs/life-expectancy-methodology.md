@@ -38,9 +38,9 @@ Sources: [Li et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6207481/); [
 
 ### BMI
 
-BMI is calculated as `weight(lb) × 703 / height(in)^2`. Li et al. table 2 reports HRs of 1.06 for BMI 18.5–22.9, 1.00 for 23–24.9, 1.05 for 25–29.9, 1.25 for 30–34.9, and 1.67 for 35+. The model conservatively assigns 1.25 below 18.5 because Li et al. excluded that range from this table; the value matches its grade-one obesity estimate and avoids portraying underweight as protective.
+BMI is calculated as `weight(lb) × 703 / height(in)^2`. Li et al. table 2 reports HRs of 1.06 for BMI 18.5–22.9, 1.00 for 23–24.9, 1.05 for 25–29.9, 1.25 for 30–34.9, and 1.67 for 35+. Li et al. excluded BMI below 18.5; for that range the model uses the independently published HR of 1.51 from the Global BMI Mortality Collaboration's primary analysis.
 
-Source: [Li et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6207481/)
+Sources: [Li et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6207481/); [Global BMI Mortality Collaboration, 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC4995441/)
 
 ### Moderate-to-vigorous physical activity
 
