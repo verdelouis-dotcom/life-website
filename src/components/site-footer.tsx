@@ -32,7 +32,7 @@ export default function SiteFooter() {
 
         <div className="max-w-sm space-y-2 text-[0.75rem] text-white/70">
           <p>Longevity Initiative for Food &amp; Education is a federally recognized 501(c)(3) nonprofit organization. EIN: 41-4525299. Contributions are tax-deductible to the full extent permitted by law.</p>
-          <p>Want to support LIFE? Every dollar goes directly to the mission. <Link href="/donate" className="underline-offset-4 hover:underline">Support LIFE →</Link></p>
+          <p>Want to support LIFE? Every dollar goes directly to the mission. <Link href="/donate" style={{ color: "#fff8ef" }} className="underline underline-offset-4">Support LIFE →</Link></p>
         </div>
 
         <div className="flex flex-wrap items-center justify-end gap-[1.6rem] text-[0.75rem] text-white/40 max-md:justify-center">
@@ -47,6 +47,7 @@ export default function SiteFooter() {
               href={link.href}
               target="_blank"
               rel="noreferrer"
+              style={{ color: "#fff8ef" }}
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/15 hover:text-white"
               aria-label={`Follow LIFE on ${link.label}`}
             >

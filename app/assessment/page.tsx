@@ -5,21 +5,21 @@ import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGES } from "@/lib/seo";
 const ASSESSMENT_URL = "https://www.longevityinitiativeforfoodandeducation.com/assessment";
 
 export const metadata: Metadata = {
-  title: "Free LIFE Assessment — Understand Your Everyday Habits",
-  description: "Take the free LIFE Assessment to understand your strengths and opportunities across six practical pillars of longevity.",
+  title: "LIFE Expectancy Calculator — Find Your Number",
+  description: "Estimate your LIFE expectancy using U.S. life-table data and published research, then see practical habits that may help you add years.",
   alternates: {
     canonical: ASSESSMENT_URL,
   },
   openGraph: {
-    title: "Free LIFE Assessment — Understand Your Everyday Habits",
-    description: "Take the free LIFE Assessment to understand your strengths and opportunities across six practical pillars of longevity.",
+    title: "LIFE Expectancy Calculator — Find Your Number",
+    description: "Estimate your LIFE expectancy using U.S. life-table data and published research, then see practical habits that may help you add years.",
     url: ASSESSMENT_URL,
     siteName: "LIFE — Longevity Initiative for Food & Education",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
-    title: "Free LIFE Assessment — Understand Your Everyday Habits",
-    description: "Take the free LIFE Assessment to understand your strengths and opportunities across six practical pillars of longevity.",
+    title: "LIFE Expectancy Calculator — Find Your Number",
+    description: "Estimate your LIFE expectancy using U.S. life-table data and published research, then see practical habits that may help you add years.",
     images: DEFAULT_TWITTER_IMAGES,
   },
 };

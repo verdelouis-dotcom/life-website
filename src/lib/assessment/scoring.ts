@@ -36,11 +36,11 @@ const HABIT_OPTION_SCORES: Partial<Record<AssessmentQuestionId, Record<string, n
   addedSugar: buildScoreMap(["multiDaily", "daily", "fewPerWeek", "rarely"]),
   homeCookedMeals: buildScoreMap(["underTwo", "threeToFour", "fiveToSix", "mostDays"]),
   hydrationChoice: buildScoreMap(["mostlySugary", "sweetenedMix", "waterPlus", "mostlyWater"]),
-  moderateActivity: buildScoreMap(["lessThanWeekly", "oneToTwoPerWeek", "threeToFourPerWeek", "mostDays"]),
+  moderateActivity: buildScoreMap(["zero", "oneToSeventyFour", "seventyFiveToOneFortyNine", "oneFiftyToTwoNinetyNine", "threeHundredPlus"], [20, 45, 65, 85, 100]),
   strengthDays: buildScoreMap(["none", "oneDay", "twoDays", "threePlusDays"]),
   sedentaryTime: buildScoreMap(["overTenHours", "sevenToTenHours", "fourToSixHours", "underFourHours"]),
   lifestyleMovement: buildScoreMap(["mostlySeated", "mixed", "onFeet", "activeAllDay"]),
-  sleepHours: buildScoreMap(["underSix", "sixToSeven", "sevenToEight", "overEight"]),
+  sleepHours: { underFive: 25, fiveToUnderSix: 45, sixToUnderSeven: 75, sevenToEight: 100, overEightToNine: 70, overNine: 35 },
   wakeRested: buildScoreMap(["rarelyRested", "sometimesRested", "mostMornings", "almostAlwaysRested"]),
   sleepConsistency: buildScoreMap(["inconsistent", "somewhatConsistent", "mostlyConsistent", "veryConsistent"]),
   meaningfulTime: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "severalPerWeek"]),
@@ -52,7 +52,6 @@ const HABIT_OPTION_SCORES: Partial<Record<AssessmentQuestionId, Record<string, n
   contributionFrequency: buildScoreMap(["rarely", "fewTimesPerYear", "monthly", "weekly"]),
   overwhelmFrequency: buildScoreMap(["almostDaily", "fewTimesPerWeek", "sometimes", "rarely"]),
   outdoorQuietTime: buildScoreMap(["rarely", "fewTimesPerMonth", "weekly", "severalPerWeek"]),
-  alcohol: buildScoreMap(["fifteenPlus", "eightToFourteen", "oneToSeven", "none"]),
   nicotine: buildScoreMap(["dailyUser", "occasionalUser", "formerUser", "neverUsed"]),
   chronicCondition: buildScoreMap(["yes", "riskFactors", "unsure", "no"]),
   preventiveCare: buildScoreMap(["never", "everyFiveYears", "everyTwoToThreeYears", "yearly"]),
@@ -92,7 +91,6 @@ const PILLAR_DESCRIPTIONS: Record<PillarKey, string> = {
 };
 
 const CONTEXT_QUESTION_IDS: AssessmentQuestionId[] = [
-  "alcohol",
   "nicotine",
   "chronicCondition",
   "preventiveCare",
@@ -114,8 +112,6 @@ export function evaluateAssessment(answers: AssessmentAnswers): AssessmentResult
   const projection = calculateLongevityProjection({
     age: answers.age ?? 40,
     sex: answers.sex ?? "female",
-    lifeHabitsScore,
-    longevityPotential,
     answers,
   });
 
@@ -198,6 +194,11 @@ function calculateHealthContextScore(answers: AssessmentAnswers) {
     const score = scoreQuestion(id, value as string | undefined);
     contextScores.push(score);
   });
+
+  if (typeof answers.alcohol === "number") {
+    const weekly = answers.alcohol;
+    contextScores.push(weekly === 0 ? 80 : weekly <= 7 ? 100 : weekly <= 14 ? 70 : 35);
+  }
 
   OPTIONAL_MARKER_KEYS.forEach((marker) => {
     const value = answers[marker];

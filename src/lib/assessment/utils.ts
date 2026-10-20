@@ -1,6 +1,6 @@
 import type { AssessmentAnswers } from "@/components/assessment/AssessmentTypes";
 
-const ASSESSMENT_STORAGE_KEY = "life_longevity_assessment_state_v1";
+const ASSESSMENT_STORAGE_KEY = "life_expectancy_assessment_state_v2";
 
 export function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);

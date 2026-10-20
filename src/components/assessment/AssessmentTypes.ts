@@ -60,6 +60,8 @@ export type AssessmentQuestionId =
   | "homeCookedMeals"
   | "hydrationChoice"
   | "moderateActivity"
+  | "cigaretteStatus"
+  | "yearsSinceQuitting"
   | "strengthDays"
   | "sedentaryTime"
   | "lifestyleMovement"
@@ -115,7 +117,9 @@ export interface AssessmentAnswers {
   contributionFrequency?: string;
   overwhelmFrequency?: string;
   outdoorQuietTime?: string;
-  alcohol?: string;
+  alcohol?: number;
+  cigaretteStatus?: "never" | "former" | "current";
+  yearsSinceQuitting?: "underOne" | "oneToFour" | "fiveToNine" | "tenToFourteen" | "fifteenPlus";
   nicotine?: string;
   chronicCondition?: string;
   preventiveCare?: string;
@@ -159,6 +163,20 @@ export interface LongevityMetrics {
   yearsGained: number;
   currentExpectedYear: number;
   potentialExpectedYear: number;
+  baselineExpectedAge: number;
+  expectedAgeLow: number;
+  expectedAgeHigh: number;
+  yearsComparedWithBaseline: number;
+  combinedHazardRatio: number;
+  modelVersion: "life-expectancy-v2";
+  addYearsOpportunities: AddYearsOpportunity[];
+}
+
+export interface AddYearsOpportunity {
+  factor: "smoking" | "bmi" | "activity" | "alcohol" | "sleep";
+  title: string;
+  detail: string;
+  estimatedYears: number;
 }
 
 export interface AssessmentStrengthOpportunity {

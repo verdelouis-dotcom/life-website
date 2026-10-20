@@ -6,7 +6,6 @@ import type { AssessmentAnswers, AssessmentQuestionId, AssessmentResultsPayload 
 import ResultsSummaryCard from "@/components/assessment/ResultsSummaryCard";
 import EmailCaptureCard from "@/components/assessment/EmailCaptureCard";
 import DonationSupportCard from "@/components/assessment/DonationSupportCard";
-import LifeTimeline from "@/components/assessment/LifeTimeline";
 import { LIFE_HABIT_LIBRARY } from "@/lib/assessment/lifeHabitLibrary";
 import { HABIT_RECOMMENDATIONS } from "@/lib/assessment/habitRecommendations";
 
@@ -21,21 +20,9 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
   const firstName = answers.firstName?.trim() || "Friend";
   const formatPercent = (value: number) => `${Math.round(value)}%`;
   const lifeScore = Math.round(results.metrics.lifeHabitsScore);
-  const strongestPillar = results.metrics.strongestPillar;
-  const growthPillar = results.metrics.weakestPillar;
   const scoreMessage = getScoreMessage(lifeScore);
   const [shareStatus, setShareStatus] = useState<string>("");
-  const shareSummary = useMemo(
-    () =>
-      `My LIFE Score: ${lifeScore}%\n\nCurrent path: ${results.metrics.currentExpectedAge} years\nPotential with consistent LIFE habits: ${results.metrics.potentialExpectedAge} years\n\nStrongest pillar: ${strongestPillar?.label ?? "N/A"}\nGrowth opportunity: ${growthPillar?.label ?? "N/A"}\n\nTake the LIFE Longevity Assessment:\nhttps://www.longevityinitiativeforfoodandeducation.com/assessment`,
-    [
-      growthPillar?.label,
-      lifeScore,
-      results.metrics.currentExpectedAge,
-      results.metrics.potentialExpectedAge,
-      strongestPillar?.label,
-    ]
-  );
+  const shareSummary = useMemo(() => `My LIFE expectancy: age ${results.metrics.currentExpectedAge}\nFind yours at https://www.longevityinitiativeforfoodandeducation.com/assessment`, [results.metrics.currentExpectedAge]);
 
   const supportingCards = [
     {
@@ -65,41 +52,31 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
 
   return (
     <div className="space-y-10">
-      <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 shadow-sm">
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div>
-            <p className="type-eyebrow text-[var(--olive)]">Your LIFE Score</p>
-            <h1 className="mt-2 text-4xl font-semibold text-[var(--life-forest)]">{lifeScore}%</h1>
-            <p className="mt-3 text-base text-[var(--muted)]">{scoreMessage}</p>
-            <div className="mt-4 grid gap-3 text-sm text-[var(--text)] md:grid-cols-2">
-              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/80 p-4">
-                <p className="type-eyebrow text-[var(--olive)]">Strongest pillar</p>
-                <p className="mt-1 font-semibold text-[var(--life-forest)]">{strongestPillar?.label ?? "N/A"}</p>
-                <p className="text-sm text-[var(--muted)]">{strongestPillar?.description}</p>
-              </div>
-              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/80 p-4">
-                <p className="type-eyebrow text-[var(--terracotta)]">Growth opportunity</p>
-                <p className="mt-1 font-semibold text-[var(--life-forest)]">{growthPillar?.label ?? "N/A"}</p>
-                <p className="text-sm text-[var(--muted)]">{growthPillar?.description}</p>
-              </div>
-            </div>
-          </div>
-          <div className="rounded-3xl border border-[var(--border)] bg-[#fff8ef] p-6 text-center">
-            <p className="type-eyebrow text-[var(--olive)]">Healthy longevity outlook</p>
-            <p className="mt-3 text-2xl font-semibold text-[var(--life-forest)]">Estimated LIFE span: {results.metrics.currentExpectedAge} yrs</p>
-            <p className="text-sm text-[var(--muted)]">With consistent habits you could reach {results.metrics.potentialExpectedAge} yrs (+{results.metrics.yearsGained}).</p>
-            <button
-              type="button"
-              onClick={onRestart}
-              className="mt-5 inline-flex items-center justify-center rounded-2xl border border-[var(--olive)] px-5 py-2 text-sm font-semibold text-[var(--olive)] transition hover:bg-white"
-            >
-              Retake Assessment
-            </button>
-          </div>
-        </div>
-      </div>
+      <section className="rounded-[40px] border border-[var(--border)] bg-white/95 p-7 text-center shadow-sm sm:p-10">
+        <p className="type-eyebrow text-[var(--olive)]">Your LIFE expectancy</p>
+        <h1 className="mt-3 type-display text-[clamp(4rem,12vw,8rem)] leading-none text-[var(--life-forest)]">age {results.metrics.currentExpectedAge}</h1>
+        <p className="mt-3 text-xl font-semibold text-[var(--olive)]">around {results.metrics.currentExpectedYear}</p>
+        <p className="mt-3 text-base text-[var(--text)]">Most likely between age {results.metrics.expectedAgeLow} and {results.metrics.expectedAgeHigh}</p>
+        <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--muted)]">{getBaselineMessage(results.metrics.yearsComparedWithBaseline)}</p>
+        <a href="#add-years" style={{ color: "#fff8ef" }} className="mt-7 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#9f5335] px-8 py-3 font-bold transition hover:bg-[#87442d] active:scale-[0.98]">Add years</a>
+        <p className="mx-auto mt-6 max-w-2xl text-xs leading-5 text-[var(--muted)]">Statistical estimate for education only. Not a medical prediction or diagnosis.</p>
+      </section>
 
-      <LifeTimeline metrics={results.metrics} />
+      <section id="add-years" className="scroll-mt-24 rounded-[32px] border border-[var(--border)] bg-[#fff8ef] p-6 shadow-sm sm:p-8">
+        <p className="type-eyebrow text-[var(--terracotta)]">Add years</p>
+        <h2 className="mt-2 text-3xl font-semibold text-[var(--life-forest)]">Your three biggest opportunities</h2>
+        {results.metrics.addYearsOpportunities.length ? (
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {results.metrics.addYearsOpportunities.map((item) => (
+              <article key={item.factor} className="rounded-3xl border border-[var(--border)] bg-white p-5">
+                <p className="text-3xl font-semibold text-[var(--terracotta)]">+{item.estimatedYears.toFixed(1)} years</p>
+                <h3 className="mt-2 font-semibold text-[var(--life-forest)]">{item.title}</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">{item.detail}</p>
+              </article>
+            ))}
+          </div>
+        ) : <p className="mt-4 text-[var(--muted)]">Your modeled factors are already in their lowest-risk ranges. Keep reinforcing what is working.</p>}
+      </section>
 
       <section className="rounded-[32px] border border-[var(--border)] bg-[var(--surface)]/70 p-6 shadow-sm">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">What your score means</p>
@@ -108,6 +85,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
           areas with room to grow.
         </p>
         <p className="mt-3 text-sm text-[var(--text)]">{scoreMessage}</p>
+        <p className="mt-3 text-xs text-[var(--muted)]">Your estimate uses age, sex, BMI, smoking, activity, alcohol, and sleep. Your other pillars appear below as guidance.</p>
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
@@ -117,11 +95,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
       </section>
 
       <ShareSection
-        score={lifeScore}
-        strongest={strongestPillar?.label ?? "N/A"}
-        growth={growthPillar?.label ?? "N/A"}
         currentAge={results.metrics.currentExpectedAge}
-        potentialAge={results.metrics.potentialExpectedAge}
         shareSummary={shareSummary}
         shareStatus={shareStatus}
         onCopy={(payload) => handleCopy(payload, setShareStatus)}
@@ -129,10 +103,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
         onDownloadImage={() =>
           handleDownloadShareImage(
             {
-              score: lifeScore,
-              strongest: strongestPillar?.label ?? "N/A",
-              growth: growthPillar?.label ?? "N/A",
-              yearsGained: results.metrics.yearsGained,
+              age: results.metrics.currentExpectedAge,
             },
             setShareStatus
           )
@@ -185,6 +156,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
       <DonationSupportCard />
 
       <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 text-center shadow-sm">
+        <button type="button" onClick={onRestart} className="btn-outline mb-4 px-6 text-sm">Retake Assessment</button>
         <Link
           href="/#join"
           className="inline-flex items-center justify-center rounded-2xl border border-[var(--terracotta)] px-6 py-3 text-sm font-semibold text-[var(--terracotta)] transition hover:bg-[var(--terracotta)] hover:text-white"
@@ -195,7 +167,7 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
 
       <section className="rounded-[32px] border border-[var(--border)] bg-white/80 p-6 text-sm text-[var(--muted)]">
         <p>
-          This assessment provides an educational estimate based on lifestyle and health factors associated with healthy aging. It is not a medical diagnosis and should not replace professional medical advice.
+          Statistical estimate for education only. Not a medical prediction or diagnosis.
         </p>
         <Link href="/assessment/methodology" className="mt-3 inline-flex text-[var(--olive)]">
           Learn about the research behind this assessment
@@ -205,12 +177,8 @@ export default function AssessmentResults({ answers, results, onRestart, showEma
   );
 }
 
-function ShareSection({ score, strongest, growth, currentAge, potentialAge, shareSummary, shareStatus, onCopy, onShare, onDownloadImage }: {
-  score: number;
-  strongest: string;
-  growth: string;
+function ShareSection({ currentAge, shareSummary, shareStatus, onCopy, onShare, onDownloadImage }: {
   currentAge: number;
-  potentialAge: number;
   shareSummary: string;
   shareStatus: string;
   onCopy: (value: string) => void;
@@ -221,15 +189,12 @@ function ShareSection({ score, strongest, growth, currentAge, potentialAge, shar
 
   return (
     <section className="rounded-[32px] border border-[var(--border)] bg-white/90 p-6 shadow-sm">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Share your LIFE Score</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--olive)]">Share my number</p>
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         <div className="space-y-1 text-sm text-[var(--muted)]">
-          <p>My LIFE Score: {score}%</p>
-          <p>Current path: {currentAge} years</p>
-          <p>Potential with consistent LIFE habits: {potentialAge} years</p>
-          <p>Strongest pillar: {strongest}</p>
-          <p>Growth opportunity: {growth}</p>
-          <p>Take the assessment: https://www.longevityinitiativeforfoodandeducation.com/assessment</p>
+          <p className="text-lg font-semibold text-[var(--life-forest)]">My LIFE expectancy: age {currentAge}</p>
+          <p className="break-all">Find yours at longevityinitiativeforfoodandeducation.com/assessment</p>
+          <p className="text-xs">No personal health answers are included.</p>
         </div>
         <div className="space-y-3">
           <button onClick={() => onCopy(currentUrl)} className="btn-outline w-full px-6 text-sm">
@@ -239,7 +204,7 @@ function ShareSection({ score, strongest, growth, currentAge, potentialAge, shar
             Copy Share Text
           </button>
           <button onClick={onDownloadImage} className="btn-outline w-full px-6 text-sm">
-            Download Image
+            Download Share Card
           </button>
           <button onClick={onShare} className="btn-outline w-full px-6 text-sm">
             Share from this device
@@ -264,6 +229,12 @@ function getScoreMessage(score: number) {
   return "This score is a starting point. Use the recommendations below and LIFE Resources to create small, sustainable shifts.";
 }
 
+function getBaselineMessage(years: number) {
+  if (Math.abs(years) < .5) return "Your modeled habits are close to the national baseline for your age and sex.";
+  if (years > 0) return `Your modeled habits are adding about ${Math.abs(years).toFixed(1)} years compared with the national baseline.`;
+  return `About ${Math.abs(years).toFixed(1)} years are available to win back compared with the national baseline.`;
+}
+
 async function handleCopy(value: string, setShareStatus: (value: string) => void) {
   try {
     await navigator.clipboard.writeText(value);
@@ -278,7 +249,7 @@ function handleWebShare(summary: string, setShareStatus: (value: string) => void
   if (navigator.share) {
     navigator
       .share({
-        title: "My LIFE Score",
+        title: "My LIFE expectancy",
         text: summary,
         url: "https://www.longevityinitiativeforfoodandeducation.com/assessment",
       })
@@ -289,7 +260,7 @@ function handleWebShare(summary: string, setShareStatus: (value: string) => void
 }
 
 function handleDownloadShareImage(
-  data: { score: number; strongest: string; growth: string; yearsGained: number },
+  data: { age: number },
   setShareStatus: (value: string) => void
 ) {
   if (typeof window === "undefined") {
@@ -308,28 +279,22 @@ function handleDownloadShareImage(
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.fillStyle = "#1b3a2f";
-  ctx.font = "bold 64px 'Inter', sans-serif";
-  ctx.fillText("My LIFE Score", 80, 140);
+  ctx.font = "bold 58px Georgia, serif";
+  ctx.fillText("My LIFE expectancy", 80, 140);
 
-  ctx.font = "bold 140px 'Inter', sans-serif";
-  ctx.fillText(`${data.score}%`, 80, 290);
+  ctx.font = "bold 140px Georgia, serif";
+  ctx.fillText(`age ${data.age}`, 80, 310);
 
   ctx.font = "28px 'Inter', sans-serif";
-  const lines = [
-    `Strongest pillar: ${data.strongest}`,
-    `Growth area: ${data.growth}`,
-    `Years you could gain: +${data.yearsGained}`,
-    "Take the LIFE Longevity Assessment",
-    "longevityinitiativeforfoodandeducation.com/assessment",
-  ];
-  let y = 360;
+  const lines = ["Find yours at", "longevityinitiativeforfoodandeducation.com/assessment"];
+  let y = 420;
   lines.forEach((line) => {
     ctx.fillText(line, 80, y);
     y += 50;
   });
 
   const link = document.createElement("a");
-  link.download = "life-score.png";
+  link.download = "my-life-expectancy.png";
   link.href = canvas.toDataURL("image/png");
   link.click();
 

@@ -13,7 +13,7 @@ const RESEARCH = [
   },
   {
     title: "Higher purpose is associated with lower mortality risk",
-    body: "Multiple longitudinal studies have found that stronger purpose in life is associated with reduced risk of death across adulthood and older age.",
+    body: "Multiple longitudinal studies have found that a stronger sense of purpose is associated with greater longevity across adulthood and older age.",
     sourceLabel: "Source: NIH / PubMed",
   },
   {

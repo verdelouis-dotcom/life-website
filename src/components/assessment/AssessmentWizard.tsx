@@ -12,7 +12,6 @@ import {
   ASSESSMENT_QUESTIONS,
   ASSESSMENT_SECTIONS,
   OPTIONAL_MARKER_QUESTIONS,
-  TOTAL_QUESTION_COUNT,
 } from "@/lib/assessment/questions";
 import { evaluateAssessment } from "@/lib/assessment/scoring";
 import {
@@ -69,12 +68,17 @@ export default function AssessmentWizard() {
     return new Map(ASSESSMENT_SECTIONS.map((section) => [section.id, section]));
   }, []);
 
+  const visibleQuestions = useMemo(
+    () => ASSESSMENT_QUESTIONS.filter((question) => question.id !== "yearsSinceQuitting" || answers.cigaretteStatus === "former"),
+    [answers.cigaretteStatus],
+  );
+
   const hasProgress = useMemo(() => hasAnyResponses(answers), [answers]);
 
-  const currentQuestion: AssessmentQuestion | undefined = ASSESSMENT_QUESTIONS[currentIndex];
+  const currentQuestion: AssessmentQuestion | undefined = visibleQuestions[currentIndex];
 
   function findFirstIncompleteIndex() {
-    return ASSESSMENT_QUESTIONS.findIndex((question) => !isQuestionComplete(question));
+    return visibleQuestions.findIndex((question) => !isQuestionComplete(question));
   }
 
   function clearAutoAdvanceTimer() {
@@ -95,7 +99,7 @@ export default function AssessmentWizard() {
     clearAutoAdvanceTimer();
     if (phase === "optional") {
       setPhase("questions");
-      setCurrentIndex(TOTAL_QUESTION_COUNT - 1);
+      setCurrentIndex(visibleQuestions.length - 1);
       return;
     }
 
@@ -111,13 +115,13 @@ export default function AssessmentWizard() {
     clearAutoAdvanceTimer();
     if (!currentQuestion) return;
 
-    if (currentIndex === TOTAL_QUESTION_COUNT - 1) {
+    if (currentIndex === visibleQuestions.length - 1) {
       setAnswers((prev) => applyOptionalDefaults(prev));
       setPhase("optional");
       return;
     }
 
-    setCurrentIndex((prev) => Math.min(prev + 1, TOTAL_QUESTION_COUNT - 1));
+    setCurrentIndex((prev) => Math.min(prev + 1, visibleQuestions.length - 1));
   }
 
   function handleCompositeChange(fieldId: string, value: number | undefined) {
@@ -147,8 +151,8 @@ export default function AssessmentWizard() {
     return false;
   }
 
-  const progressStep = Math.min(currentIndex + 1, TOTAL_QUESTION_COUNT);
-  const stepLabel = `Question ${progressStep} of ${TOTAL_QUESTION_COUNT}`;
+  const progressStep = Math.min(currentIndex + 1, visibleQuestions.length);
+  const stepLabel = `Question ${progressStep} of ${visibleQuestions.length}`;
   const section = currentQuestion ? sections.get(currentQuestion.sectionId) : undefined;
   const isNextDisabled = currentQuestion ? !isQuestionComplete(currentQuestion) : true;
 
@@ -165,10 +169,10 @@ export default function AssessmentWizard() {
 
     autoAdvanceTimerRef.current = setTimeout(() => {
       autoAdvanceTimerRef.current = null;
-      if (currentIndex === TOTAL_QUESTION_COUNT - 1) {
+      if (currentIndex === visibleQuestions.length - 1) {
         handleNext();
       } else {
-        setCurrentIndex((prev) => Math.min(prev + 1, TOTAL_QUESTION_COUNT - 1));
+        setCurrentIndex((prev) => Math.min(prev + 1, visibleQuestions.length - 1));
       }
     }, AUTO_ADVANCE_DELAY_MS);
   }
@@ -209,7 +213,7 @@ export default function AssessmentWizard() {
     if (phase === "questions" && currentQuestion) {
       return (
         <div className="space-y-6">
-          <ProgressBar current={progressStep} total={TOTAL_QUESTION_COUNT} />
+          <ProgressBar current={progressStep} total={visibleQuestions.length} />
           <QuestionStep
             question={currentQuestion}
             sectionTitle={section?.title ?? ""}
@@ -245,7 +249,7 @@ export default function AssessmentWizard() {
         <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-10 text-center shadow-sm" aria-live="polite">
           <p className="type-eyebrow">Please hold</p>
           <h2 className="mt-3 text-3xl font-semibold text-[var(--life-forest)]">Calculating your longevity profile...</h2>
-          <p className="mt-3 text-sm text-[var(--muted)]">We’re analyzing your inputs to estimate biological age and lifespan projections.</p>
+          <p className="mt-3 text-sm text-[var(--muted)]">We’re applying your inputs to the SSA life table and published longevity research.</p>
         </div>
       );
     }
@@ -256,7 +260,7 @@ export default function AssessmentWizard() {
         <section className="space-y-6">
           <div className="rounded-[40px] border border-[var(--border)] bg-white/90 p-8 text-center shadow-sm">
             <p className="type-eyebrow text-[var(--olive)]">One last step</p>
-            <h2 className="mt-3 text-3xl font-semibold text-[var(--life-forest)]">Enter your email to view your LIFE Age</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-[var(--life-forest)]">Enter your email to view your LIFE expectancy</h2>
             <p className="mt-3 text-sm text-[var(--muted)]">
               We’ll send your full LIFE report and habit recommendations. You’ll only do this once.
             </p>
@@ -278,9 +282,9 @@ export default function AssessmentWizard() {
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-6 py-12 text-[var(--text)]">
       <div className="flex flex-col gap-2 text-center text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-        <span>Survey-based educational experience</span>
-        <Link href="/assessment/methodology" className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
-          Review the LIFE Assessment methodology
+        <span style={{ color: "#6d5548" }}>Private, research-grounded educational estimate</span>
+        <Link href="/assessment/methodology" style={{ color: "#3f5338" }} className="text-[var(--olive)] underline decoration-[rgba(74,92,64,0.3)] underline-offset-4">
+          Learn about the research behind this assessment
         </Link>
       </div>
       {renderContent()}

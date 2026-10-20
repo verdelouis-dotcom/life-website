@@ -153,7 +153,7 @@ export function HomePageClient() {
             {[
               { number: "80%", label: "of lifespan is lifestyle", desc: "Not genetics. Daily habits, environment, and social connection determine how long we live.", cite: "Danish Twin Study, NEJM 1996" },
               { number: "20+", label: "additional years of life", desc: "Communities practicing the six longevity pillars consistently outlive the average American by more than two decades.", cite: "Buettner D. Blue Zones, National Geographic 2005" },
-              { number: "15%", label: "higher risk of early death", desc: "High ultra-processed food consumption is tied to a 15% increase in all-cause mortality risk.", cite: "PMC Systematic Review, 2025" },
+              { number: "15%", label: "higher mortality risk", desc: "High ultra-processed food consumption is tied to a 15% increase in all-cause mortality risk.", cite: "PMC Systematic Review, 2025" },
             ].map((stat) => (
               <Reveal key={stat.number}>
                 <div style={{ border: "1px solid rgba(245,240,232,0.12)", borderRadius: "1.5rem", padding: "2rem", background: "rgba(255,255,255,0.04)" }}>

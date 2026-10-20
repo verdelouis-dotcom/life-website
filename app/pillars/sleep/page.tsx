@@ -18,7 +18,7 @@ const RESEARCH = [
   },
   {
     title: "Sleep supports long-term health",
-    body: "A major sleep consensus statement found that regularly sleeping less than 7 hours is associated with increased risk for obesity, diabetes, hypertension, heart disease, stroke, depression, and increased risk of death.",
+    body: "A major sleep consensus statement found that regularly sleeping less than 7 hours is associated with increased risk for obesity, diabetes, hypertension, heart disease, stroke, depression, and shorter longevity.",
     sourceLabel: "Source: NIH / Sleep Consensus Panel",
   },
 ];

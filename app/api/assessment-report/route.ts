@@ -113,10 +113,10 @@ async function sendAssessmentReportEmail({
 function buildReportHtml(firstName: string | undefined, report: AssessmentReportPayload) {
   const greetingName = firstName || "there";
   const metricsRows = [
+    { label: "Your LIFE expectancy", value: `Age ${report.metrics.currentExpectedAge}` },
+    { label: "Approximate year", value: `${report.metrics.currentExpectedYear}` },
+    { label: "Likely range", value: `Age ${report.metrics.expectedAgeLow}–${report.metrics.expectedAgeHigh}` },
     { label: "LIFE Habits Score", value: formatScore(report.metrics?.lifeHabitsScore) },
-    { label: "Health Context Score", value: formatScore(report.metrics?.healthContextScore) },
-    { label: "Current Longevity Baseline", value: formatScore(report.metrics?.currentLongevityBaseline) },
-    { label: "Longevity Potential", value: formatScore(report.metrics?.longevityPotential) },
   ]
     .map(
       (item) => `
@@ -158,7 +158,7 @@ function buildReportHtml(firstName: string | undefined, report: AssessmentReport
     <div style="font-family:'Helvetica Neue',Arial,sans-serif;color:#0e1511;line-height:1.6;">
       <p style="font-size:16px;">Hi ${greetingName},</p>
       <p style="font-size:16px;">
-        Here is your LIFE Longevity Assessment snapshot. These educational estimates translate your survey responses into a lifestyle-informed profile.
+        Here is your LIFE Expectancy snapshot, grounded in the U.S. life table and published lifestyle research.
       </p>
 
       <h2 style="margin-top:24px;font-size:18px;color:#2f402c;">Key Metrics</h2>
@@ -191,7 +191,7 @@ function buildReportHtml(firstName: string | undefined, report: AssessmentReport
       </p>
 
       <p style="margin-top:16px;font-size:12px;color:#71695d;">
-        This assessment provides an educational estimate based on lifestyle and health factors associated with healthy aging. It is not a medical diagnosis and should not replace professional medical advice.
+        Statistical estimate for education only. Not a medical prediction or diagnosis.
       </p>
     </div>
   `;
@@ -200,10 +200,10 @@ function buildReportHtml(firstName: string | undefined, report: AssessmentReport
 function buildReportText(firstName: string | undefined, report: AssessmentReportPayload) {
   const greetingName = firstName || "there";
   const metricsBlock = [
+    `- Your LIFE expectancy: Age ${report.metrics.currentExpectedAge}`,
+    `- Approximate year: ${report.metrics.currentExpectedYear}`,
+    `- Likely range: Age ${report.metrics.expectedAgeLow}–${report.metrics.expectedAgeHigh}`,
     `- LIFE Habits Score: ${formatScore(report.metrics?.lifeHabitsScore)}`,
-    `- Health Context Score: ${formatScore(report.metrics?.healthContextScore)}`,
-    `- Current Longevity Baseline: ${formatScore(report.metrics?.currentLongevityBaseline)}`,
-    `- Longevity Potential: ${formatScore(report.metrics?.longevityPotential)}`,
   ].join("\n");
 
   const pillarBlock = (report.pillarScores ?? [])
@@ -226,7 +226,7 @@ function buildReportText(firstName: string | undefined, report: AssessmentReport
   return [
     `Hi ${greetingName},`,
     "",
-    "Here is your LIFE Longevity Assessment snapshot.",
+    "Here is your LIFE Expectancy snapshot.",
     "",
     "Key metrics:",
     metricsBlock,
@@ -246,7 +246,7 @@ function buildReportText(firstName: string | undefined, report: AssessmentReport
     `Retake the assessment: ${SITE_URL}/assessment`,
     `Review the methodology: ${SITE_URL}/assessment/methodology`,
     "",
-    "This assessment provides an educational estimate based on lifestyle and health factors associated with healthy aging. It is not a medical diagnosis and should not replace professional medical advice.",
+    "Statistical estimate for education only. Not a medical prediction or diagnosis.",
   ]
     .filter(Boolean)
     .join("\n");
