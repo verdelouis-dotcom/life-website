@@ -6,6 +6,7 @@ const LINKS = [
   { href: "/about", label: "About" },
   { href: "/assessment", label: "Assessment" },
   { href: "/resources", label: "Learn" },
+  { href: "/recipes", label: "Recipes" },
   { href: "/host", label: "Host a Table" },
   { href: "/gallery", label: "Gallery" },
   { href: "/donate", label: "Support Us" },
@@ -46,9 +47,20 @@ export default function SiteFooter() {
               href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="transition hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 font-semibold text-white/90 transition hover:border-white/40 hover:bg-white/15 hover:text-white"
               aria-label={`Follow LIFE on ${link.label}`}
             >
+              {link.label === "Instagram" ? (
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" className="fill-current stroke-none" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
+                  <path d="M13.7 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5H17V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V13h2.8v8h3.4Z" />
+                </svg>
+              )}
               {link.label}
             </a>
           ))}

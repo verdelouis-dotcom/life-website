@@ -62,6 +62,17 @@ export default function ResourcesPage() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-6xl px-6 pb-12">
+          <div className="flex flex-col gap-6 rounded-[36px] border border-[var(--border)] bg-[#fff8ef] p-8 shadow-sm md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="label-text text-[var(--olive)]">LIFE Recipes</p>
+              <h2 className="mt-2 heading-lg">Cook something worth sharing.</h2>
+              <p className="mt-3 max-w-2xl body-sm text-[var(--muted)]">Start with homemade fresh pasta, simple tomato sauce, and tiramisu.</p>
+            </div>
+            <Link href="/recipes" className="btn-solid whitespace-nowrap px-8 text-base">Explore Recipes</Link>
+          </div>
+        </section>
+
         <section className="mx-auto max-w-4xl px-6 pb-16">
           <div className="rounded-[36px] border border-[var(--border)] bg-white p-8 text-center shadow-sm">
             <p className="label-text">Explore the LIFE model</p>
