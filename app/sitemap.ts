@@ -19,6 +19,8 @@ const ROUTES = [
   "/recipes/fresh-pasta",
   "/recipes/tomato-sauce",
   "/recipes/tiramisu",
+  "/recipes/rigatoni-alla-vodka",
+  "/recipes/basil-pesto",
   "/resources/why-shared-meals-matter",
   "/resources/mediterranean-cooking-for-longevity",
   "/resources/the-six-pillars-of-life",

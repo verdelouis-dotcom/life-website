@@ -67,7 +67,7 @@ export default function ResourcesPage() {
             <div>
               <p className="label-text text-[var(--olive)]">LIFE Recipes</p>
               <h2 className="mt-2 heading-lg">Cook something worth sharing.</h2>
-              <p className="mt-3 max-w-2xl body-sm text-[var(--muted)]">Start with homemade fresh pasta, simple tomato sauce, and tiramisu.</p>
+              <p className="mt-3 max-w-2xl body-sm text-[var(--muted)]">Explore homemade pasta, simple sauces, basil pesto, and tiramisu.</p>
             </div>
             <Link href="/recipes" className="btn-solid whitespace-nowrap px-8 text-base">Explore Recipes</Link>
           </div>

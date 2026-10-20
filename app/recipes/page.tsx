@@ -7,7 +7,7 @@ const PAGE_URL = "https://www.longevityinitiativeforfoodandeducation.com/recipes
 
 export const metadata: Metadata = {
   title: "LIFE Recipes | Real Food for Everyday Life",
-  description: "Cook simple LIFE recipes for fresh pasta, tomato sauce, and tiramisu—made to be shared around the table.",
+  description: "Cook simple LIFE recipes for fresh pasta, sauces, pesto, and tiramisu—made to be shared around the table.",
   alternates: { canonical: PAGE_URL },
   openGraph: { title: "LIFE Recipes | Real Food for Everyday Life", description: "Simple recipes for cooking and sharing real food.", url: PAGE_URL, images: [DEFAULT_OG_IMAGE] },
   twitter: { title: "LIFE Recipes | Real Food for Everyday Life", description: "Simple recipes for cooking and sharing real food.", images: DEFAULT_TWITTER_IMAGES },
@@ -21,7 +21,7 @@ export default function RecipesPage() {
           <p className="label-text">Learn with LIFE</p>
           <h1 className="mt-2 heading-xl">Recipes made for real life.</h1>
           <p className="mt-4 max-w-3xl body-md text-[var(--muted)]">
-            Simple food, practical techniques, and recipes worth sharing. Start with three favorites from the LIFE table.
+            Simple food, practical techniques, and recipes worth sharing. Start with favorites from the LIFE table.
           </p>
         </div>
       </section>
